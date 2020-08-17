@@ -6,5 +6,5 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 })
 export class ScholarlyService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 }
