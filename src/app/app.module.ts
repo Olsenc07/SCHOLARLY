@@ -10,13 +10,15 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { TermsComponent } from './terms/terms.component';
 import { SignupComponent } from './signup/signup.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     TermsComponent,
-    SignupComponent
+    SignupComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
