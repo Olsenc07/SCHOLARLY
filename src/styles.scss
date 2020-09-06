@@ -106,13 +106,28 @@ color:#2699FB";
 style:"
 color:#2699FB";
 
+//notification icon
+<mat-icon>notification_important</mat-icon>
+//Or
+//bubbles, could chang to blue when being notified maybe
+<mat-icon> bubble_chart</mat-icon>
+//or
+//message icon
+<mat-icon> message</mat-icon>
+
 
 // Plus circle
+<mat-icon>add_circle</mat-icon>
 
-//Minus circle or square
+//Minus circle
+<mat-icon>remove_circle</mat-icon>
 
 //Symbol for people looking to joing your group
+//smily face
+<mat-icon> insert_emoticon</mat-icon>
 
 // + symbol or something to do with posting
+<mat-icon>add</mat-icon>
 
-// ^ symbol or something similar
+// ^ symbol 
+<mat-icon>keyboard_arrow_up</mat-icon>
