@@ -7,6 +7,7 @@ import {MatIconModule} from '@angular/material/icon';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
+  MatIconModule;
   
   constructor() { }
 
