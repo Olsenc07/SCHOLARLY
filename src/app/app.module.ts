@@ -9,12 +9,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { TermsComponent } from './terms/terms.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    TermsComponent
+    TermsComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
