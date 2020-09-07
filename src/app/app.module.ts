@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -12,7 +13,6 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { TermsComponent } from './terms/terms.component';
 import { SignupComponent } from './signup/signup.component';
 import { SearchComponent } from './search/search.component';
-import {}
 
 @NgModule({
   declarations: [
@@ -24,6 +24,7 @@ import {}
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
