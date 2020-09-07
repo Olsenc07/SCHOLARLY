@@ -1,163 +1,44 @@
  <!--main logo-->
-   <img Src=ProperInAppLogo.jpeg; class="home-page-logo">
- 
-// Simple Text
-    <script style="
-    position:relative;
-    width:1044px;
-    height:47px;
-    left: 1141.05px;
-    top:352.16px;
-    font-style: Hoefler text;
-    font-size: 47px; 
-    border-color: #0E3379;">
-    <div>"Enhance your University experience with Scholarly"</div>
-    </script>    
+   <div>
+ <img Src=ProperInAppLogo.jpeg; class="home-page-logo">
+</div>
 
-//Outline that surrounds log in features
-    <span {
-    style="
-    position: relative;
-    outline-style: solid;
-    width: 761.42
-    height: 599.49
-    left: 1141.05
-    top:352.16
-    border-color: #707070
-    border-radius: 46%;"></span>
-    
-    //Text field code https://material.io/develop/web
-    /components/text-fields  for email
-    input {
-    <span 
-   style="
-   position: relative;
-   width: 489.24px;
-    height: 84.99px;
-    left: 1174.36px;
-    top: 391.21px;
-    border-radius: 7%;
-    border-color: #707070;"> </span>
-    }
-
-    //Text field code https://material.io/develop/web
-    /components/text-fields for password
-    input{
-        <span
-    style="
-    position: relative;
-    width: 489.24px;
-    height: 84.99px;
-    left: 1174.36px;
-    top: 516.39px;
-    border-radius: 7%;
-    border-color: #707070">
+ <!-- Simple Text -->
+    <div class="simple-text">
+        <span>
+        <p>Enhance your University experience with Scholarly </p>
     </span>
-    }
-
-    clear{
-        <span class="material-icons" style="position: relative;
-        width: 40px; height: 40px;
-         left: 1607px;  top: 540px; border-color: #F1F9FF; ">
-
-</span>
-    }
-
-
-    clear{
-        <span class="material-icons" style="position: relative;
-        width: 40px; height: 40px;
-         left: 1607px;  top: 540px; border-color: #F1F9FF; ">
-</span>
-
-}
-//Login button
-<div text="Log In"></div>
-    <button style="position: relative;
-    width: 265.97px;
-    height: 65.5px;
-    left: 1333px;
-    top: 624.5px;
-    border-color: #3678E2">>
+    <!-- Outline that surrounds log in features -->
+    <span class="outline">
+    </span>
     </div>
-</button>
+    
+    <!-- Text field code for email -->
+    <mat-form-field class="text-field-email"><mat-label>Email</mat-label>
+<input matInput placeholder="@mail.utorontoEmail" >
+<button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+<mat-icon class="clear-button">close</mat-icon>
+  </button>
+    </mat-form-field>
+    
+    <!-- Text field code for password -->
+    <mat-form-field class="text-field-password"><mat-label>Password</mat-label>
+<input matInput placeholder="Password:">
+<button mat-button matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+    <mat-icon class="clear-button">close</mat-icon>
+  </button>
+    </mat-form-field>
+   
+<!-- //Login button -->
+<button mat-raised-button color="primary">Log In</button>
 
-     .LogIn {
-    position: relative;
-    style: Hoeflertext 
-    text-Size: 55px;
-    border-color: #0F0E0E ;
-    border: #FFFFFF;
-    border-radius: 7%;
-     }
-    
+   <!-- Forgot Password button -->
+   <button mat-button >Forgot Password?</button>
 
-    //forgot password button
-    <button style=
-    "position: relative;
-    type:button; 
-    style:Hoefler Text
-    textSize: 55 Regular
-    width:156px
-    height: 121px
-    left: 1380.5px
-    top: 631.5px
-    border-color:#0F0E0E
-    border: #FFFFFF">”Forgot Password?”</button>
+   <!-- Simple text -->
+  <div class="Or">
+    <p> Or </p>
+    </div>
     
-    
-    //Simple or text
-    <script> 
-    
-    <p style="
-    position: relative;
-    width: 42px;
-    height: 134px;
-    left: 1445.39px;
-    top: 747.23px;
-    font-style: HoeflerText;
-    border-color: #FFFFFF;
-    border: #707070;"> “Or” </p>
-    
-    </script>
-    
-    
-    
-    <button style="
-    position: relative;
-    type: button
-    width: 626px;
-    height: 85px;
-    left: 1147px;
-    top: 811px;
-    border-radius: 7%
-    border-color: #C7D6EF
-    border: #707070"></button>
-    
-    //Create new account text and button
-    <footer>
-    <p style= "
-    position: relative;
-    font-style: HoeflerText
-    font-size: 65px
-    border-color: #0E3379
-    border: #170505
-    Width: 575px
-    Height: 65px
-    left: 1186.47px
-    top: 835.88px"> “Create New Account</p>
-    
-    creatingAccount.regular{
-    <p
-    style="
-    position: relative;
-    font-style: HoeflerText
-    font-size: 65px
-    border-color: #0E3379
-    border: #170505
-    width: 575px;
-    height: 65px;
-    left: 1186.47px;
-    top: 835.88px;">
-    </p>
-    </footer>
+    <!-- Create new account text and button -->
+    <button mat-raised-button color="primary">Create New Account</button>
