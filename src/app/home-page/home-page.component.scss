@@ -1,49 +1,47 @@
-.home-page-logo{
-    position: relative;
-    width:1923;
-    height:559.04;
-    border-color: #FFFFFF;
-    border-radius: 7%;
+.home-page-logo {
+  position: relative;
+  width: 1923;
+  height: 559.04;
+  border-color: #ffffff;
+  border-radius: 7%;
 }
 
-.simple-text{
-    position:relative;
-    width:1044px;
-    height:47px;
-    left: 1141.05px;
-    top:352.16px;
-    font-style: Hoefler text;
-    font-size: 47px; 
-    border-color: #0E3379;
+.simple-text {
+  position: relative;
+  width: 1044px;
+  height: 47px;
+  font-style: Hoefler text;
+  font-size: 47px;
+  border-color: #0e3379;
 }
 
-.outline{
-    position: relative;
-    outline-style: solid;
-    width: 761.42;
-    height: 599.49;
-    border-color: #707070;
-    border-radius: 46%;
+.outline {
+  position: relative;
+  outline-style: solid;
+  width: 761.42;
+  height: 599.49;
+  border-color: #707070;
+  border-radius: 46%;
 }
 
-.text-field-email{
-    position: relative;
-   width: 489.24px;
-    height: 84.99px;
-    border-radius: 7%;
-    border-color: #707070;
+.text-field-email {
+  position: relative;
+  width: 489.24px;
+  height: 84.99px;
+  border-radius: 7%;
+  border-color: #707070;
 }
 
-.text-field-password{
-    position: relative;
-    width: 489.24px;
-    height: 84.99px;
-    border-radius: 7%;
-    border-color: #707070;
+.text-field-password {
+  position: relative;
+  width: 489.24px;
+  height: 84.99px;
+  border-radius: 7%;
+  border-color: #707070;
 }
 
-.clear-button{
-    border-color: #F1F9FF;
+.clear-button {
+  border-color: #f1f9ff;
 }
 
 // .LogIn-button-background
@@ -54,7 +52,7 @@
 // }
 
 // .LogIn-button{
-//     text: Hoeflertext 
+//     text: Hoeflertext
 //     text-Size: 55px;
 //     border-color: #0F0E0E ;
 //     border: #FFFFFF;
@@ -62,8 +60,8 @@
 //      }
 // }
 
- //forgot password button
-//  type:button; 
+//forgot password button
+//  type:button;
 //  style:Hoefler Text
 //  textSize: 55 Regular
 //  width:156px
@@ -71,13 +69,12 @@
 //  border-color:#0F0E0E
 //  border: #FFFFFF">”Forgot Password?”
 
-.Or
-{
-    width: 42px;
-    height: 134px;
-    font-style: HoeflerText;
-    border-color: #FFFFFF;
-    border: #707070;
+.Or {
+  width: 42px;
+  height: 134px;
+  font-style: HoeflerText;
+  border-color: #ffffff;
+  border: #707070;
 }
 
 // .Create-New-Account
