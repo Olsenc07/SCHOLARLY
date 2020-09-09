@@ -16,6 +16,7 @@ import { TermsComponent } from './terms/terms.component';
 import { SignupComponent } from './signup/signup.component';
 import { SearchComponent } from './search/search.component';
 import { PostPageComponent } from './post-page/post-page.component';
+import { RetrievePasswordComponent } from './retrieve-password/retrieve-password.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { PostPageComponent } from './post-page/post-page.component';
     SignupComponent,
     SearchComponent,
     PostPageComponent,
+    RetrievePasswordComponent,
   ],
   imports: [
     BrowserModule,
