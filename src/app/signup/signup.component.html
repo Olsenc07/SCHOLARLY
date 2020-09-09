@@ -129,67 +129,45 @@
     </div>
 
     <!-- Birthday Date Picker -->
-    <!-- </span>
-    <mat-icon
-      >highlight_off style="width:40px; height:40; left:1535px; top:482px;
-      color:#F1F9FF;
-    </mat-icon>
-    } { //Birthday Text and Date Picker
-    <header>"Birthday:"</header>
-    style=" width:121px; height:35; l font-style:
-    Helvetica Neue; text-size: 30; color:#707070; border-color: #418BBA; //Date
-    Picker code } //Gender Text field { input{ style:" width:456.89px;
-    height:75.74px; left:1137.11px; top:698.26px; "
-    <mat-icon
-      >highlight_off style="width:40px; height:40; left:1535px; top:719px;
-      color:#F1F9FF;
-    </mat-icon>
-    } } //Relationship Status Text field { input{ style:" width:456.89px;
-    height:75.74px; left:1137.11px; top:698.26px; "
-    <mat-icon
-      >highlight_off style="width:40px; height:40; left:1535px; top:812px;
-      color:#F1F9FF;
-    </mat-icon>
-    } //Sign Up {
-    <button
-      type="button"
-      style="
-  width:201px height:65px left: 820.48 top:896.17 text-size:56px 
-  font-type: Helvetica Neue color:#28208E border-color:#707070;
-  "
-    >
-      Sign Up
-    </button>
-    } //button to terms and condition inside a sentence {
-    <p>"By Signing Up,you are agreeing to the"</p>
-    <button
-      type="button"
-      style="
-        width: 809px;
-        height: 35px;
-        left: 556px;
-        top: 961px;
-        text-size: 30px;
-        font-style: Helvetica Neue;
-        color: #0a058b;
-      "
-    >
-      "terms and conditions"
-    </button>
-    } //only for the button border-color: #418BBA; //Existing account button
-    <button
-      type="button"
-      style="
-        text-size: 30px;
-        font-style: Helvetica Neue;
-        width: 350px;
-        height: 35px;
-        left: 746px;
-        top: 1013px;
-      "
-    >
-      I have an existing account
-    </button>
-    -->
+    <input matInput [matDatepicker]="picker" />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+
+    <!-- Text FieldGender: -->
+    <mat-form-field class="text-field-gender"
+      ><mat-label>Gender</mat-label>
+      <input matInput placeholder="Gender:" />
+      <button mat-button matSuffix mat-icon-button aria-label="Clear">
+        <mat-icon class="clear-button">close</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <!-- Text FieldRelationship: -->
+    <mat-form-field class="text-field-relationship"
+      ><mat-label>Relationship Status:</mat-label>
+      <input matInput placeholder="Relationship Status::" />
+      <button mat-button matSuffix mat-icon-button aria-label="Clear">
+        <mat-icon class="clear-button">close</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <!-- Sign Up Button  -->
+    <div>
+      <button mat-flat-button class="sign-up-button">Sign Up</button>
+    </div>
+
+    <!-- Terms/Conditions text and button -->
+    <p class="text">
+      By Signing Up, you are agreeing that I have read and accepted the
+      <button mat-flat-button class="terms-button">terms and conditions</button>
+    </p>
+
+    <!-- I have an existing account Button  -->
+    <div>
+      <button mat-flat-button class="existing-account-button">
+        I have an existing account
+      </button>
+    </div>
   </span>
 </div>
+-->

@@ -7,7 +7,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
-
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -34,6 +34,7 @@ import { SearchComponent } from './search/search.component';
     MatIconModule,
     MatButtonModule,
     FlexLayoutModule,
+    MatDatepickerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
