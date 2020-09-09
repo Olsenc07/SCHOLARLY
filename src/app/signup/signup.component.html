@@ -1,358 +1,195 @@
-<!-- 
+<!-- main logo -->
+<div>
+  <img Src="../../assets/Pics/ProperInAppLogo.jpeg" class="home-page-logo" />
+</div>
 
-//Logo
-{
-<img src="/Users/chaseolsen/angular-SCHOLARLY/
-src/assets/Pics/WhiteSquareInAppLogo.jpg" 
-style="width: 343.61px;
-position: relative;
-height: 398px;
-left: 749px;
-top: 42px;"
->
-}
+<!-- Username Text -->
+<div class="username-text">
+  <p>Username:</p>
+</div>
+<!-- Text FieldUsername: -->
+<mat-form-field class="text-field-password"
+  ><mat-label>Username</mat-label>
+  <input matInput placeholder="Username:" />
+  <button mat-button matSuffix mat-icon-button aria-label="Clear">
+    <mat-icon class="clear-button">close</mat-icon>
+  </button>
+</mat-form-field>
 
-//Text Username:
-<style>
-<header> "Username:" 
-     </header>
-     {
-style="
-position: relative;
-font-style: Helvetic Neue;
-font-size: 30;
-width: 146px;
-height: 35px;
-left: 162px;
-top: 303px;
-</style>
-}
+<!-- Password Text -->
+<div class="password-text">
+  <p>Password:</p>
+</div>
+<!-- //Text Field Password: -->
+<mat-form-field class="text-field-password"
+  ><mat-label>Password</mat-label>
+  <input matInput placeholder="Password:" />
+  <button mat-button matSuffix mat-icon-button aria-label="Clear">
+    <mat-icon class="clear-button">close</mat-icon>
+  </button>
+</mat-form-field>
 
+<!-- Repeat Password Text -->
+<div class="repeat-password-text">
+  <p>Repeat Password:</p>
+</div>
+<!-- Text Field Repeat Password: -->
+<mat-form-field class="text-field-password"
+  ><mat-label>RepeatPassword</mat-label>
+  <input matInput placeholder="Repeat Password:" />
+  <button mat-button matSuffix mat-icon-button aria-label="Clear">
+    <mat-icon class="clear-button">close</mat-icon>
+  </button>
+</mat-form-field>
 
-//User name Text field code https://material.io/develop/web
-/components/text-fields
-input {
-    <span 
-   style="width: 696.89px;
-   font-style: Helvetic Neue;
-   position: relative;
-    height: 75.74px;
-    left: 162.11px;
-    top: 338.26px;
-    border-radius: 7%;
-    border-color: #707070;"> </span>
-    <mat-icon>highlight_off style="width:40px; height:40; left:800px;
-        top:356px; color:#F1F9FF; </mat-icon>    
-}
+<!-- Major/Minor Text -->
+<div class="major-text">
+  <p>Major/Minor:</p>
+</div>
+<!-- Text Field Major/Minor -->
+<mat-form-field class="text-field-password"
+  ><mat-label>Major/Minor</mat-label>
+  <input matInput placeholder="Major/Minor:" />
+  <button mat-button matSuffix mat-icon-button aria-label="Clear">
+    <mat-icon class="clear-button">close</mat-icon>
+  </button>
+</mat-form-field>
 
-//Text Password:
-<header> "Password:" 
-     </header>
-     {
-        style="
-        position: relative;
-font-style: Helvetic Neue;
-font-size: 30;
-width: 141px;
-height: 35px;
-left: 162px;
-top: 429px;
+<!-- Sport/Club Text -->
+<div class="club-text">
+  <p>Sport/Club:</p>
+  <!-- Text Field Sport/Club: -->
+  <mat-form-field class="text-field-password"
+    ><mat-label>Sport/Club</mat-label>
+    <input matInput placeholder="Sport/Club:" />
+    <button mat-button matSuffix mat-icon-button aria-label="Clear">
+      <mat-icon class="clear-button">close</mat-icon>
+    </button>
+  </mat-form-field>
 
+  <span>
+    <span>
+      <!-- Public Account Text -->
+      <div class="public-account-text">
+        <p>Public Account:</p>
+      </div>
 
-    //Password Text field code https://material.io/develop/web
-/components/text-fields
-input {
-    <span 
-   style="
-   position: relative;
-   width: 696.89px;
-   font-style: Helvetic Neue;
-    height: 75.74px;
-    left: 162.11px;
-    top: 464.26px;
-    border-radius: 7%;
-    border-color: #707070;"> </span>
-    <mat-icon>highlight_off style="width:40px; height:40; left:800px;
-        top:482px; color:#F1F9FF; </mat-icon>
-    }
+      <!-- Private Account Text -->
+      <div class="private-account-text">
+        <p>Private Account:</p>
+      </div>
+    </span>
 
-    //Text Repeat Password:
-    <header> "Repeat Password:" 
-     </header>
-     {style="
-font-style: Helvetic Neue;
-font-size: 30;
-position: relative;
-width: 246px;
-height: 35px;
-left: 162px;
-top: 555px;}
+    <!--  click and switches to on for Public Account.
+    Share same style -->
+    <!-- hover over ! Icon 
+        //message "Members are automatically accepted to your group"
+        appears
+    
+    <stlye>
+        <icon class="material-icons">
+    toggle_on
+    </icon>
+        <span class="material-icons">
+    toggle_off
+    <button onclick="myFunction()"></button>"
+    </span>
      
+   click and switches to on for Private Account.
+    Share same style -->
+    <!-- hover over ! Icon 
+        //message "You choose to accept or decline members to your group -->
 
-    //Repeat Password Text field code https://material.io/develop/web
-/components/text-fields
-input {
-    <span 
-   style="width: 696.89px;
-   position: relative;
-   font-style: Helvetic Neue;
-    height: 75.74px;
-    left: 162.11px;
-    top: 590.26px;
-    border-radius: 7%;
-    border-color: #707070;"> </span>
-    <mat-icon>highlight_off style="width:40px; height:40; left:800px;
-        top:608px; color:#F1F9FF; </mat-icon>
-    }
+    <!-- <stlye>
+      <icon class="material-icons">
+  toggle_on
+  </icon>
+      <span class="material-icons">
+  toggle_off
+  <button onclick="myFunction()"></button>"
+  </span> -->
 
-    //Text Major/Minor
-    <header> "Major/Minor:" 
-     </header>
-     {
-        style="
-        position: relative;
-font-style: Helvetic Neue;
-font-size: 30;
-width: 171px;
-height: 35px;
-left: 162px;
-top: 679px;
+    <!-- Full Name Text -->
+    <div class="full-name-text">
+      <p>Full Name:</p>
+    </div>
 
-    //Major/Minor Text field code https://material.io/develop/web
-/components/text-fields
-    input {
-    <span 
-   style="
-   position: relative;
-   width: 696.89px;
-   font-style: Helvetic Neue;
-    height: 75.74px;
-    left: 162.11px;
-    top: 590.26px;
-    border-radius: 7%;
-    border-color: #707070;"> </span>
-    <mat-icon>highlight_off style="width:40px; height:40; left:560px;
-        top:731px; color:#F1F9FF; </mat-icon>
-    }
+    <!-- Full Name Textfield -->
+    <mat-form-field class="text-field-password"
+      ><mat-label>Full Name</mat-label>
+      <input matInput placeholder="Full Name:" />
+      <button mat-button matSuffix mat-icon-button aria-label="Clear">
+        <mat-icon class="clear-button">close</mat-icon>
+      </button>
+    </mat-form-field>
 
-    //Text Sport/Club:
-    <header> "Sport/Club:" 
-     </header>
-     {
-     style="
-     position: relative;
-font-style: Helvetic Neue;
-font-size: 30;
-width: 155px;
-height: 35px;
-left: 162px;
-top: 803px;
-     }
+    <!-- Birthday Text -->
+    <div class="birthday-text">
+      <p>Birthday:</p>
+    </div>
 
-    //Sport/Club Text field code https://material.io/develop/web
-/components/text-fields
-    input {
-    <span 
-   style="
-   position: relative;
-   width: 155px;
-   font-style: Helvetic Neue;
-    height: 35px;
-    left: 162.11px;
-    top: 803px;
-    border-radius: 7%;
-    border-color: #707070;">
-     </span>
-    <mat-icon>highlight_off style="width:40px; height:40; left:560px;
-        top:855px; color:#F1F9FF; </mat-icon>
-    }
-
-//Public Account option button and text
-{
-<span>"Public Account"</span>
-style="
-position: relative;
-width:203px;
-height:35px;
-left:1136px;
-top:289px;
-font-size: 30px;
-font-style: Helvetica Neue;
-border-color: #244BCE;"
-}
-
-//toggle icon off then click and switches to on for Public Account. 
-Share same style
-p {
-<stlye>
-    <icon class="material-icons">
-toggle_on
-</icon>
-    <span class="material-icons">
-toggle_off
-<button onclick="myFunction()"></button>"
-</span>
-
-<script>
-function myFunction() {
-  document.getElementsByTagName("icon").innerHTML = "";
-style="
-width:88px;
-height:40px;
-left:1191px;
-top:326px;
-color:#2699FB;"
-
-</stlye>
-}
-
-p.hover { 
-    //message "Members are automatically accepted to your group"
-    appears
-}
-
-
-//toggle icon off then click and switches to on for Private Account. 
-Share same style
-a {
-<stlye>
-    <icon class="material-icons">
-toggle_on
-</icon>
-    <span class="material-icons">
-toggle_off
-<button onclick="myFunction()"></button>"
-</span>
-
-<script>
-function myFunction() {
-  document.getElementsByTagName("icon").innerHTML = "";
-style="
-width:88px;
-height:40px;
-left:1495px;
-top:326px;
-color:#2699FB;"
-
-</stlye>
-}
-
-a.hover { 
-    //message "You choose to accept or decline
-Members to your group"
-}
-
-
-//Full Name text & Text field code https://material.io/develop/web
-/components/text-fields
-<style>
-<header> "Full Name:" 
-     </header>
-     {
-style="
-position: relative;
-font-style: Helvetic Neue;
-font-size: 30;
-width: 143px;
-height: 35px;
-left: 1137px;
-top: 428px;
-</style>
-}
-
-//Full name Text field code https://material.io/develop/web
-/components/text-fields
-input {
-    <span 
-   style="width: 456.89px;
-   font-style: Helvetic Neue;
-   position: relative;
-    height: 75.74px;
-    left: 1137.11px;
-    top: 464.26px;
-    border-radius: 7%;
-    border-color: #707070;"> </span>
-    <mat-icon>highlight_off style="width:40px; height:40; left:1535px;
-        top:482px; color:#F1F9FF; </mat-icon>    
-    }
-
-    {
-    //Birthday Text and Date Picker
-    <header> "Birthday:" 
-        </header>
-        style="
-        width:121px;
-        height:35;
-        left: 1021px;
-        top: 554px;
+    <!-- Birthday Date Picker -->
+    <!-- </span>
+    <mat-icon
+      >highlight_off style="width:40px; height:40; left:1535px; top:482px;
+      color:#F1F9FF;
+    </mat-icon>
+    } { //Birthday Text and Date Picker
+    <header>"Birthday:"</header>
+    style=" width:121px; height:35; l font-style:
+    Helvetica Neue; text-size: 30; color:#707070; border-color: #418BBA; //Date
+    Picker code } //Gender Text field { input{ style:" width:456.89px;
+    height:75.74px; left:1137.11px; top:698.26px; "
+    <mat-icon
+      >highlight_off style="width:40px; height:40; left:1535px; top:719px;
+      color:#F1F9FF;
+    </mat-icon>
+    } } //Relationship Status Text field { input{ style:" width:456.89px;
+    height:75.74px; left:1137.11px; top:698.26px; "
+    <mat-icon
+      >highlight_off style="width:40px; height:40; left:1535px; top:812px;
+      color:#F1F9FF;
+    </mat-icon>
+    } //Sign Up {
+    <button
+      type="button"
+      style="
+  width:201px height:65px left: 820.48 top:896.17 text-size:56px 
+  font-type: Helvetica Neue color:#28208E border-color:#707070;
+  "
+    >
+      Sign Up
+    </button>
+    } //button to terms and condition inside a sentence {
+    <p>"By Signing Up,you are agreeing to the"</p>
+    <button
+      type="button"
+      style="
+        width: 809px;
+        height: 35px;
+        left: 556px;
+        top: 961px;
+        text-size: 30px;
         font-style: Helvetica Neue;
-        text-size: 30;
-        color:#707070;
-        border-color: #418BBA;
-
-        //Date Picker code
-
-}
-
-//Gender Text field
-{
-input{
-    style:"
-    width:456.89px;
-    height:75.74px;
-    left:1137.11px;
-    top:698.26px;
-"
-<mat-icon>highlight_off style="width:40px; height:40; left:1535px;
-        top:719px; color:#F1F9FF; </mat-icon>
-}
-}
-
-//Relationship Status Text field
-{
-input{
-    style:"
-    width:456.89px;
-    height:75.74px;
-    left:1137.11px;
-    top:698.26px;
-"
-<mat-icon>highlight_off style="width:40px; height:40; left:1535px;
-        top:812px; color:#F1F9FF; </mat-icon>
-}
-
-
-//Sign Up
-{
-<button type="button" style="
-width:201px height:65px left: 820.48 top:896.17 text-size:56px 
-font-type: Helvetica Neue color:#28208E border-color:#707070;
-" >Sign Up</button>
-}
-
-
-//button to terms and condition inside a sentence
-{
-<p>"By Signing Up,you are agreeing to the"</p> <button type="button"
-style="
-width:809px;
-height:35px;
-left:556px;
-top:961px;
-text-size: 30px;
-font-style: Helvetica Neue;
-color:#0A058B"> "terms and conditions"</button>
-}
-//only for the button
-border-color: #418BBA;
-
-
-//Existing account button
-<button type="button" style="
-text-size:30px;
-font-style:Helvetica Neue;
-width:350px;
-height:35px;
-left:746px;
-top:1013px;">
-I have an existing account</button> -->
+        color: #0a058b;
+      "
+    >
+      "terms and conditions"
+    </button>
+    } //only for the button border-color: #418BBA; //Existing account button
+    <button
+      type="button"
+      style="
+        text-size: 30px;
+        font-style: Helvetica Neue;
+        width: 350px;
+        height: 35px;
+        left: 746px;
+        top: 1013px;
+      "
+    >
+      I have an existing account
+    </button>
+    -->
+  </span>
+</div>
