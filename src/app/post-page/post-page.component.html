@@ -1,10 +1,40 @@
-<p>post-page works!</p>
-<!-- Choosing date of event range -->
-<mat-date-range-input [rangePicker]="picker">
-  <input matStartDate placeholder="Start date" />
-  <input matEndDate placeholder="End date" />
-</mat-date-range-input>
+<!--main logo  -->
+<div class="side-spacers">
+  <img Src="../../assets/Pics/ProperInAppLogo.jpeg" />
+</div>
 
-<mat-date-range-picker #picker></mat-date-range-picker>
+<!-- Title of post input -->
+<div>
+  <mat-form-field class="text-input"
+    ><mat-label>Title of Post</mat-label>
+    <input matInput type="Title" placeholder="Title:" />
 
-<!-- add time picker attached too ^ -->
+    <!-- text -->
+    <div>
+      <p class="text">Description of post:</p>
+    </div>
+
+    <!-- Description input -->
+    <div>
+      <mat-form-field class="description-input"
+        ><mat-label></mat-label>
+        <input matInput type="" placeholder="Ex:Looking for..." />
+
+        <!-- Clock icon -->
+        <div></div>
+
+        <!-- Choosing date of event range  -->
+        <span>
+          <mat-date-range-input [rangePicker]="picker">
+            <input matStartDate placeholder="Start date" />
+            <input matEndDate placeholder="End date" />
+          </mat-date-range-input>
+
+          <mat-date-range-picker #picker></mat-date-range-picker>
+        </span>
+
+        <!-- add time picker attached too ^  -->
+      </mat-form-field>
+    </div></mat-form-field
+  >
+</div>
