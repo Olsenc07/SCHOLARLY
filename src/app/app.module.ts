@@ -9,12 +9,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 
+import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { TermsComponent } from './terms/terms.component';
 import { SignupComponent } from './signup/signup.component';
 import { SearchComponent } from './search/search.component';
+import { PostPageComponent } from './post-page/post-page.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { SearchComponent } from './search/search.component';
     TermsComponent,
     SignupComponent,
     SearchComponent,
+    PostPageComponent,
   ],
   imports: [
     BrowserModule,

@@ -18,11 +18,6 @@
 // // </label>
 // //}
 
-// //Date Picker
-
-// //Search Bar
-// //Which Could just be a text field with  filter setting
-
 // //Switches
 // // import {MDCSwitch} from '@material/switch';
 
@@ -108,5 +103,11 @@
 // // ^ symbol
 // <mat-icon>keyboard_arrow_up</mat-icon>
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
