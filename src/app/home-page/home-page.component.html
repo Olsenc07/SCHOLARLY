@@ -1,45 +1,51 @@
-<!--main logo-->
+<!-- Main logo -->
 <div>
-  <img Src="../../assets/Pics/ProperInAppLogo.jpeg" class="home-page-logo" />
-</div>
+  <div>
+    <img Src="../../assets/Pics/ProperInAppLogo.jpeg" />
+  </div>
 
-<!-- Simple Text -->
-<div class="simple-text">
-  <span>
-    <p>Enhance your University experience with Scholarly</p>
-  </span>
-  <!-- Outline that surrounds log in features -->
-  <span class="outline">
-    <!-- Text field code for email -->
-    <mat-form-field class="text-field-email"
-      ><mat-label>Email</mat-label>
-      <input matInput placeholder="@mail.utorontoEmail" />
-      <button mat-button matSuffix mat-icon-button aria-label="Clear">
-        <mat-icon class="clear-button">close</mat-icon>
+  <div class="main-content" fxLayout="row">
+    <span class="main-text">
+      <p>Enhance your University experience with Scholarly</p>
+    </span>
+
+    <!-- Container holding the log in form -->
+    <div class="log-in-box" fxLayout="column" fxLayoutAlign="center center">
+      <mat-form-field class="text-input"
+        ><mat-label>Email Address</mat-label>
+        <input matInput />
+        <span matSuffix class="email-suffix">@mail.utoronto.ca</span>
+        <button
+          color="primary"
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field class="text-input"
+        ><mat-label>Password</mat-label>
+        <input matInput type="password" placeholder="Password" />
+        <button
+          color="primary"
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+      <button mat-raised-button color="primary" class="action-button">
+        Log In
       </button>
-    </mat-form-field>
-
-    <!-- Text field code for password -->
-    <mat-form-field class="text-field-password"
-      ><mat-label>Password</mat-label>
-      <input matInput placeholder="Password:" />
-      <button mat-button matSuffix mat-icon-button aria-label="Clear">
-        <mat-icon class="clear-button">close</mat-icon>
-      </button>
-    </mat-form-field>
-
-    <!-- //Login button -->
-    <button mat-raised-button color="primary">Log In</button>
-
-    <!-- Forgot Password button -->
-    <button mat-button>Forgot Password?</button>
-
-    <!-- Simple text -->
-    <div class="Or">
+      <button mat-flat-button class="forgot-password">Forgot Password?</button>
       <p>Or</p>
+      <button mat-raised-button color="primary" class="action-button">
+        Create New Account
+      </button>
     </div>
-
-    <!-- Create new account text and button -->
-    <button mat-raised-button color="primary">Create New Account</button>
-  </span>
+  </div>
 </div>
