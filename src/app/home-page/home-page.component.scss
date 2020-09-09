@@ -1,87 +1,42 @@
-.home-page-logo {
+.main-content {
   position: relative;
-  width: 1923;
-  height: 559.04;
-  border-color: #ffffff;
-  border-radius: 7%;
+  padding: 24px 16px 16px;
+  font-size: 16px;
+
+  .main-text {
+    padding: 48px 32px 0 0;
+    font-size: 32px;
+    line-height: 32px;
+    color: #0e3379;
+  }
+
+  .log-in-box {
+    padding: 16px;
+    border: 1px solid gray;
+    border-radius: 16px;
+
+    .forgot-password {
+      margin: 8px 0;
+      font-size: 14px;
+    }
+
+    .action-button {
+      font-size: 16px;
+      width: 50%;
+    }
+
+    p {
+      font-size: 20px;
+      margin: 0 0 16px;
+      color: #0e3379;
+    }
+  }
 }
 
-.simple-text {
-  position: relative;
-  width: 1044px;
-  height: 47px;
-  font-style: Hoefler text;
-  font-size: 47px;
-  border-color: #0e3379;
+.email-suffix {
+  padding-right: 8px;
 }
 
-.outline {
-  position: relative;
-  outline-style: solid;
-  width: 761.43;
-  height: 599.49;
-  border-color: #707070;
-  border-radius: 46%;
+.text-input {
+  width: 100%;
 }
-
-.text-field-email {
-  position: relative;
-  width: 489.24px;
-  height: 84.99px;
-  border-radius: 7%;
-  border-color: #707070;
-}
-
-.text-field-password {
-  position: relative;
-  width: 489.24px;
-  height: 84.99px;
-  border-radius: 7%;
-  border-color: #707070;
-}
-
-.clear-button {
-  border-color: #f1f9ff;
-}
-
-// .LogIn-button-background
-// {
-//     width: 265.97px;
-//     height: 65.5px;
-//     border-color: #3678E2>
-// }
-
-// .LogIn-button{
-//     text: Hoeflertext
-//     text-Size: 55px;
-//     border-color: #0F0E0E ;
-//     border: #FFFFFF;
-//     border-radius: 7%;
-//      }
-// }
-
-//forgot password button
-//  type:button;
-//  style:Hoefler Text
-//  textSize: 55 Regular
-//  width:156px
-//  height: 121px
-//  border-color:#0F0E0E
-//  border: #FFFFFF">”Forgot Password?”
-
-.Or {
-  width: 42px;
-  height: 134px;
-  font-style: HoeflerText;
-  border-color: #ffffff;
-  border: #707070;
-}
-
-// .Create-New-Account
-// {
-//     width: 626px;
-//     height: 85px;
-//     border-radius: 7%
-//     border-color: #C7D6EF
-//     border: #707070">
-// }
