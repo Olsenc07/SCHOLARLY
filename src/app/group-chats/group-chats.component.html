@@ -1,1 +1,108 @@
-<p>group-chats works!</p>
+<!-- logo -->
+<img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" />
+
+<!-- input pic & has this default pic before-->
+<div class="pic">
+  <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" />
+</div>
+
+<!-- text -->
+<div>
+  <p class="text">Bio:</p>
+</div>
+
+<!-- Bio box -->
+<div class="bio-box"></div>
+
+<!-- Major/Minor Text -->
+<div class="major-text">
+  <p>Major/Minor:</p>
+</div>
+
+<!-- Text Field Major/Minor -->
+<mat-form-field class="text-field-password"
+  ><mat-label>Major/Minor</mat-label>
+  <input matInput placeholder="Major/Minor:" />
+  <button mat-button matSuffix mat-icon-button aria-label="Clear">
+    <mat-icon class="clear-button">close</mat-icon>
+  </button>
+</mat-form-field>
+
+<!-- Sport/Club Text -->
+<div class="club-text">
+  <p>Sport/Club:</p>
+  <!-- Text Field Sport/Club: -->
+  <mat-form-field class="text-field-password"
+    ><mat-label>Sport/Club</mat-label>
+    <input matInput placeholder="Sport/Club:" />
+    <button mat-button matSuffix mat-icon-button aria-label="Clear">
+      <mat-icon class="clear-button">close</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+
+<!-- cancel button -->
+<button mat-flat-button class="button">Cancel</button>
+
+<!-- Public or Privte account -->
+<mat-radio-group aria-label="Select an option">
+  <mat-radio-button value="">Private Account</mat-radio-button>
+  <div class="tooltip">
+    <span class="material-icons"> info </span>
+    <span class="tooltiptext"
+      >Members are automatically accepted to your group</span
+    >
+  </div>
+  <mat-radio-button value="">Public Account</mat-radio-button>
+  <div class="tooltip">
+    <span class="material-icons"> info </span>
+    <span class="tooltiptext"
+      >You choose to accept or decline members to your group</span
+    >
+  </div>
+</mat-radio-group>
+
+<!-- Full Name Text -->
+<div class="full-name-text">
+  <p>Full Name:</p>
+</div>
+
+<!-- Full Name Textfield -->
+<mat-form-field class="text-field-password"
+  ><mat-label>Full Name</mat-label>
+  <input matInput placeholder="Full Name:" />
+  <button mat-button matSuffix mat-icon-button aria-label="Clear">
+    <mat-icon class="clear-button">close</mat-icon>
+  </button>
+</mat-form-field>
+
+<!-- Birthday Text -->
+<div class="birthday-text">
+  <p>Birthday:</p>
+</div>
+
+<!-- Birthday Date Picker -->
+<input matInput [matDatepicker]="picker" />
+<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+<mat-datepicker #picker></mat-datepicker>
+
+<!-- Text FieldGender: -->
+<mat-form-field class="text-field-gender"
+  ><mat-label>Gender</mat-label>
+  <input matInput placeholder="Gender:" />
+  <button mat-button matSuffix mat-icon-button aria-label="Clear">
+    <mat-icon class="clear-button">close</mat-icon>
+  </button>
+</mat-form-field>
+
+<!-- Text FieldRelationship: -->
+<mat-form-field class="text-field-relationship"
+  ><mat-label>Relationship Status:</mat-label>
+  <input matInput placeholder="Relationship Status:" />
+  <button mat-button matSuffix mat-icon-button aria-label="Clear">
+    <mat-icon class="clear-button">close</mat-icon>
+  </button>
+</mat-form-field>
+
+<!-- done button -->
+<button mat-flat-button class="button">Done</button>
