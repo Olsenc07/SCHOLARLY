@@ -19,6 +19,10 @@ import { SignupComponent } from './signup/signup.component';
 import { SearchComponent } from './search/search.component';
 import { PostPageComponent } from './post-page/post-page.component';
 import { RetrievePasswordComponent } from './retrieve-password/retrieve-password.component';
+import { ProfileComponent } from './profile/profile.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { GroupChatsComponent } from './group-chats/group-chats.component';
+import { MainPagesComponent } from './main-pages/main-pages.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +33,10 @@ import { RetrievePasswordComponent } from './retrieve-password/retrieve-password
     SearchComponent,
     PostPageComponent,
     RetrievePasswordComponent,
+    ProfileComponent,
+    EditProfileComponent,
+    GroupChatsComponent,
+    MainPagesComponent,
   ],
   imports: [
     BrowserModule,
