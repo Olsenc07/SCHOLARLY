@@ -8,7 +8,7 @@
   <mat-form-field class="text-input"
     ><mat-label>Title of Post</mat-label>
     <input matInput type="Title" placeholder="Title:" />
-
+   </div>
     <!-- text -->
     <div>
       <p class="text">Description of post:</p>
@@ -19,22 +19,47 @@
       <mat-form-field class="description-input"
         ><mat-label></mat-label>
         <input matInput type="" placeholder="Ex:Looking for..." />
+      </mat-form-field></div
+  ></mat-form-field>
 
-        <!-- Clock icon -->
-        <div></div>
+  <!-- Clock icon -->
+  <div class="watch">
+    <mat-icon>watch_later</mat-icon>
+  </div>
 
-        <!-- Choosing date of event range  -->
-        <span>
-          <mat-date-range-input [rangePicker]="picker">
-            <input matStartDate placeholder="Start date" />
-            <input matEndDate placeholder="End date" />
-          </mat-date-range-input>
-
-          <mat-date-range-picker #picker></mat-date-range-picker>
-        </span>
-
-        <!-- add time picker attached too ^  -->
-      </mat-form-field>
-    </div></mat-form-field
-  >
+  <!-- text -->
+<div>
+  <p class="text">Time of event</p>
 </div>
+
+
+  <!-- Choosing date of event range  -->
+  <span>
+    <mat-date-range-input [rangePicker]="picker">
+      <input matStartDate placeholder="Start date" />
+      <input matEndDate placeholder="End date" />
+    </mat-date-range-input>
+
+    <mat-date-range-picker #picker></mat-date-range-picker>
+  </span>
+
+  <!-- add time picker attached too ^  -->
+
+  <!-- text -->
+ 
+<span>
+  <form class="sliders" #form="ngForm" (ngSubmit)="onFormSubmit()" ngNativeValidate>
+
+    <mat-slide-toggle ngModel value="primary" name="driving">Able to drive members</mat-slide-toggle>
+    <mat-slide-toggle ngModel value="primary" name="males" required>Males</mat-slide-toggle>
+    <mat-slide-toggle ngModel value="primary" name="females" required>Females</mat-slide-toggle>
+    <mat-slide-toggle ngModel value="primary"name="males" required>Other</mat-slide-toggle>
+
+    <mat-slide-toggle ngModel value="primary" name="males" required>Formal event</mat-slide-toggle>
+
+    <mat-slide-toggle ngModel value="primary" name="males" required>Relaxed event</mat-slide-toggle>
+    
+
+    <button mat-raised-button type="submit">Save Settings</button>
+  </form>
+</span>

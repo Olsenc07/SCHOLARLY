@@ -68,46 +68,25 @@
   </mat-form-field>
 
   <span>
-    <span>
-      <!-- Public Account Text -->
-      <div class="public-account-text">
-        <p>Public Account:</p>
+    <!-- Private or Public account 
+      swtiches with info icon to hover over to display text-->
+
+    <mat-radio-group aria-label="Select an option">
+      <mat-radio-button value="1">Private Account</mat-radio-button>
+      <div class="tooltip">
+        <span class="material-icons"> info </span>
+        <span class="tooltiptext"
+          >Members are automatically accepted to your group</span
+        >
       </div>
-
-      <!-- Private Account Text -->
-      <div class="private-account-text">
-        <p>Private Account:</p>
+      <mat-radio-button value="2">Publick Account</mat-radio-button>
+      <div class="tooltip">
+        <span class="material-icons"> info </span>
+        <span class="tooltiptext"
+          >You choose to accept or decline members to your group</span
+        >
       </div>
-    </span>
-
-    <!--  click and switches to on for Public Account.
-    Share same style -->
-    <!-- hover over ! Icon 
-        //message "Members are automatically accepted to your group"
-        appears
-    
-    <stlye>
-        <icon class="material-icons">
-    toggle_on
-    </icon>
-        <span class="material-icons">
-    toggle_off
-    <button onclick="myFunction()"></button>"
-    </span>
-     
-   click and switches to on for Private Account.
-    Share same style -->
-    <!-- hover over ! Icon 
-        //message "You choose to accept or decline members to your group -->
-
-    <!-- <stlye>
-      <icon class="material-icons">
-  toggle_on
-  </icon>
-      <span class="material-icons">
-  toggle_off
-  <button onclick="myFunction()"></button>"
-  </span> -->
+    </mat-radio-group>
 
     <!-- Full Name Text -->
     <div class="full-name-text">

@@ -2,10 +2,6 @@
   padding: 0px 50% 85% 0px;
 }
 
-.text {
-  font-family: "Helvetic Neue";
-}
-
 .text-input {
   width: 100%;
   font-family: "Helvetic Neue", "Courier New", Courier;
@@ -15,4 +11,16 @@
   width: 100%;
   font-family: "Helvetic Neue", "Courier New", Courier;
   height: 75%;
+}
+
+.watch {
+  color: #2699fb;
+}
+
+.sliders .mat-slide-toggle {
+  margin: 8px 0;
+  display: block;
+  font-family: "Helvetic Neue", "Courier New", Courier;
+  border-color: #418bba;
+  color: #707070;
 }
