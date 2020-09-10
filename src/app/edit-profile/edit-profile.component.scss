@@ -1,0 +1,121 @@
+.pic {
+  border-radius: 50%;
+}
+
+.text {
+  color: #0e3379;
+  font-family: "Helvetic Neue", "Courier New", Courier;
+}
+
+.bio-box {
+  padding: 16px;
+  border: 1px solid gray;
+  border-radius: 16px;
+}
+
+major-text {
+  position: relative;
+  font-family: "Helvetic Neue", "Courier New", Courier;
+  font-size: 30;
+  width: 171px;
+  height: 35px;
+  color: #707070;
+  border-color: #418bba;
+}
+
+.major-textfield {
+  position: relative;
+  width: 696.89px;
+  font-family: "Helvetic Neue", "Courier New", Courier;
+  height: 75.74px;
+  border-radius: 7%;
+  border-color: #707070;
+}
+
+.club-text {
+  position: relative;
+  font-family: "Helvetic Neue", "Courier New", Courier;
+  font-size: 30;
+  width: 155px;
+  height: 35px;
+  color: #707070;
+  border-color: #418bba;
+}
+
+.club-textfield {
+  position: relative;
+  width: 155px;
+  font-family: "Helvetic Neue", "Courier New", Courier;
+  height: 35px;
+  border-radius: 7%;
+  border-color: #707070;
+}
+
+.button {
+  margin: 8px 0;
+  font-size: 40px;
+  font-family: "Helvetic Neue", "Courier New", Courier;
+  color: #707070;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  position: relative;
+  font-family: "Helvetic Neue", "Courier New", Courier;
+  color: #707070;
+  border-color: #418bba;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  font-family: "Helvetic Neue", "Courier New", Courier;
+  color: #707070;
+  border-color: #418bba;
+}
+
+.full-name-text {
+  position: relative;
+  font-family: "Helvetic Neue", "Courier New", Courier;
+  font-size: 30;
+  width: 143px;
+  height: 35px;
+  color: #707070;
+  border-color: #418bba;
+}
+
+.full-name-textfield {
+  position: relative;
+  width: 456.89px;
+  font-family: "Helvetic Neue", "Courier New", Courier;
+  height: 75.74px;
+  border-radius: 7%;
+  border-color: #707070;
+}
+
+.birthday-text {
+  width: 121px;
+  height: 35;
+  font-family: "Helvetic Neue", "Courier New", Courier;
+  font-size: 30;
+  color: #707070;
+  border-color: #418bba;
+}
+
+.text-field-gender {
+  position: relative;
+  width: 456.89px;
+  height: 75.74px;
+  font-family: "Helvetic Neue", "Courier New", Courier;
+  border-radius: 7%;
+  border-color: #707070;
+}
+
+.text-field-relationship {
+  position: relative;
+  width: 456.89px;
+  height: 75.74px;
+  font-family: "Helvetic Neue", "Courier New", Courier;
+  border-radius: 7%;
+  border-color: #707070;
+  font-size: 30;
+}
