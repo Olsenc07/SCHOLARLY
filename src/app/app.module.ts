@@ -11,6 +11,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { AppRoutingModule } from './app-routing.module';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -51,6 +52,7 @@ import { MainPagesComponent } from './main-pages/main-pages.component';
     MatDatepickerModule,
     MatRadioModule,
     MatSlideToggleModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
