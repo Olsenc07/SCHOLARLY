@@ -5,3 +5,35 @@
   color: #707070;
   border-color: #418bba;
 }
+
+.members-box {
+  padding: 16px;
+  border: 1px solid gray;
+  border-radius: 16px;
+}
+
+.chat-box {
+  padding: 16px;
+  border: 1px solid gray;
+  border-radius: 16px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  position: relative;
+  font-family: "Helvetic Neue", "Courier New", Courier;
+  color: #707070;
+  border-color: #418bba;
+}
+
+.tooltip:hover .tooltiptext {
+  position: relative;
+  visibility: visible;
+  font-family: "Helvetic Neue", "Courier New", Courier;
+  color: #707070;
+  border-color: #418bba;
+}
+
+.icon-size {
+  padding: 7%;
+}

@@ -218,6 +218,7 @@
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
+  position: relative;
   font-family: "Helvetic Neue", "Courier New", Courier;
   color: #707070;
   border-color: #418bba;
