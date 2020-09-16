@@ -47,46 +47,43 @@
   <!-- text and sliders and hover over i -->
 
   <span>
-    <form
-      class="sliders"
-      #form="ngForm"
-      (ngSubmit)="onFormSubmit()"
-      ngNativeValidate
+    <!-- <form class="sliders" #form="ngForm" 
+     (ngSubmit)="onFormSubmit()" 
+      ngNativeValidate >  -->
+    <mat-slide-toggle ngModel value="primary" name="driving"
+      >Able to drive members</mat-slide-toggle
     >
-      <mat-slide-toggle ngModel value="primary" name="driving"
-        >Able to drive members</mat-slide-toggle
-      >
-      <mat-slide-toggle ngModel value="primary" name="males" required
-        >Males</mat-slide-toggle
-      >
-      <mat-slide-toggle ngModel value="primary" name="females" required
-        >Females</mat-slide-toggle
-      >
-      <mat-slide-toggle ngModel value="primary" name="males" required
-        >Other</mat-slide-toggle
-      >
+    <mat-slide-toggle ngModel value="primary" name="males" required
+      >Males</mat-slide-toggle
+    >
+    <mat-slide-toggle ngModel value="primary" name="females" required
+      >Females</mat-slide-toggle
+    >
+    <mat-slide-toggle ngModel value="primary" name="males" required
+      >Other</mat-slide-toggle
+    >
 
-      <mat-slide-toggle ngModel value="primary" name="males" required
-        >Formal event
-        <div class="tooltip">
-          <span class="material-icons"> info </span>
-          <span class="tooltiptext"
-            >Members are expected to act with a level of professionalism
-          </span>
-        </div>
-      </mat-slide-toggle>
+    <mat-slide-toggle ngModel value="primary" name="males" required
+      >Formal event
+      <div class="tooltip">
+        <span class="material-icons"> info </span>
+        <span class="tooltiptext"
+          >Members are expected to act with a level of professionalism
+        </span>
+      </div>
+    </mat-slide-toggle>
 
-      <mat-slide-toggle ngModel value="primary" name="males" required
-        >Relaxed event
-        <div class="tooltip">
-          <span class="material-icons"> info </span>
-          <span class="tooltiptext">
-            Members are able satisfy their amusements
-          </span>
-        </div>
-      </mat-slide-toggle>
-      <button mat-raised-button type="submit">Save Settings</button>
-    </form>
+    <mat-slide-toggle ngModel value="primary" name="males" required
+      >Relaxed event
+      <div class="tooltip">
+        <span class="material-icons"> info </span>
+        <span class="tooltiptext">
+          Members are able satisfy their amusements
+        </span>
+      </div>
+    </mat-slide-toggle>
+    <button mat-raised-button type="submit">Save Settings</button>
+    <!-- </form> -->
   </span>
 
   <!-- amount of people stepper -->
