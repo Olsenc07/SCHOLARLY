@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post-page.component.scss'],
 })
 export class PostPageComponent implements OnInit {
-  public submitAttempt: boolean = false;
+  public submitAttempt = false;
   constructor() {}
 
   ngOnInit(): void {}
