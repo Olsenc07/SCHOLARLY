@@ -3,137 +3,133 @@
   <img Src="../../assets/Pics/ProperInAppLogo.jpeg" class="home-page-logo" />
 </div>
 <!-- Username Text Input -->
-<div fxLayout="column" fxLayoutAlign="space-around start">
-  <mat-form-field class="input-box">
-    <mat-label>Username:</mat-label>
-    <input matInput type="text" />
-    <!-- [(ngModel)]="value" -->
-    <!-- *ngIf="value" -->
-    <!-- (click)="value = ''" -->
-    <button mat-button matSuffix mat-icon-button aria-label="Clear">
-      <mat-icon>close</mat-icon>
-    </button>
-  </mat-form-field>
+<div class="main-content">
+  <div class="column">
+    <mat-form-field class="input-box">
+      <mat-label>Username:</mat-label>
+      <input matInput type="text" />
+      <!-- [(ngModel)]="value" -->
+      <!-- *ngIf="value" -->
+      <!-- (click)="value = ''" -->
+      <button mat-button matSuffix mat-icon-button aria-label="Clear">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
 
-  <!-- Password Text -->
-
-  <mat-form-field class="text-input"></mat-form-field>
-  <mat-label class="password-text">Password:</mat-label>
-
-  <!-- //Text Field Password: -->
-  <mat-form-field class="text-field-password"
-    ><mat-label>Password</mat-label>
-    <input matInput type="password" placeholder="Password:" />
-    <button
-      mat-button
-      matSuffix
-      mat-icon-button
-      color="primary"
-      aria-label="Clear"
-    >
-      <mat-icon class="clear-button">close</mat-icon>
-    </button>
-  </mat-form-field>
-
-  <!-- Repeat Password Text -->
-
-  <p class="repeat-password-text">Repeat Password:</p>
-
-  <!-- Text Field Repeat Password: -->
-  <mat-form-field class="text-field-password"
-    ><mat-label>RepeatPassword</mat-label>
-    <input matInput placeholder="Repeat Password:" />
-    <button mat-button matSuffix mat-icon-button aria-label="Clear">
-      <mat-icon class="clear-button">close</mat-icon>
-    </button>
-  </mat-form-field>
-
-  <!-- Major/Minor Text -->
-
-  <p class="major-text">Major/Minor:</p>
-
-  <!-- Text Field Major/Minor -->
-  <mat-form-field class="text-field-password"
-    ><mat-label>Major/Minor</mat-label>
-    <input matInput placeholder="Major/Minor:" />
-    <button mat-button matSuffix mat-icon-button aria-label="Clear">
-      <mat-icon class="clear-button">close</mat-icon>
-    </button>
-  </mat-form-field>
-</div>
-
-<!-- Sport/Club Text -->
-<div class="club-text">
-  <p>Sport/Club:</p>
-  <!-- Text Field Sport/Club: -->
-  <mat-form-field class="text-field-password"
-    ><mat-label>Sport/Club</mat-label>
-    <input matInput placeholder="Sport/Club:" />
-    <button mat-button matSuffix mat-icon-button aria-label="Clear">
-      <mat-icon class="clear-button">close</mat-icon>
-    </button>
-  </mat-form-field>
-</div>
-
-<!-- Private or Public account 
-      swtiches with info icon to hover over to display text-->
-<div fxLayout="column" fxLayoutAlign="space-around end">
-  <mat-radio-group aria-label="Select an option">
-    <mat-radio-button value="">Private Account</mat-radio-button>
-    <div class="tooltip">
-      <span class="material-icons"> info </span>
-      <span class="tooltiptext"
-        >Members are automatically accepted to your group</span
+    <!-- //Text Field Password: -->
+    <mat-form-field class="text-field-password"
+      ><mat-label>Password</mat-label>
+      <input matInput type="password" placeholder="Password:" />
+      <button
+        mat-button
+        matSuffix
+        mat-icon-button
+        color="primary"
+        aria-label="Clear"
       >
+        <mat-icon class="clear-button">close</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <!-- Repeat Password Text -->
+
+    <p class="repeat-password-text">Repeat Password:</p>
+
+    <!-- Text Field Repeat Password: -->
+    <mat-form-field class="text-field-password"
+      ><mat-label>RepeatPassword</mat-label>
+      <input matInput placeholder="Repeat Password:" />
+      <button mat-button matSuffix mat-icon-button aria-label="Clear">
+        <mat-icon class="clear-button">close</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <!-- Major/Minor Text -->
+
+    <p class="major-text">Major/Minor:</p>
+
+    <!-- Text Field Major/Minor -->
+    <mat-form-field class="text-field-password"
+      ><mat-label>Major/Minor</mat-label>
+      <input matInput placeholder="Major/Minor:" />
+      <button mat-button matSuffix mat-icon-button aria-label="Clear">
+        <mat-icon class="clear-button">close</mat-icon>
+      </button>
+    </mat-form-field>
+    <!-- Sport/Club Text -->
+    <div class="club-text">
+      <p>Sport/Club:</p>
+      <!-- Text Field Sport/Club: -->
+      <mat-form-field class="text-field-password"
+        ><mat-label>Sport/Club</mat-label>
+        <input matInput placeholder="Sport/Club:" />
+        <button mat-button matSuffix mat-icon-button aria-label="Clear">
+          <mat-icon class="clear-button">close</mat-icon>
+        </button>
+      </mat-form-field>
     </div>
-    <mat-radio-button value="">Public Account</mat-radio-button>
-    <div class="tooltip">
-      <span class="material-icons"> info </span>
-      <span class="tooltiptext"
-        >You choose to accept or decline members to your group</span
-      >
-    </div>
-  </mat-radio-group>
+  </div>
 
-  <!-- Full Name Text -->
+  <!-- Private or Public account 
+        swtiches with info icon to hover over to display text-->
+  <div class="column">
+    <mat-radio-group aria-label="Select an option">
+      <mat-radio-button value="">Private Account</mat-radio-button>
+      <div class="tooltip">
+        <span class="material-icons"> info </span>
+        <span class="tooltiptext"
+          >Members are automatically accepted to your group</span
+        >
+      </div>
+      <mat-radio-button value="">Public Account</mat-radio-button>
+      <div class="tooltip">
+        <span class="material-icons"> info </span>
+        <span class="tooltiptext"
+          >You choose to accept or decline members to your group</span
+        >
+      </div>
+    </mat-radio-group>
 
-  <p class="full-name-text">Full Name:</p>
+    <!-- Full Name Text -->
 
-  <!-- Full Name Textfield -->
-  <mat-form-field class="text-field-password"
-    ><mat-label>Full Name</mat-label>
-    <input matInput placeholder="Full Name:" />
-    <button mat-button matSuffix mat-icon-button aria-label="Clear">
-      <mat-icon class="clear-button">close</mat-icon>
-    </button>
-  </mat-form-field>
+    <p class="full-name-text">Full Name:</p>
 
-  <!-- Birthday Text -->
+    <!-- Full Name Textfield -->
+    <mat-form-field class="text-field-password"
+      ><mat-label>Full Name</mat-label>
+      <input matInput placeholder="Full Name:" />
+      <button mat-button matSuffix mat-icon-button aria-label="Clear">
+        <mat-icon class="clear-button">close</mat-icon>
+      </button>
+    </mat-form-field>
 
-  <p class="birthday-text">Birthday:</p>
+    <!-- Birthday Text -->
 
-  <!-- Birthday Date Picker -->
-  <input matInput [matDatepicker]="picker" />
-  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-  <mat-datepicker #picker></mat-datepicker>
+    <p class="birthday-text">Birthday:</p>
 
-  <!-- Text FieldGender: -->
-  <mat-form-field class="text-field-gender"
-    ><mat-label>Gender</mat-label>
-    <input matInput placeholder="Gender:" />
-    <button mat-button matSuffix mat-icon-button aria-label="Clear">
-      <mat-icon class="clear-button">close</mat-icon>
-    </button>
-  </mat-form-field>
+    <!-- Birthday Date Picker -->
+    <input matInput [matDatepicker]="picker" />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
 
-  <!-- Text FieldRelationship: -->
-  <mat-form-field class="text-field-relationship"
-    ><mat-label>Relationship Status:</mat-label>
-    <input matInput placeholder="Relationship Status:" />
-    <button mat-button matSuffix mat-icon-button aria-label="Clear">
-      <mat-icon class="clear-button">close</mat-icon>
-    </button>
-  </mat-form-field>
+    <!-- Text FieldGender: -->
+    <mat-form-field class="text-field-gender"
+      ><mat-label>Gender</mat-label>
+      <input matInput placeholder="Gender:" />
+      <button mat-button matSuffix mat-icon-button aria-label="Clear">
+        <mat-icon class="clear-button">close</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <!-- Text FieldRelationship: -->
+    <mat-form-field class="text-field-relationship"
+      ><mat-label>Relationship Status:</mat-label>
+      <input matInput placeholder="Relationship Status:" />
+      <button mat-button matSuffix mat-icon-button aria-label="Clear">
+        <mat-icon class="clear-button">close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
 </div>
 <!-- Sign Up Button  -->
 <div fxLayout="column" fxLayoutAlign="space-evenly center">

@@ -3,20 +3,25 @@
   height: 398px;
 }
 
+.main-content {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
 .username-text {
   font-family: "Helvetic Neue", "Courier New", Courier;
   font-size: 30;
-  width: 146px;
-  height: 35px;
   color: #707070;
   border-color: #418bba;
 }
 
 .username-textfield {
-  width: 696.89px;
   font-family: "Helvetic Neue", "Courier New", Courier;
-
-  height: 75.74px;
   border-radius: 7%;
   border-color: #707070;
 }
@@ -24,23 +29,17 @@
 .password-text {
   font-family: "Helvetic Neue", "Courier New", Courier;
   font-size: 30;
-  width: 141px;
-  height: 35px;
   color: #707070;
   border-color: #418bba;
 }
 
 .password-textfield {
-  width: 696.89px;
-  height: 75.74px;
   font-family: "Helvetic Neue", "Courier New", Courier;
   border-radius: 7%;
   border-color: #707070;
 }
 
 .repeat-password-text {
-  width: 246px;
-  height: 30px;
   font-family: "Helvetic Neue", "Courier New", Courier;
   font-size: 30;
   color: #707070;
@@ -48,10 +47,8 @@
 }
 
 .repeat-password-textfield {
-  width: 696.89px;
   position: relative;
   font-family: "Helvetic Neue", "Courier New", Courier;
-  height: 75.74px;
   border-radius: 7%;
   border-color: #707070;
 }
@@ -59,16 +56,12 @@
 .major-text {
   font-family: "Helvetic Neue", "Courier New", Courier;
   font-size: 30;
-  width: 171px;
-  height: 35px;
   color: #707070;
   border-color: #418bba;
 }
 
 .major-textfield {
-  width: 696.89px;
   font-family: "Helvetic Neue", "Courier New", Courier;
-  height: 75.74px;
   border-radius: 7%;
   border-color: #707070;
 }
@@ -76,62 +69,46 @@
 .club-text {
   font-family: "Helvetic Neue", "Courier New", Courier;
   font-size: 30;
-  width: 155px;
-  height: 35px;
   color: #707070;
   border-color: #418bba;
 }
 
 .club-textfield {
-  width: 155px;
   font-family: "Helvetic Neue", "Courier New", Courier;
-  height: 35px;
   border-radius: 7%;
   border-color: #707070;
 }
 
 .public-account-text {
-  width: 203px;
-  height: 35px;
   font-size: 30px;
   font-family: "Helvetic Neue", "Courier New", Courier;
   border-color: #244bce;
 }
 
 .private-account-text {
-  width: 213px;
-  height: 35px;
   font-size: 30px;
   font-family: "Helvetic Neue", "Courier New", Courier;
   border-color: #244bce;
 }
 
 .switch {
-  width: 88px;
-  height: 40px;
   color: #2699fb;
 }
 
 .full-name-text {
   font-family: "Helvetic Neue", "Courier New", Courier;
   font-size: 30;
-  width: 143px;
-  height: 35px;
   color: #707070;
   border-color: #418bba;
 }
 
 .full-name-textfield {
-  width: 456.89px;
   font-family: "Helvetic Neue", "Courier New", Courier;
-  height: 75.74px;
   border-radius: 7%;
   border-color: #707070;
 }
 
 .birthday-text {
-  width: 121px;
-  height: 35;
   font-family: "Helvetic Neue", "Courier New", Courier;
   font-size: 30;
   color: #707070;
@@ -139,16 +116,12 @@
 }
 
 .text-field-gender {
-  width: 456.89px;
-  height: 75.74px;
   font-family: "Helvetic Neue", "Courier New", Courier;
   border-radius: 7%;
   border-color: #707070;
 }
 
 .text-field-relationship {
-  width: 456.89px;
-  height: 75.74px;
   font-family: "Helvetic Neue", "Courier New", Courier;
   border-radius: 7%;
   border-color: #707070;
@@ -157,8 +130,6 @@
 
 .sign-up-button {
   position: relative;
-  width: 201px;
-  height: 65px;
   font-family: "Helvetic Neue", "Courier New", Courier;
   border-radius: 7%;
   border-color: #093e86;
@@ -167,8 +138,6 @@
 }
 
 .terms-button {
-  width: 1183px;
-  height: 35px;
   font-size: 30px;
   font-family: "Helvetic Neue", "Courier New", Courier;
   color: #0a058b;
@@ -176,8 +145,6 @@
 }
 
 .text {
-  width: 1183px;
-  height: 35px;
   font-size: 30px;
   font-family: "Helvetic Neue", "Courier New", Courier;
   color: #707070;
@@ -185,8 +152,6 @@
 }
 
 .existing-account-button {
-  width: 350px;
-  height: 35px;
   font-size: 30px;
   font-family: "Helvetic Neue", "Courier New", Courier;
   color: #707070;
@@ -215,5 +180,4 @@
   font-family: "Helvetic Neue", "Courier New", Courier;
 }
 .input-box {
-  width: 200px;
 }

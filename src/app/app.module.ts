@@ -24,6 +24,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { GroupChatsComponent } from './group-chats/group-chats.component';
 import { MainPagesComponent } from './main-pages/main-pages.component';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { MainPagesComponent } from './main-pages/main-pages.component';
     FormsModule,
     MatInputModule,
     MatIconModule,
+    MatMomentDateModule,
     MatButtonModule,
     FlexLayoutModule,
     MatDatepickerModule,
