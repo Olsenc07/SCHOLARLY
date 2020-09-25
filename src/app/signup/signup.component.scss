@@ -1,162 +1,65 @@
-.main-logo {
-  width: 343.61px;
-  height: 398px;
-}
-
-.main-content {
+.entire-page {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+}
+.logo-layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .column {
   display: flex;
+  flex-direction: row;
+}
+.left-inputs {
+  display: flex;
   flex-direction: column;
+  justify-content: flex-start;
 }
 
-.username-text {
-  font-family: "Helvetic Neue", "Courier New", Courier;
-  font-size: 30;
-  color: #707070;
-  border-color: #418bba;
+.right-inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
-.username-textfield {
-  font-family: "Helvetic Neue", "Courier New", Courier;
+.bottom-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.center-text {
+  display: flex;
+  justify-content: center;
+}
+.asthetic-adds {
   border-radius: 7%;
+  color: #418bba;
   border-color: #707070;
-}
-
-.password-text {
-  font-size: 30;
-  color: #707070;
-  border-color: #418bba;
-}
-
-.clear-button {
-  border-radius: 7%;
-  border-color: #707070;
-}
-
-.repeat-password-text {
-  color: #707070;
-  border-color: #418bba;
-}
-
-.repeat-password-textfield {
-  position: relative;
-
-  border-radius: 7%;
-  border-color: #707070;
-}
-
-.major-text {
-  font-size: 30;
-  color: #707070;
-  border-color: #418bba;
-}
-
-.major-textfield {
-  border-radius: 7%;
-  border-color: #707070;
-}
-
-.club-text {
-  font-size: 30;
-  color: #707070;
-  border-color: #418bba;
-}
-
-.club-textfield {
-  border-radius: 7%;
-  border-color: #707070;
-}
-
-.public-account-text {
-  font-size: 30px;
-
-  border-color: #244bce;
-}
-
-.private-account-text {
-  font-size: 30px;
-
-  border-color: #244bce;
 }
 
 .switch {
   color: #2699fb;
 }
 
-.full-name-text {
-  font-size: 30;
-  color: #707070;
-  border-color: #418bba;
-}
-
-.full-name-textfield {
-  border-radius: 7%;
-  border-color: #707070;
-}
-
-.birthday-text {
-  font-size: 30;
-  color: #707070;
-  border-color: #418bba;
-}
-
-.text-field-gender {
-  border-radius: 7%;
-  border-color: #707070;
-}
-
-.text-field-relationship {
-  border-radius: 7%;
-  border-color: #707070;
-  font-size: 30;
-}
-
-.sign-up-button {
-  position: relative;
-
-  border-radius: 7%;
-  border-color: #093e86;
-  color: #707070;
-  font-size: 56;
-}
-
-.terms-button {
-  font-size: 30px;
-
-  color: #0a058b;
-  border-color: #418bba;
-}
-
-.text {
-  font-size: 30px;
-
-  color: #707070;
-  border-color: #418bba;
-}
-
-.existing-account-button {
-  font-size: 30px;
-
-  color: #707070;
-  border-color: #093e86;
-}
-
 .tooltip .tooltiptext {
   visibility: hidden;
-  position: relative;
-
   color: #707070;
   border-color: #418bba;
 }
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
-  position: relative;
-
   color: #707070;
   border-color: #418bba;
+}
+.material-icons {
+  border-radius: 7%;
+  color: #418bba;
+  border-color: #707070;
+}
+.home-page-logo {
+  font-size: small;
 }

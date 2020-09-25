@@ -1,137 +1,133 @@
-<!-- main logo -->
-<div fxLayout="column" fxLayoutAlign="center center">
-  <img Src="../../assets/Pics/ProperInAppLogo.jpeg" class="home-page-logo" />
-</div>
-<!-- Username Text Input -->
-<div class="main-content">
+<div class="entire-page">
+  <!-- main logo -->
+  <div class="logo-layout">
+    <img Src="../../assets/Pics/ProperInAppLogo.jpeg" class="home-page-logo" />
+  </div>
+  <!-- Username Text Input -->
   <div class="column">
-    <mat-form-field class="clear-button">
-      <mat-label>Username</mat-label>
-      <input matInput type="text" placeholder="Username:" />
-      <!-- [(ngModel)]="value"
+    <div class="left-inputs">
+      <mat-form-field class="asthetic-adds">
+        <mat-label>Username</mat-label>
+        <input matInput type="text" placeholder="Username:" />
+        <!-- [(ngModel)]="value"
       *ngIf="value" 
       (click)="value = ''" -->
-      <button mat-button matSuffix mat-icon-button aria-label="Clear">
-        <mat-icon>close</mat-icon>
-      </button>
-    </mat-form-field>
+        <button mat-button matSuffix mat-icon-button aria-label="Clear">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
 
-    <!-- //Text Field Password: -->
-    <mat-form-field class="clear-button"
-      ><mat-label>Password</mat-label>
-      <input matInput type="password" placeholder="Password:" />
-      <button
-        mat-button
-        matSuffix
-        mat-icon-button
-        color="primary"
-        aria-label="Clear"
-      >
-        <mat-icon>close</mat-icon>
-      </button>
-    </mat-form-field>
+      <!-- //Text Field Password: -->
+      <mat-form-field class="asthetic-adds"
+        ><mat-label>Password</mat-label>
+        <input matInput type="password" placeholder="Password:" />
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          color="primary"
+          aria-label="Clear"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
 
-    <!-- Text Field Repeat Password: -->
-    <mat-form-field class="clear-button"
-      ><mat-label>RepeatPassword</mat-label>
-      <input matInput placeholder="Repeat Password:" />
-      <button mat-button matSuffix mat-icon-button aria-label="Clear">
-        <mat-icon class="clear-button">close</mat-icon>
-      </button>
-    </mat-form-field>
+      <!-- Text Field Repeat Password: -->
+      <mat-form-field class="asthetic-adds"
+        ><mat-label>RepeatPassword</mat-label>
+        <input matInput placeholder="Repeat Password:" />
+        <button mat-button matSuffix mat-icon-button aria-label="Clear">
+          <mat-icon class="asthetic-adds">close</mat-icon>
+        </button>
+      </mat-form-field>
 
-    <!-- Text Field Major/Minor -->
-    <mat-form-field class="clear-button"
-      ><mat-label>Major/Minor</mat-label>
-      <input matInput placeholder="Major/Minor:" />
-      <button mat-button matSuffix mat-icon-button aria-label="Clear">
-        <mat-icon class="clear-button">close</mat-icon>
-      </button>
-    </mat-form-field>
-    <!-- Sport/Club Text -->
+      <!-- Text Field Major/Minor -->
+      <mat-form-field class="asthetic-adds"
+        ><mat-label>Major/Minor</mat-label>
+        <input matInput placeholder="Major/Minor:" />
+        <button mat-button matSuffix mat-icon-button aria-label="Clear">
+          <mat-icon class="asthetic-adds">close</mat-icon>
+        </button>
+      </mat-form-field>
 
-    <!-- Text Field Sport/Club: -->
-    <mat-form-field class="clear-button"
-      ><mat-label>Sport/Club</mat-label>
-      <input matInput placeholder="Sport/Club:" />
-      <button mat-button matSuffix mat-icon-button aria-label="Clear">
-        <mat-icon class="clear-button">close</mat-icon>
-      </button>
-    </mat-form-field>
-  </div>
+      <!-- Text Field Sport/Club: -->
+      <mat-form-field class="asthetic-adds"
+        ><mat-label>Sport/Club</mat-label>
+        <input matInput placeholder="Sport/Club:" />
+        <button mat-button matSuffix mat-icon-button aria-label="Clear">
+          <mat-icon class="asthetic-adds">close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
 
-  <!-- Private or Public account 
+    <!-- Private or Public account 
         swtiches with info icon to hover over to display text-->
-  <div class="column">
-    <mat-radio-group aria-label="Select an option">
-      <mat-radio-button value="">Private Account</mat-radio-button>
-      <div class="tooltip">
-        <span class="material-icons"> info </span>
-        <span class="tooltiptext"
-          >Members are automatically accepted to your group</span
-        >
-      </div>
-      <mat-radio-button value="">Public Account</mat-radio-button>
-      <div class="tooltip">
-        <span class="material-icons"> info </span>
-        <span class="tooltiptext"
-          >You choose to accept or decline members to your group</span
-        >
-      </div>
-    </mat-radio-group>
+    <div class="right-inputs">
+      <mat-radio-group aria-label="Select an option">
+        <mat-radio-button value="">Private Account</mat-radio-button>
+        <div class="tooltip">
+          <span class="material-icons"> info </span>
+          <span class="tooltiptext"
+            >Members are automatically accepted to your group</span
+          >
+        </div>
+        <mat-radio-button value="">Public Account</mat-radio-button>
+        <div class="tooltip">
+          <span class="material-icons"> info </span>
+          <span class="tooltiptext"
+            >You choose to accept or decline members to your group</span
+          >
+        </div>
+      </mat-radio-group>
 
-    <!-- Full Name Textfield -->
-    <mat-form-field class="text-field-password"
-      ><mat-label>Full Name</mat-label>
-      <input matInput placeholder="Full Name:" />
-      <button mat-button matSuffix mat-icon-button aria-label="Clear">
-        <mat-icon class="clear-button">close</mat-icon>
-      </button>
-    </mat-form-field>
+      <!-- Full Name Textfield -->
+      <mat-form-field class="asthetic-adds"
+        ><mat-label>Full Name</mat-label>
+        <input matInput placeholder="Full Name:" />
+        <button mat-button matSuffix mat-icon-button aria-label="Clear">
+          <mat-icon class="asthetic-adds">close</mat-icon>
+        </button>
+      </mat-form-field>
 
-    <!-- Birthday Text -->
+      <!-- Birthday Text -->
+      <p class="asthetic-adds">Birthday:</p>
 
-    <p class="birthday-text">Birthday:</p>
+      <!-- Birthday Date Picker -->
+      <input matInput [matDatepicker]="picker" />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
 
-    <!-- Birthday Date Picker -->
-    <input matInput [matDatepicker]="picker" />
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
+      <!-- Text FieldGender: -->
+      <mat-form-field class="asthetic-adds"
+        ><mat-label>Gender</mat-label>
+        <input matInput placeholder="Gender:" />
+        <button mat-button matSuffix mat-icon-button aria-label="Clear">
+          <mat-icon class="asthetic-adds">close</mat-icon>
+        </button>
+      </mat-form-field>
 
-    <!-- Text FieldGender: -->
-    <mat-form-field class="text-field-gender"
-      ><mat-label>Gender</mat-label>
-      <input matInput placeholder="Gender:" />
-      <button mat-button matSuffix mat-icon-button aria-label="Clear">
-        <mat-icon class="clear-button">close</mat-icon>
-      </button>
-    </mat-form-field>
-
-    <!-- Text FieldRelationship: -->
-    <mat-form-field class="text-field-relationship"
-      ><mat-label>Relationship Status:</mat-label>
-      <input matInput placeholder="Relationship Status:" />
-      <button mat-button matSuffix mat-icon-button aria-label="Clear">
-        <mat-icon class="clear-button">close</mat-icon>
-      </button>
-    </mat-form-field>
-  </div>
-</div>
-<!-- Sign Up Button  -->
-<div fxLayout="column" fxLayoutAlign="space-evenly center">
-  <div>
-    <button mat-flat-button class="sign-up-button">Sign Up</button>
+      <!-- Text FieldRelationship: -->
+      <mat-form-field class="asthetic-adds"
+        ><mat-label>Relationship Status:</mat-label>
+        <input matInput placeholder="Relationship Status" />
+        <button mat-button matSuffix mat-icon-button aria-label="Clear">
+          <mat-icon class="asthetic-adds">close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
   </div>
 
-  <!-- Terms/Conditions text and button -->
-  <p class="text">
-    By Signing Up, you are agreeing that I have read and accepted the
-    <button mat-flat-button class="terms-button">terms and conditions</button>
-  </p>
+  <!-- Sign Up Button  -->
+  <div class="bottom-buttons">
+    <button mat-flat-button class="asthetic-adds">Sign Up</button>
+    <!-- Terms/Conditions text and button -->
+    <p class="center-text">
+      By Signing Up, you are agreeing that I have read and accepted the
+    </p>
+    <button mat-flat-button class="asthetic-adds">terms and conditions</button>
 
-  <!-- I have an existing account Button  -->
-  <div>
-    <button mat-flat-button class="existing-account-button">
+    <!-- I have an existing account Button  -->
+    <button mat-flat-button class="asthetic-adds">
       I have an existing account
     </button>
   </div>
