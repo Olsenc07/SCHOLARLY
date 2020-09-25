@@ -5,19 +5,19 @@
 <!-- Username Text Input -->
 <div class="main-content">
   <div class="column">
-    <mat-form-field class="input-box">
-      <mat-label>Username:</mat-label>
-      <input matInput type="text" />
-      <!-- [(ngModel)]="value" -->
-      <!-- *ngIf="value" -->
-      <!-- (click)="value = ''" -->
+    <mat-form-field class="clear-button">
+      <mat-label>Username</mat-label>
+      <input matInput type="text" placeholder="Username:" />
+      <!-- [(ngModel)]="value"
+      *ngIf="value" 
+      (click)="value = ''" -->
       <button mat-button matSuffix mat-icon-button aria-label="Clear">
         <mat-icon>close</mat-icon>
       </button>
     </mat-form-field>
 
     <!-- //Text Field Password: -->
-    <mat-form-field class="text-field-password"
+    <mat-form-field class="clear-button"
       ><mat-label>Password</mat-label>
       <input matInput type="password" placeholder="Password:" />
       <button
@@ -27,16 +27,12 @@
         color="primary"
         aria-label="Clear"
       >
-        <mat-icon class="clear-button">close</mat-icon>
+        <mat-icon>close</mat-icon>
       </button>
     </mat-form-field>
 
-    <!-- Repeat Password Text -->
-
-    <p class="repeat-password-text">Repeat Password:</p>
-
     <!-- Text Field Repeat Password: -->
-    <mat-form-field class="text-field-password"
+    <mat-form-field class="clear-button"
       ><mat-label>RepeatPassword</mat-label>
       <input matInput placeholder="Repeat Password:" />
       <button mat-button matSuffix mat-icon-button aria-label="Clear">
@@ -44,12 +40,8 @@
       </button>
     </mat-form-field>
 
-    <!-- Major/Minor Text -->
-
-    <p class="major-text">Major/Minor:</p>
-
     <!-- Text Field Major/Minor -->
-    <mat-form-field class="text-field-password"
+    <mat-form-field class="clear-button"
       ><mat-label>Major/Minor</mat-label>
       <input matInput placeholder="Major/Minor:" />
       <button mat-button matSuffix mat-icon-button aria-label="Clear">
@@ -57,17 +49,15 @@
       </button>
     </mat-form-field>
     <!-- Sport/Club Text -->
-    <div class="club-text">
-      <p>Sport/Club:</p>
-      <!-- Text Field Sport/Club: -->
-      <mat-form-field class="text-field-password"
-        ><mat-label>Sport/Club</mat-label>
-        <input matInput placeholder="Sport/Club:" />
-        <button mat-button matSuffix mat-icon-button aria-label="Clear">
-          <mat-icon class="clear-button">close</mat-icon>
-        </button>
-      </mat-form-field>
-    </div>
+
+    <!-- Text Field Sport/Club: -->
+    <mat-form-field class="clear-button"
+      ><mat-label>Sport/Club</mat-label>
+      <input matInput placeholder="Sport/Club:" />
+      <button mat-button matSuffix mat-icon-button aria-label="Clear">
+        <mat-icon class="clear-button">close</mat-icon>
+      </button>
+    </mat-form-field>
   </div>
 
   <!-- Private or Public account 
@@ -89,10 +79,6 @@
         >
       </div>
     </mat-radio-group>
-
-    <!-- Full Name Text -->
-
-    <p class="full-name-text">Full Name:</p>
 
     <!-- Full Name Textfield -->
     <mat-form-field class="text-field-password"

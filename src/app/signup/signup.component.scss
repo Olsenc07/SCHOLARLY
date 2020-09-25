@@ -27,67 +27,59 @@
 }
 
 .password-text {
-  font-family: "Helvetic Neue", "Courier New", Courier;
   font-size: 30;
   color: #707070;
   border-color: #418bba;
 }
 
-.password-textfield {
-  font-family: "Helvetic Neue", "Courier New", Courier;
+.clear-button {
   border-radius: 7%;
   border-color: #707070;
 }
 
 .repeat-password-text {
-  font-family: "Helvetic Neue", "Courier New", Courier;
-  font-size: 30;
   color: #707070;
   border-color: #418bba;
 }
 
 .repeat-password-textfield {
   position: relative;
-  font-family: "Helvetic Neue", "Courier New", Courier;
+
   border-radius: 7%;
   border-color: #707070;
 }
 
 .major-text {
-  font-family: "Helvetic Neue", "Courier New", Courier;
   font-size: 30;
   color: #707070;
   border-color: #418bba;
 }
 
 .major-textfield {
-  font-family: "Helvetic Neue", "Courier New", Courier;
   border-radius: 7%;
   border-color: #707070;
 }
 
 .club-text {
-  font-family: "Helvetic Neue", "Courier New", Courier;
   font-size: 30;
   color: #707070;
   border-color: #418bba;
 }
 
 .club-textfield {
-  font-family: "Helvetic Neue", "Courier New", Courier;
   border-radius: 7%;
   border-color: #707070;
 }
 
 .public-account-text {
   font-size: 30px;
-  font-family: "Helvetic Neue", "Courier New", Courier;
+
   border-color: #244bce;
 }
 
 .private-account-text {
   font-size: 30px;
-  font-family: "Helvetic Neue", "Courier New", Courier;
+
   border-color: #244bce;
 }
 
@@ -96,33 +88,28 @@
 }
 
 .full-name-text {
-  font-family: "Helvetic Neue", "Courier New", Courier;
   font-size: 30;
   color: #707070;
   border-color: #418bba;
 }
 
 .full-name-textfield {
-  font-family: "Helvetic Neue", "Courier New", Courier;
   border-radius: 7%;
   border-color: #707070;
 }
 
 .birthday-text {
-  font-family: "Helvetic Neue", "Courier New", Courier;
   font-size: 30;
   color: #707070;
   border-color: #418bba;
 }
 
 .text-field-gender {
-  font-family: "Helvetic Neue", "Courier New", Courier;
   border-radius: 7%;
   border-color: #707070;
 }
 
 .text-field-relationship {
-  font-family: "Helvetic Neue", "Courier New", Courier;
   border-radius: 7%;
   border-color: #707070;
   font-size: 30;
@@ -130,7 +117,7 @@
 
 .sign-up-button {
   position: relative;
-  font-family: "Helvetic Neue", "Courier New", Courier;
+
   border-radius: 7%;
   border-color: #093e86;
   color: #707070;
@@ -139,21 +126,21 @@
 
 .terms-button {
   font-size: 30px;
-  font-family: "Helvetic Neue", "Courier New", Courier;
+
   color: #0a058b;
   border-color: #418bba;
 }
 
 .text {
   font-size: 30px;
-  font-family: "Helvetic Neue", "Courier New", Courier;
+
   color: #707070;
   border-color: #418bba;
 }
 
 .existing-account-button {
   font-size: 30px;
-  font-family: "Helvetic Neue", "Courier New", Courier;
+
   color: #707070;
   border-color: #093e86;
 }
@@ -161,7 +148,7 @@
 .tooltip .tooltiptext {
   visibility: hidden;
   position: relative;
-  font-family: "Helvetic Neue", "Courier New", Courier;
+
   color: #707070;
   border-color: #418bba;
 }
@@ -169,15 +156,7 @@
 .tooltip:hover .tooltiptext {
   visibility: visible;
   position: relative;
-  font-family: "Helvetic Neue", "Courier New", Courier;
+
   color: #707070;
   border-color: #418bba;
-}
-
-.clear-button {
-  font-size: 16px;
-  width: 50%;
-  font-family: "Helvetic Neue", "Courier New", Courier;
-}
-.input-box {
 }
