@@ -13,14 +13,25 @@
   margin-left: -5%;
   border-radius: 12%;
 }
-
+.left-side {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  margin-right: 20%;
+}
+.right-side {
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  margin-left: 20%;
+}
 .pic {
   border-radius: 50%;
 }
 
 .text {
   color: #0e3379;
-  font-family: "Helvetic Neue", "Courier New", Courier;
+  border-radius: 30px;
 }
 
 .degree-sport-box {
