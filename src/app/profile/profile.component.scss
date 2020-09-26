@@ -1,5 +1,17 @@
-.side-spacers {
-  padding: 0px 50% 85% 0px;
+.entire-page {
+  display: flex;
+  flex-direction: column;
+}
+.top-items {
+  display: flex;
+  flex-direction: row;
+}
+.logo-layout {
+  display: flex;
+  justify-content: start;
+  margin-right: 20%;
+  margin-left: -5%;
+  border-radius: 12%;
 }
 
 .pic {

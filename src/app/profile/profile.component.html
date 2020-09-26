@@ -1,73 +1,76 @@
-<!--main logo  -->
-<div class="side-spacers">
-  <img Src="../../assets/Pics/ProperInAppLogo.jpeg" />
-</div>
+<div class="entire-page">
+  <!--main logo  -->
+  <div class="top-items">
+    <div>
+      <img Src="../../assets/Pics/ProperInAppLogo.jpeg" class="logo-layout" />
+    </div>
 
-<!-- input pic & has this default pic before-->
-<div class="pic">
-  <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" />
-</div>
+    <!-- Search Icon -->
+    <div>
+      <button mat-raised-button color="primary" class="action-button">
+        <mat-icon class="icon-size">public</mat-icon>
+        <p class="text">Search</p>
+        <span class="material-icons-up-arrow"> keyboard_arrow_up </span>
+      </button>
+    </div>
+  </div>
 
-<!-- gender input text -->
-<div>
-  <input placeholder="" class="text" />
-</div>
+  <!-- Settings menu -->
+  <button mat-button [matMenuTriggerFor]="menu">Settings</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Change Password</button>
+    <button mat-menu-item>Edit Profile</button>
+    <button mat-menu-item>Log out</button>
+  </mat-menu>
+  <!-- input pic & has this default pic before-->
+  <div class="pic">
+    <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" />
+  </div>
 
-<!-- relationship status input text -->
-<div>
-  <input placeholder="" class="text" />
-</div>
+  <!-- gender input text -->
+  <div>
+    <input placeholder="" class="text" />
+  </div>
 
-<!-- Major/Minor -->
-<div placeholder="Major/Minor" class="degree-sport-box"></div>
+  <!-- relationship status input text -->
+  <div>
+    <input placeholder="" class="text" />
+  </div>
 
-<!-- Sport/Club -->
-<div placeholder="Sport/Club" class="degree-sport-box"></div>
+  <!-- Major/Minor -->
+  <div placeholder="Major/Minor" class="degree-sport-box"></div>
 
-<!-- Full name & age input text -->
-<div>
-  <input placeholder="" class="text" />
-</div>
+  <!-- Sport/Club -->
+  <div placeholder="Sport/Club" class="degree-sport-box"></div>
 
-<!-- bio box -->
-<div>
-  <input class="text" />
-</div>
+  <!-- Full name & age input text -->
+  <div>
+    <input placeholder="" class="text" />
+  </div>
 
-<!-- Search Icon -->
-<span
-  ><button mat-raised-button color="primary" class="action-button">
-    <mat-icon class="icon-size">public</mat-icon>
-    <p class="text">Search</p>
-    <span class="material-icons-up-arrow"> keyboard_arrow_up </span>
-  </button>
-</span>
+  <!-- bio box -->
+  <div>
+    <input class="text" />
+  </div>
 
-<!-- Settings menu -->
-<button mat-button [matMenuTriggerFor]="menu">Settings</button>
-<mat-menu #menu="matMenu">
-  <button mat-menu-item>Change Password</button>
-  <button mat-menu-item>Edit Profile</button>
-  <button mat-menu-item>Log out</button>
-</mat-menu>
-
-<!-- Recent Posts text  -->
-<div>
-  <p class="text">Recent Posts:</p>
-</div>
-<!-- Recent Posts box, need to add internal symbols
+  <!-- Recent Posts text  -->
+  <div>
+    <p class="text">Recent Posts:</p>
+  </div>
+  <!-- Recent Posts box, need to add internal symbols
 & activity things in box -->
-<div>
-  <input class="text" />
-</div>
+  <div>
+    <input class="text" />
+  </div>
 
-<!-- Current Conversations tetx -->
-<div>
-  <p class="text">Current Conversations:</p>
-</div>
+  <!-- Current Conversations tetx -->
+  <div>
+    <p class="text">Current Conversations:</p>
+  </div>
 
-<!-- Current Conversations box, need to add internal symbols
+  <!-- Current Conversations box, need to add internal symbols
 & activity things in box -->
-<div>
-  <input class="text" />
+  <div>
+    <input class="text" />
+  </div>
 </div>
