@@ -6,21 +6,30 @@
     </div>
 
     <!-- Search Icon -->
-    <div>
+    <div class="search-format">
       <button mat-raised-button color="primary" class="action-button">
         <mat-icon class="icon-size">public</mat-icon>
         <p class="text">Search</p>
         <span class="material-icons"> expand_less </span>
       </button>
     </div>
-
+    <!-- Friends Icon -->
+    <div class="friends-format">
+      <button mat-raised-button class="action-button">
+        <span class="material-icons">groups </span>
+      </button>
+    </div>
     <!-- Settings menu -->
-    <button mat-button [matMenuTriggerFor]="menu">Settings</button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item>Change Password</button>
-      <button mat-menu-item>Edit Profile</button>
-      <button mat-menu-item>Log out</button>
-    </mat-menu>
+    <div class="settings-format">
+      <button mat-button [matMenuTriggerFor]="menu">
+        <div class="material-icons">settings</div>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Change Password</button>
+        <button mat-menu-item>Edit Profile</button>
+        <button mat-menu-item>Log out</button>
+      </mat-menu>
+    </div>
   </div>
   <!-- input pic & has this default pic before-->
   <div class="left-side">

@@ -10,8 +10,29 @@
   display: flex;
   justify-content: start;
   margin-right: 20%;
+  margin-top: -2%;
   margin-left: -5%;
-  border-radius: 12%;
+  border-radius: 10% / 50%;
+}
+.search-format {
+  display: flex;
+  flex-direction: column;
+  padding-left: 15%;
+  padding-right: 10%;
+  padding-top: 3%;
+}
+
+.friends-format {
+  display: flex;
+  padding-top: 3%;
+  padding-right: 5%;
+  padding-bottom: 9%;
+}
+.settings-format {
+  display: flex;
+  padding-top: 3%;
+  padding-right: 5%;
+  padding-bottom: 9%;
 }
 .left-side {
   display: flex;
@@ -27,6 +48,7 @@
 }
 .pic {
   border-radius: 50%;
+  border-color: #0000;
 }
 
 .text {
@@ -38,4 +60,7 @@
   padding: 16px;
   border: 1px solid gray;
   border-radius: 30px;
+}
+.action-button {
+  color: #2699fb;
 }
