@@ -17,15 +17,20 @@
 .search-format {
   display: flex;
   flex-direction: column;
-  padding-left: 15%;
-  padding-right: 10%;
+  padding-left: 10%;
+  padding-right: 8%;
   padding-top: 3%;
+}
+.text-1 {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
 }
 
 .friends-format {
   display: flex;
   padding-top: 3%;
-  padding-right: 5%;
+  padding-right: 3%;
   padding-bottom: 9%;
 }
 .settings-format {
@@ -57,12 +62,26 @@
   display: flex;
   flex-direction: column;
   border-radius: 50%;
-  background: rgb(235, 235, 235);
 }
 
 .text {
+  display: flex;
+  padding-right: 95%;
+  padding-left: 10%;
   color: #0e3379;
-  border-radius: 30px;
+  border-radius: 10% / 50%;
+  padding-top: 1%;
+  border-color: #fdfdfd;
+}
+// .clear-holder {
+//   border-radius: 10% / 50%;
+//   opacity: 0.02;
+// }
+.Major-Minor {
+  display: flex;
+  padding-right: 85%;
+  padding-left: 5%;
+  padding-top: 1%;
 }
 
 .degree-sport-box {
@@ -72,4 +91,25 @@
 }
 .action-button {
   color: #2699fb;
+}
+.bio-name-age {
+  display: flex;
+  padding-right: 85%;
+  padding-left: 5%;
+  padding-top: 1%;
+}
+.bio-box {
+  display: flex;
+
+  padding: 7%, 20%, 2%, 10%;
+}
+.text-2 {
+  display: flex;
+  border-radius: 10% / 50%;
+}
+.right-side-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3% -7% 2% 30%;
 }
