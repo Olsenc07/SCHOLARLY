@@ -81,74 +81,83 @@
     <!-- Private or Public account 
         swtiches with info icon to hover over to display text-->
     <div class="right-inputs">
-      <mat-radio-group aria-label="Select an option">
-        <mat-radio-button value="">Private Account</mat-radio-button>
-        <div class="tooltip">
-          <span class="material-icons"> info </span>
-          <span class="tooltiptext"
-            >You choose to accept or decline members to your group and friend
-            list. As well non-friends aren’t able to like and comment on your
-            posts.</span
-          >
+      <div class="private-layout">
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="">Private Account</mat-radio-button>
+          <div class="tooltip">
+            <span class="material-icons"> info </span>
+            <span class="tooltiptext"
+              >You choose to accept or decline members to your group and friend
+              list. As well non-friends aren’t able to like and comment on your
+              posts.</span
+            >
+          </div>
+        </mat-radio-group>
+        <div class="public-layout">
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="">Public Account</mat-radio-button>
+            <div class="tooltip">
+              <span class="material-icons"> info </span>
+              <span class="tooltiptext"
+                >Members are automatically accepted to your group & friend
+                list</span
+              >
+            </div>
+          </mat-radio-group>
         </div>
-        <mat-radio-button value="">Public Account</mat-radio-button>
-        <div class="tooltip">
-          <span class="material-icons"> info </span>
-          <span class="tooltiptext"
-            >Members are automatically accepted to your group & friend
-            list</span
-          >
+        <!-- Full Name Textfield -->
+        <div class="fullname-layout">
+          <mat-form-field class="asthetic-adds"
+            ><mat-label>Full Name</mat-label>
+            <input matInput placeholder="Full Name:" />
+            <button mat-button matSuffix mat-icon-button aria-label="Clear">
+              <mat-icon class="asthetic-adds">close</mat-icon>
+            </button>
+          </mat-form-field>
         </div>
-      </mat-radio-group>
+        <!-- Birthday Text -->
+        <p class="asthetic-adds">Birthday:</p>
 
-      <!-- Full Name Textfield -->
-      <mat-form-field class="asthetic-adds"
-        ><mat-label>Full Name</mat-label>
-        <input matInput placeholder="Full Name:" />
-        <button mat-button matSuffix mat-icon-button aria-label="Clear">
-          <mat-icon class="asthetic-adds">close</mat-icon>
-        </button>
-      </mat-form-field>
+        <!-- Birthday Date Picker -->
+        <input matInput [matDatepicker]="picker" />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
 
-      <!-- Birthday Text -->
-      <p class="asthetic-adds">Birthday:</p>
-
-      <!-- Birthday Date Picker -->
-      <input matInput [matDatepicker]="picker" />
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-
-      <!-- Text FieldGender: -->
-      <mat-form-field class="asthetic-adds"
-        ><mat-label>Gender</mat-label>
-        <input matInput placeholder="Gender:" />
-        <button mat-button matSuffix mat-icon-button aria-label="Clear">
-          <mat-icon class="asthetic-adds">close</mat-icon>
-        </button>
-      </mat-form-field>
-
-      <!-- Text FieldRelationship: -->
-      <mat-form-field class="asthetic-adds"
-        ><mat-label>Relationship Status</mat-label>
-        <input matInput placeholder="Relationship Status:" />
-        <button mat-button matSuffix mat-icon-button aria-label="Clear">
-          <mat-icon class="asthetic-adds">close</mat-icon>
-        </button>
-      </mat-form-field>
+        <!-- Text FieldGender: -->
+        <div class="gender-layout">
+          <mat-form-field class="asthetic-adds"
+            ><mat-label>Gender</mat-label>
+            <input matInput placeholder="Gender:" />
+            <button mat-button matSuffix mat-icon-button aria-label="Clear">
+              <mat-icon class="asthetic-adds">close</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+        <!-- Text FieldRelationship: -->
+        <div class="text-layout">
+          <mat-form-field class="asthetic-adds"
+            ><mat-label>Relationship Status</mat-label>
+            <input matInput placeholder="Relationship Status:" />
+            <button mat-button matSuffix mat-icon-button aria-label="Clear">
+              <mat-icon class="asthetic-adds">close</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <!-- Sign Up Button  -->
-  <div class="bottom-buttons">
-    <button mat-flat-button class="asthetic-adds">Sign Up</button>
-    <!-- Terms/Conditions text and button -->
-    <p class="center-text">
-      By Signing Up, you are agreeing that I have read and accepted the
-    </p>
-    <button mat-flat-button class="asthetic-adds">Terms & Conditions</button>
-    <!-- I have an existing account Button  -->
-    <button mat-flat-button class="asthetic-adds">
-      I have an existing account
-    </button>
+    <!-- Sign Up Button  -->
+    <div class="bottom-buttons">
+      <button mat-flat-button class="asthetic-adds">Sign Up</button>
+      <!-- Terms/Conditions text and button -->
+      <p class="center-text">
+        By Signing Up, you are agreeing that I have read and accepted the
+      </p>
+      <button mat-flat-button class="asthetic-adds">Terms & Conditions</button>
+      <!-- I have an existing account Button  -->
+      <button mat-flat-button class="asthetic-adds">
+        I have an existing account
+      </button>
+    </div>
   </div>
 </div>
