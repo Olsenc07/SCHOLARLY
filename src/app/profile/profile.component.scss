@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: row;
 }
+
 .logo-layout {
   display: flex;
   justify-content: start;
@@ -17,9 +18,9 @@
 .search-format {
   display: flex;
   flex-direction: column;
-  padding-left: 10%;
-  padding-right: 8%;
-  padding-top: 3%;
+  margin-left: 10%;
+  margin-right: 8%;
+  margin-top: 3%;
 }
 .text-1 {
   display: flex;
@@ -29,54 +30,35 @@
 
 .friends-format {
   display: flex;
-  padding-top: 3%;
-  padding-right: 3%;
-  padding-bottom: 9%;
+  margin-top: 3%;
+  margin-right: 9%;
+  margin-bottom: 9%;
 }
 .settings-format {
   display: flex;
-  padding-top: 3%;
-  padding-right: 5%;
-  padding-bottom: 9%;
+  margin-top: 3%;
+  margin-right: 2%;
+  margin-bottom: 9%;
 }
 .left-side {
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  margin-right: 20%;
 }
+// Why wont margins set my pic in place in profile-pic,pic
 .profile-pic {
   display: flex;
-  flex-direction: column;
-  padding-right: 80%;
-  padding-left: 5%;
-  background: rgb(235, 235, 235);
-}
-.right-side {
-  display: flex;
-  justify-content: end;
-  flex-direction: column;
-  margin-left: 20%;
+  margin-right: 80%;
+  margin-left: 5%;
 }
 .pic {
   display: flex;
   flex-direction: column;
   border-radius: 50%;
+  margin-right: 80%;
+  margin-left: 5%;
+  margin-top: 2%;
+  margin-bottom: 15%;
 }
-
-.text {
-  display: flex;
-  padding-right: 95%;
-  padding-left: 10%;
-  color: #0e3379;
-  border-radius: 10% / 50%;
-  padding-top: 1%;
-  border-color: #fdfdfd;
-}
-// .clear-holder {
-//   border-radius: 10% / 50%;
-//   opacity: 0.02;
-// }
 .Major-Minor {
   display: flex;
   padding-right: 85%;
@@ -88,7 +70,37 @@
   padding: 16px;
   border: 1px solid gray;
   border-radius: 30px;
+  padding-left: 5%;
 }
+.bio-box {
+  display: flex;
+  padding: 7%, 20%, 2%, 5%;
+}
+.text-2 {
+  display: flex;
+  border-radius: 10% / 50%;
+}
+.right-side {
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  margin-left: 20%;
+}
+
+.text {
+  display: flex;
+  padding-right: 95%;
+  padding-left: 10%;
+  color: #0e3379;
+  border-radius: 10% / 50%;
+  padding-top: 1%;
+  border-color: #fdfdfd;
+}
+.clear-holder {
+  border-radius: 10% / 50%;
+  opacity: 0.02;
+}
+
 .action-button {
   color: #2699fb;
 }
@@ -97,15 +109,6 @@
   padding-right: 85%;
   padding-left: 5%;
   padding-top: 1%;
-}
-.bio-box {
-  display: flex;
-
-  padding: 7%, 20%, 2%, 10%;
-}
-.text-2 {
-  display: flex;
-  border-radius: 10% / 50%;
 }
 .right-side-1 {
   display: flex;
