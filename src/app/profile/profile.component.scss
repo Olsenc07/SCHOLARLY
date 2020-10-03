@@ -10,17 +10,13 @@
 .logo-layout {
   display: flex;
   justify-content: start;
-  margin-right: 20%;
-  margin-top: -2%;
-  margin-left: -5%;
+  margin: -2% 20% 0% -5%;
   border-radius: 10% / 50%;
 }
 .search-format {
   display: flex;
   flex-direction: column;
-  margin-left: 10%;
-  margin-right: 8%;
-  margin-top: 3%;
+  margin: 3% 8% 0% 10%;
 }
 .text-1 {
   display: flex;
@@ -47,54 +43,47 @@
 // Why wont margins set my pic in place in profile-pic,pic
 .profile-pic {
   display: flex;
-  margin-right: 80%;
-  margin-left: 5%;
+  justify-content: flex-start;
+  margin: 0% 80% 0% 5%;
 }
 .pic {
   display: flex;
   flex-direction: column;
   border-radius: 50%;
-  margin-right: 80%;
-  margin-left: 5%;
-  margin-top: 2%;
-  margin-bottom: 15%;
+  width: 52%;
+  height: 52%;
 }
 .Major-Minor {
   display: flex;
-  padding-right: 85%;
-  padding-left: 5%;
-  padding-top: 1%;
+  margin: 1% 85% 0% 5%;
 }
 
 .degree-sport-box {
-  padding: 16px;
-  border: 1px solid gray;
   border-radius: 30px;
-  padding-left: 5%;
+  margin-left: 5%;
+  color: #0e3379;
 }
 .bio-box {
   display: flex;
-  padding: 7%, 20%, 2%, 5%;
+  margin: 0% 85% 0% 2%;
+  border-radius: 10% / 50%;
 }
 .text-2 {
   display: flex;
   border-radius: 10% / 50%;
+  background-color: rgb(235, 235, 245);
 }
 .right-side {
   display: flex;
-  justify-content: end;
   flex-direction: column;
-  margin-left: 20%;
 }
 
 .text {
   display: flex;
-  padding-right: 95%;
-  padding-left: 10%;
-  color: #0e3379;
+  margin: 1% 95% 0% 10%;
   border-radius: 10% / 50%;
-  padding-top: 1%;
-  border-color: #fdfdfd;
+  color: #0e3379;
+  background-color: rgb(235, 235, 245);
 }
 .clear-holder {
   border-radius: 10% / 50%;
@@ -106,13 +95,16 @@
 }
 .bio-name-age {
   display: flex;
-  padding-right: 85%;
-  padding-left: 5%;
-  padding-top: 1%;
+  margin: 2% 85% 0% 2%;
 }
 .right-side-1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 3% -7% 2% 30%;
+  margin: 3% -7% 0% 50%;
+}
+.hide-input {
+  display: flex;
+  margin: 1% 95% 0% 7.8%;
+  border-radius: 10% / 50%;
 }
