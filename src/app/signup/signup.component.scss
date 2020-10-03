@@ -45,7 +45,6 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  margin-right: 20%;
 }
 .private-layout {
   margin-right: 10%;
@@ -71,19 +70,19 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 40%;
-  margin-right: 40%;
+  margin: -5% 45% 1% 45%;
 }
 
 .center-text {
   display: flex;
   justify-content: center;
+  overflow: visible;
+  white-space: nowrap;
 }
 .asthetic-adds {
   border-radius: 7%;
   color: #418bba;
   border-color: #707070;
-  font-size: small;
 }
 
 .switch {
@@ -102,6 +101,13 @@
   border-color: #418bba;
 }
 .material-icons {
+  border-radius: 7%;
+  color: #418bba;
+  border-color: #707070;
+}
+.existing-account-layout {
+  display: flex;
+  justify-content: center;
   border-radius: 7%;
   color: #418bba;
   border-color: #707070;
