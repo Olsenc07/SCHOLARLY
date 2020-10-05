@@ -96,6 +96,8 @@
 .text {
   display: flex;
   margin: 1% 95% 0% 12%;
+  border-width: 2px;
+  border-color: rgb(32, 58, 209);
   border-radius: 10% / 50%;
   color: #0e3379;
   background-color: rgb(235, 235, 245);
@@ -116,7 +118,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 3% 0% 0% 50%;
+  margin: 3% 1% 0% 50%;
 }
 .hide-input {
   display: flex;
