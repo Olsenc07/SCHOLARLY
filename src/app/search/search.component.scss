@@ -1,14 +1,61 @@
-.side-spacer {
-  width: 25%;
+.entire-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
 }
-
+.left-columns {
+  display: flex;
+  flex-direction: column;
+}
+.logo {
+  border-radius: 50%;
+  margin: 4% 50% 3% 10%;
+  background-color: blue;
+}
+.logo-layout {
+  display: flex;
+  margin: 3% 85% 2% 2%;
+}
+.title-box {
+  display: flex;
+  flex-direction: column;
+  margin: 0% 40% 0% 2%;
+}
+.specific-text-layout {
+  display: flex;
+  flex-direction: column;
+  margin: 0% 60% 0% 5%;
+}
+.specific-layout {
+  display: flex;
+  flex-direction: column;
+  margin: 1% 60% 0% 5%;
+}
 .filter-box {
   padding: 16px;
   border: 1px solid gray;
   border-radius: 16px;
 }
-
+.outside-input-boxs {
+  border: solid rgb(17, 24, 122);
+  background-color: rgb(235, 235, 245);
+  border-radius: 15%;
+}
+.middle-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 3% 20% 5% 20;
+}
+.search-layout {
+  display: flex;
+  flex-direction: column;
+}
 .search-textfield {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 30%;
   min-width: 15%;
   max-width: 70%;
@@ -25,6 +72,11 @@
   padding: 16px;
   border: 1px solid gray;
   border-radius: 16px;
+}
+.right-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .material-icons-profile {
@@ -47,8 +99,6 @@
 }
 
 .text {
-  font-size: 25px;
-  font-family: "Helvetic Neue", "Courier New", Courier;
   padding: 10% 15% 1% 5%;
-  border-color: #093e86;
+  color: #0e3379;
 }
