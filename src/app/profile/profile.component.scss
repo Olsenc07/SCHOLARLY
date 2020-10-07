@@ -45,25 +45,30 @@
 .profile-pic {
   display: flex;
   justify-content: flex-start;
-  margin: 0% 80% 0% 5%;
+  margin: 2% 5% 1% 5%;
+  width: 15%;
+  height: 25%;
 }
 .pic {
   display: flex;
   flex-direction: column;
   border-radius: 50%;
   width: 75%;
+  height: 100%;
 }
 .major-minor {
   display: flex;
-  margin: 1% 82% 1% 2%;
+  margin: 1% 20% 0% 5%;
+  width: 200px;
+  height: 50px;
 }
 .major-minor-box {
   text-align: center;
   border-radius: 30px;
-  margin: 1% 0% 1% 5%;
+  margin: 1% 0% 0% 5%;
   color: #0e3379;
-  width: 100%;
-  height: 150%;
+  width: 70%;
+  height: 70%;
   font-size: 130%;
 }
 .degree-sport-box {
@@ -71,31 +76,34 @@
   border-radius: 30px;
   margin: 0% 0% 1% 5%;
   color: #0e3379;
-  width: 100%;
-  height: 150%;
+  width: 70%;
+  height: 70%;
   font-size: 130%;
 }
 
 .bio-box {
   display: flex;
-  margin: 0% 85% 0% 0.5%;
-  width: 170%;
-  height: 150%;
-  background-color: rgb(235, 235, 245);
-  text-align: center;
+  margin: 0% 15% 0% 5%;
+  width: 400px;
+  height: 200px;
+}
+.bio-input {
+  width: 90%;
+  height: 70%;
+  border-radius: 30px;
+  background-color: rgb(209, 214, 235);
 }
 .text-2 {
   display: flex;
   border-radius: 10% / 50%;
   background-color: rgb(235, 235, 245);
-  width: 75%;
   margin: 1% 0% 2% 2%;
   font-weight: bold;
 }
 
 .text {
   display: flex;
-  margin: 1% 95% 0% 12%;
+  margin: 1% 1% 0% 4%;
   border-width: 2px;
   border-color: rgb(32, 58, 209);
   border-radius: 10% / 50%;
@@ -112,16 +120,26 @@
 }
 .bio-name-age {
   display: flex;
-  margin: 2% 85% 0% 2%;
+  margin: 2% 15% 0% 7%;
+  width: 200px;
+  height: 25px;
 }
 .right-side {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 3% 1% 0% 50%;
 }
 .hide-input {
   display: flex;
-  margin: 1% 90% 0% 9.5%;
+  margin: 1% 10% 0% 9.5%;
   border-radius: 10% / 50%;
+  width: 40px;
+  height: 20px;
+}
+.recent-post-layout {
+  display: flex;
+  flex-direction: column;
+  margin: 0% 7% 0% 7%;
+  height: 500px;
+  width: 600px;
 }
