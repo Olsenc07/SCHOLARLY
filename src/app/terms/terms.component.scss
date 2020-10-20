@@ -1,7 +1,12 @@
 .entire-page {
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
 }
 .logo-layout {
   display: flex;
