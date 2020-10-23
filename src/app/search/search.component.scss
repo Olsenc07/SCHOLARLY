@@ -7,9 +7,10 @@
   padding: 0px;
   overflow-x: hidden;
 }
+
 .left-columns {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 .logo {
   border-radius: 50%;
