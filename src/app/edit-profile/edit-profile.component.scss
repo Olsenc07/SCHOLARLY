@@ -1,10 +1,20 @@
+.entire-page {
+  display: flex;
+}
+.top {
+  display: flex;
+  justify-content: center;
+}
+.middle {
+  display: flex;
+  flex-direction: row;
+}
 .pic {
   border-radius: 50%;
 }
 
 .text {
   color: #0e3379;
-  font-family: "Helvetic Neue", "Courier New", Courier;
 }
 
 .bio-box {
@@ -13,9 +23,9 @@
   border-radius: 16px;
 }
 
-major-text {
+.major-text {
   position: relative;
-  font-family: "Helvetic Neue", "Courier New", Courier;
+
   font-size: 30;
   width: 171px;
   height: 35px;
@@ -26,7 +36,7 @@ major-text {
 .major-textfield {
   position: relative;
   width: 696.89px;
-  font-family: "Helvetic Neue", "Courier New", Courier;
+
   height: 75.74px;
   border-radius: 7%;
   border-color: #707070;
@@ -34,7 +44,7 @@ major-text {
 
 .club-text {
   position: relative;
-  font-family: "Helvetic Neue", "Courier New", Courier;
+
   font-size: 30;
   width: 155px;
   height: 35px;
@@ -45,7 +55,7 @@ major-text {
 .club-textfield {
   position: relative;
   width: 155px;
-  font-family: "Helvetic Neue", "Courier New", Courier;
+
   height: 35px;
   border-radius: 7%;
   border-color: #707070;
@@ -54,28 +64,25 @@ major-text {
 .button {
   margin: 8px 0;
   font-size: 40px;
-  font-family: "Helvetic Neue", "Courier New", Courier;
+
   color: #707070;
 }
 
 .tooltip .tooltiptext {
   visibility: hidden;
   position: relative;
-  font-family: "Helvetic Neue", "Courier New", Courier;
   color: #707070;
   border-color: #418bba;
 }
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
-  font-family: "Helvetic Neue", "Courier New", Courier;
   color: #707070;
   border-color: #418bba;
 }
 
 .full-name-text {
   position: relative;
-  font-family: "Helvetic Neue", "Courier New", Courier;
   font-size: 30;
   width: 143px;
   height: 35px;
@@ -86,7 +93,6 @@ major-text {
 .full-name-textfield {
   position: relative;
   width: 456.89px;
-  font-family: "Helvetic Neue", "Courier New", Courier;
   height: 75.74px;
   border-radius: 7%;
   border-color: #707070;
@@ -95,7 +101,6 @@ major-text {
 .birthday-text {
   width: 121px;
   height: 35;
-  font-family: "Helvetic Neue", "Courier New", Courier;
   font-size: 30;
   color: #707070;
   border-color: #418bba;
@@ -105,7 +110,6 @@ major-text {
   position: relative;
   width: 456.89px;
   height: 75.74px;
-  font-family: "Helvetic Neue", "Courier New", Courier;
   border-radius: 7%;
   border-color: #707070;
 }
@@ -114,7 +118,6 @@ major-text {
   position: relative;
   width: 456.89px;
   height: 75.74px;
-  font-family: "Helvetic Neue", "Courier New", Courier;
   border-radius: 7%;
   border-color: #707070;
   font-size: 30;
