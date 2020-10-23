@@ -44,26 +44,27 @@
     <!-- right column -->
     <div class="right-column">
       <!-- Public or Privte account -->
+      <div class="private-public">
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="">Private Account</mat-radio-button>
+          <div class="tooltip">
+            <span class="material-icons"> info </span>
+            <span class="tooltiptext"
+              >Members are automatically accepted to your group</span
+            >
+          </div>
+        </mat-radio-group>
 
-      <mat-radio-group aria-label="Select an option">
-        <mat-radio-button value="">Private Account</mat-radio-button>
-        <div class="tooltip">
-          <span class="material-icons"> info </span>
-          <span class="tooltiptext"
-            >Members are automatically accepted to your group</span
-          >
-        </div>
-      </mat-radio-group>
-      <mat-radio-group aria-label="Select an option">
-        <mat-radio-button value="">Public Account</mat-radio-button>
-        <div class="tooltip">
-          <span class="material-icons"> info </span>
-          <span class="tooltiptext"
-            >You choose to accept or decline members to your group</span
-          >
-        </div>
-      </mat-radio-group>
-
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="">Public Account</mat-radio-button>
+          <div class="tooltip">
+            <span class="material-icons"> info </span>
+            <span class="tooltiptext"
+              >You choose to accept or decline members to your group</span
+            >
+          </div>
+        </mat-radio-group>
+      </div>
       <!-- Full Name Textfield -->
       <mat-form-field class="text-field-password"
         ><mat-label>Full Name</mat-label>

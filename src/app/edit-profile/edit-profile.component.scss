@@ -21,6 +21,10 @@
   flex-direction: column;
   margin: 2% 10% 2% 15%;
 }
+.private-public {
+  display: flex;
+  flex-direction: row;
+}
 .pic {
   border-radius: 50%;
 }
