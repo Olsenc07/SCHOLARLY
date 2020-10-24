@@ -1,86 +1,86 @@
 <!-- Entire page -->
 <div style="background-color: rgb(235, 235, 245)" class="entire-page">
   <!-- Left side -->
-  <div>
+  <div class="left">
     <!--main logo  -->
     <div class="logo-layout-large">
       <img Src="../../assets/Pics/ProperInAppLogo.jpeg" class="logo-layout" />
     </div>
+    <div class="left-middle">
+      <!-- Left wall -->
+      <div class="left-wall">
+        <!-- Search Icon -->
+        <div>
+          <button mat-raised-button color="primary" class="action-button">
+            <mat-icon class="icon-size">public</mat-icon>
+            <p class="text">Search</p>
+          </button>
+        </div>
 
-    <!-- Left wall -->
-    <div class="left-wall">
-      <!-- Search Icon -->
-      <div>
-        <button mat-raised-button color="primary" class="action-button">
-          <mat-icon class="icon-size">public</mat-icon>
-          <p class="text">Search</p>
-        </button>
-      </div>
+        <!-- Profile Icon -->
 
-      <!-- Profile Icon -->
+        <div class="tooltip">
+          <button mat-raised-button color="primary" class="action-button">
+            <mat-icon class="icon-size">favorite</mat-icon>
+            <span class="tooltiptext">Profile</span>
+          </button>
+        </div>
 
-      <div class="tooltip">
-        <button mat-raised-button color="primary" class="action-button">
-          <mat-icon class="icon-size">favorite</mat-icon>
-          <span class="tooltiptext">Profile</span>
-        </button>
-      </div>
+        <!-- Post Icon -->
+        <div>
+          <button mat-raised-button color="primary" class="action-button">
+            <span class="material-icons"> add_circle </span>
+            <p class="text">Post</p>
+          </button>
+        </div>
 
-      <!-- Post Icon -->
-      <div>
-        <button mat-raised-button color="primary" class="action-button">
-          <span class="material-icons"> add_circle </span>
-          <p class="text">Post</p>
-        </button>
-      </div>
-
-      <!-- Info Icon which just displays a message related to specifc page
+        <!-- Info Icon which just displays a message related to specifc page
        on hover -->
-      <div class="tooltip">
-        <span class="material-icons"> info </span>
-        <span class="tooltiptext"
-          >This messages depends on which page is loaded in</span
-        >
-      </div>
-      <!-- Specifics text -->
-      <p class="text">
-        Specifics: <input placeholder="example page" class="text" />
-      </p>
+        <div class="tooltip">
+          <span class="material-icons"> info </span>
+          <span class="tooltiptext"
+            >This messages depends on which page is loaded in</span
+          >
+        </div>
+        <!-- middle ish -->
+        <div>
+          <!-- Specifics text -->
+          <p class="text">
+            Specifics: <input placeholder="example page" class="text" />
+          </p>
 
-      <!-- text beside Specifics that indicates which 
+          <!-- text beside Specifics that indicates which 
 page your own for that given main category -->
 
-      <!-- Specifics box which gets filled depending
+          <!-- Specifics box which gets filled depending
 on which main category page your on-->
-      <div class="specifics-input">
-        <textarea class="specifics-fill" rows="10" cols="40"> </textarea>
+          <div class="specifics-input">
+            <textarea class="specifics-fill" rows="10" cols="40"> </textarea>
+          </div>
+        </div>
       </div>
     </div>
-    <!-- Right wall -->
-    <div class="right-wall">
-      <!-- Search bar -->
-      <span>
-        <mat-form-field class="search-textfield">
-          <span class="material-icons-search"> </span>
-          <mat-label><span class="material-icons"> search </span></mat-label>
-          <input
-            matInput
-            type="search"
-            placeholder="Search:"
-          /> </mat-form-field
-      ></span>
-      <!-- posts text -->
-      <div>
-        <p class="text">Posts: <input placeholder="" class="text" /></p>
-      </div>
+  </div>
+  <!-- Right wall -->
+  <div class="right-wall">
+    <!-- Search bar -->
+    <span>
+      <mat-form-field class="search-textfield">
+        <span class="material-icons-search"> </span>
+        <mat-label><span class="material-icons"> search </span></mat-label>
+        <input matInput type="search" placeholder="Search:" /> </mat-form-field
+    ></span>
+    <!-- posts text -->
+    <div>
+      <p class="text">Posts: <input placeholder="" class="text" /></p>
+    </div>
 
-      <!-- text beside posts that indicates which 
+    <!-- text beside posts that indicates which 
 specific posts you are viewing -->
 
-      <!-- Posts box which should be a scroll view -->
-      <div>
-        <textarea class="specifics-fill" rows="10" cols="40"> </textarea>
-      </div>
+    <!-- Posts box which should be a scroll view -->
+    <div>
+      <textarea class="specifics-fill" rows="10" cols="40"> </textarea>
     </div>
   </div>
 </div>
