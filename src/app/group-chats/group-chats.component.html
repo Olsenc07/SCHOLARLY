@@ -1,64 +1,73 @@
-<!-- logo -->
-<img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" />
-
-<!-- label & steper for # of members allowed 
+<div style="background-color: rgb(235, 235, 245)" class="entire-page">
+  <div class="row">
+    <div class="left">
+      <!-- label & steper for # of members allowed 
 this allows more or less people to join group from the
 initial amount specified when the post was made-->
-<span class="text">
-  <label for="members">Members</label>
-  <input type="number" id="steper" name="members" step="1" />
-</span>
+      <span class="text">
+        <label for="members">Members</label>
+        <input type="number" id="steper" name="members" step="1" />
+      </span>
 
-<!-- members box -->
-<div class="members-box"></div>
+      <!-- members box -->
+      <div class="members-box"></div>
+    </div>
+    <div class="middle">
+      <!-- logo -->
+      <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" />
 
-<!-- text -->
-<span>
-  <p class="text">Chat:</p>
-</span>
+      <!-- text -->
+      <span>
+        <p class="text">Chat:</p>
+      </span>
 
-<!-- Group Name input spot -->
-<input placeholder="Group Name" class="text" />
+      <!-- Group Name input spot -->
+      <input placeholder="Group Name" class="text" />
 
-<!-- Group chat message box -->
-<div class="chat-box"></div>
+      <!-- Group chat message box -->
+      <div class="chat-box"></div>
+    </div>
 
-<!--  smily face that keeps track of members wanting to
+    <div class="right">
+      <!--  smily face that keeps track of members wanting to
 join your group ONLY FOR PRIVATE ACCOUNTS  -->
-<span>
-  <mat-icon> insert_emoticon</mat-icon>
-</span>
+      <span>
+        <mat-icon> insert_emoticon</mat-icon>
+      </span>
 
-<!-- Search Icon -->
-<div>
-  <button mat-raised-button color="primary" class="action-button">
-    <mat-icon class="icon-size">public</mat-icon>
-    <p class="text">Search</p>
-    <span class="material-icons-up-arrow"> keyboard_arrow_up </span>
-  </button>
-</div>
+      <!-- Search Icon -->
+      <div>
+        <button mat-raised-button color="primary" class="action-button">
+          <mat-icon class="icon-size">public</mat-icon>
+          <p class="text">Search</p>
+          <span class="material-icons-up-arrow"> keyboard_arrow_up </span>
+        </button>
+      </div>
 
-<!-- Profile Icon -->
-<div>
-  <button mat-raised-button color="primary" class="action-button">
-    <mat-icon class="icon-size">favorite</mat-icon>
-    <p class="text">Profile</p>
-    <span class="material-icons-up-arrow"> keyboard_arrow_up </span>
-  </button>
-</div>
+      <!-- Profile Icon -->
+      <div>
+        <button mat-raised-button color="primary" class="action-button">
+          <mat-icon class="icon-size">favorite</mat-icon>
+          <p class="text">Profile</p>
+          <span class="material-icons-up-arrow"> keyboard_arrow_up </span>
+        </button>
+      </div>
 
-<!-- Post Icon -->
-<div>
-  <button mat-raised-button color="primary" class="action-button">
-    <mat-icon class="icon-size">favorite</mat-icon>
-    <p class="text">add</p>
-    <span class="material-icons-up-arrow"> keyboard_arrow_up </span>
-  </button>
-</div>
+      <!-- Post Icon -->
+      <div>
+        <button mat-raised-button color="primary" class="action-button">
+          <mat-icon class="icon-size">favorite</mat-icon>
+          <p class="text">add</p>
+          <span class="material-icons-up-arrow"> keyboard_arrow_up </span>
+        </button>
+      </div>
 
-<!-- Info Icon which just displays a message related to specifc page
+      <!-- Info Icon which just displays a message related to specifc page
    on hover -->
-<div class="tooltip">
-  <span class="material-icons"> info </span>
-  <span class="tooltiptext">Fill in message chase </span>
+      <div class="tooltip">
+        <span class="material-icons"> info </span>
+        <span class="tooltiptext">Fill in message chase </span>
+      </div>
+    </div>
+  </div>
 </div>
