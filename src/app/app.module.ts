@@ -8,7 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatMenuModule } from '@angular/material/menu';
@@ -29,7 +29,7 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
 @NgModule({
   declarations: [
     AppComponent,
-    HomePageComponent,
+    routingComponents,
     TermsComponent,
     SignupComponent,
     SearchComponent,
