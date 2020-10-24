@@ -13,8 +13,9 @@ initial amount specified when the post was made-->
   </div>
   <div class="middle">
     <!-- logo -->
-    <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" class="pic" />
-
+    <div class="logo">
+      <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" class="pic" />
+    </div>
     <!-- Group Name input spot -->
     <div>
       <p class="text">Chat: <input placeholder="Group Name" class="text" /></p>
@@ -27,42 +28,39 @@ initial amount specified when the post was made-->
   <div class="right">
     <!--  smily face that keeps track of members wanting to
 join your group ONLY FOR PRIVATE ACCOUNTS  -->
-    <span>
-      <mat-icon> insert_emoticon</mat-icon>
-    </span>
+    <div class="face">
+      <mat-icon class="material-icons"> insert_emoticon</mat-icon>
+    </div>
 
     <!-- Search Icon -->
-    <div>
-      <button mat-raised-button color="primary" class="action-button">
-        <mat-icon class="icon-size">public</mat-icon>
+    <div class="search">
+      <button mat-icon-button color="primary" class="action-button">
+        <mat-icon class="material-icons">public</mat-icon>
         <p class="text">Search</p>
-        <span class="material-icons-up-arrow"> keyboard_arrow_up </span>
       </button>
     </div>
 
     <!-- Profile Icon -->
-    <div>
-      <button mat-raised-button color="primary" class="action-button">
-        <mat-icon class="icon-size">favorite</mat-icon>
+    <div class="profile">
+      <button mat-icon-button color="primary" class="action-button">
+        <mat-icon class="material-icons">favorite</mat-icon>
         <p class="text">Profile</p>
-        <span class="material-icons-up-arrow"> keyboard_arrow_up </span>
       </button>
     </div>
 
     <!-- Post Icon -->
-    <div>
-      <button mat-raised-button color="primary" class="action-button">
-        <mat-icon class="icon-size">favorite</mat-icon>
-        <p class="text">add</p>
-        <span class="material-icons-up-arrow"> keyboard_arrow_up </span>
+    <div class="post">
+      <button mat-icon-button color="primary" class="action-button">
+        <div class="material-icons">add_circle_outline</div>
+        <p>post</p>
       </button>
     </div>
 
     <!-- Info Icon which just displays a message related to specifc page
    on hover -->
     <div class="tooltip">
-      <span class="material-icons"> info </span>
-      <span class="tooltiptext">Fill in message chase </span>
+      <div class="material-icons">info</div>
+      <div class="tooltiptext">Fill in message chase</div>
     </div>
   </div>
 </div>
