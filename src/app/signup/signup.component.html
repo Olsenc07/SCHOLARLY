@@ -80,7 +80,7 @@
       <div class="right-inputs">
         <div class="private-layout">
           <mat-radio-group aria-label="Select an option">
-            <mat-radio-button value="">Private Account</mat-radio-button>
+            <mat-radio-button value="private">Private Account</mat-radio-button>
             <div class="tooltip">
               <span class="material-icons"> info </span>
               <span class="tooltiptext"
@@ -89,19 +89,15 @@
                 on your posts.</span
               >
             </div>
+            <mat-radio-button value="public">Public Account</mat-radio-button>
+            <div class="tooltip">
+              <span class="material-icons"> info </span>
+              <span class="tooltiptext"
+                >Members are automatically accepted to your group & friend
+                list</span
+              >
+            </div>
           </mat-radio-group>
-          <div class="public-layout">
-            <mat-radio-group aria-label="Select an option">
-              <mat-radio-button value="">Public Account</mat-radio-button>
-              <div class="tooltip">
-                <span class="material-icons"> info </span>
-                <span class="tooltiptext"
-                  >Members are automatically accepted to your group & friend
-                  list</span
-                >
-              </div>
-            </mat-radio-group>
-          </div>
           <!-- Full Name Textfield -->
           <div class="fullname-layout">
             <mat-form-field class="asthetic-adds">

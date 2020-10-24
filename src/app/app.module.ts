@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatMenuModule } from '@angular/material/menu';
@@ -48,6 +49,7 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
     MatButtonModule,
     FlexLayoutModule,
     MatDatepickerModule,
+    MatTooltipModule,
     MatRadioModule,
     MatSlideToggleModule,
     MatMenuModule,
