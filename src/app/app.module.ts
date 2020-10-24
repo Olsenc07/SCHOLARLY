@@ -17,7 +17,6 @@ import { MatMenuModule } from '@angular/material/menu';
 import { AppComponent } from './app.component';
 import { TermsComponent } from './terms/terms.component';
 import { SearchComponent } from './search/search.component';
-import { PostPageComponent } from './post-page/post-page.component';
 import { RetrievePasswordComponent } from './retrieve-password/retrieve-password.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
@@ -31,7 +30,6 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
     routingComponents,
     TermsComponent,
     SearchComponent,
-    PostPageComponent,
     RetrievePasswordComponent,
     ProfileComponent,
     EditProfileComponent,

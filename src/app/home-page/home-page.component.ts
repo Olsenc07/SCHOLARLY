@@ -8,14 +8,25 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class HomePageComponent implements OnInit {
 
+  password: FormControl = new FormControl('');
+  email: FormControl = new FormControl('');
+
   loginForm = new FormGroup({
-    email: new FormControl(''),
-    password: new FormControl(''),
+    email: this.email,
+    password: this.password,
   });
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  clearPassword(): void {
+    this.password.setValue('');
+  }
+
+  clearEmail(): void {
+    this.email.setValue('');
+  }
 
   onSubmit(): void {
     // TODO: wire up to login request
