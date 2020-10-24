@@ -2,8 +2,8 @@
   <!-- left -->
   <div class="left">
     <!--main logo  -->
-    <div class="side-spacers">
-      <img Src="../../assets/Pics/ProperInAppLogo.jpeg" />
+    <div class="logo">
+      <img Src="../../assets/Pics/ProperInAppLogo.jpeg" class="logo" />
     </div>
 
     <!-- Title of post input -->
@@ -36,108 +36,96 @@
       </div>
 
       <!-- Choosing date of event range  -->
-      <span>
-        <mat-date-range-input [rangePicker]="picker">
-          <input matStartDate placeholder="Start date" />
-          <input matEndDate placeholder="End date" />
-        </mat-date-range-input>
-
-        <mat-date-range-picker #picker></mat-date-range-picker>
-      </span>
+      <input matInput [matDatepicker]="picker" />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
 
       <!-- add time picker attached too ^  -->
 
       <!-- text and sliders and hover over i -->
     </div>
-
-    <div class="right">
-      <!-- <form
-      class="sliders"
-      #form="ngForm"
-      (ngSubmit)="onFormSubmit()"
-      ngNativeValidate
-    > -->
-
-      <mat-slide-toggle ngModel value="primary" name="driving"
-        >Able to drive members</mat-slide-toggle
-      >
-      <mat-slide-toggle ngModel value="primary" name="males" required
-        >Males</mat-slide-toggle
-      >
-      <mat-slide-toggle ngModel value="primary" name="females" required
-        >Females</mat-slide-toggle
-      >
-      <mat-slide-toggle ngModel value="primary" name="males" required
-        >Other</mat-slide-toggle
-      >
-
-      <mat-slide-toggle ngModel value="primary" name="males" required
-        >Formal event
-        <div class="tooltip">
-          <span class="material-icons"> info </span>
-          <span class="tooltiptext"
-            >Members are expected to act with a level of professionalism
-          </span>
-        </div>
-      </mat-slide-toggle>
-
-      <mat-slide-toggle ngModel value="primary" name="males" required
-        >Relaxed event
-        <div class="tooltip">
-          <span class="material-icons"> info </span>
-          <span class="tooltiptext">
-            Members are able satisfy their amusements
-          </span>
-        </div>
-      </mat-slide-toggle>
-      <button mat-raised-button type="submit">Save Settings</button>
-      <!-- </form> -->
-    </div>
-
-    <!-- amount of people stepper -->
-    <div>
-      <label for="points">Amount of people</label>
-      <input type="number" id="steper" name="points" step="1" />
-    </div>
-
-    <!-- Age range input -->
-    <p name="max&min">
-      <label for="max&min">Age Range</label>
-      <span class="min-box">
-        <input type="number" min="0" max="100" step="1" placeholder="Min:" />
-      </span>
-      <span class="max-box">
-        <input type="number" min="0" max="100" step="1" placeholder="Max:" />
-      </span>
-    </p>
-
-    <!-- search box -->
-    <span>
-      <mat-form-field class="search-textfield">
-        <span class="material-icons-search"> search </span>
-        <mat-label>Search:</mat-label>
-        <input
-          matInput
-          type="search"
-          placeholder=""
-          value="Search:"
-        /> </mat-form-field
-    ></span>
-
-    <!-- specifics box -->
-    <div class="specifics-box"></div>
-
-    <!-- back button -->
-    <div>
-      <button mat-flat-button class="text-back">Back</button>
-    </div>
-
-    <!-- post button and arrow icon -->
-    <span>
-      <button mat-flat-button class="text">
-        <span class="material-icons"> arrow_forward </span>
-        Post
-      </button>
-    </span>
   </div>
+  <!-- right -->
+  <div class="right">
+    <mat-slide-toggle ngModel value="primary" name="driving"
+      >Able to drive members</mat-slide-toggle
+    >
+    <mat-slide-toggle ngModel value="primary" name="males" required
+      >Males</mat-slide-toggle
+    >
+    <mat-slide-toggle ngModel value="primary" name="females" required
+      >Females</mat-slide-toggle
+    >
+    <mat-slide-toggle ngModel value="primary" name="males" required
+      >Other</mat-slide-toggle
+    >
+
+    <mat-slide-toggle ngModel value="primary" name="males" required
+      >Formal event
+      <div class="tooltip">
+        <span class="material-icons"> info </span>
+        <span class="tooltiptext"
+          >Members are expected to act with a level of professionalism
+        </span>
+      </div>
+    </mat-slide-toggle>
+
+    <mat-slide-toggle ngModel value="primary" name="males" required
+      >Relaxed event
+      <div class="tooltip">
+        <span class="material-icons"> info </span>
+        <span class="tooltiptext">
+          Members are able satisfy their amusements
+        </span>
+      </div>
+    </mat-slide-toggle>
+    <button mat-raised-button type="submit">Save Settings</button>
+    <!-- </form> -->
+  </div>
+
+  <!-- amount of people stepper -->
+  <div>
+    <label for="points">Amount of people</label>
+    <input type="number" id="steper" name="points" step="1" />
+  </div>
+
+  <!-- Age range input -->
+  <p name="max&min">
+    <label for="max&min">Age Range</label>
+    <span class="min-box">
+      <input type="number" min="0" max="100" step="1" placeholder="Min:" />
+    </span>
+    <span class="max-box">
+      <input type="number" min="0" max="100" step="1" placeholder="Max:" />
+    </span>
+  </p>
+
+  <!-- search box -->
+  <span>
+    <mat-form-field class="search-textfield">
+      <span class="material-icons-search"> search </span>
+      <mat-label>Search:</mat-label>
+      <input
+        matInput
+        type="search"
+        placeholder=""
+        value="Search:"
+      /> </mat-form-field
+  ></span>
+
+  <!-- specifics box -->
+  <div class="specifics-box"></div>
+
+  <!-- back button -->
+  <div>
+    <button mat-flat-button class="text-back">Back</button>
+  </div>
+
+  <!-- post button and arrow icon -->
+  <span>
+    <button mat-flat-button class="text">
+      <span class="material-icons"> arrow_forward </span>
+      Post
+    </button>
+  </span>
 </div>
