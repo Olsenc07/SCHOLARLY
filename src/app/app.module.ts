@@ -6,17 +6,16 @@ import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatMenuModule } from '@angular/material/menu';
 
 import { AppComponent } from './app.component';
-import { HomePageComponent } from './home-page/home-page.component';
 import { TermsComponent } from './terms/terms.component';
-import { SignupComponent } from './signup/signup.component';
 import { SearchComponent } from './search/search.component';
 import { PostPageComponent } from './post-page/post-page.component';
 import { RetrievePasswordComponent } from './retrieve-password/retrieve-password.component';
@@ -29,9 +28,8 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
 @NgModule({
   declarations: [
     AppComponent,
-    HomePageComponent,
+    routingComponents,
     TermsComponent,
-    SignupComponent,
     SearchComponent,
     PostPageComponent,
     RetrievePasswordComponent,
@@ -55,6 +53,7 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
     MatRadioModule,
     MatSlideToggleModule,
     MatMenuModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
