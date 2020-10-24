@@ -45,12 +45,12 @@
 }
 
 .text {
-  position: relative;
-  font-size: 30;
   color: #707070;
   border-color: #418bba;
 }
-
+.action-button {
+  display: flex;
+}
 .search-textfield {
   width: 30%;
   min-width: 15%;
@@ -59,30 +59,47 @@
 
 .text-scroll {
   overflow: scroll;
-  position: relative;
-
   color: #707070;
   border-color: #418bba;
 }
 .material-icons {
   display: flex;
-}
-.icon-size {
-  display: flex;
   justify-content: center;
 }
+
 .tooltip .tooltiptext {
+  display: flex;
   visibility: hidden;
+  margin: 10%;
   color: #707070;
   border-color: #418bba;
+  justify-content: center;
 }
 
 .tooltip:hover .tooltiptext {
+  display: flex;
+  justify-content: center;
   visibility: visible;
+  margin: 10%;
   color: #707070;
   border-color: #418bba;
 }
 .search-textfield {
+  display: flex;
+  justify-content: center;
+}
+.search {
+  margin: 10%;
+  display: flex;
+  justify-content: center;
+}
+.post {
+  margin: 10%;
+  display: flex;
+  justify-content: center;
+}
+.profile {
+  margin: 10%;
   display: flex;
   justify-content: center;
 }
