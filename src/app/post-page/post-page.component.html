@@ -10,40 +10,49 @@
     <div>
       <mat-form-field class="text-input"
         ><mat-label>Title of Post</mat-label>
-        <input matInput type="Title" placeholder="Title:" />
+        <input matInput type="Title" placeholder="" />
+      </mat-form-field>
 
-        <!-- text -->
-        <div>
-          <p class="text">Description of post:</p>
-        </div>
-
-        <!-- Description input -->
-        <div>
-          <mat-form-field class="description-input"
-            ><mat-label></mat-label>
-            <input matInput type="" placeholder="Ex:Looking for..." />
-          </mat-form-field></div
-      ></mat-form-field>
-
-      <!-- Clock icon -->
-      <div class="watch">
-        <mat-icon>watch_later</mat-icon>
-      </div>
-
-      <!-- text -->
+      <!-- Description input -->
       <div>
-        <p class="text">Time of event</p>
+        <mat-form-field class="description-input"
+          ><mat-label>Description of post</mat-label>
+          <input matInput type="" placeholder="" />
+        </mat-form-field>
       </div>
-
-      <!-- Choosing date of event range  -->
-      <input matInput [matDatepicker]="picker" />
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-
-      <!-- add time picker attached too ^  -->
-
-      <!-- text and sliders and hover over i -->
     </div>
+    <!-- Clock icon -->
+    <div class="watch">
+      <mat-icon>watch_later</mat-icon>
+    </div>
+
+    <!-- text -->
+    <div>
+      <p class="text">Time of event</p>
+    </div>
+
+    <!-- Choosing date of event range  -->
+    <input matInput [matDatepicker]="picker" />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <!-- tag friends -->
+    <span>
+      <mat-form-field class="search-textfield">
+        <span class="material-icons-search"> </span>
+        <mat-label>Tag friends:</mat-label>
+        <input
+          matInput
+          type="tag friends"
+          placeholder=""
+          value=""
+        /> </mat-form-field
+    ></span>
+    <!-- back button -->
+    <div>
+      <button mat-flat-button class="text-back">Back</button>
+    </div>
+
+    <!-- text and sliders and hover over i -->
   </div>
   <!-- right -->
   <div class="right">
@@ -79,53 +88,41 @@
         </span>
       </div>
     </mat-slide-toggle>
-    <button mat-raised-button type="submit">Save Settings</button>
     <!-- </form> -->
-  </div>
 
-  <!-- amount of people stepper -->
-  <div>
-    <label for="points">Amount of people</label>
-    <input type="number" id="steper" name="points" step="1" />
-  </div>
+    <!-- amount of people stepper -->
+    <div>
+      <label for="points">Amount of people</label>
+      <input type="number" id="steper" name="points" step="1" />
+    </div>
 
-  <!-- Age range input -->
-  <p name="max&min">
-    <label for="max&min">Age Range</label>
-    <span class="min-box">
-      <input type="number" min="0" max="100" step="1" placeholder="Min:" />
+    <!-- Age range input -->
+    <p name="max&min">
+      <label for="max&min">Age Range</label>
+      <span class="min-box">
+        <input type="number" min="0" max="100" step="1" placeholder="Min:" />
+      </span>
+      <span class="max-box">
+        <input type="number" min="0" max="100" step="1" placeholder="Max:" />
+      </span>
+    </p>
+    <!-- search -->
+    <span>
+      <mat-form-field class="search-textfield">
+        <span class="material-icons-search"> </span>
+        <mat-label><span class="material-icons"> search </span></mat-label>
+        <input matInput type="search" placeholder="Search:" /> </mat-form-field
+    ></span>
+    <!-- specifics box -->
+    <div>
+      <textarea class="outside-input-boxs" rows="20" cols="30"> </textarea>
+    </div>
+    <!-- post button and arrow icon -->
+    <span>
+      <button mat-raised-button class="text">
+        Post
+        <span class="material-icons"> arrow_forward </span>
+      </button>
     </span>
-    <span class="max-box">
-      <input type="number" min="0" max="100" step="1" placeholder="Max:" />
-    </span>
-  </p>
-
-  <!-- search box -->
-  <span>
-    <mat-form-field class="search-textfield">
-      <span class="material-icons-search"> search </span>
-      <mat-label>Search:</mat-label>
-      <input
-        matInput
-        type="search"
-        placeholder=""
-        value="Search:"
-      /> </mat-form-field
-  ></span>
-
-  <!-- specifics box -->
-  <div class="specifics-box"></div>
-
-  <!-- back button -->
-  <div>
-    <button mat-flat-button class="text-back">Back</button>
   </div>
-
-  <!-- post button and arrow icon -->
-  <span>
-    <button mat-flat-button class="text">
-      <span class="material-icons"> arrow_forward </span>
-      Post
-    </button>
-  </span>
 </div>
