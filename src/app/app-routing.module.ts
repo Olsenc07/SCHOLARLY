@@ -2,11 +2,19 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { SignupComponent } from './signup/signup.component';
+import { TermsComponent } from './terms/terms.component';
 
-export const routingComponents = [HomePageComponent];
+export const routingComponents = [
+  HomePageComponent,
+  SignupComponent,
+  TermsComponent
+];
 
 const routes: Routes = [
-  { path: 'dashboard', component: HomePageComponent },
+  { path: 'login', component: HomePageComponent },
+  { path: 'sign-up', component: SignupComponent },
+  { path: 'terms', component: TermsComponent },
   { path: '',   redirectTo: '/dashboard', pathMatch: 'full' },
 ];
 

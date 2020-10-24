@@ -14,9 +14,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatMenuModule } from '@angular/material/menu';
 
 import { AppComponent } from './app.component';
-import { HomePageComponent } from './home-page/home-page.component';
 import { TermsComponent } from './terms/terms.component';
-import { SignupComponent } from './signup/signup.component';
 import { SearchComponent } from './search/search.component';
 import { PostPageComponent } from './post-page/post-page.component';
 import { RetrievePasswordComponent } from './retrieve-password/retrieve-password.component';
@@ -31,7 +29,6 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
     AppComponent,
     routingComponents,
     TermsComponent,
-    SignupComponent,
     SearchComponent,
     PostPageComponent,
     RetrievePasswordComponent,
