@@ -7,13 +7,11 @@
   padding: 0px;
   overflow-x: hidden;
 }
-.row {
-  display: flex;
-  flex-direction: row;
-}
+
 .left {
   display: flex;
   flex-direction: column;
+  margin: 2%;
 }
 .middle {
   display: flex;
@@ -58,4 +56,7 @@
 
 .icon-size {
   padding: 7%;
+}
+.pic {
+  border-radius: 50%;
 }
