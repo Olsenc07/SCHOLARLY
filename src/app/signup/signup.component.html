@@ -2,15 +2,14 @@
   <body style="background-color: rgb(235, 235, 245)">
     <!-- main logo -->
     <div class="logo-layout">
-      <img Src="../../assets/Pics/ProperInAppLogo.jpeg" class="logo-layout" />
+      <img Src="../../assets/Pics/ProperInAppLogo.jpeg" class="logo-layout" >
     </div>
     <!-- Username Text Input -->
     <div class="column">
       <div class="left-inputs">
         <div class="username-layout">
           <mat-form-field class="asthetic-adds">
-            <mat-label>Username</mat-label>
-            <input matInput type="text" placeholder="Username:" />
+            <input matInput type="text" placeholder="Username" >
             <!-- [(ngModel)]="value"
       *ngIf="value" 
       (click)="value = ''" -->
@@ -26,10 +25,10 @@
             <input
               matInput
               type="password"
-              placeholder="Password:"
+              placeholder="Password"
               minlength="8"
               required
-            />
+            >
             <button
               mat-button
               matSuffix
@@ -43,15 +42,14 @@
         </div>
         <!-- Text Field Repeat Password: -->
         <div class="password-layout">
-          <mat-form-field class="asthetic-adds"
-            ><mat-label>RepeatPassword</mat-label>
+          <mat-form-field class="asthetic-adds">
             <input
               matInput
               type="password"
-              placeholder="Repeat Password:"
+              placeholder="Repeat Password"
               minlength="8"
               required
-            />
+            >
             <button mat-button matSuffix mat-icon-button aria-label="Clear">
               <mat-icon class="asthetic-adds">close</mat-icon>
             </button>
@@ -59,9 +57,8 @@
         </div>
         <!-- Text Field Major/Minor -->
         <div class="major-layout">
-          <mat-form-field class="asthetic-adds"
-            ><mat-label>Major/Minor</mat-label>
-            <input matInput placeholder="Major/Minor:" />
+          <mat-form-field class="asthetic-adds">
+            <input matInput placeholder="Major/Minor" >
             <button mat-button matSuffix mat-icon-button aria-label="Clear">
               <mat-icon class="asthetic-adds">close</mat-icon>
             </button>
@@ -69,9 +66,8 @@
         </div>
         <!-- Text Field Sport/Club: -->
         <div class="sport-layout">
-          <mat-form-field class="asthetic-adds"
-            ><mat-label>Sport/Club</mat-label>
-            <input matInput placeholder="Sport/Club:" />
+          <mat-form-field class="asthetic-adds">
+            <input matInput placeholder="Sport/Club" >
             <button mat-button matSuffix mat-icon-button aria-label="Clear">
               <mat-icon class="asthetic-adds">close</mat-icon>
             </button>
@@ -108,9 +104,8 @@
           </div>
           <!-- Full Name Textfield -->
           <div class="fullname-layout">
-            <mat-form-field class="asthetic-adds"
-              ><mat-label>Full Name</mat-label>
-              <input matInput placeholder="Full Name:" />
+            <mat-form-field class="asthetic-adds">
+              <input matInput placeholder="Full Name">
               <button mat-button matSuffix mat-icon-button aria-label="Clear">
                 <mat-icon class="asthetic-adds">close</mat-icon>
               </button>
@@ -120,7 +115,7 @@
           <p class="asthetic-adds">Birthday:</p>
 
           <!-- Birthday Date Picker -->
-          <input matInput [matDatepicker]="picker" />
+          <input matInput [matDatepicker]="picker">
           <mat-datepicker-toggle
             matSuffix
             [for]="picker"
@@ -129,9 +124,8 @@
 
           <!-- Text FieldGender: -->
           <div class="gender-layout">
-            <mat-form-field class="asthetic-adds"
-              ><mat-label>Gender</mat-label>
-              <input matInput placeholder="Gender:" />
+            <mat-form-field class="asthetic-adds">
+              <input matInput placeholder="Gender">
               <button mat-button matSuffix mat-icon-button aria-label="Clear">
                 <mat-icon class="asthetic-adds">close</mat-icon>
               </button>
@@ -139,9 +133,8 @@
           </div>
           <!-- Text FieldRelationship: -->
           <div class="text-layout">
-            <mat-form-field class="asthetic-adds"
-              ><mat-label>Relationship Status</mat-label>
-              <input matInput placeholder="Relationship Status:" />
+            <mat-form-field class="asthetic-adds">
+              <input matInput placeholder="Relationship Status">
               <button mat-button matSuffix mat-icon-button aria-label="Clear">
                 <mat-icon class="asthetic-adds">close</mat-icon>
               </button>
