@@ -1,54 +1,56 @@
 <!-- Main logo -->
-<div fxLayout="row">
-  <div class="side-spacer"></div>
-  <div fxLayout="column" fxLayoutAlign="center center">
-    <img Src="../../assets/Pics/ProperInAppLogo.jpeg" />
-    <div class="main-content" fxLayout="row">
-      <span class="main-text">
-        <p>Enhance your University experience with Scholarly</p>
-      </span>
+<form [formGroup]='loginForm' (ngSubmit)='onSubmit()'>
+  <div fxLayout='row'>
+    <div class='side-spacer'></div>
+    <div fxLayout='column' fxLayoutAlign='center center'>
+      <img Src='../../assets/Pics/ProperInAppLogo.jpeg' />
+      <div class='main-content' fxLayout='row'>
+        <span class='main-text'>
+          <p>Enhance your University experience with Scholarly</p>
+        </span>
 
-      <!-- Container holding the log in form -->
-      <div class="log-in-box" fxLayout="column" fxLayoutAlign="center center">
-        <mat-form-field class="text-input"
-          ><mat-label>Email Address</mat-label>
-          <input matInput />
-          <span matSuffix class="email-suffix">@mail.utoronto.ca</span>
-          <button
-            color="primary"
-            mat-button
-            matSuffix
-            mat-icon-button
-            aria-label="Clear"
-          >
-            <mat-icon>close</mat-icon>
+        <!-- Container holding the log in form -->
+        <div class='log-in-box' fxLayout='column' fxLayoutAlign='center center'>
+          <mat-form-field class='text-input' 
+            ><mat-label>Email Address</mat-label>
+            <input matInput formControlName='email' autocomplete='on'>
+            <span matSuffix class='email-suffix'>@mail.utoronto.ca</span>
+            <button
+              color='primary'
+              mat-button
+              matSuffix
+              mat-icon-button
+              aria-label='Clear'
+            >
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+          <mat-form-field class='text-input'
+            ><mat-label>Password</mat-label>
+            <input matInput formControlName='password' type='password' placeholder='Password' autocomplete='on'>
+            <button
+              color='primary'
+              mat-button
+              matSuffix
+              mat-icon-button
+              aria-label='Clear'
+            >
+              <mat-icon>close</mat-icon>
+            </button>
+          </mat-form-field>
+          <button type='submit' [disabled]='!loginForm.valid' mat-raised-button color='primary' class='action-button'>
+            Log In
           </button>
-        </mat-form-field>
-        <mat-form-field class="text-input"
-          ><mat-label>Password</mat-label>
-          <input matInput type="password" placeholder="Password" />
-          <button
-            color="primary"
-            mat-button
-            matSuffix
-            mat-icon-button
-            aria-label="Clear"
-          >
-            <mat-icon>close</mat-icon>
+          <button type='button' mat-flat-button disableRipple class='forgot-password'>
+            Forgot Password?
           </button>
-        </mat-form-field>
-        <button mat-raised-button color="primary" class="action-button">
-          Log In
-        </button>
-        <button mat-flat-button disableRipple class="forgot-password">
-          Forgot Password?
-        </button>
-        <p>Or</p>
-        <button mat-raised-button routerLink="/sign-up" color="primary" class="action-button">
-          Create New Account
-        </button>
+          <p>Or</p>
+          <button type='button' mat-raised-button routerLink='/sign-up' color='primary' class='action-button'>
+            Create New Account
+          </button>
+        </div>
       </div>
     </div>
+    <div class='side-spacer'></div>
   </div>
-  <div class="side-spacer"></div>
-</div>
+</form>
