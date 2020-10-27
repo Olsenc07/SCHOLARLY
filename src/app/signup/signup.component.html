@@ -14,7 +14,8 @@
                 matInput
                 type="text"
                 formControlName="username"
-                placeholder="username"
+                placeholder="Username"
+                required
               />
 
               <button mat-button matSuffix mat-icon-button aria-label="Clear">
@@ -68,6 +69,7 @@
                 matInput
                 placeholder="Major/Minor"
                 formControlName="major"
+                required
               />
               <button mat-button matSuffix mat-icon-button aria-label="Clear">
                 <mat-icon class="asthetic-adds">close</mat-icon>
@@ -81,6 +83,7 @@
                 matInput
                 placeholder="Sport/Club"
                 formControlName="sport"
+                required
               />
               <button mat-button matSuffix mat-icon-button aria-label="Clear">
                 <mat-icon class="asthetic-adds">close</mat-icon>
@@ -124,6 +127,7 @@
                   matInput
                   placeholder="Full Name"
                   formControlName="name"
+                  required
                 />
                 <button mat-button matSuffix mat-icon-button aria-label="Clear">
                   <mat-icon class="asthetic-adds">close</mat-icon>
@@ -161,6 +165,7 @@
                   matInput
                   placeholder="Relationship Status"
                   formControlName="relationship"
+                  required
                 />
                 <button mat-button matSuffix mat-icon-button aria-label="Clear">
                   <mat-icon class="asthetic-adds">close</mat-icon>
@@ -173,7 +178,13 @@
       <!-- Sign Up Button  -->
       <div class="bottom-buttons">
         <div class="existing-account-layout">
-          <button mat-flat-button class="existing-account-layout">
+          <button
+            type="submit"
+            [disabled]="!signupForm.valid"
+            routerLink="/login"
+            mat-flat-button
+            class="existing-account-layout"
+          >
             Sign Up
           </button>
         </div>

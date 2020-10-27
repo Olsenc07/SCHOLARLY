@@ -17,7 +17,6 @@ const routes: Routes = [
   { path: 'login', component: HomePageComponent },
   { path: 'sign-up', component: SignupComponent },
   { path: 'terms', component: TermsComponent },
-  { path: 'profile', component: HomePageComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];
 
