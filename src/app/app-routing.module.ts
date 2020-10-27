@@ -3,7 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { FriendsActivityComponent } from './friends-activity/friends-activity.component';
+import { GroupChatsComponent } from './group-chats/group-chats.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { PostPageComponent } from './post-page/post-page.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RetrievePasswordComponent } from './retrieve-password/retrieve-password.component';
 import { SearchComponent } from './search/search.component';
@@ -26,6 +28,8 @@ const routes: Routes = [
   { path: 'search', component: SearchComponent },
   { path: 'edit-profile', component: EditProfileComponent },
   { path: 'friends-activity', component: FriendsActivityComponent },
+  { path: 'groups', component: GroupChatsComponent },
+  { path: 'post-page', component: PostPageComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];
 

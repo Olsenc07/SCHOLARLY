@@ -1,109 +1,144 @@
-<div style="background-color: rgb(235, 235, 245)" class="entire-page">
-  <!-- logo -->
-  <div class="top">
-    <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" />
-  </div>
-  <!-- lower box -->
-  <div class="middle">
-    <!-- left column -->
-    <div class="left-column">
-      <!-- input pic & has this default pic before-->
-      <div>
-        <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" class="pic" />
-      </div>
-
-      <!-- text -->
-      <div>
-        <p class="text">Bio:</p>
-      </div>
-
-      <!-- Bio box -->
-      <input class="bio-box" />
-
-      <!-- Text Field Major/Minor -->
-      <mat-form-field class="text-field-password"
-        ><mat-label>Major/Minor</mat-label>
-        <input matInput placeholder="Major/Minor:" />
-        <button mat-button matSuffix mat-icon-button aria-label="Clear">
-          <mat-icon class="clear-button">close</mat-icon>
-        </button>
-      </mat-form-field>
-
-      <!-- Text Field Sport/Club -->
-      <mat-form-field class="text-field-password"
-        ><mat-label>Sport/Club</mat-label>
-        <input matInput placeholder="Sport/Club:" />
-        <button mat-button matSuffix mat-icon-button aria-label="Clear">
-          <mat-icon class="clear-button">close</mat-icon>
-        </button>
-      </mat-form-field>
-
-      <!-- cancel button -->
-      <button mat-button class="button">Cancel</button>
+<form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+  <div style="background-color: rgb(235, 235, 245)" class="entire-page">
+    <!-- logo -->
+    <div class="top">
+      <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" />
     </div>
-    <!-- right column -->
-    <div class="right-column">
-      <!-- Public or Privte account -->
-      <div class="private-public">
-        <mat-radio-group aria-label="Select an option">
-          <mat-radio-button value="">Private Account</mat-radio-button>
-          <div class="tooltip">
-            <span class="material-icons"> info </span>
-            <span class="tooltiptext"
-              >Members are automatically accepted to your group</span
-            >
-          </div>
-        </mat-radio-group>
+    <!-- lower box -->
+    <div class="middle">
+      <!-- left column -->
+      <div class="left-column">
+        <!-- input pic & has this default pic before-->
+        <div>
+          <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" class="pic" />
+        </div>
 
-        <mat-radio-group aria-label="Select an option">
-          <mat-radio-button value="">Public Account</mat-radio-button>
-          <div class="tooltip">
-            <span class="material-icons"> info </span>
-            <span class="tooltiptext"
-              >You choose to accept or decline members to your group</span
-            >
-          </div>
-        </mat-radio-group>
+        <!-- text -->
+        <div>
+          <p class="text">Bio:</p>
+        </div>
+
+        <!-- Bio box -->
+        <input class="bio-box" />
+
+        <!-- Text Field Major/Minor -->
+        <mat-form-field class="text-field-password"
+          ><mat-label>Major/Minor</mat-label>
+          <input
+            matInput
+            formControlName="major"
+            autocomplete="on"
+            placeholder="Major/Minor:"
+          />
+          <button mat-button matSuffix mat-icon-button aria-label="Clear">
+            <mat-icon class="clear-button">close</mat-icon>
+          </button>
+        </mat-form-field>
+
+        <!-- Text Field Sport/Club -->
+        <mat-form-field class="text-field-password"
+          ><mat-label>Sport/Club</mat-label>
+          <input
+            matInput
+            formControlName="sport"
+            autocomplete="on"
+            placeholder="Sport/Club:"
+          />
+          <button mat-button matSuffix mat-icon-button aria-label="Clear">
+            <mat-icon class="clear-button">close</mat-icon>
+          </button>
+        </mat-form-field>
+
+        <!-- cancel button -->
+        <button mat-button type="button" routerLink="/profile" class="button">
+          Cancel
+        </button>
       </div>
-      <!-- Full Name Textfield -->
-      <mat-form-field class="text-field-password"
-        ><mat-label>Full Name</mat-label>
-        <input matInput placeholder="Full Name:" />
-        <button mat-button matSuffix mat-icon-button aria-label="Clear">
-          <mat-icon class="clear-button">close</mat-icon>
-        </button>
-      </mat-form-field>
+      <!-- right column -->
+      <div class="right-column">
+        <!-- Public or Privte account -->
+        <div class="private-public">
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="">Private Account</mat-radio-button>
+            <div class="tooltip">
+              <span class="material-icons"> info </span>
+              <span class="tooltiptext"
+                >Members are automatically accepted to your group</span
+              >
+            </div>
 
-      <!-- Birthday Text -->
-      <div class="birthday-text">
-        <p>Birthday:</p>
+            <mat-radio-button value="">Public Account</mat-radio-button>
+            <div class="tooltip">
+              <span class="material-icons"> info </span>
+              <span class="tooltiptext"
+                >You choose to accept or decline members to your group</span
+              >
+            </div>
+          </mat-radio-group>
+        </div>
+        <!-- Full Name Textfield -->
+        <mat-form-field class="text-field-password"
+          ><mat-label>Full Name</mat-label>
+          <input
+            matInput
+            formControlName="name"
+            autocomplete="on"
+            placeholder="Full Name:"
+          />
+          <button mat-button matSuffix mat-icon-button aria-label="Clear">
+            <mat-icon class="clear-button">close</mat-icon>
+          </button>
+        </mat-form-field>
+
+        <!-- Birthday Text -->
+        <div class="birthday-text">
+          <p>Birthday:</p>
+        </div>
+
+        <!-- Birthday Date Picker -->
+        <input
+          matInput
+          formControlName="birthday"
+          autocomplete="on"
+          [matDatepicker]="picker"
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+
+        <!-- Text FieldGender: -->
+        <mat-form-field class="text-field-gender"
+          ><mat-label>Gender</mat-label>
+          <input matInput autocomplete="on" placeholder="Gender:" />
+          <button mat-button matSuffix mat-icon-button aria-label="Clear">
+            <mat-icon class="clear-button">close</mat-icon>
+          </button>
+        </mat-form-field>
+
+        <!-- Text FieldRelationship: -->
+        <mat-form-field class="text-field-relationship"
+          ><mat-label>Relationship Status:</mat-label>
+          <input
+            matInput
+            formControlName="relationship"
+            autocomplete="on"
+            placeholder="Relationship Status:"
+          />
+          <button mat-button matSuffix mat-icon-button aria-label="Clear">
+            <mat-icon class="clear-button">close</mat-icon>
+          </button>
+        </mat-form-field>
+
+        <!-- done button -->
+        <button
+          mat-button
+          type="submit"
+          [disabled]="!editForm.valid"
+          routerLink="/profile"
+          class="button"
+        >
+          Done
+        </button>
       </div>
-
-      <!-- Birthday Date Picker -->
-      <input matInput [matDatepicker]="picker" />
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-
-      <!-- Text FieldGender: -->
-      <mat-form-field class="text-field-gender"
-        ><mat-label>Gender</mat-label>
-        <input matInput placeholder="Gender:" />
-        <button mat-button matSuffix mat-icon-button aria-label="Clear">
-          <mat-icon class="clear-button">close</mat-icon>
-        </button>
-      </mat-form-field>
-
-      <!-- Text FieldRelationship: -->
-      <mat-form-field class="text-field-relationship"
-        ><mat-label>Relationship Status:</mat-label>
-        <input matInput placeholder="Relationship Status:" />
-        <button mat-button matSuffix mat-icon-button aria-label="Clear">
-          <mat-icon class="clear-button">close</mat-icon>
-        </button>
-      </mat-form-field>
-
-      <!-- done button -->
-      <button mat-button class="button">Done</button>
     </div>
   </div>
-</div>
+</form>
