@@ -1,0 +1,48 @@
+.entire-page {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-column {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 2% 5% 2% 15%;
+}
+.logo {
+  border-radius: 50%;
+}
+.logo-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.top {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.middle {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 2% 5% 2% 5%;
+}
+.right {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 2% 5% 2% 5%;
+}
+.friends-request-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 2%;
+}
+.friends-activity-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 2%;
+}
