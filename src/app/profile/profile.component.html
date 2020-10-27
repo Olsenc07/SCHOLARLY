@@ -20,7 +20,12 @@
     </div>
     <!-- Friends Icon -->
     <div class="friends-format">
-      <button mat-raised-button class="action-button">
+      <button
+        mat-raised-button
+        type="button"
+        routerLink="/friends-activity"
+        class="action-button"
+      >
         <span class="material-icons">groups </span>
       </button>
     </div>
@@ -30,9 +35,13 @@
         <div class="material-icons">settings</div>
       </button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item>Change Password</button>
-        <button mat-menu-item>Edit Profile</button>
-        <button mat-menu-item>Log out</button>
+        <button mat-menu-item type="button" routerLink="retrieve-password">
+          Change Password
+        </button>
+        <button mat-menu-item type="button" routerLink="/edit-profile">
+          Edit Profile
+        </button>
+        <button mat-menu-item type="button" routerLink="/login">Log out</button>
       </mat-menu>
     </div>
   </div>
