@@ -53,7 +53,6 @@
   position: relative;
   color: #707070;
   border-color: #418bba;
-  margin: 5%;
 }
 
 .tooltip:hover .tooltiptext {
@@ -61,7 +60,6 @@
   visibility: visible;
   color: #707070;
   border-color: #418bba;
-  margin: 5%;
 }
 
 .logo {
@@ -72,14 +70,21 @@
   border-radius: 50%;
 }
 .face {
-  margin: 15px;
+  margin-bottom: 90px;
 }
 .search {
-  margin: 15px;
+  margin-bottom: 70px;
 }
+
 .profile {
-  margin: 15px;
+  margin-bottom: 70px;
 }
+
 .post {
-  margin: 15px;
+  margin-bottom: 70px;
+}
+
+.number {
+  margin-left: 2px;
+  width: 40px;
 }
