@@ -9,8 +9,12 @@
       <!-- left column -->
       <div class="left-column">
         <!-- input pic & has this default pic before-->
-        <div>
-          <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" class="pic" />
+        <div class="pic-box">
+          <img
+            Src="../../assets/Pics/WhiteSquareInAppLogo.jpg"
+            alt="../../assets/Pics/WhiteSquareInAppLogo.jpg"
+            class="pic"
+          />
         </div>
 
         <!-- text -->
@@ -22,7 +26,7 @@
         <input class="bio-box" />
 
         <!-- Text Field Major/Minor -->
-        <mat-form-field class="text-field-password"
+        <mat-form-field class="major"
           ><mat-label>Major/Minor</mat-label>
           <input
             matInput
@@ -36,7 +40,7 @@
         </mat-form-field>
 
         <!-- Text Field Sport/Club -->
-        <mat-form-field class="text-field-password"
+        <mat-form-field class="sport"
           ><mat-label>Sport/Club</mat-label>
           <input
             matInput
@@ -50,31 +54,39 @@
         </mat-form-field>
 
         <!-- cancel button -->
-        <button mat-button type="button" routerLink="/profile" class="button">
-          Cancel
-        </button>
+        <div class="cancel">
+          <button mat-button type="button" routerLink="/profile" class="button">
+            Cancel
+          </button>
+        </div>
       </div>
       <!-- right column -->
       <div class="right-column">
         <!-- Public or Privte account -->
         <div class="private-public">
-          <mat-radio-group aria-label="Select an option">
-            <mat-radio-button value="">Private Account</mat-radio-button>
-            <div class="tooltip">
-              <span class="material-icons"> info </span>
-              <span class="tooltiptext"
-                >Members are automatically accepted to your group</span
-              >
-            </div>
+          <div class="private">
+            <mat-radio-group aria-label="Select an option">
+              <mat-radio-button value="">Private Account</mat-radio-button>
+              <div class="tooltip">
+                <span class="material-icons"> info </span>
+                <span class="tooltiptext"
+                  >Members are automatically accepted to your group</span
+                >
+              </div>
+            </mat-radio-group>
+          </div>
 
-            <mat-radio-button value="">Public Account</mat-radio-button>
-            <div class="tooltip">
-              <span class="material-icons"> info </span>
-              <span class="tooltiptext"
-                >You choose to accept or decline members to your group</span
-              >
-            </div>
-          </mat-radio-group>
+          <div class="public">
+            <mat-radio-group aria-label="Select an option">
+              <mat-radio-button value="">Public Account</mat-radio-button>
+              <div class="tooltip">
+                <span class="material-icons"> info </span>
+                <span class="tooltiptext"
+                  >You choose to accept or decline members to your group</span
+                >
+              </div>
+            </mat-radio-group>
+          </div>
         </div>
         <!-- Full Name Textfield -->
         <mat-form-field class="text-field-password"
