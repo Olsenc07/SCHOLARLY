@@ -14,19 +14,21 @@
         routerLink="/search"
         class="action-button"
       >
-        <mat-icon class="icon-size">public</mat-icon>
+        <mat-icon class="action-button" style="font-size: 70px"
+          >public</mat-icon
+        >
         <p class="text-1">Search</p>
       </button>
     </div>
     <!-- Friends Icon -->
     <div class="friends-format">
       <button
-        mat-raised-button
+        mat-icon-button
         type="button"
         routerLink="/friends-activity"
         class="action-button"
       >
-        <span class="material-icons">groups </span>
+        <span class="material-icons" style="font-size: 70px">groups </span>
       </button>
     </div>
     <!-- Settings menu -->
@@ -85,26 +87,29 @@
 
     <!-- Recent Posts text  -->
     <div class="right-side">
-      <div>
-        <button type="button" routerLink="/groups" class="text">
-          Recent Posts:
-        </button>
-      </div>
-      <!-- Recent Posts box, need to add internal symbols
+      <div class="recents">
+        <div>
+          <button type="button" routerLink="/groups" class="text">
+            Recent Posts:
+          </button>
+        </div>
+        <!-- Recent Posts box, need to add internal symbols
   & activity things in box -->
-      <div class="recent-post-layout">
-        <textarea class="text" rows="10" cols="75"> </textarea>
+        <div class="recent-post-layout">
+          <textarea class="text" rows="10" cols="75"> </textarea>
+        </div>
       </div>
+      <div class="conversations">
+        <!-- Current Conversations text -->
+        <div>
+          <p class="text">Current Conversations:</p>
+        </div>
 
-      <!-- Current Conversations text -->
-      <div>
-        <p class="text">Current Conversations:</p>
-      </div>
-
-      <!-- Current Conversations box, need to add internal symbols
+        <!-- Current Conversations box, need to add internal symbols
   & activity things in box -->
-      <div class="recent-post-layout">
-        <textarea class="text" rows="10" cols="75"> </textarea>
+        <div class="recent-post-layout">
+          <textarea class="text" rows="10" cols="75"> </textarea>
+        </div>
       </div>
     </div>
   </div>

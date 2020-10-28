@@ -24,21 +24,18 @@
 }
 .text-1 {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-content: center;
+  margin: 20%;
 }
 
 .friends-format {
   display: flex;
-  margin-top: 3%;
-  margin-right: 9%;
-  margin-bottom: 9%;
+  margin: 3% 9% 9% 0%;
 }
 .settings-format {
   display: flex;
-  margin-top: 3%;
-  margin-right: 2%;
-  margin-bottom: 9%;
+  margin: 3% 2% 9% 0%;
 }
 .left-side {
   display: flex;
@@ -127,6 +124,8 @@
 
 .action-button {
   color: #2699fb;
+  display: flex;
+  justify-content: center;
 }
 .bio-name-age {
   display: flex;
@@ -158,4 +157,14 @@
 .main-content {
   justify-content: center;
   display: flex;
+}
+.recents {
+  margin: 2% 5% 10% 5%;
+}
+.conversations {
+  margin: 2% 5% 20% 5%;
+}
+.groups {
+  width: 50px;
+  height: 50px;
 }
