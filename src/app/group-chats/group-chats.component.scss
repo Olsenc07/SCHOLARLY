@@ -37,7 +37,6 @@
 }
 .action-button {
   display: flex;
-  justify-content: center;
 }
 .chat-box {
   padding: 16px;
@@ -46,13 +45,13 @@
 }
 .material-icons {
   display: flex;
-  justify-content: center;
 }
 .tooltip .tooltiptext {
   visibility: hidden;
   position: relative;
   color: #707070;
   border-color: #418bba;
+  margin-bottom: 80px;
 }
 
 .tooltip:hover .tooltiptext {
@@ -74,6 +73,7 @@
 }
 .search {
   margin-bottom: 70px;
+  margin-top: 10px;
 }
 
 .profile {
