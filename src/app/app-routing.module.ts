@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { from } from 'rxjs';
 import { AppComponent } from './app.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { FriendsActivityComponent } from './friends-activity/friends-activity.component';
@@ -11,6 +12,7 @@ import { RetrievePasswordComponent } from './retrieve-password/retrieve-password
 import { SearchComponent } from './search/search.component';
 import { SignupComponent } from './signup/signup.component';
 import { TermsComponent } from './terms/terms.component';
+import { MainPagesComponent } from './main-pages/main-pages.component';
 
 export const routingComponents = [
   HomePageComponent,
@@ -30,6 +32,7 @@ const routes: Routes = [
   { path: 'friends-activity', component: FriendsActivityComponent },
   { path: 'groups', component: GroupChatsComponent },
   { path: 'post-page', component: PostPageComponent },
+  { path: 'main', component: MainPagesComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];
 
