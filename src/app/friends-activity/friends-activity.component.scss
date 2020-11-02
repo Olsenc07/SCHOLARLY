@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin: 2% 5% 2% 12%;
+  margin: 2% 5% 2% 5%;
 }
 .logo {
   border-radius: 50%;
@@ -27,13 +27,22 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin: 2% 2% 2% 5%;
+  margin: 2% 2% 2% 2%;
 }
 .right {
   display: flex;
   justify-content: center;
   flex-direction: column;
   margin: 2% 5% 2% 5%;
+}
+.mutual-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 2%;
+}
+.mutual {
+  margin: 10% 2% 2% 2%;
 }
 .friends-request-box {
   display: flex;
