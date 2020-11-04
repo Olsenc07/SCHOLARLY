@@ -11,24 +11,54 @@
       <div class="left-wall">
         <!-- Search Icon -->
         <div class="search">
-          <button mat-icon-button color="primary" class="action-button">
-            <mat-icon class="material-icons">public</mat-icon>
+          <button
+            mat-icon-button
+            color="primary"
+            class="action-button"
+            type="button"
+            routerLink="/search"
+            color="primary"
+            class="action-button"
+          >
+            <mat-icon class="material-icons" style="font-size: 70px"
+              >public</mat-icon
+            >
             <p class="text">Search</p>
           </button>
         </div>
 
         <!-- Profile Icon -->
         <div class="profile">
-          <button mat-icon-button color="primary" class="action-button">
-            <mat-icon class="material-icons">favorite</mat-icon>
-            <span class="text">Profile</span>
+          <button
+            mat-icon-button
+            color="primary"
+            class="action-button"
+            type="button"
+            routerLink="/profile"
+            color="primary"
+            class="action-button"
+          >
+            <mat-icon class="material-icons" style="font-size: 70px"
+              >favorite</mat-icon
+            >
+            <p class="text">Profile</p>
           </button>
         </div>
 
         <!-- Post Icon -->
         <div class="post">
-          <button mat-icon-button color="primary" class="action-button">
-            <span class="material-icons"> add_circle </span>
+          <button
+            mat-icon-button
+            color="primary"
+            class="action-button"
+            type="button"
+            routerLink="/post-page"
+            color="primary"
+            class="action-button"
+          >
+            <span class="material-icons" style="font-size: 70px">
+              add_circle
+            </span>
             <p class="text">Post</p>
           </button>
         </div>
@@ -36,7 +66,7 @@
         <!-- Info Icon which just displays a message related to specifc page
        on hover -->
         <div class="tooltip">
-          <span class="material-icons"> info </span>
+          <span class="material-icons" style="font-size: 70px"> info </span>
           <span class="tooltiptext"
             >This messages depends on which page is loaded in</span
           >

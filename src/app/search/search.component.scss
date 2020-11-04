@@ -67,6 +67,7 @@
 .search-layout {
   display: flex;
   flex-direction: column;
+  margin-bottom: 40%;
 }
 .search-textfield {
   display: flex;
@@ -102,7 +103,6 @@
 
 .profile-text {
   font-size: 25;
-  font-family: "Helvetic Neue", "Courier New", Courier;
   padding: 2px;
   color: #093e86;
 }
@@ -122,4 +122,5 @@
 .profile-icon {
   display: flex;
   justify-content: center;
+  margin-bottom: 20%;
 }
