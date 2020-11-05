@@ -33,6 +33,8 @@
 
 .watch {
   color: #2699fb;
+  display: flex;
+  margin-left: 35%;
 }
 .mat-slide-toggle {
   margin: 8px 0;
@@ -63,7 +65,20 @@
 .text {
   border-color: #418bba;
   color: #707070;
+  width: 40%;
 }
 .text-back {
   color: #707070;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -10%;
+}
+.amount-people {
+  margin-bottom: 15%;
 }
