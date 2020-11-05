@@ -15,13 +15,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 2% 10% 0% 10%;
+  margin: 2% 10% 0% 12%;
 }
 .middle-column {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 2% 20% 0% 20%;
+  margin: 2% 10% 0% 10%;
 }
 .right-column {
   display: flex;
@@ -102,9 +102,7 @@
 }
 
 .profile-text {
-  font-size: 25;
-  padding: 2px;
-  color: #093e86;
+  margin-left: 40%;
 }
 
 .material-icons-up-arrow {
@@ -119,8 +117,12 @@
 .title-box {
   display: flex;
 }
+.recents-box {
+  margin-right: 10%;
+}
 .profile-icon {
   display: flex;
   justify-content: center;
   margin-bottom: 20%;
+  margin-right: 15%;
 }
