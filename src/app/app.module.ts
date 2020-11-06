@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { AppRoutingModule, routingComponents } from './app-routing.module';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatMenuModule } from '@angular/material/menu';
@@ -17,7 +18,6 @@ import { MatMenuModule } from '@angular/material/menu';
 import { AppComponent } from './app.component';
 import { TermsComponent } from './terms/terms.component';
 import { SearchComponent } from './search/search.component';
-import { PostPageComponent } from './post-page/post-page.component';
 import { RetrievePasswordComponent } from './retrieve-password/retrieve-password.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
@@ -34,7 +34,6 @@ import { FriendsActivityComponent } from './friends-activity/friends-activity.co
     routingComponents,
     TermsComponent,
     SearchComponent,
-    PostPageComponent,
     RetrievePasswordComponent,
     ProfileComponent,
     EditProfileComponent,
@@ -56,6 +55,7 @@ import { FriendsActivityComponent } from './friends-activity/friends-activity.co
     MatButtonModule,
     FlexLayoutModule,
     MatDatepickerModule,
+    MatTooltipModule,
     MatRadioModule,
     MatSlideToggleModule,
     MatMenuModule,

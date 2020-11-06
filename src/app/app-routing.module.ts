@@ -18,6 +18,7 @@ export const routingComponents = [
   HomePageComponent,
   SignupComponent,
   TermsComponent,
+  PostPageComponent,
   ProfileComponent,
 ];
 
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'login', component: HomePageComponent },
   { path: 'sign-up', component: SignupComponent },
   { path: 'terms', component: TermsComponent },
+  { path: 'post-page', component: PostPageComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'retrieve-password', component: RetrievePasswordComponent },
   { path: 'search', component: SearchComponent },
