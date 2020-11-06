@@ -24,8 +24,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 2% 10% 2% 2%;
+  margin: 5% 10% 2% 10%;
 }
+
 .middle {
   margin: 2% 15% 2% 5%;
 }
@@ -33,7 +34,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 2% 5% 2% 20%;
+  margin: 2% 5% 2% 5%;
 }
 .logo-layout-large {
   display: flex;
@@ -48,9 +49,7 @@
   color: #707070;
   border-color: #418bba;
 }
-.action-button {
-  display: flex;
-}
+
 .search-textfield {
   width: 30%;
   min-width: 15%;
@@ -70,7 +69,6 @@
 .tooltip .tooltiptext {
   display: flex;
   visibility: hidden;
-  margin: 10%;
   color: #707070;
   border-color: #418bba;
   justify-content: center;
@@ -80,26 +78,24 @@
   display: flex;
   justify-content: center;
   visibility: visible;
-  margin: 10%;
   color: #707070;
   border-color: #418bba;
 }
 .search-textfield {
   display: flex;
-  justify-content: center;
 }
 .search {
-  margin: 10%;
+  margin: 10% 10% 70% 27%;
   display: flex;
   justify-content: center;
 }
 .post {
-  margin: 10%;
+  margin: 10% 10% 60% 10%;
   display: flex;
   justify-content: center;
 }
 .profile {
-  margin: 10%;
+  margin: 5% 5% 25% 25%;
   display: flex;
   justify-content: center;
 }

@@ -11,32 +11,66 @@
       <div class="left-wall">
         <!-- Search Icon -->
         <div class="search">
-          <button mat-icon-button color="primary" class="action-button">
-            <mat-icon class="material-icons">public</mat-icon>
-            <p class="text">Search</p>
+          <button
+            mat-icon-button
+            color="primary"
+            class="action-button"
+            type="button"
+            routerLink="/search"
+            color="primary"
+            class="action-button"
+          >
+            <mat-icon class="material-icons" style="font-size: 80px"
+              >public</mat-icon
+            >
+            <p class="text" style="margin-left: -30%; margin-top: 20%">
+              Search
+            </p>
           </button>
         </div>
 
         <!-- Profile Icon -->
         <div class="profile">
-          <button mat-icon-button color="primary" class="action-button">
-            <mat-icon class="material-icons">favorite</mat-icon>
-            <span class="text">Profile</span>
+          <button
+            mat-icon-button
+            color="primary"
+            class="action-button"
+            type="button"
+            routerLink="/profile"
+            color="primary"
+            class="action-button"
+          >
+            <mat-icon class="material-icons" style="font-size: 80px"
+              >favorite</mat-icon
+            >
+            <p class="text" style="margin-left: -30%; margin-top: 20%">
+              Profile
+            </p>
           </button>
         </div>
 
         <!-- Post Icon -->
         <div class="post">
-          <button mat-icon-button color="primary" class="action-button">
-            <span class="material-icons"> add_circle </span>
-            <p class="text">Post</p>
+          <button
+            mat-icon-button
+            color="primary"
+            class="action-button"
+            type="button"
+            routerLink="/post-page"
+            color="primary"
+            class="action-button"
+          >
+            <span class="material-icons" style="font-size: 80px">
+              add_circle
+            </span>
+            <p class="text" style="margin-top: -40%">Post</p>
           </button>
         </div>
 
         <!-- Info Icon which just displays a message related to specifc page
        on hover -->
-        <div class="tooltip">
-          <span class="material-icons"> info </span>
+        <div class="tooltip" style="margin-top: 35%">
+          <span class="material-icons" style="font-size: 80px"> info </span>
           <span class="tooltiptext"
             >This messages depends on which page is loaded in</span
           >
@@ -77,7 +111,7 @@ specific posts you are viewing -->
 
     <!-- Posts box which should be a scroll view -->
     <div>
-      <textarea class="specifics-fill" rows="40" cols="40"> </textarea>
+      <textarea class="specifics-fill" rows="40" cols="70"> </textarea>
     </div>
   </div>
 </div>

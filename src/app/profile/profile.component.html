@@ -7,15 +7,33 @@
 
     <!-- Search Icon -->
     <div class="search-format">
-      <button mat-icon-button color="primary" class="action-button">
-        <mat-icon class="icon-size">public</mat-icon>
-        <p class="text-1">Search</p>
+      <button
+        mat-icon-button
+        color="primary"
+        type="button"
+        routerLink="/search"
+        class="action-button"
+      >
+        <span>
+          <mat-icon class="material-icons" style="font-size: 80px"
+            >public</mat-icon
+          >
+        </span>
+        <p class="search-text" style="margin-left: 65%; margin-top: -40%">
+          Search
+        </p>
       </button>
     </div>
     <!-- Friends Icon -->
     <div class="friends-format">
-      <button mat-raised-button class="action-button">
-        <span class="material-icons">groups </span>
+      <button
+        mat-icon-button
+        type="button"
+        routerLink="/friends-activity"
+        class="action-button"
+      >
+        <span class="material-icons" style="font-size: 80px">groups </span>
+        <p class="friends-text">Friends Activity</p>
       </button>
     </div>
     <!-- Settings menu -->
@@ -24,9 +42,13 @@
         <div class="material-icons">settings</div>
       </button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item>Change Password</button>
-        <button mat-menu-item>Edit Profile</button>
-        <button mat-menu-item>Log out</button>
+        <button mat-menu-item type="button" routerLink="/retrieve-password">
+          Change Password
+        </button>
+        <button mat-menu-item type="button" routerLink="/edit-profile">
+          Edit Profile
+        </button>
+        <button mat-menu-item type="button" routerLink="/login">Log out</button>
       </mat-menu>
     </div>
   </div>
@@ -40,12 +62,12 @@
 
       <!-- gender input text -->
       <div class="hide-input">
-        <input style="border: 0" placeholder="Male" class="text" />
+        <input style="border: 0" placeholder="Male" class="gender" />
       </div>
 
       <!-- relationship status input text -->
       <div class="hide-input">
-        <input style="border: 0" placeholder="Single" class="text" />
+        <input style="border: 0" placeholder="Single" class="relationship" />
       </div>
 
       <!-- Major/Minor -->
@@ -70,24 +92,29 @@
 
     <!-- Recent Posts text  -->
     <div class="right-side">
-      <div class="">
-        <p class="text">Recent Posts:</p>
-      </div>
-      <!-- Recent Posts box, need to add internal symbols
+      <div class="recents">
+        <div class="recent">
+          <button type="button" routerLink="/groups" class="text">
+            Recent Posts:
+          </button>
+        </div>
+        <!-- Recent Posts box, need to add internal symbols
   & activity things in box -->
-      <div class="recent-post-layout">
-        <textarea class="text" rows="10" cols="75"> </textarea>
+        <div class="recent-post-layout">
+          <textarea class="text" rows="14" cols="80"> </textarea>
+        </div>
       </div>
+      <div class="conversations">
+        <!-- Current Conversations text -->
+        <div class="current">
+          <p class="text">Current Conversations:</p>
+        </div>
 
-      <!-- Current Conversations tetx -->
-      <div>
-        <p class="text">Current Conversations:</p>
-      </div>
-
-      <!-- Current Conversations box, need to add internal symbols
+        <!-- Current Conversations box, need to add internal symbols
   & activity things in box -->
-      <div class="recent-post-layout">
-        <textarea class="text" rows="10" cols="75"> </textarea>
+        <div class="recent-post-layout">
+          <textarea class="text" rows="14" cols="80"> </textarea>
+        </div>
       </div>
     </div>
   </div>

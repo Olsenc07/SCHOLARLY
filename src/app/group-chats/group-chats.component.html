@@ -5,11 +5,11 @@ this allows more or less people to join group from the
 initial amount specified when the post was made-->
     <span class="text">
       <label for="members">Members</label>
-      <input type="number" id="steper" name="members" step="1" />
+      <input type="number" class="number" id="steper" name="members" step="1" />
     </span>
 
     <!-- members box -->
-    <textarea class="text" rows="30" cols="50"> </textarea>
+    <textarea class="text" rows="45" cols="50"> </textarea>
   </div>
   <div class="middle">
     <!-- logo -->
@@ -22,44 +22,70 @@ initial amount specified when the post was made-->
     </div>
 
     <!-- Group chat message box -->
-    <textarea class="text" rows="20" cols="70"> </textarea>
+    <textarea class="text" rows="25" cols="70"> </textarea>
   </div>
 
   <div class="right">
     <!--  smily face that keeps track of members wanting to
 join your group ONLY FOR PRIVATE ACCOUNTS  -->
     <div class="face">
-      <mat-icon class="material-icons"> insert_emoticon</mat-icon>
+      <mat-icon class="material-icons" style="font-size: 80px">
+        insert_emoticon</mat-icon
+      >
     </div>
 
     <!-- Search Icon -->
     <div class="search">
-      <button mat-icon-button color="primary" class="action-button">
-        <mat-icon class="material-icons">public</mat-icon>
-        <p class="text">Search</p>
+      <button
+        mat-icon-button
+        type="button"
+        routerLink="/search"
+        color="primary"
+        class="action-button"
+      >
+        <mat-icon class="material-icons" style="font-size: 80px"
+          >public</mat-icon
+        >
+        <p class="plain-text">Search</p>
       </button>
     </div>
 
     <!-- Profile Icon -->
     <div class="profile">
-      <button mat-icon-button color="primary" class="action-button">
-        <mat-icon class="material-icons">favorite</mat-icon>
-        <p class="text">Profile</p>
+      <button
+        mat-icon-button
+        type="button"
+        routerLink="/profile"
+        color="primary"
+        class="action-button"
+      >
+        <mat-icon class="material-icons" style="font-size: 80px"
+          >favorite</mat-icon
+        >
+        <p class="plain-text">Profile</p>
       </button>
     </div>
 
     <!-- Post Icon -->
     <div class="post">
-      <button mat-icon-button color="primary" class="action-button">
-        <div class="material-icons">add_circle_outline</div>
-        <p>post</p>
+      <button
+        mat-icon-button
+        type="button"
+        routerLink="/post-page"
+        color="primary"
+        class="action-button"
+      >
+        <div class="material-icons" style="font-size: 80px">
+          add_circle_outline
+        </div>
+        <p class="post-text">post</p>
       </button>
     </div>
 
     <!-- Info Icon which just displays a message related to specifc page
    on hover -->
-    <div class="tooltip">
-      <div class="material-icons">info</div>
+    <div class="tooltip" style="margin-top: 20%">
+      <div class="material-icons" style="font-size: 80px">info</div>
       <div class="tooltiptext">Fill in message chase</div>
     </div>
   </div>

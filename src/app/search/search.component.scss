@@ -15,19 +15,19 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 2% 10% 0% 10%;
+  margin: 2% 10% 5% 12%;
 }
 .middle-column {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 2% 20% 0% 20%;
+  margin: 2% 10% 0% 10%;
 }
 .right-column {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 2% 10% 0% 10%;
+  margin: 2% 10% 2% 10%;
 }
 .logo {
   border-radius: 50%;
@@ -67,6 +67,7 @@
 .search-layout {
   display: flex;
   flex-direction: column;
+  margin-bottom: 40%;
 }
 .search-textfield {
   display: flex;
@@ -101,25 +102,43 @@
 }
 
 .profile-text {
-  font-size: 25;
-  font-family: "Helvetic Neue", "Courier New", Courier;
-  padding: 2px;
-  color: #093e86;
+  margin-left: 45%;
 }
-
-.material-icons-up-arrow {
-  color: #2699fb;
-  padding: 2px;
+.recents-text {
+  color: #0e3379;
+  margin-left: 10%;
 }
-
 .text {
-  padding: 10% 15% 1% 5%;
+  margin-left: 55%;
   color: #0e3379;
 }
 .title-box {
   display: flex;
 }
-.profile-icon {
+.recents-box {
+  margin-right: 10%;
+}
+
+.action-button {
+  color: #2699fb;
   display: flex;
   justify-content: center;
+}
+.three-icons {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-bottom: 35%;
+  margin-top: 2%;
+}
+.friends-format {
+  margin-right: 15%;
+}
+.profile-icon {
+  margin-right: 15%;
+  margin-left: 5%;
+}
+.post {
+  margin-right: 5%;
+  margin-left: 20%;
 }

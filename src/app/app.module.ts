@@ -24,6 +24,9 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { GroupChatsComponent } from './group-chats/group-chats.component';
 import { MainPagesComponent } from './main-pages/main-pages.component';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import { SignupComponent } from './signup/signup.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { FriendsActivityComponent } from './friends-activity/friends-activity.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +39,9 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
     EditProfileComponent,
     GroupChatsComponent,
     MainPagesComponent,
+    SignupComponent,
+    HomePageComponent,
+    FriendsActivityComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +59,7 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
     MatRadioModule,
     MatSlideToggleModule,
     MatMenuModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

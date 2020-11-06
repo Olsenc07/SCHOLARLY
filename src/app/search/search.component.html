@@ -10,12 +10,20 @@
       <div class="title-box">
         <!-- Specifics text-->
         <div class="specific-text-layout">
-          <p class="text">Specific pages</p>
+          <button
+            mat-icon-button
+            type="button"
+            routerLink="/main"
+            color="primary"
+            class="action-button"
+          >
+            <p class="text">Specific pages</p>
+          </button>
         </div>
 
         <!-- categeory filter box -->
         <div class="specific-layout">
-          <textarea class="outside-input-boxs" rows="30" cols="30"> </textarea>
+          <textarea class="outside-input-boxs" rows="30" cols="35"> </textarea>
         </div>
       </div>
     </div>
@@ -37,22 +45,60 @@
 
     <!-- right -->
     <div class="right-column">
-      <!-- profile icon  -->
-      <div class="profile-icon">
-        <button mat-icon-button color="primary" class="action-button">
-          <mat-icon class="icon-size">favorite</mat-icon>
-          <p class="text-1">Profile</p>
-        </button>
+      <!--  Three Icons -->
+      <div class="three-icons">
+        <!-- Friends Icon -->
+        <div class="friends-format">
+          <button
+            mat-icon-button
+            type="button"
+            routerLink="/friends-activity"
+            class="action-button"
+          >
+            <span class="material-icons" style="font-size: 70px">groups </span>
+            <p class="friends-text">Friends Activity</p>
+          </button>
+        </div>
+        <!-- profile icon  -->
+        <div class="profile-icon">
+          <button
+            mat-icon-button
+            type="button"
+            routerLink="/profile"
+            color="primary"
+            class="action-button"
+          >
+            <mat-icon style="font-size: 70px" class="icon-size"
+              >favorite</mat-icon
+            >
+            <p class="profile-text">Profile</p>
+          </button>
+        </div>
+        <!-- Post Icon -->
+        <div class="post">
+          <button
+            mat-icon-button
+            type="button"
+            routerLink="/post-page"
+            color="primary"
+            class="action-button"
+          >
+            <div class="material-icons" style="font-size: 80px">
+              add_circle_outline
+            </div>
+            <p class="post-text">Post</p>
+          </button>
+        </div>
       </div>
-      <div class="title-box">
+      <div class="recents-box">
         <!-- Recents tetx -->
         <div>
-          <p class="text">Recents:</p>
+          <p class="recents-text">Recents:</p>
         </div>
 
         <!-- Recents box -->
         <div>
-          <textarea class="outside-input-boxs" rows="30" cols="30"> </textarea>
+          <textarea class="outside-input-boxs" rows="30" cols="35"> </textarea>
         </div>
       </div>
     </div>

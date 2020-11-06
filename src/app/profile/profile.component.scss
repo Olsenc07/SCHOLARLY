@@ -20,36 +20,33 @@
 .search-format {
   display: flex;
   flex-direction: column;
-  margin: 3% 8% 0% 10%;
+  margin: 4.85% 8% 0% 10%;
 }
 .text-1 {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-content: center;
 }
 
 .friends-format {
   display: flex;
-  margin-top: 3%;
-  margin-right: 9%;
-  margin-bottom: 9%;
+  margin: 3% 9% 9% 5%;
 }
 .settings-format {
   display: flex;
-  margin-top: 3%;
-  margin-right: 2%;
-  margin-bottom: 9%;
+  margin: 3% 2% 9% 0%;
 }
 .left-side {
   display: flex;
   flex-direction: column;
+  margin: 2% 5% 2% 10%;
 }
 .profile-pic {
   display: flex;
-  justify-content: flex-start;
-  margin: 2% 5% 1% 5%;
+  margin: 2% 5% 1% 7%;
   height: 25%;
 }
+
 .pic {
   display: flex;
   flex-direction: column;
@@ -65,7 +62,7 @@
 .major-minor-box {
   text-align: center;
   border-radius: 30px;
-  margin: 1% 0% 0% 5%;
+  margin: 1% 0% 0% 15%;
   color: #0e3379;
   width: 70%;
   height: 70%;
@@ -74,7 +71,7 @@
 .degree-sport-box {
   text-align: center;
   border-radius: 30px;
-  margin: 0% 0% 1% 5%;
+  margin: 0% 0% 1% 15%;
   color: #0e3379;
   width: 70%;
   height: 70%;
@@ -85,7 +82,7 @@
   display: flex;
   margin: 0% 15% 0% 5%;
   width: 400px;
-  height: 200px;
+  height: 150px;
 }
 .bio-input {
   width: 90%;
@@ -105,9 +102,18 @@
   display: flex;
   margin: 1% 1% 0% 4%;
   border-width: 2px;
-  border-color: rgb(32, 58, 209);
   border-radius: 10% / 50%;
   color: #0e3379;
+  background-color: rgb(235, 235, 245);
+}
+.gender {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(235, 235, 245);
+}
+.relationship {
+  display: flex;
+  justify-content: center;
   background-color: rgb(235, 235, 245);
 }
 .clear-holder {
@@ -117,6 +123,8 @@
 
 .action-button {
   color: #2699fb;
+  display: flex;
+  justify-content: center;
 }
 .bio-name-age {
   display: flex;
@@ -128,10 +136,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 0% 10% 2% 5%;
 }
 .hide-input {
+  justify-content: center;
   display: flex;
-  margin: 1% 10% 0% 9.5%;
+  margin: 2% 2% 2% 40%;
   border-radius: 10% / 50%;
   width: 40px;
   height: 20px;
@@ -146,4 +156,21 @@
 .main-content {
   justify-content: center;
   display: flex;
+  flex-direction: row;
+}
+.recents {
+  margin: 2% 5% 0% 5%;
+}
+.conversations {
+  margin: 2% 5% 15% 5%;
+}
+.groups {
+  width: 50px;
+  height: 50px;
+}
+.recent {
+  margin-left: 15%;
+}
+.current {
+  margin-left: 15%;
 }

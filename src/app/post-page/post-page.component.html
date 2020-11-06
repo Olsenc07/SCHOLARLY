@@ -20,39 +20,88 @@
           <input matInput type="" placeholder="" />
         </mat-form-field>
       </div>
-    </div>
-    <!-- Clock icon -->
-    <div class="watch">
-      <mat-icon>watch_later</mat-icon>
-    </div>
+      <!-- New Box -->
+      <div class="row">
+        <div style="margin-right: 5%">
+          <textarea class="post" rows="7" cols="50"> </textarea>
+        </div>
+        <!-- New New Box -->
+        <div class="column">
+          <div class="row">
+            <!-- Clock icon -->
+            <div style="margin-right: 30%">
+              <div class="watch">
+                <mat-icon>watch_later</mat-icon>
+              </div>
 
-    <!-- text -->
-    <div>
-      <p class="text">Time of event</p>
-    </div>
+              <!-- text -->
+              <div>
+                <p class="text" style="width: 95px">Plan The Event</p>
+              </div>
+            </div>
+            <!-- amount of people stepper -->
+            <div class="column">
+              <div class="amount-people">
+                <label for="points">Amount of people</label>
+                <input type="number" id="steper" name="points" step="1" />
+              </div>
 
-    <!-- Choosing date of event range  -->
-    <input matInput [matDatepicker]="picker" />
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-    <!-- tag friends -->
-    <span>
-      <mat-form-field class="search-textfield">
-        <span class="material-icons-search"> </span>
-        <mat-label>Tag friends:</mat-label>
-        <input
-          matInput
-          type="tag friends"
-          placeholder=""
-          value=""
-        /> </mat-form-field
-    ></span>
-    <!-- back button -->
-    <div>
-      <button mat-flat-button class="text-back">Back</button>
-    </div>
+              <!-- Age range input -->
+              <p class="row" name="max&min">
+                <label for="max&min">Age Range</label>
+                <span class="min-box">
+                  <input
+                    type="number"
+                    min="0"
+                    max="100"
+                    step="1"
+                    placeholder="Min:"
+                  />
+                </span>
+                <span class="max-box">
+                  <input
+                    type="number"
+                    min="0"
+                    max="100"
+                    step="1"
+                    placeholder="Max:"
+                  />
+                </span>
+              </p>
+            </div>
+          </div>
 
-    <!-- text and sliders and hover over i -->
+          <!-- Choosing date of event range  -->
+          <input matInput [matDatepicker]="picker" />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <!-- Newest Box -->
+          <div class="row">
+            <!-- tag friends -->
+            <span style="margin-right: 5%">
+              <mat-form-field class="search-textfield">
+                <span class="material-icons-search"> </span>
+                <mat-label>Tag friends:</mat-label>
+                <input
+                  matInput
+                  type="tag friends"
+                  placeholder=""
+                  value=""
+                /> </mat-form-field
+            ></span>
+          </div>
+        </div>
+      </div>
+      <!-- back button -->
+      <div>
+        <button mat-flat-button class="text-back">Back</button>
+      </div>
+
+      <!-- text and sliders and hover over i -->
+    </div>
   </div>
   <!-- right -->
   <div class="right">
@@ -74,7 +123,7 @@
       <div class="tooltip">
         <span class="material-icons"> info </span>
         <span class="tooltiptext"
-          >Members are expected to act with a level of professionalism
+          >Members are expected to act with a level of professionalism.
         </span>
       </div>
     </mat-slide-toggle>
@@ -83,29 +132,11 @@
       >Relaxed event
       <div class="tooltip">
         <span class="material-icons"> info </span>
-        <span class="tooltiptext">
-          Members are able satisfy their amusements
-        </span>
+        <span class="tooltiptext"> This is not a proffesional event. </span>
       </div>
     </mat-slide-toggle>
     <!-- </form> -->
 
-    <!-- amount of people stepper -->
-    <div>
-      <label for="points">Amount of people</label>
-      <input type="number" id="steper" name="points" step="1" />
-    </div>
-
-    <!-- Age range input -->
-    <p name="max&min">
-      <label for="max&min">Age Range</label>
-      <span class="min-box">
-        <input type="number" min="0" max="100" step="1" placeholder="Min:" />
-      </span>
-      <span class="max-box">
-        <input type="number" min="0" max="100" step="1" placeholder="Max:" />
-      </span>
-    </p>
     <!-- search -->
     <span>
       <mat-form-field class="search-textfield">
