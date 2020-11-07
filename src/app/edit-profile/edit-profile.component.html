@@ -34,7 +34,14 @@
             autocomplete="on"
             placeholder="Major/Minor:"
           />
-          <button mat-button matSuffix mat-icon-button aria-label="Clear">
+          <button
+            mat-button
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            type="button"
+            (click)="clearMajor()"
+          >
             <mat-icon class="clear-button">close</mat-icon>
           </button>
         </mat-form-field>
@@ -48,7 +55,14 @@
             autocomplete="on"
             placeholder="Sport/Club:"
           />
-          <button mat-button matSuffix mat-icon-button aria-label="Clear">
+          <button
+            mat-button
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            type="button"
+            (click)="clearSport()"
+          >
             <mat-icon class="clear-button">close</mat-icon>
           </button>
         </mat-form-field>
@@ -97,7 +111,14 @@
             autocomplete="on"
             placeholder="Full Name:"
           />
-          <button mat-button matSuffix mat-icon-button aria-label="Clear">
+          <button
+            mat-button
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            type="button"
+            (click)="clearName()"
+          >
             <mat-icon class="clear-button">close</mat-icon>
           </button>
         </mat-form-field>
@@ -120,7 +141,13 @@
         <!-- Text FieldGender: -->
         <mat-form-field class="text-field-gender"
           ><mat-label>Gender</mat-label>
-          <input matInput autocomplete="on" placeholder="Gender:" />
+          <input
+            matInput
+            autocomplete="on"
+            placeholder="Gender:"
+            type="button"
+            (click)="clearGender()"
+          />
           <button mat-button matSuffix mat-icon-button aria-label="Clear">
             <mat-icon class="clear-button">close</mat-icon>
           </button>
@@ -135,7 +162,14 @@
             autocomplete="on"
             placeholder="Relationship Status:"
           />
-          <button mat-button matSuffix mat-icon-button aria-label="Clear">
+          <button
+            mat-button
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            type="button"
+            (click)="clearRelationship()"
+          >
             <mat-icon class="clear-button">close</mat-icon>
           </button>
         </mat-form-field>

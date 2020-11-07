@@ -16,6 +16,7 @@
                 formControlName="username"
                 placeholder="Username"
                 required
+                autocomplete="on"
               />
 
               <button
@@ -41,6 +42,7 @@
                 minlength="8"
                 required
                 formControlName="password"
+                autocomplete="on"
               />
               <button
                 mat-button
@@ -65,6 +67,7 @@
                 minlength="8"
                 required
                 formControlName="password"
+                autocomplete="on"
               />
               <button
                 mat-button
@@ -86,6 +89,7 @@
                 placeholder="Major/Minor"
                 formControlName="major"
                 required
+                autocomplete="on"
               />
               <button
                 mat-button
@@ -107,6 +111,7 @@
                 placeholder="Sport/Club"
                 formControlName="sport"
                 required
+                autocomplete="on"
               />
               <button
                 mat-button
@@ -163,6 +168,7 @@
                 placeholder="Full Name"
                 formControlName="name"
                 required
+                autocomplete="on"
               />
               <button
                 mat-button
@@ -180,7 +186,12 @@
           <p class="asthetic-adds">Birthday:</p>
 
           <!-- Birthday Date Picker -->
-          <input matInput [matDatepicker]="picker" formControlName="birthday" />
+          <input
+            matInput
+            [matDatepicker]="picker"
+            formControlName="birthday"
+            autocomplete="on"
+          />
           <mat-datepicker-toggle
             matSuffix
             [for]="picker"
@@ -190,7 +201,12 @@
           <!-- Text FieldGender: -->
           <div class="gender-layout">
             <mat-form-field class="asthetic-adds">
-              <input matInput placeholder="Gender" formControlName="gender" />
+              <input
+                matInput
+                placeholder="Gender"
+                formControlName="gender"
+                autocomplete="on"
+              />
               <button
                 mat-button
                 matSuffix
@@ -211,6 +227,7 @@
                 placeholder="Relationship Status"
                 formControlName="relationship"
                 required
+                autocomplete="on"
               />
               <button
                 mat-button
