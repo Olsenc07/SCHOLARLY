@@ -18,7 +18,14 @@
                 required
               />
 
-              <button mat-button matSuffix mat-icon-button aria-label="Clear">
+              <button
+                mat-button
+                matSuffix
+                mat-icon-button
+                aria-label="Clear"
+                type="button"
+                (click)="clearUsername()"
+              >
                 <mat-icon>close</mat-icon>
               </button>
             </mat-form-field>
@@ -41,6 +48,8 @@
                 mat-icon-button
                 color="primary"
                 aria-label="Clear"
+                type="button"
+                (click)="clearPassword()"
               >
                 <mat-icon>close</mat-icon>
               </button>
@@ -57,7 +66,14 @@
                 required
                 formControlName="password"
               />
-              <button mat-button matSuffix mat-icon-button aria-label="Clear">
+              <button
+                mat-button
+                matSuffix
+                mat-icon-button
+                aria-label="Clear"
+                type="button"
+                (click)="clearPassword()"
+              >
                 <mat-icon class="asthetic-adds">close</mat-icon>
               </button>
             </mat-form-field>
@@ -71,7 +87,14 @@
                 formControlName="major"
                 required
               />
-              <button mat-button matSuffix mat-icon-button aria-label="Clear">
+              <button
+                mat-button
+                matSuffix
+                mat-icon-button
+                aria-label="Clear"
+                type="button"
+                (click)="clearMajor()"
+              >
                 <mat-icon class="asthetic-adds">close</mat-icon>
               </button>
             </mat-form-field>
@@ -85,7 +108,14 @@
                 formControlName="sport"
                 required
               />
-              <button mat-button matSuffix mat-icon-button aria-label="Clear">
+              <button
+                mat-button
+                matSuffix
+                mat-icon-button
+                aria-label="Clear"
+                type="button"
+                (click)="clearSport()"
+              >
                 <mat-icon class="asthetic-adds">close</mat-icon>
               </button>
             </mat-form-field>
@@ -134,7 +164,14 @@
                 formControlName="name"
                 required
               />
-              <button mat-button matSuffix mat-icon-button aria-label="Clear">
+              <button
+                mat-button
+                matSuffix
+                mat-icon-button
+                aria-label="Clear"
+                type="button"
+                (click)="clearName()"
+              >
                 <mat-icon class="asthetic-adds">close</mat-icon>
               </button>
             </mat-form-field>
@@ -154,7 +191,14 @@
           <div class="gender-layout">
             <mat-form-field class="asthetic-adds">
               <input matInput placeholder="Gender" formControlName="gender" />
-              <button mat-button matSuffix mat-icon-button aria-label="Clear">
+              <button
+                mat-button
+                matSuffix
+                mat-icon-button
+                aria-label="Clear"
+                type="button"
+                (click)="clearGender()"
+              >
                 <mat-icon class="asthetic-adds">close</mat-icon>
               </button>
             </mat-form-field>
@@ -168,7 +212,14 @@
                 formControlName="relationship"
                 required
               />
-              <button mat-button matSuffix mat-icon-button aria-label="Clear">
+              <button
+                mat-button
+                matSuffix
+                mat-icon-button
+                aria-label="Clear"
+                type="button"
+                (click)="clearRelationship()"
+              >
                 <mat-icon class="asthetic-adds">close</mat-icon>
               </button>
             </mat-form-field>
