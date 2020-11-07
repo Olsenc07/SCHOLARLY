@@ -20,6 +20,7 @@ export const routingComponents = [
   TermsComponent,
   PostPageComponent,
   ProfileComponent,
+  EditProfileComponent,
 ];
 
 const routes: Routes = [
