@@ -7,3 +7,44 @@
   left: 0;
   right: 0;
 }
+
+$box-shadow-color: rgba(0, 0, 0, 0.25);
+
+.root-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.header {
+  position: fixed;
+  z-index: 2;
+  box-shadow: 0px 2px 5px 0px $box-shadow-color;
+  height: 64px;
+}
+
+.main-content {
+  padding: 72px 24px 16px;
+}
+
+.title {
+  padding-left: 16px;
+}
+
+h4:focus {
+  outline: none;
+  border: 0;
+  padding-left: 16px;
+}
+
+.route-active {
+  background-color: blue !important;
+}
+
+.fill-space {
+  flex: 1 1 auto;
+}

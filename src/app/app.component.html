@@ -3,3 +3,21 @@
   <router-outlet>
   </router-outlet>
 </div>
+
+
+<div class="root-container">
+  <mat-toolbar class="header" color="primary">
+      <span class="title">Scholarly</span>
+      <span class="fill-space"></span>
+      <button mat-icon-button type="button">
+          <mat-icon>settings</mat-icon>
+      </button>
+      <button mat-icon-button type="button">
+          <mat-icon>exit_to_app</mat-icon>
+      </button>
+  </mat-toolbar>
+
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
