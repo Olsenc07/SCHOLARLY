@@ -13,7 +13,7 @@ import { SearchComponent } from './search/search.component';
 import { SignupComponent } from './signup/signup.component';
 import { TermsComponent } from './terms/terms.component';
 import { MainPagesComponent } from './main-pages/main-pages.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 export const routingComponents = [

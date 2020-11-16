@@ -14,7 +14,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatMenuModule } from '@angular/material/menu';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 import { AppComponent } from './app.component';
 import { TermsComponent } from './terms/terms.component';
@@ -61,8 +62,9 @@ import { FriendsActivityComponent } from './friends-activity/friends-activity.co
     MatSlideToggleModule,
     MatMenuModule,
     ReactiveFormsModule,
-    FontAwesomeModule,
+    // FontAwesomeModule,
   ],
+
   providers: [],
   bootstrap: [AppComponent],
 })
