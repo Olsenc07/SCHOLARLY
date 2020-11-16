@@ -30,21 +30,21 @@
 
 .friends-format {
   display: flex;
-  margin: 3% 9% 9% 5%;
+  margin: 3% 9% 1% 5%;
 }
 .settings-format {
   display: flex;
-  margin: 3% 2% 9% 0%;
+  margin: 3% 2% 1% 0%;
 }
 .left-side {
   display: flex;
   flex-direction: column;
-  margin: 2% 2% 2% 10%;
+  margin: 2% 2% 2% 5%;
 }
 .middle {
   display: flex;
   flex-direction: column;
-  margin: 2% 3% 2% 1%;
+  margin: 2% 1% 2% 1%;
 }
 .profile-pic {
   display: flex;
@@ -141,7 +141,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0% 10% 8% 5%;
+  margin: 0% 10% 8% 1%;
 }
 .hide-input {
   justify-content: center;
@@ -155,7 +155,7 @@
   display: flex;
   flex-direction: column;
   margin: 0% 7% 0% 7%;
-  width: 300px;
+  width: 400px;
 }
 
 .main-content {
