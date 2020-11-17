@@ -11,12 +11,7 @@
   display: flex;
   flex-direction: row;
 }
-.logo-layout {
-  display: flex;
-  justify-content: flex-start;
-  margin: -2% 20% 0% -5%;
-  border-radius: 10% / 50%;
-}
+
 .search-format {
   display: flex;
   flex-direction: column;
@@ -39,7 +34,7 @@
 .left-side {
   display: flex;
   flex-direction: column;
-  margin: 2% 2% 2% 5%;
+  margin: 2% 2% 2% 1%;
 }
 .middle {
   display: flex;
@@ -141,7 +136,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: -2% 10% 8% 1%;
+  margin: 2% 10% 8% 1%;
 }
 .hide-input {
   justify-content: center;
