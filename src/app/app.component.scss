@@ -33,11 +33,16 @@ $box-shadow-color: rgba(0, 0, 0, 0.25);
 .toolbar-logo {
   height: inherit;
 }
-
+.search-center {
+  display: flex;
+  margin-right: 25%;
+}
 .main-content {
   padding: 72px 24px 16px;
 }
-
+.material-icons {
+  color: white;
+}
 h4:focus {
   outline: none;
   border: 0;

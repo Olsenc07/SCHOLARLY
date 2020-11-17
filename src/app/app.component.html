@@ -1,4 +1,4 @@
-
+<form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
 <div class="root-container" >
   <router-outlet>
   </router-outlet>
@@ -9,6 +9,26 @@
   <mat-toolbar class="header" color="primary">
       <img class="toolbar-logo" Src="../assets/Pics/ProperInAppLogo.jpeg" />
       <span class="fill-space"></span>
+
+      <div class="search-center">
+      <mat-form-field class="search-textfield">
+        <mat-label><span class="material-icons"> search </span> </mat-label>
+        <input matInput type="search" placeholder="Search:" formControlName="search" autocomplete="on"/>
+        <button
+        color="primary"
+        mat-button
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        type="button"
+        (click)="clearSearch()"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+      </mat-form-field>
+    </div>
+
+      
       <button mat-icon-button type="button" routerLink="/search">
         <mat-icon>public</mat-icon>
       </button>
@@ -41,3 +61,4 @@
     <router-outlet></router-outlet>
   </div>
 </div>
+</form>
