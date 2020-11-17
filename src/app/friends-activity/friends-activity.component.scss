@@ -3,12 +3,6 @@
   flex-direction: row;
 }
 
-.left-column {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin: 2% 5% 2% 5%;
-}
 .logo {
   border-radius: 50%;
 }
@@ -23,11 +17,20 @@
   justify-content: center;
   flex-direction: column;
 }
+.left-column {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 2% 5% 2% 3%;
+}
 .middle {
   display: flex;
   justify-content: center;
   flex-direction: column;
   margin: 2% 2% 2% 2%;
+}
+.middle-middle {
+  margin: 11% 2% 4% 4%;
 }
 .right {
   display: flex;
