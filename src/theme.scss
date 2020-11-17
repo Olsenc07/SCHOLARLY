@@ -4,9 +4,9 @@
 // logo primary hex: #11173a
 
 // Colors chosen using: https://material.io/tools/color/#!/?view.left=0&view.right=0
-// - Primary: #11173a (from main logo)
-// - Secondary: #42a5f5
-// - Warning: #ec4344
+$primary: #11173a; // from main logo
+$secondary: #42a5f5;
+$warning: #ec4344;
 
 // Palette generated with: http://mcg.mbitson.com/#!?mcgpalette0=%2311173a&themename=mcgtheme
 
@@ -110,10 +110,10 @@ $app-warning: (
 );
 
 $custom-primary: mat-palette($app-primary);
-$custom-accent: mat-palette($app-secondary, A500, A200, A700);
+$custom-accent: mat-palette($app-secondary);
 $custom-warn: mat-palette($app-warning);
 
-$custom-app-theme: mat-dark-theme(
+$custom-app-theme: mat-light-theme(
   $custom-primary,
   $custom-accent,
   $custom-warn
