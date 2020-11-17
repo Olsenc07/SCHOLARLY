@@ -1,72 +1,14 @@
+<form [formGroup]="mainForm" (ngSubmit)="onSubmit()">
 <!-- Entire page -->
 <div class="entire-page">
   <!-- Left side -->
   <div class="left">
-    <!--main logo  -->
-    <div class="logo-layout-large">
-      <img Src="../../assets/Pics/ProperInAppLogo.jpeg" class="logo-layout" />
-    </div>
+    
     <div class="left-middle">
       <!-- Left wall -->
       <div class="left-wall">
-        <!-- Search Icon -->
-        <div class="search">
-          <button
-            mat-icon-button
-            color="primary"
-            class="action-button"
-            type="button"
-            routerLink="/search"
-            color="primary"
-            class="action-button"
-          >
-            <mat-icon class="material-icons" style="font-size: 80px"
-              >public</mat-icon
-            >
-            <p class="text" style="margin-left: -30%; margin-top: 20%">
-              Search
-            </p>
-          </button>
-        </div>
-
-        <!-- Profile Icon -->
-        <div class="profile">
-          <button
-            mat-icon-button
-            color="primary"
-            class="action-button"
-            type="button"
-            routerLink="/profile"
-            color="primary"
-            class="action-button"
-          >
-            <mat-icon class="material-icons" style="font-size: 80px"
-              >favorite</mat-icon
-            >
-            <p class="text" style="margin-left: -30%; margin-top: 20%">
-              Profile
-            </p>
-          </button>
-        </div>
-
-        <!-- Post Icon -->
-        <div class="post">
-          <button
-            mat-icon-button
-            color="primary"
-            class="action-button"
-            type="button"
-            routerLink="/post-page"
-            color="primary"
-            class="action-button"
-          >
-            <span class="material-icons" style="font-size: 80px">
-              add_circle
-            </span>
-            <p class="text" style="margin-top: -40%">Post</p>
-          </button>
-        </div>
-
+      
+        
         <!-- Info Icon which just displays a message related to specifc page
        on hover -->
         <div class="tooltip" style="margin-top: 35%">
@@ -99,7 +41,19 @@ on which main category page your on-->
       <mat-form-field class="search-textfield">
         <span class="material-icons-search"> </span>
         <mat-label><span class="material-icons"> search </span></mat-label>
-        <input matInput type="search" placeholder="Search:" /> </mat-form-field
+        <input matInput type="search" placeholder="Search:" formControlName="main" autocomplete="on"/> 
+        
+        <button
+              color="primary"
+              mat-button
+              matSuffix
+              mat-icon-button
+              aria-label="Clear"
+              type="button"
+              (click)="clearMain()"
+            >
+              <mat-icon>close</mat-icon>
+            </button></mat-form-field
     ></span>
     <!-- posts text -->
     <div>
@@ -111,7 +65,8 @@ specific posts you are viewing -->
 
     <!-- Posts box which should be a scroll view -->
     <div>
-      <textarea class="specifics-fill" rows="40" cols="70"> </textarea>
+      <textarea class="specifics-fill" rows="30" cols="50"> </textarea>
     </div>
   </div>
 </div>
+</form>

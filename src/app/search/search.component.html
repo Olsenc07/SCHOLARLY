@@ -1,3 +1,4 @@
+<form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
 <div class="entire-page">
   <!-- Entire page -->
   <div class="main-layout">
@@ -35,7 +36,18 @@
         <div class="search-layout">
           <mat-form-field class="search-textfield">
             <mat-label><span class="material-icons"> search </span> </mat-label>
-            <input matInput type="search" placeholder="Search:" />
+            <input matInput type="search" placeholder="Search:" formControlName="search" autocomplete="on"/>
+            <button
+            color="primary"
+            mat-button
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            type="button"
+            (click)="clearSearch()"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
           </mat-form-field>
         </div>
       </div>
@@ -60,3 +72,4 @@
     </div>
   </div>
 </div>
+</form>
