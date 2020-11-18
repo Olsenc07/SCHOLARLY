@@ -1,25 +1,25 @@
 <form [formGroup]="mainForm" (ngSubmit)="onSubmit()">
 <!-- Entire page -->
 <div class="entire-page">
-  <!-- Left side -->
-  <div class="left">
+<!-- Left Side -->
+<div class="left">
+  <textarea class="left-input" rows="48" cols="20"> </textarea>
+</div>
+  <!-- Middle -->
+  <div class="middle-large">
     
-    <div class="left-middle">
-      <!-- Left wall -->
-      <div class="left-wall">
+    <div class="middle-middle">
       
-        
-        <!-- Info Icon which just displays a message related to specifc page
-       on hover -->
-        <div class="tooltip" style="margin-top: 35%">
-          <span class="material-icons" style="font-size: 80px"> info </span>
-          <span class="tooltiptext"
-            >This messages depends on which page is loaded in</span
-          >
-        </div>
-      </div>
       <!-- middle ish -->
       <div class="middle">
+        <!-- Search Bar -->
+          
+<form class="search" >
+  <input type="text" 
+   class="search-input" placeholder="Search.." name="search">
+  <button type="submit"><span class="material-icons">search</span></button>
+ 
+</form>
         <!-- Specifics text -->
         <p class="text">Specifics: <input placeholder="" class="text" /></p>
 
@@ -36,25 +36,8 @@ on which main category page your on-->
   </div>
   <!-- Right wall -->
   <div class="right-wall">
-    <!-- Search bar -->
-    <span>
-      <mat-form-field class="search-textfield">
-        <span class="material-icons-search"> </span>
-        <mat-label><span class="material-icons"> search </span></mat-label>
-        <input matInput type="search" placeholder="Search:" formControlName="main" autocomplete="on"/> 
-        
-        <button
-              color="primary"
-              mat-button
-              matSuffix
-              mat-icon-button
-              aria-label="Clear"
-              type="button"
-              (click)="clearMain()"
-            >
-              <mat-icon>close</mat-icon>
-            </button></mat-form-field
-    ></span>
+    
+
     <!-- posts text -->
     <div>
       <p class="text">Posts: <input placeholder="" class="text" /></p>
@@ -65,8 +48,19 @@ specific posts you are viewing -->
 
     <!-- Posts box which should be a scroll view -->
     <div>
-      <textarea class="specifics-fill" rows="30" cols="50"> </textarea>
+      <textarea class="specifics-fill" rows="40" cols="50"> </textarea>
     </div>
   </div>
 </div>
 </form>
+
+
+
+ <!-- Info Icon which just displays a message related to specifc page
+       on hover -->
+<!--  <div class="tooltip" style="margin-top: 35%">
+    <span class="material-icons" style="font-size: 40px"> info </span>
+    <span class="tooltiptext"
+      >This messages depends on which page is loaded in</span
+    >
+  </div> -->
