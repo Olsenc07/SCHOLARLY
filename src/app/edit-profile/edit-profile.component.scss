@@ -14,12 +14,12 @@
 .left-column {
   display: flex;
   flex-direction: column;
-  margin: 2% 15% 2% 15%;
+  margin: 1% 15% 2% 15%;
 }
 .right-column {
   display: flex;
   flex-direction: column;
-  margin: 2% 10% 2% 15%;
+  margin: 2% 10% 2% 20%;
 }
 .private-public {
   display: flex;
@@ -31,7 +31,7 @@
 }
 .pic {
   border-radius: 50%;
-  width: 70%;
+  width: 90%;
   height: 100%;
 }
 
@@ -40,7 +40,7 @@
 }
 
 .bio-box {
-  padding: 16px;
+  padding: 25px;
   border: 1px solid gray;
   border-radius: 16px;
 }
