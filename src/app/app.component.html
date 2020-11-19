@@ -10,9 +10,11 @@
       <img class="toolbar-logo" Src="../assets/Pics/ProperInAppLogo.jpeg" />
       <span class="fill-space"></span>
 
-      
-
-      
+      <!-- New -->
+      <div class="search-box"><i class="fa fa-search search-box__icon"></i>
+        <input class="search-box__input" placeholder="Search.."/>
+      </div>
+      <!-- End -->
       <button mat-icon-button type="button" routerLink="/search">
         <mat-icon>public</mat-icon>
       </button>
@@ -22,23 +24,23 @@
       <button mat-icon-button type="button" routerLink="/profile">
           <mat-icon>account_circle</mat-icon>
       </button>
-      <button mat-icon-button type="button" routerLink="/post-page">
-      <mat-icon>add_circle</mat-icon>
+      <button mat-icon-button type="button" routerLink="/post-page" >
+      <mat-icon >add_circle</mat-icon>
       </button>
       <button mat-icon-button [matMenuTriggerFor]="settingsMenu" type="button">
-          <mat-icon>settings</mat-icon>
+          <mat-icon class="settings">settings</mat-icon>
       </button>
   </mat-toolbar>
 
   
   <mat-menu #settingsMenu="matMenu">
-    <button mat-menu-item type="button" routerLink="/retrieve-password">
+    <button mat-menu-item type="button" routerLink="/retrieve-password" style="background-color: #4568e8;">
       Change Password
     </button>
-    <button mat-menu-item type="button" routerLink="/edit-profile">
+    <button mat-menu-item type="button" routerLink="/edit-profile" style="background-color: #69a1da;">
       Edit Profile
     </button>
-    <button mat-menu-item type="button" routerLink="/login">Log Out</button> <!-- TODO: wire up log out button -->
+    <button mat-menu-item type="button" routerLink="/login" style="background-color: #d4d7f1;">Log Out</button> <!-- TODO: wire up log out button -->
   </mat-menu>
 
   <div class="main-content">
