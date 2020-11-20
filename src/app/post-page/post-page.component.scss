@@ -11,17 +11,24 @@
 .left {
   display: flex;
   flex-direction: column;
-  margin: 5%;
+  margin: 5% 9% 5% 5%;
 }
 .right {
   display: flex;
   flex-direction: column;
-  margin: 1% 5% 5% 5%;
+  margin: 7% 5% 5% 5%;
 }
-.logo {
-  border-radius: 50%;
+.middle {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: 3%;
 }
-
+.sliders {
+  display: flex;
+  flex-direction: column;
+  margin-left: 4%;
+}
 .text-input {
   width: 75%;
   margin-top: 5%;
@@ -81,4 +88,7 @@
 }
 .amount-people {
   margin-bottom: 15%;
+}
+.back-button {
+  margin-top: 15%;
 }

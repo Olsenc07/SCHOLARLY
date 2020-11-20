@@ -1,11 +1,6 @@
 <div class="entire-page">
   <!-- left -->
   <div class="left">
-    <!--main logo  -->
-    <div class="logo">
-      <img Src="../../assets/Pics/ProperInAppLogo.jpeg" class="logo" />
-    </div>
-
     <!-- Title of post input -->
     <div>
       <mat-form-field class="text-input"
@@ -16,118 +11,89 @@
       <!-- Description input -->
       <div>
         <mat-form-field class="description-input"
-          ><mat-label>Description of post.. Also add ability to uplaod video/pic</mat-label>
+          ><mat-label>Description of post.. </mat-label>
           <input matInput type="" placeholder="" />
         </mat-form-field>
       </div>
       <!-- New Box -->
-      <div class="row">
+      <div class="column">
         <div style="margin-right: 5%">
-          <textarea class="post" rows="7" cols="50"> </textarea>
+          <textarea class="post" rows="7" cols="40" style="width: 400px"> </textarea>
         </div>
-        <!-- New New Box -->
-        <div class="column">
-          
-            <!-- amount of people stepper -->
-            <div class="column">
-              <div class="amount-people">
-                <label for="points">Amount of people</label>
-                <input type="number" id="steper" name="points" step="1" />
-              </div>
-
-              <!-- Age range input -->
-              <p class="row" name="max&min">
-                <label for="max&min">Age Range</label>
-                <span class="min-box">
-                  <input
-                    type="number"
-                    min="0"
-                    max="100"
-                    step="1"
-                    placeholder="Min:"
-                  />
-                </span>
-                <span class="max-box">
-                  <input
-                    type="number"
-                    min="0"
-                    max="100"
-                    step="1"
-                    placeholder="Max:"
-                  />
-                </span>
-              </p>
-            </div>
-          
-
-          <!-- Choosing date of event range  -->
-          <input matInput [matDatepicker]="picker" />
-          <mat-datepicker-toggle
-            matSuffix
-            [for]="picker"
-          ></mat-datepicker-toggle>
-          <mat-datepicker #picker></mat-datepicker>
-          <!-- Newest Box -->
-          <div class="row">
-            <!-- tag friends -->
-            <span style="margin-right: 5%">
-              <mat-form-field class="search-textfield">
-                <span class="material-icons-search"> </span>
-                <mat-label>Tag friends:</mat-label>
-                <input
-                  matInput
-                  type="tag friends"
-                  placeholder=""
-                  value=""
-                /> </mat-form-field
-            ></span>
-          </div>
+        <!-- Upload pic/video -->
+        <div class="post-pic/video">
+          <textarea class="text" rows="17" cols="40" style="width: 400px">  Add ability to uplaod video/pic</textarea>
         </div>
+        
       </div>
+    </div>
       <!-- back button -->
-      <div>
+      <div class="back-button">
         <button mat-flat-button class="text-back">Back</button>
       </div>
-
-      <!-- text and sliders and hover over i -->
-    </div>
   </div>
+
+  <!-- Middle -->
+  <!-- New New Box -->
+  <div class="middle">
+    <!-- amount of people stepper -->
+    <div class="column">
+      <div class="amount-people">
+        <label for="points">Amount of people</label>
+        <input type="number" id="steper" name="points" step="1" />
+      </div>
+
+      <!-- Age range input -->
+      <p class="row" name="max&min">
+        <label for="max&min">Age Range</label>
+        <span class="min-box">
+          <input
+            type="number"
+            min="0"
+            max="100"
+            step="1"
+            placeholder="Min:"
+          />
+        </span>
+        <span class="max-box">
+          <input
+            type="number"
+            min="0"
+            max="100"
+            step="1"
+            placeholder="Max:"
+          />
+        </span>
+      </p>
+    </div>
+  
+
+  <!-- Choosing date of event range  -->
+  <mat-form-field appearance="fill">
+    <mat-label>Choose a date:</mat-label>
+    <input matInput [matDatepicker]="dp" [formControl]="date">
+    <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+    <mat-datepicker #dp></mat-datepicker>
+  </mat-form-field>
+  <!-- Newest Box -->
+  <div class="row">
+    <!-- tag friends -->
+    <span style="margin-right: 5%">
+      <mat-form-field class="search-textfield">
+        <span class="material-icons-search"> </span>
+        <mat-label>Tag friends:</mat-label>
+        <input
+          matInput
+          type="tag friends"
+          placeholder=""
+          value=""
+        /> </mat-form-field
+    ></span>
+  </div>
+</div>
   <!-- right -->
   <div class="right">
-    <mat-slide-toggle ngModel value="primary" name="driving"
-      >Able to drive members</mat-slide-toggle
-    >
-    <mat-slide-toggle ngModel value="primary" name="driving"
-      >Service involving payment</mat-slide-toggle
-    >
-    <mat-slide-toggle ngModel value="primary" name="males" required
-      >Males</mat-slide-toggle
-    >
-    <mat-slide-toggle ngModel value="primary" name="females" required
-      >Females</mat-slide-toggle
-    >
-    <!-- Have all select both male and female -->
-    <mat-slide-toggle ngModel value="primary" name="males" required
-      >All</mat-slide-toggle
-    >
-
-    <mat-slide-toggle ngModel value="primary" name="males" required
-      >Formal event
-      <div class="tooltip">
-        <span class="material-icons"> info </span>
-        <span class="tooltiptext"
-          >Members are expected to act with a level of professionalism.
-        </span>
-      </div>
-    </mat-slide-toggle>
-
-    <mat-slide-toggle ngModel value="primary" name="males" required
-      >Relaxed event
-      <div class="tooltip">
-        <span class="material-icons"> info </span>
-        <span class="tooltiptext"> This is not a proffesional event. </span>
-      </div>
-    </mat-slide-toggle>
+    
     <!-- </form> -->
 
     <!-- search -->
@@ -137,10 +103,54 @@
         <mat-label><span class="material-icons"> search </span></mat-label>
         <input matInput type="search" placeholder="Search:" /> </mat-form-field
     ></span>
+    <!-- Box -->
+    <div class="row">
     <!-- specifics box -->
     <div>
       <textarea class="outside-input-boxs" rows="20" cols="30"> </textarea>
     </div>
+
+
+    <div class="sliders">
+      <mat-slide-toggle ngModel value="primary" name="driving"
+        >Able to drive members</mat-slide-toggle
+      >
+      <mat-slide-toggle ngModel value="primary" name="driving"
+        >Service involving payment</mat-slide-toggle
+      >
+      <mat-slide-toggle ngModel value="primary" name="males" required
+        >Males</mat-slide-toggle
+      >
+      <mat-slide-toggle ngModel value="primary" name="females" required
+        >Females</mat-slide-toggle
+      >
+      <!-- Have all select both male and female -->
+      <mat-slide-toggle ngModel value="primary" name="males" required
+        >All</mat-slide-toggle
+      >
+  
+      <mat-slide-toggle ngModel value="primary" name="males" required
+        >Formal event
+        <div class="tooltip">
+          <span class="material-icons"> info </span>
+          <span class="tooltiptext"
+            >Members are expected to act with a level of professionalism.
+          </span>
+        </div>
+      </mat-slide-toggle>
+  
+      <mat-slide-toggle ngModel value="primary" name="males" required
+        >Relaxed event
+        <div class="tooltip">
+          <span class="material-icons"> info </span>
+          <span class="tooltiptext"> This is not a proffesional event. </span>
+        </div>
+      </mat-slide-toggle>
+    </div>
+    </div>
+
+
+
     <!-- post button and arrow icon -->
     <span>
       <button mat-raised-button class="text">
