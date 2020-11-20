@@ -59,6 +59,22 @@ h4:focus {
 .settings {
   color: gray;
 }
+.public:hover {
+  color: blue;
+}
+.groups:hover {
+  color: green;
+}
+.profile:hover {
+  color: yellow;
+}
+.post:hover {
+  color: red;
+}
+.look-nice {
+  display: flex;
+  justify-content: center;
+}
 // New
 body {
   background: black;
