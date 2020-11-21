@@ -15,6 +15,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import {MatSliderModule} from '@angular/material/slider';
 
 import { AppComponent } from './app.component';
 import { TermsComponent } from './terms/terms.component';
@@ -43,6 +44,7 @@ import { FriendsActivityComponent } from './friends-activity/friends-activity.co
     SignupComponent,
     HomePageComponent,
     FriendsActivityComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -62,6 +64,7 @@ import { FriendsActivityComponent } from './friends-activity/friends-activity.co
     MatSlideToggleModule,
     MatMenuModule,
     ReactiveFormsModule,
+    MatSliderModule,
     // FontAwesomeModule,
   ],
 

@@ -11,18 +11,21 @@
 .left {
   display: flex;
   flex-direction: column;
-  margin: 5% 9% 5% 5%;
+  margin: 5% 6% 5% 5%;
 }
 .right {
   display: flex;
   flex-direction: column;
-  margin: 7% 5% 5% 5%;
+  margin: 7% 3% 5% 1%;
 }
 .middle {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-right: 3%;
+  margin-right: 4%;
+}
+mat-slider {
+  width: 300px;
 }
 .sliders {
   display: flex;
@@ -84,7 +87,6 @@
 .column {
   display: flex;
   flex-direction: column;
-  margin-bottom: -10%;
 }
 .amount-people {
   margin-bottom: 15%;

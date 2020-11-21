@@ -36,45 +36,31 @@
   <!-- Middle -->
   <!-- New New Box -->
   <div class="middle">
-    <!-- amount of people stepper -->
-    <div class="column">
-      <div class="amount-people">
-        <label for="points">Amount of people</label>
-        <input type="number" id="steper" name="points" step="1" />
-      </div>
-
-      <!-- Age range input -->
-      <p class="row" name="max&min">
-        <label for="max&min">Age Range</label>
-        <span class="min-box">
-          <input
-            type="number"
-            min="0"
-            max="100"
-            step="1"
-            placeholder="Min:"
-          />
-        </span>
-        <span class="max-box">
-          <input
-            type="number"
-            min="0"
-            max="100"
-            step="1"
-            placeholder="Max:"
-          />
-        </span>
-      </p>
-    </div>
-  
-
-  <!-- Choosing date of event range  -->
+     <!-- Choosing date of event range  -->
   <mat-form-field appearance="fill">
     <mat-label>Choose a date:</mat-label>
     <input matInput [matDatepicker]="dp" [formControl]="date">
     <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
     <mat-datepicker #dp></mat-datepicker>
   </mat-form-field>
+    <!-- amount of people stepper -->
+    <div class="column">
+      <div class="amount-people">
+        <label for="points">Amount of people</label>
+       <!--# of people slider -->
+<mat-slider
+thumbLabel
+[displayWith]="formatLabel"
+
+min="1"
+max="100"></mat-slider>
+      </div>
+
+      
+    </div>
+  
+
+ 
   <!-- Newest Box -->
   <div class="row">
     <!-- tag friends -->

@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
+
 import {MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS} from '@angular/material-moment-adapter';
 import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
 import * as _moment from 'moment';
 import { default as _rollupMoment} from 'moment';
+import {MatSliderModule} from '@angular/material/slider';
 
 const moment = _rollupMoment || _moment;
 export const MY_FORMATS = {
@@ -37,6 +39,14 @@ export const MY_FORMATS = {
 })
 export class PostPageComponent implements OnInit {
   date = new FormControl(moment());
+  // tslint:disable-next-line: typedef
+  formatLabel(value: number) {
+    if (value >= 100) {
+      return Math.round(value / 1 ) + '+' ;
+    }
+
+    return value;
+  }
   constructor() {}
 
   ngOnInit(): void {}
