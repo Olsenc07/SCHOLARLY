@@ -1,14 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 import {MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS} from '@angular/material-moment-adapter';
 import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
-
 import * as _moment from 'moment';
-
-import {default as _rollupMoment} from 'moment';
+import { default as _rollupMoment} from 'moment';
 
 const moment = _rollupMoment || _moment;
-
 export const MY_FORMATS = {
   parse: {
     dateInput: 'LL',
