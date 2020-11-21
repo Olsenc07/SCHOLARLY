@@ -13,10 +13,10 @@ export class AppComponent implements OnInit {
 
   searchForm = new FormGroup({
     search: this.search,
-
-
-
   });
+
+
+  
   constructor() { }
 
   ngOnInit(): void {
