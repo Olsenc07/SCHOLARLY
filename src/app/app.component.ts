@@ -8,17 +8,11 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  // New
-  const searchIcon = document.getElementsByClassName('search-box__icon')[0];
-  const searchBox = document.getElementsByClassName('search-box')[0];
-  searchIcon;.addEventListener('click', activateSearch);
-  function activateSearch() {  
-  searchBox.classList.toggle('active');
-  }
-// End
-  title = 'angular-SCHOLARLY';
-  search: FormControl = new FormControl('');
+  title = 'angular-SCHOLARLY';  // what is the intention of this title?
 
+  searchBox: Element;
+
+  search: FormControl = new FormControl('');
   searchForm = new FormGroup({
     search: this.search,
   });
@@ -26,13 +20,19 @@ export class AppComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    document.getElementsByClassName('search-box__icon')[0].addEventListener('click', this.activateSearch);
+    this.searchBox = document.getElementsByClassName('search-box')[0];
   }
-clearSearch(): void{
-  this.search.setValue('');
-}
 
-onSubmit(): void {
-  // TODO: wire up to login request
-  console.log(this.searchForm.value);
-}
+  activateSearch(): void {
+    this.searchBox.classList.toggle('active');
+  }
+
+  clearSearch(): void{
+    this.search.setValue('');
+  }
+
+  onSubmit(): void {
+    console.log(this.searchForm.value);
+  }
 }
