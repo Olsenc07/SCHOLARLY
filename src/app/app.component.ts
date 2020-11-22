@@ -8,6 +8,14 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
+  // New
+  const searchIcon = document.getElementsByClassName('search-box__icon')[0];
+  const searchBox = document.getElementsByClassName('search-box')[0];
+  searchIcon;.addEventListener('click', activateSearch);
+  function activateSearch() {  
+  searchBox.classList.toggle('active');
+  }
+// End
   title = 'angular-SCHOLARLY';
   search: FormControl = new FormControl('');
 
@@ -15,8 +23,6 @@ export class AppComponent implements OnInit {
     search: this.search,
   });
 
-
-  
   constructor() { }
 
   ngOnInit(): void {
