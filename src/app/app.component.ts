@@ -19,7 +19,11 @@ export class AppComponent implements OnInit {
 faCoffee = faCoffee;
   title = 'angular-SCHOLARLY';
   search: FormControl = new FormControl('');
+  title = 'angular-SCHOLARLY';  // what is the intention of this title?
 
+  searchBox: Element;
+
+  search: FormControl = new FormControl('');
   searchForm = new FormGroup({
     search: this.search,
   });
@@ -27,13 +31,19 @@ faCoffee = faCoffee;
   constructor() { }
 
   ngOnInit(): void {
+    document.getElementsByClassName('search-box__icon')[0].addEventListener('click', this.activateSearch);
+    this.searchBox = document.getElementsByClassName('search-box')[0];
   }
-clearSearch(): void{
-  this.search.setValue('');
-}
 
-onSubmit(): void {
-  // TODO: wire up to login request
-  console.log(this.searchForm.value);
-}
+  activateSearch(): void {
+    this.searchBox.classList.toggle('active');
+  }
+
+  clearSearch(): void{
+    this.search.setValue('');
+  }
+
+  onSubmit(): void {
+    console.log(this.searchForm.value);
+  }
 }
