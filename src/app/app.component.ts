@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -9,13 +9,14 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class AppComponent implements OnInit {
   // New
-  const searchIcon = document.getElementsByClassName('search-box__icon')[0];
-  const searchBox = document.getElementsByClassName('search-box')[0];
-  searchIcon;.addEventListener('click', activateSearch);
-  function activateSearch() {  
-  searchBox.classList.toggle('active');
-  }
+//   const searchIcon = document.getElementsByClassName('search-box__icon')[0];
+//   const searchBox = document.getElementsByClassName('search-box')[0];
+//   searchIcon;.addEventListener('click', activateSearch);
+// function activateSearch() {
+//   searchBox.classList.toggle('active');
+//   }
 // End
+faCoffee = faCoffee;
   title = 'angular-SCHOLARLY';
   search: FormControl = new FormControl('');
 
