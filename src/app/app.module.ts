@@ -18,6 +18,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatSliderModule} from '@angular/material/slider';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+
 import { AppComponent } from './app.component';
 import { TermsComponent } from './terms/terms.component';
 import { SearchComponent } from './search/search.component';
@@ -30,6 +31,7 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { SignupComponent } from './signup/signup.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { FriendsActivityComponent } from './friends-activity/friends-activity.component';
+import { Component } from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -45,6 +47,7 @@ import { FriendsActivityComponent } from './friends-activity/friends-activity.co
     SignupComponent,
     HomePageComponent,
     FriendsActivityComponent,
+    Component,
 
   ],
   imports: [
