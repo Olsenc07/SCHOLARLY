@@ -33,6 +33,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { FriendsActivityComponent } from './friends-activity/friends-activity.component';
 import { Component } from '@angular/core';
 
+
 @NgModule({
   declarations: [
     AppComponent,
