@@ -24,8 +24,9 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     document.getElementsByClassName('search-box__icon')[0].addEventListener('click', this.activateSearch);
     this.searchBox = document.getElementsByClassName('search-box')[0];
-  }
-
+}
+// Missing link to fix search icon movement i hope
+// searchIcon.addEventListener("click", activateSearch);
   activateSearch(): void {
     this.searchBox.classList.toggle('active');
   }
