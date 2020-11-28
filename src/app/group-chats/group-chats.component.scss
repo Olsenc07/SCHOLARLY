@@ -11,7 +11,7 @@
 .left {
   display: flex;
   flex-direction: column;
-  margin: 2%;
+  margin: 5% 2% 2% 2%;
 }
 .middle {
   display: flex;
@@ -25,8 +25,9 @@
   margin: 1% 2% 2% 10%;
 }
 .text {
-  color: #707070;
+  color: #000000;
   border-color: #418bba;
+  font-size: medium;
 }
 .plain-text {
   display: flex;
@@ -51,7 +52,7 @@
 .material-icons {
   display: flex;
   margin-top: 1%;
-  margin-right: 1%;
+  margin-right: -2%;
   color: rgb(15, 10, 90);
 }
 .tooltip .tooltiptext {
@@ -87,8 +88,14 @@
   display: flex;
   flex-direction: row;
 }
+.row-icons {
+  display: flex;
+  flex-direction: row;
+  margin-left: 28%;
+  margin-bottom: 1%;
+}
 .fas {
   font-size: 25px;
   margin-top: 1%;
-  margin-right: 1%;
+  margin-right: 2%;
 }
