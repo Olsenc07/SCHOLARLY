@@ -6,7 +6,8 @@
 
 
 <div class="root-container">
-  <mat-toolbar class="header" color="primary">
+  <mat-toolbar class="header" color="primary" id="nav-bar">
+<div *ngIf=[routerLink]="['/app-home-page']" routerLinkActive=nav-bar></div>
       <img class="toolbar-logo" Src="../assets/Pics/ProperInAppLogo.jpeg" />
       <span class="fill-space"></span>
 
