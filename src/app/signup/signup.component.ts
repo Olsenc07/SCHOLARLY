@@ -34,7 +34,7 @@ export const MY_FORMATS = {
 ]
 })
 export class SignupComponent implements OnInit {
-  MatIconModule;
+  MatIconModule: any;
 
   username: FormControl = new FormControl('');
   password: FormControl = new FormControl('');
