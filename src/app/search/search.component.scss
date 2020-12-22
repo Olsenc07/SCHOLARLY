@@ -142,6 +142,10 @@
   margin-right: 5%;
   margin-left: 20%;
 }
+.main-options {
+  display: flex;
+  flex-direction: column;
+}
 // Search bar
 * {
   box-sizing: border-box;
