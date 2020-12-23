@@ -1,22 +1,24 @@
+<form [formGroup]="myForm">
 <div class="entire-page">
   <!-- left -->
   <div class="left">
     <!-- Title of post input -->
     <div>
+
       <mat-form-field class="text-input"
         ><mat-label>Title of Post</mat-label>
-        <input matInput type="Title" placeholder="" />
+        <input matInput type="text" [formControl]="title" />
       </mat-form-field>
 
       
       <!-- Description of Post -->
       <div class="column">
         <div style="margin-right: 5%">
-          <textarea class="post" rows="7" cols="40" style="width: 400px"> Description of post..</textarea>
+          <textarea type="text" [formControl]="description" class="post" rows="7" cols="40" style="width: 400px"> Description of post..</textarea>
         </div>
         <!-- Upload pic/video -->
         <div class="post-pic/video">
-          <textarea class="text" rows="17" cols="40" style="width: 400px">  Add ability to uplaod video/pic</textarea>
+          <textarea type="submit" [formControl]="upload" class="text" rows="17" cols="40" style="width: 400px">  Add ability to upload video/pic</textarea>
         </div>
         
       </div>
@@ -80,7 +82,7 @@ max="100"></mat-slider>
       <mat-form-field class="search-textfield">
         <span class="material-icons-search"> </span>
         <mat-label><span class="material-icons"> search </span></mat-label>
-        <input matInput type="search" placeholder="Search:" /> </mat-form-field
+        <input matInput type="text" placeholder="Search:"/> </mat-form-field
     ></span>
     <!-- Box -->
     <div class="row">
@@ -139,3 +141,4 @@ max="100"></mat-slider>
     </span>
   </div>
 </div>
+</form>

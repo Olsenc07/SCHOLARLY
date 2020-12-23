@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
-
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 
 import {MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS} from '@angular/material-moment-adapter';
 import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
@@ -38,7 +37,11 @@ export const MY_FORMATS = {
 ]
 })
 export class PostPageComponent implements OnInit {
+  myForm: FormGroup;
   date = new FormControl(moment());
+  title = new FormControl();
+  description = new FormControl();
+  upload = new FormControl();
   // tslint:disable-next-line: typedef
   formatLabel(value: number) {
     if (value >= 100) {
@@ -47,7 +50,13 @@ export class PostPageComponent implements OnInit {
 
     return value;
   }
-  constructor() {}
 
-  ngOnInit(): void {}
+  constructor(private fb: FormBuilder) {}
+  ngOnInit():  {
+    this.myForm = this.fb.group({
+title:'Title',
+description:'Description',
+    })
+  }
 }
+

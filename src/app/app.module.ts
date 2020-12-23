@@ -6,6 +6,10 @@ import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
+import { MatChipsModule } from '@angular/material/chips';
+
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -17,6 +21,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatSliderModule} from '@angular/material/slider';
 
+
 import { AppComponent } from './app.component';
 import { TermsComponent } from './terms/terms.component';
 import { SearchComponent } from './search/search.component';
@@ -26,10 +31,12 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { GroupChatsComponent } from './group-chats/group-chats.component';
 import { MainPagesComponent } from './main-pages/main-pages.component';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
+
 import { SignupComponent } from './signup/signup.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { FriendsActivityComponent } from './friends-activity/friends-activity.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 @NgModule({
   declarations: [
@@ -45,6 +52,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     SignupComponent,
     HomePageComponent,
     FriendsActivityComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -57,6 +65,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     MatIconModule,
     MatMomentDateModule,
     MatButtonModule,
+    MatCheckboxModule,
     FlexLayoutModule,
     MatDatepickerModule,
     MatTooltipModule,
@@ -66,6 +75,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ReactiveFormsModule,
     MatSliderModule,
     FontAwesomeModule,
+    MatSelectModule,
+    MatChipsModule,
   ],
 
   providers: [],
