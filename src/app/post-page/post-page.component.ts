@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 
 
 import {MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS} from '@angular/material-moment-adapter';
@@ -37,7 +37,30 @@ export const MY_FORMATS = {
   {provide: MAT_DATE_FORMATS, useValue: MY_FORMATS},
 ]
 })
+
+
 export class PostPageComponent implements OnInit {
+postForm = new FormGroup({
+  title: new FormControl(),
+  description: new FormControl(),
+tagged_friends: new FormControl(),
+upload: new FormControl(),
+driver: new FormControl(),
+payment_service: new FormControl(),
+formal_event: new FormControl(),
+relaxed_event: new FormControl(),
+male: new FormControl(),
+female: new FormControl(),
+all: new FormControl(),
+views: new FormControl(),
+likes: new FormControl(),
+comments: new FormControl(),
+people_amount: new FormControl(),
+})
+title: string;
+description: string;
+
+
   date = new FormControl(moment());
   // tslint:disable-next-line: typedef
   formatLabel(value: number) {
@@ -48,6 +71,8 @@ export class PostPageComponent implements OnInit {
     return value;
   }
   constructor() {}
-
+onFormSubmit(): void{
+  console.log(this.postForm.get(this.title))
+}
   ngOnInit(): void {}
 }
