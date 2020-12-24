@@ -6,6 +6,7 @@ import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/
 import * as _moment from 'moment';
 import { default as _rollupMoment} from 'moment';
 import {MatSliderModule} from '@angular/material/slider';
+import { Title } from '@angular/platform-browser';
 
 const moment = _rollupMoment || _moment;
 export const MY_FORMATS = {
@@ -38,9 +39,12 @@ export const MY_FORMATS = {
 })
 export class PostPageComponent implements OnInit {
   myForm: FormGroup;
+  PostForm = this.fb.group({
+    title: string,
+  })
   date = new FormControl(moment());
-  title = new FormControl();
-  description = new FormControl();
+  title = new FormControl()
+  description = new FormControl()
   upload = new FormControl();
   // tslint:disable-next-line: typedef
   formatLabel(value: number) {
@@ -52,11 +56,7 @@ export class PostPageComponent implements OnInit {
   }
 
   constructor(private fb: FormBuilder) {}
-  ngOnInit():  {
-    this.myForm = this.fb.group({
-title:'Title',
-description:'Description',
-    })
+  ngOnInit(): void {
   }
 }
 
