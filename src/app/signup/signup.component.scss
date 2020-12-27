@@ -13,7 +13,7 @@
   justify-content: center;
   border-radius: 53%;
   width: 40%;
-  margin: 1% 1% 1% 32%;
+  margin: 1% 1% 1% 28%;
 }
 
 .column {
@@ -24,8 +24,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 25%;
-  margin-right: 25%;
+  margin: 0% 15% 0% 15%;
 }
 .username-layout {
   display: flex;
@@ -49,6 +48,7 @@
 .right-inputs {
   display: flex;
   flex-direction: column;
+  margin: 0% 15% 0% 15%;
 }
 .private-layout {
   margin-bottom: 2%;
@@ -68,10 +68,11 @@
   margin-right: 10%;
   margin-bottom: 2%;
 }
-.bottom-buttons {
+.middle-column {
   display: flex;
   flex-direction: column;
-  margin: -14% 35% 1% 45%;
+  justify-content: center;
+  margin: 0% 5% 0% 0%;
 }
 
 .center-text {
@@ -124,7 +125,6 @@
   display: flex;
   justify-content: center;
   width: fit-content;
-  margin-left: 10%;
 }
 .accounts {
   display: flex;

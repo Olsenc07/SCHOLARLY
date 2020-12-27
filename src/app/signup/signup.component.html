@@ -128,7 +128,65 @@
             </mat-form-field>
           </div>
         </div>
+<!-- Sign Up Button  -->
+<div class="middle-column">
+  <div class="email-layout">
+  <mat-form-field class="asthetic-adds">
+    <input
+      matInput
+      placeholder="@mail.utoronto.ca"
+      formControlName="mail"
+      pattern="^@mail.utoronto.ca"
+    />
+    <button
+      mat-button
+      matSuffix
+      mat-icon-button
+      aria-label="Clear"
+      type="button"
+      (click)="clearEmail()"
+    >
+      <mat-icon class="asthetic-adds">close</mat-icon>
+    </button>
+  </mat-form-field>
+  </div>
 
+        <div class="existing-account-layout">
+          <button
+            type="submit"
+            [disabled]="!signupForm.valid"
+            routerLink="/login"
+            mat-flat-button
+            class="existing-account-layout"
+          >
+            Sign Up
+          </button>
+        </div>
+        <!-- Terms/Conditions text and button -->
+        <div>
+          <p class="center-text">By Signing Up, 
+            you are agreeing to the</p>
+        </div>
+        <div class="terms">
+          <button
+            mat-flat-button
+            routerLink="/terms"
+            class="existing-account-layout"
+          >
+            Terms & Conditions
+          </button>
+        </div>
+        <!-- I have an existing account Button  -->
+        <div class="existed-centered">
+          <button
+            mat-flat-button
+            routerLink="/login"
+            class="existing-account-layout"
+          >
+            I have an existing account
+          </button>
+        </div>
+      </div>
         <!-- Private or Public account 
         swtiches with info icon to hover over to display text-->
         <div class="right-inputs">
@@ -188,8 +246,7 @@
           <p class="asthetic-adds">Birthday:</p>
 
           <!-- Birthday Date Picker -->
-               <!-- Choosing date  -->
-  <mat-form-field appearance="fill">
+  <mat-form-field appearance="fill" style="width: 208px;">
     <mat-label>Choose a date:</mat-label>
     <input matInput [matDatepicker]="dp" [formControl]="date">
     <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
@@ -241,43 +298,7 @@
           </div>
         </div>
       </div>
-      <!-- Sign Up Button  -->
-      <div class="bottom-buttons">
-        <div class="existing-account-layout">
-          <button
-            type="submit"
-            [disabled]="!signupForm.valid"
-            routerLink="/login"
-            mat-flat-button
-            class="existing-account-layout"
-          >
-            Sign Up
-          </button>
-        </div>
-        <!-- Terms/Conditions text and button -->
-        <div>
-          <p class="center-text">By Signing Up, you are agreeing to the</p>
-        </div>
-        <div class="terms">
-          <button
-            mat-flat-button
-            routerLink="/terms"
-            class="existing-account-layout"
-          >
-            Terms & Conditions
-          </button>
-        </div>
-        <!-- I have an existing account Button  -->
-        <div class="existed-centered">
-          <button
-            mat-flat-button
-            routerLink="/login"
-            class="existing-account-layout"
-          >
-            I have an existing account
-          </button>
-        </div>
-      </div>
+      
     </body>
   </div>
 </form>

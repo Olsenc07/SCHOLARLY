@@ -44,6 +44,7 @@ export class SignupComponent implements OnInit {
   birthday: FormControl = new FormControl('');
   gender: FormControl = new FormControl('');
   relationship: FormControl = new FormControl('');
+  email: FormControl = new FormControl('');
 
   signupForm = new FormGroup({
     username: this.username,
@@ -53,6 +54,7 @@ export class SignupComponent implements OnInit {
     name: this.name,
     gender: this.gender,
     relationship: this.relationship,
+    email: this.email,
   });
 
   date = new FormControl(moment());
@@ -91,6 +93,10 @@ export class SignupComponent implements OnInit {
   clearRelationship(): void {
     this.relationship.setValue('');
   }
+clearEmail(): void {
+  this.email.setValue('');
+}
+
   onSubmit(): void {
     // TODO: wire up to login request
     console.log(this.signupForm.value);
