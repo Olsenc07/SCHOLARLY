@@ -19,34 +19,35 @@
   </router-outlet>
 </div>
 
-
 <div class="root-container">
-  <mat-toolbar class="header" color="primary" id="nav-bar">
-<!-- <div *ngIf=[routerLink]="['/app-home-page']" routerLinkActive=nav-bar></div> -->
-      <img class="toolbar-logo" Src="../assets/Pics/ProperInAppLogo.jpeg" />
-      <span class="fill-space"></span>
-
-      <!-- New -->
-      <div class="search-box"><i class="fas fa-search search-box__icon"></i>
-        <input class="search-box__input" placeholder="Search.."/>
-      </div>
-      <!-- End -->
-      <button mat-icon-button type="button" routerLink="/search">
-        <mat-icon class="public">public</mat-icon>
-      </button>
-      <button mat-icon-button type="button" routerLink="/friends-activity">
-          <mat-icon class="groups">groups</mat-icon>
-      </button>
-      <button mat-icon-button type="button" routerLink="/profile">
-          <mat-icon class="profile">account_circle</mat-icon>
-      </button>
-      <button mat-icon-button type="button" routerLink="/post-page" >
-      <mat-icon class="post">add_circle</mat-icon>
-      </button>
-      <button mat-icon-button [matMenuTriggerFor]="settingsMenu" type="button">
-          <mat-icon class="settings">settings</mat-icon>
-      </button>
-  </mat-toolbar>
+  <ng-container *ngIf="(isHomeScreen$ | async) === false">
+    <mat-toolbar class="header" color="primary" id="nav-bar">
+    <!-- <div *ngIf=[routerLink]="['/app-home-page']" routerLinkActive=nav-bar></div> -->
+        <img class="toolbar-logo" Src="../assets/Pics/ProperInAppLogo.jpeg" />
+        <span class="fill-space"></span>
+  
+        <!-- New -->
+        <div class="search-box"><i class="fas fa-search search-box__icon"></i>
+          <input class="search-box__input" placeholder="Search.."/>
+        </div>
+        <!-- End -->
+        <button mat-icon-button type="button" routerLink="/search">
+          <mat-icon class="public">public</mat-icon>
+        </button>
+        <button mat-icon-button type="button" routerLink="/friends-activity">
+            <mat-icon class="groups">groups</mat-icon>
+        </button>
+        <button mat-icon-button type="button" routerLink="/profile">
+            <mat-icon class="profile">account_circle</mat-icon>
+        </button>
+        <button mat-icon-button type="button" routerLink="/post-page" >
+        <mat-icon class="post">add_circle</mat-icon>
+        </button>
+        <button mat-icon-button [matMenuTriggerFor]="settingsMenu" type="button">
+            <mat-icon class="settings">settings</mat-icon>
+        </button>
+    </mat-toolbar>    
+  </ng-container>
 
   
   <mat-menu #settingsMenu="matMenu">

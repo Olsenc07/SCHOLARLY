@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { NavigationEnd, Router } from '@angular/router';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { Observable } from 'rxjs';
+import { filter, map, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +14,7 @@ export class AppComponent implements OnInit {
   faCoffee = faCoffee;
   title = 'angular-SCHOLARLY';
 
+  isHomeScreen$: Observable<boolean>;
 
   searchBox: Element;
 
@@ -19,14 +23,21 @@ export class AppComponent implements OnInit {
     search: this.search,
   });
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
-    document.getElementsByClassName('search-box__icon')[0].addEventListener('click', this.activateSearch);
+    document.getElementsByClassName('search-box__icon')[0]?.addEventListener('click', this.activateSearch);
     this.searchBox = document.getElementsByClassName('search-box')[0];
-}
-// Missing link to fix search icon movement i hope
-// searchIcon.addEventListener("click", activateSearch);
+
+    this.isHomeScreen$ = this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd),
+      map((event: NavigationEnd) => event.url === '/' || event.url === '/login')
+    );
+  }
+  // Missing link to fix search icon movement i hope
+  // searchIcon.addEventListener("click", activateSearch);
   activateSearch(): void {
     this.searchBox.classList.toggle('active');
   }
