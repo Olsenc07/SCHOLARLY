@@ -37,8 +37,10 @@ export const MY_FORMATS = {
   {provide: MAT_DATE_FORMATS, useValue: MY_FORMATS},
 ]
 })
-
-
+enum BooleanOptions {
+  Can_Drive = 'able_to_drive',
+  Payement_Service = 'p',
+}
 export class PostPageComponent implements OnInit {
 postForm = new FormGroup({
   title: new FormControl(),
@@ -57,8 +59,7 @@ likes: new FormControl(),
 comments: new FormControl(),
 people_amount: new FormControl(),
 })
-title: string;
-description: string;
+
 
 
   date = new FormControl(moment());

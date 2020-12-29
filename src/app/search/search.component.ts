@@ -8,6 +8,8 @@ import { FormControl, FormGroup } from '@angular/forms';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
+// Need myVariable value to be filled by a users selection. 
+// Then a function to display the appropriate array.
 enum SearchOptions {
   College_Connection = 'college/faculty-connection',
   Blues_Clubs = 'blue-clubs',
@@ -65,6 +67,7 @@ if myVariable === SearchOptions.COURSE_F_M {
     let upcoming = ['Arts & Science','Club Sports','Concerts','Drop In Games','Festivals','Fraternities & Sororities','Fundraisers','Intramural Sports','Miscellaneous','Parties & Clubs','Varsity Sports','Video & Board Games']
   }
   // Fix
+  
 document.getElementById("").onclick = function() {
   // display appropriate array
 };
