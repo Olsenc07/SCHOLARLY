@@ -3,11 +3,12 @@ import { Component, OnInit } from '@angular/core';
 import { DefaultGridAlignColumnsDirective } from '@angular/flex-layout/grid/typings/align-columns/align-columns';
 import { FormControl, FormGroup } from '@angular/forms';
 
-@Component({
+Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
+
 // Need myVariable value to be filled by a users selection. 
 // Then a function to display the appropriate array.
 enum SearchOptions {
@@ -41,11 +42,11 @@ if myVariable === SearchOptions.COURSE_F_M {
     let n_z = ['Near & Middle Eastern Civilizations','New College','Nutritional Sciences','Peace, Conflict & Justice','Pharmacology & Toxicology','Philosophy','Physiology','Pysics','Planetary Science','Political Science','Portuguese','Psychology','Public Policy','Religion','Rotman Commerce','St.Michaels College','Sexual Diversity Studies','Slavic Languages & Literature','Sociology','South Asian Studies','Spanish','Statistical Sciences','Trinity College','University College','Victoria College','Women & Gender Studies','Woodsworth College','Yiddish Studies']
   }
 
-  if myVariable === SearchOptions.ENTREP_IDEA{
+  if myVariable === SearchOptions.ENTREP_IDEA {
     let entrep =['Arts','Contracting','Enviromental & Conservation','Health Care','Money Managing','Non-Profit','Science & Technology','Sports','Travel','Unique Ideas']
   }
 
-  if myVariable === SearchOptions.HELP_WANT{
+  if myVariable === SearchOptions.HELP_WANT {
     let help = ['Cleaning','Cooking & Grociers','Designing','Electronic Based','Moving Furniture','Transportation','Walking Home']
   }
   if myVariable === SearchOptions.HOUSING{
@@ -67,7 +68,7 @@ if myVariable === SearchOptions.COURSE_F_M {
     let upcoming = ['Arts & Science','Club Sports','Concerts','Drop In Games','Festivals','Fraternities & Sororities','Fundraisers','Intramural Sports','Miscellaneous','Parties & Clubs','Varsity Sports','Video & Board Games']
   }
   // Fix
-  
+
 document.getElementById("").onclick = function() {
   // display appropriate array
 };
@@ -92,6 +93,6 @@ onSubmit(): void {
   // TODO: wire up to login request
   console.log(this.searchForm.value);
 }
-
-
+}
+}
 }

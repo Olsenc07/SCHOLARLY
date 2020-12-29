@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
-
 import {MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS} from '@angular/material-moment-adapter';
 import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
 import * as _moment from 'moment';
@@ -23,7 +22,7 @@ export const MY_FORMATS = {
 
 
 
-@Component({
+Component({
   selector: 'app-post-page',
   templateUrl: './post-page.component.html',
   styleUrls: ['./post-page.component.scss'],
@@ -38,13 +37,18 @@ export const MY_FORMATS = {
 ]
 })
 enum BooleanOptions {
-  Can_Drive = 'able_to_drive',
-  Payement_Service = 'p',
+  Can_Drive = 'able-to-drive',
+  Payement_Service = 'pay-service',
+  Formal_Event = 'formal-event',
+  Relaxed_Event = 'relaxed-event',
+  Male = 'male',
+  Female = 'female',
+  All = 'all',
 }
 export class PostPageComponent implements OnInit {
 postForm = new FormGroup({
-  title: new FormControl(),
-  description: new FormControl(),
+title: new FormControl(),
+description: new FormControl(),
 tagged_friends: new FormControl(),
 upload: new FormControl(),
 driver: new FormControl(),
@@ -63,6 +67,7 @@ people_amount: new FormControl(),
 
 
   date = new FormControl(moment());
+
   // tslint:disable-next-line: typedef
   formatLabel(value: number) {
     if (value >= 100) {
@@ -73,7 +78,7 @@ people_amount: new FormControl(),
   }
   constructor() {}
 onFormSubmit(): void{
-  console.log(this.postForm.get(this.title))
+ 
 }
   ngOnInit(): void {}
 }
