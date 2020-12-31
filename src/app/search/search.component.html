@@ -24,7 +24,12 @@
 
         <!-- categeory filter box -->
         <div class="specific-layout">
-          <textarea class="outside-input-boxs" rows="30" cols="35"> </textarea>
+          <textarea class="outside-input-boxs" rows="30" cols="35"> 
+<!-- display appropriate array -->
+
+
+
+          </textarea>
         </div>
       </div>
     </div>
@@ -45,24 +50,24 @@
     
       </div>
       <!-- Category box -->
-      <!-- String [] search = {"Alumni Connections","Blues Clubs & Intramural's",...} -->
       <textarea class="outside-input-boxs" rows="30" cols="30" style="width: 292px;
       height: 458px;">
-  
-            Alumni Connections
-            Blues Clubs & Intramural's
-            College & Faculty Connections
-            Course Review A-E
-            Course Review F-M
-            Course Review N-Z
-            Entrepreneurial Ideas
-            Help Wanted
-            Housing
-            Miscellaneous Buy & Sell
-            School Work
-            Spirituality
-            U Of T Specific Questions
-            Upcoming Events
+      <!-- Except it shouldn't be a drop down. Just simply displayed texts that can be clicked and display their appropriate array -->
+  <select id="myVariable" onchange="displayFunction()" >
+        <option value="blue-clubs"> Blue's Clubs</option>    
+        <option value="college/faculty-connection">College & Faculty Connections </option> 
+        <option value="course-a-e" >Course's A-E</option>
+        <option value="course-f-m">Course's F-M</option>
+        <option value="course-n-z">Course's N-Z </option>
+        <option value="entrep">Entreprenurial Idea</option>
+        <option value="help">Help Wanted</option>
+        <option value="housing">Housing</option>
+        <option value="buy&sell">Miscellaneous Buy & Sell</option>
+        <option value="school-work" >School Work</option>
+        <option value="spirituality" >Spirituality</option>
+        <option value="questions">U Of T Questions</option>
+        <option value="upcoming-events">Upcoming Events</option>
+          </select>
       </textarea>
       
     </div>

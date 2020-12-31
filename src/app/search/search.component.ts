@@ -33,12 +33,14 @@ if myVariable === SearchOptions.College_Connection {
 }
 if myVariable === SearchOptions.Blues_Clubs {
 let blue = ['Academic','Arts','Athletics & Recreation','Community Service','Culture & Identities','Environment & Sustainability','Hobby & Leisure','Global Interests','Leadership','Media','Other','Politics','Social Justive & Advocay','Social','Spirituality & Faith Communities','Student Governments, Unions & Councils','Work & Career Development']
+}
 if myVariable === SearchOptions.COURSE_A_E {
   let a_e = ['Academic Bridging Program','Acturial Science', 'American Studies', 'Anatomy',' Anthropology,','Archaeology','Architecture & Visual Studies','Art History','Astronomy & Astrophysics','Biochemistry','Biology','Candian Institutes For Theoretical Astrophysics','Cell & Systems Biology','Cinema Studies Institute', 'Computer Science','Contemporary Asian Studies','Criminology & Sociolegal Studies','Criminology & Sociolegal Studies','Diaspora & Transnational Studies','Drama', 'Theatre & Performance Studies','Earth Sciences','East Asian Studies','Ecology & Evolutionary Studies','Earth Sciences','East Asian Studies','Ecology & Evolutionary Biology','Economics','Environment(School of the)','Estonian','Ethics','European Studies']
 }
-if myVariable === SearchOptions.COURSE_F_M {
-  let f_m = ['Finnish','First-Year Foundations','Forest Conservation & Forest Biomaterials Science','French','Geography & Planning','German','History','History & Philosophy & Technology','Human Biology','Hungarian','Immunology','Impact Culture','Indigenous Studies','Industrial Relations & Resources (Centre For)','Innis College','Italian','Centre For Jewish Studies','Laboratory Medicine & Pathobiology','Latin American Studies','Life Sciences','Linguistics','Material Science','Mathematics','Molecular Genetics & Microbiology','Munk One','Music']
-  if myVariable === SearchOptions.COURSE_N_Z{
+  if myVariable === SearchOptions.COURSE_F_M {
+    let f_m = ['Finnish','First-Year Foundations','Forest Conservation & Forest Biomaterials Science','French','Geography & Planning','German','History','History & Philosophy & Technology','Human Biology','Hungarian','Immunology','Impact Culture','Indigenous Studies','Industrial Relations & Resources (Centre For)','Innis College','Italian','Centre For Jewish Studies','Laboratory Medicine & Pathobiology','Latin American Studies','Life Sciences','Linguistics','Material Science','Mathematics','Molecular Genetics & Microbiology','Munk One','Music']
+  }
+    if myVariable === SearchOptions.COURSE_N_Z{
     let n_z = ['Near & Middle Eastern Civilizations','New College','Nutritional Sciences','Peace, Conflict & Justice','Pharmacology & Toxicology','Philosophy','Physiology','Pysics','Planetary Science','Political Science','Portuguese','Psychology','Public Policy','Religion','Rotman Commerce','St.Michaels College','Sexual Diversity Studies','Slavic Languages & Literature','Sociology','South Asian Studies','Spanish','Statistical Sciences','Trinity College','University College','Victoria College','Women & Gender Studies','Woodsworth College','Yiddish Studies']
   }
 
@@ -66,6 +68,11 @@ if myVariable === SearchOptions.COURSE_F_M {
   }
   if myVariable === SearchOptions.UPCOMING_EVENTS{
     let upcoming = ['Arts & Science','Club Sports','Concerts','Drop In Games','Festivals','Fraternities & Sororities','Fundraisers','Intramural Sports','Miscellaneous','Parties & Clubs','Varsity Sports','Video & Board Games']
+  }
+
+  function displayFunction(){
+    var c = document.getElementById("myVariable").value;
+    // display appropriate array in other display box on screen.
   }
   // Fix
 
