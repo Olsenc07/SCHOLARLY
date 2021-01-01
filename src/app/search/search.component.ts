@@ -28,7 +28,10 @@ enum SearchOptions {
   UPCOMING_EVENTS = 'upcoming-events' 
 
 }
-
+if(document.getElementById('myVariable').clicked == true)
+{
+   alert("button was clicked");
+}
 if myVariable === SearchOptions.College_Connection {
   let specifics = ['Applied Science & Engineering', 'Architecture, Landscape & Design', 'Arts & Science', 'Continuing Studies', 'Dentistry', 'Education', 'Information', 'Kinesiology & Physical Education','Law','Management','Medicine', 'Music','Nursing','Pharmacy','Public Health','Social Work','Innis College','New College','St.Micheals College','Trinity College','University College','U Of T Mississauga Campus','U Of T Scarborough','Victoria College','Woodsworth College' ]
 }
@@ -76,6 +79,7 @@ if myVariable === SearchOptions.COURSE_A_E {
     var c = document.getElementById("myVariable").value;
     // display appropriate array in other display box on screen.
   }
+  
   // End
 
 document.getElementById("").onclick = function() {
