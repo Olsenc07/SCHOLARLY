@@ -74,7 +74,7 @@ function specificFunction(){
   specifics.values()
 }
 
-document.getElementById('specifics').innerHTML = ;
+document.getElementById('specifics').innerHTML;
 
 export class SearchComponent implements OnInit {
 
