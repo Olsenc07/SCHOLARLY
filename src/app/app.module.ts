@@ -9,14 +9,17 @@ import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { AppRoutingModule, routingComponents } from './app-routing.module';
+import { AppRoutingModule} from './app-routing.module';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import {MatSliderModule} from '@angular/material/slider';
+import { MatMomentDateModule } from '@angular/material-moment-adapter';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
+import {routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TermsComponent } from './terms/terms.component';
 import { SearchComponent } from './search/search.component';
@@ -25,11 +28,11 @@ import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { GroupChatsComponent } from './group-chats/group-chats.component';
 import { MainPagesComponent } from './main-pages/main-pages.component';
-import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { SignupComponent } from './signup/signup.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { FriendsActivityComponent } from './friends-activity/friends-activity.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { PostPageComponent } from './post-page/post-page.component';
+
 
 @NgModule({
   declarations: [
@@ -45,6 +48,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     SignupComponent,
     HomePageComponent,
     FriendsActivityComponent,
+    PostPageComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,

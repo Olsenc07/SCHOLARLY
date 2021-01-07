@@ -21,8 +21,7 @@ export const MY_FORMATS = {
 };
 
 
-
-Component({
+@Component({
   selector: 'app-post-page',
   templateUrl: './post-page.component.html',
   styleUrls: ['./post-page.component.scss'],
@@ -62,7 +61,7 @@ views: new FormControl(),
 likes: new FormControl(),
 comments: new FormControl(),
 people_amount: new FormControl(),
-})
+});
 
 
 
@@ -78,7 +77,6 @@ people_amount: new FormControl(),
   }
   constructor() {}
 onFormSubmit(): void{
- 
 }
   ngOnInit(): void {}
 }
