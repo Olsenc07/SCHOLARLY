@@ -3,12 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { DefaultGridAlignColumnsDirective } from '@angular/flex-layout/grid/typings/align-columns/align-columns';
 import { FormControl, FormGroup } from '@angular/forms';
 
-@Component({
-  selector: 'app-search',
-  templateUrl: './search.component.html',
-  styleUrls: ['./search.component.scss']
-})
-
 // Start
 // Need myVariable value to be filled by a users selection.
 // Then a function to display the appropriate array.
@@ -25,7 +19,7 @@ enum SearchOptions {
   SCHOOL_WORK = 'school-work',
   SPIRITUALITY = 'spiritituality',
   U_OF_T_QS = 'questions',
-  UPCOMING_EVENTS = 'upcoming-events' ,
+  UPCOMING_EVENTS = 'upcoming-events',
 }
 
 // const myVariable = document.addEventListener(click,specificFunction(specifics));
@@ -45,13 +39,13 @@ enum SearchOptions {
 // }
 // if (myVariable === SearchOptions.COURSE_A_E) {
 //   var specifics = ['Academic Bridging Program','Acturial Science',
- // 'American Studies', 'Anatomy',' Anthropology,','Archaeology','Architecture & Visual Studies',
- // 'Art History','Astronomy & Astrophysics','Biochemistry','Biology','Candian Institutes For Theoretical Astrophysics',
- // 'Cell & Systems Biology','Cinema Studies Institute', 'Computer Science','Contemporary Asian Studies','Criminology & Sociolegal Studies',
- // 'Criminology & Sociolegal Studies','Diaspora & Transnational Studies','Drama',
- // 'Theatre & Performance Studies','Earth Sciences','East Asian Studies',
- // 'Ecology & Evolutionary Studies','Earth Sciences','East Asian Studies',
- // 'Ecology & Evolutionary Biology','Economics','Environment(School of the)','Estonian','Ethics','European Studies']
+// 'American Studies', 'Anatomy',' Anthropology,','Archaeology','Architecture & Visual Studies',
+// 'Art History','Astronomy & Astrophysics','Biochemistry','Biology','Candian Institutes For Theoretical Astrophysics',
+// 'Cell & Systems Biology','Cinema Studies Institute', 'Computer Science','Contemporary Asian Studies','Criminology & Sociolegal Studies',
+// 'Criminology & Sociolegal Studies','Diaspora & Transnational Studies','Drama',
+// 'Theatre & Performance Studies','Earth Sciences','East Asian Studies',
+// 'Ecology & Evolutionary Studies','Earth Sciences','East Asian Studies',
+// 'Ecology & Evolutionary Biology','Economics','Environment(School of the)','Estonian','Ethics','European Studies']
 // }
 //   if (myVariable === SearchOptions.COURSE_F_M) {
 //     var specifics = ['Finnish','First-Year Foundations','Forest Conservation & Forest Biomaterials Science','French',
@@ -99,26 +93,28 @@ enum SearchOptions {
 //   specifics.values()
 // }
 
-
 // document.getElementById('specifics').innerHTML;
 
+@Component({
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.scss'],
+})
 export class SearchComponent implements OnInit {
-
   search: FormControl = new FormControl('');
 
   searchForm = new FormGroup({
     search: this.search,
   });
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  clearSearch(): void {
+    this.search.setValue('');
   }
-clearSearch(): void{
-  this.search.setValue('');
-}
-onSubmit(): void {
-  // TODO: wire up to login request
-  console.log(this.searchForm.value);
-}
+  onSubmit(): void {
+    // TODO: wire up to login request
+    console.log(this.searchForm.value);
+  }
 }
