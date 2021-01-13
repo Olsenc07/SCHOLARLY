@@ -1,97 +1,109 @@
 <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
-<div class="entire-page">
-  <!-- Entire page -->
-  <div class="main-layout">
-    <div class="left-column">
-      <!-- Profile picture!! School logo or delete -->
-      <div class="logo-layout">
-        <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" class="logo" />
-      </div>
+  <div class="entire-page">
+    <!-- Entire page -->
+    <div class="main-layout">
+      <div class="left-column">
+        <!-- Profile picture!! School logo or delete -->
+        <div class="logo-layout">
+          <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" class="logo" />
+        </div>
 
-      <div class="title-box">
-        <!-- Specifics text-->
-        <div class="specific-text-layout">
-          <button
-            mat-icon-button
-            type="button"
-            routerLink="/main"
-            color="primary"
-            class="action-button"
+        <div class="title-box">
+          <!-- Specifics text-->
+          <div class="specific-text-layout">
+            <button
+              mat-icon-button
+              type="button"
+              routerLink="/main"
+              color="primary"
+              class="action-button"
+            >
+              <p class="text" style="font-size: large">Specific Pages:</p>
+            </button>
+          </div>
+
+          <!-- categeory filter box -->
+          <div
+            class="outside-input-boxs"
+            id="specifics"
+            rows="30"
+            cols="35"
+            style="width: 292px; height: 458px"
           >
-            <p class="text" style="font-size: large;">Specific Pages:</p>
-          </button>
+            <mat-selection-list [multiple]="false">
+              <mat-list-option
+                *ngFor="let opt of specificOptions"
+                [value]="opt"
+              >
+                {{ opt }}
+              </mat-list-option>
+            </mat-selection-list>
+          </div>
         </div>
-
-        <!-- categeory filter box -->
-        <form>
-        <div class="specific-layout">
-          <textarea class="outside-input-boxs"  id="specifics" rows="30" cols="35"> 
-<!-- display appropriate array -->
-
-
-
-          </textarea>
-        </div>
-      </form>
       </div>
-    </div>
 
-    <!-- middle -->
-    <div class="middle-column">
-      <!-- Search text field -->
+      <!-- middle -->
       <div class="middle-column">
-        
-
-        
-        <!-- Search Bar -->
-<form class="search" >
-  <input type="text" 
-   class="search-input" placeholder="Search.." name="search">
-  <button type="submit"><span class="material-icons">search</span></button>
-</form>
-    
-      </div>
-      <!-- Category box -->
-      <textarea class="outside-input-boxs" rows="30" cols="30" style="width: 292px;
-      height: 458px;">
-      <!-- Except it shouldn't be a drop down so I didn't use select and option tags. Just simply displayed texts that can be clicked and display their appropriate array -->
-  <div id="myVariable" onchange="displayFunction()" >
-        <button onclick="specificFunctin()" value="blue-clubs"> Blue's Clubs</button>    
-        <button onclick="specificFunctin()" value="college/faculty-connection">College & Faculty Connections </button> 
-        <button onclick="specificFunctin()" value="course-a-e" >Course's A-E</button>
-        <button onclick="specificFunctin()" value="course-f-m">Course's F-M</button>
-        <button onclick="specificFunctin()" value="course-n-z">Course's N-Z </button>
-        <button onclick="specificFunctin()" value="entrep">Entreprenurial Idea</button>
-        <button onclick="specificFunctin()" value="help">Help Wanted</button>
-        <button onclick="specificFunctin()" value="housing">Housing</button>
-        <button onclick="specificFunctin()" value="buy&sell">Miscellaneous Buy & Sell</button>
-        <button onclick="specificFunctin()" value="school-work" >School Work</button>
-        <button onclick="specificFunctin()" value="spirituality" >Spirituality</button>
-        <button onclick="specificFunctin()" value="questions">U Of T Questions</button>
-        <button onclick="specificFunctin()" value="upcoming-events">Upcoming Events</button>
-  </div>
-      </textarea>
-      
-    </div>
-
-    <!-- right -->
-    <div class="right-column">
-      
-      <div class="recents-box">
-        <!-- Recents tetx -->
-        <div>
-          <p class="recents-text" 
-          style="font-size: large;"
-      >Recents:</p>
+        <!-- Search text field -->
+        <div class="middle-column">
+          <!-- Search Bar -->
+          <form class="search">
+            <input
+              type="text"
+              class="search-input"
+              placeholder="Search.."
+              name="search"
+            />
+            <button type="submit">
+              <span class="material-icons">search</span>
+            </button>
+          </form>
         </div>
+        <!-- Category box -->
 
-        <!-- Recents box -->
-        <div>
-          <textarea class="outside-input-boxs" rows="37" cols="37 width: 334px;
-          height: 619px;"> </textarea>
+        <div
+          class="outside-input-boxs"
+          rows="30"
+          cols="30"
+          style="width: 292px; height: 458px"
+        >
+          <mat-selection-list
+            #searchList
+            [(ngModel)]="selectedOption"
+            (ngModelChange)="onSearchSelection($event)"
+            [ngModelOptions]="{ standalone: true }"
+            [multiple]="false"
+          >
+            <mat-list-option
+              *ngFor="let opt of searchOptions"
+              [value]="opt.value"
+            >
+              {{ opt.name }}
+            </mat-list-option>
+          </mat-selection-list>
         </div>
       </div>
+
+      <!-- right -->
+      <div class="right-column">
+        <div class="recents-box">
+          <!-- Recents tetx -->
+          <div>
+            <p class="recents-text" style="font-size: large">Recents:</p>
+          </div>
+
+          <!-- Recents box -->
+          <div>
+            <textarea
+              class="outside-input-boxs"
+              rows="37"
+              cols="37 width: 334px;
+              height: 619px;"
+            >
+            </textarea>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 </form>
