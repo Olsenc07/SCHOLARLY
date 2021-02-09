@@ -38,7 +38,7 @@ export class SearchComponent implements OnInit {
     { name: 'Course A-E', value: SearchValues.COURSE_A_E },
     { name: 'Course F-M', value: SearchValues.COURSE_F_M },
     { name: 'Course N-Z', value: SearchValues.COURSE_N_Z },
-    { name: 'Entrep', value: SearchValues.ENTREP_IDEA },
+    { name: 'Entrepreneur Opportunities', value: SearchValues.ENTREP_IDEA },
     { name: 'Help', value: SearchValues.HELP_WANTED },
     { name: 'Housing', value: SearchValues.HOUSING },
     { name: 'Buy & Sell', value: SearchValues.MISCELL_BUY_SELL },
