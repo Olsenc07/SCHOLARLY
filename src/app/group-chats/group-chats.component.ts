@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
-
+import {MatBadgeModule} from '@angular/material/badge';
 
 @Component({
   selector: 'app-group-chats',
@@ -9,6 +9,7 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 })
 export class GroupChatsComponent implements OnInit {
   faCoffee = faCoffee;
+  MatBadgeModule;
 
   constructor() { }
 

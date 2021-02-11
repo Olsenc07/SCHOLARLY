@@ -25,13 +25,12 @@
           <!-- categeory filter box -->
           <div
             class="outside-input-boxs"
-            id="specifics"
             rows="30"
             cols="35"
             style="width: 292px; height: 458px"
           >
-            <mat-selection-list [multiple]="false">
-              <mat-list-option
+            <mat-selection-list [multiple]="false" class="mat-list-text">
+              <mat-list-option 
                 *ngFor="let opt of specificOptions"
                 [value]="opt"
               >

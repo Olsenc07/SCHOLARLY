@@ -18,6 +18,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {MatBadgeModule} from '@angular/material/badge';
 
 import { routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -71,6 +72,7 @@ import { MatListModule } from '@angular/material/list';
     MatSliderModule,
     FontAwesomeModule,
     MatListModule,
+    MatBadgeModule,
   ],
 
   providers: [],

@@ -64,11 +64,14 @@
   overflow: hidden;
   scroll-behavior: smooth;
   overflow-y: scroll;
+  display: flex;
+  justify-content: center;
 }
 
 .search-layout {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   margin-bottom: 40%;
 }
 .search-textfield {
@@ -127,20 +130,11 @@
   display: flex;
   justify-content: center;
 }
-.three-icons {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  margin-bottom: 35%;
-  margin-top: 2%;
-}
+
 .friends-format {
   margin-right: 15%;
 }
-.profile-icon {
-  margin-right: 15%;
-  margin-left: 5%;
-}
+
 .post {
   margin-right: 5%;
   margin-left: 20%;
