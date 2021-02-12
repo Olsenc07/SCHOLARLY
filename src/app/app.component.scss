@@ -23,10 +23,7 @@ $box-shadow-color: rgba(0, 0, 0, 0.25);
 .toolbar-logo {
   height: inherit;
 }
-.search-center {
-  display: flex;
-  margin-right: 25%;
-}
+
 .main-content {
   padding: 72px 24px 16px;
 }
@@ -46,9 +43,11 @@ h4:focus {
 .fill-space {
   flex: 1 1 auto;
 }
+
 .settings {
   color: gray;
 }
+
 .public:hover {
   color: rgb(32, 32, 199);
 }
@@ -78,13 +77,12 @@ h4:focus {
   flex-direction: row;
   display: inline-block;
   margin-top: 3%;
-  margin-right: 3%;
   border-style: hidden;
 }
 .search-box__icon {
   position: absolute;
-  right: 0;
-  height: 22px;
+  font-size: 26px;
+  right: 10%;
   color: lightblue;
   cursor: pointer;
 }
@@ -96,16 +94,17 @@ h4:focus {
   bottom: 0;
   padding: 1px;
   width: 20%;
-  color: lightblue;
+  color: rgb(35, 155, 224);
   font-style: italic;
   float: right;
   position: absolute;
   border-radius: 5%;
   margin-right: 10%;
-  background-color: #103384;
+  background-color: #194bbe;
   opacity: 0.7%;
   cursor: pointer;
 }
+
 // transition to the left and have box initially invisible
 .search-box__input:focus {
   width: 100%;
@@ -124,32 +123,11 @@ h4:focus {
   }
 }
 
-@media (min-width: 704px) {
-  #small-icons {
+@media (min-width: 768px) {
+  .small-icons {
     display: none;
   }
 }
-
-.example-container {
-  width: 200px;
-  height: 300px;
-  border: 1px solid rgba(22, 171, 190, 0.5);
-  border-radius: 5%;
-}
-
-.example-sidenav-content {
+.small_icons {
   display: flex;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-}
-
-.example-sidenav {
-  padding: 20px;
-}
-.columns {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  padding: 5%;
 }
