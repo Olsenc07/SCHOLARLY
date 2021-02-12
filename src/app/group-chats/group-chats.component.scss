@@ -76,9 +76,6 @@
 .pic {
   border-radius: 50%;
 }
-.face {
-  margin-bottom: 100%;
-}
 
 .number {
   margin-left: 2px;
@@ -98,4 +95,22 @@
   font-size: 25px;
   margin-top: 1%;
   margin-right: 2%;
+}
+.container {
+  display: flex;
+  margin-bottom: 95%;
+  margin-left: 25%;
+  cursor: pointer;
+  height: 100px;
+  width: 100px;
+}
+.face {
+  background-color: transparent;
+  border: transparent;
+  height: 100%;
+  width: 100%;
+}
+.icon {
+  display: flex;
+  font-size: 90px;
 }
