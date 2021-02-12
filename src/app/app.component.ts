@@ -4,6 +4,7 @@ import { NavigationEnd, Router } from '@angular/router';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { Observable } from 'rxjs';
 import { filter, map, tap } from 'rxjs/operators';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-root',

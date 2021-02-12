@@ -72,13 +72,13 @@ h4:focus {
 
 .search-box {
   position: relative;
-  width: 14%;
+  width: 200px;
   height: 22px;
   display: flex;
   flex-direction: row;
   display: inline-block;
-  margin-top: 0.7%;
-  margin-right: 1%;
+  margin-top: 3%;
+  margin-right: 3%;
   border-style: hidden;
 }
 .search-box__icon {
@@ -95,7 +95,7 @@ h4:focus {
   top: 0;
   bottom: 0;
   padding: 1px;
-  width: 10%;
+  width: 20%;
   color: lightblue;
   font-style: italic;
   float: right;
@@ -108,8 +108,48 @@ h4:focus {
 }
 // transition to the left and have box initially invisible
 .search-box__input:focus {
-  width: 90%;
+  width: 100%;
   visibility: visible;
   box-sizing: content-box;
   opacity: 1;
+}
+.large-screen-icons {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+@media (max-width: 705px) {
+  .large-screen-icons {
+    display: none;
+  }
+}
+
+@media (min-width: 704px) {
+  #small-icons {
+    display: none;
+  }
+}
+
+.example-container {
+  width: 200px;
+  height: 300px;
+  border: 1px solid rgba(22, 171, 190, 0.5);
+  border-radius: 5%;
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav {
+  padding: 20px;
+}
+.columns {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 5%;
 }
