@@ -98,6 +98,7 @@
     <router-outlet></router-outlet>
   </div>
   <!-- Bottom nav bar for small screens -->
+  <ng-container *ngIf="(isHomeScreen$ | async) === false">
 <mat-toolbar class="lower">
   <div class="clean">
   <button mat-icon-button type="button" routerLink="/search" style="margin-right:10%;margin-left:5%">
@@ -114,5 +115,6 @@
   </button>
 </div>
 </mat-toolbar>
+</ng-container>
 </div>
 </form>
