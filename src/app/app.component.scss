@@ -48,18 +48,6 @@ h4:focus {
   color: gray;
 }
 
-.public:hover {
-  color: rgb(32, 32, 199);
-}
-.groups:hover {
-  color: rgb(14, 240, 14);
-}
-.profile:hover {
-  color: rgb(241, 255, 38);
-}
-.post:hover {
-  color: rgb(245, 49, 49);
-}
 .look-nice {
   display: flex;
   justify-content: center;
@@ -102,6 +90,7 @@ h4:focus {
   margin-right: 10%;
   background-color: #194bbe;
   opacity: 0.7%;
+  height: 25px;
   cursor: pointer;
 }
 
@@ -130,4 +119,61 @@ h4:focus {
 }
 .small_icons {
   display: flex;
+}
+// Bottom Nav
+@media (max-width: 768px) {
+  .lower {
+    position: fixed;
+    z-index: 2;
+    box-shadow: 0px 2px 5px 0px $box-shadow-color;
+    height: 50px;
+    padding-left: 0;
+    bottom: 0;
+    background-color: rgb(9, 0, 61);
+  }
+}
+@media (min-width: 769px) {
+  .lower {
+    display: none;
+  }
+}
+// bottom nav
+.clean {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+}
+.public_ {
+  color: rgb(110, 32, 199);
+  font-size: xx-large;
+}
+.groups_ {
+  color: rgb(14, 240, 14);
+  font-size: xx-large;
+}
+.profile_ {
+  color: rgb(241, 255, 38);
+  font-size: xx-large;
+}
+.post_ {
+  color: rgb(233, 106, 21);
+  font-size: xx-large;
+}
+// top nav
+.public {
+  color: rgb(110, 32, 199);
+  font-size: xx-large;
+}
+.groups {
+  color: rgb(14, 240, 14);
+  font-size: xx-large;
+}
+.profile {
+  color: rgb(241, 255, 38);
+  font-size: xx-large;
+}
+.post {
+  color: rgb(233, 106, 21);
+  font-size: xx-large;
 }
