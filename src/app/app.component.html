@@ -26,6 +26,27 @@
         <img class="toolbar-logo" Src="../assets/Pics/ProperInAppLogo.jpeg" />
         <span class="fill-space"></span>
   
+
+
+<!-- Small screens side nav -->
+
+<div class="small-icons" >
+  <div class="search-box">
+    <i type="button"class="fas fa-search search-box__icon"></i>
+    <input class="search-box__input" placeholder="Search Fellow Scholars"/>
+  </div>
+  
+  <button    mat-icon-button [matMenuTriggerFor]="settingsMenu" type="button">
+    <mat-icon class="settings">settings</mat-icon>
+</button>
+</div> 
+
+
+
+
+
+        <!--Icons autosize to sidenav  -->
+        <div class="large-screen-icons">
         <!-- New -->
         <div class="search-box">
           <i type="button"class="fas fa-search search-box__icon"></i>
@@ -47,6 +68,7 @@
         <button mat-icon-button [matMenuTriggerFor]="settingsMenu" type="button">
             <mat-icon class="settings">settings</mat-icon>
         </button>
+      </div>
     </mat-toolbar>    
   </ng-container>
 
@@ -75,5 +97,22 @@
   <div class="main-content">
     <router-outlet></router-outlet>
   </div>
+  <!-- Bottom nav bar for small screens -->
+<mat-toolbar class="lower">
+  <div class="clean">
+  <button mat-icon-button type="button" routerLink="/search" style="margin-right:10%;margin-left:5%">
+    <mat-icon class="public_">public</mat-icon>
+  </button>
+  <button mat-icon-button type="button" routerLink="/friends-activity" style="margin-left:8%;margin-right:8%">
+      <mat-icon class="groups_">groups</mat-icon>
+  </button>
+  <button mat-icon-button type="button" routerLink="/profile" style="margin-right:8%;margin-left:8%">
+      <mat-icon class="profile_">account_circle</mat-icon>
+  </button>
+  <button mat-icon-button type="button" routerLink="/post-page" style="margin-left:10%;margin-right:2%" >
+  <mat-icon class="post_">add_circle</mat-icon>
+  </button>
+</div>
+</mat-toolbar>
 </div>
 </form>

@@ -23,10 +23,7 @@ $box-shadow-color: rgba(0, 0, 0, 0.25);
 .toolbar-logo {
   height: inherit;
 }
-.search-center {
-  display: flex;
-  margin-right: 25%;
-}
+
 .main-content {
   padding: 72px 24px 16px;
 }
@@ -46,21 +43,11 @@ h4:focus {
 .fill-space {
   flex: 1 1 auto;
 }
+
 .settings {
   color: gray;
 }
-.public:hover {
-  color: rgb(32, 32, 199);
-}
-.groups:hover {
-  color: rgb(14, 240, 14);
-}
-.profile:hover {
-  color: rgb(241, 255, 38);
-}
-.post:hover {
-  color: rgb(245, 49, 49);
-}
+
 .look-nice {
   display: flex;
   justify-content: center;
@@ -72,19 +59,18 @@ h4:focus {
 
 .search-box {
   position: relative;
-  width: 14%;
+  width: 200px;
   height: 22px;
   display: flex;
   flex-direction: row;
   display: inline-block;
-  margin-top: 0.7%;
-  margin-right: 1%;
+  margin-top: 3%;
   border-style: hidden;
 }
 .search-box__icon {
   position: absolute;
-  right: 0;
-  height: 22px;
+  font-size: 26px;
+  right: 10%;
   color: lightblue;
   cursor: pointer;
 }
@@ -95,21 +81,99 @@ h4:focus {
   top: 0;
   bottom: 0;
   padding: 1px;
-  width: 10%;
-  color: lightblue;
+  width: 20%;
+  color: rgb(35, 155, 224);
   font-style: italic;
   float: right;
   position: absolute;
   border-radius: 5%;
   margin-right: 10%;
-  background-color: #103384;
+  background-color: #194bbe;
   opacity: 0.7%;
+  height: 25px;
   cursor: pointer;
 }
+
 // transition to the left and have box initially invisible
 .search-box__input:focus {
-  width: 90%;
+  width: 100%;
   visibility: visible;
   box-sizing: content-box;
   opacity: 1;
+}
+.large-screen-icons {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+@media (max-width: 769px) {
+  .large-screen-icons {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .small-icons {
+    display: none;
+  }
+}
+.small_icons {
+  display: flex;
+}
+// Bottom Nav
+@media (max-width: 768px) {
+  .lower {
+    position: fixed;
+    z-index: 2;
+    box-shadow: 0px 2px 5px 0px $box-shadow-color;
+    height: 50px;
+    padding-left: 0;
+    bottom: 0;
+    background-color: rgb(9, 0, 61);
+  }
+}
+@media (min-width: 769px) {
+  .lower {
+    display: none;
+  }
+}
+// bottom nav
+.clean {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+}
+.public_ {
+  color: rgb(110, 32, 199);
+  font-size: xx-large;
+}
+.groups_ {
+  color: rgb(14, 240, 14);
+  font-size: xx-large;
+}
+.profile_ {
+  color: rgb(241, 255, 38);
+  font-size: xx-large;
+}
+.post_ {
+  color: rgb(233, 106, 21);
+  font-size: xx-large;
+}
+// top nav
+.public {
+  color: rgb(110, 32, 199);
+  font-size: xx-large;
+}
+.groups {
+  color: rgb(14, 240, 14);
+  font-size: xx-large;
+}
+.profile {
+  color: rgb(241, 255, 38);
+  font-size: xx-large;
+}
+.post {
+  color: rgb(233, 106, 21);
+  font-size: xx-large;
 }
