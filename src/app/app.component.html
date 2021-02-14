@@ -94,9 +94,11 @@
       </span>Log Out</button> <!-- TODO: wire up log out button -->
   </mat-menu>
 
+  
   <div class="main-content">
     <router-outlet></router-outlet>
   </div>
+
   <!-- Bottom nav bar for small screens -->
   <ng-container *ngIf="(isHomeScreen$ | async) === false">
 <mat-toolbar class="lower">
