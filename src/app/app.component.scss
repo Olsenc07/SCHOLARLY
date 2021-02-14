@@ -84,6 +84,7 @@ h4:focus {
   width: 20%;
   color: rgb(35, 155, 224);
   font-style: italic;
+  font-size: 1vw;
   float: right;
   position: relative;
   border-radius: 5%;
@@ -107,13 +108,13 @@ h4:focus {
   flex-direction: row;
   width: 60%;
 }
-@media (max-width: 769px) {
+@media (max-width: 801px) {
   .large-screen-icons {
     display: none;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 802px) {
   .small-icons {
     display: none;
   }
@@ -122,7 +123,7 @@ h4:focus {
   display: flex;
 }
 // Bottom Nav
-@media (max-width: 768px) {
+@media (max-width: 801px) {
   .lower {
     position: fixed;
     z-index: 2;
@@ -133,7 +134,7 @@ h4:focus {
     background-color: rgb(9, 0, 61);
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 802px) {
   .lower {
     display: none;
   }
@@ -162,19 +163,187 @@ h4:focus {
   font-size: xx-large;
 }
 // top nav
-.public {
-  color: rgb(110, 32, 199);
-  font-size: xx-large;
+@media (min-width: 1440px) {
+  .public {
+    color: rgb(110, 32, 199);
+    font-size: 3vw;
+  }
+  .groups {
+    color: rgb(14, 240, 14);
+    font-size: 3vw;
+  }
+  .profile {
+    color: rgb(241, 255, 38);
+    font-size: 3vw;
+  }
+  .post {
+    color: rgb(233, 106, 21);
+    font-size: 3vw;
+  }
+  .search-box__input:focus {
+    width: 57%;
+    visibility: visible;
+    box-sizing: content-box;
+    opacity: 1;
+  }
+  .search-box__input {
+    transition: right, 1s;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 1px;
+    width: 20%;
+    color: rgb(35, 155, 224);
+    font-style: italic;
+    font-size: 1.8vw;
+    float: right;
+    position: relative;
+    border-radius: 5%;
+    margin-right: 10%;
+    background-color: #194bbe;
+    opacity: 0.7%;
+    height: 25px;
+    cursor: pointer;
+  }
 }
-.groups {
-  color: rgb(14, 240, 14);
-  font-size: xx-large;
+@media (max-width: 1440px) and (min-width: 1150px) {
+  .public {
+    color: rgb(110, 32, 199);
+    font-size: 4vw;
+  }
+  .groups {
+    color: rgb(14, 240, 14);
+    font-size: 4vw;
+  }
+  .profile {
+    color: rgb(241, 255, 38);
+    font-size: 4vw;
+  }
+  .post {
+    color: rgb(233, 106, 21);
+    font-size: 4vw;
+  }
+  .search-box__input:focus {
+    width: 65%;
+    visibility: visible;
+    box-sizing: content-box;
+    opacity: 1;
+  }
+  .search-box__input {
+    transition: right, 1s;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 1px;
+    width: 20%;
+    color: rgb(35, 155, 224);
+    font-style: italic;
+    font-size: 1.8vw;
+    float: right;
+    position: relative;
+    border-radius: 5%;
+    margin-right: 10%;
+    background-color: #194bbe;
+    opacity: 0.7%;
+    height: 25px;
+    cursor: pointer;
+  }
 }
-.profile {
-  color: rgb(241, 255, 38);
-  font-size: xx-large;
+
+@media (max-width: 1150px) {
+  .public {
+    color: rgb(110, 32, 199);
+    font-size: 5vw;
+  }
+  .groups {
+    color: rgb(14, 240, 14);
+    font-size: 5vw;
+  }
+  .profile {
+    color: rgb(241, 255, 38);
+    font-size: 5vw;
+  }
+  .post {
+    color: rgb(233, 106, 21);
+    font-size: 5vw;
+  }
+  .search-box__input:focus {
+    width: 130%;
+    visibility: visible;
+    box-sizing: content-box;
+    opacity: 1;
+  }
+  .search-box__input {
+    transition: right, 1s;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 1px;
+    width: 20%;
+    color: rgb(35, 155, 224);
+    font-style: italic;
+    font-size: 2.5vw;
+    float: right;
+    position: relative;
+    border-radius: 5%;
+    margin-right: 10%;
+    background-color: #194bbe;
+    opacity: 0.7%;
+    height: 25px;
+    cursor: pointer;
+  }
 }
-.post {
-  color: rgb(233, 106, 21);
-  font-size: xx-large;
+@media (max-width: 900px) {
+  .search-box__input:focus {
+    width: 145%;
+    visibility: visible;
+    box-sizing: content-box;
+    opacity: 1;
+  }
+  .search-box__input {
+    transition: right, 1s;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 1px;
+    width: 20%;
+    color: rgb(35, 155, 224);
+    font-style: italic;
+    font-size: 2vw;
+    float: right;
+    position: relative;
+    border-radius: 5%;
+    margin-right: 10%;
+    background-color: #194bbe;
+    opacity: 0.7%;
+    height: 25px;
+    cursor: pointer;
+  }
+}
+@media (max-width: 801px) {
+  .search-box__input:focus {
+    width: 100%;
+    visibility: visible;
+    box-sizing: content-box;
+    opacity: 1;
+  }
+  .search-box__input {
+    transition: right, 1s;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 1px;
+    width: 20%;
+    color: rgb(35, 155, 224);
+    font-style: italic;
+    font-size: 4vw;
+    float: right;
+    position: relative;
+    border-radius: 5%;
+    margin-right: 10%;
+    background-color: #194bbe;
+    opacity: 0.7%;
+    height: 25px;
+    cursor: pointer;
+  }
 }
