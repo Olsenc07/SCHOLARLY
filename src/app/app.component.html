@@ -36,7 +36,7 @@
     <input class="search-box__input" placeholder="Search Fellow Scholars"/>
   </div>
   
-  <button    mat-icon-button [matMenuTriggerFor]="settingsMenu" type="button">
+  <button mat-icon-button [matMenuTriggerFor]="settingsMenu" type="button">
     <mat-icon class="settings">settings</mat-icon>
 </button>
 </div> 
@@ -53,19 +53,19 @@
           <input class="search-box__input" placeholder="Search Fellow Scholars"/>
         </div>
         <!-- End -->
-        <button mat-icon-button type="button" routerLink="/search">
+        <button mat-icon-button type="button" routerLink="/search" style="margin-left:7%">
           <mat-icon class="public">public</mat-icon>
         </button>
-        <button mat-icon-button type="button" routerLink="/friends-activity">
+        <button mat-icon-button type="button" routerLink="/friends-activity" style="margin-left:7%">
             <mat-icon class="groups">groups</mat-icon>
         </button>
-        <button mat-icon-button type="button" routerLink="/profile">
+        <button mat-icon-button type="button" routerLink="/profile" style="margin-left:7%">
             <mat-icon class="profile">account_circle</mat-icon>
         </button>
-        <button mat-icon-button type="button" routerLink="/post-page" >
+        <button mat-icon-button type="button" routerLink="/post-page" style="margin-left:7%" >
         <mat-icon class="post">add_circle</mat-icon>
         </button>
-        <button mat-icon-button [matMenuTriggerFor]="settingsMenu" type="button">
+        <button mat-icon-button [matMenuTriggerFor]="settingsMenu" type="button" style="margin-left:10%">
             <mat-icon class="settings">settings</mat-icon>
         </button>
       </div>
@@ -98,6 +98,7 @@
     <router-outlet></router-outlet>
   </div>
   <!-- Bottom nav bar for small screens -->
+  <ng-container *ngIf="(isHomeScreen$ | async) === false">
 <mat-toolbar class="lower">
   <div class="clean">
   <button mat-icon-button type="button" routerLink="/search" style="margin-right:10%;margin-left:5%">
@@ -114,5 +115,6 @@
   </button>
 </div>
 </mat-toolbar>
+</ng-container>
 </div>
 </form>

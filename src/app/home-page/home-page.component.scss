@@ -1,15 +1,26 @@
-.main-content {
+.content {
   position: relative;
   padding: 24px 16px 16px;
   font-size: 16px;
-  max-width: 750px; // size of the header image
+  max-width: 80%;
+  @media (min-width: 767px) {
+    .main-text {
+      padding: 48px 32px 0 0;
+      font-size: 3vw;
+      line-height: initial;
+      color: #0e3379;
+      font-family: "Helvetic Neue", "Courier New", Courier;
+    }
+  }
 
-  .main-text {
-    padding: 48px 32px 0 0;
-    font-size: 32px;
-    line-height: 32px;
-    color: #0e3379;
-    font-family: "Helvetic Neue", "Courier New", Courier;
+  @media (max-width: 767px) {
+    .main-text-small {
+      padding: 48px 32px 0 0;
+      font-size: 4vw;
+      line-height: initial;
+      color: #0e3379;
+      font-family: "Helvetic Neue", "Courier New", Courier;
+    }
   }
 
   .log-in-box {
