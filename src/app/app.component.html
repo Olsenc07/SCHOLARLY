@@ -53,19 +53,19 @@
           <input class="search-box__input" placeholder="Fellow Scholars"/>
         </div>
         <!-- End -->
-        <button mat-icon-button type="button" routerLink="/search" style="margin-left:7%">
+        <button mat-icon-button type="button" routerLink="/search" class="a_up">
           <mat-icon class="public">public</mat-icon>
         </button>
-        <button mat-icon-button type="button" routerLink="/friends-activity" style="margin-left:7%">
+        <button mat-icon-button type="button" routerLink="/friends-activity" class="a_up">
             <mat-icon class="groups">groups</mat-icon>
         </button>
-        <button mat-icon-button type="button" routerLink="/profile" style="margin-left:7%">
+        <button mat-icon-button type="button" routerLink="/profile" class="a_up">
             <mat-icon class="profile">account_circle</mat-icon>
         </button>
-        <button mat-icon-button type="button" routerLink="/post-page" style="margin-left:7%" >
+        <button mat-icon-button type="button" routerLink="/post-page" class="a_up" >
         <mat-icon class="post">add_circle</mat-icon>
         </button>
-        <button mat-icon-button [matMenuTriggerFor]="settingsMenu" type="button" style="margin-left:10%">
+        <button mat-icon-button [matMenuTriggerFor]="settingsMenu" type="button" class="b_up">
             <mat-icon class="settings">settings</mat-icon>
         </button>
       </div>
@@ -75,21 +75,21 @@
   
   <mat-menu #settingsMenu="matMenu">
     
-    <button mat-menu-item type="button" routerLink="/retrieve-password" style="border-bottom:solid #c6c9ea"class="look-nice"><span class="material-icons" style="color: burlywood; margin-top: 8%;">
+    <button mat-menu-item type="button" routerLink="/retrieve-password" style="border-bottom:solid #c6c9ea"class="look-nice"><span class="material-icons d_settings" style="color: burlywood; ">
       vpn_key
       </span>
       Change Password
     </button>
   
   
-    <button mat-menu-item type="button" routerLink="/edit-profile" style="border-bottom:solid #c6c9ea"class="look-nice"><span class="material-icons" style="color: cadetblue; margin-top: 8%;">
+    <button mat-menu-item type="button" routerLink="/edit-profile" style="border-bottom:solid #c6c9ea"class="look-nice"><span class="material-icons d_settings" style="color: cadetblue; ">
       lock_open
       </span>
       Edit Profile
     </button>
   
   
-    <button mat-menu-item type="button" routerLink="/login" class="look-nice"><span class="material-icons" style="color: darkcyan;margin-top: 8%;">
+    <button mat-menu-item type="button" routerLink="/login" class="look-nice"><span class="material-icons d_settings" style="color: darkcyan;">
       exit_to_app
       </span>Log Out</button> <!-- TODO: wire up log out button -->
   </mat-menu>
@@ -103,20 +103,26 @@
   <ng-container *ngIf="(isHomeScreen$ | async) === false">
 <mat-toolbar class="lower">
   <div class="clean">
-  <button mat-icon-button type="button" routerLink="/search" style="margin-right:10%;margin-left:5%">
+  <button mat-icon-button type="button" routerLink="/search" class="a_bottom">
     <mat-icon class="public_">public</mat-icon>
   </button>
-  <button mat-icon-button type="button" routerLink="/friends-activity" style="margin-left:8%;margin-right:8%">
+  <button mat-icon-button type="button" routerLink="/friends-activity" class="b_bottom">
       <mat-icon class="groups_">groups</mat-icon>
   </button>
-  <button mat-icon-button type="button" routerLink="/profile" style="margin-right:8%;margin-left:8%">
+  <button mat-icon-button type="button" routerLink="/profile" class="b_bottom">
       <mat-icon class="profile_">account_circle</mat-icon>
   </button>
-  <button mat-icon-button type="button" routerLink="/post-page" style="margin-left:10%;margin-right:2%" >
+  <button mat-icon-button type="button" routerLink="/post-page" class="c_bottom" >
   <mat-icon class="post_">add_circle</mat-icon>
   </button>
 </div>
 </mat-toolbar>
 </ng-container>
 </div>
+
+
+<ng-container *ngIf="(isHomeScreen$ | async) === false">
+  <div class="main-content"></div>
+</ng-container>
+
 </form>
