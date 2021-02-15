@@ -13,7 +13,7 @@
 $box-shadow-color: rgba(0, 0, 0, 0.25);
 
 .header {
-  position: fixed;
+  position: relative;
   z-index: 2;
   box-shadow: 0px 2px 5px 0px $box-shadow-color;
   height: 75px;
@@ -23,9 +23,11 @@ $box-shadow-color: rgba(0, 0, 0, 0.25);
 .toolbar-logo {
   height: inherit;
 }
-//@media (min-width: 600px) {
+
 .main-content {
-  padding: 72px 0px 16px;
+  //padding: 72px 0px 16px;
+  height: 100%;
+  padding-bottom: 5%;
 }
 
 .material-icons {
@@ -47,6 +49,13 @@ h4:focus {
 
 .settings {
   color: gray;
+}
+// top nav icon
+.a_up {
+  margin-left: 7%;
+}
+.b_up {
+  margin-left: 10%;
 }
 
 .look-nice {
@@ -126,7 +135,7 @@ h4:focus {
 // Bottom Nav
 @media (max-width: 801px) {
   .lower {
-    position: fixed;
+    position: absolute;
     z-index: 2;
     box-shadow: 0px 2px 5px 0px $box-shadow-color;
     height: 50px;
@@ -162,6 +171,21 @@ h4:focus {
 .post_ {
   color: rgb(233, 106, 21);
   font-size: xx-large;
+}
+.a_bottom {
+  margin-right: 10%;
+  margin-left: 5%;
+}
+.b_bottom {
+  margin-left: 8%;
+  margin-right: 8%;
+}
+.c_bottom {
+  margin-left: 10%;
+  margin-right: 2%;
+}
+.d_settings {
+  margin-top: 8%;
 }
 // top nav
 @media (min-width: 1440px) {

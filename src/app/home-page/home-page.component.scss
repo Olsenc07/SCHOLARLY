@@ -24,9 +24,11 @@
   }
 
   .log-in-box {
+    box-sizing: border-box;
     padding: 16px;
     border: 1px solid gray;
     border-radius: 16px;
+    width: 65%;
 
     .forgot-password {
       margin: 8px 0;
@@ -36,7 +38,6 @@
     }
 
     .action-button {
-      width: 50%;
       font-family: "Helvetic Neue", "Courier New", Courier;
     }
 
