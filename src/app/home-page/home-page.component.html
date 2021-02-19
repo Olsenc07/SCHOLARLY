@@ -3,17 +3,17 @@
   <div fxLayout="row">
     <div class="side-spacer"></div>
     <div fxLayout="column" fxLayoutAlign="center center" style="width: 100%" >
-      <img Src="../../assets/Pics/ProperInAppLogo.jpeg" style="width: 80%"  >
+      <img Src="../../assets/Pics/ProperInAppLogo.jpeg" style="width: 100%"  >
       <div class="content" fxLayout="row">
         <span class="main-text main-text-small">
           <p>Enhance your University experience with Scholarly</p>
         </span>
         <!-- Container holding the log in form -->
-        <div class="log-in-box" fxLayout="column" fxLayoutAlign="center center">
-          <mat-form-field class="text-input"
-            ><mat-label>Email Address</mat-label>
+        <div class="log-in-box" fxLayout="column"  fxLayoutAlign="center center">
+          <mat-form-field class="text-input">
+            <!-- <mat-label> Academic Email</mat-label> -->
             <input matInput formControlName="email" autocomplete="on" />
-            <span matSuffix class="email-suffix">@mail.utoronto.ca</span>
+            <span matSuffix  class="hide">Academic Email</span>
             <button
               color="primary"
               mat-button
