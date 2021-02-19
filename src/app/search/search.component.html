@@ -8,7 +8,7 @@
           <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" class="logo" />
         </div>
 
-        <div class="title-box">
+        <div class="title-categories">
           <!-- Specifics text-->
           <div class="specific-text-layout">
             <button
@@ -24,12 +24,9 @@
 
           <!-- categeory filter box -->
           <div
-            class="outside-input-boxs"
-            rows="30"
-            cols="35"
-            style="width: 292px; height: 458px"
-          >
-            <mat-selection-list [multiple]="false" class="mat-list-text">
+          class="outside-input-boxs" >
+          
+            <mat-selection-list [multiple]="false" class="mat-list-text" >
               <mat-list-option 
                 *ngFor="let opt of specificOptions"
                 [value]="opt"
@@ -37,12 +34,13 @@
                 {{ opt }}
               </mat-list-option>
             </mat-selection-list>
+            
           </div>
         </div>
       </div>
 
       <!-- middle -->
-      <div class="middle-column">
+      <div class="middle-column-large">
         <!-- Search text field -->
         <div class="middle-column">
           <!-- Search Bar -->
@@ -61,12 +59,8 @@
         <!-- Category box -->
 
         <div
-          class="outside-input-boxs"
-          rows="30"
-          cols="30"
-          style="width: 292px; height: 458px"
-        >
-          <mat-selection-list
+          class="outside-input-boxs" >
+          <mat-selection-list 
             #searchList
             [(ngModel)]="selectedOption"
             (ngModelChange)="onSearchSelection($event)"
@@ -93,13 +87,11 @@
 
           <!-- Recents box -->
           <div>
-            <textarea
-              class="outside-input-boxs"
-              rows="37"
-              cols="37 width: 334px;
-              height: 619px;"
+            <div
+              class="outside-input-boxs recents"
+              
             >
-            </textarea>
+          </div>
           </div>
         </div>
       </div>
