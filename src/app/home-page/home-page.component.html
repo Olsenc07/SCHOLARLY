@@ -4,16 +4,16 @@
     <div class="side-spacer"></div>
     <div fxLayout="column" fxLayoutAlign="center center" style="width: 100%" >
       <img Src="../../assets/Pics/ProperInAppLogo.jpeg" style="width: 100%"  >
-      <div class="content" fxLayout="row">
+      <div class="content" class="row">
         <span class="main-text main-text-small">
-          <p>Enhance your University experience with Scholarly</p>
+          <a>Enhance your University experience with Scholarly</a>
         </span>
         <!-- Container holding the log in form -->
         <div class="log-in-box" fxLayout="column"  fxLayoutAlign="center center">
           <mat-form-field class="text-input">
-            <!-- <mat-label> Academic Email</mat-label> -->
+            <mat-label> Academic Email</mat-label>
             <input matInput formControlName="email" autocomplete="on" />
-            <span matSuffix  class="hide">Academic Email</span>
+            <span matSuffix  class="hide"></span>
             <button
               color="primary"
               mat-button
@@ -53,7 +53,7 @@
             routerLink="/profile"
             mat-raised-button
             color="primary"
-            class="action-button"
+            class="action-button top"
           >
             Log In
           </button>
@@ -66,7 +66,7 @@
           >
             Forgot Password?
           </button>
-          <p>Or</p>
+          <p class="tag">Or</p>
           <button
             type="button"
             mat-raised-button
