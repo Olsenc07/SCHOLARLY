@@ -1,60 +1,88 @@
-.content {
-  position: relative;
-  padding: 24px 16px 16px;
-  font-size: 16px;
-  max-width: 80%;
-  @media (min-width: 767px) {
-    .main-text {
-      padding: 48px 32px 0 0;
-      font-size: 3vw;
-      line-height: initial;
-      color: #0e3379;
-      font-family: "Helvetic Neue", "Courier New", Courier;
-    }
+@media (max-width: 500px) {
+  .content {
+    display: flex;
+    position: relative;
+    padding: 2% 9% 2%;
+    height: 79vh;
+    justify-content: center;
   }
-
-  @media (max-width: 767px) {
-    .main-text-small {
-      padding: 48px 32px 0 0;
-      font-size: 4vw;
-      line-height: initial;
-      color: #0e3379;
-      font-family: "Helvetic Neue", "Courier New", Courier;
-    }
+}
+@media (max-width: 500px) and (max-height: 478px) {
+  .content {
+    position: relative;
+    padding: 2% 9% 2%;
+    height: 9vh;
+    display: flex;
+    justify-content: center;
   }
-
-  .log-in-box {
-    box-sizing: border-box;
-    padding: 16px;
-    border: 1px solid gray;
-    border-radius: 16px;
-    width: 65%;
-
-    .forgot-password {
-      margin: 8px 0;
-      font-size: 14px;
-      color: #0e3379;
-      font-family: "Helvetic Neue", "Courier New", Courier;
-    }
-
-    .action-button {
-      font-family: "Helvetic Neue", "Courier New", Courier;
-    }
-
-    p {
-      font-size: 20px;
-      margin: 0 0 16px;
-      color: #0e3379;
-      font-family: "Helvetic Neue", "Courier New", Courier;
-    }
+}
+@media (min-width: 767px) {
+  .main-text {
+    padding: 48px 32px 0 0;
+    font-size: 3vw;
+    line-height: initial;
+    color: #0e3379;
+    font-family: "Helvetic Neue", "Courier New", Courier;
   }
+}
+
+@media (max-width: 767px) {
+  .main-text-small {
+    padding: 8px 2px 0 0;
+    line-height: initial;
+    color: #0e3379;
+    font-family: "Helvetic Neue", "Courier New", Courier;
+  }
+}
+
+.log-in-box {
+  box-sizing: border-box;
+  padding: 0% 5% 5% 5%;
+  border: 1px solid gray;
+  border-radius: 16px;
+  width: 100%;
+  display: flex;
+}
+
+.forgot-password {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #0e3379;
+  font-family: "Helvetic Neue", "Courier New", Courier;
+}
+
+.action-button {
+  font-family: "Helvetic Neue", "Courier New", Courier;
+}
+
+p {
+  margin: 3% 0 1%;
+  color: #0e3379;
+  font-family: "Helvetic Neue", "Courier New", Courier;
 }
 
 .text-input {
   width: 100%;
   font-family: "Helvetic Neue", "Courier New", Courier;
+  height: 9vh;
 }
-
 .side-spacer {
   width: 25%;
+}
+@media (max-width: 501px) {
+  .side-spacer {
+    display: none;
+  }
+}
+@media (min-width: 501px) {
+  .row {
+    display: flex;
+    flex-direction: row;
+  }
+}
+@media (max-width: 501px) {
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
 }
