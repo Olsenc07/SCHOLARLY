@@ -18,7 +18,7 @@
 }
 @media (min-width: 767px) {
   .main-text {
-    padding: 48px 32px 0 0;
+    padding: 8% 2% 0 0;
     font-size: 3vw;
     line-height: initial;
     color: #0e3379;
@@ -28,13 +28,22 @@
 
 @media (max-width: 767px) {
   .main-text-small {
-    padding: 8px 2px 0 0;
+    padding: 8% 2% 0 0;
+    font-size: 4vw;
     line-height: initial;
     color: #0e3379;
     font-family: "Helvetic Neue", "Courier New", Courier;
   }
 }
-
+@media (max-width: 500px) {
+  .main-text-small {
+    padding: 8% 2% 0 0;
+    font-size: 5vw;
+    line-height: initial;
+    color: #0e3379;
+    font-family: "Helvetic Neue", "Courier New", Courier;
+  }
+}
 .log-in-box {
   box-sizing: border-box;
   padding: 0% 5% 5% 5%;
@@ -46,7 +55,7 @@
 
 .forgot-password {
   margin: 8px 0;
-  font-size: 14px;
+  font-size: 16px;
   color: #0e3379;
   font-family: "Helvetic Neue", "Courier New", Courier;
 }
@@ -54,33 +63,63 @@
 .action-button {
   font-family: "Helvetic Neue", "Courier New", Courier;
 }
-
-p {
-  margin: 3% 0 1%;
-  color: #0e3379;
-  font-family: "Helvetic Neue", "Courier New", Courier;
+@media (max-height: 500px) {
+  .top {
+    margin-top: 3%;
+  }
+}
+@media (min-width: 511px) {
+  .tag {
+    color: #0e3379;
+    font-family: "Helvetic Neue", "Courier New", Courier;
+    margin: 3% 0;
+    font-size: 17px;
+  }
+}
+@media (max-width: 511px) {
+  .tag {
+    display: none;
+  }
 }
 
 .text-input {
   width: 100%;
   font-family: "Helvetic Neue", "Courier New", Courier;
   height: 9vh;
+  font-size: large;
+}
+@media (max-width: 700px) and (min-width: 402px) {
+  .text-input {
+    width: 100%;
+    font-family: "Helvetic Neue", "Courier New", Courier;
+    height: 9vh;
+    font-size: medium;
+  }
+}
+@media (max-width: 401px) {
+  .text-input {
+    width: 100%;
+    font-family: "Helvetic Neue", "Courier New", Courier;
+    height: 9vh;
+    font-size: small;
+  }
 }
 .side-spacer {
   width: 25%;
 }
-@media (max-width: 501px) {
+@media (max-width: 510px) {
   .side-spacer {
     display: none;
   }
 }
-@media (min-width: 501px) {
+@media (min-width: 511px) {
   .row {
     display: flex;
     flex-direction: row;
+    margin-top: 1%;
   }
 }
-@media (max-width: 501px) {
+@media (max-width: 510px) {
   .column {
     display: flex;
     flex-direction: column;
