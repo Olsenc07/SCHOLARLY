@@ -24,7 +24,7 @@
 
           <!-- categeory filter box -->
           <div
-          class="outside-input-boxs" >
+          class="input-boxs" >
           
             <mat-selection-list [multiple]="false" class="mat-list-text" >
               <mat-list-option 
@@ -59,8 +59,8 @@
         <!-- Category box -->
 
         <div
-          class="outside-input-boxs" >
-          <mat-selection-list 
+          class="input-boxs top_scroll " >
+          <mat-selection-list class="horizontal_list"
             #searchList
             [(ngModel)]="selectedOption"
             (ngModelChange)="onSearchSelection($event)"
