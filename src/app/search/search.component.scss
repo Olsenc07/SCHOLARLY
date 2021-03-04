@@ -41,7 +41,6 @@
   scroll-behavior: smooth;
 }
 
-// Recents related
 .right-column {
   display: flex;
   flex-direction: column;
@@ -51,16 +50,56 @@
   height: fit-content;
   box-sizing: border-box;
 }
-.recents-text {
-  color: #0e3379;
-  font-size: large;
-  color: #0e3379;
+
+// Reacting to mobile and tablet sizes
+@media (max-width: 1025px) {
+  .logo .logo-layout .specifics-text {
+    display: none;
+  }
 }
-.specifics-text {
-  margin-left: 35%;
-  color: #0e3379;
-  font-size: large;
+@media (max-width: 1025px) {
+  .specific-text-layout {
+    display: none;
+  }
 }
+@media (max-width: 1025px) {
+  .recents-text {
+    display: none;
+  }
+}
+@media (max-width: 1025px) {
+  .search {
+    display: none;
+  }
+}
+@media (max-width: 1025px) {
+  .logo-layout {
+    display: none;
+  }
+}
+
+@media (min-width: 1025px) {
+  .specifics-text {
+    margin-left: 35%;
+    color: #0e3379;
+    font-size: large;
+  }
+  .specific-text-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .recents-text {
+    color: #0e3379;
+    font-size: large;
+    color: #0e3379;
+  }
+  .logo-layout {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 .recents-box {
   margin-bottom: 10%;
   display: flex;
@@ -78,10 +117,6 @@
   width: 57%;
 }
 
-.logo-layout {
-  display: flex;
-  justify-content: center;
-}
 .title-categories {
   display: flex;
   flex-direction: column;
@@ -101,16 +136,12 @@
   margin-bottom: 4%;
   margin-top: 1%;
 }
-.specific-text-layout {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+
 .mat-list-text {
   justify-content: center;
   flex-direction: column;
   flex: inherit;
-  height: 35vh;
+  height: 48vh;
   box-sizing: border-box;
 }
 .specific-layout {
@@ -142,12 +173,6 @@
   display: flex;
   height: 100%;
   width: 100%;
-}
-
-.action-button {
-  color: #2699fb;
-  display: flex;
-  justify-content: center;
 }
 
 .main-options {
