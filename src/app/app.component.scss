@@ -23,7 +23,12 @@ $box-shadow-color: rgba(0, 0, 0, 0.25);
 .toolbar-logo {
   height: inherit;
 }
-
+@media (max-width: 580px) {
+  .toolbar-logo {
+    height: inherit;
+    width: 53vw;
+  }
+}
 .main-content {
   //padding: 72px 0px 16px;
   height: 100%;
@@ -152,34 +157,38 @@ h4:focus {
   justify-content: center;
   flex-direction: row;
   width: 100%;
+  height: 100%;
 }
 .public_ {
   color: rgb(110, 32, 199);
-  font-size: xx-large;
+  font-size: 6vmax;
 }
 .groups_ {
   color: rgb(14, 240, 14);
-  font-size: xx-large;
+  font-size: 6vmax;
 }
 .profile_ {
   color: rgb(241, 255, 38);
-  font-size: xx-large;
+  font-size: 6vmax;
 }
 .post_ {
   color: rgb(233, 106, 21);
-  font-size: xx-large;
+  font-size: 6vmax;
 }
 .a_bottom {
-  margin-right: 10%;
-  margin-left: 5%;
+  margin-right: 5%;
+  margin-left: 3%;
+  height: 100%;
 }
 .b_bottom {
   margin-left: 8%;
-  margin-right: 8%;
+  margin-right: 10%;
+  height: 100%;
 }
 .c_bottom {
   margin-left: 10%;
-  margin-right: 2%;
+  margin-right: 6%;
+  height: 100%;
 }
 .d_settings {
   margin-top: 8%;
