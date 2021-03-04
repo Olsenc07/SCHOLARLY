@@ -134,7 +134,7 @@ h4:focus {
 // Bottom Nav
 @media (max-width: 801px) {
   .lower {
-    position: absolute;
+    position: fixed;
     z-index: 2;
     box-shadow: 0px 2px 5px 0px $box-shadow-color;
     bottom: 0;
