@@ -37,7 +37,7 @@
     position: relative;
     height: 100vh;
     overflow-y: scroll;
-    width: 37vw;
+    width: 51%;
   }
 }
 .middle-column {
@@ -72,7 +72,7 @@
     width: fit-content;
     position: relative;
     overflow-x: scroll;
-    height: 14vh;
+    height: 21vh;
   }
 }
 @media (min-width: 1025px) {
@@ -134,7 +134,7 @@
     position: fixed;
   }
 }
-@media (max-width: 1025px) {
+@media (max-width: 1025px) and (min-height: 513px) {
   .recents {
     display: flex;
     position: fixed;
@@ -142,6 +142,28 @@
     left: 19%;
     right: 0;
     top: 29vh;
+    border-style: groove;
+  }
+}
+@media (max-height: 513px) and (min-height: 437px) {
+  .recents {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 19%;
+    right: 0;
+    top: 34vh;
+    border-style: groove;
+  }
+}
+@media (max-height: 437px) {
+  .recents {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 19%;
+    right: 0;
+    top: 43vh;
     border-style: groove;
   }
 }
@@ -164,7 +186,7 @@
     flex-direction: column;
     justify-content: center;
     position: relative;
-    width: 30vw;
+    width: 38vw;
   }
 }
 @media (min-width: 1025px) {
@@ -202,7 +224,6 @@
     flex-direction: column;
     flex: inherit;
     height: 48vh;
-
     box-sizing: border-box;
   }
 }
@@ -235,6 +256,20 @@
   min-width: 15%;
 }
 @media (max-width: 1025px) {
+  .mat-list-base .mat-list-item,
+  .mat-list-base .mat-list-option {
+    height: fit-content;
+  }
+}
+@media (max-width: 1025px) and (min-height: 830px) {
+  .fix {
+    font-size: 2vh;
+    border-style: groove;
+    border-radius: 7%;
+    margin-right: 1%;
+  }
+}
+@media (max-height: 830px) {
   .fix {
     font-size: 3vh;
     border-style: groove;
@@ -242,9 +277,17 @@
     margin-right: 1%;
   }
 }
-@media (max-width: 1025px) {
+@media (max-width: 1025px) and (min-width: 901px) {
   .fix2 {
     font-size: 3vh;
+    border-style: groove;
+    border-radius: 7%;
+    margin-bottom: 1%;
+  }
+}
+@media (max-width: 900px) {
+  .fix2 {
+    font-size: 2vh;
     border-style: groove;
     border-radius: 7%;
     margin-bottom: 1%;
