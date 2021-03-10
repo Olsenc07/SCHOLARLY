@@ -1,28 +1,54 @@
-.entire-page {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+@media (min-width: 1024px) {
+  .entire-page {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 }
-
+@media (max-width: 1024px) {
+  .entire-page {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
+}
 .logo {
   border-radius: 50%;
 }
-.logo-box {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin: 10%;
+@media (min-width: 1024px) {
+  .logo-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10%;
+  }
+}
+@media (max-width: 1024px) {
+  .logo-box {
+    display: none;
+  }
 }
 .top {
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
-.left-column {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin: 2% 1% 2% 1%;
+@media (min-width: 1024px) {
+  .left-column {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2% 1% 2% 1%;
+  }
+}
+@media (max-width: 1024px) {
+  .left-column {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
 }
 .following-box {
   display: flex;
@@ -69,30 +95,61 @@
 .mutual {
   margin: 10% 2% 2% 2%;
 }
-.friends-request-box {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin: 2%;
-  height: 7vh;
-  overflow-y: scroll;
+@media (min-width: 1024px) {
+  .friends-request-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2%;
+    height: 7vh;
+    overflow-y: scroll;
+  }
 }
-.friends-request {
-  display: flex;
-  width: 100%;
-  height: 100%;
+@media (min-width: 1024px) {
+  .friends-request {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
 }
+@media (max-width: 1024px) {
+  .friends-request {
+    display: flex;
+    width: 100%;
+    height: 20vh;
+  }
+}
+@media (max-width: 1024px) {
+  .friends-request-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow-y: scroll;
+  }
+}
+
 .friends-activity {
   display: flex;
   width: 100%;
   height: 100%;
 }
-.friends-activity-box {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin: 2%;
-  height: 28vh;
+@media (min-width: 1024px) {
+  .friends-activity-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2%;
+    height: 28vh;
+  }
+}
+@media (max-width: 1024px) {
+  .friends-activity-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: scroll;
+  }
 }
 .number {
   width: 50px;
