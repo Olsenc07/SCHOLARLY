@@ -272,12 +272,14 @@
   .horizontal_list {
     display: flex;
     flex-direction: row;
+    width: 100%;
   }
   .top_scroll {
     display: flex;
     position: relative;
     width: fit-content;
     border-style: initial;
+    width: 100%;
   }
 }
 @media (min-width: 1025px) {
