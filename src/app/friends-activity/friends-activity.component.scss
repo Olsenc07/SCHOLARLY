@@ -1,6 +1,7 @@
 .entire-page {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 .logo {
@@ -21,7 +22,21 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin: 2% 1% 2% 3%;
+  margin: 2% 1% 2% 1%;
+}
+.following-box {
+  display: flex;
+  width: 100%;
+  height: 79%;
+}
+.followers {
+  display: flex;
+  width: 17vw;
+  height: 100%;
+}
+.follow-m {
+  display: flex;
+  height: 100%;
 }
 .middle {
   display: flex;
@@ -30,13 +45,13 @@
   margin: 2% 2% 2% 2%;
 }
 .middle-middle {
-  margin: 11% 2% 4% 4%;
+  margin: 10% 2% 4% 4%;
 }
 .right {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin: 2% 5% 2% 5%;
+  margin: 2% 2% 2% 5%;
 }
 .action-button {
   display: flex;
@@ -48,6 +63,8 @@
   justify-content: center;
   flex-direction: column;
   margin: 2%;
+  height: 65%;
+  width: 100%;
 }
 .mutual {
   margin: 10% 2% 2% 2%;
@@ -57,12 +74,25 @@
   justify-content: center;
   flex-direction: column;
   margin: 2%;
+  height: 7vh;
+  overflow-y: scroll;
+}
+.friends-request {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.friends-activity {
+  display: flex;
+  width: 100%;
+  height: 100%;
 }
 .friends-activity-box {
   display: flex;
   justify-content: center;
   flex-direction: column;
   margin: 2%;
+  height: 28vh;
 }
 .number {
   width: 50px;
