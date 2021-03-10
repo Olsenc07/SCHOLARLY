@@ -14,10 +14,20 @@
       <textarea class="friends-activity" ></textarea> 
     </div>
   </div>
+  <!-- Tablet/Mobile search bar -->
+  
+  <div class="search-friends">
+    <div class="hide1">
+  <div><form class="search" >
+    <input type="text" 
+     class="search-input" placeholder="Search.." name="search">
+    <button type="submit"><span class="material-icons">search</span></button>
+  </form></div></div>
   <!-- Middle column -->
+<div class="row">
   <div class="middle">
     <p>
-      Following #
+      Following
       <input type="number" class="number" id="steper" name="members" step="1" />
     </p>
 
@@ -27,14 +37,16 @@
   </div>
   <!-- mutual friends -->
   <div class="middle-middle">
-            <!-- Sesrch Bar -->
-<form class="search" >
+            <!-- Search Bar Desktop -->
+     <div class="hide">    
+ <form class="search" >
   <input type="text" 
    class="search-input" placeholder="Search.." name="search">
   <button type="submit"><span class="material-icons">search</span></button>
 </form>
+</div>   
   <p>
-    Mutual Friends #
+    Mutual Friends
   </p>
     <div class="mutual-box">
       <textarea class="follow-m"> </textarea>
@@ -43,11 +55,13 @@
   <!-- Right column -->
   <div class="right">
     <p>
-      Followers #
+      Followers
       <input type="number" class="number" id="steper" name="members" step="1" />
     </p>
     <div class="following-box">
       <textarea class="followers" > </textarea>
     </div>
   </div>
+</div>
+</div>
 </div>
