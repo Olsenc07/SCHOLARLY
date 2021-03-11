@@ -1,11 +1,9 @@
-.entire-page {
+.main-content {
   display: flex;
-  flex-direction: column;
-  width: 100%;
+  flex-direction: row;
   height: 100%;
-  margin: 0px;
-  padding: 0px;
-  overflow-x: hidden;
+  width: 100%;
+  box-sizing: border-box;
 }
 .top-items {
   display: flex;
@@ -34,8 +32,12 @@
 .left-side {
   display: flex;
   flex-direction: column;
-  margin: 2% 2% 2% 1%;
+  margin: 1% 1% 0% 1%;
   justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  height: 100%;
+  position: relative;
 }
 .middle {
   display: flex;
@@ -44,7 +46,9 @@
 }
 .profile-pic {
   display: flex;
-  margin: 2% 5% 1% 7%;
+  margin: 2% 5% 1% 5%;
+  height: 15vh;
+  justify-content: center;
 }
 
 .pic {
@@ -54,9 +58,9 @@
 }
 .major-minor {
   display: flex;
-  margin: 1% 20% 0% 14%;
-  width: 200px;
-  height: 50px;
+  margin: 1% 1% 1% 1%;
+  width: 100%;
+  height: 10%;
 }
 .major-minor-box {
   text-align: center;
@@ -79,15 +83,20 @@
 
 .bio-box {
   display: flex;
-  margin: 0% 15% 0% 5%;
-  width: 400px;
-  height: 150px;
+  margin: 0% 1% 41% 1%;
+  width: 100%;
+  height: 10%;
+  box-sizing: border-box;
+  justify-content: center;
 }
+
 .bio-input {
-  width: 90%;
-  height: 70%;
-  border-radius: 30px;
-  background-color: rgb(209, 214, 235);
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: solid;
+  border-color: cornflowerblue;
+  background-color: #d1d6eb;
 }
 .text-2 {
   display: flex;
@@ -140,14 +149,16 @@
 .hide-input {
   justify-content: center;
   display: flex;
-  margin: 2% 2% 2% 2%;
-
+  margin: 1% 0% 2% 0%;
+  width: 100%;
   border: hidden;
   background-color: rgb(235, 235, 245);
 }
 .center {
   display: flex;
   justify-content: center;
+  margin-top: 25%;
+  margin-left: 29%;
 }
 .recent-post-layout {
   display: flex;
@@ -156,12 +167,6 @@
   width: 400px;
 }
 
-.main-content {
-  display: flex;
-  flex-direction: row;
-  height: 100%;
-  width: 100%;
-}
 .recents {
   margin: 2% 5% 0% 5%;
 }
