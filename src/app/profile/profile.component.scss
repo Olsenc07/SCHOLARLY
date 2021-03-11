@@ -166,7 +166,15 @@
   margin: 0% 7% 0% 7%;
   width: 400px;
 }
-
+.c {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  font-size: 4vh;
+  color: #0b4bff;
+  box-sizing: border-box;
+  width: 100%;
+}
 .recents {
   margin: 2% 5% 0% 5%;
 }
