@@ -33,8 +33,7 @@
   display: flex;
   flex-direction: column;
   margin: 1% 1% 0% 1%;
-  justify-content: center;
-  width: 100%;
+  width: 35%;
   box-sizing: border-box;
   height: 100%;
   position: relative;
@@ -43,7 +42,7 @@
   display: flex;
   flex-direction: column;
   margin: 1% 1% 1% 1%;
-  width: 100%;
+  width: 51%;
   height: 100%;
 }
 .profile-pic {
@@ -187,7 +186,7 @@
   flex-direction: column;
   justify-content: center;
   margin: 2% 5% 3% 1%;
-  width: 100%;
+  width: 50%;
   height: 100%;
 }
 .hide-input {
@@ -207,10 +206,26 @@
 .recent-post-layout {
   display: flex;
   flex-direction: column;
-
   width: 100%;
   height: 100%;
 }
+.recent-post-layout1 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.posts {
+  display: flex;
+  margin: 1% 1% 0% 4%;
+  border-width: 2px;
+  height: 70%;
+  width: 100%;
+  border-radius: 5%;
+  color: #0e3379;
+  background-color: rgb(235, 235, 245);
+}
+
 .user-name {
   box-sizing: border-box;
   display: flex;
@@ -220,11 +235,7 @@
   box-sizing: border-box;
   width: 100%;
 }
-.recents {
-  margin: 2% 5% 28% 5%;
-  width: 100%;
-  height: 100%;
-}
+
 .conversations {
   margin: 2% 5% 2% 5%;
 }
