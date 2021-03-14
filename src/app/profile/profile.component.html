@@ -35,6 +35,10 @@
       <div class="bio-box">
         <textarea class="bio-input" > </textarea>
       </div>
+      <div class="conversations">
+      <button mat-raised-button (click)="openBottomSheet()" class="convo-text">Current Conversations</button>
+      
+    </div>
     </div>
     <!-- Middle -->
     <div class="middle">
@@ -50,7 +54,7 @@
       <div class="highlights-layout" >
         <div class="groups-j"></div>
         <div class="personal-acc"></div>
-        <div class="row">
+        <div class="row_1">
           <div class="completed-courses"></div>
           <div class="completed-courses"></div>
         </div>
@@ -62,11 +66,20 @@
     <!-- Recent Posts text  -->
     <div class="right-side">
       
-       
+       <div class="row_2">
+        <p class="follow">
+          Following
+          <input type="number" class="number" id="steper" name="members" step="1" />
+        </p>
+        <p class="follow">
+          Followers
+          <input type="number" class="number" id="steper" name="members" step="1" />
+        </p>
+       </div>
         <!-- Recent Posts box-->
         <div class="recent-post-layout">
           <div class="recent">
-            <button type="button" routerLink="/groups" class="text">
+            <button type="button" routerLink="/groups" >
               Recent Posts:
             </button>
           </div>
@@ -74,7 +87,7 @@
         
       
       <!-- Current Conversations text -->
-      <div class="conversations">
+      <div class="features">
         <div class="current"></div>
           <p class="text">Features</p>
         </div>
