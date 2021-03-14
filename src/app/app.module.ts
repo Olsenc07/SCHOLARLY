@@ -20,6 +20,7 @@ import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 
 import { routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -75,6 +76,7 @@ import { MatListModule } from '@angular/material/list';
     MatListModule,
     MatBadgeModule,
     MatSidenavModule,
+    MatBottomSheetModule,
   ],
 
   providers: [],

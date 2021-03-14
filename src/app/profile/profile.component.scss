@@ -41,9 +41,9 @@
 .middle {
   display: flex;
   flex-direction: column;
-  margin: 1% 1% 1% 1%;
+  margin: 1% 1% 1% 7%;
   width: 51%;
-  height: 100%;
+  height: 90%;
 }
 .profile-pic {
   display: flex;
@@ -112,7 +112,6 @@
   margin: 1% 1% 0% 4%;
   border-width: 2px;
   height: 100%;
-  width: 100%;
   border-radius: 5%;
   color: #0e3379;
   background-color: rgb(235, 235, 245);
@@ -151,26 +150,30 @@
   width: 100%;
   height: 100%;
   border: ridge;
+  box-sizing: border-box;
 }
 .groups-j {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  height: 50%;
   border: ridge;
+  box-sizing: border-box;
 }
 .personal-acc {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 100%;
+  height: 50%;
   border: ridge;
+  box-sizing: border-box;
 }
 .row {
   display: flex;
   flex-direction: row;
   width: 100%;
   height: 100%;
+  box-sizing: border-box;
 }
 .completed-courses {
   display: flex;
@@ -179,15 +182,22 @@
   width: 100%;
   height: 100%;
   border: ridge;
+  box-sizing: border-box;
 }
-
-.right-side {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 2% 5% 3% 1%;
-  width: 50%;
-  height: 100%;
+@media (min-width: 1024px) {
+  .right-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2% 1% 3% 1%;
+    width: 50%;
+    height: 90%;
+  }
+}
+@media (max-width: 1024px) {
+  .right-side {
+    display: none;
+  }
 }
 .hide-input {
   justify-content: center;
@@ -220,7 +230,6 @@
   margin: 1% 1% 0% 4%;
   border-width: 2px;
   height: 70%;
-  width: 100%;
   border-radius: 5%;
   color: #0e3379;
   background-color: rgb(235, 235, 245);
@@ -237,7 +246,7 @@
 }
 
 .conversations {
-  margin: 2% 5% 2% 5%;
+  margin: 2% 5% 0% 5%;
 }
 .groups {
   width: 50px;
