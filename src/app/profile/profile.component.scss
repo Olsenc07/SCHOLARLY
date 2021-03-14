@@ -114,6 +114,7 @@
   display: flex;
   box-sizing: border-box;
   justify-content: center;
+  width: 100%;
 }
 .convo-text {
   display: flex;
@@ -228,6 +229,7 @@
 }
 .follow {
   font-family: "Times New Roman", Times, serif;
+  margin-right: 3%;
 }
 .number {
   width: 25%;
@@ -275,13 +277,26 @@
   flex-direction: row;
   width: 100%;
 }
-.user-name {
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  font-size: 4vh;
-  color: #0b4bff;
-  box-sizing: border-box;
+@media (min-width: 450px) {
+  .user-name {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    font-size: 3vh;
+    color: #0b4bff;
+    box-sizing: border-box;
+    margin-right: 7%;
+  }
+}
+@media (max-width: 450px) {
+  .user-name {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    color: #0b4bff;
+    box-sizing: border-box;
+    margin-right: 2%;
+  }
 }
 
 .features {
