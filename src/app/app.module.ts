@@ -36,6 +36,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { FriendsActivityComponent } from './friends-activity/friends-activity.component';
 import { PostPageComponent } from './post-page/post-page.component';
 import { MatListModule } from '@angular/material/list';
+import { ProfileBottomSheetComponent } from './profile/bottom-sheet/bottom-sheet.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { MatListModule } from '@angular/material/list';
     FriendsActivityComponent,
     PostPageComponent,
     SearchComponent,
+    ProfileBottomSheetComponent
   ],
   imports: [
     BrowserModule,
