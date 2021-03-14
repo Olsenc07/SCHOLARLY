@@ -1,11 +1,9 @@
-.entire-page {
+.main-content {
   display: flex;
-  flex-direction: column;
-  width: 100%;
+  flex-direction: row;
   height: 100%;
-  margin: 0px;
-  padding: 0px;
-  overflow-x: hidden;
+  width: 100%;
+  box-sizing: border-box;
 }
 .top-items {
   display: flex;
@@ -34,16 +32,24 @@
 .left-side {
   display: flex;
   flex-direction: column;
-  margin: 2% 2% 2% 1%;
+  margin: 1% 1% 0% 1%;
+  width: 35%;
+  box-sizing: border-box;
+  height: 100%;
+  position: relative;
 }
 .middle {
   display: flex;
   flex-direction: column;
-  margin: 5% 1% 22% 1%;
+  margin: 1% 1% 1% 7%;
+  width: 51%;
+  height: 90%;
 }
 .profile-pic {
   display: flex;
-  margin: 2% 5% 1% 7%;
+  margin: 2% 5% 1% 5%;
+  height: 15vh;
+  justify-content: center;
 }
 
 .pic {
@@ -53,9 +59,9 @@
 }
 .major-minor {
   display: flex;
-  margin: 1% 20% 0% 14%;
-  width: 200px;
-  height: 50px;
+  margin: 1% 1% 1% 1%;
+  width: 100%;
+  height: 10%;
 }
 .major-minor-box {
   text-align: center;
@@ -78,15 +84,30 @@
 
 .bio-box {
   display: flex;
-  margin: 0% 15% 0% 5%;
-  width: 400px;
-  height: 150px;
+  margin: 0% 1% 41% 1%;
+  width: 100%;
+  height: 10%;
+  box-sizing: border-box;
+  justify-content: center;
 }
+
 .bio-input {
-  width: 90%;
-  height: 70%;
-  border-radius: 30px;
-  background-color: rgb(209, 214, 235);
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: solid;
+  border-color: cornflowerblue;
+  background-color: #d1d6eb;
+}
+.conversations {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+}
+.convo-text {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
 }
 .text-2 {
   display: flex;
@@ -100,6 +121,7 @@
   display: flex;
   margin: 1% 1% 0% 4%;
   border-width: 2px;
+  height: 100%;
   border-radius: 5%;
   color: #0e3379;
   background-color: rgb(235, 235, 245);
@@ -127,39 +149,129 @@
 .bio-name-age {
   display: flex;
   margin: 2% 15% 0% 7%;
-  width: 200px;
+  width: 100%;
   height: 25px;
 }
-.right-side {
+.highlights-layout {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 2% 10% 14% 1%;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: ridge;
+  box-sizing: border-box;
+}
+.groups-j {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  border: ridge;
+  box-sizing: border-box;
+}
+.personal-acc {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  border: ridge;
+  box-sizing: border-box;
+}
+.row_1 {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+.completed-courses {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border: ridge;
+  box-sizing: border-box;
+}
+@media (min-width: 1024px) {
+  .right-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2% 1% 3% 1%;
+    width: 50%;
+    height: 90%;
+  }
+}
+@media (max-width: 1024px) {
+  .right-side {
+    display: none;
+  }
+}
+.row_2 {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  height: fit-content;
+}
+.follow {
+  font-family: "Times New Roman", Times, serif;
+}
+.number {
+  width: 25%;
+  background-color: #ebebf5;
+  border: none;
+  font-weight: bold;
 }
 .hide-input {
   justify-content: center;
   display: flex;
-  margin: 2% 2% 2% 48%;
-  border-radius: 10% / 50%;
-  width: 40px;
-  height: 20px;
+  margin: 1% 0% 2% 0%;
+  width: 100%;
+  border: hidden;
+  background-color: rgb(235, 235, 245);
+}
+.center {
+  display: flex;
+  justify-content: center;
+  margin-top: 5%;
+  margin-left: 29%;
 }
 .recent-post-layout {
   display: flex;
   flex-direction: column;
-  margin: 0% 7% 0% 7%;
-  width: 400px;
+  width: 100%;
+  height: 100%;
+}
+.recent-post-layout1 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.posts {
+  display: flex;
+  margin: 1% 1% 0% 4%;
+  border-width: 2px;
+  height: 70%;
+  border-radius: 5%;
+  color: #0e3379;
+  background-color: rgb(235, 235, 245);
 }
 
-.main-content {
+.user-name {
+  box-sizing: border-box;
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+  font-size: 4vh;
+  color: #0b4bff;
+  box-sizing: border-box;
+  width: 100%;
 }
-.recents {
+
+.features {
   margin: 2% 5% 0% 5%;
-}
-.conversations {
-  margin: 2% 5% 15% 5%;
 }
 .groups {
   width: 50px;

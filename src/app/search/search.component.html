@@ -24,10 +24,10 @@
 
           <!-- categeory filter box -->
           <div
-          class="outside-input-boxs" >
+          class="input-boxs" >
           
             <mat-selection-list [multiple]="false" class="mat-list-text" >
-              <mat-list-option 
+              <mat-list-option class="fix2"
                 *ngFor="let opt of specificOptions"
                 [value]="opt"
               >
@@ -59,15 +59,15 @@
         <!-- Category box -->
 
         <div
-          class="outside-input-boxs" >
-          <mat-selection-list 
+          class="input-boxs top_scroll " >
+          <mat-selection-list class="horizontal_list"
             #searchList
             [(ngModel)]="selectedOption"
             (ngModelChange)="onSearchSelection($event)"
             [ngModelOptions]="{ standalone: true }"
             [multiple]="false"
           >
-            <mat-list-option
+            <mat-list-option class="fix"
               *ngFor="let opt of searchOptions"
               [value]="opt.value"
             >
@@ -79,21 +79,21 @@
 
       <!-- right -->
       <div class="right-column">
-        <div class="recents-box">
-          <!-- Recents tetx -->
-          <div>
-            <p class="recents-text">Recents:</p>
-          </div>
+         <!-- Recents tetx -->
+         <div>
+          <p class="recents-text">Recents:</p>
+        </div>
+        
+         
 
           <!-- Recents box -->
           <div>
             <div
               class="outside-input-boxs recents"
-              
             >
           </div>
           </div>
-        </div>
+        
       </div>
     </div>
   </div>

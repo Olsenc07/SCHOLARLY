@@ -1,68 +1,268 @@
-.entire-page {
-  display: flex;
-  flex-direction: row;
+@media (min-width: 1024px) {
+  .entire-page {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
 }
-
+@media (max-width: 1024px) {
+  .entire-page {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
+}
 .logo {
   border-radius: 50%;
 }
-.logo-box {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin: 10%;
+@media (min-width: 1024px) {
+  .logo-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10%;
+  }
+}
+@media (max-width: 1024px) {
+  .logo-box {
+    display: none;
+  }
 }
 .top {
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
-.left-column {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin: 2% 5% 2% 3%;
+@media (min-width: 1024px) {
+  .left-column {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2% 1% 2% 8%;
+  }
 }
-.middle {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin: 2% 2% 2% 2%;
+@media (max-width: 1024px) {
+  .left-column {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 10%;
+  }
 }
-.middle-middle {
-  margin: 11% 2% 4% 4%;
+@media (min-width: 1024px) {
+  .hide1 {
+    display: none;
+  }
 }
-.right {
+@media (max-width: 1024px) {
+  .hide {
+    display: none;
+  }
+}
+@media (max-width: 1024px) {
+  .search-friends {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .search-friends {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+.row {
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  flex-direction: column;
-  margin: 2% 5% 2% 5%;
+  height: 100%;
+  width: 100%;
+}
+.column {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.following-box {
+  display: flex;
+  width: 100%;
+  height: 79%;
+}
+@media (min-width: 1024px) {
+  .followers {
+    display: flex;
+    width: 17vw;
+    height: 100%;
+  }
+}
+@media (max-width: 1024px) {
+  .followers {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+}
+.follow-m {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+@media (min-width: 1024px) {
+  .middle {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2% 5% 2% 2%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .middle {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 1% 5% 1% 2%;
+  }
+}
+@media (min-width: 1024px) {
+  .middle-middle {
+    margin: 10% 2% 4% 4%;
+  }
+}
+@media (max-width: 1024px) {
+  .middle-middle {
+    margin: 10% 2% 4% 2%;
+  }
+}
+@media (min-width: 1024px) {
+  .right {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2% 2% 2% 5%;
+  }
+}
+@media (max-width: 1024px) {
+  .right {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 1% 2% 1% 3%;
+  }
 }
 .action-button {
   display: flex;
   justify-content: center;
   margin: 2% 15% 30% 35%;
 }
-.mutual-box {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin: 2%;
+@media (min-width: 1024px) {
+  .mutual-largest {
+    display: none;
+  }
+}
+@media (max-width: 1024px) {
+  .mutual-largest {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
+}
+@media (max-height: 400px) {
+  .mutual-largest {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    margin-bottom: 7%;
+  }
+}
+@media (min-width: 1024px) {
+  .mutual-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    height: 65%;
+    width: 100%;
+  }
+}
+@media (max-width: 1024px) {
+  .mutual-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0% 2% 2% 2%;
+    height: 60%;
+    width: 80%;
+  }
 }
 .mutual {
   margin: 10% 2% 2% 2%;
 }
-.friends-request-box {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin: 2%;
+@media (min-width: 1024px) {
+  .friends-request-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2%;
+    height: 7vh;
+    overflow-y: scroll;
+  }
 }
-.friends-activity-box {
+@media (min-width: 1024px) {
+  .friends-request {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (max-width: 1024px) {
+  .friends-request {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (max-width: 1024px) {
+  .friends-request-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 36%;
+  }
+}
+
+.friends-activity {
   display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin: 2%;
+  width: 100%;
+  height: 100%;
+}
+@media (min-width: 1024px) {
+  .friends-activity-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2%;
+    height: 28vh;
+  }
+}
+@media (max-width: 1024px) {
+  .friends-activity-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: scroll;
+  }
 }
 .number {
   width: 50px;
@@ -104,7 +304,4 @@ form.search::after {
   content: "";
   clear: both;
   display: table;
-}
-.search {
-  margin-bottom: 20%;
 }

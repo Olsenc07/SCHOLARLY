@@ -23,7 +23,12 @@ $box-shadow-color: rgba(0, 0, 0, 0.25);
 .toolbar-logo {
   height: inherit;
 }
-
+@media (max-width: 580px) {
+  .toolbar-logo {
+    height: inherit;
+    width: 53vw;
+  }
+}
 .main-content {
   //padding: 72px 0px 16px;
   height: 100%;
@@ -85,7 +90,7 @@ h4:focus {
 }
 
 .search-box__input {
-  transition: right, 1s;
+  transition: right, 1.1s;
   right: 0;
   top: 0;
   bottom: 0;
@@ -117,13 +122,13 @@ h4:focus {
   flex-direction: row;
   width: 60%;
 }
-@media (max-width: 801px) {
+@media (max-width: 1025px) {
   .large-screen-icons {
     display: none;
   }
 }
 
-@media (min-width: 802px) {
+@media (min-width: 1025px) {
   .small-icons {
     display: none;
   }
@@ -132,16 +137,16 @@ h4:focus {
   display: flex;
 }
 // Bottom Nav
-@media (max-width: 801px) {
+@media (max-width: 1025px) {
   .lower {
-    position: absolute;
+    position: fixed;
     z-index: 2;
     box-shadow: 0px 2px 5px 0px $box-shadow-color;
     bottom: 0;
     background-color: rgb(9, 0, 61);
   }
 }
-@media (min-width: 802px) {
+@media (min-width: 1025px) {
   .lower {
     display: none;
   }
@@ -152,34 +157,38 @@ h4:focus {
   justify-content: center;
   flex-direction: row;
   width: 100%;
+  height: 100%;
 }
 .public_ {
   color: rgb(110, 32, 199);
-  font-size: xx-large;
+  font-size: 6vmax;
 }
 .groups_ {
   color: rgb(14, 240, 14);
-  font-size: xx-large;
+  font-size: 6vmax;
 }
 .profile_ {
   color: rgb(241, 255, 38);
-  font-size: xx-large;
+  font-size: 6vmax;
 }
 .post_ {
   color: rgb(233, 106, 21);
-  font-size: xx-large;
+  font-size: 6vmax;
 }
 .a_bottom {
-  margin-right: 10%;
-  margin-left: 5%;
+  margin-right: 5%;
+  margin-left: 3%;
+  height: 100%;
 }
 .b_bottom {
   margin-left: 8%;
-  margin-right: 8%;
+  margin-right: 10%;
+  height: 100%;
 }
 .c_bottom {
   margin-left: 10%;
-  margin-right: 2%;
+  margin-right: 6%;
+  height: 100%;
 }
 .d_settings {
   margin-top: 8%;
