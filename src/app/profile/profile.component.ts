@@ -8,6 +8,7 @@ import {ProfileBottomSheetComponent} from './bottom-sheet/bottom-sheet.component
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent {
+  showFiller = false;
   constructor(private _bottomSheet: MatBottomSheet) {}
 
   openBottomSheet(): void {

@@ -22,6 +22,7 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 
+
 import { routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TermsComponent } from './terms/terms.component';
