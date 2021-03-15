@@ -47,8 +47,7 @@
 }
 .profile-pic {
   display: flex;
-  margin: 2% 5% 1% 5%;
-  height: 15vh;
+  height: 13vh;
   justify-content: center;
 }
 
@@ -63,23 +62,26 @@
   width: 100%;
   height: 10%;
 }
-.major-minor-box {
-  text-align: center;
-  border-radius: 30px;
-  margin: 1% 0% 0% 15%;
-  color: #0e3379;
-  width: 70%;
-  height: 70%;
-  font-size: 130%;
+@media (min-width: 440px) {
+  .major-box {
+    text-align: center;
+    border-radius: 30px;
+    margin: 0% 0% 1% 15%;
+    color: #0e3379;
+    width: 70%;
+    height: 70%;
+    font-size: 130%;
+  }
 }
-.degree-sport-box {
-  text-align: center;
-  border-radius: 30px;
-  margin: 0% 0% 1% 15%;
-  color: #0e3379;
-  width: 70%;
-  height: 70%;
-  font-size: 130%;
+@media (max-width: 440px) {
+  .major-box {
+    text-align: center;
+    border-radius: 30px;
+    margin: 0% 0% 1% 15%;
+    color: #0e3379;
+    width: 70%;
+    height: 70%;
+  }
 }
 @media (min-width: 1024px) {
   .bio-box {
@@ -114,6 +116,7 @@
   display: flex;
   box-sizing: border-box;
   justify-content: center;
+  width: 100%;
 }
 .convo-text {
   display: flex;
@@ -163,6 +166,7 @@
   width: 100%;
   height: 25px;
 }
+
 .highlights-layout {
   display: flex;
   flex-direction: column;
@@ -228,6 +232,7 @@
 }
 .follow {
   font-family: "Times New Roman", Times, serif;
+  margin-right: 3%;
 }
 .number {
   width: 25%;
@@ -235,6 +240,19 @@
   border: none;
   font-weight: bold;
 }
+//
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+@media (min-width: 1024px) {
+  .hide {
+    display: none;
+  }
+}
+//
 .hide-input {
   justify-content: center;
   display: flex;
@@ -247,7 +265,7 @@
   display: flex;
   justify-content: center;
   margin-top: 5%;
-  margin-left: 29%;
+  margin-left: 23%;
 }
 .recent-post-layout {
   display: flex;
@@ -275,13 +293,26 @@
   flex-direction: row;
   width: 100%;
 }
-.user-name {
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  font-size: 4vh;
-  color: #0b4bff;
-  box-sizing: border-box;
+@media (min-width: 450px) {
+  .user-name {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    font-size: 3vh;
+    color: #0b4bff;
+    box-sizing: border-box;
+    margin-right: 7%;
+  }
+}
+@media (max-width: 450px) {
+  .user-name {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    color: #0b4bff;
+    box-sizing: border-box;
+    margin-right: 2%;
+  }
 }
 
 .features {
