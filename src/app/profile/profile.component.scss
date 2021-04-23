@@ -111,17 +111,36 @@
   border-color: cornflowerblue;
   background-color: #d1d6eb;
 }
-
-.conversations {
-  display: flex;
-  box-sizing: border-box;
-  justify-content: center;
-  width: 100%;
+@media (min-width: 410px) {
+  .conversations {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    width: 100%;
+  }
 }
-.convo-text {
-  display: flex;
-  justify-content: center;
-  box-sizing: border-box;
+@media (max-width: 410px) {
+  .conversations {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    width: fit-content;
+  }
+}
+@media (min-width: 410px) {
+  .convo-text {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+}
+@media (max-width: 410px) {
+  .convo-text {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    margin-right: 20%;
+  }
 }
 .text-2 {
   display: flex;

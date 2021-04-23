@@ -45,7 +45,7 @@
     flex-direction: column;
     justify-content: center;
     position: relative;
-    height: 86vh;
+    height: 84vh;
 
     width: 65%;
   }
@@ -330,7 +330,7 @@
 @media (max-width: 1025px) and (min-height: 830px) {
   .fix {
     font-size: 2vh;
-    border-style: groove;
+
     border-radius: 7%;
     margin-right: 1%;
   }
@@ -338,7 +338,7 @@
 @media (max-height: 830px) {
   .fix {
     font-size: 3vh;
-    border-style: groove;
+
     border-radius: 7%;
     margin-right: 1%;
   }

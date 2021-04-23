@@ -100,7 +100,7 @@ export class SearchComponent implements OnInit {
           'Media',
           'Other',
           'Politics',
-          'Social Justive & Advocay',
+          'Social Justice & Advocacy',
           'Social',
           'Spirituality & Faith Communities',
           'Student Governments, Unions & Councils',
