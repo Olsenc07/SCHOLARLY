@@ -54,6 +54,13 @@ export class PostPageComponent implements OnInit {
   title: string;
   constructor() {}
 
+
+  pages: string[] = [
+    'College Connection', 'Blue Clubs', 'Course A-E', 'Course F-M', 'Course N-Z'
+    , 'Entrepreneurial Opportunities', 'Help', 'Housing', 'Buy & Sell', 'School Work',
+    'Spirituality', 'Questions', 'Upcoming Events'
+  ];
+
   postForm = new FormGroup({
     title: new FormControl(),
     description: new FormControl(),
@@ -85,3 +92,5 @@ export class PostPageComponent implements OnInit {
   onFormSubmit(): void {}
   ngOnInit(): void {}
 }
+
+

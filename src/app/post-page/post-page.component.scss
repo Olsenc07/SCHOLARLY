@@ -183,6 +183,11 @@ mat-slider {
   height: 50%;
   width: 100%;
 }
+.location {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 .location-options {
   display: flex;
   height: 100%;

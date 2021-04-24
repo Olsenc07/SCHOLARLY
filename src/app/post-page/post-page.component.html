@@ -71,20 +71,23 @@ max="100"></mat-slider>
 </div>
   <!-- right -->
   <div class="right">
-    
     <!-- </form> -->
 
-    <!-- search -->
-    <span class="search-posting-page">
-      <mat-form-field class="search-textfield">
-        <span class="material-icons-search"> </span>
-        <mat-label><span class="material-icons"> search </span></mat-label>
-        <input matInput type="search" placeholder="Post Location" /> </mat-form-field
-    ></span>
+    
     <!-- Box -->
     <div class="options">
     <!-- specifics box -->
     <div class="post-location">
+      <div class="location">
+      <h4>Post-Location</h4>
+<mat-form-field appearance="fill">
+  <mat-label>Page</mat-label>
+  <mat-select>
+    <mat-option>None</mat-option>
+    <mat-option *ngFor="let page of pages" [value]="page">{{page}}</mat-option>
+  </mat-select>
+</mat-form-field>
+</div>
       <textarea class="location-options" > </textarea>
     </div>
 
