@@ -1,28 +1,78 @@
+.largest-page {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
 .entire-page {
   display: flex;
+  position: relative;
   width: 100%;
   height: 100%;
   margin: 0px;
   padding: 0px;
-  overflow-x: hidden;
-  overflow-y: hidden;
   flex-direction: row;
+  box-sizing: border-box;
+  justify-content: center;
 }
 .left {
   display: flex;
   flex-direction: column;
-  margin: 5% 6% 5% 5%;
+  margin: 2% 6% 1% 5%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
 }
-.right {
+.left_1 {
   display: flex;
+  width: 100%;
+  height: 79%;
   flex-direction: column;
-  margin: 7% 3% 5% 1%;
+}
+.post-description {
+  display: flex;
+  width: 100%;
+  height: 30%;
+}
+.post-pic-video {
+  display: flex;
+  margin-top: 3%;
+  height: 100%;
+  width: 100%;
+}
+.upload {
+  display: flex;
+  height: 80%;
+  width: 100%;
+}
+
+.post {
+  display: flex;
+  width: 100%;
+  height: 100%;
 }
 .middle {
   display: flex;
   justify-content: center;
   flex-direction: column;
   margin-right: 2%;
+  width: 100%;
+  position: relative;
+}
+.right {
+  display: flex;
+  flex-direction: column;
+  margin: 7% 1% 5% 1%;
+  width: 100%;
+  position: relative;
+}
+.search-posting-page {
+  display: flex;
+  width: 50%;
+  position: relative;
 }
 mat-slider {
   width: 300px;
@@ -31,9 +81,9 @@ mat-slider {
   display: flex;
   flex-direction: column;
   margin-left: 3%;
+  box-sizing: border-box;
 }
 .text-input {
-  width: 75%;
   margin-top: 5%;
 }
 
@@ -78,19 +128,28 @@ mat-slider {
   width: 40%;
 }
 .text-back {
-  color: #707070;
+  color: #194ec2;
+  width: 75%;
 }
 .row {
   display: flex;
   flex-direction: row;
+}
+.column_1 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .column {
   display: flex;
   flex-direction: column;
 }
 .amount-people {
-  margin-bottom: 15%;
+  margin-bottom: 5%;
 }
 .back-button {
-  margin-top: 15%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 5%;
 }

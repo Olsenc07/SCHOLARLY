@@ -1,28 +1,28 @@
-<form [formGroup]="postForm" (ngSubmit)="onFormSubmit">
+<form [formGroup]="postForm" (ngSubmit)="onFormSubmit" class="largest-page">
 <div class="entire-page">
   <!-- left -->
   <div class="left">
     <!-- Title of post input -->
-    <div>
+    <div class="left_1">
       <mat-form-field class="text-input"
         ><mat-label>Title of Post</mat-label>
         <input matInput type=text [formControlName]="title" placeholder="" />
       </mat-form-field>      
       <!-- Description of Post -->
-      <div class="column">
-        <div style="margin-right: 5%">
-          <textarea class="post" rows="7" cols="40" style="width: 400px"> Description of post..</textarea>
+      <div class="column_1">
+        <div class="post-description">
+          <textarea class="post" > Description of post..</textarea>
         </div>
         <!-- Upload pic/video -->
-        <div class="post-pic/video">
-          <textarea class="text" rows="17" cols="40" style="width: 400px">  Add ability to uplaod video/pic</textarea>
+        <div class="post-pic-video">
+          <textarea class="upload" >  Add ability to upload video/pic</textarea>
         </div>
         
       </div>
     </div>
       <!-- back button -->
       <div class="back-button">
-        <button mat-flat-button class="text-back">Back</button>
+        <button mat-flat-button class="text-back">PREVIOUS</button>
       </div>
   </div>
 
@@ -53,7 +53,7 @@ max="100"></mat-slider>
   <!-- Newest Box -->
   <div class="row">
     <!-- tag friends -->
-    <span style="margin-right: 5%">
+    <span >
       <mat-form-field class="search-textfield">
         <span class="material-icons-search"> </span>
         <mat-label>Tag friends:</mat-label>
@@ -66,7 +66,7 @@ max="100"></mat-slider>
     ></span>
   </div>
   <div>
-    <textarea class="outside-input-boxs" rows="20" cols="30">Shows the friends you tagged, can click an x to easily remove them </textarea>
+    <textarea class="outside-input-boxs" >Shows the friends you tagged, can click an x to easily remove them </textarea>
   </div>
 </div>
   <!-- right -->
@@ -75,7 +75,7 @@ max="100"></mat-slider>
     <!-- </form> -->
 
     <!-- search -->
-    <span>
+    <span class="search-posting-page">
       <mat-form-field class="search-textfield">
         <span class="material-icons-search"> </span>
         <mat-label><span class="material-icons"> search </span></mat-label>
@@ -85,7 +85,7 @@ max="100"></mat-slider>
     <div class="row">
     <!-- specifics box -->
     <div>
-      <textarea class="outside-input-boxs" rows="20" cols="30"> </textarea>
+      <textarea class="outside-input-boxs" > </textarea>
     </div>
 
 
