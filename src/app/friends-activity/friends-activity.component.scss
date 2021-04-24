@@ -101,6 +101,8 @@
     display: flex;
     width: 17vw;
     height: 100%;
+    border: ridge;
+    border-color: rgb(57, 168, 233);
   }
 }
 @media (max-width: 1024px) {
@@ -108,12 +110,16 @@
     display: flex;
     width: 100%;
     height: 100%;
+    border: ridge;
+    border-color: rgb(57, 168, 233);
   }
 }
 .follow-m {
   display: flex;
   height: 100%;
   width: 100%;
+  border: ridge;
+  border-color: rgb(57, 168, 233);
 }
 @media (min-width: 1024px) {
   .middle {
@@ -190,7 +196,6 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-
     height: 65%;
     width: 100%;
   }
@@ -224,6 +229,8 @@
     display: flex;
     width: 100%;
     height: 100%;
+    border: ridge;
+    border-color: rgb(57, 168, 233);
   }
 }
 @media (max-width: 1024px) {
@@ -231,6 +238,8 @@
     display: flex;
     width: 100%;
     height: 100%;
+    border: ridge;
+    border-color: rgb(57, 168, 233);
   }
 }
 @media (max-width: 1024px) {
@@ -247,6 +256,8 @@
   display: flex;
   width: 100%;
   height: 100%;
+  border: solid;
+  border-color: rgb(57, 168, 233);
 }
 @media (min-width: 1024px) {
   .friends-activity-box {

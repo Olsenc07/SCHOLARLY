@@ -47,25 +47,27 @@
   display: flex;
   height: 80%;
   width: 100%;
+  border: solid;
+  border-color: rgb(57, 168, 233);
 }
 
 .post {
   display: flex;
   width: 100%;
-  height: 100%;
+  border: solid;
+  border-color: rgb(57, 168, 233);
 }
 .middle {
   display: flex;
   justify-content: center;
   flex-direction: column;
   margin-right: 2%;
-  width: 100%;
   position: relative;
 }
 .right {
   display: flex;
   flex-direction: column;
-  margin: 7% 1% 5% 1%;
+  margin: 2% 1% 5% 1%;
   width: 100%;
   position: relative;
 }
@@ -82,6 +84,7 @@ mat-slider {
   flex-direction: column;
   margin-left: 3%;
   box-sizing: border-box;
+  position: relative;
 }
 .text-input {
   margin-top: 5%;
@@ -123,17 +126,32 @@ mat-slider {
 }
 
 .text {
-  border-color: #418bba;
-  color: #707070;
+  color: gold;
   width: 40%;
+  border: solid;
 }
 .text-back {
-  color: #194ec2;
+  color: #000;
   width: 75%;
+  border: solid;
 }
-.row {
+.column_2 {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+}
+.friends-search {
+  display: flex;
+  justify-content: center;
+}
+.tagged-friends-box {
+  display: flex;
+  height: 40%;
+  justify-content: center;
+}
+.tagged-friends {
+  display: flex;
+  scroll-behavior: smooth;
+  overflow-y: hidden;
 }
 .column_1 {
   display: flex;
@@ -143,13 +161,40 @@ mat-slider {
 .column {
   display: flex;
   flex-direction: column;
+  margin-top: 30%;
 }
 .amount-people {
+  display: flex;
+  width: 100%;
   margin-bottom: 5%;
+  flex-direction: column;
+  justify-content: center;
+}
+.options {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.post-location {
+  display: flex;
+  height: 50%;
+  width: 100%;
+}
+.location-options {
+  display: flex;
+  height: 100%;
+  width: 100%;
 }
 .back-button {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-bottom: 5%;
+}
+.post-final {
+  display: flex;
+  position: relative;
+  margin-top: 5%;
   margin-bottom: 5%;
 }
