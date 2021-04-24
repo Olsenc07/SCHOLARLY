@@ -1,28 +1,80 @@
+.largest-page {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
 .entire-page {
   display: flex;
+  position: relative;
   width: 100%;
   height: 100%;
   margin: 0px;
   padding: 0px;
-  overflow-x: hidden;
-  overflow-y: hidden;
   flex-direction: row;
+  box-sizing: border-box;
+  justify-content: center;
 }
 .left {
   display: flex;
   flex-direction: column;
-  margin: 5% 6% 5% 5%;
+  margin: 2% 6% 1% 5%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
 }
-.right {
+.left_1 {
   display: flex;
+  width: 100%;
+  height: 79%;
   flex-direction: column;
-  margin: 7% 3% 5% 1%;
+}
+.post-description {
+  display: flex;
+  width: 100%;
+  height: 30%;
+}
+.post-pic-video {
+  display: flex;
+  margin-top: 3%;
+  height: 100%;
+  width: 100%;
+}
+.upload {
+  display: flex;
+  height: 80%;
+  width: 100%;
+  border: solid;
+  border-color: rgb(57, 168, 233);
+}
+
+.post {
+  display: flex;
+  width: 100%;
+  border: solid;
+  border-color: rgb(57, 168, 233);
 }
 .middle {
   display: flex;
   justify-content: center;
   flex-direction: column;
   margin-right: 2%;
+  position: relative;
+}
+.right {
+  display: flex;
+  flex-direction: column;
+  margin: 2% 1% 5% 1%;
+  width: 100%;
+  position: relative;
+}
+.search-posting-page {
+  display: flex;
+  width: 50%;
+  position: relative;
 }
 mat-slider {
   width: 300px;
@@ -31,9 +83,10 @@ mat-slider {
   display: flex;
   flex-direction: column;
   margin-left: 3%;
+  box-sizing: border-box;
+  position: relative;
 }
 .text-input {
-  width: 75%;
   margin-top: 5%;
 }
 
@@ -73,24 +126,75 @@ mat-slider {
 }
 
 .text {
-  border-color: #418bba;
-  color: #707070;
+  color: gold;
   width: 40%;
+  border: solid;
 }
 .text-back {
-  color: #707070;
+  color: #000;
+  width: 75%;
+  border: solid;
 }
-.row {
+.column_2 {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+}
+.friends-search {
+  display: flex;
+  justify-content: center;
+}
+.tagged-friends-box {
+  display: flex;
+  height: 40%;
+  justify-content: center;
+}
+.tagged-friends {
+  display: flex;
+  scroll-behavior: smooth;
+  overflow-y: hidden;
+}
+.column_1 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .column {
   display: flex;
   flex-direction: column;
+  margin-top: 30%;
 }
 .amount-people {
-  margin-bottom: 15%;
+  display: flex;
+  width: 100%;
+  margin-bottom: 5%;
+  flex-direction: column;
+  justify-content: center;
+}
+.options {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.post-location {
+  display: flex;
+  height: 50%;
+  width: 100%;
+}
+.location-options {
+  display: flex;
+  height: 100%;
+  width: 100%;
 }
 .back-button {
-  margin-top: 15%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 5%;
+}
+.post-final {
+  display: flex;
+  position: relative;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
