@@ -82,7 +82,6 @@ mat-slider {
 .sliders {
   display: flex;
   flex-direction: column;
-  margin-left: 3%;
   box-sizing: border-box;
   position: relative;
 }
@@ -102,8 +101,7 @@ mat-slider {
 .mat-slide-toggle {
   margin: 8px 0;
   display: block;
-  border-color: #418bba;
-  color: #707070;
+  color: #0b38dc;
 }
 
 .tooltip .tooltiptext {
@@ -118,7 +116,11 @@ mat-slider {
   color: #707070;
   border-color: #418bba;
 }
-
+.formal {
+  display: flex;
+  margin-top: 3%;
+  margin-bottom: 4%;
+}
 .specifics-box {
   padding: 16px;
   border: 1px solid gray;
@@ -185,6 +187,8 @@ mat-slider {
   display: flex;
   height: 100%;
   width: 100%;
+  border: solid;
+  border-color: rgb(57, 168, 233);
 }
 .back-button {
   display: flex;

@@ -38,7 +38,7 @@ import { FriendsActivityComponent } from './friends-activity/friends-activity.co
 import { PostPageComponent } from './post-page/post-page.component';
 import { MatListModule } from '@angular/material/list';
 import { ProfileBottomSheetComponent } from './profile/bottom-sheet/bottom-sheet.component';
-
+import {MatSelectModule} from '@angular/material/select';
 @NgModule({
   declarations: [
     AppComponent,
@@ -80,6 +80,7 @@ import { ProfileBottomSheetComponent } from './profile/bottom-sheet/bottom-sheet
     MatBadgeModule,
     MatSidenavModule,
     MatBottomSheetModule,
+    MatSelectModule,
   ],
 
   providers: [],
