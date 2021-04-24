@@ -66,7 +66,7 @@ max="100"></mat-slider>
     ></span>
   </div>
   <div class="tagged-friends-box">
-    <textarea class="tagged-friends" >Shows the friends you tagged, can click an x to easily remove them "anglar material CHIPS!!"</textarea>
+    <textarea class="tagged-friends" >Shows the friends you tagged, can click an x to easily remove them "angular material CHIPS!!"</textarea>
   </div>
 </div>
   <!-- right -->
@@ -79,16 +79,38 @@ max="100"></mat-slider>
     <!-- specifics box -->
     <div class="post-location">
       <div class="location">
+        
       <h4>Post-Location</h4>
+      <mat-selection-list 
+            #searchList
+            [(ngModel)]="selectedOption"
+            (ngModelChange)="onSearchSelection($event)"
+            [ngModelOptions]="{ standalone: true }"
+            [multiple]="false"
+          >
 <mat-form-field appearance="fill">
   <mat-label>Page</mat-label>
   <mat-select>
     <mat-option>None</mat-option>
-    <mat-option *ngFor="let page of pages" [value]="page">{{page}}</mat-option>
+    <mat-option *ngFor="let opt of searchOptions"
+    [value]="opt.value"
+  >
+    {{ opt.name }}</mat-option>
   </mat-select>
 </mat-form-field>
+</mat-selection-list>
 </div>
-      <textarea class="location-options" > </textarea>
+
+<!-- Second selection -->
+      <div class="location-options" > 
+        <mat-selection-list #options [multiple]="false" class="second-list">
+        <mat-list-option  *ngFor="let opt of specificOptions"
+        [value]="opt"
+      >
+        {{ opt }}
+        </mat-list-option>
+      </mat-selection-list>
+      </div>
     </div>
 
 

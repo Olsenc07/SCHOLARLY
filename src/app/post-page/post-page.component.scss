@@ -154,6 +154,8 @@ mat-slider {
   display: flex;
   scroll-behavior: smooth;
   overflow-y: hidden;
+  border: solid;
+  color: #0b38dc;
 }
 .column_1 {
   display: flex;
@@ -190,11 +192,27 @@ mat-slider {
 }
 .location-options {
   display: flex;
+  position: relative;
+  flex-direction: column;
+  box-sizing: border-box;
   height: 100%;
   width: 100%;
   border: solid;
-  border-color: rgb(57, 168, 233);
+  border-radius: 7%;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
 }
+.second-list {
+  display: flex;
+  justify-content: center;
+  overflow-y: scroll;
+  height: 100%;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
 .back-button {
   display: flex;
   flex-direction: row;
