@@ -67,8 +67,9 @@
 .right {
   display: flex;
   flex-direction: column;
-  margin: 2% 1% 5% 1%;
+  box-sizing: border-box;
   width: 100%;
+  height: 100%;
   position: relative;
 }
 .search-posting-page {
@@ -84,6 +85,16 @@ mat-slider {
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
+  width: 35%;
+}
+.btn {
+  display: flex;
+  width: 10%;
+}
+.btn_ {
+  display: flex;
+  justify-content: center;
+  width: 10%;
 }
 .text-input {
   margin-top: 5%;
@@ -103,7 +114,15 @@ mat-slider {
   display: block;
   color: #0b38dc;
 }
-
+p {
+  display: flex;
+  color: #0b38dc;
+}
+.margin {
+  display: flex;
+  flex-direction: column;
+  margin-right: 7%;
+}
 .tooltip .tooltiptext {
   visibility: hidden;
   position: relative;
@@ -179,11 +198,13 @@ mat-slider {
   flex-direction: column;
   height: 100%;
   width: 100%;
+  box-sizing: border-box;
 }
 .post-location {
   display: flex;
-  height: 50%;
+  height: 40%;
   width: 100%;
+  flex-direction: row;
 }
 .location {
   display: flex;
@@ -202,6 +223,15 @@ mat-slider {
   overflow: hidden;
   scroll-behavior: smooth;
   overflow-y: scroll;
+}
+.box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.trio {
+  display: flex;
+  flex-direction: row;
 }
 .second-list {
   display: flex;
@@ -222,6 +252,5 @@ mat-slider {
 .post-final {
   display: flex;
   position: relative;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  justify-content: center;
 }

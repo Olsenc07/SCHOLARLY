@@ -102,6 +102,7 @@ max="100"></mat-slider>
 </div>
 
 <!-- Second selection -->
+<div class="box">
       <div class="location-options" > 
         <mat-selection-list #options [multiple]="false" class="second-list">
         <mat-list-option  *ngFor="let opt of specificOptions"
@@ -111,29 +112,51 @@ max="100"></mat-slider>
         </mat-list-option>
       </mat-selection-list>
       </div>
+      <span class="post-final">
+        <button mat-raised-button class="text">
+          Post
+          <span class="material-icons"> arrow_forward </span>
+        </button>
+      </span>
+    </div>
     </div>
 
 
     <div class="sliders">
-      <mat-slide-toggle ngModel value="primary" name="driving"
-        >Able to drive members</mat-slide-toggle
+      <p>Able to drive members</p>
+      <mat-slide-toggle class="btn" ngModel value="primary" name="driving"
+        ></mat-slide-toggle
       >
-      <mat-slide-toggle ngModel value="primary" name="driving"
-        >Service involving payment</mat-slide-toggle
+      <p>Service involving payment</p>
+      <mat-slide-toggle class="btn" ngModel value="primary" name="driving"
+        ></mat-slide-toggle
       >
-      <mat-slide-toggle ngModel value="primary" name="males" required
-        >Males</mat-slide-toggle
+      <div class="trio">
+      
+      <div class="margin">
+      <p>Females</p>
+      <mat-slide-toggle class="btn_" ngModel value="primary" name="females" required
+        ></mat-slide-toggle
       >
-      <mat-slide-toggle ngModel value="primary" name="females" required
-        >Females</mat-slide-toggle
-      >
+    </div>
+      <div class="margin">
+      <p>All</p>
       <!-- Have all select both male and female -->
-      <mat-slide-toggle ngModel value="primary" name="males" required
-        >All</mat-slide-toggle
+      <mat-slide-toggle class="btn_" ngModel value="primary" name="males" required
+        ></mat-slide-toggle
       >
-  
-      <mat-slide-toggle ngModel value="primary" name="males" class="formal" required
-        >Formal event
+    </div>
+    <div class="margin">
+      <p>Males</p>
+      <mat-slide-toggle class="btn_" ngModel value="primary" name="males" required
+        ></mat-slide-toggle
+      >
+    </div>
+    </div>
+      
+  <p>Formal event</p>
+      <mat-slide-toggle  ngModel value="primary" name="males" class="formal" required
+        >
         <div class="tooltip">
           <span class="material-icons"> info </span>
           <span class="tooltiptext"
@@ -141,21 +164,16 @@ max="100"></mat-slider>
           </span>
         </div>
       </mat-slide-toggle>
-  
-      <mat-slide-toggle ngModel value="primary" name="males" required
-        >Relaxed event
+  <p>Relaxed event</p>
+      <mat-slide-toggle  ngModel value="primary" name="males" required
+        >
         <div class="tooltip">
           <span class="material-icons"> info </span>
           <span class="tooltiptext"> This is not a proffesional event. </span>
         </div>
       </mat-slide-toggle>
     </div>
-    <span class="post-final">
-      <button mat-raised-button class="text">
-        Post
-        <span class="material-icons"> arrow_forward </span>
-      </button>
-    </span>
+    
     </div>
 
 
