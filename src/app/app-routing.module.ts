@@ -37,7 +37,6 @@ const routes: Routes = [
   { path: 'edit-profile', component: EditProfileComponent },
   { path: 'friends-activity', component: FriendsActivityComponent },
   { path: 'groups', component: GroupChatsComponent },
-  { path: 'post-page', component: PostPageComponent },
   { path: 'main', component: MainPagesComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];

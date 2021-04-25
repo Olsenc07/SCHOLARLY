@@ -1,5 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Form, FormControl, FormGroup } from '@angular/forms';
+import {
+  MomentDateAdapter,
+  MAT_MOMENT_DATE_ADAPTER_OPTIONS,
+} from '@angular/material-moment-adapter';
+import {
+  DateAdapter,
+  MAT_DATE_FORMATS,
+  MAT_DATE_LOCALE,
+} from '@angular/material/core';
+import moment from 'moment';
+import { MatSliderModule } from '@angular/material/slider';
 
 
 enum SearchValues {
@@ -21,18 +32,6 @@ interface SearchOption {
   value: string;
   name: string;
 }
-
-import {
-  MomentDateAdapter,
-  MAT_MOMENT_DATE_ADAPTER_OPTIONS,
-} from '@angular/material-moment-adapter';
-import {
-  DateAdapter,
-  MAT_DATE_FORMATS,
-  MAT_DATE_LOCALE,
-} from '@angular/material/core';
-import moment from 'moment';
-import { MatSliderModule } from '@angular/material/slider';
 
 export const MY_FORMATS = {
   parse: {
@@ -73,9 +72,31 @@ enum BooleanOptions {
 export class PostPageComponent implements OnInit {
   title: string;
   location: FormControl = new FormControl('');
-  constructor() {}
+  search: FormControl = new FormControl('');
+  postForm: FormGroup;
 
-search: FormControl = new FormControl('');
+  constructor() {
+    this.postForm = new FormGroup({
+      title: new FormControl(''),
+      description: new FormControl(''),
+      date: new FormControl(''),
+      taggedFriends: new FormControl(''),
+      upload: new FormControl(),
+      driver: new FormControl(),
+      paymentService: new FormControl(),
+      formalEvent: new FormControl(),
+      relaxedEvent: new FormControl(),
+      male: new FormControl(),
+      female: new FormControl(),
+      all: new FormControl(),
+      views: new FormControl(),
+      likes: new FormControl(),
+      comments: new FormControl(),
+      peopleAmount: new FormControl(),
+      location: this.location,
+      search: this.search,
+    });
+  }
 
   public searchOptions: SearchOption[] = [
     { name: 'College Connection', value: SearchValues.COLLEGE_CONNECTION },
@@ -94,27 +115,6 @@ search: FormControl = new FormControl('');
   ];
   public selectedOption: string;
   public specificOptions: string[];
-  postForm = new FormGroup({
-    title: new FormControl(),
-    description: new FormControl(),
-    tagged_friends: new FormControl(),
-    upload: new FormControl(),
-    driver: new FormControl(),
-    payment_service: new FormControl(),
-    formal_event: new FormControl(),
-    relaxed_event: new FormControl(),
-    male: new FormControl(),
-    female: new FormControl(),
-    all: new FormControl(),
-    views: new FormControl(),
-    likes: new FormControl(),
-    comments: new FormControl(),
-    people_amount: new FormControl(),
-    location: this.location,
-  });
-
-  date = new FormControl(moment());
-
 
   onSearchSelection(event: Event): void {
     switch (event[0]) {
