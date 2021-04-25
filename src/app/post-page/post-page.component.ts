@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Form, FormControl, FormGroup } from '@angular/forms';
 
 
 enum SearchValues {
@@ -72,10 +72,10 @@ enum BooleanOptions {
 })
 export class PostPageComponent implements OnInit {
   title: string;
+  location: FormControl = new FormControl('');
   constructor() {}
 
-
-  search: FormControl = new FormControl('');
+search: FormControl = new FormControl('');
 
   public searchOptions: SearchOption[] = [
     { name: 'College Connection', value: SearchValues.COLLEGE_CONNECTION },
@@ -110,6 +110,7 @@ export class PostPageComponent implements OnInit {
     likes: new FormControl(),
     comments: new FormControl(),
     people_amount: new FormControl(),
+    location: this.location,
   });
 
   date = new FormControl(moment());
@@ -346,13 +347,6 @@ export class PostPageComponent implements OnInit {
     }
   }
 
-  // pages: string[] = [
-  //   'College Connection', 'Blue Clubs', 'Course A-E', 'Course F-M', 'Course N-Z'
-  //   , 'Entrepreneurial Opportunities', 'Help', 'Housing', 'Buy & Sell', 'School Work',
-  //   'Spirituality', 'Questions', 'Upcoming Events'
-  // ];
-
-
 
   // tslint:disable-next-line: typedef
   formatLabel(value: number) {
@@ -364,6 +358,9 @@ export class PostPageComponent implements OnInit {
   }
   onFormSubmit(): void {}
   ngOnInit(): void {}
+  clearLocation(): void{
+    this.location.setValue('');
+  }
 }
 
 
