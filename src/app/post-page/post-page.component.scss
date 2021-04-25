@@ -48,14 +48,14 @@
   height: 80%;
   width: 100%;
   border: solid;
-  border-color: rgb(57, 168, 233);
+  border-color: #2668bb;
 }
 
 .post {
   display: flex;
   width: 100%;
   border: solid;
-  border-color: rgb(57, 168, 233);
+  border-color: #2668bb;
 }
 .middle {
   display: flex;
@@ -85,7 +85,7 @@ mat-slider {
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
-  width: 35%;
+  width: 55%;
 }
 .btn {
   display: flex;
@@ -174,7 +174,7 @@ p {
   scroll-behavior: smooth;
   overflow-y: hidden;
   border: solid;
-  color: #0b38dc;
+  border-color: #2668bb;
 }
 .column_1 {
   display: flex;
@@ -210,6 +210,7 @@ p {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  width: 100%;
 }
 .location-options {
   display: flex;
@@ -228,6 +229,8 @@ p {
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin-left: 2%;
+  margin-right: 2%;
 }
 .trio {
   display: flex;
@@ -253,4 +256,8 @@ p {
   display: flex;
   position: relative;
   justify-content: center;
+}
+.row {
+  display: flex;
+  flex-direction: row;
 }

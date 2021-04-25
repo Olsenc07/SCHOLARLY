@@ -39,7 +39,7 @@
     <!-- amount of people stepper -->
     <div class="column">
       <div class="amount-people">
-        <label for="points">Amount of people</label>
+        <label for="points" class="fas fa-user" style="color: #70ade2;">Amount of people</label>
        <!--# of people slider -->
 <mat-slider
 thumbLabel
@@ -47,6 +47,10 @@ thumbLabel
 
 min="1"
 max="100"></mat-slider>
+<mat-radio-group >
+  <mat-radio-button value="1">All Welcome</mat-radio-button>
+  
+</mat-radio-group>
       </div>
     </div>
   
@@ -121,40 +125,38 @@ max="100"></mat-slider>
     </div>
     </div>
 
-
     <div class="sliders">
-      <p>Able to drive members</p>
-      <mat-slide-toggle class="btn" ngModel value="primary" name="driving"
+      <div class="row"><div class="material-icons" style="color: rgb(104, 11, 11);">  directions_car</div><p style="color: rgb(104, 11, 11);">Able to drive members </p></div>
+      <mat-slide-toggle class="btn" ngModel value="primary" name="driving" 
         ></mat-slide-toggle
       >
-      <p>Service involving payment</p>
+      <div  class="row"> <div class="material-icons" style="color: green">attach_money</div><p style="color: green">Service involving payment </p></div>
       <mat-slide-toggle class="btn" ngModel value="primary" name="driving"
         ></mat-slide-toggle
       >
       <div class="trio">
-      
       <div class="margin">
-      <p>Females</p>
+      <p class="fas fa-venus" style="color: #d230b5;">Females</p>
       <mat-slide-toggle class="btn_" ngModel value="primary" name="females" required
         ></mat-slide-toggle
       >
     </div>
       <div class="margin">
-      <p>All</p>
+      <p class="fas fa-transgender-alt" style="color: #26dd2f;">All</p>
       <!-- Have all select both male and female -->
       <mat-slide-toggle class="btn_" ngModel value="primary" name="males" required
         ></mat-slide-toggle
       >
     </div>
     <div class="margin">
-      <p>Males</p>
+      <p class="fas fa-mars" style="color: #4e30d2;">Males</p>
       <mat-slide-toggle class="btn_" ngModel value="primary" name="males" required
         ></mat-slide-toggle
       >
     </div>
     </div>
       
-  <p>Formal event</p>
+  <p class="fas fa-user-tie" style="color: #e9c215;">Formal event</p>
       <mat-slide-toggle  ngModel value="primary" name="males" class="formal" required
         >
         <div class="tooltip">
@@ -164,7 +166,7 @@ max="100"></mat-slider>
           </span>
         </div>
       </mat-slide-toggle>
-  <p>Relaxed event</p>
+  <p class="fas fa-glass-cheers" style="color: gold;">Relaxed event</p>
       <mat-slide-toggle  ngModel value="primary" name="males" required
         >
         <div class="tooltip">
