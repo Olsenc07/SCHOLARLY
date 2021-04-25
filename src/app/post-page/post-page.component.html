@@ -66,49 +66,97 @@ max="100"></mat-slider>
     ></span>
   </div>
   <div class="tagged-friends-box">
-    <textarea class="tagged-friends" >Shows the friends you tagged, can click an x to easily remove them </textarea>
+    <textarea class="tagged-friends" >Shows the friends you tagged, can click an x to easily remove them "angular material CHIPS!!"</textarea>
   </div>
 </div>
   <!-- right -->
   <div class="right">
-    
     <!-- </form> -->
 
-    <!-- search -->
-    <span class="search-posting-page">
-      <mat-form-field class="search-textfield">
-        <span class="material-icons-search"> </span>
-        <mat-label><span class="material-icons"> search </span></mat-label>
-        <input matInput type="search" placeholder="Post Location" /> </mat-form-field
-    ></span>
+    
     <!-- Box -->
     <div class="options">
     <!-- specifics box -->
     <div class="post-location">
-      <textarea class="location-options" > </textarea>
+      <div class="location">
+        
+      <h4>Post-Location</h4>
+      <mat-selection-list 
+            #searchList
+            [(ngModel)]="selectedOption"
+            (ngModelChange)="onSearchSelection($event)"
+            [ngModelOptions]="{ standalone: true }"
+            [multiple]="false"
+          >
+<mat-form-field appearance="fill">
+  <mat-label>Page</mat-label>
+  <mat-select>
+    <mat-option>None</mat-option>
+    <mat-option *ngFor="let opt of searchOptions"
+    [value]="opt.value"
+  >
+    {{ opt.name }}</mat-option>
+  </mat-select>
+</mat-form-field>
+</mat-selection-list>
+</div>
+
+<!-- Second selection -->
+<div class="box">
+      <div class="location-options" > 
+        <mat-selection-list #options [multiple]="false" class="second-list">
+        <mat-list-option  *ngFor="let opt of specificOptions"
+        [value]="opt"
+      >
+        {{ opt }}
+        </mat-list-option>
+      </mat-selection-list>
+      </div>
+      <span class="post-final">
+        <button mat-raised-button class="text">
+          Post
+          <span class="material-icons"> arrow_forward </span>
+        </button>
+      </span>
+    </div>
     </div>
 
 
     <div class="sliders">
-      <mat-slide-toggle ngModel value="primary" name="driving"
-        >Able to drive members</mat-slide-toggle
+      <p>Able to drive members</p>
+      <mat-slide-toggle class="btn" ngModel value="primary" name="driving"
+        ></mat-slide-toggle
       >
-      <mat-slide-toggle ngModel value="primary" name="driving"
-        >Service involving payment</mat-slide-toggle
+      <p>Service involving payment</p>
+      <mat-slide-toggle class="btn" ngModel value="primary" name="driving"
+        ></mat-slide-toggle
       >
-      <mat-slide-toggle ngModel value="primary" name="males" required
-        >Males</mat-slide-toggle
+      <div class="trio">
+      
+      <div class="margin">
+      <p>Females</p>
+      <mat-slide-toggle class="btn_" ngModel value="primary" name="females" required
+        ></mat-slide-toggle
       >
-      <mat-slide-toggle ngModel value="primary" name="females" required
-        >Females</mat-slide-toggle
-      >
+    </div>
+      <div class="margin">
+      <p>All</p>
       <!-- Have all select both male and female -->
-      <mat-slide-toggle ngModel value="primary" name="males" required
-        >All</mat-slide-toggle
+      <mat-slide-toggle class="btn_" ngModel value="primary" name="males" required
+        ></mat-slide-toggle
       >
-  
-      <mat-slide-toggle ngModel value="primary" name="males" required
-        >Formal event
+    </div>
+    <div class="margin">
+      <p>Males</p>
+      <mat-slide-toggle class="btn_" ngModel value="primary" name="males" required
+        ></mat-slide-toggle
+      >
+    </div>
+    </div>
+      
+  <p>Formal event</p>
+      <mat-slide-toggle  ngModel value="primary" name="males" class="formal" required
+        >
         <div class="tooltip">
           <span class="material-icons"> info </span>
           <span class="tooltiptext"
@@ -116,21 +164,16 @@ max="100"></mat-slider>
           </span>
         </div>
       </mat-slide-toggle>
-  
-      <mat-slide-toggle ngModel value="primary" name="males" required
-        >Relaxed event
+  <p>Relaxed event</p>
+      <mat-slide-toggle  ngModel value="primary" name="males" required
+        >
         <div class="tooltip">
           <span class="material-icons"> info </span>
           <span class="tooltiptext"> This is not a proffesional event. </span>
         </div>
       </mat-slide-toggle>
     </div>
-    <span class="post-final">
-      <button mat-raised-button class="text">
-        Post
-        <span class="material-icons"> arrow_forward </span>
-      </button>
-    </span>
+    
     </div>
 
 

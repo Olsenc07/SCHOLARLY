@@ -67,8 +67,9 @@
 .right {
   display: flex;
   flex-direction: column;
-  margin: 2% 1% 5% 1%;
+  box-sizing: border-box;
   width: 100%;
+  height: 100%;
   position: relative;
 }
 .search-posting-page {
@@ -82,9 +83,18 @@ mat-slider {
 .sliders {
   display: flex;
   flex-direction: column;
-  margin-left: 3%;
   box-sizing: border-box;
   position: relative;
+  width: 35%;
+}
+.btn {
+  display: flex;
+  width: 10%;
+}
+.btn_ {
+  display: flex;
+  justify-content: center;
+  width: 10%;
 }
 .text-input {
   margin-top: 5%;
@@ -102,10 +112,17 @@ mat-slider {
 .mat-slide-toggle {
   margin: 8px 0;
   display: block;
-  border-color: #418bba;
-  color: #707070;
+  color: #0b38dc;
 }
-
+p {
+  display: flex;
+  color: #0b38dc;
+}
+.margin {
+  display: flex;
+  flex-direction: column;
+  margin-right: 7%;
+}
 .tooltip .tooltiptext {
   visibility: hidden;
   position: relative;
@@ -118,7 +135,11 @@ mat-slider {
   color: #707070;
   border-color: #418bba;
 }
-
+.formal {
+  display: flex;
+  margin-top: 3%;
+  margin-bottom: 4%;
+}
 .specifics-box {
   padding: 16px;
   border: 1px solid gray;
@@ -152,6 +173,8 @@ mat-slider {
   display: flex;
   scroll-behavior: smooth;
   overflow-y: hidden;
+  border: solid;
+  color: #0b38dc;
 }
 .column_1 {
   display: flex;
@@ -175,17 +198,51 @@ mat-slider {
   flex-direction: column;
   height: 100%;
   width: 100%;
+  box-sizing: border-box;
 }
 .post-location {
   display: flex;
-  height: 50%;
+  height: 40%;
   width: 100%;
+  flex-direction: row;
+}
+.location {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 .location-options {
   display: flex;
+  position: relative;
+  flex-direction: column;
+  box-sizing: border-box;
   height: 100%;
   width: 100%;
+  border: solid;
+  border-radius: 7%;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
 }
+.box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.trio {
+  display: flex;
+  flex-direction: row;
+}
+.second-list {
+  display: flex;
+  justify-content: center;
+  overflow-y: scroll;
+  height: 100%;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+
 .back-button {
   display: flex;
   flex-direction: row;
@@ -195,6 +252,5 @@ mat-slider {
 .post-final {
   display: flex;
   position: relative;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  justify-content: center;
 }
