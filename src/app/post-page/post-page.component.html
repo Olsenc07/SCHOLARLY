@@ -38,6 +38,13 @@
   </mat-form-field>
     <!-- amount of people stepper -->
     <div class="column">
+      <mat-form-field class="">
+        <mat-label>Location</mat-label>
+        <input matInput  formControlName="location" autocomplete="on">
+        <button mat-button  matSuffix mat-icon-button aria-label="Clear" (click)="clearLocation()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
       <div class="amount-people">
         <label for="points" class="fas fa-user" style="color: #70ade2;">Amount of people</label>
        <!--# of people slider -->
@@ -70,7 +77,7 @@ max="100"></mat-slider>
     ></span>
   </div>
   <div class="tagged-friends-box">
-    <textarea class="tagged-friends" >Shows the friends you tagged, can click an x to easily remove them "angular material CHIPS!!"</textarea>
+    <textarea class="tagged-friends" >Shows the friends you tagged, can click an x to easily remove them "angular material CHIPS!! as well can tag where friend is on the pic"</textarea>
   </div>
 </div>
   <!-- right -->

@@ -20,7 +20,7 @@
 .left {
   display: flex;
   flex-direction: column;
-  margin: 2% 6% 1% 5%;
+  margin: 2% 6% 1% 6%;
   width: 100%;
   height: 100%;
   position: relative;
@@ -61,7 +61,8 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-right: 2%;
+  margin-right: 4%;
+  margin-left: 4%;
   position: relative;
 }
 .right {
@@ -70,6 +71,8 @@
   box-sizing: border-box;
   width: 100%;
   height: 100%;
+  margin-left: 2%;
+  margin-right: 2%;
   position: relative;
 }
 .search-posting-page {
@@ -77,9 +80,7 @@
   width: 50%;
   position: relative;
 }
-mat-slider {
-  width: 300px;
-}
+
 .sliders {
   display: flex;
   flex-direction: column;
@@ -184,7 +185,6 @@ p {
 .column {
   display: flex;
   flex-direction: column;
-  margin-top: 30%;
 }
 .amount-people {
   display: flex;
