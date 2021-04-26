@@ -86,7 +86,7 @@
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
-  width: 55%;
+  width: 100%;
 }
 .btn {
   display: flex;
@@ -224,6 +224,9 @@ p {
   overflow: hidden;
   scroll-behavior: smooth;
   overflow-y: scroll;
+}
+mat-slide-toggle {
+  width: fit-content;
 }
 .box {
   display: flex;
