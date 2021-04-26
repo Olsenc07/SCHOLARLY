@@ -1,6 +1,6 @@
 <form [formGroup]="postForm" (ngSubmit)="onFormSubmit()" class="largest-page">
 <div class="entire-page">
-  <!-- left -->
+  <!-- LEFT DESKTOP VIEW -->
   <div class="left">
     <!-- Title of post input -->
     <div class="left_1">
@@ -26,7 +26,155 @@
       </div>
   </div>
 
-  <!-- Middle -->
+  <!-- TOP MOBILE VIEW -->
+  <div class="mobile-page">
+  <div class="top">
+    <div class="top-left">
+    <mat-form-field class="text-input"
+        ><mat-label>Title of Post</mat-label>
+        <input matInput formControlName="title" placeholder="" />
+      </mat-form-field>   
+      <div class="post-description">
+        <textarea class="post" > Description of post..</textarea>
+      </div>   
+      <div class="all-welcome">
+      <div class="amount-peopleM">
+        <label for="points" class="fas fa-user" style="color: #70ade2;">Amount of people</label>
+        <!--# of people slider -->
+        <mat-slider
+        thumbLabel
+        [displayWith]="formatLabel"
+        min="1"
+        max="100"></mat-slider>
+      <mat-radio-group >
+        <mat-radio-button value="1">All Welcome</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    </div>
+  </div>
+  <div class="top-right">
+<!-- Date -->
+    <mat-form-field appearance="fill">
+      <mat-label>Choose a date:</mat-label>
+      <input matInput [matDatepicker]="dp" formControlName="date">
+      <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+      <mat-datepicker #dp></mat-datepicker>
+    </mat-form-field>
+      <!-- Location -->
+        <mat-form-field class="">
+          <mat-label>Location</mat-label>
+          <input matInput formControlName="location" autocomplete="on">
+          <button mat-button  matSuffix mat-icon-button aria-label="Clear" (click)="clearLocation()">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+  </div>
+  </div>
+  <!-- MIDDLE MOBILE VIEW -->
+  <div class="middle-mobile">
+    <textarea class="upload" >  Add ability to upload video/pic</textarea>
+  </div>
+  <!-- BOTTOM MOBILE VIEW -->
+  <div class="bottom-mobile">
+    <div class="left-btm-mobile"><mat-form-field class="">
+      <mat-label>Tag friends:</mat-label>
+      <input
+        matInput
+        formControlName="taggedFriends"
+        placeholder=""
+      /> </mat-form-field>
+      <div class="tagged-friends-box">
+        <textarea class="tagged-friends" >Shows the friends you tagged, can click an x to easily remove them "angular material CHIPS!! as well can tag where friend is on the pic"</textarea>
+      </div>
+      <div class="back-button">
+        <button mat-flat-button class="text-back">PREVIOUS</button>
+      </div>
+    </div>
+    <div class="middle-btm-mobile">
+      <!-- 1st select -->
+      <h4>Post-Location</h4>
+      <mat-selection-list 
+            #searchList
+            [(ngModel)]="selectedOption"
+            (ngModelChange)="onSearchSelection($event)"
+            [ngModelOptions]="{ standalone: true }"
+            [multiple]="false"
+          >
+<mat-form-field appearance="fill">
+  <mat-label>Page</mat-label>
+  <mat-select>
+    <mat-option>None</mat-option>
+    <mat-option *ngFor="let opt of searchOptions"
+    [value]="opt.value"
+  >
+    {{ opt.name }}</mat-option>
+  </mat-select>
+</mat-form-field>
+</mat-selection-list>
+<!-- 2nd select -->
+<mat-selection-list #options [multiple]="false" class="second-list">
+  <mat-list-option  *ngFor="let opt of specificOptions"
+  [value]="opt"
+>
+  {{ opt }}
+  </mat-list-option>
+</mat-selection-list>
+    </div>
+    <div class="right-btm-mobile"><div class="row"><div class="material-icons" style="color: rgb(104, 11, 11);">  directions_car</div><p style="color: rgb(104, 11, 11);">Able to drive members </p></div>
+    <mat-slide-toggle class="btn" ngModel value="primary" name="driving" 
+      ></mat-slide-toggle
+    >
+    <div  class="row"> <div class="material-icons" style="color: green">attach_money</div><p style="color: green">Service involving payment </p></div>
+    <mat-slide-toggle class="btn" ngModel value="primary" name="driving"
+      ></mat-slide-toggle
+    >
+    <div class="trio">
+    <div class="margin">
+    <p class="fas fa-venus" style="color: #d230b5;">Females</p>
+    <mat-slide-toggle class="btn_" ngModel value="primary" name="females" required
+      ></mat-slide-toggle
+    >
+  </div>
+    <div class="margin">
+    <p class="fas fa-transgender-alt" style="color: #26dd2f;">All</p>
+    <!-- Have all select both male and female -->
+    <mat-slide-toggle class="btn_" ngModel value="primary" name="males" required
+      ></mat-slide-toggle
+    >
+  </div>
+  <div class="margin">
+    <p class="fas fa-mars" style="color: #4e30d2;">Males</p>
+    <mat-slide-toggle class="btn_" ngModel value="primary" name="males" required
+      ></mat-slide-toggle
+    >
+  </div>
+  </div>
+    
+<p class="fas fa-user-tie" style="color: #e9c215;">Formal event</p>
+    <mat-slide-toggle  ngModel value="primary" name="males" class="formal" required
+      >
+      <div class="tooltip">
+        <span class="material-icons"> info </span>
+        <span class="tooltiptext"
+          >Members are expected to act with a level of professionalism.
+        </span>
+      </div>
+    </mat-slide-toggle>
+<p class="fas fa-glass-cheers" style="color: gold;">Relaxed event</p>
+    <mat-slide-toggle  ngModel value="primary" name="males" required
+      >
+      <div class="tooltip">
+        <span class="material-icons"> info </span>
+        <span class="tooltiptext"> This is not a proffesional event. </span>
+      </div>
+    </mat-slide-toggle></div>
+    <button mat-raised-button class="text">
+      Post
+      <span class="material-icons"> arrow_forward </span>
+    </button>
+  </div>
+</div>
+  <!-- MIDDLE DESKTOP VIEW -->
   <!-- New New Box -->
   <div class="middle">
      <!-- Choosing date  -->
@@ -45,7 +193,7 @@
           <mat-icon>close</mat-icon>
         </button>
       </mat-form-field>
-      <div class="amount-people">
+      <div class="amount-peopleD">
         <label for="points" class="fas fa-user" style="color: #70ade2;">Amount of people</label>
         <!--# of people slider -->
         <mat-slider
@@ -66,7 +214,6 @@
     <!-- tag friends -->
     <span class="friends-search">
       <mat-form-field class="search-textfield">
-        <span class="material-icons-search"> </span>
         <mat-label>Tag friends:</mat-label>
         <input
           matInput
@@ -79,7 +226,7 @@
     <textarea class="tagged-friends" >Shows the friends you tagged, can click an x to easily remove them "angular material CHIPS!! as well can tag where friend is on the pic"</textarea>
   </div>
 </div>
-  <!-- right -->
+  <!-- RIGHT DESKTOP VIEW -->
   <div class="right">
     <!-- </form> -->
 
