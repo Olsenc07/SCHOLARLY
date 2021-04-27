@@ -100,7 +100,7 @@
   </div>
 
   <!-- Bottom nav bar for small screens -->
-  <ng-container *ngIf="(isHomeScreen$ | async) === false">
+  <ng-container *ngIf="(isHomeScreen$ | async) === false && (isPostScreen$ | async) === false"  >
 <mat-toolbar class="lower">
   <div class="clean">
   <button mat-icon-button type="button" routerLink="/search" class="a_bottom">
@@ -118,11 +118,16 @@
 </div>
 </mat-toolbar>
 </ng-container>
+
 </div>
 
 
 <ng-container *ngIf="(isHomeScreen$ | async) === false">
   <div class="main-content"></div>
 </ng-container>
+
+
+
+
 
 </form>

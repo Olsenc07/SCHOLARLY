@@ -37,6 +37,9 @@
   .mobile-page {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
   }
 }
 @media (min-width: 1024px) {
@@ -53,54 +56,75 @@
   .top {
     display: flex;
     flex-direction: row;
+    width: 100%;
+    height: 100%;
+    position: relative;
   }
 }
 @media (max-width: 1024px) {
   .top-left {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    height: 100%;
   }
 }
 @media (max-width: 1024px) {
   .top-right {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    height: 100%;
   }
 }
 @media (min-width: 1024px) {
   .bottom-mobile {
     display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .middle-mobile {
+    display: none;
+  }
+}
+@media (max-width: 1024px) {
+  .middle-mobile {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
   }
 }
 @media (max-width: 1024px) {
   .bottom-mobile {
     display: flex;
     flex-direction: row;
-  }
-}
-@media (min-width: 1024px) {
-  .middle-mobile {
-    display: none;
-  }
-}
-@media (max-wdith: 1024px) {
-  .middle-mobile {
-    display: flex;
-    width: 100%;
     height: 100%;
+    width: 100%;
+    position: relative;
   }
 }
 .left-btm-mobile {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  width: 100%;
+  position: relative;
 }
 .middle-btm-mobile {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  width: 100%;
+  position: relative;
 }
 .right-btm-mobile {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  width: 100%;
+  position: relative;
 }
 .all-welcome {
   display: flex;
@@ -117,6 +141,11 @@
   width: 100%;
   height: 30%;
 }
+.post-descriptionM {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
 .post-pic-video {
   display: flex;
   margin-top: 3%;
@@ -125,7 +154,7 @@
 }
 .upload {
   display: flex;
-  height: 80%;
+  height: 100%;
   width: 100%;
   border: solid;
   border-color: #2668bb;
@@ -340,6 +369,10 @@ mat-slide-toggle {
   display: flex;
   flex-direction: row;
 }
+.trio_ {
+  display: flex;
+  flex-direction: row;
+}
 .second-list {
   display: flex;
   justify-content: center;
@@ -348,6 +381,12 @@ mat-slide-toggle {
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
+}
+.second-select-mobile {
+  display: flex;
+  border: solid;
+  overflow-y: scroll;
+  height: 100%;
 }
 
 .back-button {

@@ -30,49 +30,56 @@
   <div class="mobile-page">
   <div class="top">
     <div class="top-left">
-    <mat-form-field class="text-input"
+    <mat-form-field class="text-inputM"
         ><mat-label>Title of Post</mat-label>
         <input matInput formControlName="title" placeholder="" />
       </mat-form-field>   
-      <div class="post-description">
+      <div class="post-descriptionM">
         <textarea class="post" > Description of post..</textarea>
       </div>   
       <div class="all-welcome">
-      <div class="amount-peopleM">
-        <label for="points" class="fas fa-user" style="color: #70ade2;">Amount of people</label>
-        <!--# of people slider -->
-        <mat-slider
-        thumbLabel
-        [displayWith]="formatLabel"
-        min="1"
-        max="100"></mat-slider>
-      <mat-radio-group >
-        <mat-radio-button value="1">All Welcome</mat-radio-button>
-      </mat-radio-group>
-    </div>
+      
     </div>
   </div>
-  <div class="top-right">
-<!-- Date -->
-    <mat-form-field appearance="fill">
-      <mat-label>Choose a date:</mat-label>
-      <input matInput [matDatepicker]="dp" formControlName="date">
-      <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
-      <mat-datepicker #dp></mat-datepicker>
-    </mat-form-field>
-      <!-- Location -->
-        <mat-form-field class="">
-          <mat-label>Location</mat-label>
-          <input matInput formControlName="location" autocomplete="on">
-          <button mat-button  matSuffix mat-icon-button aria-label="Clear" (click)="clearLocation()">
-            <mat-icon>close</mat-icon>
-          </button>
-        </mat-form-field>
-  </div>
+ 
+<div class="top-right">
+  <input class="upload"  type="file"  src="{{user.image}} ||../../assets/Pics/WhiteSquareInAppLogo.jpg" >
+</div>
+
+
+
   </div>
   <!-- MIDDLE MOBILE VIEW -->
   <div class="middle-mobile">
-    <textarea class="upload" >  Add ability to upload video/pic</textarea>
+    <div >
+      <!-- Date -->
+          <mat-form-field appearance="fill">
+            <mat-label>Choose a date:</mat-label>
+            <input matInput [matDatepicker]="dp" formControlName="date">
+            <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+            <mat-datepicker #dp></mat-datepicker>
+          </mat-form-field>
+            <!-- Location -->
+              <mat-form-field class="">
+                <mat-label>Location</mat-label>
+                <input matInput formControlName="location" autocomplete="on">
+                <button mat-button  matSuffix mat-icon-button aria-label="Clear" (click)="clearLocation()">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
+              <div class="amount-peopleM">
+                <label for="points" class="fas fa-user" style="color: #70ade2;">Amount of people</label>
+                <!--# of people slider -->
+                <mat-slider
+                thumbLabel
+                [displayWith]="formatLabel"
+                min="1"
+                max="100"></mat-slider>
+              <mat-radio-group >
+                <mat-radio-button value="1">All Welcome</mat-radio-button>
+              </mat-radio-group>
+            </div>
+        </div>
   </div>
   <!-- BOTTOM MOBILE VIEW -->
   <div class="bottom-mobile">
@@ -112,6 +119,7 @@
 </mat-form-field>
 </mat-selection-list>
 <!-- 2nd select -->
+<div class="second-select-mobile">
 <mat-selection-list #options [multiple]="false" class="second-list">
   <mat-list-option  *ngFor="let opt of specificOptions"
   [value]="opt"
@@ -119,15 +127,10 @@
   {{ opt }}
   </mat-list-option>
 </mat-selection-list>
+</div>
     </div>
-    <div class="right-btm-mobile"><div class="row"><div class="material-icons" style="color: rgb(104, 11, 11);">  directions_car</div><p style="color: rgb(104, 11, 11);">Able to drive members </p></div>
-    <mat-slide-toggle class="btn" ngModel value="primary" name="driving" 
-      ></mat-slide-toggle
-    >
-    <div  class="row"> <div class="material-icons" style="color: green">attach_money</div><p style="color: green">Service involving payment </p></div>
-    <mat-slide-toggle class="btn" ngModel value="primary" name="driving"
-      ></mat-slide-toggle
-    >
+    <div class="right-btm-mobile">
+      
     <div class="trio">
     <div class="margin">
     <p class="fas fa-venus" style="color: #d230b5;">Females</p>
@@ -137,8 +140,7 @@
   </div>
     <div class="margin">
     <p class="fas fa-transgender-alt" style="color: #26dd2f;">All</p>
-    <!-- Have all select both male and female -->
-    <mat-slide-toggle class="btn_" ngModel value="primary" name="males" required
+    <mat-slide-toggle class="btn_" ngModel value="primary" name="all" required
       ></mat-slide-toggle
     >
   </div>
@@ -149,29 +151,36 @@
     >
   </div>
   </div>
-    
-<p class="fas fa-user-tie" style="color: #e9c215;">Formal event</p>
-    <mat-slide-toggle  ngModel value="primary" name="males" class="formal" required
-      >
-      <div class="tooltip">
-        <span class="material-icons"> info </span>
-        <span class="tooltiptext"
-          >Members are expected to act with a level of professionalism.
-        </span>
-      </div>
-    </mat-slide-toggle>
-<p class="fas fa-glass-cheers" style="color: gold;">Relaxed event</p>
-    <mat-slide-toggle  ngModel value="primary" name="males" required
-      >
-      <div class="tooltip">
-        <span class="material-icons"> info </span>
-        <span class="tooltiptext"> This is not a proffesional event. </span>
-      </div>
-    </mat-slide-toggle></div>
+  <div class="trio_">
+    <div class="column">
+      <p class="fas fa-user-tie" style="color: #e9c215;">Formal event</p>
+          <mat-slide-toggle  ngModel value="primary" name="males" class="formal" required
+            >
+            
+          </mat-slide-toggle>
+      <p class="fas fa-glass-cheers" style="color: gold;">Relaxed event</p>
+          <mat-slide-toggle  ngModel value="primary" name="relaxed" required
+            >
+            
+          </mat-slide-toggle>
+        </div>
+    <div class="column">
+  <div class="row"><div class="material-icons" style="color: rgb(104, 11, 11);">  directions_car</div><p style="color: rgb(104, 11, 11);">Able to drive members </p></div>
+  <mat-slide-toggle class="btn" ngModel value="primary" name="driving" 
+    ></mat-slide-toggle
+  >
+  <div  class="row"> <div class="material-icons" style="color: green">attach_money</div><p style="color: green">Service involving payment </p>
+</div>
+  <mat-slide-toggle class="btn" ngModel value="primary" name="money"
+    ></mat-slide-toggle>
+  </div>
+
+  </div>
     <button mat-raised-button class="text">
       Post
       <span class="material-icons"> arrow_forward </span>
     </button>
+  </div>
   </div>
 </div>
   <!-- MIDDLE DESKTOP VIEW -->
