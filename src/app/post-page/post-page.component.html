@@ -34,22 +34,11 @@
         ><mat-label>Title of Post</mat-label>
         <input matInput formControlName="title" placeholder="" />
       </mat-form-field>   
-      <div class="post-description">
+      <div class="post-descriptionM">
         <textarea class="post" > Description of post..</textarea>
       </div>   
       <div class="all-welcome">
-      <div class="amount-peopleM">
-        <label for="points" class="fas fa-user" style="color: #70ade2;">Amount of people</label>
-        <!--# of people slider -->
-        <mat-slider
-        thumbLabel
-        [displayWith]="formatLabel"
-        min="1"
-        max="100"></mat-slider>
-      <mat-radio-group >
-        <mat-radio-button value="1">All Welcome</mat-radio-button>
-      </mat-radio-group>
-    </div>
+      
     </div>
   </div>
   <div class="top-right">
@@ -68,6 +57,18 @@
             <mat-icon>close</mat-icon>
           </button>
         </mat-form-field>
+        <div class="amount-peopleM">
+          <label for="points" class="fas fa-user" style="color: #70ade2;">Amount of people</label>
+          <!--# of people slider -->
+          <mat-slider
+          thumbLabel
+          [displayWith]="formatLabel"
+          min="1"
+          max="100"></mat-slider>
+        <mat-radio-group >
+          <mat-radio-button value="1">All Welcome</mat-radio-button>
+        </mat-radio-group>
+      </div>
   </div>
   </div>
   <!-- MIDDLE MOBILE VIEW -->
@@ -112,6 +113,7 @@
 </mat-form-field>
 </mat-selection-list>
 <!-- 2nd select -->
+<div class="second-select-mobile">
 <mat-selection-list #options [multiple]="false" class="second-list">
   <mat-list-option  *ngFor="let opt of specificOptions"
   [value]="opt"
@@ -119,6 +121,7 @@
   {{ opt }}
   </mat-list-option>
 </mat-selection-list>
+</div>
     </div>
     <div class="right-btm-mobile"><div class="row"><div class="material-icons" style="color: rgb(104, 11, 11);">  directions_car</div><p style="color: rgb(104, 11, 11);">Able to drive members </p></div>
     <mat-slide-toggle class="btn" ngModel value="primary" name="driving" 
@@ -137,7 +140,6 @@
   </div>
     <div class="margin">
     <p class="fas fa-transgender-alt" style="color: #26dd2f;">All</p>
-    <!-- Have all select both male and female -->
     <mat-slide-toggle class="btn_" ngModel value="primary" name="males" required
       ></mat-slide-toggle
     >
@@ -167,11 +169,12 @@
         <span class="material-icons"> info </span>
         <span class="tooltiptext"> This is not a proffesional event. </span>
       </div>
-    </mat-slide-toggle></div>
+    </mat-slide-toggle>
     <button mat-raised-button class="text">
       Post
       <span class="material-icons"> arrow_forward </span>
     </button>
+  </div>
   </div>
 </div>
   <!-- MIDDLE DESKTOP VIEW -->

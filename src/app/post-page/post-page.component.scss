@@ -37,6 +37,9 @@
   .mobile-page {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
   }
 }
 @media (min-width: 1024px) {
@@ -53,18 +56,24 @@
   .top {
     display: flex;
     flex-direction: row;
+    width: 100%;
+    height: 100%;
   }
 }
 @media (max-width: 1024px) {
   .top-left {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    height: 100%;
   }
 }
 @media (max-width: 1024px) {
   .top-right {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    height: 100%;
   }
 }
 @media (min-width: 1024px) {
@@ -72,12 +81,7 @@
     display: none;
   }
 }
-@media (max-width: 1024px) {
-  .bottom-mobile {
-    display: flex;
-    flex-direction: row;
-  }
-}
+
 @media (min-width: 1024px) {
   .middle-mobile {
     display: none;
@@ -90,17 +94,31 @@
     height: 100%;
   }
 }
+@media (max-width: 1024px) {
+  .bottom-mobile {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+  }
+}
 .left-btm-mobile {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  width: 100%;
 }
 .middle-btm-mobile {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  width: 100%;
 }
 .right-btm-mobile {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  width: 100%;
 }
 .all-welcome {
   display: flex;
@@ -116,6 +134,11 @@
   display: flex;
   width: 100%;
   height: 30%;
+}
+.post-descriptionM {
+  display: flex;
+  width: 100%;
+  height: 100%;
 }
 .post-pic-video {
   display: flex;
@@ -348,6 +371,12 @@ mat-slide-toggle {
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
+}
+.second-select-mobile {
+  display: flex;
+  border: solid;
+  overflow-y: scroll;
+  height: 100%;
 }
 
 .back-button {
