@@ -18,6 +18,8 @@ export class AppComponent implements OnInit {
 
   isHomeScreen$: Observable<boolean>;
 
+  isPostScreen$: Observable<boolean>;
+
   searchBox: Element;
 
   search: FormControl = new FormControl('');
@@ -36,6 +38,11 @@ export class AppComponent implements OnInit {
     this.isHomeScreen$ = this.router.events.pipe(
       filter(event => event instanceof NavigationEnd),
       map((event: NavigationEnd) => event.url === '/' || event.url === '/login')
+    );
+
+    this.isPostScreen$ = this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd),
+      map((event: NavigationEnd) => event.url === '/' || event.url === '/post-page')
     );
   }
   // Missing link to fix search icon movement i hope
