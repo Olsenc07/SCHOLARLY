@@ -41,39 +41,45 @@
       
     </div>
   </div>
-  <div class="top-right">
-<!-- Date -->
-    <mat-form-field appearance="fill">
-      <mat-label>Choose a date:</mat-label>
-      <input matInput [matDatepicker]="dp" formControlName="date">
-      <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
-      <mat-datepicker #dp></mat-datepicker>
-    </mat-form-field>
-      <!-- Location -->
-        <mat-form-field class="">
-          <mat-label>Location</mat-label>
-          <input matInput formControlName="location" autocomplete="on">
-          <button mat-button  matSuffix mat-icon-button aria-label="Clear" (click)="clearLocation()">
-            <mat-icon>close</mat-icon>
-          </button>
-        </mat-form-field>
-        <div class="amount-peopleM">
-          <label for="points" class="fas fa-user" style="color: #70ade2;">Amount of people</label>
-          <!--# of people slider -->
-          <mat-slider
-          thumbLabel
-          [displayWith]="formatLabel"
-          min="1"
-          max="100"></mat-slider>
-        <mat-radio-group >
-          <mat-radio-button value="1">All Welcome</mat-radio-button>
-        </mat-radio-group>
-      </div>
-  </div>
+ 
+<div class="top-right">
+  <input class="upload"  type="file"  src="{{user.image}} ||../../assets/Pics/WhiteSquareInAppLogo.jpg" >
+</div>
+
+
+
   </div>
   <!-- MIDDLE MOBILE VIEW -->
   <div class="middle-mobile">
-    <textarea class="upload" >  Add ability to upload video/pic</textarea>
+    <div >
+      <!-- Date -->
+          <mat-form-field appearance="fill">
+            <mat-label>Choose a date:</mat-label>
+            <input matInput [matDatepicker]="dp" formControlName="date">
+            <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+            <mat-datepicker #dp></mat-datepicker>
+          </mat-form-field>
+            <!-- Location -->
+              <mat-form-field class="">
+                <mat-label>Location</mat-label>
+                <input matInput formControlName="location" autocomplete="on">
+                <button mat-button  matSuffix mat-icon-button aria-label="Clear" (click)="clearLocation()">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
+              <div class="amount-peopleM">
+                <label for="points" class="fas fa-user" style="color: #70ade2;">Amount of people</label>
+                <!--# of people slider -->
+                <mat-slider
+                thumbLabel
+                [displayWith]="formatLabel"
+                min="1"
+                max="100"></mat-slider>
+              <mat-radio-group >
+                <mat-radio-button value="1">All Welcome</mat-radio-button>
+              </mat-radio-group>
+            </div>
+        </div>
   </div>
   <!-- BOTTOM MOBILE VIEW -->
   <div class="bottom-mobile">
