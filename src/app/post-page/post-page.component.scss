@@ -58,6 +58,7 @@
     flex-direction: row;
     width: 100%;
     height: 100%;
+    position: relative;
   }
 }
 @media (max-width: 1024px) {
@@ -87,11 +88,12 @@
     display: none;
   }
 }
-@media (max-wdith: 1024px) {
+@media (max-width: 1024px) {
   .middle-mobile {
     display: flex;
     width: 100%;
     height: 100%;
+    position: relative;
   }
 }
 @media (max-width: 1024px) {
@@ -100,6 +102,7 @@
     flex-direction: row;
     height: 100%;
     width: 100%;
+    position: relative;
   }
 }
 .left-btm-mobile {
@@ -107,18 +110,21 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
+  position: relative;
 }
 .middle-btm-mobile {
   display: flex;
   flex-direction: column;
   height: 100%;
   width: 100%;
+  position: relative;
 }
 .right-btm-mobile {
   display: flex;
   flex-direction: column;
   height: 100%;
   width: 100%;
+  position: relative;
 }
 .all-welcome {
   display: flex;
