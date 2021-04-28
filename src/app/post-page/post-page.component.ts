@@ -13,6 +13,7 @@ import moment from 'moment';
 import { MatSliderModule } from '@angular/material/slider';
 
 
+
 enum SearchValues {
   COLLEGE_CONNECTION = 'college-connection',
   BLUE_CLUBS = 'blue-clubs',
@@ -74,6 +75,15 @@ export class PostPageComponent implements OnInit {
   location: FormControl = new FormControl('');
   search: FormControl = new FormControl('');
   postForm: FormGroup;
+
+// First step at ability to uplaod img/file
+selectedFile: File = null;
+onFileSelected(event){
+  this.selectedFile = event.target.files[0];
+}
+
+
+
 
   constructor() {
     this.postForm = new FormGroup({
