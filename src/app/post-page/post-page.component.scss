@@ -85,13 +85,9 @@
   height: 100%;
   margin-left: 5%;
   margin-right: 5%;
+  size: 100%;
 }
-.pre-file-imgD {
-  background-image: url(../../assets/Pics/WhiteSquareInAppLogo.jpg);
-  background-repeat: no-repeat;
-  width: fit-content;
-  height: 100%;
-}
+
 @media (min-width: 1024px) {
   .bottom-mobile {
     display: none;
@@ -116,6 +112,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  width: 100%;
 }
 @media (max-width: 1024px) {
   .bottom-mobile {
@@ -130,15 +127,15 @@
 .left-btm-mobile {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: fit-content;
   width: 100%;
   position: relative;
 }
 .middle-btm-mobile {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  width: 100%;
+  height: fit-content;
+  width: 65%;
   position: relative;
 }
 .right-btm-mobile {
@@ -155,7 +152,7 @@
 .left_1 {
   display: flex;
   width: 100%;
-  height: 79%;
+  height: 48%;
   flex-direction: column;
 }
 .post-description {
@@ -171,13 +168,16 @@
 .post-pic-video {
   display: flex;
   margin-top: 3%;
+  background-image: url(../../assets/Pics/WhiteSquareInAppLogo.jpg);
+  background-repeat: no-repeat;
+  width: fit-content;
   height: 100%;
-  width: 100%;
+  background-size: 100%;
 }
 .uploadD {
   display: flex;
   height: 100%;
-  width: 100%;
+  width: fit-content;
   border: solid;
   border-color: #2668bb;
   box-sizing: border-box;
