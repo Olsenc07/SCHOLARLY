@@ -14,8 +14,8 @@
           <textarea class="post" > Description of post..</textarea>
         </div>
         <!-- Upload pic/video -->
-        <div class="post-pic-video">
-          <textarea class="upload" >  Add ability to upload video/pic</textarea>
+        <div class="post-pic-video pre-file-imgD">
+          <input class="uploadD" type="file" (change)="onFileSelected($event)">
         </div>
         
       </div>
@@ -42,8 +42,10 @@
     </div>
   </div>
  
-<div class="top-right">
-  <input class="upload"  type="file"  src="{{user.image}} ||../../assets/Pics/WhiteSquareInAppLogo.jpg" >
+<div class="top-right pre-file-img"  >
+  <!-- {{'images'}}  is just a place holder rn, not attached to anything but whille be the file chosen by user to upload
+   and will replace the white square logo -->
+  <input class="upload"  type="file"  (change)="onFileSelected($event)"  >
 </div>
 
 
@@ -51,7 +53,7 @@
   </div>
   <!-- MIDDLE MOBILE VIEW -->
   <div class="middle-mobile">
-    <div >
+    <div class="middleM">
       <!-- Date -->
           <mat-form-field appearance="fill">
             <mat-label>Choose a date:</mat-label>
@@ -130,7 +132,18 @@
 </div>
     </div>
     <div class="right-btm-mobile">
-      
+      <div class="column">
+        <p class="fas fa-user-tie" style="color: #e9c215;">Formal event</p>
+            <mat-slide-toggle  ngModel value="primary" name="males" class="formal" required
+              >
+              
+            </mat-slide-toggle>
+        <p class="fas fa-glass-cheers" style="color: gold;">Relaxed event</p>
+            <mat-slide-toggle  ngModel value="primary" name="relaxed" required
+              >
+              
+            </mat-slide-toggle>
+          </div>
     <div class="trio">
     <div class="margin">
     <p class="fas fa-venus" style="color: #d230b5;">Females</p>
@@ -152,18 +165,7 @@
   </div>
   </div>
   <div class="trio_">
-    <div class="column">
-      <p class="fas fa-user-tie" style="color: #e9c215;">Formal event</p>
-          <mat-slide-toggle  ngModel value="primary" name="males" class="formal" required
-            >
-            
-          </mat-slide-toggle>
-      <p class="fas fa-glass-cheers" style="color: gold;">Relaxed event</p>
-          <mat-slide-toggle  ngModel value="primary" name="relaxed" required
-            >
-            
-          </mat-slide-toggle>
-        </div>
+    
     <div class="column">
   <div class="row"><div class="material-icons" style="color: rgb(104, 11, 11);">  directions_car</div><p style="color: rgb(104, 11, 11);">Able to drive members </p></div>
   <mat-slide-toggle class="btn" ngModel value="primary" name="driving" 

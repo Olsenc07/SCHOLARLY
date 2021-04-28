@@ -39,6 +39,7 @@ import { PostPageComponent } from './post-page/post-page.component';
 import { MatListModule } from '@angular/material/list';
 import { ProfileBottomSheetComponent } from './profile/bottom-sheet/bottom-sheet.component';
 import {MatSelectModule} from '@angular/material/select';
+
 @NgModule({
   declarations: [
     AppComponent,
