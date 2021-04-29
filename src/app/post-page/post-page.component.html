@@ -82,6 +82,60 @@
               </mat-radio-group>
             </div>
         </div>
+
+        <div class="right-btm-mobile">
+    
+          <div class="trio">
+          <div class="margin">
+          <p class="fas fa-venus" style="color: #d230b5;">Females</p>
+          <mat-slide-toggle class="btn_" ngModel value="primary" name="females" required
+            ></mat-slide-toggle
+          >
+        </div>
+          <div class="margin">
+          <p class="fas fa-transgender-alt" style="color: #26dd2f;">All</p>
+          <mat-slide-toggle class="btn_" ngModel value="primary" name="all" required
+            ></mat-slide-toggle
+          >
+        </div>
+        <div class="margin">
+          <p class="fas fa-mars" style="color: #4e30d2;">Males</p>
+          <mat-slide-toggle class="btn_" ngModel value="primary" name="males" required
+            ></mat-slide-toggle
+          >
+        </div>
+        </div>
+        <div class="trio_">
+          
+          <div class="column">
+        <div class="row"><div class="material-icons" style="color: rgb(104, 11, 11);">  directions_car</div><p style="color: rgb(104, 11, 11);">Able to drive members </p></div>
+        <mat-slide-toggle class="btn" ngModel value="primary" name="driving" 
+          ></mat-slide-toggle
+        >
+        <div  class="row"> <div class="material-icons" style="color: green">attach_money</div><p style="color: green">Service involving payment </p>
+      </div>
+        <mat-slide-toggle class="btn" ngModel value="primary" name="money"
+          ></mat-slide-toggle>
+        </div>
+      
+        <div class="column_">
+
+        <p class="fas fa-user-tie" style="color: #e9c215;">Formal event</p>
+        <mat-slide-toggle  ngModel value="primary" name="formal" class="formalM" required
+          >
+          
+        </mat-slide-toggle>
+    <p class="fas fa-glass-cheers" style="color: gold;">Relaxed event</p>
+        <mat-slide-toggle  ngModel value="primary" name="relaxed" class="relaxed" required
+          >
+        </mat-slide-toggle>
+
+</div>
+        </div>
+          
+        </div>
+
+
   </div>
   <!-- BOTTOM MOBILE VIEW -->
   <div class="bottom-mobile">
@@ -132,60 +186,15 @@
 </div>
 
 <div class="column">
-  <p class="fas fa-user-tie" style="color: #e9c215;">Formal event</p>
-      <mat-slide-toggle  ngModel value="primary" name="males" class="formal" required
-        >
-        
-      </mat-slide-toggle>
-  <p class="fas fa-glass-cheers" style="color: gold;">Relaxed event</p>
-      <mat-slide-toggle  ngModel value="primary" name="relaxed" required
-        >
-        
-      </mat-slide-toggle>
+  <button mat-raised-button class="text">
+    Post
+    <span class="material-icons"> arrow_forward </span>
+  </button>
+  
     </div>
 
     </div>
-    <div class="right-btm-mobile">
     
-    <div class="trio">
-    <div class="margin">
-    <p class="fas fa-venus" style="color: #d230b5;">Females</p>
-    <mat-slide-toggle class="btn_" ngModel value="primary" name="females" required
-      ></mat-slide-toggle
-    >
-  </div>
-    <div class="margin">
-    <p class="fas fa-transgender-alt" style="color: #26dd2f;">All</p>
-    <mat-slide-toggle class="btn_" ngModel value="primary" name="all" required
-      ></mat-slide-toggle
-    >
-  </div>
-  <div class="margin">
-    <p class="fas fa-mars" style="color: #4e30d2;">Males</p>
-    <mat-slide-toggle class="btn_" ngModel value="primary" name="males" required
-      ></mat-slide-toggle
-    >
-  </div>
-  </div>
-  <div class="trio_">
-    
-    <div class="column">
-  <div class="row"><div class="material-icons" style="color: rgb(104, 11, 11);">  directions_car</div><p style="color: rgb(104, 11, 11);">Able to drive members </p></div>
-  <mat-slide-toggle class="btn" ngModel value="primary" name="driving" 
-    ></mat-slide-toggle
-  >
-  <div  class="row"> <div class="material-icons" style="color: green">attach_money</div><p style="color: green">Service involving payment </p>
-</div>
-  <mat-slide-toggle class="btn" ngModel value="primary" name="money"
-    ></mat-slide-toggle>
-  </div>
-
-  </div>
-    <button mat-raised-button class="text">
-      Post
-      <span class="material-icons"> arrow_forward </span>
-    </button>
-  </div>
   </div>
 </div>
   <!-- MIDDLE DESKTOP VIEW -->
@@ -324,7 +333,7 @@
     </div>
       
   <p class="fas fa-user-tie" style="color: #e9c215;">Formal event</p>
-      <mat-slide-toggle  ngModel value="primary" name="males" class="formal" required
+      <mat-slide-toggle  ngModel value="primary" name="males" class="formalD" required
         >
         <div class="tooltip">
           <span class="material-icons"> info </span>

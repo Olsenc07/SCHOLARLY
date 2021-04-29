@@ -60,6 +60,7 @@
     height: 71%;
     position: relative;
     box-sizing: border-box;
+    margin-bottom: 2%;
   }
 }
 @media (max-width: 1024px) {
@@ -112,7 +113,8 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 100%;
+  width: 70%;
+  margin-right: 10%;
 }
 @media (max-width: 1024px) {
   .bottom-mobile {
@@ -144,6 +146,7 @@
   height: 100%;
   width: 100%;
   position: relative;
+  justify-content: center;
 }
 .all-welcome {
   display: flex;
@@ -290,10 +293,18 @@ p {
   color: #707070;
   border-color: #418bba;
 }
-.formal {
+.formalM {
   display: flex;
-  margin-top: 3%;
-  margin-bottom: 4%;
+  margin-top: 0%;
+  margin-bottom: 44%;
+}
+.formalD {
+  display: flex;
+  margin-top: 0%;
+}
+.relaxed {
+  display: flex;
+  margin-top: 0%;
 }
 .specifics-box {
   padding: 16px;
@@ -339,6 +350,14 @@ p {
 .column {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  margin-right: 3%;
+}
+
+.column_ {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .amount-peopleD {
   display: flex;
@@ -399,10 +418,12 @@ mat-slide-toggle {
 .trio {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 .trio_ {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 .second-list {
   display: flex;
