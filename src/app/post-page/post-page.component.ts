@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ComponentType } from '@angular/cdk/portal';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { Form, FormControl, FormGroup } from '@angular/forms';
 import {
   MomentDateAdapter,
@@ -9,8 +10,7 @@ import {
   MAT_DATE_FORMATS,
   MAT_DATE_LOCALE,
 } from '@angular/material/core';
-import moment from 'moment';
-import { MatSliderModule } from '@angular/material/slider';
+import {MatDialog} from '@angular/material/dialog';
 
 
 
@@ -70,22 +70,12 @@ enum BooleanOptions {
     { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS },
   ],
 })
+
+
+  
+
 export class PostPageComponent implements OnInit {
-  title: string;
-  location: FormControl = new FormControl('');
-  search: FormControl = new FormControl('');
-  postForm: FormGroup;
-
-// First step at ability to uplaod img/file
-selectedFile: File = null;
-onFileSelected(event){
-  this.selectedFile = event.target.files[0];
-}
-
-
-
-
-  constructor() {
+  constructor(public dialog: MatDialog) {
     this.postForm = new FormGroup({
       title: new FormControl(''),
       description: new FormControl(''),
@@ -107,6 +97,17 @@ onFileSelected(event){
       search: this.search,
     });
   }
+  openDialog() {
+    this.dialog.open(DialogElementsComponent);
+  }
+
+  title: string;
+  location: FormControl = new FormControl('');
+  search: FormControl = new FormControl('');
+  postForm: FormGroup;
+
+// First step at ability to uplaod img/file
+selectedFile: File = null;
 
   public searchOptions: SearchOption[] = [
     { name: 'College Connection', value: SearchValues.COLLEGE_CONNECTION },
@@ -371,6 +372,15 @@ onFileSelected(event){
   clearLocation(): void{
     this.location.setValue('');
   }
+
+
 }
+@Component({
+  selector: 'app-post-page',
+  templateUrl: './dialog-elements.component.html',
+  styleUrls: ['./dialog-elements.component.scss'],
+})
+export class DialogElementsComponent {}
+
 
 
