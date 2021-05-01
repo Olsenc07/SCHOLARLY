@@ -75,6 +75,7 @@ enum BooleanOptions {
   
 
 export class PostPageComponent implements OnInit {
+  value: any;
   constructor(public dialog: MatDialog) {
     this.postForm = new FormGroup({
       title: new FormControl(''),
@@ -106,8 +107,10 @@ export class PostPageComponent implements OnInit {
   search: FormControl = new FormControl('');
   postForm: FormGroup;
 
-// First step at ability to uplaod img/file
-selectedFile: File = null;
+// First step at ability to uplaod img/file attempt
+ OnFileSelected (event: Event): void
+{ 
+}
 
   public searchOptions: SearchOption[] = [
     { name: 'College Connection', value: SearchValues.COLLEGE_CONNECTION },

@@ -15,7 +15,7 @@
         </div>
         <!-- Upload pic/video -->
         <div class="post-pic-video">
-          <input class="uploadD" type="file" (change)="onFileSelected($event)">
+          <input class="uploadD"  type="file" (ngModelChange)="onFileSelected($event)" (click)="this.value=null" [(ngModel)]="value" multiple>
         </div>
         
       </div>
@@ -43,9 +43,8 @@
   </div>
  
 <div class="top-right pre-file-img"  >
-  <!-- {{'images'}}  is just a place holder rn, not attached to anything but whille be the file chosen by user to upload
-   and will replace the white square logo -->
-  <input class="upload"  type="file"  (change)="onFileSelected($event)"  >
+
+  <input class="upload" #fileInput type="file"  (ngModelChange)="onFileSelected($event)" [(ngModel)]="value" multiple >
 </div>
 
 
