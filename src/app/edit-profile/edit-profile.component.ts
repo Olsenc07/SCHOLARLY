@@ -4,6 +4,7 @@ import {MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS} from '@angular/mater
 import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
 import * as _moment from 'moment';
 import { default as _rollupMoment} from 'moment';
+import {MatDialog} from '@angular/material/dialog';
 
 const moment = _rollupMoment || _moment;
 export const MY_FORMATS = {
@@ -48,8 +49,10 @@ export class EditProfileComponent implements OnInit {
     gender: this.gender,
   });
   date = new FormControl(moment());
-  constructor() {}
-
+  constructor(public dialog: MatDialog) {}
+  openDialog(): void {
+    this.dialog.open(PopUpComponent);
+  }
   ngOnInit(): void {}
 
   clearMajor(): void {
@@ -81,3 +84,9 @@ export class EditProfileComponent implements OnInit {
     console.log(this.editForm.value);
   }
 }
+@Component({
+  selector: 'app-edit-profile',
+  templateUrl: './pop-up-editP.component.html',
+  styleUrls: ['./pop-up-editP.component.scss']
+})
+export class PopUpComponent {}

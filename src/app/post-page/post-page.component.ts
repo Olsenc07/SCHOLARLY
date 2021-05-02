@@ -95,7 +95,7 @@ export class PostPageComponent implements OnInit {
       search: this.search,
     });
   }
-  openDialog() {
+  openDialog(): void {
     this.dialog.open(DialogElementsComponent);
   }
 
@@ -105,9 +105,8 @@ export class PostPageComponent implements OnInit {
   postForm: FormGroup;
 
 // First step at ability to uplaod img/file attempt
- OnFileSelected (event: Event): void
-{ 
-}
+ OnFileSelected(event: Event): void
+{}
 
   public searchOptions: SearchOption[] = [
     { name: 'College Connection', value: SearchValues.COLLEGE_CONNECTION },

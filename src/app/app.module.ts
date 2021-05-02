@@ -58,7 +58,6 @@ import {MatSelectModule} from '@angular/material/select';
     PostPageComponent,
     SearchComponent,
     ProfileBottomSheetComponent,
-    
   ],
   imports: [
     BrowserModule,
