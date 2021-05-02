@@ -71,9 +71,6 @@ enum BooleanOptions {
   ],
 })
 
-
-  
-
 export class PostPageComponent implements OnInit {
   value: any;
   constructor(public dialog: MatDialog) {
