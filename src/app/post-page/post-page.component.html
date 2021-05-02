@@ -15,7 +15,7 @@
         </div>
         <!-- Upload pic/video -->
         <div class="post-pic-video">
-          <input class="uploadD" type="file" (change)="onFileSelected($event)">
+          <input class="uploadD"  type="file" (ngModelChange)="onFileSelected($event)" (click)="this.value=null" [(ngModel)]="value" multiple>
         </div>
         
       </div>
@@ -43,9 +43,8 @@
   </div>
  
 <div class="top-right pre-file-img"  >
-  <!-- {{'images'}}  is just a place holder rn, not attached to anything but whille be the file chosen by user to upload
-   and will replace the white square logo -->
-  <input class="upload"  type="file"  (change)="onFileSelected($event)"  >
+
+  <input class="upload" #fileInput type="file"  (ngModelChange)="onFileSelected($event)" [(ngModel)]="value" multiple >
 </div>
 
 
@@ -123,7 +122,12 @@
         <p class="fas fa-user-tie" style="color: #e9c215;">Formal event</p>
         <mat-slide-toggle  ngModel value="primary" name="formal" class="formalM" required
           >
-          
+          <div class="">
+            <button mat-button (click)="openDialog()"><mat-icon>info</mat-icon></button>
+  
+        
+            
+          </div>
         </mat-slide-toggle>
     <p class="fas fa-glass-cheers" style="color: gold;">Relaxed event</p>
         <mat-slide-toggle  ngModel value="primary" name="relaxed" class="relaxed" required
@@ -335,19 +339,18 @@
   <p class="fas fa-user-tie" style="color: #e9c215;">Formal event</p>
       <mat-slide-toggle  ngModel value="primary" name="males" class="formalD" required
         >
-        <div class="tooltip">
-          <span class="material-icons"> info </span>
-          <span class="tooltiptext"
-            >Members are expected to act with a level of professionalism.
-          </span>
+        <div class="">
+          <button mat-button (click)="openDialog()"><mat-icon>info</mat-icon></button>
+
+      
+          
         </div>
       </mat-slide-toggle>
   <p class="fas fa-glass-cheers" style="color: gold;">Relaxed event</p>
       <mat-slide-toggle  ngModel value="primary" name="males" required
         >
-        <div class="tooltip">
-          <span class="material-icons"> info </span>
-          <span class="tooltiptext"> This is not a proffesional event. </span>
+        <div class="">
+          <button mat-button (click)="openDialog()"><mat-icon>info</mat-icon></button>
         </div>
       </mat-slide-toggle>
     </div>

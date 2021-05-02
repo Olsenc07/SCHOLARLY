@@ -21,6 +21,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 import { routingComponents } from './app-routing.module';
@@ -40,6 +41,7 @@ import { MatListModule } from '@angular/material/list';
 import { ProfileBottomSheetComponent } from './profile/bottom-sheet/bottom-sheet.component';
 import {MatSelectModule} from '@angular/material/select';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +57,8 @@ import {MatSelectModule} from '@angular/material/select';
     FriendsActivityComponent,
     PostPageComponent,
     SearchComponent,
-    ProfileBottomSheetComponent
+    ProfileBottomSheetComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -82,6 +85,7 @@ import {MatSelectModule} from '@angular/material/select';
     MatSidenavModule,
     MatBottomSheetModule,
     MatSelectModule,
+    MatDialogModule,
   ],
 
   providers: [],

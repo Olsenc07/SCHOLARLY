@@ -17,6 +17,7 @@ import { MainPagesComponent } from './main-pages/main-pages.component';
 
 
 
+
 export const routingComponents = [
   HomePageComponent,
   SignupComponent,
