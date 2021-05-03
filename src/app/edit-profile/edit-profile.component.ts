@@ -39,6 +39,7 @@ export class EditProfileComponent implements OnInit {
   birthday: FormControl = new FormControl('');
   relationship: FormControl = new FormControl('');
   gender: FormControl = new FormControl('');
+  date: FormControl = new FormControl(moment());
 
   editForm = new FormGroup({
     major: this.major,
@@ -47,8 +48,9 @@ export class EditProfileComponent implements OnInit {
     birthday: this.birthday,
     relationship: this.relationship,
     gender: this.gender,
+    date: this.date,
   });
-  date = new FormControl(moment());
+
   constructor(public dialog: MatDialog) {}
   openDialog(): void {
     this.dialog.open(PopUpComponent);
@@ -75,7 +77,7 @@ export class EditProfileComponent implements OnInit {
     this.relationship.setValue('');
   }
 
-  clearGender(): void {
+  clearGender(): any {
     this.gender.setValue('');
   }
 

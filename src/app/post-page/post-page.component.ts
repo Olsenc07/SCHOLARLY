@@ -1,6 +1,6 @@
-import { ComponentType } from '@angular/cdk/portal';
-import { Component, OnInit, TemplateRef } from '@angular/core';
-import { Form, FormControl, FormGroup } from '@angular/forms';
+
+import { Component, OnInit } from '@angular/core';
+import {  FormControl, FormGroup } from '@angular/forms';
 import {
   MomentDateAdapter,
   MAT_MOMENT_DATE_ADAPTER_OPTIONS,
@@ -11,8 +11,8 @@ import {
   MAT_DATE_LOCALE,
 } from '@angular/material/core';
 import {MatDialog} from '@angular/material/dialog';
-
-
+import * as _moment from 'moment';
+import { default as _rollupMoment} from 'moment';
 
 enum SearchValues {
   COLLEGE_CONNECTION = 'college-connection',
@@ -34,6 +34,7 @@ interface SearchOption {
   name: string;
 }
 
+const moment = _rollupMoment || _moment;
 export const MY_FORMATS = {
   parse: {
     dateInput: 'LL',
@@ -73,37 +74,52 @@ enum BooleanOptions {
 
 export class PostPageComponent implements OnInit {
   value: any;
-  constructor(public dialog: MatDialog) {
-    this.postForm = new FormGroup({
-      title: new FormControl(''),
-      description: new FormControl(''),
-      date: new FormControl(''),
-      taggedFriends: new FormControl(''),
-      upload: new FormControl(),
-      driver: new FormControl(),
-      paymentService: new FormControl(),
-      formalEvent: new FormControl(),
-      relaxedEvent: new FormControl(),
-      male: new FormControl(),
-      female: new FormControl(),
-      all: new FormControl(),
-      views: new FormControl(),
-      likes: new FormControl(),
-      comments: new FormControl(),
-      peopleAmount: new FormControl(),
+  title: FormControl = new FormControl('');
+  description: FormControl = new FormControl('');
+  date: FormControl =  new FormControl(moment());
+  taggedFriends: FormControl =  new FormControl('');
+  upload: FormControl =  new FormControl('');
+  driver: FormControl =  new FormControl('');
+  paymentService: FormControl =  new FormControl('');
+  formalEvent: FormControl =  new FormControl('');
+  relaxedEvent: FormControl =  new FormControl('');
+  male: FormControl =  new FormControl('');
+  female: FormControl =  new FormControl('');
+  all: FormControl =  new FormControl('');
+  views: FormControl =  new FormControl('');
+  likes: FormControl =  new FormControl('');
+  comments: FormControl =  new FormControl('');
+  peopleAmount: FormControl =  new FormControl('');
+  location: FormControl =  new FormControl('');
+  search: FormControl =  new FormControl('');
+
+    postForm = new FormGroup({
+      title: this.title,
+      description: this.description,
+      date: this.date,
+      taggedFriends: this.taggedFriends,
+      upload: this.upload,
+      driver: this.driver,
+      paymentService: this.paymentService,
+      formaEvent: this.formalEvent,
+      relaxedEvent: this.relaxedEvent,
+      male: this.male,
+      female: this.female,
+      all: this.all,
+      views: this.views,
+      likes: this.likes,
+      comments: this.comments,
+      peopleAmount: this.peopleAmount,
       location: this.location,
       search: this.search,
+
     });
-  }
+
+  constructor(public dialog: MatDialog) {}
   openDialog(): void {
     this.dialog.open(DialogElementsComponent);
   }
-
-  title: string;
-  location: FormControl = new FormControl('');
-  search: FormControl = new FormControl('');
-  postForm: FormGroup;
-
+  ngOnInit(): void {}
 // First step at ability to uplaod img/file attempt
  OnFileSelected(event: Event): void
 {}
@@ -358,20 +374,27 @@ export class PostPageComponent implements OnInit {
   }
 
 
-  // tslint:disable-next-line: typedef
-  formatLabel(value: number) {
+
+  formatLabel(value: number): any {
     if (value >= 100) {
       return Math.round(value / 1) + '+';
     }
-
     return value;
   }
-  onFormSubmit(): void {}
-  ngOnInit(): void {}
+clearTitle(): void{
+  this.title.setValue('');
+}
+
+
   clearLocation(): void{
     this.location.setValue('');
   }
 
+
+  onFormSubmit(): void {
+    // TODO: wire up to post request
+    console.log(this.postForm.value);
+  }
 
 }
 @Component({
