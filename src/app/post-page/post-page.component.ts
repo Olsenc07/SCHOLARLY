@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import {  FormControl, FormGroup } from '@angular/forms';
 import {
@@ -10,9 +9,23 @@ import {
   MAT_DATE_FORMATS,
   MAT_DATE_LOCALE,
 } from '@angular/material/core';
-import {MatDialog} from '@angular/material/dialog';
 import * as _moment from 'moment';
 import { default as _rollupMoment} from 'moment';
+import {MatDialog} from '@angular/material/dialog';
+
+
+const moment = _rollupMoment || _moment;
+export const MY_FORMATS = {
+  parse: {
+    dateInput: 'LL',
+  },
+  display: {
+    dateInput: 'LL',
+    monthYearLabel: 'MMM YYYY',
+    dateA11yLabel: 'LL',
+    monthYearA11yLabel: 'MMMM YYYY',
+  },
+};
 
 enum SearchValues {
   COLLEGE_CONNECTION = 'college-connection',
@@ -34,18 +47,7 @@ interface SearchOption {
   name: string;
 }
 
-const moment = _rollupMoment || _moment;
-export const MY_FORMATS = {
-  parse: {
-    dateInput: 'LL',
-  },
-  display: {
-    dateInput: 'LL',
-    monthYearLabel: 'MMM YYYY',
-    dateA11yLabel: 'LL',
-    monthYearA11yLabel: 'MMMM YYYY',
-  },
-};
+
 
 enum BooleanOptions {
   Can_Drive = 'able-to-drive',
@@ -56,6 +58,8 @@ enum BooleanOptions {
   Female = 'female',
   All = 'all',
 }
+
+
 
 @Component({
   selector: 'app-post-page',
@@ -71,6 +75,8 @@ enum BooleanOptions {
     { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS },
   ],
 })
+
+
 
 export class PostPageComponent implements OnInit {
   value: any;
@@ -115,6 +121,23 @@ export class PostPageComponent implements OnInit {
 
     });
 
+    public searchOptions: SearchOption[] = [
+      { name: 'College Connection', value: SearchValues.COLLEGE_CONNECTION },
+      { name: 'Blue Clubs', value: SearchValues.BLUE_CLUBS },
+      { name: 'Course A-E', value: SearchValues.COURSE_A_E },
+      { name: 'Course F-M', value: SearchValues.COURSE_F_M },
+      { name: 'Course N-Z', value: SearchValues.COURSE_N_Z },
+      { name: 'Entrepreneurial Opportunities', value: SearchValues.ENTREP_IDEA },
+      { name: 'Help', value: SearchValues.HELP_WANTED },
+      { name: 'Housing', value: SearchValues.HOUSING },
+      { name: 'Buy & Sell', value: SearchValues.MISCELL_BUY_SELL },
+      { name: 'School Work', value: SearchValues.SCHOOL_WORK },
+      { name: 'Spirituality', value: SearchValues.SPIRITUALITY },
+      { name: 'Questions', value: SearchValues.U_OF_T_QS },
+      { name: 'Upcoming Events', value: SearchValues.UPCOMING_EVENTS },
+    ];
+    public selectedOption: string;
+    public specificOptions: string[];
   constructor(public dialog: MatDialog) {}
   openDialog(): void {
     this.dialog.open(DialogElementsComponent);
@@ -123,25 +146,6 @@ export class PostPageComponent implements OnInit {
 // First step at ability to uplaod img/file attempt
  OnFileSelected(event: Event): void
 {}
-
-  public searchOptions: SearchOption[] = [
-    { name: 'College Connection', value: SearchValues.COLLEGE_CONNECTION },
-    { name: 'Blue Clubs', value: SearchValues.BLUE_CLUBS },
-    { name: 'Course A-E', value: SearchValues.COURSE_A_E },
-    { name: 'Course F-M', value: SearchValues.COURSE_F_M },
-    { name: 'Course N-Z', value: SearchValues.COURSE_N_Z },
-    { name: 'Entrepreneurial Opportunities', value: SearchValues.ENTREP_IDEA },
-    { name: 'Help', value: SearchValues.HELP_WANTED },
-    { name: 'Housing', value: SearchValues.HOUSING },
-    { name: 'Buy & Sell', value: SearchValues.MISCELL_BUY_SELL },
-    { name: 'School Work', value: SearchValues.SCHOOL_WORK },
-    { name: 'Spirituality', value: SearchValues.SPIRITUALITY },
-    { name: 'Questions', value: SearchValues.U_OF_T_QS },
-    { name: 'Upcoming Events', value: SearchValues.UPCOMING_EVENTS },
-  ];
-  public selectedOption: string;
-  public specificOptions: string[];
-
   onSearchSelection(event: Event): void {
     switch (event[0]) {
       case SearchValues.COLLEGE_CONNECTION:
@@ -381,7 +385,7 @@ export class PostPageComponent implements OnInit {
     }
     return value;
   }
-clearTitle(): void{
+  clearTitle(): void{
   this.title.setValue('');
 }
 
