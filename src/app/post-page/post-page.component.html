@@ -78,13 +78,13 @@
       <!-- Date -->
           <mat-form-field  appearance="fill">
             <mat-label>Choose a date:</mat-label>
-            <input matInput [matDatepicker]="dp" [formControl]="date">
-            <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
-            <mat-datepicker #dp></mat-datepicker>
+            <input matInput [matDatepicker]="M" [formControl]="date">
+            <mat-datepicker-toggle matSuffix [for]="M"></mat-datepicker-toggle>
+            <mat-datepicker #M></mat-datepicker>
           </mat-form-field>
             <!-- Location -->
             
-              <mat-form-field class="">
+              <mat-form-field class="hide">
                 <mat-label>Location</mat-label>
                 <input matInput formControlName="location" autocomplete="on">
                 <button mat-button  matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearLocation()">
@@ -99,8 +99,10 @@
                 [displayWith]="formatLabel"
                 min="1"
                 max="100"></mat-slider>
-              <mat-radio-group >
-                <mat-radio-button value="1">All Welcome</mat-radio-button>
+
+                <!-- How to deselect ( use check box instead) -->
+              <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="0">All Welcome</mat-radio-button>
               </mat-radio-group>
             </div>
         </div>
@@ -171,7 +173,6 @@
       <mat-label>Tag friends:</mat-label>
       <input
         matInput
-        
         placeholder=""
       /> </mat-form-field>
       <div class="tagged-friends-box">
@@ -234,9 +235,9 @@
      <!-- Choosing date  -->
   <mat-form-field appearance="fill">
     <mat-label>Choose a date:</mat-label>
-    <input matInput [matDatepicker]="dp" [formControl]="date" >
-    <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
-    <mat-datepicker #dp></mat-datepicker>
+    <input matInput [matDatepicker]="D" [formControl]="date" >
+    <mat-datepicker-toggle matSuffix [for]="D"></mat-datepicker-toggle>
+    <mat-datepicker #D></mat-datepicker>
   </mat-form-field>
     <!-- amount of people stepper -->
     
@@ -257,10 +258,10 @@
 
         min="1"
         max="100"></mat-slider>
-      <mat-radio-group >
-        <mat-radio-button value="1">All Welcome</mat-radio-button>
+      
+        <mat-checkbox formControlName="checked" >All Welcome</mat-checkbox>
         
-      </mat-radio-group>
+      
       </div>
     </div>
   
@@ -335,38 +336,45 @@
     </div>
 
     <div class="sliders">
+      <!-- want these to stay doublele selected -->
+      <!-- This mat-checkbox can't have formcontrol name or the page won't load properly -->
       <div class="row"><div class="material-icons" style="color: rgb(104, 11, 11);">  directions_car</div><p style="color: rgb(104, 11, 11);">Able to drive members </p></div>
-      <mat-slide-toggle class="btn"  
-        ></mat-slide-toggle
+      <mat-checkbox  class="btn"  
+        ></mat-checkbox
       >
+    
+    
       <div  class="row"> <div class="material-icons" style="color: green">attach_money</div><p style="color: green">Service involving payment </p></div>
-      <mat-slide-toggle class="btn" 
-        ></mat-slide-toggle
+      <mat-checkbox formControlName="checked2"  class="btn" 
+        ></mat-checkbox
       >
+   
+      <mat-radio-group aria-label="Select an option">
       <div class="trio">
       <div class="margin">
-      <p class="fas fa-venus" style="color: #d230b5;">Females</p>
-      <mat-slide-toggle class="btn_"  required
-        ></mat-slide-toggle
+      <p class="fas fa-venus"  style="color: #d230b5;">Females</p>
+      <mat-radio-button  class="btn_" value="3" name="gender" required
+        ></mat-radio-button
       >
     </div>
       <div class="margin">
-      <p class="fas fa-transgender-alt" style="color: #26dd2f;">All</p>
+      <p class="fas fa-transgender-alt"  style="color: #26dd2f;">All</p>
       <!-- Have all select both male and female -->
-      <mat-slide-toggle class="btn_"  required
-        ></mat-slide-toggle
+      <mat-radio-button class="btn_" value="4" name="gender"  required
+        ></mat-radio-button
       >
     </div>
     <div class="margin">
-      <p class="fas fa-mars" style="color: #4e30d2;">Males</p>
-      <mat-slide-toggle class="btn_"  required
-        ></mat-slide-toggle
+      <p class="fas fa-mars"  style="color: #4e30d2;">Males</p>
+      <mat-radio-button class="btn_" value="5" name="gender" required
+        ></mat-radio-button
       >
     </div>
     </div>
-      
+  </mat-radio-group>
+  <mat-radio-group aria-label="Select an option">
   <p class="fas fa-user-tie" style="color: #e9c215;">Formal event</p>
-      <mat-slide-toggle   class="formalD" required
+      <mat-radio-button  value="6" required
         >
         <div class="">
           <button mat-button (click)="openDialog()"><mat-icon>info</mat-icon></button>
@@ -374,14 +382,15 @@
       
           
         </div>
-      </mat-slide-toggle>
+      </mat-radio-button>
   <p class="fas fa-glass-cheers" style="color: gold;">Relaxed event</p>
-      <mat-slide-toggle   required
+      <mat-radio-button value="7"   required
         >
         <div class="">
           <button mat-button (click)="openDialog()"><mat-icon>info</mat-icon></button>
         </div>
-      </mat-slide-toggle>
+      </mat-radio-button>
+    </mat-radio-group>
     </div>
     
     </div>
