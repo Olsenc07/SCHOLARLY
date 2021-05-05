@@ -337,15 +337,18 @@
 
     <div class="sliders">
       <!-- want these to stay doublele selected -->
+      <!-- This mat-checkbox can't have formcontrol name or the page won't load properly -->
       <div class="row"><div class="material-icons" style="color: rgb(104, 11, 11);">  directions_car</div><p style="color: rgb(104, 11, 11);">Able to drive members </p></div>
-      <mat-checkbox formControlName="checked1" class="btn"  
-        ></mat-checkbox
-      >
-      <div  class="row"> <div class="material-icons" style="color: green">attach_money</div><p style="color: green">Service involving payment </p></div>
-      <mat-checkbox formControlName="checked2 "  class="btn" 
+      <mat-checkbox  class="btn"  
         ></mat-checkbox
       >
     
+    
+      <div  class="row"> <div class="material-icons" style="color: green">attach_money</div><p style="color: green">Service involving payment </p></div>
+      <mat-checkbox formControlName="checked2"  class="btn" 
+        ></mat-checkbox
+      >
+   
       <mat-radio-group aria-label="Select an option">
       <div class="trio">
       <div class="margin">
