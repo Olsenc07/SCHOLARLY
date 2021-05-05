@@ -100,9 +100,9 @@
                 min="1"
                 max="100"></mat-slider>
 
-                <!-- How to deselect -->
+                <!-- How to deselect ( use check box instead) -->
               <mat-radio-group aria-label="Select an option">
-                <mat-radio-button value="1">All Welcome</mat-radio-button>
+                <mat-radio-button value="0">All Welcome</mat-radio-button>
               </mat-radio-group>
             </div>
         </div>
@@ -173,7 +173,6 @@
       <mat-label>Tag friends:</mat-label>
       <input
         matInput
-        
         placeholder=""
       /> </mat-form-field>
       <div class="tagged-friends-box">
@@ -259,10 +258,10 @@
 
         min="1"
         max="100"></mat-slider>
-      <mat-radio-group >
-        <mat-radio-button value="1">All Welcome</mat-radio-button>
+      
+        <mat-checkbox formControlName="checked" >All Welcome</mat-checkbox>
         
-      </mat-radio-group>
+      
       </div>
     </div>
   
@@ -337,16 +336,16 @@
     </div>
 
     <div class="sliders">
-      <mat-radio-group aria-label="Select an option">
+      <!-- want these to stay doublele selected -->
       <div class="row"><div class="material-icons" style="color: rgb(104, 11, 11);">  directions_car</div><p style="color: rgb(104, 11, 11);">Able to drive members </p></div>
-      <mat-radio-button class="btn"  value="1"
-        ></mat-radio-button
+      <mat-checkbox formControlName="checked1" class="btn"  
+        ></mat-checkbox
       >
       <div  class="row"> <div class="material-icons" style="color: green">attach_money</div><p style="color: green">Service involving payment </p></div>
-      <mat-radio-button class="btn" value="2"
-        ></mat-radio-button
+      <mat-checkbox formControlName="checked2 "  class="btn" 
+        ></mat-checkbox
       >
-    </mat-radio-group>
+    
       <mat-radio-group aria-label="Select an option">
       <div class="trio">
       <div class="margin">

@@ -22,6 +22,9 @@ import {MatBadgeModule} from '@angular/material/badge';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatListModule } from '@angular/material/list';
+import {MatSelectModule} from '@angular/material/select';
 
 
 import { routingComponents } from './app-routing.module';
@@ -37,9 +40,8 @@ import { SignupComponent } from './signup/signup.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { FriendsActivityComponent } from './friends-activity/friends-activity.component';
 import { PostPageComponent } from './post-page/post-page.component';
-import { MatListModule } from '@angular/material/list';
 import { ProfileBottomSheetComponent } from './profile/bottom-sheet/bottom-sheet.component';
-import {MatSelectModule} from '@angular/material/select';
+
 
 
 @NgModule({
@@ -85,6 +87,7 @@ import {MatSelectModule} from '@angular/material/select';
     MatBottomSheetModule,
     MatSelectModule,
     MatDialogModule,
+    MatCheckboxModule,
   ],
 
   providers: [],
