@@ -99,6 +99,8 @@ export class PostPageComponent implements OnInit {
   location: FormControl =  new FormControl('');
   search: FormControl =  new FormControl('');
 
+
+
     postForm = new FormGroup({
       title: this.title,
       description: this.description,
