@@ -148,6 +148,8 @@
   height: fit-content;
   width: 100%;
   position: relative;
+  margin-right: 5%;
+  margin-left: 5%;
 }
 .middle-btm-mobile {
   display: flex;
@@ -289,6 +291,10 @@
   display: block;
   color: #0b38dc;
 }
+.mat-radio-group {
+  display: flex;
+  width: 100%;
+}
 p {
   display: flex;
   color: #0b38dc;
@@ -298,28 +304,7 @@ p {
   flex-direction: column;
   margin-right: 7%;
 }
-// .tooltip .tooltiptext {
-//   visibility: hidden;
-//   position: relative;
-//   color: #707070;
-//   border-color: #418bba;
-// }
 
-// .tooltip:hover .tooltiptext {
-//   visibility: visible;
-//   color: #707070;
-//   border-color: #418bba;
-// }
-.formalM {
-  display: flex;
-  margin-top: 0%;
-  margin-bottom: 44%;
-}
-
-.relaxed {
-  display: flex;
-  margin-top: 0%;
-}
 .specifics-box {
   padding: 16px;
   border: 1px solid gray;
@@ -400,6 +385,12 @@ p {
   width: 100%;
   flex-direction: row;
 }
+.btm-rightM {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  height: 100%;
+}
 .location {
   display: flex;
   justify-content: center;
@@ -432,12 +423,16 @@ mat-slide-toggle {
 .trio {
   display: flex;
   flex-direction: row;
-  justify-content: center;
 }
 .trio_ {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+}
+.trioD {
+  display: flex;
+  flex-direction: row;
+  margin-top: 3%;
+  margin-bottom: 3%;
 }
 .second-list {
   display: flex;
