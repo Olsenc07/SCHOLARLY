@@ -100,64 +100,69 @@
                 min="1"
                 max="100"></mat-slider>
 
-                <!-- How to deselect ( use check box instead) -->
-              <mat-radio-group aria-label="Select an option">
-                <mat-radio-button value="0">All Welcome</mat-radio-button>
-              </mat-radio-group>
+                <mat-checkbox formControlName="checked1" >All Welcome</mat-checkbox>
             </div>
         </div>
 
         <div class="right-btm-mobile">
     
           <div class="trio">
+            <mat-radio-group aria-label="Select an option">
           <div class="margin">
+            
           <p class="fas fa-venus" style="color: #d230b5;">Females</p>
-          <mat-slide-toggle class="btn_"  required
-            ></mat-slide-toggle
-          >
+          <mat-radio-button class="btn_" value="3" name="gender"  required
+          ></mat-radio-button
+        >
         </div>
           <div class="margin">
           <p class="fas fa-transgender-alt" style="color: #26dd2f;">All</p>
-          <mat-slide-toggle class="btn_"  required
-            ></mat-slide-toggle
-          >
+          <mat-radio-button  class="btn_" value="4" name="gender" required
+          ></mat-radio-button
+        >
         </div>
         <div class="margin">
           <p class="fas fa-mars" style="color: #4e30d2;">Males</p>
-          <mat-slide-toggle class="btn_" required
-            ></mat-slide-toggle
-          >
+          <mat-radio-button class="btn_" value="5" name="gender"  required
+          ></mat-radio-button
+        >
         </div>
+      </mat-radio-group>
         </div>
+      
         <div class="trio_">
           
           <div class="column">
         <div class="row"><div class="material-icons" style="color: rgb(104, 11, 11);">  directions_car</div><p style="color: rgb(104, 11, 11);">Able to drive members </p></div>
-        <mat-slide-toggle class="btn"  
-          ></mat-slide-toggle
-        >
+        <mat-checkbox formControlName="checked2" class="btn"  
+        ></mat-checkbox
+      >
         <div  class="row"> <div class="material-icons" style="color: green">attach_money</div><p style="color: green">Service involving payment </p>
       </div>
-        <mat-slide-toggle class="btn" 
-          ></mat-slide-toggle>
+      <mat-checkbox formControlName="checked3"  class="btn" 
+      ></mat-checkbox
+    >
         </div>
       
         <div class="column_">
 
         <p class="fas fa-user-tie" style="color: #e9c215;">Formal event</p>
-        <mat-slide-toggle  class="formalM" required
-          >
-          <div class="">
-            <button mat-button (click)="openDialog()"><mat-icon>info</mat-icon></button>
-  
-        
-            
-          </div>
-        </mat-slide-toggle>
+        <mat-radio-button  value="6" required
+        >
+        <div class="">
+          <button mat-button (click)="openDialog()"><mat-icon>info</mat-icon></button>
+
+      
+          
+        </div>
+      </mat-radio-button>
     <p class="fas fa-glass-cheers" style="color: gold;">Relaxed event</p>
-        <mat-slide-toggle   class="relaxed" required
-          >
-        </mat-slide-toggle>
+    <mat-radio-button value="7"   required
+    >
+    <div class="">
+      <button mat-button (click)="openDialog()"><mat-icon>info</mat-icon></button>
+    </div>
+  </mat-radio-button>
 
 </div>
         </div>
@@ -184,7 +189,8 @@
     </div>
     <div class="middle-btm-mobile">
       <!-- 1st select -->
-      <h4>Post-Location</h4>
+      <div class="btm-rightM ">
+      <div>Post-Location</div>
       <mat-selection-list 
             #searchList
             [(ngModel)]="selectedOption"
@@ -221,16 +227,13 @@
   </button>
   
     </div>
-
+  </div>
     </div>
     
   </div>
 </div>
   <!-- MIDDLE DESKTOP VIEW -->
-  <!-- New New Box -->
 
-  
-    
   <div class="middle">
      <!-- Choosing date  -->
   <mat-form-field appearance="fill">
@@ -259,7 +262,7 @@
         min="1"
         max="100"></mat-slider>
       
-        <mat-checkbox formControlName="checked" >All Welcome</mat-checkbox>
+        <mat-checkbox formControlName="checked1" >All Welcome</mat-checkbox>
         
       
       </div>
@@ -293,8 +296,7 @@
     <!-- specifics box -->
     <div class="post-location">
       <div class="location">
-        
-      <h4>Post-Location</h4>
+      <div>Post-Location</div>
       <mat-selection-list 
             #searchList
             [(ngModel)]="selectedOption"
@@ -336,21 +338,20 @@
     </div>
 
     <div class="sliders">
-      <!-- want these to stay doublele selected -->
-      <!-- This mat-checkbox can't have formcontrol name or the page won't load properly -->
+
       <div class="row"><div class="material-icons" style="color: rgb(104, 11, 11);">  directions_car</div><p style="color: rgb(104, 11, 11);">Able to drive members </p></div>
-      <mat-checkbox  class="btn"  
+      <mat-checkbox formControlName="checked2" class="btn"  
         ></mat-checkbox
       >
     
     
       <div  class="row"> <div class="material-icons" style="color: green">attach_money</div><p style="color: green">Service involving payment </p></div>
-      <mat-checkbox formControlName="checked2"  class="btn" 
+      <mat-checkbox formControlName="checked3"  class="btn" 
         ></mat-checkbox
       >
-   
+      <div class="trioD">
       <mat-radio-group aria-label="Select an option">
-      <div class="trio">
+      
       <div class="margin">
       <p class="fas fa-venus"  style="color: #d230b5;">Females</p>
       <mat-radio-button  class="btn_" value="3" name="gender" required
@@ -370,19 +371,20 @@
         ></mat-radio-button
       >
     </div>
-    </div>
   </mat-radio-group>
+</div>
   <mat-radio-group aria-label="Select an option">
+    <div class="column"> 
   <p class="fas fa-user-tie" style="color: #e9c215;">Formal event</p>
       <mat-radio-button  value="6" required
         >
         <div class="">
           <button mat-button (click)="openDialog()"><mat-icon>info</mat-icon></button>
-
-      
           
         </div>
       </mat-radio-button>
+    </div>
+    <div class="column"> 
   <p class="fas fa-glass-cheers" style="color: gold;">Relaxed event</p>
       <mat-radio-button value="7"   required
         >
@@ -390,7 +392,9 @@
           <button mat-button (click)="openDialog()"><mat-icon>info</mat-icon></button>
         </div>
       </mat-radio-button>
+    </div>
     </mat-radio-group>
+  
     </div>
     
     </div>

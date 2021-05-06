@@ -79,9 +79,9 @@ enum BooleanOptions {
 
 
 export class PostPageComponent implements OnInit {
-  checked1 = false;
-  checked2 = false;
-  checked3 = false;
+  checked1: FormControl = new FormControl('');
+  checked2: FormControl = new FormControl('');
+  checked3: FormControl = new FormControl('');
   value: any;
   title: FormControl = new FormControl('');
   description: FormControl = new FormControl('');
@@ -123,6 +123,9 @@ export class PostPageComponent implements OnInit {
       peopleAmount: this.peopleAmount,
       location: this.location,
       search: this.search,
+      checked1: this.checked1,
+      checked2: this.checked2,
+      checked3: this.checked3,
 
     });
 
