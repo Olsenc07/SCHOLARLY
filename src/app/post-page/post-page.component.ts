@@ -76,9 +76,6 @@ enum BooleanOptions {
   ],
 })
 
-
-
-
 export class PostPageComponent implements OnInit {
   isLinear = false;
   checked1: FormControl = new FormControl('');

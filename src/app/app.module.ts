@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
@@ -18,15 +18,18 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import {MatBadgeModule} from '@angular/material/badge';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatListModule } from '@angular/material/list';
-import {MatSelectModule} from '@angular/material/select';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatStepperModule} from '@angular/material/stepper';
+import { MatSelectModule } from '@angular/material/select';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatStepperModule } from '@angular/material/stepper';
+import { IgxTimePickerModule } from 'igniteui-angular';
+import { HammerModule } from '@angular/platform-browser';
+
 
 
 import { routingComponents } from './app-routing.module';
@@ -43,8 +46,6 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { FriendsActivityComponent } from './friends-activity/friends-activity.component';
 import { PostPageComponent } from './post-page/post-page.component';
 import { ProfileBottomSheetComponent } from './profile/bottom-sheet/bottom-sheet.component';
-
-
 
 @NgModule({
   declarations: [
@@ -92,9 +93,13 @@ import { ProfileBottomSheetComponent } from './profile/bottom-sheet/bottom-sheet
     MatCheckboxModule,
     MatTabsModule,
     MatStepperModule,
+    HammerModule,
+    IgxTimePickerModule
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+}
