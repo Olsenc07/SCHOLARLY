@@ -82,7 +82,7 @@ export class PostPageComponent implements OnInit {
   checked1: FormControl = new FormControl('');
   checked2: FormControl = new FormControl('');
   checked3: FormControl = new FormControl('');
-  value: any;
+  value: FormControl = new FormControl('');
   title: FormControl = new FormControl('');
   description: FormControl = new FormControl('');
   date: FormControl =  new FormControl(moment());
@@ -126,6 +126,7 @@ export class PostPageComponent implements OnInit {
       checked1: this.checked1,
       checked2: this.checked2,
       checked3: this.checked3,
+      value: this.value,
 
     });
 

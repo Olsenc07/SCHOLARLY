@@ -14,9 +14,6 @@
         <input   placeholder="Single"  class="hide-input"/>
       </div>
 
-      
-      
-
       <!-- Major/Minor -->
       <div class="major-minor">
         <input placeholder="Major/Minor" class="major-box" />
@@ -47,41 +44,36 @@
         <div class="user-name">
       <p> Olsen07</p>
     </div>
-      <p class="follow">
+      <h2 class="follow">
         Following
         <input type="number" class="number" id="steper" name="members" step="1" />
-      </p>
-      <p class="follow">
+      </h2>
+      <h2 class="follow">
         Followers
         <input type="number" class="number" id="steper" name="members" step="1" />
-      </p>
+      </h2>
 
       </div>
       <div>
     
       </div>
-      <div class="row">
-        <p class="text">Highlights:</p>
-        <div class="hide">
-        <mat-sidenav-container>
-          <mat-sidenav>End</mat-sidenav>
-          <mat-sidenav-content>Main</mat-sidenav-content>
-        </mat-sidenav-container>
-        </div>
-      </div>
+<!-- DESKTOP -->
+<div class="hide">
+<div class="HighlightsM">
+      
 
-    <!-- Hightlight Input box -->
-      <div class="highlights-layout" >
-        <div class="groups-j"></div>
-        <div class="personal-acc"></div>
-        <div class="row_1">
-          <div class="completed-courses"></div>
-          <div class="completed-courses"></div>
-        </div>
+  <!-- Hightlight Input box -->
+  <p class="text">Highlights:</p>
+    <div class="highlights-layout" >
+      <div class="groups-j"></div>
+      <div class="personal-acc"></div>
+      <div class="row_1">
+        <div class="completed-courses"></div>
+        <div class="completed-courses"></div>
       </div>
     </div>
-
-
+  </div>
+  <div class="activityM">
     <!-- Right side -->
     <!-- Recent Posts text  -->
     <div class="right-side">
@@ -109,9 +101,76 @@
         <!-- Current Conversations box, need to add internal symbols
   & activity things in box -->
         <div class="recent-post-layout1">
-          <textarea class="text"> </textarea>
+          <textarea class="text_"> </textarea>
         </div>
       </div>
       </div>
+    </div>
+
+  </div>
+
+
+
+
+
+<!-- MOBILE -->
+
+<mat-tab-group dynamicHeight dynamicWidth mat-align-tabs="center" >
+  <mat-tab label="Highlights">
+<div class="HighlightsM">
+      
+
+    <!-- Hightlight Input box -->
+      <div class="highlights-layout" >
+        <div class="groups-j"></div>
+        <div class="personal-acc"></div>
+        <div class="row_1">
+          <div class="completed-courses"></div>
+          <div class="completed-courses"></div>
+        </div>
+      </div>
+    </div>
+    </mat-tab>
+    
+<mat-tab label="Activity">
+<div class="activityM">
+    <!-- Right side -->
+    <!-- Recent Posts text  -->
+    <div class="right-side">
+      
+       <div class="row_2">
+        
+      
+       </div>
+        <!-- Recent Posts box-->
+        <div class="recent-post-layout">
+          <div class="recent">
+            <button type="button" routerLink="/groups" >
+              Recent Posts:
+            </button>
+          </div>
+          <textarea class="posts" > </textarea>
+        
+      
+      <!-- Current Conversations text -->
+      <div class="features">
+        <div class="current"></div>
+          <p class="text">Features</p>
+        </div>
+     
+        <!-- Current Conversations box, need to add internal symbols
+  & activity things in box -->
+        <div class="recent-post-layout1">
+          <textarea class="text_"> </textarea>
+        </div>
+      </div>
+      </div>
+    </div>
+    </mat-tab>
+
+    </mat-tab-group>
+
+
+
   </div>
   

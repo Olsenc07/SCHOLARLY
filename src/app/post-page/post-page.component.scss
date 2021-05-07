@@ -59,7 +59,7 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 32%;
+    height: 75%;
     position: relative;
     box-sizing: border-box;
     margin-bottom: 2%;
@@ -91,11 +91,6 @@
   margin-right: 5%;
   size: 100%;
 }
-@media (max-width: 1024px) {
-  .pre-file-img {
-    display: none;
-  }
-}
 
 @media (min-width: 1024px) {
   .bottom-mobile {
@@ -112,7 +107,7 @@
   .middle-mobile {
     display: flex;
     width: 100%;
-    height: 85%;
+    height: 100%;
     position: relative;
     box-sizing: border-box;
   }
@@ -176,15 +171,14 @@
   height: 48%;
   flex-direction: column;
 }
-.post-description {
+.post-descriptionD {
   display: flex;
   width: 100%;
-  height: 30%;
 }
 .post-descriptionM {
   display: flex;
   width: 100%;
-  height: 100%;
+  height: 65%;
 }
 .post-pic-video {
   display: flex;
@@ -197,7 +191,7 @@
 }
 .uploadD {
   display: flex;
-  height: 93%;
+  height: 100%;
   width: fit-content;
   border: solid;
   border-color: #2668bb;
