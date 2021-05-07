@@ -26,6 +26,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MatListModule } from '@angular/material/list';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatStepperModule} from '@angular/material/stepper';
 
 
 import { routingComponents } from './app-routing.module';
@@ -90,6 +91,7 @@ import { ProfileBottomSheetComponent } from './profile/bottom-sheet/bottom-sheet
     MatDialogModule,
     MatCheckboxModule,
     MatTabsModule,
+    MatStepperModule,
   ],
 
   providers: [],
