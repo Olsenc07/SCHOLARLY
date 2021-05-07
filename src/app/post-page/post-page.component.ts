@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {  FormControl, FormGroup } from '@angular/forms';
+import {  FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import {
   MomentDateAdapter,
   MAT_MOMENT_DATE_ADAPTER_OPTIONS,
@@ -78,7 +78,9 @@ enum BooleanOptions {
 
 
 
+
 export class PostPageComponent implements OnInit {
+  isLinear = false;
   checked1: FormControl = new FormControl('');
   checked2: FormControl = new FormControl('');
   checked3: FormControl = new FormControl('');
@@ -129,6 +131,12 @@ export class PostPageComponent implements OnInit {
       value: this.value,
 
     });
+    firstFormGroup = new FormGroup({
+      date: this.date,
+    });
+    secondFormGroup = new FormGroup({
+      peopleAmount: this.peopleAmount,
+    });
 
     public searchOptions: SearchOption[] = [
       { name: 'College Connection', value: SearchValues.COLLEGE_CONNECTION },
@@ -147,11 +155,18 @@ export class PostPageComponent implements OnInit {
     ];
     public selectedOption: string;
     public specificOptions: string[];
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, private FORMBuilder: FormBuilder ) {}
   openDialog(): void {
     this.dialog.open(DialogElementsComponent);
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.firstFormGroup = this.FORMBuilder.group({
+      firstCtrl: ['']
+    });
+    this.secondFormGroup = this.FORMBuilder.group({
+      secondCtrl: ['', Validators.required]
+    });
+  }
 // First step at ability to uplaod img/file attempt
  OnFileSelected(event: Event): void
 {}
@@ -407,6 +422,16 @@ export class PostPageComponent implements OnInit {
   onFormSubmit(): void {
     // TODO: wire up to post request
     console.log(this.postForm.value);
+  }
+
+  onfirstFormSubmit(): void {
+    // TODO: wire up to post request
+    console.log(this.firstFormGroup.value);
+  }
+
+  onsecondFormSubmit(): void {
+    // TODO: wire up to post request
+    console.log(this.secondFormGroup.value);
   }
 
 }
