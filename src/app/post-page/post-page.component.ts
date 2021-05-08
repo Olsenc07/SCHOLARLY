@@ -78,6 +78,7 @@ enum BooleanOptions {
 
 export class PostPageComponent implements OnInit {
   isLinear = false;
+  time: FormControl = new FormControl('');
   checked1: FormControl = new FormControl('');
   checked2: FormControl = new FormControl('');
   checked3: FormControl = new FormControl('');
@@ -126,6 +127,7 @@ export class PostPageComponent implements OnInit {
       checked2: this.checked2,
       checked3: this.checked3,
       value: this.value,
+      time: this.time,
 
     });
     firstFormGroup = new FormGroup({
@@ -133,6 +135,14 @@ export class PostPageComponent implements OnInit {
     });
     secondFormGroup = new FormGroup({
       peopleAmount: this.peopleAmount,
+    });
+    thirdFormGroup = new FormGroup({
+      driver: this.driver,
+      paymentService: this.paymentService,
+    });
+    fourthFormGroup = new FormGroup({
+      formaEvent: this.formalEvent,
+      relaxedEvent: this.relaxedEvent,
     });
 
     public searchOptions: SearchOption[] = [
@@ -161,7 +171,13 @@ export class PostPageComponent implements OnInit {
       firstCtrl: ['']
     });
     this.secondFormGroup = this.FORMBuilder.group({
-      secondCtrl: ['', Validators.required]
+      secondCtrl: ['']
+    });
+    this.thirdFormGroup = this.FORMBuilder.group({
+      thirdCtrl: ['']
+    });
+    this.fourthFormGroup = this.FORMBuilder.group({
+      fourthCtrl: ['']
     });
   }
 // First step at ability to uplaod img/file attempt
@@ -430,7 +446,14 @@ export class PostPageComponent implements OnInit {
     // TODO: wire up to post request
     console.log(this.secondFormGroup.value);
   }
-
+  onthirdFormSubmit(): void {
+    // TODO: wire up to post request
+    console.log(this.thirdFormGroup.value);
+  }
+  onfourthFormSubmit(): void {
+    // TODO: wire up to post request
+    console.log(this.fourthFormGroup.value);
+  }
 }
 @Component({
   selector: 'app-post-page',

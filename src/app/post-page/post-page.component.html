@@ -294,13 +294,13 @@
   <div class="right">
     
 
-    <!-- 5 steps start -->
-
     
+
+    <!-- Step1 -->
     <mat-vertical-stepper [linear]="isLinear" #stepper>
       <mat-step [stepControl]="firstFormGroup" class="column_">
         <form [formGroup]="firstFormGroup" (ngSubmit)="onfirstFormSubmit()">
-          <ng-template matStepLabel>Destinantion</ng-template>
+          <ng-template matStepLabel>When & Where</ng-template>
           <mat-form-field appearance="fill">
             <mat-label>Choose a date:</mat-label>
             <input matInput [matDatepicker]="D" [formControl]="date" >
@@ -308,8 +308,12 @@
             <mat-datepicker #D></mat-datepicker>
           </mat-form-field>
           <!-- Time -->
-          <igx-time-picker></igx-time-picker>
-          <!--  -->
+          <div class="ngx-timepicker-field-example" >
+            <ngx-timepicker-field [defaultTime]="'12:00 am'" >
+              <input matInput [formControl]="time">
+            </ngx-timepicker-field>
+        </div>
+  
           <mat-form-field>
             <mat-label>Location</mat-label>
             <input matInput formControlName="firstCtrl" >
@@ -320,8 +324,9 @@
           </div>
         </form>
       </mat-step>
+        <!-- Step 2 -->
       <mat-step [stepControl]="secondFormGroup">
-        <form [formGroup]="secondFormGroup">
+        <form [formGroup]="secondFormGroup" (ngSubmit)="onsecondFormSubmit()">
           <ng-template matStepLabel>Who's Welcome To Join</ng-template>
           
                    <div class="trioD">
@@ -353,7 +358,7 @@
         
                 <div class="amount-peopleD">
                   <label for="points" class="fas fa-user" style="color: #70ade2;">Amount of people</label>
-                  <!--# of people slider -->
+                
                   <mat-slider
                   thumbLabel
                   [displayWith]="formatLabel"
@@ -373,58 +378,74 @@
           </div>
         </form>
       </mat-step>
-    </mat-vertical-stepper>
-
-  
-    <div class="options">
-    <!-- specifics box -->
-  
-
-    <div class="sliders">
-
-      <div class="row"><div class="material-icons" style="color: rgb(104, 11, 11);">  directions_car</div><p style="color: rgb(104, 11, 11);">Able to drive members </p></div>
-      <mat-checkbox formControlName="checked2" class="btn"  
+      <!-- Step3 -->
+      <mat-step [stepControl]="thirdFormGroup">
+        <form [formGroup]="thirdFormGroup" (ngSubmit)="onthirdFormSubmit()">
+          <ng-template matStepLabel>Services</ng-template>
+          <div class="column_">
+          <div class="row"><div class="material-icons" style="color: rgb(104, 11, 11);">  directions_car</div><p style="color: rgb(104, 11, 11);">Able to drive members </p></div>
+      <!-- formControlName="checked2"  -->
+          <mat-checkbox class="btn"  
         ></mat-checkbox
       >
     
     
       <div  class="row"> <div class="material-icons" style="color: green">attach_money</div><p style="color: green">Service involving payment </p></div>
-      <mat-checkbox formControlName="checked3"  class="btn" 
+      <!-- formControlName="checked3" -->
+      <mat-checkbox   class="btn" 
         ></mat-checkbox
       >
-      
-  <mat-radio-group aria-label="Select an option">
-    <div class="column"> 
-  <p class="fas fa-user-tie" style="color: #e9c215;">Formal event</p>
-      <mat-radio-button  value="6" required
-        >
-        <div class="">
-          <button mat-button (click)="openDialog()"><mat-icon>info</mat-icon></button>
+    </div>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <!-- Step4 -->
+      <mat-step [stepControl]="fourthFormGroup">
+        <form [formGroup]="fourthFormGroup" (ngSubmit)="onfourthFormSubmit()">
+          <ng-template matStepLabel>Type Of Event</ng-template>
           
-        </div>
-      </mat-radio-button>
-    </div>
-    <div class="column"> 
-  <p class="fas fa-glass-cheers" style="color: gold;">Relaxed event</p>
-      <mat-radio-button value="7"   required
-        >
-        <div class="">
-          <button mat-button (click)="openDialog()"><mat-icon>info</mat-icon></button>
-        </div>
-      </mat-radio-button>
-    </div>
-    </mat-radio-group>
+          <mat-radio-group aria-label="Select an option">
+            <div class="column"> 
+          <p class="fas fa-user-tie" style="color: #e9c215;">Formal event</p>
+              <mat-radio-button  value="6" required
+                >
+                <div class="">
+                  <button mat-button (click)="openDialog()"><mat-icon>info</mat-icon></button>
+                  
+                </div>
+              </mat-radio-button>
+            </div>
+            <div class="column"> 
+          <p class="fas fa-glass-cheers" style="color: gold;">Relaxed event</p>
+              <mat-radio-button value="7"   required
+                >
+                <div class="">
+                  <button mat-button (click)="openDialog()"><mat-icon>info</mat-icon></button>
+                </div>
+              </mat-radio-button>
+            </div>
+            </mat-radio-group>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+<!-- Step 5 -->
+<mat-step>
+  <ng-template matStepLabel>Time To Post</ng-template>
+  <div>
+    <button mat-button matStepperPrevious>Back</button>
+    <button mat-button (click)="stepper.reset()">Reset</button>
+  </div>
+</mat-step>
+    </mat-vertical-stepper>
+
   
-    </div>
     
-    </div>
-    
-
- 
-      
-      
-      
-
       <span class="post-final">
         <button mat-raised-button class="text">
           Post

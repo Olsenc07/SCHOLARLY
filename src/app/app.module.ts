@@ -27,8 +27,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatStepperModule } from '@angular/material/stepper';
-import { IgxTimePickerModule } from 'igniteui-angular';
-import { HammerModule } from '@angular/platform-browser';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 
 
 
@@ -93,8 +92,7 @@ import { ProfileBottomSheetComponent } from './profile/bottom-sheet/bottom-sheet
     MatCheckboxModule,
     MatTabsModule,
     MatStepperModule,
-    HammerModule,
-    IgxTimePickerModule
+    NgxMaterialTimepickerModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
