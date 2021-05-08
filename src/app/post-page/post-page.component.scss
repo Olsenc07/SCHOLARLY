@@ -216,7 +216,7 @@
 @media (min-width: 1024px) {
   .middle {
     display: flex;
-
+    justify-content: center;
     flex-direction: column;
     margin-right: 2%;
     margin-left: 2%;
@@ -236,7 +236,6 @@
     width: 100%;
     height: 100%;
     margin-left: 2%;
-    margin-right: 2%;
     position: relative;
   }
 }
@@ -309,6 +308,7 @@ p {
   color: gold;
   width: fit-content;
   border: solid;
+  width: 50%;
 }
 .text-back {
   color: #000;

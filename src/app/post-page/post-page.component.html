@@ -74,100 +74,164 @@
   </div>
   <!-- MIDDLE MOBILE VIEW -->
   <div class="middle-mobile">
-    <div class="middleM">
-      <!-- Date -->
-          <mat-form-field  appearance="fill">
+
+<!-- Step1 -->
+    <mat-horizontal-stepper [linear]="isLinear" #stepper >
+      <mat-step [stepControl]="firstFormGroup" class="column_">
+        <form [formGroup]="firstFormGroup" (ngSubmit)="onfirstFormSubmit()">
+          <ng-template matStepLabel>When & Where</ng-template>
+          <mat-form-field appearance="fill">
             <mat-label>Choose a date:</mat-label>
-            <input matInput [matDatepicker]="M" [formControl]="date">
+            <input matInput [matDatepicker]="M" [formControl]="date" >
             <mat-datepicker-toggle matSuffix [for]="M"></mat-datepicker-toggle>
             <mat-datepicker #M></mat-datepicker>
           </mat-form-field>
-            <!-- Location -->
+          <!-- Time -->
+          <div class="ngx-timepicker-field-example" >
+            <ngx-timepicker-field [defaultTime]="'12:00 am'" >
+              <input matInput [formControl]="time">
+            </ngx-timepicker-field>
+        </div>
+  
+          <mat-form-field>
+            <mat-label>Location</mat-label>
+            <input matInput formControlName="firstCtrl" >
             
-              <mat-form-field class="hide">
-                <mat-label>Location</mat-label>
-                <input matInput formControlName="location" autocomplete="on">
-                <button mat-button  matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearLocation()">
-                  <mat-icon class="clear-button">close</mat-icon>
-                </button>
-              </mat-form-field>
-              <div class="amount-peopleM">
-                <label for="points" class="fas fa-user" style="color: #70ade2;">Amount of people</label>
-                <!--# of people slider -->
-                <mat-slider
-                thumbLabel
-                [displayWith]="formatLabel"
-                min="1"
-                max="100"></mat-slider>
-
-                <mat-checkbox formControlName="checked1" >All Welcome</mat-checkbox>
-            </div>
-        </div>
-
-        <div class="right-btm-mobile">
-    
-          <div class="trio">
-            <mat-radio-group aria-label="Select an option">
-          <div class="margin">
-            
-          <p class="fas fa-venus" style="color: #d230b5;">Females</p>
-          <mat-radio-button class="btn_" value="3" name="gender"  required
-          ></mat-radio-button
-        >
-        </div>
-          <div class="margin">
-          <p class="fas fa-transgender-alt" style="color: #26dd2f;">All</p>
-          <mat-radio-button  class="btn_" value="4" name="gender" required
-          ></mat-radio-button
-        >
-        </div>
-        <div class="margin">
-          <p class="fas fa-mars" style="color: #4e30d2;">Males</p>
-          <mat-radio-button class="btn_" value="5" name="gender"  required
-          ></mat-radio-button
-        >
-        </div>
-      </mat-radio-group>
-        </div>
-      
-        <div class="trio_">
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <!-- Step 2 -->
+      <mat-step [stepControl]="secondFormGroup" >
+        <form [formGroup]="secondFormGroup" (ngSubmit)="onsecondFormSubmit()">
+          <ng-template matStepLabel>Who's Welcome To Join</ng-template>
           
-          <div class="column">
-        <div class="row"><div class="material-icons" style="color: rgb(104, 11, 11);">  directions_car</div><p style="color: rgb(104, 11, 11);">Able to drive members </p></div>
-        <mat-checkbox formControlName="checked2" class="btn"  
+                   <div class="trioD">
+                    <mat-radio-group aria-label="Select an option">
+                    
+                    <div class="margin">
+                    <p class="fas fa-venus"  style="color: #d230b5;">Females</p>
+                    <mat-radio-button  class="btn_" value="3" name="genderM" required
+                      ></mat-radio-button
+                    >
+                  </div>
+                    <div class="margin">
+                    <p class="fas fa-transgender-alt"  style="color: #26dd2f;">All</p>
+                    
+                    <mat-radio-button class="btn_" value="4" name="genderM"  required
+                      ></mat-radio-button
+                    >
+                  </div>
+                  <div class="margin">
+                    <p class="fas fa-mars"  style="color: #4e30d2;">Males</p>
+                    <mat-radio-button class="btn_" value="5" name="genderM" required
+                      ></mat-radio-button
+                    >
+                  </div>
+              
+                </mat-radio-group>
+              </div>
+              <div class="column">
+        
+                <div class="amount-peopleD">
+                  <label for="points" class="fas fa-user" style="color: #70ade2;">Amount of people</label>
+                
+                  <mat-slider
+                  thumbLabel
+                  [displayWith]="formatLabel"
+          
+                  min="1"
+                  max="100"></mat-slider>
+                <!-- formControlName="checked1" -->
+                  <mat-checkbox  >All Welcome</mat-checkbox>
+                  
+                
+                </div>
+              </div>
+              
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <!-- Step3 -->
+      <mat-step [stepControl]="thirdFormGroup">
+        <form [formGroup]="thirdFormGroup" (ngSubmit)="onthirdFormSubmit()">
+          <ng-template matStepLabel>Services</ng-template>
+          <div class="column_">
+          <div class="row"><div class="material-icons" style="color: rgb(104, 11, 11);">  directions_car</div><p style="color: rgb(104, 11, 11);">Able to drive members </p></div>
+      <!-- formControlName="checked2"  -->
+          <mat-checkbox class="btn"  
         ></mat-checkbox
       >
-        <div  class="row"> <div class="material-icons" style="color: green">attach_money</div><p style="color: green">Service involving payment </p>
-      </div>
-      <mat-checkbox formControlName="checked3"  class="btn" 
-      ></mat-checkbox
-    >
-        </div>
-      
-        <div class="column_">
-
-        <p class="fas fa-user-tie" style="color: #e9c215;">Formal event</p>
-        <mat-radio-button  value="6" required
-        >
-        <div class="">
-          <button mat-button (click)="openDialog()"><mat-icon>info</mat-icon></button>
-
-      
-          
-        </div>
-      </mat-radio-button>
-    <p class="fas fa-glass-cheers" style="color: gold;">Relaxed event</p>
-    <mat-radio-button value="7"   required
-    >
-    <div class="">
-      <button mat-button (click)="openDialog()"><mat-icon>info</mat-icon></button>
+    
+    
+      <div  class="row"> <div class="material-icons" style="color: green">attach_money</div><p style="color: green">Service involving payment </p></div>
+      <!-- formControlName="checked3" -->
+      <mat-checkbox   class="btn" 
+        ></mat-checkbox
+      >
     </div>
-  </mat-radio-button>
-
-</div>
-        </div>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <!-- Step4 -->
+      <mat-step [stepControl]="fourthFormGroup">
+        <form [formGroup]="fourthFormGroup" (ngSubmit)="onfourthFormSubmit()">
+          <ng-template matStepLabel>Type Of Event</ng-template>
           
-        </div>
+          <mat-radio-group aria-label="Select an option">
+            <div class="column"> 
+          <p class="fas fa-user-tie" style="color: #e9c215;">Formal event</p>
+              <mat-radio-button  value="6" required
+                >
+                <div class="">
+                  <button mat-button (click)="openDialog()"><mat-icon>info</mat-icon></button>
+                  
+                </div>
+              </mat-radio-button>
+            </div>
+            <div class="column"> 
+          <p class="fas fa-glass-cheers" style="color: gold;">Relaxed event</p>
+              <mat-radio-button value="7"   required
+                >
+                <div class="">
+                  <button mat-button (click)="openDialog()"><mat-icon>info</mat-icon></button>
+                </div>
+              </mat-radio-button>
+            </div>
+            </mat-radio-group>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+<!-- Step 5 -->
+  <mat-step>
+  <ng-template matStepLabel>Time To Post</ng-template>
+  <div>
+    <button mat-button matStepperPrevious>Back</button>
+    <button mat-button (click)="stepper.reset()">Reset</button>
+  </div>
+    </mat-step>
+    </mat-horizontal-stepper>
+
+
+
+
+
+
+   
+
+        
+   
 
 
   </div>
@@ -292,12 +356,9 @@
 </div>
   <!-- RIGHT DESKTOP VIEW -->
   <div class="right">
-    
-
-    
-
+  
     <!-- Step1 -->
-    <mat-vertical-stepper [linear]="isLinear" #stepper>
+    <mat-vertical-stepper [linear]="isLinear" #stepper >
       <mat-step [stepControl]="firstFormGroup" class="column_">
         <form [formGroup]="firstFormGroup" (ngSubmit)="onfirstFormSubmit()">
           <ng-template matStepLabel>When & Where</ng-template>
@@ -325,7 +386,7 @@
         </form>
       </mat-step>
         <!-- Step 2 -->
-      <mat-step [stepControl]="secondFormGroup">
+      <mat-step [stepControl]="secondFormGroup" >
         <form [formGroup]="secondFormGroup" (ngSubmit)="onsecondFormSubmit()">
           <ng-template matStepLabel>Who's Welcome To Join</ng-template>
           
@@ -334,20 +395,20 @@
                     
                     <div class="margin">
                     <p class="fas fa-venus"  style="color: #d230b5;">Females</p>
-                    <mat-radio-button  class="btn_" value="3" name="gender" required
+                    <mat-radio-button  class="btn_" value="3"  required
                       ></mat-radio-button
                     >
                   </div>
                     <div class="margin">
                     <p class="fas fa-transgender-alt"  style="color: #26dd2f;">All</p>
                     
-                    <mat-radio-button class="btn_" value="4" name="gender"  required
+                    <mat-radio-button class="btn_" value="4"  required
                       ></mat-radio-button
                     >
                   </div>
                   <div class="margin">
                     <p class="fas fa-mars"  style="color: #4e30d2;">Males</p>
-                    <mat-radio-button class="btn_" value="5" name="gender" required
+                    <mat-radio-button class="btn_" value="5"  required
                       ></mat-radio-button
                     >
                   </div>
