@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {  FormControl, FormGroup } from '@angular/forms';
+import {  FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import {
   MomentDateAdapter,
   MAT_MOMENT_DATE_ADAPTER_OPTIONS,
@@ -76,9 +76,9 @@ enum BooleanOptions {
   ],
 })
 
-
-
 export class PostPageComponent implements OnInit {
+  isLinear = false;
+  time: FormControl = new FormControl('');
   checked1: FormControl = new FormControl('');
   checked2: FormControl = new FormControl('');
   checked3: FormControl = new FormControl('');
@@ -127,7 +127,22 @@ export class PostPageComponent implements OnInit {
       checked2: this.checked2,
       checked3: this.checked3,
       value: this.value,
+      time: this.time,
 
+    });
+    firstFormGroup = new FormGroup({
+      date: this.date,
+    });
+    secondFormGroup = new FormGroup({
+      peopleAmount: this.peopleAmount,
+    });
+    thirdFormGroup = new FormGroup({
+      driver: this.driver,
+      paymentService: this.paymentService,
+    });
+    fourthFormGroup = new FormGroup({
+      formaEvent: this.formalEvent,
+      relaxedEvent: this.relaxedEvent,
     });
 
     public searchOptions: SearchOption[] = [
@@ -147,11 +162,24 @@ export class PostPageComponent implements OnInit {
     ];
     public selectedOption: string;
     public specificOptions: string[];
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, private FORMBuilder: FormBuilder ) {}
   openDialog(): void {
     this.dialog.open(DialogElementsComponent);
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.firstFormGroup = this.FORMBuilder.group({
+      firstCtrl: ['']
+    });
+    this.secondFormGroup = this.FORMBuilder.group({
+      secondCtrl: ['']
+    });
+    this.thirdFormGroup = this.FORMBuilder.group({
+      thirdCtrl: ['']
+    });
+    this.fourthFormGroup = this.FORMBuilder.group({
+      fourthCtrl: ['']
+    });
+  }
 // First step at ability to uplaod img/file attempt
  OnFileSelected(event: Event): void
 {}
@@ -409,6 +437,23 @@ export class PostPageComponent implements OnInit {
     console.log(this.postForm.value);
   }
 
+  onfirstFormSubmit(): void {
+    // TODO: wire up to post request
+    console.log(this.firstFormGroup.value);
+  }
+
+  onsecondFormSubmit(): void {
+    // TODO: wire up to post request
+    console.log(this.secondFormGroup.value);
+  }
+  onthirdFormSubmit(): void {
+    // TODO: wire up to post request
+    console.log(this.thirdFormGroup.value);
+  }
+  onfourthFormSubmit(): void {
+    // TODO: wire up to post request
+    console.log(this.fourthFormGroup.value);
+  }
 }
 @Component({
   selector: 'app-post-page',
