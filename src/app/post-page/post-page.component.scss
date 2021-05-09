@@ -5,7 +5,20 @@
   height: 100%;
   box-sizing: border-box;
 }
-
+.amount-peopleD {
+  display: flex;
+  width: 100%;
+  margin-bottom: 5%;
+  flex-direction: column;
+  justify-content: center;
+}
+.amount-peopleM {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+}
 .entire-page {
   display: flex;
   position: relative;
@@ -17,6 +30,84 @@
   box-sizing: border-box;
   justify-content: center;
 }
+.all-welcome {
+  display: flex;
+  flex-direction: row;
+}
+.back-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 5%;
+  margin-top: 7%;
+}
+@media (max-width: 1024px) {
+  .bottom-mobile {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+  }
+}
+@media (min-width: 1024px) {
+  .bottom-mobile {
+    display: none;
+  }
+}
+.box {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+.btn {
+  display: flex;
+  width: 10%;
+}
+.btn_ {
+  display: flex;
+  justify-content: center;
+  width: 10%;
+}
+.btm-rightM {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  height: 100%;
+}
+
+.column_1 {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 3%;
+}
+
+.column_ {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.column_2 {
+  display: flex;
+  flex-direction: column;
+}
+.description-input {
+  width: 75%;
+}
+.friends-search {
+  display: flex;
+  justify-content: center;
+}
+
 @media (min-width: 1024px) {
   .left {
     display: flex;
@@ -33,6 +124,57 @@
     display: none;
   }
 }
+.location {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+.location-options {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 25%;
+  width: 100%;
+  border: solid;
+  border-radius: 7%;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
+.left-btm-mobile {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  width: 100%;
+  position: relative;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+.left_1 {
+  display: flex;
+  width: 100%;
+  height: 67%;
+  flex-direction: column;
+}
+mat-slide-toggle {
+  width: fit-content;
+}
+.mat-slide-toggle {
+  margin: 8px 0;
+  display: block;
+  color: #0b38dc;
+}
+.mat-radio-group {
+  display: flex;
+  width: 100%;
+}
+.margin {
+  display: flex;
+  flex-direction: column;
+  margin-right: 7%;
+}
 @media (max-width: 1024px) {
   .mobile-page {
     display: flex;
@@ -42,7 +184,216 @@
     box-sizing: border-box;
   }
 }
+@media (min-width: 1024px) {
+  .middle-mobile {
+    display: none;
+  }
+}
+@media (max-width: 1024px) {
+  .middle-mobile {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+  }
+}
+@media (max-width: 1024px) {
+  .middleM {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 85%;
+    margin-left: 1%;
+    margin-right: 8%;
+  }
+}
+@media (min-width: 1024px) {
+  .middleM {
+    display: none;
+  }
+}
 
+.middle-btm-mobile {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 65%;
+  position: relative;
+}
+@media (min-width: 1024px) {
+  .middle {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: 2%;
+    margin-left: 2%;
+    position: relative;
+  }
+}
+@media (max-width: 1024px) {
+  .middle {
+    display: none;
+  }
+}
+.options {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+p {
+  display: flex;
+  color: #0b38dc;
+}
+.post-final {
+  display: flex;
+  position: relative;
+  justify-content: center;
+}
+.pre-file-img {
+  background-image: url(../../assets/Pics/WhiteSquareInAppLogo.jpg);
+  background-repeat: no-repeat;
+  width: fit-content;
+  height: 100%;
+  margin-left: 5%;
+  margin-right: 5%;
+  size: 100%;
+}
+.post-descriptionD {
+  display: flex;
+  width: 100%;
+}
+.post-descriptionM {
+  display: flex;
+  width: 100%;
+  height: 65%;
+}
+.post-pic-video {
+  display: flex;
+  margin-top: 3%;
+  background-image: url(../../assets/Pics/WhiteSquareInAppLogo.jpg);
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  background-size: 100%;
+}
+.post {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border: solid;
+  overflow-y: scroll;
+  border-color: #2668bb;
+}
+.post-location {
+  display: flex;
+  height: 40%;
+  width: 100%;
+  flex-direction: row;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+@media (min-width: 1024px) {
+  .right {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    margin-left: 2%;
+    position: relative;
+  }
+}
+@media (max-width: 1024px) {
+  .right {
+    display: none;
+  }
+}
+.right-btm-mobile {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  justify-content: center;
+}
+.search-posting-page {
+  display: flex;
+  width: 50%;
+  position: relative;
+}
+
+.sliders {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+}
+.specifics-box {
+  padding: 16px;
+  border: 1px solid gray;
+  border-radius: 16px;
+}
+.second-list {
+  display: flex;
+  justify-content: center;
+  overflow-y: scroll;
+  height: 100%;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+}
+.second-select-mobile {
+  display: flex;
+  border: solid;
+  overflow-y: scroll;
+  height: 100%;
+}
+.tagged-friends {
+  display: flex;
+  scroll-behavior: smooth;
+  overflow-y: hidden;
+  border: solid;
+  border-color: #2668bb;
+}
+.text {
+  color: gold;
+  width: fit-content;
+  border: solid;
+  width: 50%;
+}
+.text-back {
+  color: #000;
+  width: 75%;
+  border: solid;
+}
+
+.tagged-friends-box {
+  display: flex;
+  height: 20%;
+  justify-content: center;
+}
+.trio {
+  display: flex;
+  flex-direction: row;
+}
+.trio_ {
+  display: flex;
+  flex-direction: row;
+}
+.trioD {
+  display: flex;
+  flex-direction: row;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+.text-input {
+  margin-top: 5%;
+}
 @media (min-width: 1024px) {
   .top .top-left {
     display: none;
@@ -82,113 +433,6 @@
   }
 }
 
-.pre-file-img {
-  background-image: url(../../assets/Pics/WhiteSquareInAppLogo.jpg);
-  background-repeat: no-repeat;
-  width: fit-content;
-  height: 100%;
-  margin-left: 5%;
-  margin-right: 5%;
-  size: 100%;
-}
-
-@media (min-width: 1024px) {
-  .bottom-mobile {
-    display: none;
-  }
-}
-
-@media (min-width: 1024px) {
-  .middle-mobile {
-    display: none;
-  }
-}
-@media (max-width: 1024px) {
-  .middle-mobile {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    box-sizing: border-box;
-  }
-}
-@media (max-width: 1024px) {
-  .middleM {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 85%;
-    margin-left: 1%;
-    margin-right: 8%;
-  }
-}
-@media (min-width: 1024px) {
-  .middleM {
-    display: none;
-  }
-}
-@media (max-width: 1024px) {
-  .bottom-mobile {
-    display: flex;
-    flex-direction: row;
-    height: 100%;
-    width: 100%;
-    position: relative;
-    box-sizing: border-box;
-  }
-}
-.left-btm-mobile {
-  display: flex;
-  flex-direction: column;
-  height: fit-content;
-  width: 100%;
-  position: relative;
-  margin-right: 5%;
-  margin-left: 5%;
-}
-.middle-btm-mobile {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 65%;
-  position: relative;
-}
-.right-btm-mobile {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-  position: relative;
-  justify-content: center;
-}
-.all-welcome {
-  display: flex;
-  flex-direction: row;
-}
-.left_1 {
-  display: flex;
-  width: 100%;
-  height: 67%;
-  flex-direction: column;
-}
-.post-descriptionD {
-  display: flex;
-  width: 100%;
-}
-.post-descriptionM {
-  display: flex;
-  width: 100%;
-  height: 65%;
-}
-.post-pic-video {
-  display: flex;
-  margin-top: 3%;
-  background-image: url(../../assets/Pics/WhiteSquareInAppLogo.jpg);
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100%;
-  background-size: 100%;
-}
 .uploadD {
   display: flex;
   height: 100%;
@@ -205,257 +449,8 @@
   box-sizing: border-box;
 }
 
-.post {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  border: solid;
-  overflow-y: scroll;
-  border-color: #2668bb;
-}
-@media (min-width: 1024px) {
-  .middle {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin-right: 2%;
-    margin-left: 2%;
-    position: relative;
-  }
-}
-@media (max-width: 1024px) {
-  .middle {
-    display: none;
-  }
-}
-@media (min-width: 1024px) {
-  .right {
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    margin-left: 2%;
-    position: relative;
-  }
-}
-@media (max-width: 1024px) {
-  .right {
-    display: none;
-  }
-}
-.search-posting-page {
-  display: flex;
-  width: 50%;
-  position: relative;
-}
-
-.sliders {
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-  width: 100%;
-}
-.btn {
-  display: flex;
-  width: 10%;
-}
-.btn_ {
-  display: flex;
-  justify-content: center;
-  width: 10%;
-}
-.text-input {
-  margin-top: 5%;
-}
-
-.description-input {
-  width: 75%;
-}
-
 .watch {
   color: #2699fb;
   display: flex;
   margin-left: 35%;
-}
-.mat-slide-toggle {
-  margin: 8px 0;
-  display: block;
-  color: #0b38dc;
-}
-.mat-radio-group {
-  display: flex;
-  width: 100%;
-}
-p {
-  display: flex;
-  color: #0b38dc;
-}
-.margin {
-  display: flex;
-  flex-direction: column;
-  margin-right: 7%;
-}
-
-.specifics-box {
-  padding: 16px;
-  border: 1px solid gray;
-  border-radius: 16px;
-}
-
-.text {
-  color: gold;
-  width: fit-content;
-  border: solid;
-  width: 50%;
-}
-.text-back {
-  color: #000;
-  width: 75%;
-  border: solid;
-}
-.column_2 {
-  display: flex;
-  flex-direction: column;
-}
-.friends-search {
-  display: flex;
-  justify-content: center;
-}
-.tagged-friends-box {
-  display: flex;
-  height: 20%;
-  justify-content: center;
-}
-.tagged-friends {
-  display: flex;
-  scroll-behavior: smooth;
-  overflow-y: hidden;
-  border: solid;
-  border-color: #2668bb;
-}
-.column_1 {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-.column {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-right: 3%;
-}
-
-.column_ {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.amount-peopleD {
-  display: flex;
-  width: 100%;
-  margin-bottom: 5%;
-  flex-direction: column;
-  justify-content: center;
-}
-.amount-peopleM {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  justify-content: center;
-  box-sizing: border-box;
-}
-.options {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  box-sizing: border-box;
-}
-.post-location {
-  display: flex;
-  height: 40%;
-  width: 100%;
-  flex-direction: row;
-}
-.btm-rightM {
-  display: flex;
-  flex-direction: column;
-  width: 75%;
-  height: 100%;
-}
-.location {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  width: 100%;
-}
-.location-options {
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  box-sizing: border-box;
-  height: 25%;
-  width: 100%;
-  border: solid;
-  border-radius: 7%;
-  overflow: hidden;
-  scroll-behavior: smooth;
-  overflow-y: scroll;
-}
-mat-slide-toggle {
-  width: fit-content;
-}
-.box {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin-left: 2%;
-  margin-right: 2%;
-}
-.trio {
-  display: flex;
-  flex-direction: row;
-}
-.trio_ {
-  display: flex;
-  flex-direction: row;
-}
-.trioD {
-  display: flex;
-  flex-direction: row;
-  margin-top: 3%;
-  margin-bottom: 3%;
-}
-.second-list {
-  display: flex;
-  justify-content: center;
-  overflow-y: scroll;
-  height: 100%;
-  flex-direction: column;
-  box-sizing: border-box;
-  position: relative;
-}
-.second-select-mobile {
-  display: flex;
-  border: solid;
-  overflow-y: scroll;
-  height: 100%;
-}
-
-.back-button {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-bottom: 5%;
-  margin-top: 7%;
-}
-.post-final {
-  display: flex;
-  position: relative;
-  justify-content: center;
-}
-.row {
-  display: flex;
-  flex-direction: row;
 }
