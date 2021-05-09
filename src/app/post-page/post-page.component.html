@@ -40,8 +40,10 @@
   <!-- TOP MOBILE VIEW -->
 
   <div class="mobile-page">
-  <div class="top">
-    <div class="top-left">
+  <!-- MIDDLE MOBILE VIEW -->
+  <div class="middle-mobile">
+<div class="column">
+  <div class="top-left">
     <mat-form-field class="text-inputM"
         ><mat-label>Title of Post</mat-label>
         <input matInput formControlName="title" placeholder="" />
@@ -63,20 +65,8 @@
       
     </div>
   </div>
- 
-<div class="top-right pre-file-img"  >
-
-  <input #fileInputs class="upload"  type="file" onchange="onFileSelected" (click)="this.value=null" formControlName="value" multiple >
-</div>
-
-
-
-  </div>
-  <!-- MIDDLE MOBILE VIEW -->
-  <div class="middle-mobile">
-
 <!-- Step1 -->
-    <mat-horizontal-stepper [linear]="isLinear" #stepper >
+    <mat-vertical-stepper [linear]="isLinear" #stepper >
       <mat-step [stepControl]="firstFormGroup" class="column_">
         <form [formGroup]="firstFormGroup" (ngSubmit)="onfirstFormSubmit()">
           <ng-template matStepLabel>When & Where</ng-template>
@@ -221,80 +211,83 @@
     <button mat-button (click)="stepper.reset()">Reset</button>
   </div>
     </mat-step>
-    </mat-horizontal-stepper>
+    </mat-vertical-stepper>
 
 
 
+    <div class="back-button">
+      <button mat-flat-button class="text-back">PREVIOUS</button>
+    </div>
 
-
-
+  </div>
    
 
-        
+  <div class="right-mid">
+    <div class="top-right pre-file-img"  >
+
+      <input #fileInputs class="upload"  type="file" onchange="onFileSelected" (click)="this.value=null" formControlName="value" multiple >
+    </div>
+    <mat-form-field class="">
+      <mat-label>Tag friends:</mat-label>
+      <input
+        matInput
+        placeholder=""
+      /> </mat-form-field>
+      
+      
+        <div>Post-Location</div>
+        <mat-selection-list 
+              #searchList
+              [(ngModel)]="selectedOption"
+              (ngModelChange)="onSearchSelection($event)"
+              [ngModelOptions]="{ standalone: true }"
+              [multiple]="false"
+            >
+  <mat-form-field appearance="fill">
+    <mat-label>Page</mat-label>
+    <mat-select>
+      <mat-option>None</mat-option>
+      <mat-option *ngFor="let opt of searchOptions"
+      [value]="opt.value"
+    >
+      {{ opt.name }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  </mat-selection-list>
+  <!-- 2nd select -->
+  <div class="second-select-mobile">
+  <mat-selection-list #options [multiple]="false" class="second-list">
+    <mat-list-option  *ngFor="let opt of specificOptions"
+    [value]="opt"
+  >
+    {{ opt }}
+    </mat-list-option>
+  </mat-selection-list>
+  </div>
+  
+  <div class="column">
+    <button mat-raised-button class="text">
+      Post
+      <span class="material-icons"> arrow_forward </span>
+    </button>
+    
+      </div>
+</div>
    
 
 
   </div>
   <!-- BOTTOM MOBILE VIEW -->
   <!-- formControlName="taggedFriends" -->
-  <div class="bottom-mobile">
-    <div class="left-btm-mobile"><mat-form-field class="">
-      <mat-label>Tag friends:</mat-label>
-      <input
-        matInput
-        placeholder=""
-      /> </mat-form-field>
-      <div class="tagged-friends-box">
-        <textarea class="tagged-friends" >Shows the friends you tagged, can click an x to easily remove them "angular material CHIPS!! as well can tag where friend is on the pic"</textarea>
-      </div>
-      <div class="back-button">
-        <button mat-flat-button class="text-back">PREVIOUS</button>
-      </div>
-    </div>
+ 
+      
+    
     <div class="middle-btm-mobile">
       <!-- 1st select -->
-      <div class="btm-rightM ">
-      <div>Post-Location</div>
-      <mat-selection-list 
-            #searchList
-            [(ngModel)]="selectedOption"
-            (ngModelChange)="onSearchSelection($event)"
-            [ngModelOptions]="{ standalone: true }"
-            [multiple]="false"
-          >
-<mat-form-field appearance="fill">
-  <mat-label>Page</mat-label>
-  <mat-select>
-    <mat-option>None</mat-option>
-    <mat-option *ngFor="let opt of searchOptions"
-    [value]="opt.value"
-  >
-    {{ opt.name }}</mat-option>
-  </mat-select>
-</mat-form-field>
-</mat-selection-list>
-<!-- 2nd select -->
-<div class="second-select-mobile">
-<mat-selection-list #options [multiple]="false" class="second-list">
-  <mat-list-option  *ngFor="let opt of specificOptions"
-  [value]="opt"
->
-  {{ opt }}
-  </mat-list-option>
-</mat-selection-list>
-</div>
-
-<div class="column">
-  <button mat-raised-button class="text">
-    Post
-    <span class="material-icons"> arrow_forward </span>
-  </button>
-  
-    </div>
-  </div>
+      
     </div>
     
-  </div>
+  
 </div>
   <!-- MIDDLE DESKTOP VIEW -->
 
