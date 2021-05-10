@@ -39,10 +39,14 @@
 
   <!-- TOP MOBILE VIEW -->
 
-  <div class="mobile-page">
+  
   <!-- MIDDLE MOBILE VIEW -->
-  <div class="middle-mobile">
-<div class="column">
+  <mat-tab-group  mat-align-tabs="center">
+    
+    
+    <mat-tab label="Specialize">
+      <div class="mobile-page">
+      
   <div class="top-left">
     <mat-form-field class="text-inputM"
         ><mat-label>Title of Post</mat-label>
@@ -61,9 +65,7 @@
       <div class="post-descriptionM">
         <textarea class="post" > Description of post..</textarea>
       </div>   
-      <div class="all-welcome">
-      
-    </div>
+     
   </div>
 <!-- Step1 -->
     <mat-vertical-stepper [linear]="isLinear" #stepper >
@@ -205,12 +207,13 @@
       </mat-step>
 <!-- Step 5 -->
   <mat-step>
-  <ng-template matStepLabel>Time To Post</ng-template>
+  <ng-template matStepLabel>Time To Create</ng-template>
   <div>
     <button mat-button matStepperPrevious>Back</button>
     <button mat-button (click)="stepper.reset()">Reset</button>
   </div>
     </mat-step>
+    
     </mat-vertical-stepper>
 
 
@@ -219,9 +222,11 @@
       <button mat-flat-button class="text-back">PREVIOUS</button>
     </div>
 
-  </div>
-   
+  
+</div>
+</mat-tab>
 
+<mat-tab label="Create">
   <div class="right-mid">
     <div class="top-right pre-file-img"  >
 
@@ -274,21 +279,20 @@
       </div>
 </div>
    
+</mat-tab>
 
+  
 
-  </div>
+  </mat-tab-group>
   <!-- BOTTOM MOBILE VIEW -->
   <!-- formControlName="taggedFriends" -->
  
       
     
-    <div class="middle-btm-mobile">
-      <!-- 1st select -->
-      
-    </div>
     
+</div> 
   
-</div>
+
   <!-- MIDDLE DESKTOP VIEW -->
 
   <div class="middle">
@@ -509,5 +513,5 @@
 
 
   </div>
-</div>
+
 </form>
