@@ -123,6 +123,11 @@
   border-color: #2668bb;
 }
 @media (min-width: 1024px) {
+  mat-tab-group {
+    display: none;
+  }
+}
+@media (min-width: 1024px) {
   .middle {
     display: flex;
     justify-content: center;
@@ -183,6 +188,16 @@
     justify-content: center;
     height: 100%;
     width: 100%;
+  }
+}
+@media (max-width: 1024px) {
+  .yo {
+    display: none;
+  }
+}
+@media (min-width: 1024px) {
+  mat-tab-group {
+    display: none;
   }
 }
 @media (max-height: 400px) {
