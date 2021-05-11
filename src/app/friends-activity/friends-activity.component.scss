@@ -67,7 +67,7 @@
   .search-friends {
     display: flex;
     flex-direction: column;
-    width: 71%;
+    width: 100%;
     height: 100%;
   }
 }
@@ -92,18 +92,64 @@
   height: 100%;
   width: 100%;
 }
+@media (max-width: 1024px) {
+  .columnM {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
+}
+@media (max-width: 1024px) {
+  .bottomM {
+    display: flex;
+    height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .bottomM {
+    display: none;
+  }
+}
+@media (min-width: 1024px) {
+  .columnD {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 90%;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .column_ {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .column_ {
+    display: none;
+  }
+}
 .following-box {
   display: flex;
   width: 100%;
-  height: 79%;
+  height: 100%;
+  flex-direction: column;
+  border: ridge;
+  border-color: #2668bb;
+  overflow-y: scroll;
 }
 @media (min-width: 1024px) {
   .followers {
     display: flex;
     width: 17vw;
     height: 100%;
-    border: ridge;
-    border-color: #2668bb;
   }
 }
 @media (max-width: 1024px) {
@@ -111,8 +157,13 @@
     display: flex;
     width: 100%;
     height: 100%;
-    border: ridge;
-    border-color: #2668bb;
+  }
+}
+@media (max-width: 1024px) {
+  .follower-s {
+    display: flex;
+    width: 100%;
+    height: 30%;
   }
 }
 .follow-m {
@@ -133,6 +184,7 @@
     justify-content: center;
     flex-direction: column;
     margin: 2% 5% 2% 2%;
+    overflow-y: scroll;
   }
 }
 
@@ -141,8 +193,9 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 1% 0% 1% 2%;
     width: 100%;
+    height: 100%;
+    overflow-y: scroll;
   }
 }
 @media (min-width: 1024px) {
@@ -161,6 +214,8 @@
     justify-content: center;
     flex-direction: column;
     margin: 2% 2% 2% 5%;
+
+    overflow-y: scroll;
   }
 }
 @media (max-width: 1024px) {
@@ -168,8 +223,9 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 1% 2% 1% 1%;
     width: 100%;
+    height: 100%;
+    overflow-y: scroll;
   }
 }
 .action-button {
@@ -200,6 +256,12 @@
     display: none;
   }
 }
+@media (max-width: 1024px) {
+  mat-tab-group {
+    display: flex;
+    width: 100%;
+  }
+}
 @media (max-height: 400px) {
   .mutual-largest {
     display: flex;
@@ -223,8 +285,8 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 0% 2% 2% 2%;
-    height: 60%;
+
+    height: 75%;
     width: 80%;
   }
 }
@@ -252,23 +314,10 @@
     border-color: #2668bb;
   }
 }
-@media (max-width: 1024px) {
-  .friends-request {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    margin-bottom: 5%;
-    border: ridge;
-    border-color: #2668bb;
-  }
-}
+
 @media (max-width: 1024px) {
   .friends-request-box {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    overflow-y: scroll;
-    height: 36%;
+    display: none;
   }
 }
 
@@ -287,6 +336,7 @@
     margin: 2%;
     height: 35vh;
     width: 100%;
+    overflow-y: scroll;
   }
 }
 @media (max-width: 1024px) {
@@ -338,4 +388,8 @@ form.search::after {
   content: "";
   clear: both;
   display: table;
+}
+::ng-deep .mat-tab-body-wrapper {
+  display: flex;
+  height: 100%;
 }
