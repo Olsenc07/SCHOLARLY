@@ -240,7 +240,8 @@
       /> </mat-form-field>
       
       
-        <div>Post-Location</div>
+        <div class="center">
+          <p>Post-Location</p>
         <mat-selection-list 
               #searchList
               [(ngModel)]="selectedOption"
@@ -259,6 +260,7 @@
     </mat-select>
   </mat-form-field>
   </mat-selection-list>
+  </div>
   <!-- 2nd select -->
   <div class="second-select-mobile">
   <mat-selection-list #options [multiple]="false" class="second-list">

@@ -76,6 +76,11 @@
   width: 75%;
   height: 100%;
 }
+.center {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 .column {
   display: flex;
   justify-content: center;
@@ -160,6 +165,7 @@
 mat-slide-toggle {
   width: fit-content;
 }
+
 .mat-slide-toggle {
   margin: 8px 0;
   display: block;
@@ -242,6 +248,7 @@ mat-slide-toggle {
 p {
   display: flex;
   color: #0b38dc;
+  justify-content: center;
 }
 .post-final {
   display: flex;
@@ -250,7 +257,7 @@ p {
 }
 .pre-file-img {
   background-image: url(../../assets/Pics/WhiteSquareInAppLogo.jpg);
-  background-repeat: no-repeat;
+
   width: 100%;
   height: 100%;
 
@@ -355,7 +362,7 @@ p {
   display: flex;
   border: solid;
   overflow-y: scroll;
-  height: 100%;
+  height: 50%;
 }
 .tagged-friends {
   display: flex;
@@ -435,6 +442,7 @@ p {
 .upload {
   display: flex;
   height: 100%;
+  width: 100%;
   border: solid;
   border-color: #2668bb;
   box-sizing: border-box;
