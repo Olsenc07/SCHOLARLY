@@ -29,12 +29,11 @@ interface SearchOption {
 })
 export class SearchComponent implements OnInit {
   constructor() {}
-
   search: FormControl = new FormControl('');
 
   public searchOptions: SearchOption[] = [
-    { name: 'College Connection', value: SearchValues.COLLEGE_CONNECTION },
     { name: 'Blue Clubs', value: SearchValues.BLUE_CLUBS },
+    { name: 'College Connection', value: SearchValues.COLLEGE_CONNECTION },
     { name: 'Course A-E', value: SearchValues.COURSE_A_E },
     { name: 'Course F-M', value: SearchValues.COURSE_F_M },
     { name: 'Course N-Z', value: SearchValues.COURSE_N_Z },

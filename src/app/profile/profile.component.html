@@ -6,12 +6,14 @@
     <div class="left-side">
       <div class="profile-pic">
         <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" class="pic" />
+        
       </div>
 
       <!-- gender input text, relationship status input text -->
       <div  class="center">
-        <input    placeholder="Male" class="hide-input" />
-        <input   placeholder="Single"  class="hide-input"/>
+        <div class="hide-input"> Olsen07</div>
+        <div class="row"><div   class="hide-input"> Male</div>
+        <div     class="hide-input">Single</div></div>
       </div>
 
       <!-- Major/Minor -->
@@ -33,7 +35,7 @@
         <textarea class="bio-input" > </textarea>
       </div>
       <div class="conversations">
-      <button mat-raised-button (click)="openBottomSheet()" class="convo-text">Current Conversations</button>
+      <button mat-raised-button (click)="openBottomSheet()" class="convo-text"> Conversations</button>
       
     </div>
     </div>
@@ -42,7 +44,7 @@
       <!-- User-Name -->
       <div class="top-middle">
         <div class="user-name">
-      <p> Olsen07</p>
+      
     </div>
       <h3 class="follow">
         Following
@@ -65,11 +67,17 @@
   <!-- Hightlight Input box -->
   <p class="text">Highlights:</p>
     <div class="highlights-layout" >
-      <div class="groups-j"></div>
-      <div class="personal-acc"></div>
+      <div class="groups-j"><div class="words">
+        Groups Joined
+      </div></div>
+      <div class="personal-acc"><div class="words">
+        Personal Accomplishments
+      </div></div>
       <div class="row_1">
-        <div class="completed-courses"></div>
-        <div class="completed-courses"></div>
+        <div class="completed-courses"><div class="words">Completed Courses</div></div>
+        <div class="completed-courses"><div class="words">
+          Pursuing Courses
+        </div></div>
       </div>
     </div>
   </div>
@@ -86,7 +94,7 @@
               Recent's
             </p>
           </h2>
-          <textarea class="posts" > </textarea>
+          <div class="posts" > </div>
         
           <mat-divider></mat-divider>
       <!-- Current Conversations text -->
@@ -99,7 +107,7 @@
         <!-- Current Conversations box, need to add internal symbols
   & activity things in box -->
         
-          <textarea class="text_"> </textarea>
+          <div class="text_"> </div>
         
       </div>
       </div>
@@ -120,11 +128,19 @@
 
     <!-- Hightlight Input box -->
       <div class="highlights-layout" >
-        <div class="groups-j"></div>
-        <div class="personal-acc"></div>
+        <div class="groups-j"><div class="words">
+          Groups Joined
+        </div></div>
+        <div class="personal-acc"><div class="words">
+          Personal Accomplishments
+        </div></div>
         <div class="row_1">
-          <div class="completed-courses"></div>
-          <div class="completed-courses"></div>
+          <div class="completed-courses">
+            <div class="words">Completed Courses</div>
+          </div>
+          <div class="completed-courses"> <div class="words">
+            Pursuing Courses
+          </div></div>
         </div>
       </div>
     </div>
@@ -144,7 +160,7 @@
               Recent's
             </p>
           </div>
-          <textarea class="posts" > </textarea>
+          <div class="posts" > </div>
         
           <mat-divider></mat-divider>
       <!-- Current Conversations text -->
@@ -156,7 +172,7 @@
         <!-- Current Conversations box, need to add internal symbols
   & activity things in box -->
       
-          <textarea class="text_"> </textarea>
+          <div class="text_"> </div>
         
       </div>
       </div>

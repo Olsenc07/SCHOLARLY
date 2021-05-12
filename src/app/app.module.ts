@@ -28,7 +28,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatStepperModule } from '@angular/material/stepper';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
-
+import {MatChipsModule} from '@angular/material/chips';
 
 
 import { routingComponents } from './app-routing.module';
@@ -93,6 +93,7 @@ import { ProfileBottomSheetComponent } from './profile/bottom-sheet/bottom-sheet
     MatTabsModule,
     MatStepperModule,
     NgxMaterialTimepickerModule,
+    MatChipsModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
