@@ -34,6 +34,7 @@
               >
                 {{ opt }}
               </mat-chip>
+             
             </mat-chip-list>
             
           </div>
@@ -61,31 +62,37 @@
 
         <div
           class="input-boxs top_scroll " >
-          
-          <mat-chip-list aria-label="First Choice">
+          <mat-form-field >
+          <mat-chip-list aria-label="First Choice"  >
             
+
+           
+<!-- Makes you click to display each chip, one at a time.. [(ngModel)]="selectedOption" -->
           <mat-chip selected class="horizontal_list"
-            #searchList
-            [(ngModel)]="selectedOption"
-            (ngModelChange)="onSearchSelection($event)"
-            [ngModelOptions]="{ standalone: true }"
-            [multiple]="false"
+          #searchList
+          
+          (ngModelChange)="onSearchSelection($event)"
+          [ngModelOptions]="{ standalone: true }"
+          [multiple]="false"
+          
 
-
-
-            *ngFor="let opt of searchOptions"
-              [value]="opt.value"
+          *ngFor="let opt of searchOptions"
+            [value]="opt.name"
           >
-            <mat-list-option class="fix"
-              *ngFor="let opt of searchOptions"
-              [value]="opt.value"
-            >
-              {{ opt.name }}
-            </mat-list-option>
+          
+             
+              
+          <!-- <mat-list-option class="fix"
+          *ngFor="let opt of searchOptions"
+          [value]="opt.value"
+        >
+          {{ opt.name }}
+        </mat-list-option> -->
+    
           {{opt.name}}</mat-chip>
         
         </mat-chip-list>
-      
+      </mat-form-field>
         </div>
       </div>
 

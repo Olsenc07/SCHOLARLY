@@ -257,10 +257,10 @@
   .input-boxs {
     border: solid rgb(17, 24, 122);
     background-color: rgb(235, 235, 245);
-    border-radius: 15%;
     overflow: hidden;
     scroll-behavior: smooth;
     overflow-y: scroll;
+    flex-direction: column;
     display: flex;
     justify-content: center;
     margin-bottom: 4%;
