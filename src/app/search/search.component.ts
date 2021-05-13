@@ -20,6 +20,7 @@ enum SearchValues {
 interface SearchOption {
   value: string;
   name: string;
+
 }
 
 @Component({
@@ -32,13 +33,13 @@ export class SearchComponent implements OnInit {
   search: FormControl = new FormControl('');
 
   public searchOptions: SearchOption[] = [
-    { name: 'Blue Clubs', value: SearchValues.BLUE_CLUBS },
+    { name: 'Blues Clubs', value: SearchValues.BLUE_CLUBS },
     { name: 'College Connection', value: SearchValues.COLLEGE_CONNECTION },
-    { name: 'Course A-E', value: SearchValues.COURSE_A_E },
-    { name: 'Course F-M', value: SearchValues.COURSE_F_M },
-    { name: 'Course N-Z', value: SearchValues.COURSE_N_Z },
+    { name: 'Courses A-E', value: SearchValues.COURSE_A_E },
+    { name: 'Courses F-M', value: SearchValues.COURSE_F_M },
+    { name: 'Courses N-Z', value: SearchValues.COURSE_N_Z },
     { name: 'Entrepreneurial Opportunities', value: SearchValues.ENTREP_IDEA },
-    { name: 'Help', value: SearchValues.HELP_WANTED },
+    { name: 'Helping Hand', value: SearchValues.HELP_WANTED },
     { name: 'Housing', value: SearchValues.HOUSING },
     { name: 'Buy & Sell', value: SearchValues.MISCELL_BUY_SELL },
     { name: 'School Work', value: SearchValues.SCHOOL_WORK },
@@ -59,7 +60,7 @@ export class SearchComponent implements OnInit {
     switch (value) {
       case SearchValues.COLLEGE_CONNECTION:
         this.specificOptions = [
-          'Applied Science & Engineering',
+           'Applied Science & Engineering',
           'Architecture, Landscape & Design',
           'Arts & Science',
           'Continuing Studies',
@@ -218,10 +219,10 @@ export class SearchComponent implements OnInit {
       case SearchValues.HELP_WANTED:
         this.specificOptions = [
           'Cleaning',
-          'Cooking & Grociers',
+          'Cooking & Groceries',
           'Designing',
           'Electronic Based',
-          'Moving Furniture',
+          'Moving/Furniture',
           'Transportation',
           'Walking Home',
         ];
@@ -229,7 +230,7 @@ export class SearchComponent implements OnInit {
       case SearchValues.HOUSING:
         this.specificOptions = [
           'Buy & Sell',
-          'Searching For Residence',
+          'ISO Residence',
           'Questions & Advice',
           'Roomate Wanted',
           'Subleting',
