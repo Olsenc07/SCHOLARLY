@@ -18,25 +18,22 @@
               color="primary"
               class="action-button"
             >
-              <p class="specifics-text" >Specific Pages:</p>
+              <p class="specifics-text">Specific Pages:</p>
             </button>
           </div>
 
           <!-- categeory filter box -->
-          <div
-          class="input-boxs" >
-          
-            <mat-chip-list [multiple]="false" class="mat-list-text" >
-              <mat-chip class="fix2"
+          <div class="input-boxs">
+            <mat-chip-list class="mat-list-text">
+              <mat-chip
+                class="fix2"
+                [multiple]="false"
                 *ngFor="let opt of specificOptions"
                 [value]="opt"
-                selected
               >
                 {{ opt }}
               </mat-chip>
-             
             </mat-chip-list>
-            
           </div>
         </div>
       </div>
@@ -60,59 +57,33 @@
         </div>
         <!-- Category box -->
 
-        <div
-          class="input-boxs top_scroll " >
-          <mat-form-field >
-          <mat-chip-list aria-label="First Choice"  >
-            
-
-           
-<!-- Makes you click to display each chip, one at a time.. [(ngModel)]="selectedOption" -->
-          <mat-chip selected class="horizontal_list"
-          #searchList
-          
-          (ngModelChange)="onSearchSelection($event)"
-          [ngModelOptions]="{ standalone: true }"
-          [multiple]="false"
-          
-
-          *ngFor="let opt of searchOptions"
-            [value]="opt.name"
-          >
-          
-             
-              
-          <!-- <mat-list-option class="fix"
-          *ngFor="let opt of searchOptions"
-          [value]="opt.value"
-        >
-          {{ opt.name }}
-        </mat-list-option> -->
-    
-          {{opt.name}}</mat-chip>
-        
-        </mat-chip-list>
-      </mat-form-field>
+        <div class="input-boxs top_scroll">
+          <mat-form-field>
+            <mat-chip-list aria-label="First Choice">
+              <mat-chip
+                class="horizontal_list"
+                (click)="onSearchSelection(opt.value)"
+                [selected]="opt.name"
+                [multiple]="false"
+                *ngFor="let opt of searchOptions"
+                [value]="opt.name"
+              >
+                {{ opt.name }}
+              </mat-chip>
+            </mat-chip-list>
+          </mat-form-field>
         </div>
       </div>
-
       <!-- right -->
       <div class="right-column">
-         <!-- Recents tetx -->
-         <div>
+        <!-- Recents tetx -->
+        <div>
           <p class="recents-text">Recents:</p>
         </div>
-        
-         
-
-          <!-- Recents box -->
-          <div>
-            <div
-              class="outside-input-boxs recents"
-            >
-          </div>
-          </div>
-        
+        <!-- Recents box -->
+        <div>
+          <div class="outside-input-boxs recents"></div>
+        </div>
       </div>
     </div>
   </div>

@@ -54,8 +54,9 @@ export class SearchComponent implements OnInit {
     search: this.search,
   });
 
-  onSearchSelection(event: Event): void {
-    switch (event[0]) {
+  onSearchSelection(value: string): void {
+    console.log(value);
+    switch (value) {
       case SearchValues.COLLEGE_CONNECTION:
         this.specificOptions = [
           'Applied Science & Engineering',
