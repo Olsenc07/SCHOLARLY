@@ -255,7 +255,6 @@
 }
 @media (min-width: 1025px) {
   .input-boxs {
-    border: solid rgb(17, 24, 122);
     background-color: rgb(235, 235, 245);
     overflow: hidden;
     scroll-behavior: smooth;
@@ -267,7 +266,10 @@
     margin-top: 1%;
   }
 }
-
+.mat-chip {
+  background-color: rgb(65, 88, 165) !important;
+  color: rgb(252, 252, 252) !important;
+}
 @media (max-width: 1025px) {
   .horizontal_list {
     display: flex;

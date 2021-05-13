@@ -17,8 +17,12 @@
               routerLink="/main"
               color="primary"
               class="action-button"
+
+              
+             
             >
               <p class="specifics-text">Specific Pages:</p>
+             
             </button>
           </div>
 
@@ -30,6 +34,7 @@
                 [multiple]="false"
                 *ngFor="let opt of specificOptions"
                 [value]="opt"
+                
               >
                 {{ opt }}
               </mat-chip>
@@ -59,18 +64,25 @@
 
         <div class="input-boxs top_scroll">
           <mat-form-field>
-            <mat-chip-list aria-label="First Choice">
+            
+            <mat-chip-list aria-label="First Choice" >
+              
               <mat-chip
-                class="horizontal_list"
-                (click)="onSearchSelection(opt.value)"
-                [selected]="opt.name"
-                [multiple]="false"
-                *ngFor="let opt of searchOptions"
-                [value]="opt.name"
+              (click)="onSearchSelection(opt.value)"
+              [selected]="opt.name"
+              [multiple]="false"
+              *ngFor="let opt of searchOptions"
+              [value]="opt.name"
+              
+              
               >
-                {{ opt.name }}
+              <mat-radio-button  class="horizontal_list"
+              > {{ opt.name }}</mat-radio-button>
+            
               </mat-chip>
+           
             </mat-chip-list>
+          
           </mat-form-field>
         </div>
       </div>
