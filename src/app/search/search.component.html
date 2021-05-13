@@ -30,7 +30,7 @@
           <div class="input-boxs">
             <mat-chip-list class="mat-list-text">
               <mat-chip
-                class="fix2"
+                
                 [multiple]="false"
                 *ngFor="let opt of specificOptions"
                 [value]="opt"
@@ -46,8 +46,8 @@
       <!-- middle -->
       <div class="middle-column-large">
         <!-- Search text field -->
-        <div class="middle-column">
-          <!-- Search Bar -->
+        <!-- <div class="middle-column">
+          Search Bar 
           <form class="search">
             <input
               type="text"
@@ -59,13 +59,14 @@
               <span class="material-icons">search</span>
             </button>
           </form>
-        </div>
+        </div> -->
         <!-- Category box -->
 
         <div class="input-boxs top_scroll">
+          <h2 class="center">Main Categories </h2>
           <mat-form-field>
             
-            <mat-chip-list aria-label="First Choice" >
+            <mat-chip-list aria-label="First Choice"  >
               
               <mat-chip
               (click)="onSearchSelection(opt.value)"
@@ -89,8 +90,8 @@
       <!-- right -->
       <div class="right-column">
         <!-- Recents tetx -->
-        <div>
-          <p class="recents-text">Recents:</p>
+        <div class="center">
+          <p class="recents-text">Recent Feed</p>
         </div>
         <!-- Recents box -->
         <div>

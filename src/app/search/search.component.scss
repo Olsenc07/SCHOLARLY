@@ -10,6 +10,17 @@
   overflow-x: hidden;
   overflow-y: hidden;
 }
+@media (min-width: 1024px) {
+  .center {
+    display: flex;
+    justify-content: center;
+  }
+}
+@media (max-width: 1024px) {
+  .center {
+    display: none;
+  }
+}
 .main-layout {
   display: flex;
   flex-direction: row;
@@ -136,7 +147,7 @@
   }
   .recents-text {
     color: #0e3379;
-    font-size: large;
+    font-size: x-large;
     color: #0e3379;
   }
   .logo-layout {
@@ -346,32 +357,28 @@
 @media (max-width: 1025px) and (min-width: 901px) {
   .fix2 {
     font-size: 3vh;
-    border-style: groove;
-    border-radius: 7%;
+
     margin-bottom: 1%;
   }
 }
 @media (max-width: 900px) {
   .fix2 {
     font-size: 2vh;
-    border-style: groove;
-    border-radius: 7%;
+
     margin-bottom: 1%;
   }
 }
 @media (min-height: 800px) {
   .fix2 {
     font-size: 2vh;
-    border-style: groove;
-    border-radius: 7%;
+
     margin-bottom: 1%;
   }
 }
 @media (min-height: 1200px) {
   .fix2 {
     font-size: 1vh;
-    border-style: groove;
-    border-radius: 7%;
+
     margin-bottom: 1%;
   }
 }
