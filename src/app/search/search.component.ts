@@ -298,3 +298,9 @@ export class SearchComponent implements OnInit {
     console.log(this.searchForm.value);
   }
 }
+@Component({
+  selector: 'app-post-page',
+  templateUrl: './search-options.component.html',
+  styleUrls: ['./search-options.component.scss'],
+})
+export class SearchOptionsComponent {}

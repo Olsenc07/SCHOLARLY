@@ -62,7 +62,7 @@
         </div> -->
         <!-- Category box -->
 
-        <div class="input-boxs top_scroll">
+        <div class="input-boxs ">
           <h2 class="center">Main Categories </h2>
           <mat-form-field>
             
@@ -92,12 +92,60 @@
         <!-- Recents tetx -->
         <div class="center">
           <p class="recents-text">Recent Feed</p>
+          
         </div>
-        <!-- Recents box -->
-        <div>
-          <div class="outside-input-boxs recents"></div>
-        </div>
+        <div class="recents"></div>
       </div>
-    </div>
+<!-- Mobile -->
+<div class="columnM">
+      <!-- Recents box -->
+      <div class="Recents">
+        <div class="sp8ecificM">
+        <mat-chip-list class="mat-list-text">
+          <mat-chip
+            
+            [multiple]="false"
+            *ngFor="let opt of specificOptions"
+            [value]="opt"
+            
+          >
+            {{ opt }}
+          </mat-chip>
+        </mat-chip-list>
+      </div>
+        
+      </div>
+<div class="topM">
+  <mat-form-field>
+            
+    <mat-chip-list aria-label="First Choice"  >
+      
+      <mat-chip
+      (click)="onSearchSelection(opt.value)"
+      [selected]="opt.name"
+      [multiple]="false"
+      *ngFor="let opt of searchOptions"
+      [value]="opt.name"
+      
+      
+      >
+      
+      <mat-radio-button (click)="openDialog()"
+      > {{ opt.name }}</mat-radio-button>
+      </mat-chip>
+   
+    </mat-chip-list>
+  
+  </mat-form-field>
+  <div class="recentsM"></div>
+</div>
+
+
+
+
+    
+      </div>
+    
+  </div>
   </div>
 </form>
