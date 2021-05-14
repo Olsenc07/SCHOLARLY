@@ -1,18 +1,15 @@
 <div class="whole">
     <p class="specifics-text">Navigate To Specific Page</p>
     <br>
-    <mat-chip-list aria-label="First Choice"  >
+    <mat-chip-list aria-label="First Choice" class="overflowy" >
                 
       <mat-chip
     
       [multiple]="false"
       *ngFor="let opt of specificOptions2"
-      
-      
-      
       >
-      <mat-radio-button  class="horizontal_list"
-      > {{ opt }}</mat-radio-button>
+      
+       {{ opt }}
     
       </mat-chip>
    

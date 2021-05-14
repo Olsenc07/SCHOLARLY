@@ -379,7 +379,7 @@ export class BluesCOptionComponent {
       })
 export class BuySComponent{
 public specificOptions2 = [
-  'Looking To Buy/Sell', 'Miscellaneous'
+  'Buy/Sell', 'Miscellaneous',
 ];
 }
 @Component({
