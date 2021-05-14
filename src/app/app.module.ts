@@ -46,7 +46,19 @@ import { FriendsActivityComponent } from './friends-activity/friends-activity.co
 import { PostPageComponent } from './post-page/post-page.component';
 import { ProfileBottomSheetComponent } from './profile/bottom-sheet/bottom-sheet.component';
 import { DialogElementsComponent } from './post-page/post-page.component';
-import { SearchOptionsComponent} from './search/search.component';
+import { BluesCOptionComponent} from './search/search.component';
+import { BuySComponent} from './search/search.component';
+import { CollegeConComponent} from './search/search.component';
+import { CoursesAEComponent} from './search/search.component';
+import { CoursesFMComponent} from './search/search.component';
+import { CoursesNZComponent} from './search/search.component';
+import { EntrepOppComponent} from './search/search.component';
+import { HelpingHComponent} from './search/search.component';
+import { HousingComponent} from './search/search.component';
+import { QuestionsComponent} from './search/search.component';
+import { SchoolWComponent} from './search/search.component';
+import { SpiritualityComponent} from './search/search.component';
+import { UpcomingEComponent} from './search/search.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,7 +76,19 @@ import { SearchOptionsComponent} from './search/search.component';
     SearchComponent,
     ProfileBottomSheetComponent,
     DialogElementsComponent ,
-    SearchOptionsComponent,
+    BluesCOptionComponent,
+    BuySComponent,
+    CollegeConComponent,
+    CoursesAEComponent,
+    CoursesFMComponent,
+    CoursesNZComponent,
+    EntrepOppComponent,
+    HelpingHComponent,
+    HousingComponent,
+    QuestionsComponent,
+    SchoolWComponent,
+    SpiritualityComponent,
+    UpcomingEComponent,
   ],
   imports: [
     BrowserModule,

@@ -17,9 +17,6 @@
               routerLink="/main"
               color="primary"
               class="action-button"
-
-              
-             
             >
               <p class="specifics-text">Specific Pages:</p>
              
@@ -45,21 +42,7 @@
 
       <!-- middle -->
       <div class="middle-column-large">
-        <!-- Search text field -->
-        <!-- <div class="middle-column">
-          Search Bar 
-          <form class="search">
-            <input
-              type="text"
-              class="search-input"
-              placeholder="Search.."
-              name="search"
-            />
-            <button type="submit">
-              <span class="material-icons">search</span>
-            </button>
-          </form>
-        </div> -->
+       
         <!-- Category box -->
 
         <div class="input-boxs ">
@@ -98,53 +81,91 @@
       </div>
 <!-- Mobile -->
 <div class="columnM">
-      <!-- Recents box -->
-      <!-- <div class="Recents">
-        <div class="specificM">
-        <mat-chip-list class="mat-list-text">
-          <mat-chip
-            
-            [multiple]="false"
-            *ngFor="let opt of specificOptions"
-            [value]="opt"
-            
-          >
-            {{ opt }}
-          </mat-chip>
-        </mat-chip-list>
-      </div>
-        
-      </div> -->
+    
 <div class="topM">
   <mat-form-field>
             
     <mat-chip-list aria-label="First Choice"  >
       
-      <mat-chip
-      (click)="onSearchSelection(opt.value)"
-      [selected]="opt.name"
-      [multiple]="false"
-      *ngFor="let opt of searchOptions"
-      [value]="opt.name"
-      
-      
-      >
-      
-      <mat-radio-button mat-button (click)="openDialog()" (click)="onSearchSelection(opt.value)" [selected]="opt.name"
-      [multiple]="false"
-    
-      [value]="opt.name"
-      > {{ opt.name }}</mat-radio-button>
+      <mat-chip>
+        <mat-radio-button mat-button (click)="openDialog1()" 
+        > Blues Clubs</mat-radio-button>
+        </mat-chip>
+
+      <mat-chip>
+      <mat-radio-button mat-button (click)="openDialog2()" 
+      > Buy & Sell</mat-radio-button>
       </mat-chip>
-   
+
+      <mat-chip>
+        <mat-radio-button mat-button (click)="openDialog3()" 
+        > College Connection</mat-radio-button>
+        </mat-chip>
+
+        <mat-chip>
+          <mat-radio-button mat-button (click)="openDialog4()" 
+          > Courses A-E</mat-radio-button>
+          </mat-chip>
+
+          <mat-chip>
+            <mat-radio-button mat-button (click)="openDialog5()" 
+            > Courses F-M</mat-radio-button>
+            </mat-chip>
+
+            <mat-chip>
+              <mat-radio-button mat-button (click)="openDialog6()" 
+              > Courses N-Z</mat-radio-button>
+              </mat-chip>
+
+              <mat-chip>
+                <mat-radio-button mat-button (click)="openDialog7()" 
+                > Entrepreneurial Opportunities</mat-radio-button>
+                </mat-chip>
+
+                <mat-chip>
+                  <mat-radio-button mat-button (click)="openDialog8()" 
+                  > Helping Hand</mat-radio-button>
+                  </mat-chip>
+
+                <mat-chip>
+                  <mat-radio-button mat-button (click)="openDialog9()" 
+                  > Housing</mat-radio-button>
+                  </mat-chip>
+
+                  <mat-chip>
+                    <mat-radio-button mat-button (click)="openDialog10()" 
+                    > Questions</mat-radio-button>
+                    </mat-chip>
+
+                  <mat-chip>
+                    <mat-radio-button mat-button (click)="openDialog11()" 
+                    > School Work</mat-radio-button>
+                    </mat-chip>
+
+                    <mat-chip>
+                      <mat-radio-button mat-button (click)="openDialog12()" 
+                      > Spirituality</mat-radio-button>
+                      </mat-chip>
+
+                      
+
+                        <mat-chip>
+                          <mat-radio-button mat-button (click)="openDialog13()" 
+                          > Upcoming Events</mat-radio-button>
+                          </mat-chip>
+
+                          
+
+                           
+
+
+
+
+
     </mat-chip-list>
-  
   </mat-form-field>
   <div class="recentsM"></div>
 </div>
-
-
-
 
     
       </div>

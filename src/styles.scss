@@ -112,3 +112,16 @@ body {
   font-family: "Adamina", "Helvetic Neue", "Sunflower";
   background-color: rgb(235, 235, 245);
 }
+.whole {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+}
+
+.specifics-text {
+  display: flex;
+  justify-content: center;
+  color: #0e3379;
+  font-size: large;
+}

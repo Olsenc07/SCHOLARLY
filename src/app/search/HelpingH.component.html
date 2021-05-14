@@ -1,0 +1,25 @@
+<div class="whole">
+    <p class="specifics-text">Navigate To Specific Page</p>
+    <br>
+    <mat-chip-list aria-label="First Choice"  >
+                
+      <mat-chip
+    
+      [multiple]="false"
+      *ngFor="let opt of specificOptions8"
+      
+      
+      
+      >
+      <mat-radio-button  class="horizontal_list"
+      > {{ opt }}</mat-radio-button>
+    
+      </mat-chip>
+   
+    </mat-chip-list>
+  
+  <br>
+    <button mat-button mat-dialog-close>Cancel</button>
+  
+  
+  </div>
