@@ -10,6 +10,11 @@
   overflow-x: hidden;
   overflow-y: hidden;
 }
+.category-box {
+  padding: 16px;
+  border: 1px solid gray;
+  border-radius: 16px;
+}
 @media (min-width: 1024px) {
   .center {
     display: flex;
@@ -18,6 +23,19 @@
 }
 @media (max-width: 1024px) {
   .center {
+    display: none;
+  }
+}
+@media (max-width: 1024px) {
+  .columnM {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .columnM {
     display: none;
   }
 }
@@ -33,34 +51,40 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 2%;
+    margin: 5% 2% 2% 2%;
     height: 100%;
     width: 100%;
   }
 }
 
-@media (max-width: 1025px) and (min-width: 650px) {
+@media (max-width: 1025px) {
   .left-column {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    height: 86vh;
-
-    width: 65%;
+    display: none;
   }
 }
-@media (max-width: 650px) {
-  .left-column {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    height: 84vh;
 
-    width: 65%;
-  }
-}
+// @media (max-width: 1025px) and (min-width: 650px) {
+//   .left-column {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     position: relative;
+//     height: 86vh;
+
+//     width: 65%;
+//   }
+// }
+// @media (max-width: 650px) {
+//   .left-column {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     position: relative;
+//     height: 84vh;
+
+//     width: 65%;
+//   }
+// }
 .middle-column {
   display: flex;
   flex-direction: column;
@@ -113,15 +137,15 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    margin: 2%;
-    height: fit-content;
+    margin: 2% 0% 0% 2%;
+    height: 90%;
     box-sizing: border-box;
   }
 }
 @media (max-width: 1025px) {
   .right-column {
     display: flex;
-    position: absolute;
+    position: relative;
   }
 }
 // Reacting to mobile and tablet sizes
@@ -146,9 +170,7 @@
     justify-content: center;
   }
   .recents-text {
-    color: #0e3379;
     font-size: x-large;
-    color: #0e3379;
   }
   .logo-layout {
     display: flex;
@@ -161,77 +183,100 @@
     display: flex;
     width: 100%;
     box-sizing: border-box;
-    padding: 50%;
+    height: 100%;
     border-style: groove;
-    position: fixed;
+    position: relative;
   }
 }
-@media (max-width: 1025px) and (min-height: 1144px) {
-  .recents {
+@media (max-width: 1025px) {
+  .recentsM {
     display: flex;
-    position: fixed;
-    bottom: 0;
-    left: 19%;
-    right: 0;
-    top: 13vh;
+    position: relative;
+    height: 100%;
+    width: 100%;
     border-style: groove;
+  }
+}
+.Recents {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 1024px) {
+  .specificM {
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .specificM {
+    display: none;
   }
 }
 
-@media (max-width: 1025px) and (max-height: 1144px) and (min-width: 500px) {
-  .recents {
-    display: flex;
-    position: fixed;
-    bottom: 0;
-    left: 19%;
-    right: 0;
-    top: 19vh;
-    border-style: groove;
-  }
+.mat-chip-list-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  flex-direction: row;
+  width: 100%;
 }
-@media (max-width: 1025px) and (max-height: 800px) {
-  .recents {
-    display: flex;
-    position: fixed;
-    bottom: 0;
-    left: 27%;
-    right: 0;
-    top: 29vh;
-    border-style: groove;
-  }
-}
-@media (max-height: 513px) and (min-height: 437px) {
-  .recents {
-    display: flex;
-    position: fixed;
-    bottom: 0;
-    left: 27%;
-    right: 0;
-    top: 30vh;
-    border-style: groove;
-  }
-}
-@media (max-height: 437px) {
-  .recents {
-    display: flex;
-    position: fixed;
-    bottom: 0;
-    left: 27%;
-    right: 0;
-    top: 41vh;
-    border-style: groove;
-  }
-}
-@media (max-width: 500px) {
-  .recents {
-    display: flex;
-    position: fixed;
-    bottom: 0;
-    left: 36%;
-    right: 0;
-    border-style: groove;
-  }
-}
+// @media (max-width: 1025px) and (max-height: 1144px) and (min-width: 500px) {
+//   .recents {
+//     display: flex;
+//     position: fixed;
+//     bottom: 0;
+//     left: 19%;
+//     right: 0;
+//     top: 19vh;
+//     border-style: groove;
+//   }
+// }
+// @media (max-width: 1025px) and (max-height: 800px) {
+//   .recents {
+//     display: flex;
+//     position: fixed;
+//     bottom: 0;
+//     left: 27%;
+//     right: 0;
+//     top: 29vh;
+//     border-style: groove;
+//   }
+// }
+// @media (max-height: 513px) and (min-height: 437px) {
+//   .recents {
+//     display: flex;
+//     position: fixed;
+//     bottom: 0;
+//     left: 27%;
+//     right: 0;
+//     top: 30vh;
+//     border-style: groove;
+//   }
+// }
+// @media (max-height: 437px) {
+//   .recents {
+//     display: flex;
+//     position: fixed;
+//     bottom: 0;
+//     left: 27%;
+//     right: 0;
+//     top: 41vh;
+//     border-style: groove;
+//   }
+// }
+// @media (max-width: 500px) {
+//   .recents {
+//     display: flex;
+//     position: fixed;
+//     bottom: 0;
+//     left: 36%;
+//     right: 0;
+//     border-style: groove;
+//   }
+// }
 .logo {
   border-radius: 50%;
   width: 57%;
@@ -264,6 +309,14 @@
     width: 35vw;
   }
 }
+
+.topM {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
 @media (min-width: 1025px) {
   .input-boxs {
     background-color: rgb(235, 235, 245);
@@ -277,6 +330,12 @@
     margin-top: 1%;
   }
 }
+@media (max-width: 1025px) {
+  .input-boxs {
+    display: none;
+  }
+}
+
 .mat-chip {
   background-color: rgb(65, 88, 165) !important;
   color: rgb(252, 252, 252) !important;
@@ -300,7 +359,7 @@
     justify-content: center;
     flex-direction: column;
     flex: inherit;
-    height: 48vh;
+    height: 55vh;
     box-sizing: border-box;
     overflow-y: scroll;
   }
@@ -309,8 +368,8 @@
   .mat-list-text {
     justify-content: center;
     flex-direction: column;
-    flex: inherit;
-    height: 75vh;
+    display: flex;
+    height: 100%;
     width: 100%;
     box-sizing: border-box;
     overflow-y: scroll;
@@ -381,11 +440,6 @@
 
     margin-bottom: 1%;
   }
-}
-.category-box {
-  padding: 16px;
-  border: 1px solid gray;
-  border-radius: 16px;
 }
 
 .title-box {

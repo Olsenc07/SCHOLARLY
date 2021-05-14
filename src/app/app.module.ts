@@ -45,7 +45,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { FriendsActivityComponent } from './friends-activity/friends-activity.component';
 import { PostPageComponent } from './post-page/post-page.component';
 import { ProfileBottomSheetComponent } from './profile/bottom-sheet/bottom-sheet.component';
-
+import { DialogElementsComponent } from './post-page/post-page.component';
+import { SearchOptionsComponent} from './search/search.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,6 +63,8 @@ import { ProfileBottomSheetComponent } from './profile/bottom-sheet/bottom-sheet
     PostPageComponent,
     SearchComponent,
     ProfileBottomSheetComponent,
+    DialogElementsComponent ,
+    SearchOptionsComponent,
   ],
   imports: [
     BrowserModule,
