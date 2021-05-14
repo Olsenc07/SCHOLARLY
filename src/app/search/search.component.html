@@ -99,8 +99,8 @@
 <!-- Mobile -->
 <div class="columnM">
       <!-- Recents box -->
-      <div class="Recents">
-        <div class="sp8ecificM">
+      <!-- <div class="Recents">
+        <div class="specificM">
         <mat-chip-list class="mat-list-text">
           <mat-chip
             
@@ -114,7 +114,7 @@
         </mat-chip-list>
       </div>
         
-      </div>
+      </div> -->
 <div class="topM">
   <mat-form-field>
             
@@ -130,7 +130,10 @@
       
       >
       
-      <mat-radio-button (click)="openDialog()"
+      <mat-radio-button mat-button (click)="openDialog()" (click)="onSearchSelection(opt.value)" [selected]="opt.name"
+      [multiple]="false"
+    
+      [value]="opt.name"
       > {{ opt.name }}</mat-radio-button>
       </mat-chip>
    

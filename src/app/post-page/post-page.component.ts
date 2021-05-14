@@ -446,7 +446,7 @@ export class PostPageComponent implements OnInit {
     // TODO: wire up to post request
     console.log(this.secondFormGroup.value);
   }
-  
+
   onthirdFormSubmit(): void {
     // TODO: wire up to post request
     console.log(this.thirdFormGroup.value);
