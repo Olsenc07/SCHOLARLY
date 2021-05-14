@@ -1,41 +1,5 @@
 <div class="whole">
 
-  <div class="work">
-    <mat-form-field>
-                
-        <mat-chip-list aria-label="First Choice"  >
-          
-          <mat-chip
-          (click)="onSearchSelection(opt.value)"
-          [selected]="opt.name"
-          [multiple]="false"
-          *ngFor="let opt of searchOptions"
-          [value]="opt.name"
-          
-          
-          >
-          
-          <mat-radio-button 
-          > {{ opt.name }}</mat-radio-button>
-          </mat-chip>
-       
-        </mat-chip-list>
-      
-      </mat-form-field></div>
-
-<div class="night">
-<mat-chip-list class="mat-list-text">
-    <mat-chip
-      
-      [multiple]="false"
-      *ngFor="let opt of specificOptions"
-      [value]="opt"
-      
-    >
-      {{ opt }}
-    </mat-chip>
-  </mat-chip-list>
-</div>
 
 
 

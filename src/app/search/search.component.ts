@@ -36,6 +36,7 @@ export class SearchComponent implements OnInit {
 
   public searchOptions: SearchOption[] = [
     { name: 'Blues Clubs', value: SearchValues.BLUE_CLUBS },
+    { name: 'Buy & Sell', value: SearchValues.MISCELL_BUY_SELL },
     { name: 'College Connection', value: SearchValues.COLLEGE_CONNECTION },
     { name: 'Courses A-E', value: SearchValues.COURSE_A_E },
     { name: 'Courses F-M', value: SearchValues.COURSE_F_M },
@@ -43,7 +44,6 @@ export class SearchComponent implements OnInit {
     { name: 'Entrepreneurial Opportunities', value: SearchValues.ENTREP_IDEA },
     { name: 'Helping Hand', value: SearchValues.HELP_WANTED },
     { name: 'Housing', value: SearchValues.HOUSING },
-    { name: 'Buy & Sell', value: SearchValues.MISCELL_BUY_SELL },
     { name: 'School Work', value: SearchValues.SCHOOL_WORK },
     { name: 'Spirituality', value: SearchValues.SPIRITUALITY },
     { name: 'Questions', value: SearchValues.U_OF_T_QS },
