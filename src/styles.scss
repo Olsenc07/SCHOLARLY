@@ -125,3 +125,8 @@ body {
   color: #0e3379;
   font-size: large;
 }
+.overflowy {
+  display: flex;
+  overflow-y: scroll;
+  max-height: 40vh;
+}
