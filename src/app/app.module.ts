@@ -29,6 +29,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatStepperModule } from '@angular/material/stepper';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import {MatChipsModule} from '@angular/material/chips';
+import {MatTreeModule} from '@angular/material/tree';
 
 
 import { routingComponents } from './app-routing.module';
@@ -59,6 +60,7 @@ import { QuestionsComponent} from './search/search.component';
 import { SchoolWComponent} from './search/search.component';
 import { SpiritualityComponent} from './search/search.component';
 import { UpcomingEComponent} from './search/search.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -121,6 +123,7 @@ import { UpcomingEComponent} from './search/search.component';
     MatStepperModule,
     NgxMaterialTimepickerModule,
     MatChipsModule,
+    MatTreeModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 

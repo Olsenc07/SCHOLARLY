@@ -22,7 +22,7 @@
       <!-- Description of Post -->
       <div class="column_1">
         <div class="post-descriptionD">
-          <textarea class="post" > Description of post..</textarea>
+          <textarea class="post" placeholder="What do you wanna say?"></textarea>
         </div>
         <!-- Upload pic/video -->
         <div class="post-pic-video">
@@ -37,7 +37,7 @@
       </div>
   </div>
 
-  <!-- TOP MOBILE VIEW -->
+
 
   
   <!-- MIDDLE MOBILE VIEW -->
@@ -63,7 +63,7 @@
       </button>
       </mat-form-field>   
       <div class="post-descriptionM">
-        <textarea class="post" > Description of post..</textarea>
+        <textarea class="post" placeholder="What do you wanna say?"></textarea>
       </div>   
      
   
@@ -242,28 +242,27 @@
       
         <div class="center">
           <p>Post-Location</p>
-        <mat-selection-list 
-              #searchList
-              [(ngModel)]="selectedOption"
-              (ngModelChange)="onSearchSelection($event)"
-              [ngModelOptions]="{ standalone: true }"
-              [multiple]="false"
-            >
+        <mat-selection-list #options [multiple]="false" class="second-list">
   <mat-form-field appearance="fill">
     <mat-label>Page</mat-label>
+   
     <mat-select>
       <mat-option>None</mat-option>
-      <mat-option *ngFor="let opt of searchOptions"
-      [value]="opt.value"
+      <mat-option (click)="onSearchSelection(opt.value)"
+      [selected]="opt.name"
+      [multiple]="false"
+      *ngFor="let opt of searchOptions"
+      [value]="opt.name">
     >
-      {{ opt.name }}</mat-option>
+    {{ opt.name }}</mat-option> 
     </mat-select>
+  
   </mat-form-field>
-  </mat-selection-list>
-  </div>
+        </mat-selection-list>
+  
   <!-- 2nd select -->
   <div class="second-select-mobile">
-  <mat-selection-list #options [multiple]="false" class="second-list">
+  <mat-selection-list>
     <mat-list-option  *ngFor="let opt of specificOptions"
     [value]="opt"
   >
@@ -271,7 +270,7 @@
     </mat-list-option>
   </mat-selection-list>
   </div>
-  
+</div>
   <div class="column">
     <button mat-raised-button class="text">
       Post
@@ -319,38 +318,64 @@
   </div>
   
 
+
+
+  
+
+
+
+  
   <div class="location">
     <div>Post-Location</div>
-    <mat-selection-list 
-          #searchList
-          [(ngModel)]="selectedOption"
-          (ngModelChange)="onSearchSelection($event)"
-          [ngModelOptions]="{ standalone: true }"
-          [multiple]="false"
+   
+    <h2 class="center">Main Categories </h2>
+    <mat-form-field>
+      
+      <mat-chip-list aria-label="First Choice"  >
+        
+        <mat-chip
+        (click)="onSearchSelection(opt.value)"
+        [selected]="opt.name"
+        [multiple]="false"
+        *ngFor="let opt of searchOptions"
+        [value]="opt.name"
+        
+        
         >
-<mat-form-field appearance="fill">
-<mat-label>Page</mat-label>
-<mat-select>
-  <mat-option>None</mat-option>
-  <mat-option *ngFor="let opt of searchOptions"
-  [value]="opt.value"
->
-  {{ opt.name }}</mat-option>
-</mat-select>
-</mat-form-field>
-</mat-selection-list>
+        <mat-radio-button  class="horizontal_list"
+        > {{ opt.name }}</mat-radio-button>
+      
+        </mat-chip>
+     
+      </mat-chip-list>
+    
+    </mat-form-field>
+
+
+
 </div>
 
 
   <div class="location-options" > 
-    <mat-selection-list #options [multiple]="false" class="second-list">
-    <mat-list-option  *ngFor="let opt of specificOptions"
-    [value]="opt"
-  >
-    {{ opt }}
-    </mat-list-option>
-  </mat-selection-list>
+   
+    <mat-chip-list class="mat-list-text">
+      <mat-chip
+        
+        [multiple]="false"
+        *ngFor="let opt of specificOptions"
+        [value]="opt"
+        
+      >
+        {{ opt }}
+      </mat-chip>
+    </mat-chip-list>
+
   </div>
+
+
+
+
+
 
 </div>
   <!-- RIGHT DESKTOP VIEW -->

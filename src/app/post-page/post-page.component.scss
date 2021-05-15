@@ -22,10 +22,9 @@
 .entire-page {
   display: flex;
   position: relative;
-  width: 100%;
+  width: 85%;
   height: 100%;
-  margin: 0px;
-  padding: 0px;
+  margin-left: 2%;
   flex-direction: row;
   box-sizing: border-box;
   justify-content: center;
@@ -139,11 +138,8 @@
   position: relative;
   flex-direction: column;
   box-sizing: border-box;
-  height: 25%;
+  height: 100%;
   width: 100%;
-  border: solid;
-  border-radius: 7%;
-  overflow: hidden;
   scroll-behavior: smooth;
   overflow-y: scroll;
 }
@@ -231,6 +227,7 @@ mat-slide-toggle {
     flex-direction: column;
     margin-right: 2%;
     margin-left: 2%;
+    width: 100%;
     position: relative;
   }
 }
@@ -305,7 +302,7 @@ p {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    width: 100%;
+    width: 85%;
     height: 100%;
     margin-left: 2%;
     position: relative;

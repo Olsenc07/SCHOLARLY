@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {  FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
+import {  FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import {
   MomentDateAdapter,
   MAT_MOMENT_DATE_ADAPTER_OPTIONS,
@@ -14,6 +14,8 @@ import { default as _rollupMoment} from 'moment';
 import {MatDialog} from '@angular/material/dialog';
 
 
+
+
 const moment = _rollupMoment || _moment;
 export const MY_FORMATS = {
   parse: {
@@ -26,6 +28,7 @@ export const MY_FORMATS = {
     monthYearA11yLabel: 'MMMM YYYY',
   },
 };
+
 
 enum SearchValues {
   COLLEGE_CONNECTION = 'college-connection',
@@ -162,7 +165,8 @@ export class PostPageComponent implements OnInit {
     ];
     public selectedOption: string;
     public specificOptions: string[];
-  constructor(public dialog: MatDialog, private FORMBuilder: FormBuilder ) {}
+  constructor(public dialog: MatDialog, private FORMBuilder: FormBuilder ) { 
+  }
   openDialog(): void {
     this.dialog.open(DialogElementsComponent);
   }
