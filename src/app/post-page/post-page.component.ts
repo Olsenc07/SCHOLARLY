@@ -131,7 +131,6 @@ export class PostPageComponent implements OnInit {
       checked3: this.checked3,
       value: this.value,
       time: this.time,
-
     });
     firstFormGroup = new FormGroup({
       date: this.date,
@@ -149,23 +148,23 @@ export class PostPageComponent implements OnInit {
     });
 
     public searchOptions: SearchOption[] = [
-      { name: 'College Connection', value: SearchValues.COLLEGE_CONNECTION },
-      { name: 'Blue Clubs', value: SearchValues.BLUE_CLUBS },
-      { name: 'Course A-E', value: SearchValues.COURSE_A_E },
-      { name: 'Course F-M', value: SearchValues.COURSE_F_M },
-      { name: 'Course N-Z', value: SearchValues.COURSE_N_Z },
-      { name: 'Entrepreneurial Opportunities', value: SearchValues.ENTREP_IDEA },
-      { name: 'Help', value: SearchValues.HELP_WANTED },
-      { name: 'Housing', value: SearchValues.HOUSING },
-      { name: 'Buy & Sell', value: SearchValues.MISCELL_BUY_SELL },
-      { name: 'School Work', value: SearchValues.SCHOOL_WORK },
-      { name: 'Spirituality', value: SearchValues.SPIRITUALITY },
-      { name: 'Questions', value: SearchValues.U_OF_T_QS },
-      { name: 'Upcoming Events', value: SearchValues.UPCOMING_EVENTS },
+    { name: 'Blues Clubs', value: SearchValues.BLUE_CLUBS },
+    { name: 'Buy & Sell', value: SearchValues.MISCELL_BUY_SELL },
+    { name: 'College Connection', value: SearchValues.COLLEGE_CONNECTION },
+    { name: 'Courses A-E', value: SearchValues.COURSE_A_E },
+    { name: 'Courses F-M', value: SearchValues.COURSE_F_M },
+    { name: 'Courses N-Z', value: SearchValues.COURSE_N_Z },
+    { name: 'Entrepreneurial Opportunities', value: SearchValues.ENTREP_IDEA },
+    { name: 'Helping Hand', value: SearchValues.HELP_WANTED },
+    { name: 'Housing', value: SearchValues.HOUSING },
+    { name: 'School Work', value: SearchValues.SCHOOL_WORK },
+    { name: 'Spirituality', value: SearchValues.SPIRITUALITY },
+    { name: 'Questions', value: SearchValues.U_OF_T_QS },
+    { name: 'Upcoming Events', value: SearchValues.UPCOMING_EVENTS },
     ];
     public selectedOption: string;
     public specificOptions: string[];
-  constructor(public dialog: MatDialog, private FORMBuilder: FormBuilder ) { 
+  constructor(public dialog: MatDialog, private FORMBuilder: FormBuilder ) {
   }
   openDialog(): void {
     this.dialog.open(DialogElementsComponent);
@@ -187,8 +186,8 @@ export class PostPageComponent implements OnInit {
 // First step at ability to uplaod img/file attempt
  OnFileSelected(event: Event): void
 {}
-  onSearchSelection(event: Event): void {
-    switch (event[0]) {
+  onSearchSelection(value: string): void {
+    switch (value) {
       case SearchValues.COLLEGE_CONNECTION:
         this.specificOptions = [
           'Applied Science & Engineering',
@@ -310,7 +309,7 @@ export class PostPageComponent implements OnInit {
           'Pharmacology & Toxicology',
           'Philosophy',
           'Physiology',
-          'Pysics',
+          'Physics',
           'Planetary Science',
           'Political Science',
           'Portuguese',

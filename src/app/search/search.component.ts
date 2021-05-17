@@ -101,10 +101,6 @@ export class SearchComponent implements OnInit {
   }
 
 
-
-
-
-
   onSearchSelection(value: string): void {
     console.log(value);
     switch (value) {
@@ -229,7 +225,7 @@ export class SearchComponent implements OnInit {
           'Pharmacology & Toxicology',
           'Philosophy',
           'Physiology',
-          'Pysics',
+          'Physics',
           'Planetary Science',
           'Political Science',
           'Portuguese',
