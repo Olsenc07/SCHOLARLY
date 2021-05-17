@@ -24,8 +24,6 @@
   position: relative;
   width: 100%;
   height: 100%;
-  margin: 0px;
-  padding: 0px;
   flex-direction: row;
   box-sizing: border-box;
   justify-content: center;
@@ -38,6 +36,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-top: 5%;
 }
 @media (max-width: 1024px) {
   .bottom-mobile {
@@ -81,6 +80,13 @@
   justify-content: center;
   flex-direction: column;
 }
+.centerD {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  font-size: x-large;
+}
 .column {
   display: flex;
   justify-content: center;
@@ -102,6 +108,8 @@
 .column_2 {
   display: flex;
   flex-direction: column;
+  margin-top: 5%;
+  margin-bottom: 30%;
 }
 .description-input {
   width: 75%;
@@ -116,7 +124,7 @@
   .left {
     display: flex;
     flex-direction: column;
-    margin: 2% 2% 1% 2%;
+    margin: 0% 2%;
     width: 100%;
     height: 100%;
     position: relative;
@@ -133,17 +141,15 @@
   justify-content: center;
   flex-direction: column;
   width: 100%;
+  height: 100%;
 }
 .location-options {
   display: flex;
   position: relative;
   flex-direction: column;
   box-sizing: border-box;
-  height: 25%;
+  height: 100%;
   width: 100%;
-  border: solid;
-  border-radius: 7%;
-  overflow: hidden;
   scroll-behavior: smooth;
   overflow-y: scroll;
 }
@@ -159,13 +165,17 @@
 .left_1 {
   display: flex;
   width: 100%;
-  height: 67%;
+  height: 75%;
   flex-direction: column;
 }
 mat-slide-toggle {
   width: fit-content;
 }
-
+mat-chip .mat-list-text {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
 .mat-slide-toggle {
   margin: 8px 0;
   display: block;
@@ -231,6 +241,7 @@ mat-slide-toggle {
     flex-direction: column;
     margin-right: 2%;
     margin-left: 2%;
+    width: 100%;
     position: relative;
   }
 }
@@ -253,6 +264,7 @@ p {
 .post-final {
   display: flex;
   position: relative;
+  margin-top: 5%;
   justify-content: center;
 }
 .pre-file-img {
@@ -266,6 +278,7 @@ p {
 .post-descriptionD {
   display: flex;
   width: 100%;
+  height: 50%;
 }
 
 .post-descriptionM {
@@ -275,12 +288,12 @@ p {
 }
 .post-pic-video {
   display: flex;
-  margin-top: 3%;
+  margin-top: 8%;
   background-image: url(../../assets/Pics/WhiteSquareInAppLogo.jpg);
-  background-repeat: no-repeat;
   width: 100%;
   height: 100%;
-  background-size: 100%;
+  background-size: cover;
+  justify-content: center;
 }
 .post {
   display: flex;
@@ -305,7 +318,7 @@ p {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    width: 100%;
+    width: 85%;
     height: 100%;
     margin-left: 2%;
     position: relative;
@@ -353,7 +366,6 @@ p {
   display: flex;
   justify-content: center;
   overflow-y: scroll;
-  height: 100%;
   flex-direction: column;
   box-sizing: border-box;
   position: relative;
@@ -362,7 +374,7 @@ p {
   display: flex;
   border: solid;
   overflow-y: scroll;
-  height: 50%;
+  height: 100%;
 }
 .tagged-friends {
   display: flex;
@@ -372,7 +384,6 @@ p {
   border-color: #2668bb;
 }
 .text {
-  color: gold;
   width: fit-content;
   border: solid;
   width: 50%;
@@ -446,6 +457,7 @@ p {
   border: solid;
   border-color: #2668bb;
   box-sizing: border-box;
+  background-size: cover;
 }
 
 .watch {

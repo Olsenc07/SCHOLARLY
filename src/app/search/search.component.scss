@@ -15,16 +15,15 @@
   border: 1px solid gray;
   border-radius: 16px;
 }
-@media (min-width: 1024px) {
-  .center {
-    display: flex;
-    justify-content: center;
-  }
+
+.center {
+  display: flex;
+  justify-content: center;
 }
-@media (max-width: 1024px) {
-  .center {
-    display: none;
-  }
+.centerM {
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
 }
 @media (max-width: 1024px) {
   .columnM {
@@ -63,28 +62,6 @@
   }
 }
 
-// @media (max-width: 1025px) and (min-width: 650px) {
-//   .left-column {
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     position: relative;
-//     height: 86vh;
-
-//     width: 65%;
-//   }
-// }
-// @media (max-width: 650px) {
-//   .left-column {
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     position: relative;
-//     height: 84vh;
-
-//     width: 65%;
-//   }
-// }
 .middle-column {
   display: flex;
   flex-direction: column;
@@ -195,6 +172,7 @@
     height: 100%;
     width: 100%;
     border-style: groove;
+    overflow-y: scroll;
   }
 }
 .Recents {
@@ -223,60 +201,7 @@
   flex-direction: row;
   width: 100%;
 }
-// @media (max-width: 1025px) and (max-height: 1144px) and (min-width: 500px) {
-//   .recents {
-//     display: flex;
-//     position: fixed;
-//     bottom: 0;
-//     left: 19%;
-//     right: 0;
-//     top: 19vh;
-//     border-style: groove;
-//   }
-// }
-// @media (max-width: 1025px) and (max-height: 800px) {
-//   .recents {
-//     display: flex;
-//     position: fixed;
-//     bottom: 0;
-//     left: 27%;
-//     right: 0;
-//     top: 29vh;
-//     border-style: groove;
-//   }
-// }
-// @media (max-height: 513px) and (min-height: 437px) {
-//   .recents {
-//     display: flex;
-//     position: fixed;
-//     bottom: 0;
-//     left: 27%;
-//     right: 0;
-//     top: 30vh;
-//     border-style: groove;
-//   }
-// }
-// @media (max-height: 437px) {
-//   .recents {
-//     display: flex;
-//     position: fixed;
-//     bottom: 0;
-//     left: 27%;
-//     right: 0;
-//     top: 41vh;
-//     border-style: groove;
-//   }
-// }
-// @media (max-width: 500px) {
-//   .recents {
-//     display: flex;
-//     position: fixed;
-//     bottom: 0;
-//     left: 36%;
-//     right: 0;
-//     border-style: groove;
-//   }
-// }
+
 .logo {
   border-radius: 50%;
   width: 57%;
