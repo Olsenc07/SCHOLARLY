@@ -87,6 +87,7 @@
   height: 100%;
   font-size: x-large;
 }
+
 .column {
   display: flex;
   justify-content: center;
@@ -387,6 +388,12 @@ p {
   width: fit-content;
   border: solid;
   width: 50%;
+}
+.textM {
+  display: flex;
+  justify-content: center;
+  font-size: large;
+  margin-top: 2%;
 }
 .text-back {
   color: #000;
