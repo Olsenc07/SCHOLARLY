@@ -159,34 +159,42 @@ h4:focus {
   height: 100%;
 }
 .public_ {
-  color: rgb(110, 32, 199);
+  color: gray;
   font-size: 6vmax;
 }
+.PublicOn {
+  color: pink;
+}
 .groups_ {
-  color: rgb(14, 240, 14);
+  color: gray;
   font-size: 6vmax;
 }
 .profile_ {
-  color: rgb(241, 255, 38);
+  color: gray;
   font-size: 6vmax;
 }
 .post_ {
-  color: rgb(233, 106, 21);
+  color: #0006ff;
   font-size: 6vmax;
 }
 .a_bottom {
-  margin-right: 5%;
-  margin-left: 3%;
+  margin-right: 8%;
+  margin-left: 4%;
   height: 100%;
 }
-.b_bottom {
+.b_bottom1 {
+  margin-left: 10%;
+  margin-right: 8%;
+  height: 100%;
+}
+.b_bottom2 {
   margin-left: 8%;
   margin-right: 10%;
   height: 100%;
 }
 .c_bottom {
-  margin-left: 10%;
-  margin-right: 6%;
+  margin-left: 8%;
+  margin-right: 10%;
   height: 100%;
 }
 .d_settings {

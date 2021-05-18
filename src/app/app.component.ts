@@ -16,9 +16,15 @@ export class AppComponent implements OnInit {
   faCoffee = faCoffee;
   title = 'angular-SCHOLARLY';
 
-  isHomeScreen$: Observable<boolean>;
+ isHomeScreen$: Observable<boolean>;
 
   isPostScreen$: Observable<boolean>;
+
+  isSearchScreen$:Observable<boolean>;
+
+  isFriendsActScreen$:Observable<boolean>;
+
+  isProfileScreen$:Observable<boolean>;
 
   searchBox: Element;
 
@@ -44,6 +50,25 @@ export class AppComponent implements OnInit {
       filter(event => event instanceof NavigationEnd),
       map((event: NavigationEnd) => event.url === '/' || event.url === '/post-page')
     );
+
+    this.isSearchScreen$ = this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd),
+      map((event: NavigationEnd) => event.url === '/' || event.url === '/search')
+    );
+
+    this.isFriendsActScreen$ = this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd),
+      map((event: NavigationEnd) => event.url === '/' || event.url === '/friends-activity')
+    );
+
+
+    this.isProfileScreen$ = this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd),
+      map((event: NavigationEnd) => event.url === '/' || event.url === '/profile')
+    );
+
+
+
   }
 
   // Missing link to fix search icon movement i hope
