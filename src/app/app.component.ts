@@ -45,6 +45,7 @@ export class AppComponent implements OnInit {
       map((event: NavigationEnd) => event.url === '/' || event.url === '/post-page')
     );
   }
+
   // Missing link to fix search icon movement i hope
   // searchIcon.addEventListener("click", activateSearch);
   activateSearch(): void {

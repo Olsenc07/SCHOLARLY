@@ -55,7 +55,6 @@
      <mat-label>Tag friends:</mat-label>
      <input
        matInput
-       
        placeholder=""
      /> </mat-form-field
  ></span>
@@ -73,8 +72,6 @@
      [multiple]="false"
      *ngFor="let opt of searchOptions"
      [value]="opt.name"
-     
-     
      >
      <mat-radio-button  class="horizontal_list"
      > {{ opt.name }}</mat-radio-button>
@@ -198,18 +195,18 @@
       <form [formGroup]="thirdFormGroup" (ngSubmit)="onthirdFormSubmit()">
         <ng-template matStepLabel>Services</ng-template>
         <div class="column_">
-        <div class="row"><div class="material-icons" style="color: rgb(104, 11, 11);">  directions_car</div><p style="color: rgb(104, 11, 11);">Able to drive members </p></div>
+        <div class="row"><div class="material-icons" style="color: rgb(104, 11, 11);">  directions_car</div><p style="color: rgb(104, 11, 11);">Able to drive members </p><mat-checkbox class="btn"  
+        ></mat-checkbox
+      ></div>
     <!-- formControlName="checked2"  -->
-        <mat-checkbox class="btn"  
-      ></mat-checkbox
-    >
+     
   
   
-    <div  class="row"> <div class="material-icons" style="color: green">attach_money</div><p style="color: green">Service involving payment </p></div>
+    <div  class="row"> <div class="material-icons" style="color: green">attach_money</div><p style="color: green">Service involving payment </p><mat-checkbox class="btn" 
+    ></mat-checkbox
+  ></div>
     <!-- formControlName="checked3" -->
-    <mat-checkbox   class="btn" 
-      ></mat-checkbox
-    >
+    
   </div>
         <div>
           <button mat-button matStepperPrevious>Back</button>
@@ -221,25 +218,22 @@
     <mat-step [stepControl]="fourthFormGroup">
       <form [formGroup]="fourthFormGroup" (ngSubmit)="onfourthFormSubmit()">
         <ng-template matStepLabel>Type Of Event</ng-template>
-        
+        <button mat-button (click)="openDialog()"><mat-icon>info</mat-icon></button>
         <mat-radio-group aria-label="Select an option">
+          <div class="columnM">
           <div class="column"> 
         <p class="fas fa-user-tie" style="color: #e9c215;">Formal event</p>
             <mat-radio-button  value="6" required
               >
-              <div class="">
-                <button mat-button (click)="openDialog()"><mat-icon>info</mat-icon></button>
-                
-              </div>
+
             </mat-radio-button>
-          </div>
+            </div>
+            </div>
           <div class="column"> 
         <p class="fas fa-glass-cheers" style="color: gold;">Relaxed event</p>
             <mat-radio-button value="7"   required
               >
-              <div class="">
-                <button mat-button (click)="openDialog()"><mat-icon>info</mat-icon></button>
-              </div>
+        
             </mat-radio-button>
           </div>
           </mat-radio-group>
@@ -385,18 +379,18 @@
         <form [formGroup]="thirdFormGroup" (ngSubmit)="onthirdFormSubmit()">
           <ng-template matStepLabel>Services</ng-template>
           <div class="column_">
-          <div class="row"><div class="material-icons" style="color: rgb(104, 11, 11);">  directions_car</div><p style="color: rgb(104, 11, 11);">Able to drive members </p></div>
+          <div class="row"><div class="material-icons" style="color: rgb(104, 11, 11);">  directions_car</div><p style="color: rgb(104, 11, 11);">Able to drive members </p>    <mat-checkbox class="btn"  
+          ></mat-checkbox
+        ></div>
       <!-- [formControl]="checked2"  -->
-          <mat-checkbox class="btn"  
-        ></mat-checkbox
-      >
+      
     
     
-      <div  class="row"> <div class="material-icons" style="color: green">attach_money</div><p style="color: green">Service involving payment </p></div>
+      <div  class="row"> <div class="material-icons" style="color: green">attach_money</div><p style="color: green">Service involving payment </p>  <mat-checkbox   class="btn" 
+      ></mat-checkbox
+    ></div>
       <!-- [formControl]="checked3" -->
-      <mat-checkbox   class="btn" 
-        ></mat-checkbox
-      >
+    
     </div>
           <div>
             <button mat-button matStepperPrevious>Back</button>
@@ -407,28 +401,25 @@
       <!-- Step4 -->
       <mat-step [stepControl]="fourthFormGroup">
         <form [formGroup]="fourthFormGroup" (ngSubmit)="onfourthFormSubmit()">
-          <ng-template matStepLabel>Type Of Event</ng-template>
+          <ng-template matStepLabel>Type Of Event</ng-template><button mat-button (click)="openDialog()"><mat-icon>info</mat-icon></button>
           
           <mat-radio-group aria-label="Select an option">
+            <div class="columnM">
             <div class="column"> 
           <p class="fas fa-user-tie" style="color: #e9c215;">Formal event</p>
               <mat-radio-button  value="6" required
                 >
-                <div class="">
-                  <button mat-button (click)="openDialog()"><mat-icon>info</mat-icon></button>
-                  
-                </div>
+                
               </mat-radio-button>
             </div>
             <div class="column"> 
           <p class="fas fa-glass-cheers" style="color: gold;">Relaxed event</p>
               <mat-radio-button value="7"   required
                 >
-                <div class="">
-                  <button mat-button (click)="openDialog()"><mat-icon>info</mat-icon></button>
-                </div>
+                
               </mat-radio-button>
             </div>
+          </div>
             </mat-radio-group>
           <div>
             <button mat-button matStepperPrevious>Back</button>
@@ -472,7 +463,7 @@
       
       
         <div class="center">
-          <p>Post-Location</p>
+          <div class="center">Where do you want your post?</div> <div class="text_"> Main Categories </div>
         <mat-selection-list #options [multiple]="false" class="second-list">
   <mat-form-field appearance="fill">
     <mat-label>Page</mat-label>
@@ -493,12 +484,14 @@
   
   <!-- 2nd select-->
   <div class="second-select-mobile">
-  <mat-selection-list>
-    <mat-list-option  *ngFor="let opt of specificOptions"
+  <mat-chip-list>
+    <mat-chip  *ngFor="let opt of specificOptions"
     [value]="opt">
+    <mat-radio-button>
     {{ opt }}
-    </mat-list-option>
-  </mat-selection-list>
+  </mat-radio-button>
+    </mat-chip>
+  </mat-chip-list>
   </div>
 </div>
   <div class="column">
