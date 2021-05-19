@@ -55,8 +55,18 @@ h4:focus {
   color: gray;
 }
 // top nav icon
+.icon-btn-fit {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  box-sizing: content-box;
+}
 .a_up {
-  margin-left: 7%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  height: auto;
+  width: auto;
 }
 .b_up {
   margin-left: 10%;
@@ -151,75 +161,104 @@ h4:focus {
   }
 }
 // bottom nav
-.clean {
+.publicM {
+  display: flex;
+  color: #0006ff;
+  justify-content: center;
+  font-size: 6vmax;
+}
+.PublicOnM {
   display: flex;
   justify-content: center;
-  flex-direction: row;
-  width: 100%;
-  height: 100%;
+  color: rgb(6, 4, 116);
+  font-size: 7vmax;
 }
-.public_ {
-  color: gray;
-  font-size: 6vmax;
-}
-.PublicOn {
-  color: pink;
-}
-.groups_ {
-  color: gray;
-  font-size: 6vmax;
-}
-.profile_ {
-  color: gray;
-  font-size: 6vmax;
-}
-.post_ {
+
+.groupsM {
   color: #0006ff;
+  display: flex;
+  justify-content: center;
   font-size: 6vmax;
 }
-.a_bottom {
-  margin-right: 8%;
-  margin-left: 4%;
-  height: 100%;
+.GroupsOnM {
+  font-size: 7vmax;
+  display: flex;
+  color: rgb(6, 4, 116);
+  justify-content: center;
 }
-.b_bottom1 {
-  margin-left: 10%;
-  margin-right: 8%;
-  height: 100%;
+.profileM {
+  color: #0006ff;
+  display: flex;
+  justify-content: center;
+  font-size: 6vmax;
 }
-.b_bottom2 {
-  margin-left: 8%;
-  margin-right: 10%;
-  height: 100%;
+.ProfileOnM {
+  display: flex;
+  font-size: 7vmax;
+  color: rgb(6, 4, 116);
+  justify-content: center;
 }
-.c_bottom {
-  margin-left: 8%;
-  margin-right: 10%;
-  height: 100%;
+.postM {
+  color: #0006ff;
+  display: flex;
+  justify-content: center;
+  font-size: 7vmax;
 }
 .d_settings {
   margin-top: 8%;
 }
-// top nav
-@media (min-width: 1440px) {
+
+@media (max-width: 1440px) {
+  .icon-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
   .public {
-    color: rgb(110, 32, 199);
-    font-size: 3vw;
+    font-size: 4vw;
+    display: flex;
+    color: #0006ff;
+    justify-content: center;
+  }
+  .PublicOn {
+    display: flex;
+    justify-content: center;
+    color: rgb(6, 4, 116);
+    font-size: 5vw;
   }
   .groups {
-    color: rgb(14, 240, 14);
-    font-size: 3vw;
+    color: #0006ff;
+    font-size: 4vw;
+    display: flex;
+    justify-content: center;
+  }
+  .GroupsOn {
+    font-size: 5vw;
+    display: flex;
+    color: rgb(6, 4, 116);
+    justify-content: center;
   }
   .profile {
-    color: rgb(241, 255, 38);
-    font-size: 3vw;
+    color: #0006ff;
+    font-size: 4vw;
+    display: flex;
+    justify-content: center;
+  }
+  .ProfileOn {
+    display: flex;
+    font-size: 5vw;
+    color: rgb(6, 4, 116);
+    justify-content: center;
   }
   .post {
-    color: rgb(233, 106, 21);
-    font-size: 3vw;
+    color: #0006ff;
+    font-size: 4vw;
+    display: flex;
+    justify-content: center;
   }
   .search-box__input:focus {
-    width: 57%;
+    width: 105%;
     visibility: visible;
     box-sizing: content-box;
     opacity: 1;
@@ -230,49 +269,7 @@ h4:focus {
     top: 0;
     bottom: 0;
     padding: 1px;
-    width: 20%;
-    color: rgb(35, 155, 224);
-    font-style: italic;
-    font-size: 1.8vw;
-    float: right;
-    position: relative;
-    border-radius: 5%;
-    margin-right: 10%;
-    opacity: 0.7%;
-    height: 25px;
-    cursor: pointer;
-  }
-}
-@media (max-width: 1440px) and (min-width: 1150px) {
-  .public {
-    color: rgb(110, 32, 199);
-    font-size: 4vw;
-  }
-  .groups {
-    color: rgb(14, 240, 14);
-    font-size: 4vw;
-  }
-  .profile {
-    color: rgb(241, 255, 38);
-    font-size: 4vw;
-  }
-  .post {
-    color: rgb(233, 106, 21);
-    font-size: 4vw;
-  }
-  .search-box__input:focus {
-    width: 65%;
-    visibility: visible;
-    box-sizing: content-box;
-    opacity: 1;
-  }
-  .search-box__input {
-    transition: right, 0.7s;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    padding: 1px;
-    width: 20%;
+    width: 10%;
     color: rgb(35, 155, 224);
     font-style: italic;
     font-size: 1.8vw;
@@ -286,49 +283,7 @@ h4:focus {
   }
 }
 
-@media (max-width: 1150px) {
-  .public {
-    color: rgb(110, 32, 199);
-    font-size: 5vw;
-  }
-  .groups {
-    color: rgb(14, 240, 14);
-    font-size: 5vw;
-  }
-  .profile {
-    color: rgb(241, 255, 38);
-    font-size: 5vw;
-  }
-  .post {
-    color: rgb(233, 106, 21);
-    font-size: 5vw;
-  }
-  .search-box__input:focus {
-    width: 130%;
-    visibility: visible;
-    box-sizing: content-box;
-    opacity: 1;
-  }
-  .search-box__input {
-    transition: right, 0.7s;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    padding: 1px;
-    width: 20%;
-    color: rgb(35, 155, 224);
-    font-style: italic;
-    font-size: 2.5vw;
-    float: right;
-    position: relative;
-    border-radius: 5%;
-    margin-right: 10%;
-    opacity: 0.7%;
-    height: 25px;
-    cursor: pointer;
-  }
-}
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .search-box__input:focus {
     width: 145%;
     visibility: visible;
