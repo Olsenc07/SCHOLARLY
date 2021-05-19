@@ -55,8 +55,19 @@ h4:focus {
   color: gray;
 }
 // top nav icon
+.icon-btn-fit {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  box-sizing: content-box;
+}
 .a_up {
   margin-left: 7%;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  height: auto;
+  width: auto;
 }
 .b_up {
   margin-left: 10%;
@@ -162,9 +173,7 @@ h4:focus {
   color: gray;
   font-size: 6vmax;
 }
-.PublicOn {
-  color: pink;
-}
+
 .groups_ {
   color: gray;
   font-size: 6vmax;
@@ -205,6 +214,8 @@ h4:focus {
   .public {
     color: rgb(110, 32, 199);
     font-size: 3vw;
+    display: flex;
+    justify-content: center;
   }
   .groups {
     color: rgb(14, 240, 14);
@@ -217,48 +228,6 @@ h4:focus {
   .post {
     color: rgb(233, 106, 21);
     font-size: 3vw;
-  }
-  .search-box__input:focus {
-    width: 57%;
-    visibility: visible;
-    box-sizing: content-box;
-    opacity: 1;
-  }
-  .search-box__input {
-    transition: right, 0.7s;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    padding: 1px;
-    width: 20%;
-    color: rgb(35, 155, 224);
-    font-style: italic;
-    font-size: 1.8vw;
-    float: right;
-    position: relative;
-    border-radius: 5%;
-    margin-right: 10%;
-    opacity: 0.7%;
-    height: 25px;
-    cursor: pointer;
-  }
-}
-@media (max-width: 1440px) and (min-width: 1150px) {
-  .public {
-    color: rgb(110, 32, 199);
-    font-size: 4vw;
-  }
-  .groups {
-    color: rgb(14, 240, 14);
-    font-size: 4vw;
-  }
-  .profile {
-    color: rgb(241, 255, 38);
-    font-size: 4vw;
-  }
-  .post {
-    color: rgb(233, 106, 21);
-    font-size: 4vw;
   }
   .search-box__input:focus {
     width: 65%;
@@ -285,26 +254,57 @@ h4:focus {
     cursor: pointer;
   }
 }
-
-@media (max-width: 1150px) {
+@media (max-width: 1440px) {
+  .icon-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
   .public {
-    color: rgb(110, 32, 199);
-    font-size: 5vw;
+    font-size: 4vw;
+    display: flex;
+    color: #0006ff;
+    justify-content: center;
+  }
+  .PublicOn {
+    display: flex;
+    justify-content: center;
+    color: rgb(6, 4, 116);
+    font-size: 4vw;
   }
   .groups {
-    color: rgb(14, 240, 14);
-    font-size: 5vw;
+    color: #0006ff;
+    font-size: 4vw;
+    display: flex;
+    justify-content: center;
+  }
+  .GroupsOn {
+    font-size: 4vw;
+    display: flex;
+    color: rgb(6, 4, 116);
+    justify-content: center;
   }
   .profile {
-    color: rgb(241, 255, 38);
-    font-size: 5vw;
+    color: #0006ff;
+    font-size: 4vw;
+    display: flex;
+    justify-content: center;
+  }
+  .ProfileOn {
+    display: flex;
+    font-size: 4vw;
+    color: rgb(6, 4, 116);
+    justify-content: center;
   }
   .post {
-    color: rgb(233, 106, 21);
-    font-size: 5vw;
+    color: #0006ff;
+    font-size: 4vw;
+    display: flex;
+    justify-content: center;
   }
   .search-box__input:focus {
-    width: 130%;
+    width: 105%;
     visibility: visible;
     box-sizing: content-box;
     opacity: 1;
@@ -315,10 +315,10 @@ h4:focus {
     top: 0;
     bottom: 0;
     padding: 1px;
-    width: 20%;
+    width: 10%;
     color: rgb(35, 155, 224);
     font-style: italic;
-    font-size: 2.5vw;
+    font-size: 1.8vw;
     float: right;
     position: relative;
     border-radius: 5%;
@@ -328,7 +328,8 @@ h4:focus {
     cursor: pointer;
   }
 }
-@media (max-width: 900px) {
+
+@media (max-width: 1024px) {
   .search-box__input:focus {
     width: 145%;
     visibility: visible;

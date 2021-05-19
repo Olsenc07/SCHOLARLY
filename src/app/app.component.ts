@@ -20,11 +20,11 @@ export class AppComponent implements OnInit {
 
   isPostScreen$: Observable<boolean>;
 
-  isSearchScreen$:Observable<boolean>;
+  isSearchScreen$: Observable<boolean>;
 
-  isFriendsActScreen$:Observable<boolean>;
+  isFriendsActScreen$: Observable<boolean>;
 
-  isProfileScreen$:Observable<boolean>;
+  isProfileScreen$: Observable<boolean>;
 
   searchBox: Element;
 
