@@ -30,7 +30,7 @@
   <div class="columnD columnM ">
     
 
-<!-- attempt -->
+
 <div class="row yo">
   
     
@@ -40,7 +40,7 @@
       Following
       </div>
       <div class="center">
-      <input type="number" class="number" id="steper" name="members" step="1" />
+      <input type="number" class="number" id="steper" name="members" step="1" value="0" />
       </div>
     </div>
 
@@ -64,7 +64,7 @@
     Mutual Friends
   </div>
   <div class="center">
-    <input type="number" class="number" id="steper" name="members" step="1" />
+    <input type="number" class="number" id="steper" name="members" step="1" value="0"/>
   </div>
 </div>
     <div class="mutual-box">
@@ -81,7 +81,7 @@
       Followers
       </div>
       <div class="center">
-      <input type="number" class="number" id="steper" name="members" step="1" />
+      <input type="number" class="number" id="steper" name="members" step="1" value="0"/>
       </div>
     </div>
     <div class="following-box">
@@ -110,7 +110,9 @@
       </div>
       <mat-divider></mat-divider>
       <div class="followers">
-
+        <div class="center">
+          <input type="number" class="number" id="steper" name="members" step="1" value="0"/>
+          </div>
       </div>
     </div>
     <mat-divider></mat-divider>
@@ -136,11 +138,14 @@
   <!-- Right column -->
 
   
-  <mat-tab label="Following" type="number" class="number" id="steper" name="members" step="1"> 
+  <mat-tab label="Following" > 
   <div class="right">
    
     <div class="following-box">
-      <div class="followers" > </div>
+
+      <div class="followers" ><div class="center">
+          <input type="number" class="number" id="steper" name="members" step="1" value="0"/>
+          </div> </div>
     </div>
      </div>
     </mat-tab>
@@ -154,8 +159,12 @@
         <mat-tab label="Mutual">
       <div class="mutual-largest">
       <div class="mutual-box">
-       
-      <div class="follow-m"> </div>
+        <div class="center">
+          
+          </div>
+      <div class="follow-m"><div class="center">
+        <input type="number" class="number" id="steper" name="members" step="1" value="0"/>
+        </div> </div>
     </div>
       </div>
     </mat-tab>
