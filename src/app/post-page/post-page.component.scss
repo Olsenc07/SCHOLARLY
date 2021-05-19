@@ -278,11 +278,9 @@ p {
 }
 .pre-file-img {
   background-image: url(../../assets/Pics/WhiteSquareInAppLogo.jpg);
-
   width: 100%;
   height: 100%;
-
-  size: 100%;
+  background-size: cover;
 }
 .post-descriptionD {
   display: flex;
@@ -294,6 +292,7 @@ p {
   display: flex;
   width: 100%;
   height: 100%;
+  margin-bottom: 5%;
 }
 .post-pic-video {
   display: flex;
@@ -308,9 +307,15 @@ p {
   display: flex;
   width: 100%;
   height: 100%;
-  border: solid;
+  border: ridge;
   overflow-y: scroll;
-  border-color: #2668bb;
+}
+.postM {
+  display: flex;
+  width: 100%;
+  height: 135%;
+  border: ridge;
+  overflow-y: scroll;
 }
 .post-location {
   display: flex;
@@ -370,6 +375,10 @@ p {
   padding: 16px;
   border: 1px solid gray;
   border-radius: 16px;
+}
+.SpecializeM {
+  display: flex;
+  height: 100%;
 }
 .second-list {
   display: flex;
@@ -467,18 +476,15 @@ p {
   display: flex;
   height: 100%;
   width: 100%;
-  border: solid;
-  border-color: #2668bb;
+  border: ridge;
   box-sizing: border-box;
 }
 .upload {
   display: flex;
   height: 100%;
   width: 100%;
-  border: solid;
-  border-color: #2668bb;
+  border: ridge;
   box-sizing: border-box;
-  background-size: cover;
 }
 
 .watch {

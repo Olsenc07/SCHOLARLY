@@ -34,7 +34,7 @@
     </div>
       <!-- back button -->
       <div class="back-button">
-        <button mat-flat-button class="text-back">PREVIOUS</button>
+        <button mat-flat-button routerLink="/search" class="text-back">Cancel</button>
       </div>
   </div>
 
@@ -139,7 +139,7 @@
       <!-- Step 2 -->
     <mat-step [stepControl]="secondFormGroup" >
       <form [formGroup]="secondFormGroup" (ngSubmit)="onsecondFormSubmit()">
-        <ng-template matStepLabel>Who's Welcome To Join</ng-template>
+        <ng-template matStepLabel>Whos Welcome To Join</ng-template>
         
                  <div class="trioD">
                   <mat-radio-group aria-label="Select an option">
@@ -266,9 +266,10 @@
 </div>  
   
   <!-- MIDDLE MOBILE VIEW -->
+  
   <mat-tab-group  mat-align-tabs="center">
     
-    
+   
     <mat-tab label="Specialize">
       <div class="mobile-page">
       
@@ -288,9 +289,9 @@
       </button>
       </mat-form-field>   
       <div class="post-descriptionM">
-        <textarea class="post" placeholder="What do you wanna say?"></textarea>
+        <textarea class="postM" placeholder="What do you wanna say?"></textarea>
       </div>   
-     
+    
   
 <!-- Step1 -->
     <mat-vertical-stepper [linear]="isLinear" #stepper >
@@ -323,7 +324,7 @@
       <!-- Step 2 -->
       <mat-step [stepControl]="secondFormGroup" >
         <form [formGroup]="secondFormGroup" (ngSubmit)="onsecondFormSubmit()">
-          <ng-template matStepLabel>Who's Welcome To Join</ng-template>
+          <ng-template matStepLabel>Whos Welcome To Join</ng-template>
           
                    <div class="trioD">
                     <mat-radio-group aria-label="Select an option">
@@ -441,7 +442,7 @@
 
 
     <div class="back-button">
-      <button mat-flat-button class="text-back">CANCEL</button>
+      <button mat-flat-button routerLink="/search" class="text-back">Cancel</button>
     </div>
 
   
