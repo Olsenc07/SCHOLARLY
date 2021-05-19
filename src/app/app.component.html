@@ -114,26 +114,38 @@
   </div>
 
   <!-- Bottom nav bar for small screens -->
+  
   <ng-container *ngIf="(isHomeScreen$ | async) === false && (isPostScreen$ | async) === false"  >
 <mat-toolbar class="lower">
-  <div class="clean">
-  <button mat-icon-button type="button" routerLink="/search" class="a_bottom">
-    <mat-icon class="public_">public</mat-icon>
+  <div class="icon-top">
+  <div class="icon-btn-fit">
+  <button mat-icon-button type="button" routerLink="/search" class="a_up">
+    <mat-icon [ngClass]="(isSearchScreen$ | async ) === true
+    ? 'PublicOnM' : 'publicM' ">public</mat-icon>
   </button>
-  <button mat-icon-button type="button" routerLink="/friends-activity" class="b_bottom1">
-      <mat-icon class="groups_">groups</mat-icon>
+  </div>
+  <div class="icon-btn-fit">
+  <button mat-icon-button type="button" routerLink="/friends-activity" class="a_up">
+      <mat-icon [ngClass]="(isFriendsActScreen$ | async ) === true
+      ? 'GroupsOnM' : 'groupsM' ">groups</mat-icon>
   </button>
-  <button mat-icon-button type="button" routerLink="/profile" class="b_bottom2">
-      <mat-icon class="profile_">account_circle</mat-icon>
+</div>
+<div class="icon-btn-fit">
+  <button mat-icon-button type="button" routerLink="/profile" class="a_up">
+      <mat-icon [ngClass]="(isProfileScreen$ | async ) === true
+      ? 'ProfileOnM' : 'profileM' ">account_circle</mat-icon>
   </button>
-  <button mat-icon-button type="button" routerLink="/post-page" class="c_bottom" >
-  <mat-icon class="post_">add_circle</mat-icon>
+  </div>
+  <div class="icon-btn-fit">
+  <button mat-icon-button type="button" routerLink="/post-page" class="a_up" >
+  <mat-icon class="postM">add_circle</mat-icon>
   </button>
+  </div>
 </div>
 </mat-toolbar>
 </ng-container>
-
 </div>
+
 
 
 <ng-container *ngIf="(isHomeScreen$ | async) === false">
