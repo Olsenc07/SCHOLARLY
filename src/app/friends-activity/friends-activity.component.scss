@@ -177,6 +177,7 @@
     display: flex;
     width: 100%;
     height: 100%;
+    flex-direction: column;
   }
 }
 @media (max-width: 1024px) {
@@ -192,6 +193,7 @@
   height: 100%;
   width: 100%;
   border: ridge;
+  flex-direction: column;
 }
 @media (min-width: 1024px) {
   mat-tab-group {

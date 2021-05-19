@@ -309,29 +309,14 @@ h4:focus {
     cursor: pointer;
   }
 }
-@media (max-width: 801px) {
+@media (max-width: 600px) {
   .search-box__input:focus {
-    width: 100%;
+    width: 135%;
     visibility: visible;
     box-sizing: content-box;
     opacity: 1;
   }
   .search-box__input {
-    transition: right, 0.7s;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    padding: 1px;
-    width: 20%;
-    color: rgb(35, 155, 224);
-    font-style: italic;
     font-size: 4vw;
-    float: right;
-    position: relative;
-    border-radius: 5%;
-    margin-right: 10%;
-    opacity: 0.7%;
-    height: 25px;
-    cursor: pointer;
   }
 }
