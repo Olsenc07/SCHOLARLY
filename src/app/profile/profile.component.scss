@@ -55,6 +55,12 @@
   flex-direction: column;
   margin-top: 5%;
 }
+.center1 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
 .clear-holder {
   border-radius: 10% / 50%;
   opacity: 0.02;
@@ -67,22 +73,14 @@
   border: ridge;
   box-sizing: border-box;
 }
-@media (min-width: 410px) {
-  .conversations {
-    display: flex;
-    box-sizing: border-box;
-    justify-content: center;
-    width: 100%;
-  }
+
+.conversations {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: center;
+  width: 100%;
 }
-@media (max-width: 410px) {
-  .conversations {
-    display: flex;
-    box-sizing: border-box;
-    justify-content: center;
-    width: fit-content;
-  }
-}
+
 @media (min-width: 410px) {
   .convo-text {
     display: flex;
@@ -216,6 +214,22 @@
     height: 100%;
   }
 }
+@media (max-width: 1024px) {
+  .message {
+    display: none;
+  }
+}
+@media (min-width: 1024px) {
+  .message {
+    display: flex;
+    width: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .messageM {
+    display: none;
+  }
+}
 .middle {
   display: flex;
   flex-direction: column;
@@ -306,6 +320,21 @@
 .settings-format {
   display: flex;
   margin: 3% 2% 1% 0%;
+}
+.space {
+  display: flex;
+  width: 30%;
+  justify-content: center;
+  margin-right: 3%;
+  background-color: cornflowerblue;
+}
+.spaceM {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 15%;
+  height: 50%;
+  background-color: cornflowerblue;
 }
 .text-1 {
   display: flex;
