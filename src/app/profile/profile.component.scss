@@ -55,7 +55,7 @@
   flex-direction: column;
   margin-top: 5%;
 }
-.center1 {
+.centerM {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -223,11 +223,20 @@
   .message {
     display: flex;
     width: 50%;
+    justify-content: space-around;
   }
 }
 @media (min-width: 1024px) {
   .messageM {
     display: none;
+  }
+}
+@media (max-width: 1024px) {
+  .messageM {
+    display: flex;
+    height: 50%;
+    flex-direction: column;
+    margin-left: 3%;
   }
 }
 .middle {
@@ -321,20 +330,35 @@
   display: flex;
   margin: 3% 2% 1% 0%;
 }
-.space {
+.spaceD {
   display: flex;
   width: 30%;
   justify-content: center;
   margin-right: 3%;
   background-color: cornflowerblue;
 }
-.spaceM {
+.spaceDM {
+  display: flex;
+  width: 30%;
+  justify-content: center;
+  margin-right: 3%;
+  background-color: rgb(163, 188, 235);
+}
+.spaceMF {
   display: flex;
   width: 100%;
   justify-content: center;
   margin-top: 15%;
-  height: 50%;
+  height: 15%;
   background-color: cornflowerblue;
+}
+.spaceMM {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 15%;
+  height: 15%;
+  background-color: rgb(163, 188, 235);
 }
 .text-1 {
   display: flex;
