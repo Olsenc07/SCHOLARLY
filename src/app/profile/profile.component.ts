@@ -9,10 +9,10 @@ import {ProfileBottomSheetComponent} from './bottom-sheet/bottom-sheet.component
 })
 export class ProfileComponent {
   showFiller = false;
-  constructor(private _bottomSheet: MatBottomSheet) {}
+  constructor(private _BOTTOMSHEET: MatBottomSheet) {}
 
   openBottomSheet(): void {
-    this._bottomSheet.open(ProfileBottomSheetComponent);
+    this._BOTTOMSHEET.open(ProfileBottomSheetComponent);
   }
 }
 
