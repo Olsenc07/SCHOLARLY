@@ -17,14 +17,11 @@
 }
 .bio-name-age {
   display: flex;
-  margin: 2% 15% 0% 7%;
-  width: 100%;
-  height: 25px;
 }
 @media (min-width: 1024px) {
   .bio-box {
     display: flex;
-    margin: 0% 1% 41% 1%;
+    margin: 1%;
     width: 100%;
     height: 10%;
     box-sizing: border-box;
@@ -34,7 +31,7 @@
 @media (max-width: 1024px) {
   .bio-box {
     display: flex;
-    margin: 0% 1% 21% 1%;
+    margin: 0% 1% 10% 1%;
     width: 100%;
     height: 10%;
     box-sizing: border-box;
@@ -45,8 +42,7 @@
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  border: solid;
-  border-color: cornflowerblue;
+
   background-color: #d1d6eb;
 }
 .center {
@@ -60,6 +56,7 @@
   justify-content: center;
   flex-direction: column;
   height: 100%;
+  color: white;
 }
 .clear-holder {
   border-radius: 10% / 50%;
@@ -79,6 +76,7 @@
   box-sizing: border-box;
   justify-content: center;
   width: 100%;
+  margin-top: 15%;
 }
 
 @media (min-width: 410px) {
@@ -166,7 +164,7 @@
 .left-side {
   display: flex;
   flex-direction: column;
-  margin: 1% 1% 0% 1%;
+  margin: 1% 0% 0% 1%;
   width: 35%;
   box-sizing: border-box;
   height: 100%;
@@ -174,17 +172,17 @@
 }
 .major-minor {
   display: flex;
-  margin: 1% 1% 1% 1%;
   width: 100%;
   height: 10%;
+  justify-content: center;
 }
 @media (min-width: 440px) {
   .major-box {
     text-align: center;
     border-radius: 30px;
-    margin: 0% 0% 1% 15%;
+    margin: 0% 0% 1% 10%;
     color: #0e3379;
-    width: 70%;
+    width: 80%;
     height: 70%;
     font-size: 130%;
   }
@@ -193,9 +191,9 @@
   .major-box {
     text-align: center;
     border-radius: 30px;
-    margin: 0% 0% 1% 15%;
+    margin: 0% 0% 1% 5%;
     color: #0e3379;
-    width: 70%;
+    width: 90%;
     height: 70%;
   }
 }
@@ -214,31 +212,13 @@
     height: 100%;
   }
 }
-@media (max-width: 1024px) {
-  .message {
-    display: none;
-  }
+
+.messageM {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10%;
 }
-@media (min-width: 1024px) {
-  .message {
-    display: flex;
-    width: 50%;
-    justify-content: space-around;
-  }
-}
-@media (min-width: 1024px) {
-  .messageM {
-    display: none;
-  }
-}
-@media (max-width: 1024px) {
-  .messageM {
-    display: flex;
-    height: 50%;
-    flex-direction: column;
-    margin-left: 3%;
-  }
-}
+
 .middle {
   display: flex;
   flex-direction: column;
@@ -279,10 +259,7 @@
   height: 15vh;
   justify-content: center;
 }
-.top-items {
-  display: flex;
-  flex-direction: row;
-}
+
 .relationship {
   display: flex;
   justify-content: center;
@@ -346,19 +323,17 @@
 }
 .spaceMF {
   display: flex;
-  width: 100%;
   justify-content: center;
-  margin-top: 15%;
-  height: 15%;
   background-color: cornflowerblue;
+  height: 30%;
 }
 .spaceMM {
   display: flex;
   width: 100%;
   justify-content: center;
-  margin-top: 15%;
-  height: 15%;
+  margin-top: 10%;
   background-color: rgb(163, 188, 235);
+  height: 30%;
 }
 .text-1 {
   display: flex;
@@ -371,7 +346,7 @@
   background-color: rgb(235, 235, 245);
   margin: 1% 0% 2% 2%;
   font-weight: bold;
-  height: fit-content;
+  justify-content: center;
 }
 
 .text {
@@ -402,6 +377,10 @@
   display: flex;
   flex-direction: row;
   width: 100%;
+}
+.top-items {
+  display: flex;
+  flex-direction: row;
 }
 
 @media (min-width: 450px) {
