@@ -30,6 +30,9 @@ import { MatStepperModule } from '@angular/material/stepper';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatTreeModule} from '@angular/material/tree';
+import { MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 
 
 import { routingComponents } from './app-routing.module';
@@ -61,6 +64,7 @@ import { SchoolWComponent} from './search/search.component';
 import { SpiritualityComponent} from './search/search.component';
 import { UpcomingEComponent} from './search/search.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -91,6 +95,7 @@ import { UpcomingEComponent} from './search/search.component';
     SchoolWComponent,
     SpiritualityComponent,
     UpcomingEComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -124,6 +129,8 @@ import { UpcomingEComponent} from './search/search.component';
     NgxMaterialTimepickerModule,
     MatChipsModule,
     MatTreeModule,
+    MatAutocompleteModule,
+    MatFormFieldModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 

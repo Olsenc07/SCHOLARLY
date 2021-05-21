@@ -51,13 +51,48 @@
  <!-- Shows the friends you tagged, can click an x to easily remove them "angular material CHIPS!!
     as well can tag where friend is on the pic" and include scroll  -->
  <span class="friends-search">
-   <mat-form-field class="search-textfield">
+   <!-- <mat-form-field class="search-textfield">
      <mat-label>Tag friends:</mat-label>
      <input
        matInput
        placeholder=""
-     /> </mat-form-field
- ></span>
+     /> </mat-form-field -->
+
+<div class="column_">
+     <h2>Tag Friends:</h2>
+     <mat-form-field >
+      
+      <mat-chip-list #chipList aria-label="Friends selection" >
+        <mat-chip
+          *ngFor="let friend of friends"
+          [selectable]="selectable"
+          [removable]="removable"
+          (removed)="remove(friend)">
+          {{friend}}
+          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+        </mat-chip>
+        <input
+          placeholder="Start typing..."
+          #fruitInput
+          [formControl]="friendCtrl"
+          [matAutocomplete]="auto"
+          [matChipInputFor]="chipList"
+          [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+          (matChipInputTokenEnd)="add($event)">
+      </mat-chip-list>
+      <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+        <mat-option *ngFor="let friend of filteredFriends | async" [value]="friend">
+          {{friend}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </div>
+
+
+
+
+
+ </span>
 </div>
 
 <div class="location">

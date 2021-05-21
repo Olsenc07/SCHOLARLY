@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import {  FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import {
   MomentDateAdapter,
@@ -12,8 +12,12 @@ import {
 import * as _moment from 'moment';
 import { default as _rollupMoment} from 'moment';
 import {MatDialog} from '@angular/material/dialog';
-
-
+import {COMMA, ENTER} from '@angular/cdk/keycodes';
+import {MatAutocompleteSelectedEvent, MatAutocomplete} from '@angular/material/autocomplete';
+import {MatChipInputEvent} from '@angular/material/chips';
+import {Observable} from 'rxjs';
+import {map } from 'rxjs/operators';
+import {MatChipsModule} from '@angular/material/chips';
 
 
 const moment = _rollupMoment || _moment;
@@ -80,6 +84,19 @@ enum BooleanOptions {
 })
 
 export class PostPageComponent implements OnInit {
+  visible = true;
+  selectable = true;
+  removable = true;
+  separatorKeysCodes: number[] = [ENTER, COMMA];
+  friendCtrl = new FormControl();
+  filteredFriends: Observable<string[]>;
+  friends: string[] = ['Friend1'];
+  // allFriends should filter through your friend list
+  allFriends: string[] = [''];
+
+  @ViewChild('friendInput') friendInput: ElementRef<HTMLInputElement>;
+  @ViewChild('auto') matAutocomplete: MatAutocomplete;
+
   isLinear = false;
   time: FormControl = new FormControl('');
   checked1: FormControl = new FormControl('');
@@ -165,6 +182,8 @@ export class PostPageComponent implements OnInit {
     public selectedOption: string;
     public specificOptions: string[];
   constructor(public dialog: MatDialog, private FORMBuilder: FormBuilder ) {
+    this.filteredFriends = this.friendCtrl.valueChanges.pipe(
+      map((fruit: string | null) => fruit ? this._filter(fruit) : this.allFriends.slice()));
   }
   openDialog(): void {
     this.dialog.open(DialogElementsComponent);
@@ -183,6 +202,40 @@ export class PostPageComponent implements OnInit {
       fourthCtrl: ['']
     });
   }
+  add(event: MatChipInputEvent): void {
+    const value = (event.value || '').trim();
+
+    // Add our fruit
+    if (value) {
+      this.friends.push(value);
+    }
+
+    // Clear the input value
+    // event.chipInput!.clear();
+
+    this.friendCtrl.setValue(null);
+  }
+
+  remove(friend: string): void {
+    const index = this.friends.indexOf(friend);
+
+    if (index >= 0) {
+      this.friends.splice(index, 1);
+    }
+  }
+
+  selected(event: MatAutocompleteSelectedEvent): void {
+    this.friends.push(event.option.viewValue);
+    this.friendInput.nativeElement.value = '';
+    this.friendCtrl.setValue(null);
+  }
+
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+
+    return this.allFriends.filter(friend => friend.toLowerCase().indexOf(filterValue) === 0);
+  }
+
 // First step at ability to uplaod img/file attempt
  OnFileSelected(event: Event): void
 {}
