@@ -1,214 +1,188 @@
 <div class="main-content">
-    <!-- input pic & has this default pic before-->
-    <div class="left-side">
-      <div class="profile-pic">
-        <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" class="pic" />
-        
-      </div>
-
-      <!-- gender input text, relationship status input text -->
-      <div  class="center">
-        <h2 class="hide-input"> Olsen07</h2>
-        <div class="row"><div   class="hide-input"> Male</div>
-        <div     class="hide-input">Single</div></div>
-      </div>
-
-      <!-- Major/Minor -->
-      <div class="major-minor">
-        <input placeholder="Major/Minor" class="major-box" />
-      </div>
-      <!-- Sport/Club -->
-      <div class="major-minor">
-        <input placeholder="Sport/Club" class="major-box" />
-      </div>
-
-      <!-- Bio: Full name & age input text -->
-      <div class="bio-name-age">
-        <input style="border: 0" placeholder="Chase Olsen 23" class="text-2" />
-      </div>
-
-      <!-- bio box -->
-      <div class="bio-box">
-        <textarea class="bio-input" > </textarea>
-      </div>
-      <div class="conversations">
-      <button mat-raised-button (click)="openBottomSheet()" class="convo-text"> Conversations</button>
+  <!-- input pic & has this default pic before-->
+  <div class="left-side">
+    <div class="profile-pic">
+      <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" class="pic" />
     </div>
 
+    <!-- gender input text, relationship status input text -->
+    <div class="center">
+      <h2 class="hide-input">Olsen07</h2>
+      <div class="row">
+        <div class="hide-input">Male</div>
+        <div class="hide-input">Single</div>
+      </div>
+    </div>
+
+    <!-- Major/Minor -->
+    <div class="major-minor">
+      <input placeholder="Major/Minor" class="major-box" />
+    </div>
+    <!-- Sport/Club -->
+    <div class="major-minor">
+      <input placeholder="Sport/Club" class="major-box" />
+    </div>
+
+    <!-- Bio: Full name & age input text -->
+    <div class="bio-name-age">
+      <input style="border: 0" placeholder="Chase Olsen 23" class="text-2" />
+    </div>
+
+    <!-- bio box -->
+    <div class="bio-box">
+      <textarea class="bio-input"> </textarea>
+    </div>
+    <div class="conversations">
+      <button mat-raised-button (click)="openBottomSheet()" class="convo-text">
+        Conversations
+      </button>
+    </div>
 
     <div class="messageM">
-      <button class="spaceMF">
-      
+      <button class="spaceMF" (click)="followClicked()">
         <h2 class="centerM">
-       Follow
+          {{ following ? "Unfollow" : "Follow" }}
         </h2>
-    <!-- Switches to Unfollow btn option  -->
-  </button>
-      <button class="spaceMM">
-        <h2 class="centerM">
-       Message
-        </h2>
+        <!-- Switches to Unfollow btn option  -->
       </button>
-      
-      </div>
-
-
+      <button class="spaceMM">
+        <h2 class="centerM">Message</h2>
+      </button>
     </div>
-    <!-- Middle -->
-    <div class="middle">
-      <!-- User-Name -->
-      <div class="top-middle">
-        <div class="user-name">
-    </div>
+  </div>
+  <!-- Middle -->
+  <div class="middle">
+    <!-- User-Name -->
+    <div class="top-middle">
+      <div class="user-name"></div>
       <h3 class="follow">
         Following
-        <input type="readonly" class="number" id="steper" name="members" step="1" value="0" />
+        <input
+          type="readonly"
+          class="number"
+          id="steper"
+          name="members"
+          step="1"
+          value="0"
+        />
       </h3>
       <h3 class="follow">
         Followers
-        <input type="number" class="number" id="steper" name="members" step="1"  value="0"/>
+        <input
+          type="number"
+          class="number"
+          id="steper"
+          name="members"
+          step="1"
+          value="0"
+        />
       </h3>
       <div class="message">
         <button class="spaceD">
-          <div class="centerM">
-         Follow
-          </div>
+          <div class="centerM">Follow</div>
         </button>
-      <button class="spaceDM"><div class="centerM">
-        Message
-</div>
-      </button>
-      
-      </div>
-      </div>
-      <div>
-    
-      </div>
-<!-- DESKTOP -->
-<div class="hide">
-<div class="HighlightsM">
-      
-
-  <!-- Hightlight Input box -->
-  <p class="text_cent">Highlights</p>
-    <div class="highlights-layout" >
-      <div class="groups-j"><div class="words">
-        Groups Joined
-      </div></div>
-      <div class="personal-acc"><div class="words">
-        Personal Accomplishments
-      </div></div>
-      <div class="row_1">
-        <div class="completed-courses"><div class="words">Completed Courses</div></div>
-        <div class="completed-courses"><div class="words">
-          Pursuing Courses
-        </div></div>
+        <button class="spaceDM"><div class="centerM">Message</div></button>
       </div>
     </div>
-  </div>
-  <div class="activityM">
-    <!-- Right side -->
-    <!-- Recent Posts text  -->
-    <div class="right-side">
-      
-     
-        <!-- Recent Posts box-->
-        <p class="text_cent">Activity</p>
-        <div class="recent-post-layout">
-          
-          <div class="recent">
-            <p class="text" >
-              Recents
-            </p>
+    <div></div>
+    <!-- DESKTOP -->
+    <div class="hide">
+      <div class="HighlightsM">
+        <!-- Hightlight Input box -->
+        <p class="text_cent">Highlights</p>
+        <div class="highlights-layout">
+          <div class="groups-j"><div class="words">Groups Joined</div></div>
+          <div class="personal-acc">
+            <div class="words">Personal Accomplishments</div>
           </div>
-          <div class="posts" > </div>
-        
-          <mat-divider></mat-divider>
-      <!-- Current Conversations text -->
-      <div class="features">
-        <div class="current"></div>
-          <p class="text">Features</p>
+          <div class="row_1">
+            <div class="completed-courses">
+              <div class="words">Completed Courses</div>
+            </div>
+            <div class="completed-courses">
+              <div class="words">Pursuing Courses</div>
+            </div>
+          </div>
+        </div>
       </div>
-     
-     
-        <!-- Current Conversations box, need to add internal symbols
+      <div class="activityM">
+        <!-- Right side -->
+        <!-- Recent Posts text  -->
+        <div class="right-side">
+          <!-- Recent Posts box-->
+          <p class="text_cent">Activity</p>
+          <div class="recent-post-layout">
+            <div class="recent">
+              <p class="text">Recents</p>
+            </div>
+            <div class="posts"></div>
+
+            <mat-divider></mat-divider>
+            <!-- Current Conversations text -->
+            <div class="features">
+              <div class="current"></div>
+              <p class="text">Features</p>
+            </div>
+
+            <!-- Current Conversations box, need to add internal symbols
   & activity things in box -->
-        
-          <div class="text_"> </div>
-        
-      </div>
-      </div>
-    </div>
 
-  </div>
-
-
-
-
-
-<!-- MOBILE -->
-
-<mat-tab-group dynamicHeight dynamicWidth mat-align-tabs="center" >
-  <mat-tab label="Highlights">
-<div class="HighlightsM">
-      
-
-    <!-- Hightlight Input box -->
-      <div class="highlights-layout" >
-        <div class="groups-j"><div class="words">
-          Groups Joined
-        </div></div>
-        <div class="personal-acc"><div class="words">
-          Personal Accomplishments
-        </div></div>
-        <div class="row_1">
-          <div class="completed-courses">
-            <div class="words">Completed Courses</div>
+            <div class="text_"></div>
           </div>
-          <div class="completed-courses"> <div class="words">
-            Pursuing Courses
-          </div></div>
         </div>
       </div>
     </div>
-    </mat-tab>
-    
-<mat-tab label="Activity">
-<div class="activityM">
-    <!-- Right side -->
-    <!-- Recent Posts text  -->
-    <div class="right-side">
-      
-  
-        <!-- Recent Posts box-->
-        <div class="recent-post-layout">
-          <div class="recent">
-            <p class="text">
-              Recents
-            </p>
+
+    <!-- MOBILE -->
+
+    <mat-tab-group dynamicHeight dynamicWidth mat-align-tabs="center">
+      <mat-tab label="Highlights">
+        <div class="HighlightsM">
+          <!-- Hightlight Input box -->
+          <div class="highlights-layout">
+            <div class="groups-j"><div class="words">Groups Joined</div></div>
+            <div class="personal-acc">
+              <div class="words">Personal Accomplishments</div>
+            </div>
+            <div class="row_1">
+              <div class="completed-courses">
+                <div class="words">Completed Courses</div>
+              </div>
+              <div class="completed-courses">
+                <div class="words">Pursuing Courses</div>
+              </div>
+            </div>
           </div>
-          <div class="posts" > </div>
-        
-          <mat-divider></mat-divider>
-      <!-- Current Conversations text -->
-      <div class="features">
-        <div class="current"></div>
-          <p class="text">Features</p>
-      </div>
-     
-        <!-- Current Conversations box, need to add internal symbols
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Activity">
+        <div class="activityM">
+          <!-- Right side -->
+          <!-- Recent Posts text  -->
+          <div class="right-side">
+            <!-- Recent Posts box-->
+            <div class="recent-post-layout">
+              <div class="recent">
+                <p class="text">Recents</p>
+              </div>
+              <div class="posts"></div>
+
+              <mat-divider></mat-divider>
+              <!-- Current Conversations text -->
+              <div class="features">
+                <div class="current"></div>
+                <p class="text">Features</p>
+              </div>
+
+              <!-- Current Conversations box, need to add internal symbols
   & activity things in box -->
-      
-          <div class="text_"> </div>
-        
-      </div>
-      </div>
-    </div>
-    </mat-tab>
 
+              <div class="text_"></div>
+            </div>
+          </div>
+        </div>
+      </mat-tab>
     </mat-tab-group>
-
-
-
   </div>
-  
+</div>
