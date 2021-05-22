@@ -514,11 +514,11 @@ export class PostPageComponent implements OnInit {
     // TODO: wire up to post request
     console.log(this.fourthFormGroup.value);
   }
-  changeTab() {
-    this.selectedIndex = this.selectedIndex === 1 ?0:1
+  changeTab(): void {
+    this.selectedIndex = this.selectedIndex === 1 ? 0 : 1;
   }
-  changeTab1() {
-    this.selectedIndex = this.selectedIndex === 0 ?1:0
+  changeTab1(): void {
+    this.selectedIndex = this.selectedIndex === 0 ? 1 : 0;
   }
 }
 @Component({
