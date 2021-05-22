@@ -91,20 +91,23 @@ export class PostPageComponent implements OnInit {
   selectable = true;
   removable = true;
   separatorKeysCodes: number[] = [ENTER, COMMA];
+  // Desktop tag friends
   friendCtrl = new FormControl();
-  friendCtrlM = new FormControl();
   filteredFriends: Observable<string[]>;
-  filteredFriendsM: Observable<string[]>;
   friends: string[] = [];
-  friendsM: string[] = [];
-  // allFriends should filter through your friend list
-  allFriends: string[] = [''];
-  allFriendsM: string[] = [''];
-
   @ViewChild('friendInput') friendInput: ElementRef<HTMLInputElement>;
-  @ViewChild('friendInputM') friendInputM: ElementRef<HTMLInputElement>;
-  // Atocomplete should really just be a filter for your friend list, and displayed when user clicks on input line, rn doesn't work properly
+  // Autocomplete should really just be a filter for your friend list,
+  // and displayed when user clicks on input line, rn doesn't work properly
   @ViewChild('auto') matAutocomplete: MatAutocomplete;
+  // allFriends should filter through your friend list desktop
+  allFriends: string[] = [''];
+  // Mobile tag friends
+  friendCtrlM = new FormControl();
+  filteredFriendsM: Observable<string[]>;
+  friendsM: string[] = [];
+  // allFriends should filter through your friend list mobile
+  allFriendsM: string[] = [''];
+  @ViewChild('friendInputM') friendInputM: ElementRef<HTMLInputElement>;
   @ViewChild('autoM') matAutocompleteM: MatAutocomplete;
 
   isLinear = false;
@@ -192,8 +195,10 @@ export class PostPageComponent implements OnInit {
     public selectedOption: string;
     public specificOptions: string[];
   constructor(public dialog: MatDialog, private FORMBuilder: FormBuilder ) {
+    // Desktop tag friends
     this.filteredFriends = this.friendCtrl.valueChanges.pipe(
       map((friend: string | null) => friend ? this._filter(friend) : this.allFriends.slice()));
+      // Mobile tag friends
     this.filteredFriendsM = this.friendCtrlM.valueChanges.pipe(
         map((friendM: string | null) => friendM ? this._filterM(friendM) : this.allFriendsM.slice()));
     }
@@ -214,7 +219,7 @@ export class PostPageComponent implements OnInit {
       fourthCtrl: ['']
     });
   }
-  // Desktop
+  // Desktop tag friends
   add(event: MatChipInputEvent): void {
     const value = (event.value || '').trim();
     // Add our friend
@@ -226,18 +231,6 @@ export class PostPageComponent implements OnInit {
 
     this.friendCtrl.setValue(null);
  }
-//  Mobile
-  addM(event: MatChipInputEvent): void {
-    const valueM = (event.value || '').trim();
-
-    if (valueM) {
-      this.friendsM.push(valueM);
-    }
-
-    this.friendCtrlM.setValue(null);
-  }
-
-
   remove(friend: string): void {
     const index = this.friends.indexOf(friend);
     if (index >= 0) {
@@ -255,6 +248,15 @@ export class PostPageComponent implements OnInit {
     return this.allFriends.filter(friend => friend.toLowerCase().indexOf(filterValue) === 0);
   }
 // Mobile tag friends
+addM(event: MatChipInputEvent): void {
+  const valueM = (event.value || '').trim();
+
+  if (valueM) {
+    this.friendsM.push(valueM);
+  }
+
+  this.friendCtrlM.setValue(null);
+}
 selectedM(event: MatAutocompleteSelectedEvent): void {
   this.friendsM.push(event.option.viewValue);
   this.friendInputM.nativeElement.value = '';
