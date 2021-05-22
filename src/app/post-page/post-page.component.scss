@@ -90,12 +90,6 @@
   font-size: x-large;
 }
 
-.column {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  width: 100%;
-}
 .columnM {
   display: flex;
   flex-direction: row;
@@ -395,7 +389,6 @@ p {
 }
 .second-select-mobile {
   display: flex;
-  border: ridge;
   overflow-y: scroll;
   height: 100%;
 }
@@ -406,16 +399,7 @@ p {
   border: solid;
   border-color: #2668bb;
 }
-.text1 {
-  width: 100%;
-  border: solid;
-  margin-right: 1%;
-}
-.text2 {
-  width: 100%;
-  border: solid;
-  margin-left: 1%;
-}
+
 .textM {
   display: flex;
   justify-content: center;
@@ -428,15 +412,12 @@ p {
   font-size: medium;
   margin-top: 2%;
 }
-.text-back {
+
+.text {
   display: flex;
-  width: 50%;
+  width: 100%;
   justify-content: center;
-}
-.text-next {
-  display: flex;
-  width: 50%;
-  justify-content: center;
+  margin: 0% 5%;
 }
 
 .tagged-friends-box {
