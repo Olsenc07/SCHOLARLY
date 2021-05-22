@@ -183,7 +183,7 @@ export class PostPageComponent implements OnInit {
     public specificOptions: string[];
   constructor(public dialog: MatDialog, private FORMBuilder: FormBuilder ) {
     this.filteredFriends = this.friendCtrl.valueChanges.pipe(
-      map((fruit: string | null) => fruit ? this._filter(fruit) : this.allFriends.slice()));
+      map((friend: string | null) => friend ? this._filter(friend) : this.allFriends.slice()));
   }
   openDialog(): void {
     this.dialog.open(DialogElementsComponent);
