@@ -84,6 +84,9 @@ enum BooleanOptions {
 })
 
 export class PostPageComponent implements OnInit {
+  selectedIndex = 0;
+
+
   visible = true;
   selectable = true;
   removable = true;
@@ -184,7 +187,7 @@ export class PostPageComponent implements OnInit {
   constructor(public dialog: MatDialog, private FORMBuilder: FormBuilder ) {
     this.filteredFriends = this.friendCtrl.valueChanges.pipe(
       map((friend: string | null) => friend ? this._filter(friend) : this.allFriends.slice()));
-  }
+    }
   openDialog(): void {
     this.dialog.open(DialogElementsComponent);
   }
@@ -510,6 +513,12 @@ export class PostPageComponent implements OnInit {
   onfourthFormSubmit(): void {
     // TODO: wire up to post request
     console.log(this.fourthFormGroup.value);
+  }
+  changeTab() {
+    this.selectedIndex = this.selectedIndex === 1 ?0:1
+  }
+  changeTab1() {
+    this.selectedIndex = this.selectedIndex === 0 ?1:0
   }
 }
 @Component({

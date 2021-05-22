@@ -34,7 +34,7 @@
     </div>
       <!-- back button -->
       <div class="back-button">
-        <button mat-flat-button routerLink="/search" class="text-back">Cancel</button>
+        <button mat-raised-button routerLink="/search" class="text">Cancel</button>
       </div>
   </div>
 
@@ -291,11 +291,11 @@
 </div>  
   
   <!--  MOBILE VIEW -->
-  
-  <mat-tab-group  mat-align-tabs="center">
+  <!-- Need to fix selected index for next and back buttons, If ser clicks create or specilaize then function takes a double click to work -->
+  <mat-tab-group  mat-align-tabs="center" [selectedIndex]="selectedIndex" >
     
    
-    <mat-tab label="Specialize">
+    <mat-tab label="Specialize"  >
       <div class="mobile-page">
       
   
@@ -358,8 +358,8 @@
 
 
     <div class="back-button">
-      <button mat-stroked-button routerLink="/search" class="text">Cancel</button>
-      <button mat-raised-button color="primary"  class="text">Next 
+      <button mat-raised-button routerLink="/search" class="text" >Cancel</button>
+      <button mat-raised-button color="primary" (click)="changeTab1()"  class="text">Next 
         <span class="material-icons"> arrow_forward </span>
       </button>
     </div>
@@ -556,7 +556,7 @@
 
 
   <div class="back-button">
-    <button mat-stroked-button class="text">
+    <button mat-raised-button class="text" (click)="changeTab()">
       <span class="material-icons"> arrow_back </span>
       Back
     </button>
