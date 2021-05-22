@@ -53,7 +53,7 @@
  
 
 <div class="column_">
-     <h2>Tag Friends:</h2>
+     <h2>Tag Friends: Start typing...</h2>
      
      <mat-form-field >
       
@@ -67,7 +67,6 @@
           <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
         </mat-chip>
         <input
-          placeholder="Start typing..."
           #friendInput
           [formControl]="friendCtrl"
           [matAutocomplete]="auto"
@@ -324,31 +323,30 @@
 
 
       <div class="column_">
-        <h2>Tag Friends:</h2>
+        <h2>Tag Friends: Start typing...</h2>
         
         <mat-form-field >
          
-         <mat-chip-list #chipList aria-label="Friends selection" >
+         <mat-chip-list #chipListM aria-label="Friends selectionM" >
            <mat-chip
-             *ngFor="let friend of friends"
+             *ngFor="let friendM of friendsM"
              [selectable]="selectable"
              [removable]="removable"
-             (removed)="remove(friend)">
-             {{friend}}
+             (removed)="removeM(friendM)">
+             {{friendM}}
              <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
            </mat-chip>
            <input
-             placeholder="Start typing..."
-             #friendInput
-             [formControl]="friendCtrl"
-             [matAutocomplete]="auto"
-             [matChipInputFor]="chipList"
+             #friendInputM
+             [formControl]="friendCtrlM"
+             [matAutocomplete]="autoM"
+             [matChipInputFor]="chipListM"
              [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-             (matChipInputTokenEnd)="add($event)">
+             (matChipInputTokenEnd)="addM($event)">
          </mat-chip-list>
-         <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
-           <mat-option *ngFor="let friend of filteredFriends | async" [value]="friend">
-             {{friend}}
+         <mat-autocomplete #autoM="matAutocomplete" (optionSelected)="selectedM($event)">
+           <mat-option *ngFor="let friendM of filteredFriendsM | async" [valueM]="friendM">
+             {{friendM}}
            </mat-option>
          </mat-autocomplete>
        </mat-form-field>

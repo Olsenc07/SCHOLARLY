@@ -92,13 +92,20 @@ export class PostPageComponent implements OnInit {
   removable = true;
   separatorKeysCodes: number[] = [ENTER, COMMA];
   friendCtrl = new FormControl();
+  friendCtrlM = new FormControl();
   filteredFriends: Observable<string[]>;
-  friends: string[] = ['Friend1'];
+  filteredFriendsM: Observable<string[]>;
+  friends: string[] = [];
+  friendsM: string[] = [];
   // allFriends should filter through your friend list
   allFriends: string[] = [''];
+  allFriendsM: string[] = [''];
 
   @ViewChild('friendInput') friendInput: ElementRef<HTMLInputElement>;
+  @ViewChild('friendInputM') friendInputM: ElementRef<HTMLInputElement>;
+  // Atocomplete should really just be a filter for your friend list, and displayed when user clicks on input line, rn doesn't work properly
   @ViewChild('auto') matAutocomplete: MatAutocomplete;
+  @ViewChild('autoM') matAutocompleteM: MatAutocomplete;
 
   isLinear = false;
   time: FormControl = new FormControl('');
@@ -187,6 +194,8 @@ export class PostPageComponent implements OnInit {
   constructor(public dialog: MatDialog, private FORMBuilder: FormBuilder ) {
     this.filteredFriends = this.friendCtrl.valueChanges.pipe(
       map((friend: string | null) => friend ? this._filter(friend) : this.allFriends.slice()));
+    this.filteredFriendsM = this.friendCtrlM.valueChanges.pipe(
+        map((friendM: string | null) => friendM ? this._filterM(friendM) : this.allFriendsM.slice()));
     }
   openDialog(): void {
     this.dialog.open(DialogElementsComponent);
@@ -205,23 +214,32 @@ export class PostPageComponent implements OnInit {
       fourthCtrl: ['']
     });
   }
+  // Desktop
   add(event: MatChipInputEvent): void {
     const value = (event.value || '').trim();
-
-    // Add our fruit
+    // Add our friend
     if (value) {
       this.friends.push(value);
     }
-
     // Clear the input value
     // event.chipInput!.clear();
 
     this.friendCtrl.setValue(null);
+ }
+//  Mobile
+  addM(event: MatChipInputEvent): void {
+    const valueM = (event.value || '').trim();
+
+    if (valueM) {
+      this.friendsM.push(valueM);
+    }
+
+    this.friendCtrlM.setValue(null);
   }
+
 
   remove(friend: string): void {
     const index = this.friends.indexOf(friend);
-
     if (index >= 0) {
       this.friends.splice(index, 1);
     }
@@ -232,13 +250,26 @@ export class PostPageComponent implements OnInit {
     this.friendInput.nativeElement.value = '';
     this.friendCtrl.setValue(null);
   }
-
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
-
     return this.allFriends.filter(friend => friend.toLowerCase().indexOf(filterValue) === 0);
   }
-
+// Mobile tag friends
+selectedM(event: MatAutocompleteSelectedEvent): void {
+  this.friendsM.push(event.option.viewValue);
+  this.friendInputM.nativeElement.value = '';
+  this.friendCtrlM.setValue(null);
+}
+removeM( friendM: string): void {
+  const indexM = this.friendsM.indexOf(friendM);
+  if (indexM >= 0) {
+    this.friendsM.splice(indexM, 1);
+  }
+}
+private _filterM(valueM: string): string[] {
+  const filterValueM = valueM.toLowerCase();
+  return this.allFriendsM.filter(friendM => friendM.toLowerCase().indexOf(filterValueM) === 0);
+}
 // First step at ability to uplaod img/file attempt
  OnFileSelected(event: Event): void
 {}
