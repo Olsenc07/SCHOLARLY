@@ -320,9 +320,7 @@
 }
 .searchM {
   display: flex;
-  overflow-y: scroll;
   width: 100%;
-  height: 33%;
   flex-direction: column;
 }
 @media (max-width: 1025px) {
