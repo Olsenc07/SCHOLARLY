@@ -1,41 +1,83 @@
 <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
   <div class="entire-page">
-    <body>
-      <!-- main logo -->
-      <div class="logo-layout">
-        <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" class="logo-layout" />
+    
+
+
+
+    <mat-tab-group [selectedIndex]="selectedIndex" >
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class=""><span class="material-icons-two-tone">
+            verified
+            </span></mat-icon>
+            Required
+        </ng-template>
+        <div>
+        <mat-form-field class="asthetic-adds">
+          <input
+            matInput
+            placeholder="@mail.utoronto.ca"
+            [formControl]="email"
+            pattern="^@mail.utoronto.ca"
+          />
+          <button
+            mat-button
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            type="button"
+            (click)="clearEmail()"
+          >
+            <mat-icon class="asthetic-adds">close</mat-icon>
+          </button>
+        </mat-form-field>
       </div>
-      <!-- Username Text Input -->
-      <div class="column">
-        <div class="left-inputs">
-          <div class="username-layout">
-            <mat-form-field class="asthetic-adds">
-              <input
-                matInput
-                type="text"
-                formControlName="username"
-                placeholder="Username"
-                required
-                autocomplete="on"
-              />
+      <div>
+      <mat-form-field class="asthetic-adds">
+        <input
+          matInput
+          type="text"
+          [formControl]="username"
+          placeholder="Username"
+          required
+          autocomplete="on"
+        />
 
-              <button
-                mat-button
-                matSuffix
-                mat-icon-button
-                aria-label="Clear"
-                type="button"
-                (click)="clearUsername()"
-              >
-                <mat-icon>close</mat-icon>
-              </button>
-            </mat-form-field>
-          </div>
-<!-- Email input with pattern="^.@mail.utoronto.ca" -->
-
-          <!-- //Text Field Password: -->
-          <div class="password-layout">
-            <mat-form-field class="asthetic-adds"
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          type="button"
+          (click)="clearUsername()"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+      </div>
+      <div><mat-form-field class="asthetic-adds">
+        <input
+          matInput
+          type="password"
+          placeholder="Repeat Password"
+          minlength="8"
+          required
+          [formControl]="password"
+          autocomplete="on"
+        />
+        <button
+          mat-button
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          type="button"
+          (click)="clearPassword()"
+        >
+          <mat-icon class="asthetic-adds">close</mat-icon>
+        </button>
+      </mat-form-field></div>
+      <div>
+      <mat-form-field class="asthetic-adds"
               ><mat-label>Password min 8 characters</mat-label>
               <input
                 matInput
@@ -43,7 +85,7 @@
                 placeholder="Password"
                 minlength="8"
                 required
-                formControlName="password"
+                [formControl]="rePassword"
                 autocomplete="on"
               />
               <button
@@ -59,29 +101,130 @@
               </button>
             </mat-form-field>
           </div>
+          <div class="accounts">
+            <mat-radio-group aria-label="Select an option">
+            <div class="private">
+              <div class="private-layout">
+                
+                  <mat-radio-button value="1">Private Account</mat-radio-button>
+                  <div class="tooltip">
+                    <span class="material-icons"> info </span>
+                    <span class="tooltiptext"
+                      >You choose to accept or decline members to your group and
+                      friend list. Non-friends aren’t able to like and
+                      comment on your posts.</span
+                    >
+                  </div>
+                
+              </div>
+            </div>
+
+            <div class="public">
+              <div class="public-layout">
+                <mat-radio-button value="2">Public Account</mat-radio-button>
+                <div class="tooltip">
+                  <span class="material-icons"> info </span>
+                  <span class="tooltiptext"
+                    >Members are automatically accepted to your group & friends
+                    list.</span
+                  >
+                </div>
+              </div>
+            </div>
+          </mat-radio-group>
+          </div>
+          <mat-form-field appearance="fill" class="asthetic-adds">
+            <mat-label>Gender</mat-label>
+            <mat-select [formControl]="genderChoice" required>
+              <mat-option *ngFor="let gender of genders" [value]="gender">
+                {{gender.name}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <div class="existing-account-layout">
+            <button
+              type="submit"
+              [disabled]="!signupForm.valid"
+              routerLink="/login"
+              mat-flat-button
+              class="existing-account-layout"
+            >
+              Next
+            </button>
+          </div>
+ <!-- Terms/Conditions text and button -->
+ <div>
+  <p class="center-text">By checking this box, 
+    you are agreeing to the</p><mat-checkbox required [formControl]="termsCheck"></mat-checkbox>
+</div>
+<div class="terms">
+  <button
+    mat-flat-button
+    routerLink="/terms"
+    class="existing-account-layout"
+  >
+    Terms & Conditions
+  </button>
+</div>
+
+
+      </mat-tab>
+    
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class=""><span class="material-icons-two-tone">
+            badge
+            </span></mat-icon>
+          Personalize
+        </ng-template>
+        Content 2
+      </mat-tab>
+    
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class=""><span class="material-icons-two-tone">
+            school
+            </span></mat-icon>
+          Academic
+        </ng-template>
+    
+        Content 3
+      </mat-tab>
+    </mat-tab-group>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- main logo -->
+      <div class="logo-layout">
+        <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" class="logo-layout" />
+      </div>
+      <!-- Username Text Input -->
+      <div class="column">
+        <div class="left-inputs">
+          <div class="username-layout">
+          
+          </div>
+<!-- Email input with pattern="^.@mail.utoronto.ca" -->
+
+          <!-- //Text Field Password: -->
+          <div class="password-layout">
+            
+          </div>
           <!-- Text Field Repeat Password: -->
           <div class="password-layout">
-            <mat-form-field class="asthetic-adds">
-              <input
-                matInput
-                type="password"
-                placeholder="Repeat Password"
-                minlength="8"
-                required
-                formControlName="password"
-                autocomplete="on"
-              />
-              <button
-                mat-button
-                matSuffix
-                mat-icon-button
-                aria-label="Clear"
-                type="button"
-                (click)="clearPassword()"
-              >
-                <mat-icon class="asthetic-adds">close</mat-icon>
-              </button>
-            </mat-form-field>
+            
           </div>
           <!-- Text Field Major/Minor -->
           <div class="major-layout">
@@ -131,51 +274,11 @@
 <!-- Sign Up Button  -->
 <div class="middle-column">
   <div class="email-layout">
-  <mat-form-field class="asthetic-adds">
-    <input
-      matInput
-      placeholder="@mail.utoronto.ca"
-      formControlName="mail"
-      pattern="^@mail.utoronto.ca"
-    />
-    <button
-      mat-button
-      matSuffix
-      mat-icon-button
-      aria-label="Clear"
-      type="button"
-      (click)="clearEmail()"
-    >
-      <mat-icon class="asthetic-adds">close</mat-icon>
-    </button>
-  </mat-form-field>
+  
   </div>
 
-        <div class="existing-account-layout">
-          <button
-            type="submit"
-            [disabled]="!signupForm.valid"
-            routerLink="/login"
-            mat-flat-button
-            class="existing-account-layout"
-          >
-            Sign Up
-          </button>
-        </div>
-        <!-- Terms/Conditions text and button -->
-        <div>
-          <p class="center-text">By Signing Up, 
-            you are agreeing to the</p>
-        </div>
-        <div class="terms">
-          <button
-            mat-flat-button
-            routerLink="/terms"
-            class="existing-account-layout"
-          >
-            Terms & Conditions
-          </button>
-        </div>
+        
+       
         <!-- I have an existing account Button  -->
         <div class="existed-centered">
           <button
@@ -190,36 +293,7 @@
         <!-- Private or Public account 
         swtiches with info icon to hover over to display text-->
         <div class="right-inputs">
-          <div class="accounts">
-            <div class="private">
-              <div class="private-layout">
-                <mat-radio-group aria-label="Select an option">
-                  <mat-radio-button value="">Private Account</mat-radio-button>
-                  <div class="tooltip">
-                    <span class="material-icons"> info </span>
-                    <span class="tooltiptext"
-                      >You choose to accept or decline members to your group and
-                      friend list. Non-friends aren’t able to like and
-                      comment on your posts.</span
-                    >
-                  </div>
-                </mat-radio-group>
-              </div>
-            </div>
-
-            <div class="public">
-              <div class="public-layout">
-                <mat-radio-button value="">Public Account</mat-radio-button>
-                <div class="tooltip">
-                  <span class="material-icons"> info </span>
-                  <span class="tooltiptext"
-                    >Members are automatically accepted to your group & friends
-                    list.</span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
+         
           <!-- Full Name Textfield -->
           <div class="fullname-layout">
             <mat-form-field class="asthetic-adds">
@@ -253,52 +327,11 @@
     <mat-datepicker #dp></mat-datepicker>
   </mat-form-field>
 
-          <!-- Text FieldGender: -->
-          <div class="gender-layout">
-            <mat-form-field class="asthetic-adds">
-              <input
-                matInput
-                placeholder="Gender"
-                formControlName="gender"
-                autocomplete="on"
-              />
-              <button
-                mat-button
-                matSuffix
-                mat-icon-button
-                aria-label="Clear"
-                type="button"
-                (click)="clearGender()"
-              >
-                <mat-icon class="asthetic-adds">close</mat-icon>
-              </button>
-            </mat-form-field>
-          </div>
-          <!-- Text FieldRelationship: -->
-          <div class="text-layout">
-            <mat-form-field class="asthetic-adds">
-              <input
-                matInput
-                placeholder="Relationship Status"
-                formControlName="relationship"
-                required
-                autocomplete="on"
-              />
-              <button
-                mat-button
-                matSuffix
-                mat-icon-button
-                aria-label="Clear"
-                type="button"
-                (click)="clearRelationship()"
-              >
-                <mat-icon class="asthetic-adds">close</mat-icon>
-              </button>
-            </mat-form-field>
-          </div>
+         
+          
         </div>
       </div>
       
-    </body>
+    
   </div>
 </form>

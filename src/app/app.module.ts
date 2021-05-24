@@ -45,6 +45,10 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { GroupChatsComponent } from './group-chats/group-chats.component';
 import { MainPagesComponent } from './main-pages/main-pages.component';
 import { SignupComponent } from './signup/signup.component';
+
+import { TermsPopUpComponent } from './signup/signup.component';
+
+
 import { HomePageComponent } from './home-page/home-page.component';
 import { FriendsActivityComponent } from './friends-activity/friends-activity.component';
 import { PostPageComponent } from './post-page/post-page.component';
@@ -95,7 +99,7 @@ import { UpcomingEComponent} from './search/search.component';
     SchoolWComponent,
     SpiritualityComponent,
     UpcomingEComponent,
-   
+    TermsPopUpComponent,
   ],
   imports: [
     BrowserModule,
