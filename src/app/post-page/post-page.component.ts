@@ -17,7 +17,7 @@ import {MatAutocompleteSelectedEvent, MatAutocomplete} from '@angular/material/a
 import {MatChipInputEvent} from '@angular/material/chips';
 import {Observable} from 'rxjs';
 import {map } from 'rxjs/operators';
-import {MatChipsModule} from '@angular/material/chips';
+
 
 
 const moment = _rollupMoment || _moment;
