@@ -9,8 +9,14 @@ import {MatAutocompleteSelectedEvent, MatAutocomplete} from '@angular/material/a
 import {MatChipInputEvent} from '@angular/material/chips';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {Observable} from 'rxjs';
-import {map, startWith} from 'rxjs/operators';
+import {map} from 'rxjs/operators';
 
+
+
+
+interface Gender {
+  name: string;
+}
 const moment = _rollupMoment || _moment;
 export const MY_FORMATS = {
   parse: {
@@ -125,28 +131,35 @@ classes: string[] = [];
 @ViewChild('codeInput') codeInput: ElementRef<HTMLInputElement>;
 @ViewChild('auto') matAutocomplete: MatAutocomplete;
 
+selectedIndex = 0;
+genders: Gender[] = [
+{name: 'Female'},
+{name: 'Male'},
+{name: 'Other'},
+{name: 'Perfer Not To Answer'},
+];
+
 
   MatIconModule: any;
 
   username: FormControl = new FormControl('');
   password: FormControl = new FormControl('');
+  rePassword: FormControl = new FormControl('');
   major: FormControl = new FormControl('');
   sport: FormControl = new FormControl('');
   name: FormControl = new FormControl('');
   birthday: FormControl = new FormControl('');
-  gender: FormControl = new FormControl('');
-  relationship: FormControl = new FormControl('');
+  genderChoice: FormControl = new FormControl('');
   email: FormControl = new FormControl('');
+  termsCheck: FormControl = new FormControl('');
 
   signupForm = new FormGroup({
     username: this.username,
     password: this.password,
-    major: this.major,
-    sport: this.sport,
-    name: this.name,
-    gender: this.gender,
-    relationship: this.relationship,
+    rePassword: this.rePassword,
+    genderChoice: this.genderChoice,
     email: this.email,
+    termsCheck: this.termsCheck,
   });
 
   date = new FormControl(moment());
@@ -196,7 +209,9 @@ classes: string[] = [];
 
 
 
-
+  openDialog(): void {
+    this.dialog.open(TermsPopUpComponent);
+  }
   clearUsername(): void {
     this.username.setValue('');
   }
@@ -217,13 +232,7 @@ classes: string[] = [];
     this.name.setValue('');
   }
 
-  clearGender(): void {
-    this.gender.setValue('');
-  }
 
-  clearRelationship(): void {
-    this.relationship.setValue('');
-  }
 clearEmail(): void {
   this.email.setValue('');
 }
@@ -234,7 +243,10 @@ clearEmail(): void {
   }
   ngOnInit(): void {}
 
-
-
 }
-
+@Component({
+  selector: 'app-terms-page',
+  templateUrl: './terms-popup.component.html',
+  styleUrls: ['./terms-popup.component.scss'],
+})
+export class TermsPopUpComponent{}
