@@ -5,7 +5,9 @@
 
 
     <mat-tab-group [selectedIndex]="selectedIndex" >
+      
       <mat-tab>
+        <form [formGroup]="requiredForm" >
         <ng-template mat-tab-label>
           <mat-icon class=""><span class="material-icons-two-tone">
             verified
@@ -102,7 +104,7 @@
             </mat-form-field>
           </div>
           <div class="accounts">
-            <mat-radio-group aria-label="Select an option">
+            <mat-radio-group aria-label="Select an option" [formControl]="accountType">
             <div class="private">
               <div class="private-layout">
                 
@@ -142,17 +144,7 @@
             </mat-select>
           </mat-form-field>
 
-          <div class="existing-account-layout">
-            <button
-              type="submit"
-              [disabled]="!signupForm.valid"
-              routerLink="/login"
-              mat-flat-button
-              class="existing-account-layout"
-            >
-              Next
-            </button>
-          </div>
+          
  <!-- Terms/Conditions text and button -->
  <div>
   <p class="center-text">By checking this box, 
@@ -162,6 +154,19 @@
       Terms & Conditions
     </button><mat-checkbox required [formControl]="termsCheck"></mat-checkbox>
 </div>
+<div class="existing-account-layout">
+  <button
+    type="submit"
+    [disabled]="!requiredForm.valid"
+    routerLink="/login"
+    mat-flat-button
+    class="existing-account-layout"
+    (ngSubmit)="onSubmitPartOne()"
+  >
+    Next
+  </button>
+</div>
+</form>
       </mat-tab>
     
       <mat-tab>
@@ -171,7 +176,7 @@
             </span></mat-icon>
           Personalize
         </ng-template>
-        Content 2
+        <div> <input #fileInputs class="upload"  type="file" onchange="onFileSelected" (click)="this.profilePic=null" [formControl]="profilePic" multiple ></div>
       </mat-tab>
     
       <mat-tab>

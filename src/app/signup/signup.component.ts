@@ -145,12 +145,16 @@ genders: Gender[] = [
   password: FormControl = new FormControl('');
   rePassword: FormControl = new FormControl('');
   major: FormControl = new FormControl('');
+  minor: FormControl = new FormControl('');
   sport: FormControl = new FormControl('');
+  club: FormControl = new FormControl('');
   name: FormControl = new FormControl('');
   birthday: FormControl = new FormControl('');
   genderChoice: FormControl = new FormControl('');
   email: FormControl = new FormControl('');
   termsCheck: FormControl = new FormControl('');
+  profilePic: FormControl = new FormControl('');
+  accountType: FormControl = new FormControl('');
 
   signupForm = new FormGroup({
     username: this.username,
@@ -159,6 +163,22 @@ genders: Gender[] = [
     genderChoice: this.genderChoice,
     email: this.email,
     termsCheck: this.termsCheck,
+    accountType: this.accountType,
+    profilePic: this.profilePic,
+    birthday: this.birthday,
+    name: this.name,
+    sport: this.sport,
+    club: this.club,
+    major: this.major,
+    minor: this.minor,
+  });
+  requiredForm = new FormGroup({
+    email: this.email,
+    username: this.username,
+    password: this.password,
+    rePassword: this.rePassword,
+    genderChoice: this.genderChoice,
+    accountType: this.accountType,
   });
 
   date = new FormControl(moment());
@@ -239,6 +259,10 @@ clearEmail(): void {
   onSubmit(): void {
     // TODO: wire up to login request
     console.log(this.signupForm.value);
+  }
+  onSubmitPartOne(): void {
+    // TODO: wire up to login request
+    console.log(this.requiredForm.value);
   }
   ngOnInit(): void {}
 
