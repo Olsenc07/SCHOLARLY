@@ -57,27 +57,7 @@
         </button>
       </mat-form-field>
       </div>
-      <div><mat-form-field class="asthetic-adds">
-        <input
-          matInput
-          type="password"
-          placeholder="Repeat Password"
-          minlength="8"
-          required
-          [formControl]="password"
-          autocomplete="on"
-        />
-        <button
-          mat-button
-          matSuffix
-          mat-icon-button
-          aria-label="Clear"
-          type="button"
-          (click)="clearPassword()"
-        >
-          <mat-icon class="asthetic-adds">close</mat-icon>
-        </button>
-      </mat-form-field></div>
+     
       <div>
       <mat-form-field class="asthetic-adds"
               ><mat-label>Password min 8 characters</mat-label>
@@ -103,6 +83,27 @@
               </button>
             </mat-form-field>
           </div>
+          <div><mat-form-field class="asthetic-adds">
+            <input
+              matInput
+              type="password"
+              placeholder="Repeat Password"
+              minlength="8"
+              required
+              [formControl]="password"
+              autocomplete="on"
+            />
+            <button
+              mat-button
+              matSuffix
+              mat-icon-button
+              aria-label="Clear"
+              type="button"
+              (click)="clearPassword()"
+            >
+              <mat-icon class="asthetic-adds">close</mat-icon>
+            </button>
+          </mat-form-field></div>
           <div class="accounts">
             <mat-radio-group aria-label="Select an option" [formControl]="accountType">
             <div class="private">
