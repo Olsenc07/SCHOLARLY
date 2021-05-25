@@ -37,7 +37,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 
 import { routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TermsComponent } from './terms/terms.component';
 import { SearchComponent } from './search/search.component';
 import { RetrievePasswordComponent } from './retrieve-password/retrieve-password.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -45,7 +44,6 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { GroupChatsComponent } from './group-chats/group-chats.component';
 import { MainPagesComponent } from './main-pages/main-pages.component';
 import { SignupComponent } from './signup/signup.component';
-
 import { TermsPopUpComponent } from './signup/signup.component';
 
 
@@ -73,7 +71,6 @@ import { UpcomingEComponent} from './search/search.component';
   declarations: [
     AppComponent,
     routingComponents,
-    TermsComponent,
     RetrievePasswordComponent,
     ProfileComponent,
     EditProfileComponent,

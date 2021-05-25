@@ -1,6 +1,5 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-
 import {MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS} from '@angular/material-moment-adapter';
 import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
 import * as _moment from 'moment';
@@ -10,7 +9,7 @@ import {MatChipInputEvent} from '@angular/material/chips';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
-
+import {MatDialog} from '@angular/material/dialog';
 
 
 
@@ -169,7 +168,7 @@ genders: Gender[] = [
       return Math.round(value / 1 ) + '+' ;
     }
   }
-  constructor() {
+  constructor(public dialog: MatDialog) {
     this.filteredCodes = this.courseCodeCtrl.valueChanges.pipe(
       map((code: string | null) => code ? this._filter(code) : this.allClases.slice()));
   }
