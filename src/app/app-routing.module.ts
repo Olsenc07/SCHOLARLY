@@ -11,7 +11,6 @@ import { ProfileComponent } from './profile/profile.component';
 import { RetrievePasswordComponent } from './retrieve-password/retrieve-password.component';
 import { SearchComponent } from './search/search.component';
 import { SignupComponent } from './signup/signup.component';
-import { TermsComponent } from './terms/terms.component';
 import { MainPagesComponent } from './main-pages/main-pages.component';
 
 
@@ -21,7 +20,6 @@ import { MainPagesComponent } from './main-pages/main-pages.component';
 export const routingComponents = [
   HomePageComponent,
   SignupComponent,
-  TermsComponent,
   PostPageComponent,
   ProfileComponent,
   EditProfileComponent,
@@ -30,7 +28,6 @@ export const routingComponents = [
 const routes: Routes = [
   { path: 'login', component: HomePageComponent },
   { path: 'sign-up', component: SignupComponent },
-  { path: 'terms', component: TermsComponent },
   { path: 'post-page', component: PostPageComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'retrieve-password', component: RetrievePasswordComponent },
