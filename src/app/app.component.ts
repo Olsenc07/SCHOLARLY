@@ -26,6 +26,8 @@ export class AppComponent implements OnInit {
 
   isProfileScreen$: Observable<boolean>;
 
+  isSignUpScreen$: Observable<boolean>;
+
   searchBox: Element;
 
   search: FormControl = new FormControl('');
@@ -67,7 +69,10 @@ export class AppComponent implements OnInit {
       map((event: NavigationEnd) => event.url === '/' || event.url === '/profile')
     );
 
-
+    this.isSignUpScreen$ = this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd),
+      map((event: NavigationEnd) => event.url === '/' || event.url === '/sign-up')
+    );
 
   }
 

@@ -149,12 +149,14 @@ genders: Gender[] = [
   sport: FormControl = new FormControl('');
   club: FormControl = new FormControl('');
   name: FormControl = new FormControl('');
+  pronouns: FormControl = new FormControl('');
   birthday: FormControl = new FormControl('');
   genderChoice: FormControl = new FormControl('');
   email: FormControl = new FormControl('');
   termsCheck: FormControl = new FormControl('');
   profilePic: FormControl = new FormControl('');
   accountType: FormControl = new FormControl('');
+features: FormControl = new FormControl('');
 
   signupForm = new FormGroup({
     username: this.username,
@@ -171,6 +173,8 @@ genders: Gender[] = [
     club: this.club,
     major: this.major,
     minor: this.minor,
+    pronouns: this.pronouns,
+    features: this.features,
   });
   requiredForm = new FormGroup({
     email: this.email,
@@ -242,9 +246,15 @@ genders: Gender[] = [
   clearMajor(): void {
     this.major.setValue('');
   }
+  clearMinor(): void {
+    this.minor.setValue('');
+  }
 
   clearSport(): void {
     this.sport.setValue('');
+  }
+  clearClub(): void {
+    this.club.setValue('');
   }
 
   clearName(): void {
