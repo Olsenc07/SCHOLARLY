@@ -329,13 +329,13 @@
       *ngFor="let course of classes"
       [selectable]="selectable"
       [removable]="removable"
-      (removed)="remove(course)">
+      (removed)="removeP(course)">
       {{course}}
       <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
     </mat-chip>
     <input
       placeholder="Choose completed courses"
-      #codeInput
+      #codeInputP
       [formControl]="courseCodeCtrl"
       [matAutocomplete]="auto"
       [matChipInputFor]="chipList"
@@ -351,7 +351,33 @@
 
 
 
-
+<!-- Pursuing Courses -->
+<mat-form-field class="example-chip-list">
+  <mat-label>Pursuing Courses</mat-label>
+  <mat-chip-list #chipListP aria-label="Fruit selection">
+    <mat-chip
+      *ngFor="let courseP of classesP"
+      [selectable]="selectable"
+      [removable]="removable"
+      (removed)="remove(courseP)">
+      {{courseP}}
+      <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+    </mat-chip>
+    <input
+      placeholder="Choose completed courses"
+      #codeInputP
+      [formControl]="courseCodeCtrlP"
+      [matAutocomplete]="autoP"
+      [matChipInputFor]="chipListP"
+      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+      (matChipInputTokenEnd)="addP($event)">
+  </mat-chip-list>
+  <mat-autocomplete #autoP="matAutocomplete" (optionSelected)="selectedP($event)">
+    <mat-option *ngFor="let courseP of filteredCodesP | async" [valueP]="courseP">
+      {{courseP}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
 
 
       </div>

@@ -86,7 +86,6 @@ enum BooleanOptions {
 export class PostPageComponent implements OnInit {
   selectedIndex = 0;
 
-
   visible = true;
   selectable = true;
   removable = true;
