@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChild, Input } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, Input, NgModule } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import {MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS} from '@angular/material-moment-adapter';
 import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
@@ -10,6 +10,7 @@ import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {MatDialog} from '@angular/material/dialog';
+import { AppComponent } from '../app.component';
 
 
 
@@ -29,7 +30,12 @@ export const MY_FORMATS = {
     monthYearA11yLabel: 'MMMM YYYY',
   },
 };
-
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  bootstrap: [AppComponent]
+})
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -45,6 +51,8 @@ export const MY_FORMATS = {
 ]
 })
 export class SignupComponent implements OnInit {
+      // Doesn't read in harded coded list in app.component
+@Input(AppComponent) allClassesP: string[];
 // Every class code U Of T, use to create chip input which fills created and pursuing courses on profile page.
 allClasses: string[] = [
   'ABP100Y1', 'ABP101Y1', 'ABP102Y1', 'ABP103Y1', 'ABP104Y1', 'ABP105Y1', 'ABP106Y1', 'ABP107Y1', 'ABP108Y1', 'ABP109Y1', 'ACT199H1', 'ACT230H1', 'ACT240H1', 'ACT245H1', 'ACT247H1', 'ACT348H1', 'ACT349H1', 'ACT350H1', 'ACT370H1', 'ACT371H1', 'ACT372H1', 'ACT390H1', 'ACT391H1', 'ACT398H0', 'ACT398Y0', 'ACT451H1', 'ACT452H1', 'ACT455H1', 'ACT460H1', 'ACT466H1', 'ACT470H1', 'ACT471H1', 'ACT473H1', 'ACT475H1', 'ACT496H1', 'ACT497H1', 'ACT498Y1', 'ACT499Y1', 'AFR150Y1', 'AFR250Y1', 'AFR280Y1', 'AFR322H1', 'AFR351Y1', 'AFR352H1', 'AFR353H1', 'AFR354H1', 'AFR355H1', 'AFR357H1', 'AFR358H1', 'AFR359H1', 'AFR380Y1', 'AFR450Y1', 'AFR451H1', 'AFR453H1', 'AFR453Y1', 'AFR454H1', 'AFR455H1', 'AFR459H1', 'AMS200H1', 'AMS210H1', 'AMS300H1', 'AMS310H1', 'AMS311H1', 'AMS312H1', 'AMS313H1', 'AMS400H1', 'AMS401H1', 'AMS402H1', 'AMS403H1', 'AMS494H1', 'AMS495Y1', 'ANA300Y1', 'ANA301H1', 'ANA400H1', 'ANA411H1', 'ANA420H!', 'ANA496H1', 'ANA497H1', 'ANA498Y1', 'ANT100Y1',
@@ -122,9 +130,8 @@ allClasses: string[] = [
   'WGS376H1', 'WGS380H1', 'WGS381H1', 'WGS382H1', 'WGS382H1', 'WGS385H1', 'WGS386H1', 'WGS390H1', 'WGS396H1', 'WGS397H1', 'WGS420H1', 'WGS426H1', 'WGS434H1', 'WGS435H1', 'WGS440H1', 'WGS442H1', 'WGS450H1', 'WGS451H!', 'WGS451Y1', 'WGS460Y1', 'WGS461Y1', 'WGS462H1', 'WGS463H1', 'WGS465H1', 'WGS470Y1', 'WGS480H1', 'WGS481H1', 'WGS482H1', 'WRR103H1', 'WRR104H1', 'WRR201H1', 'WRR203H1', 'WRR204H1', 'WRR211H1', 'WRR300H1', 'WRR301H1', 'WRR302H1', 'WRR303H1', 'WRR304H1', 'WRR305H1', 'WRR308H1', 'WRR310H1', 'WRR311Y1', 'WRR312H1', 'WRR316H1', 'WRR405Y1', 'WRR406H1', 'WRR407H1', 'WRR408Y1', 'WRR409H1', 'WRR410H1', 'WRR413H1', 'WRR414H1'
     ];
 
-    
-    // Doesn't read in harded coded list in app.component
-@Input() allClassesP: string[];
+
+
 
 
 
