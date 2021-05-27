@@ -45,7 +45,7 @@ export const MY_FORMATS = {
 })
 export class SignupComponent implements OnInit {
 // Every class code U Of T, use to create chip input which fills created and pursuing courses on profile page.
-allClases: string[] = [
+allClasses: string[] = [
   'ABP100Y1', 'ABP101Y1', 'ABP102Y1', 'ABP103Y1', 'ABP104Y1', 'ABP105Y1', 'ABP106Y1', 'ABP107Y1', 'ABP108Y1', 'ABP109Y1', 'ACT199H1', 'ACT230H1', 'ACT240H1', 'ACT245H1', 'ACT247H1', 'ACT348H1', 'ACT349H1', 'ACT350H1', 'ACT370H1', 'ACT371H1', 'ACT372H1', 'ACT390H1', 'ACT391H1', 'ACT398H0', 'ACT398Y0', 'ACT451H1', 'ACT452H1', 'ACT455H1', 'ACT460H1', 'ACT466H1', 'ACT470H1', 'ACT471H1', 'ACT473H1', 'ACT475H1', 'ACT496H1', 'ACT497H1', 'ACT498Y1', 'ACT499Y1', 'AFR150Y1', 'AFR250Y1', 'AFR280Y1', 'AFR322H1', 'AFR351Y1', 'AFR352H1', 'AFR353H1', 'AFR354H1', 'AFR355H1', 'AFR357H1', 'AFR358H1', 'AFR359H1', 'AFR380Y1', 'AFR450Y1', 'AFR451H1', 'AFR453H1', 'AFR453Y1', 'AFR454H1', 'AFR455H1', 'AFR459H1', 'AMS200H1', 'AMS210H1', 'AMS300H1', 'AMS310H1', 'AMS311H1', 'AMS312H1', 'AMS313H1', 'AMS400H1', 'AMS401H1', 'AMS402H1', 'AMS403H1', 'AMS494H1', 'AMS495Y1', 'ANA300Y1', 'ANA301H1', 'ANA400H1', 'ANA411H1', 'ANA420H!', 'ANA496H1', 'ANA497H1', 'ANA498Y1', 'ANT100Y1',
   'ANT192H1', 'ANT193H1', 'ANT194H1', 'ANT195H1', 'ANT196H1', 'ANT197H1', 'ANT198H1', 'ANT199H1', 'ANT200Y1', 'ANT203Y1', 'ANT204H1', 'ANT205H1', 'ANT207H1', 'ANT208H1', 'ANT210H1', 'ANT253H1', 'ANT299Y1', 'ANT311Y0', 'ANT311Y1', 'ANT314H1', 'ANT315H1', 'ANT317H1', 'ANT318H1', 'ANT319Y1', 'ANT320H1', 'ANT322H1', 'ANT324H1', 'ANT327H1', 'ANT329H1', 'ANT330Y1', 'ANT333Y1', 'ANT334H1', 'ANT335Y1', 'ANT336H1', 'ANT337H1', 'ANT338H1', 'ANT340H1', 'ANT341H1', 'ANT343H1', 'ANT345H1', 'ANT346H1', 'ANT347H1', 'ANT348H1', 'ANT349H1', 'ANT356H1', 'ANT358H1', 'ANT362H1', 'ANT364H1', 'ANT366H1', 'ANT368H1', 'ANT370H1', 'ANT372H1', 'ANT374H1', 'ANT376H1', 'ANT378H1', 'ANT380H1', 'ANT384H1', 'ANT386H1', 'ANT390H1', 'ANT395Y0', 'ANT396Y0', 'ANT398H0', 'ANT398Y0', 'ANT399Y1', 'ANT406H1', 'ANT407H1', 'ANT409H1', 'ANT410H1', 'ANT411H1',
   'ANT412H1', 'ANT415Y1', 'ANT416H1', 'ANT419H1', 'ANT420H1', 'ANT425H1', 'ANT426H1', 'ANT430H1', 'ANT431H1', 'ANT434H1', 'ANT435H1', 'ANT436H1', 'ANT437H1', 'ANT438H1', 'ANT441H1', 'ANT450H1', 'ANT455H1', 'ANT456H1', 'ANT457H1', 'ANT458H1', 'ANT459H1', 'ANT460H1', 'ANT462H1', 'ANT472H1', 'ANT473H1', 'ANT474H1', 'ANT475H1', 'ANT476H1', 'ANT477H1', 'ANT480H1', 'ANT481H1', 'ANT483H1', 'ANT484H1', 'ANT485H1', 'ANT486H1', 'ANT490Y1', 'ANT491H1', 'ANT491Y1', 'ANT497Y1', 'ANT498H1', 'ANT499H1', 'APM236H1', 'APM306Y1', 'APM346H1', 'APM348H1', 'APM396H1', 'APM421H1', 'APM426H1', 'APM441H1', 'APM446H1', 'APM461H1', 'APM462H1', 'APM466H1', 'APM496H1', 'ARH305H1', 'ARH306Y1', 'ARH309H1', 'ARH312Y1', 'ARH360H1', 'ARH361H0', 'ARH361H1', 'ARH361Y0', 'ARH361Y1', 'ARH398H0', 'ARH398Y0', 'ARH482H1', 'ARH494H1', 'ARH495H1', 'AST101H1', 'AST121H1', 'AST198H1', 'AST199H1', 'AST201H1', 'AST210H1', 'AST221H1', 'AST222H1', 'AST251H1', 'AST299Y1', 'AST301H1', 'AST310H1',
@@ -194,7 +194,7 @@ features: FormControl = new FormControl('');
   }
   constructor(public dialog: MatDialog) {
     this.filteredCodes = this.courseCodeCtrl.valueChanges.pipe(
-      map((code: string | null) => code ? this._filter(code) : this.allClases.slice()));
+      map((course: string | null) => course ? this._filter(course) : this.allClasses.slice()));
   }
 
   add(event: MatChipInputEvent): void {
@@ -211,8 +211,8 @@ features: FormControl = new FormControl('');
     this.courseCodeCtrl.setValue(null);
   }
 
-  remove(code: string): void {
-    const index = this.classes.indexOf(code);
+  remove(course: string): void {
+    const index = this.classes.indexOf(course);
 
     if (index >= 0) {
       this.classes.splice(index, 1);
@@ -226,7 +226,7 @@ features: FormControl = new FormControl('');
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
 
-    return this.allClases.filter(code => code.toLowerCase().indexOf(filterValue) === 0);
+    return this.allClasses.filter(code => code.toLowerCase().indexOf(filterValue) === 0);
   }
 
 

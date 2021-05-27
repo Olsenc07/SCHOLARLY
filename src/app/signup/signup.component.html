@@ -321,6 +321,39 @@
             </button>
           </mat-form-field>
         </div>
+<!-- Completed Courses -->
+<mat-form-field class="example-chip-list">
+  <mat-label>Completed Courses</mat-label>
+  <mat-chip-list #chipList aria-label="Fruit selection">
+    <mat-chip
+      *ngFor="let course of classes"
+      [selectable]="selectable"
+      [removable]="removable"
+      (removed)="remove(course)">
+      {{course}}
+      <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+    </mat-chip>
+    <input
+      placeholder="Choose completed courses"
+      #codeInput
+      [formControl]="courseCodeCtrl"
+      [matAutocomplete]="auto"
+      [matChipInputFor]="chipList"
+      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+      (matChipInputTokenEnd)="add($event)">
+  </mat-chip-list>
+  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+    <mat-option *ngFor="let course of filteredCodes | async" [value]="course">
+      {{course}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
+
+
+
+
+
+
       </div>
       </mat-tab>
     </mat-tab-group>
