@@ -177,7 +177,59 @@
             </span></mat-icon>
           Personalize
         </ng-template>
+        <!-- Upload one profile pic -->
         <div> <input #fileInputs class="upload"  type="file" onchange="onFileSelected" (click)="this.profilePic=null" [formControl]="profilePic" multiple ></div>
+        <div class="fullname-layout">
+          <mat-form-field class="asthetic-adds">
+            <input
+              matInput
+              placeholder="Full Name"
+              [formControl]="name"
+            />
+            <button
+              mat-button
+              matSuffix
+              mat-icon-button
+              aria-label="Clear"
+              type="button"
+              (click)="clearName()"
+            >
+              <mat-icon class="asthetic-adds">close</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+        <div class="fullname-layout">
+          <mat-form-field class="asthetic-adds">
+            <input
+              matInput
+              placeholder="Prefered Pronouns"
+              [formControl]="pronouns"
+            />
+            <button
+              mat-button
+              matSuffix
+              mat-icon-button
+              aria-label="Clear"
+              type="button"
+              (click)="clearName()"
+            >
+              <mat-icon class="asthetic-adds">close</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+         <!-- Birthday Text -->
+         <p class="asthetic-adds">Birthday<i class="fas fa-birthday-cake"></i></p>
+
+         <!-- Birthday Date Picker -->
+ <mat-form-field appearance="fill" >
+   <mat-label>Choose a date:</mat-label>
+   <input matInput [matDatepicker]="dp" [formControl]="date">
+   <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+   <mat-datepicker #dp></mat-datepicker>
+ </mat-form-field>
+<div><textarea placeholder="Bio"></textarea></div>
+<!-- Ability to upload as many pics/ videos wanted, displasy in features one for each scroll -->
+<div> <input #fileInputs class="upload"  type="file" onchange="onFileSelected" (click)="this.features=null" [formControl]="features" multiple ></div>
       </mat-tab>
     
       <mat-tab>
@@ -188,7 +240,147 @@
           Academic
         </ng-template>
     
-        Content 3
+         <!-- Text Field Major/Minor -->
+         <div class="major-layout">
+          <mat-form-field class="asthetic-adds">
+            <input
+              matInput
+              placeholder="Major"
+              [formControl]="major"
+            />
+            <button
+              mat-button
+              matSuffix
+              mat-icon-button
+              aria-label="Clear"
+              type="button"
+              (click)="clearMajor()"
+            >
+              <mat-icon class="asthetic-adds">close</mat-icon>
+            </button>
+          </mat-form-field>
+              
+          <div class="major-layout">
+            <mat-form-field class="asthetic-adds">
+              <input
+                matInput
+                placeholder="Minor"
+                [formControl]="minor"
+                
+              />
+              <button
+                mat-button
+                matSuffix
+                mat-icon-button
+                aria-label="Clear"
+                type="button"
+                (click)="clearMinor()"
+              >
+                <mat-icon class="asthetic-adds">close</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+          
+        
+        <div class="sport-layout">
+          <mat-form-field class="asthetic-adds">
+            <input
+              matInput
+              placeholder="What sport do you play?"
+              [formControl]="sport"
+             
+            />
+            <button
+              mat-button
+              matSuffix
+              mat-icon-button
+              aria-label="Clear"
+              type="button"
+              (click)="clearSport()"
+            >
+              <mat-icon class="asthetic-adds">close</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+        <div class="sport-layout">
+          <mat-form-field class="asthetic-adds">
+            <input
+              matInput
+              placeholder="What club are you apart of? "
+              [formControl]="club"
+            />
+            <button
+              mat-button
+              matSuffix
+              mat-icon-button
+              aria-label="Clear"
+              type="button"
+              (click)="clearClub()"
+            >
+              <mat-icon class="asthetic-adds">close</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+<!-- Completed Courses -->
+<mat-form-field class="example-chip-list">
+  <mat-label>Completed Courses</mat-label>
+  <mat-chip-list #chipList aria-label="Fruit selection">
+    <mat-chip
+      *ngFor="let course of classes"
+      [selectable]="selectable"
+      [removable]="removable"
+      (removed)="removeP(course)">
+      {{course}}
+      <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+    </mat-chip>
+    <input
+      placeholder="Choose completed courses"
+      #codeInputP
+      [formControl]="courseCodeCtrl"
+      [matAutocomplete]="auto"
+      [matChipInputFor]="chipList"
+      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+      (matChipInputTokenEnd)="add($event)">
+  </mat-chip-list>
+  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+    <mat-option *ngFor="let course of filteredCodes | async" [value]="course">
+      {{course}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
+
+
+
+<!-- Pursuing Courses -->
+<mat-form-field class="example-chip-list">
+  <mat-label>Pursuing Courses</mat-label>
+  <mat-chip-list #chipListP aria-label="Fruit selection">
+    <mat-chip
+      *ngFor="let courseP of classesP"
+      [selectable]="selectable"
+      [removable]="removable"
+      (removed)="remove(courseP)">
+      {{courseP}}
+      <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+    </mat-chip>
+    <input
+      placeholder="Choose completed courses"
+      #codeInputP
+      [formControl]="courseCodeCtrlP"
+      [matAutocomplete]="autoP"
+      [matChipInputFor]="chipListP"
+      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+      (matChipInputTokenEnd)="addP($event)">
+  </mat-chip-list>
+  <mat-autocomplete #autoP="matAutocomplete" (optionSelected)="selectedP($event)">
+    <mat-option *ngFor="let courseP of filteredCodesP | async" [valueP]="courseP">
+      {{courseP}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
+
+
+      </div>
       </mat-tab>
     </mat-tab-group>
 
@@ -206,70 +398,8 @@
 
 
       <!-- main logo -->
-      <div class="logo-layout">
-        <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" class="logo-layout" />
-      </div>
-      <!-- Username Text Input -->
-      <div class="column">
-        <div class="left-inputs">
-          <div class="username-layout">
-          
-          </div>
-<!-- Email input with pattern="^.@mail.utoronto.ca" -->
-
-          <!-- //Text Field Password: -->
-          <div class="password-layout">
-            
-          </div>
-          <!-- Text Field Repeat Password: -->
-          <div class="password-layout">
-            
-          </div>
-          <!-- Text Field Major/Minor -->
-          <div class="major-layout">
-            <mat-form-field class="asthetic-adds">
-              <input
-                matInput
-                placeholder="Major/Minor"
-                formControlName="major"
-                required
-                autocomplete="on"
-              />
-              <button
-                mat-button
-                matSuffix
-                mat-icon-button
-                aria-label="Clear"
-                type="button"
-                (click)="clearMajor()"
-              >
-                <mat-icon class="asthetic-adds">close</mat-icon>
-              </button>
-            </mat-form-field>
-          </div>
-          <!-- Text Field Sport/Club: -->
-          <div class="sport-layout">
-            <mat-form-field class="asthetic-adds">
-              <input
-                matInput
-                placeholder="Sport/Club"
-                formControlName="sport"
-                required
-                autocomplete="on"
-              />
-              <button
-                mat-button
-                matSuffix
-                mat-icon-button
-                aria-label="Clear"
-                type="button"
-                (click)="clearSport()"
-              >
-                <mat-icon class="asthetic-adds">close</mat-icon>
-              </button>
-            </mat-form-field>
-          </div>
-        </div>
+      
+      
 <!-- Sign Up Button  -->
 <div class="middle-column">
   <div class="email-layout">
@@ -289,48 +419,9 @@
           </button>
         </div>
       </div>
-        <!-- Private or Public account 
-        swtiches with info icon to hover over to display text-->
-        <div class="right-inputs">
-         
-          <!-- Full Name Textfield -->
-          <div class="fullname-layout">
-            <mat-form-field class="asthetic-adds">
-              <input
-                matInput
-                placeholder="Full Name"
-                formControlName="name"
-                required
-                autocomplete="on"
-              />
-              <button
-                mat-button
-                matSuffix
-                mat-icon-button
-                aria-label="Clear"
-                type="button"
-                (click)="clearName()"
-              >
-                <mat-icon class="asthetic-adds">close</mat-icon>
-              </button>
-            </mat-form-field>
-          </div>
-          <!-- Birthday Text -->
-          <p class="asthetic-adds">Birthday:</p>
-
-          <!-- Birthday Date Picker -->
-  <mat-form-field appearance="fill" style="width: 208px;">
-    <mat-label>Choose a date:</mat-label>
-    <input matInput [matDatepicker]="dp" [formControl]="date">
-    <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
-    <mat-datepicker #dp></mat-datepicker>
-  </mat-form-field>
-
-         
-          
-        </div>
+      
       </div>
       
     
-  </div>
+  
 </form>

@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, Input, NgModule } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import {
   MomentDateAdapter,
@@ -10,17 +10,19 @@ import {
   MAT_DATE_LOCALE,
 } from '@angular/material/core';
 import * as _moment from 'moment';
-import { default as _rollupMoment } from 'moment';
-import {
-  MatAutocompleteSelectedEvent,
-  MatAutocomplete,
-} from '@angular/material/autocomplete';
-import { MatChipInputEvent } from '@angular/material/chips';
-import { COMMA, ENTER } from '@angular/cdk/keycodes';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { MatDialog } from '@angular/material/dialog';
+
+import { default as _rollupMoment} from 'moment';
+import {MatAutocompleteSelectedEvent, MatAutocomplete} from '@angular/material/autocomplete';
+import {MatChipInputEvent} from '@angular/material/chips';
+import {COMMA, ENTER} from '@angular/cdk/keycodes';
+import {Observable} from 'rxjs';
+import {map} from 'rxjs/operators';
+import {MatDialog} from '@angular/material/dialog';
+import { AppComponent } from '../app.component';
 import { ClassListService } from '../services/class.service';
+
+
+
 
 interface Gender {
   name: string;
@@ -37,7 +39,12 @@ export const MY_FORMATS = {
     monthYearA11yLabel: 'MMMM YYYY',
   },
 };
-
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  bootstrap: [AppComponent]
+})
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -53,42 +60,52 @@ export const MY_FORMATS = {
   ],
 })
 export class SignupComponent implements OnInit {
-  visible = true;
-  selectable = true;
-  removable = true;
-  separatorKeysCodes: number[] = [ENTER, COMMA];
-  courseCodeCtrl = new FormControl();
-  filteredCodes: Observable<string[]>;
-  classes: string[] = [];
-  @ViewChild('codeInput') codeInput: ElementRef<HTMLInputElement>;
-  @ViewChild('auto') matAutocomplete: MatAutocomplete;
 
-  selectedIndex = 0;
-  genders: Gender[] = [
-    { name: 'Female' },
-    { name: 'Male' },
-    { name: 'Other' },
-    { name: 'Perfer Not To Answer' },
-  ];
+visible = true;
+selectable = true;
+removable = true;
+separatorKeysCodes: number[] = [ENTER, COMMA];
+courseCodeCtrl = new FormControl();
+courseCodeCtrlP = new FormControl();
+filteredCodes: Observable<string[]>;
+filteredCodesP: Observable<string[]>;
+classes: string[] = [];
+classesP: string[] = [];
+@ViewChild('codeInput') codeInput: ElementRef<HTMLInputElement>;
+@ViewChild('codeInputP') codeInputP: ElementRef<HTMLInputElement>;
+@ViewChild('auto') matAutocomplete: MatAutocomplete;
+@ViewChild('autoP') matAutocompleteP: MatAutocomplete;
 
-  MatIconModule: any;
+selectedIndex = 0;
+genders: Gender[] = [
+{name: 'Female'},
+{name: 'Male'},
+{name: 'Other'},
+{name: 'Perfer Not To Answer'},
+];
 
-  username: FormControl = new FormControl('');
-  password: FormControl = new FormControl('');
-  rePassword: FormControl = new FormControl('');
-  major: FormControl = new FormControl('');
-  minor: FormControl = new FormControl('');
-  sport: FormControl = new FormControl('');
-  club: FormControl = new FormControl('');
-  name: FormControl = new FormControl('');
-  birthday: FormControl = new FormControl('');
-  genderChoice: FormControl = new FormControl('');
-  email: FormControl = new FormControl('');
-  termsCheck: FormControl = new FormControl('');
-  profilePic: FormControl = new FormControl('');
-  accountType: FormControl = new FormControl('');
 
-  signupForm = new FormGroup({
+ 
+MatIconModule: any;
+
+username: FormControl = new FormControl('');
+password: FormControl = new FormControl('');
+rePassword: FormControl = new FormControl('');
+major: FormControl = new FormControl('');
+minor: FormControl = new FormControl('');
+sport: FormControl = new FormControl('');
+club: FormControl = new FormControl('');
+name: FormControl = new FormControl('');
+pronouns: FormControl = new FormControl('');
+birthday: FormControl = new FormControl('');
+genderChoice: FormControl = new FormControl('');
+email: FormControl = new FormControl('');
+termsCheck: FormControl = new FormControl('');
+profilePic: FormControl = new FormControl('');
+accountType: FormControl = new FormControl('');
+features: FormControl = new FormControl('');
+
+signupForm = new FormGroup({
     username: this.username,
     password: this.password,
     rePassword: this.rePassword,
@@ -103,8 +120,10 @@ export class SignupComponent implements OnInit {
     club: this.club,
     major: this.major,
     minor: this.minor,
+    pronouns: this.pronouns,
+    features: this.features,
   });
-  requiredForm = new FormGroup({
+requiredForm = new FormGroup({
     email: this.email,
     username: this.username,
     password: this.password,
@@ -113,9 +132,10 @@ export class SignupComponent implements OnInit {
     accountType: this.accountType,
   });
 
-  date = new FormControl(moment());
 
-  constructor(
+date = new FormControl(moment());
+
+ constructor(
     public dialog: MatDialog,
     public classListService: ClassListService
   ) {
@@ -124,16 +144,21 @@ export class SignupComponent implements OnInit {
         code ? this._filter(code) : this.classListService.allClasses().slice()
       )
     );
+      this.filteredCodesP = this.courseCodeCtrlP.valueChanges.pipe(
+      map((code: string | null) =>
+        code ? this._filter(code) : this.classListService.allClasses().slice()
+      )
+    );
   }
 
   // tslint:disable-next-line: typedef
-  formatLabel(value: number) {
+formatLabel(value: number) {
     if (value >= 100) {
       return Math.round(value / 1) + '+';
     }
   }
 
-  add(event: MatChipInputEvent): void {
+add(event: MatChipInputEvent): void {
     const value = (event.value || '').trim();
 
     // Add our course code
@@ -146,15 +171,41 @@ export class SignupComponent implements OnInit {
 
     this.courseCodeCtrl.setValue(null);
   }
+// Pursuing Courses
+addP(event: MatChipInputEvent): void {
+  const valueP = (event.value || '').trim();
 
-  remove(code: string): void {
-    const index = this.classes.indexOf(code);
+  // Add our course code
+  if (valueP) {
+    this.classesP.push(valueP);
+  }
 
+  // Clear the input value
+  // event.chipInput!.clear();
+
+  this.courseCodeCtrlP.setValue(null);
+}
+
+
+
+remove(course: string): void {
+    const index = this.classes.indexOf(course);
     if (index >= 0) {
       this.classes.splice(index, 1);
     }
   }
-  selected(event: MatAutocompleteSelectedEvent): void {
+removeP(courseP: string): void {
+    const indexP = this.classesP.indexOf(courseP);
+
+
+    if (indexP >= 0) {
+      this.classesP.splice(indexP, 1);
+    }
+
+
+
+  }
+selected(event: MatAutocompleteSelectedEvent): void {
     this.classes.push(event.option.viewValue);
     this.codeInput.nativeElement.value = '';
     this.courseCodeCtrl.setValue(null);
@@ -162,31 +213,47 @@ export class SignupComponent implements OnInit {
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
 
-    return this.classListService
+
+   return this.classListService
       .allClasses()
       .filter((code) => code.toLowerCase().indexOf(filterValue) === 0);
   }
+// Pursuing Classes
+selectedP(event: MatAutocompleteSelectedEvent): void {
+    this.classesP.push(event.option.viewValue);
+    this.codeInputP.nativeElement.value = '';
+    this.courseCodeCtrlP.setValue(null);
 
-  openDialog(): void {
+  }
+  private _filterP(valueP: string): string[] {
+    const filterValue = valueP.toLowerCase();
+
+
     this.dialog.open(TermsPopUpComponent);
   }
-  clearUsername(): void {
+clearUsername(): void {
     this.username.setValue('');
   }
 
-  clearPassword(): void {
+clearPassword(): void {
     this.password.setValue('');
   }
 
-  clearMajor(): void {
+clearMajor(): void {
     this.major.setValue('');
   }
-
-  clearSport(): void {
-    this.sport.setValue('');
+clearMinor(): void {
+    this.minor.setValue('');
   }
 
-  clearName(): void {
+clearSport(): void {
+    this.sport.setValue('');
+  }
+clearClub(): void {
+    this.club.setValue('');
+  }
+
+clearName(): void {
     this.name.setValue('');
   }
 
@@ -194,15 +261,18 @@ export class SignupComponent implements OnInit {
     this.email.setValue('');
   }
 
-  onSubmit(): void {
+onSubmit(): void {
     // TODO: wire up to login request
     console.log(this.signupForm.value);
   }
-  onSubmitPartOne(): void {
+onSubmitPartOne(): void {
     // TODO: wire up to login request
     console.log(this.requiredForm.value);
   }
-  ngOnInit(): void {}
+
+ngOnInit(): void {}
+
+
 }
 
 @Component({
