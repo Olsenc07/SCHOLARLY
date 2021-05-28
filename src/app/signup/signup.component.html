@@ -147,13 +147,14 @@
 
           
  <!-- Terms/Conditions text and button -->
- <div>
+ <div class="btmText">
   <p class="center-text">By checking this box, 
-    you are agreeing to the</p><button
+    you are agreeing to the</p>
+    <div class="checkBox"><button
     mat-button (click)="openDialog()"
     >
       Terms & Conditions
-    </button><mat-checkbox required [formControl]="termsCheck"></mat-checkbox>
+    </button><mat-checkbox class="display" required [formControl]="termsCheck"></mat-checkbox></div>
 </div>
 <div class="existing-account-layout">
   <button
@@ -166,6 +167,19 @@
   >
     Next
   </button>
+ 
+</div>
+<!-- I have an existing account Button  -->
+<div class="existed-centered">
+  <button
+    mat-flat-button
+    routerLink="/login"
+    class="existing-account-layout"
+  >
+    I have an existing account
+  </button>
+
+
 </div>
 </form>
       </mat-tab>
@@ -230,6 +244,8 @@
 <div><textarea placeholder="Bio"></textarea></div>
 <!-- Ability to upload as many pics/ videos wanted, displasy in features one for each scroll -->
 <div> <input #fileInputs class="upload"  type="file" onchange="onFileSelected" (click)="this.features=null" [formControl]="features" multiple ></div>
+<button>Back</button>
+<button>Next</button>
       </mat-tab>
     
       <mat-tab>
@@ -381,45 +397,12 @@
 
 
       </div>
+      <button>Back</button>
+<button>Create</button>
       </mat-tab>
     </mat-tab-group>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <!-- main logo -->
-      
-      
-<!-- Sign Up Button  -->
-<div class="middle-column">
-  <div class="email-layout">
-  
-  </div>
-
-        
-       
-        <!-- I have an existing account Button  -->
-        <div class="existed-centered">
-          <button
-            mat-flat-button
-            routerLink="/login"
-            class="existing-account-layout"
-          >
-            I have an existing account
-          </button>
-        </div>
-      </div>
-      
+    
       </div>
       
     

@@ -7,11 +7,23 @@
   padding: 0px;
   overflow-x: hidden;
 }
-
+.btmText {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.checkBox {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
 .column {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+.display {
+  display: flex;
 }
 .left-inputs {
   display: flex;
@@ -49,7 +61,6 @@
   margin-bottom: 2%;
 }
 .fullname-layout {
-  margin-right: 10%;
   margin-bottom: 2%;
 }
 .gender-layout {
@@ -60,18 +71,11 @@
   margin-right: 10%;
   margin-bottom: 2%;
 }
-.middle-column {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0% 5% 0% 0%;
-}
 
 .center-text {
   display: flex;
   justify-content: center;
   overflow: visible;
-  margin-right: 15%;
   text-align: center;
 }
 .asthetic-adds {
@@ -104,10 +108,8 @@
 .existing-account-layout {
   display: flex;
   justify-content: center;
-  border-radius: 7%;
   color: #418bba;
   border-color: #707070;
-  margin-bottom: 5%;
 }
 .align-bottom {
   display: flex;
@@ -116,7 +118,8 @@
 .existed-centered {
   display: flex;
   justify-content: center;
-  width: fit-content;
+  width: 100%;
+  margin-top: 2%;
 }
 .accounts {
   display: flex;

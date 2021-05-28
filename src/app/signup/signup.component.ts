@@ -123,6 +123,7 @@ requiredForm = new FormGroup({
     rePassword: this.rePassword,
     genderChoice: this.genderChoice,
     accountType: this.accountType,
+    termsCheck: this.termsCheck,
   });
 
 
