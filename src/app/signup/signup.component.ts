@@ -181,42 +181,38 @@ addP(event: MatChipInputEvent): void {
 
 
 
-remove(course: string): void {
-    const index = this.classes.indexOf(course);
+remove(code: string): void {
+    const index = this.classes.indexOf(code);
     if (index >= 0) {
       this.classes.splice(index, 1);
     }
   }
-removeP(courseP: string): void {
-    const indexP = this.classesP.indexOf(courseP);
-
-
+removeP(codeP: string): void {
+    const indexP = this.classesP.indexOf(codeP);
     if (indexP >= 0) {
       this.classesP.splice(indexP, 1);
     }
-
-
-
   }
 selected(event: MatAutocompleteSelectedEvent): void {
     this.classes.push(event.option.viewValue);
     this.codeInput.nativeElement.value = '';
     this.courseCodeCtrl.setValue(null);
   }
+  // Pursuing Classes
+selectedP(event: MatAutocompleteSelectedEvent): void {
+  this.classesP.push(event.option.viewValue);
+  this.codeInputP.nativeElement.value = '';
+  this.courseCodeCtrlP.setValue(null);
+}
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
 
 
     return this.classListService
       .allClasses()
-      .filter((code) => code.toLowerCase().indexOf(filterValue) === 0);
+      .filter((code) => code.toLowerCase().indexOf(filterValue) === 0); 
   }
-// Pursuing Classes
-selectedP(event: MatAutocompleteSelectedEvent): void {
-    this.classesP.push(event.option.viewValue);
-    this.codeInputP.nativeElement.value = '';
-    this.courseCodeCtrlP.setValue(null);
-  }
+
 
 clearUsername(): void {
     this.username.setValue('');

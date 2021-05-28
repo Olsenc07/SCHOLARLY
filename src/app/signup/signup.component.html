@@ -4,7 +4,7 @@
 
 
 
-    <mat-tab-group [selectedIndex]="selectedIndex" >
+    <mat-tab-group [selectedIndex]="selectedIndex" mat-align-tabs="center" >
       
       <mat-tab>
         <form [formGroup]="requiredForm" >
@@ -326,11 +326,11 @@
   <mat-label>Completed Courses</mat-label>
   <mat-chip-list #chipList aria-label="Fruit selection">
     <mat-chip
-      *ngFor="let course of classes"
+      *ngFor="let code of classes"
       [selectable]="selectable"
       [removable]="removable"
-      (removed)="removeP(course)">
-      {{course}}
+      (removed)="remove(code)">
+      {{code}}
       <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
     </mat-chip>
     <input
@@ -343,8 +343,8 @@
       (matChipInputTokenEnd)="add($event)">
   </mat-chip-list>
   <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
-    <mat-option *ngFor="let course of filteredCodes | async" [value]="course">
-      {{course}}
+    <mat-option *ngFor="let code of filteredCodes | async" [value]="code">
+      {{code}}
     </mat-option>
   </mat-autocomplete>
 </mat-form-field>
@@ -356,11 +356,11 @@
   <mat-label>Pursuing Courses</mat-label>
   <mat-chip-list #chipListP aria-label="Fruit selection">
     <mat-chip
-      *ngFor="let courseP of classesP"
+      *ngFor="let codeP of classesP"
       [selectable]="selectable"
       [removable]="removable"
-      (removed)="remove(courseP)">
-      {{courseP}}
+      (removed)="removeP(codeP)">
+      {{codeP}}
       <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
     </mat-chip>
     <input
@@ -373,8 +373,8 @@
       (matChipInputTokenEnd)="addP($event)">
   </mat-chip-list>
   <mat-autocomplete #autoP="matAutocomplete" (optionSelected)="selectedP($event)">
-    <mat-option *ngFor="let courseP of filteredCodesP | async" [valueP]="courseP">
-      {{courseP}}
+    <mat-option *ngFor="let codeP of filteredCodesP | async" [valueP]="codeP">
+      {{codeP}}
     </mat-option>
   </mat-autocomplete>
 </mat-form-field>
