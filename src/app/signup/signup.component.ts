@@ -18,7 +18,6 @@ import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {MatDialog} from '@angular/material/dialog';
-import { AppComponent } from '../app.component';
 import { ClassListService } from '../services/class.service';
 
 
@@ -39,12 +38,7 @@ export const MY_FORMATS = {
     monthYearA11yLabel: 'MMMM YYYY',
   },
 };
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  bootstrap: [AppComponent]
-})
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -85,7 +79,6 @@ genders: Gender[] = [
 ];
 
 
- 
 MatIconModule: any;
 
 username: FormControl = new FormControl('');
@@ -144,7 +137,7 @@ date = new FormControl(moment());
         code ? this._filter(code) : this.classListService.allClasses().slice()
       )
     );
-      this.filteredCodesP = this.courseCodeCtrlP.valueChanges.pipe(
+    this.filteredCodesP = this.courseCodeCtrlP.valueChanges.pipe(
       map((code: string | null) =>
         code ? this._filter(code) : this.classListService.allClasses().slice()
       )
@@ -214,7 +207,7 @@ selected(event: MatAutocompleteSelectedEvent): void {
     const filterValue = value.toLowerCase();
 
 
-   return this.classListService
+    return this.classListService
       .allClasses()
       .filter((code) => code.toLowerCase().indexOf(filterValue) === 0);
   }
@@ -223,14 +216,8 @@ selectedP(event: MatAutocompleteSelectedEvent): void {
     this.classesP.push(event.option.viewValue);
     this.codeInputP.nativeElement.value = '';
     this.courseCodeCtrlP.setValue(null);
-
   }
-  private _filterP(valueP: string): string[] {
-    const filterValue = valueP.toLowerCase();
 
-
-    this.dialog.open(TermsPopUpComponent);
-  }
 clearUsername(): void {
     this.username.setValue('');
   }
