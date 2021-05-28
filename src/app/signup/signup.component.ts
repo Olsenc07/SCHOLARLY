@@ -180,7 +180,9 @@ addP(event: MatChipInputEvent): void {
 }
 
 
-
+openDialog(): void {
+  this.dialog.open(TermsPopUpComponent);
+}
 remove(code: string): void {
     const index = this.classes.indexOf(code);
     if (index >= 0) {
@@ -210,7 +212,7 @@ selectedP(event: MatAutocompleteSelectedEvent): void {
 
     return this.classListService
       .allClasses()
-      .filter((code) => code.toLowerCase().indexOf(filterValue) === 0); 
+      .filter((code) => code.toLowerCase().indexOf(filterValue) === 0);
   }
 
 
