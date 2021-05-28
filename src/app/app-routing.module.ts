@@ -13,10 +13,6 @@ import { SearchComponent } from './search/search.component';
 import { SignupComponent } from './signup/signup.component';
 import { MainPagesComponent } from './main-pages/main-pages.component';
 
-
-
-
-
 export const routingComponents = [
   HomePageComponent,
   SignupComponent,
