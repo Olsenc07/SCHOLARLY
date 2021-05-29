@@ -11,7 +11,7 @@
             </span></mat-icon>
             Required
         </ng-template>
-        <div class="email">
+        <div class="input">
           <span class="material-icons _icon">
             school
             </span>
@@ -35,7 +35,7 @@
         </mat-form-field>
       </div>
       
-      <div class="userName">
+      <div class="userIn">
         <span class="material-icons _icon">
           account_circle
           </span>
@@ -270,8 +270,13 @@
     
          <!-- Text Field Major/Minor -->
          <div class="major-layout">
-          <mat-form-field class="asthetic-adds">
+           <div class="input">
+          <span class="material-icons _icon">
+            looks_one
+            </span>
+          <mat-form-field >
             <input
+            class="major"
               matInput
               placeholder="Major"
               [formControl]="major"
@@ -287,32 +292,13 @@
               <mat-icon class="asthetic-adds">close</mat-icon>
             </button>
           </mat-form-field>
-              
-          <div class="major-layout">
-            <mat-form-field class="asthetic-adds">
-              <input
-                matInput
-                placeholder="Minor"
-                [formControl]="minor"
-                
-              />
-              <button
-                mat-button
-                matSuffix
-                mat-icon-button
-                aria-label="Clear"
-                type="button"
-                (click)="clearMinor()"
-              >
-                <mat-icon class="asthetic-adds">close</mat-icon>
-              </button>
-            </mat-form-field>
-          </div>
-          
-        
-        <div class="sport-layout">
-          <mat-form-field class="asthetic-adds">
-            <input
+        </div>
+        <div class="input"> 
+        <span class="material-icons _icon">
+          emoji_events
+          </span>
+          <mat-form-field >
+            <input 
               matInput
               placeholder="What sport do you play?"
               [formControl]="sport"
@@ -330,9 +316,42 @@
             </button>
           </mat-form-field>
         </div>
+          </div>
+          
+        
         <div class="sport-layout">
-          <mat-form-field class="asthetic-adds">
+          <div class="input">
+          <span class="material-icons _icon">
+            looks_two
+            </span>
+          <mat-form-field >
             <input
+            class="major"
+              matInput
+              placeholder="Minor"
+              [formControl]="minor"
+              
+            />
+            <button
+              mat-button
+              matSuffix
+              mat-icon-button
+              aria-label="Clear"
+              type="button"
+              (click)="clearMinor()"
+            >
+              <mat-icon class="asthetic-adds">close</mat-icon>
+            </button>
+          </mat-form-field>
+         
+        </div>
+            <div class="input">
+              <span class="material-icons _icon">
+              group
+              </span>
+          <mat-form-field >
+            <input
+            class="major"
               matInput
               placeholder="What club are you apart of? "
               [formControl]="club"
@@ -348,6 +367,7 @@
               <mat-icon class="asthetic-adds">close</mat-icon>
             </button>
           </mat-form-field>
+        </div>
         </div>
 <!-- Completed Courses -->
 <mat-form-field class="example-chip-list">
@@ -408,7 +428,7 @@
 </mat-form-field>
 
 
-      </div>
+      
       
       <div class="createBtn">
         <button mat-flat-button (click)="changeTab2()">Back</button>

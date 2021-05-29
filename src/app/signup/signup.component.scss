@@ -6,12 +6,16 @@
 .Accounts {
   display: flex;
   justify-content: space-around;
-  width: 100%;
+  width: 50%;
 }
 .accounts {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
+}
+.align-bottom {
+  display: flex;
+  justify-content: center;
 }
 .entire-page {
   display: flex;
@@ -67,13 +71,7 @@
 .display {
   display: flex;
 }
-.email {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  margin-top: 2%;
-  width: 100%;
-}
+
 .twoPassword {
   display: flex;
   margin: 2% 0%;
@@ -90,7 +88,7 @@
 @media (min-width: 1024px) {
   ::ng-deep mat-form-field {
     display: flex;
-    width: 30%;
+    width: 40%;
   }
 }
 @media (max-width: 1024px) {
@@ -105,23 +103,28 @@
   justify-content: center;
   margin: 0% 15% 0% 15%;
 }
-.username-layout {
+.input {
   display: flex;
-  flex-direction: column;
-  margin-bottom: 20%;
-}
-.password-layout {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20%;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 2%;
+  width: 100%;
 }
 .major-layout {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 2% 0%;
+}
+.major {
+  display: flex;
+  width: 100%;
 }
 .sport-layout {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  margin: 3% 0%;
+  justify-content: space-around;
 }
 .right-inputs {
   display: flex;
@@ -182,10 +185,7 @@
   color: #418bba;
   border-color: #707070;
 }
-.align-bottom {
-  display: flex;
-  justify-content: center;
-}
+
 .existed-centered {
   display: flex;
   justify-content: center;
@@ -199,16 +199,22 @@
   margin-right: 9%;
 }
 @media (min-width: 1024px) {
-  .userName {
+  .userIn {
+    display: flex;
+    margin: 2% 0%;
+    width: 100%;
+    justify-content: center;
+  }
+}
+@media (max-width: 1024px) {
+  .userIn {
     display: flex;
     margin: 2% 0%;
     width: 100%;
   }
 }
-@media (max-width: 1024px) {
-  .userName {
-    display: flex;
-    margin: 2% 0%;
-    width: 100%;
-  }
+.username-layout {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20%;
 }
