@@ -62,12 +62,10 @@
       </mat-form-field>
       </div>
      <div class="twoPassword">
-      <div class="row">
+      <div class="input">
         <span class="material-icons _icon">
           lock
           </span>
-          
-          
       <mat-form-field class="userName"
               ><mat-label>Password min 8 characters</mat-label>
               <input
@@ -92,7 +90,7 @@
               </button>
             </mat-form-field>
           </div>
-          <div class="row">
+          <div class="input">
             <span class="material-icons _icon">
               enhanced_encryption
               </span>
@@ -293,34 +291,8 @@
             </button>
           </mat-form-field>
         </div>
-        <div class="input"> 
-        <span class="material-icons _icon">
-          emoji_events
-          </span>
-          <mat-form-field >
-            <input 
-              matInput
-              placeholder="What sport do you play?"
-              [formControl]="sport"
-             
-            />
-            <button
-              mat-button
-              matSuffix
-              mat-icon-button
-              aria-label="Clear"
-              type="button"
-              (click)="clearSport()"
-            >
-              <mat-icon class="asthetic-adds">close</mat-icon>
-            </button>
-          </mat-form-field>
-        </div>
-          </div>
-          
         
-        <div class="sport-layout">
-          <div class="input">
+        <div class="input">
           <span class="material-icons _icon">
             looks_two
             </span>
@@ -345,6 +317,41 @@
           </mat-form-field>
          
         </div>
+
+       
+          </div>
+          
+        
+        <div class="sport-layout">
+         
+
+
+          <div class="input"> 
+            <span class="material-icons _icon">
+              emoji_events
+              </span>
+              <mat-form-field >
+                <input 
+                  matInput
+                  placeholder="What sport do you play?"
+                  [formControl]="sport"
+                 
+                />
+                <button
+                  mat-button
+                  matSuffix
+                  mat-icon-button
+                  aria-label="Clear"
+                  type="button"
+                  (click)="clearSport()"
+                >
+                  <mat-icon class="asthetic-adds">close</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
+
+
+
             <div class="input">
               <span class="material-icons _icon">
               group
@@ -370,6 +377,11 @@
         </div>
         </div>
 <!-- Completed Courses -->
+
+<div class="row">
+  <div class="courses">
+    <div class="input">
+  <i class="fas fa-check _icon"></i>
 <mat-form-field class="example-chip-list">
   <mat-label>Completed Courses</mat-label>
   <mat-chip-list #chipList aria-label="Fruit selection">
@@ -396,10 +408,15 @@
     </mat-option>
   </mat-autocomplete>
 </mat-form-field>
-
+</div>
+</div>
 
 
 <!-- Pursuing Courses -->
+<div class="courses">
+  <div class="input">
+<i class="fas fa-tasks _icon"></i>
+
 <mat-form-field class="example-chip-list">
   <mat-label>Pursuing Courses</mat-label>
   <mat-chip-list #chipListP aria-label="Fruit selection">
@@ -426,12 +443,14 @@
     </mat-option>
   </mat-autocomplete>
 </mat-form-field>
-
+</div>
+</div>
+</div>
 
       
       
       <div class="createBtn">
-        <button mat-flat-button (click)="changeTab2()">Back</button>
+        <button mat-flat-button class="cBtnB" (click)="changeTab2()">Back</button>
         <i class="fas fa-user-graduate cBtnI"></i>
 <button mat-raised-button class="cBtn"  (ngSubmit)="onSubmit()">Create</button>
 </div>
