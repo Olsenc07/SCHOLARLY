@@ -176,6 +176,7 @@
     mat-flat-button
     class="existing-account-layout"
     (ngSubmit)="onSubmitPartOne()"
+    (click)="changeTab()"
   >
     Next
   </button>
@@ -256,8 +257,8 @@
 <div><textarea placeholder="Bio"></textarea></div>
 <!-- Ability to upload as many pics/ videos wanted, displasy in features one for each scroll -->
 <div> <input #fileInputs class="upload"  type="file" onchange="onFileSelected" (click)="this.features=null" [formControl]="features" multiple ></div>
-<button>Back</button>
-<button>Next</button>
+<button (click)="changeTab1R()">Back</button>
+<button (click)="changeTab1()">Next</button>
       </mat-tab>
     
       <mat-tab>
@@ -409,8 +410,8 @@
 
 
       </div>
-      <button>Back</button>
-<button>Create</button>
+      <button (click)="changeTab2()">Back</button>
+<button (ngSubmit)="onSubmit()">Create</button>
       </mat-tab>
     </mat-tab-group>
 

@@ -54,7 +54,6 @@ export const MY_FORMATS = {
   ],
 })
 export class SignupComponent implements OnInit {
-
 visible = true;
 selectable = true;
 removable = true;
@@ -246,6 +245,20 @@ clearName(): void {
   clearEmail(): void {
     this.email.setValue('');
   }
+  changeTab(): void {
+    this.selectedIndex = this.selectedIndex === 0 ? 1 : 0;
+  }
+  changeTab1(): void {
+    this.selectedIndex = this.selectedIndex === 1 ? 2 : 1;
+  }
+  changeTab1R(): void {
+    this.selectedIndex = this.selectedIndex === 1 ? 0 : 1;
+  }
+  changeTab2(): void {
+    this.selectedIndex = this.selectedIndex === 2 ? 1 : 2;
+  }
+
+
 
 onSubmit(): void {
     // TODO: wire up to login request
