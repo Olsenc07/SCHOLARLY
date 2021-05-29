@@ -172,7 +172,6 @@
   <button
     type="submit"
     [disabled]="!requiredForm.valid"
-    routerLink="/login"
     mat-flat-button
     class="existing-account-layout"
     (ngSubmit)="onSubmitPartOne()"
@@ -410,8 +409,12 @@
 
 
       </div>
-      <button (click)="changeTab2()">Back</button>
-<button (ngSubmit)="onSubmit()">Create</button>
+      
+      <div class="createBtn">
+        <button mat-flat-button (click)="changeTab2()">Back</button>
+        <i class="fas fa-user-graduate cBtnI"></i>
+<button mat-raised-button class="cBtn"  (ngSubmit)="onSubmit()">Create</button>
+</div>
       </mat-tab>
     </mat-tab-group>
 

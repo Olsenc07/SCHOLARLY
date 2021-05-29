@@ -42,6 +42,28 @@
   flex-direction: row;
   justify-content: center;
 }
+.cBtn {
+  display: flex;
+  background-color: #418bba;
+  justify-content: center;
+  color: white;
+  flex-direction: column;
+  font-size: x-large;
+}
+.cBtnI {
+  display: flex;
+  color: #418bba;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: 1%;
+  font-size: x-large;
+}
+.createBtn {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  flex-direction: row;
+}
 .display {
   display: flex;
 }
