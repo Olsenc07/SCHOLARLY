@@ -32,6 +32,10 @@
   width: 100%;
   flex-direction: column;
 }
+.displayB {
+  display: flex;
+  justify-content: center;
+}
 @media (min-width: 1024px) {
   .display {
     display: flex;
@@ -55,6 +59,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin-bottom: 2%;
 }
 .center-text {
   display: flex;
