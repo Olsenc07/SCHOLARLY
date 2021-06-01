@@ -82,7 +82,6 @@ MatIconModule: any;
 
 username: FormControl = new FormControl('');
 password: FormControl = new FormControl('');
-rePassword: FormControl = new FormControl('');
 major: FormControl = new FormControl('');
 minor: FormControl = new FormControl('');
 sport: FormControl = new FormControl('');
@@ -100,7 +99,6 @@ features: FormControl = new FormControl('');
 signupForm = new FormGroup({
     username: this.username,
     password: this.password,
-    rePassword: this.rePassword,
     genderChoice: this.genderChoice,
     email: this.email,
     termsCheck: this.termsCheck,
@@ -119,7 +117,6 @@ requiredForm = new FormGroup({
     email: this.email,
     username: this.username,
     password: this.password,
-    rePassword: this.rePassword,
     genderChoice: this.genderChoice,
     accountType: this.accountType,
     termsCheck: this.termsCheck,

@@ -11,7 +11,7 @@
             </span></mat-icon>
             Required
         </ng-template>
-        <div class="input">
+        <div class="inputTop">
           <span class="material-icons _icon">
             school
             </span>
@@ -74,7 +74,7 @@
                 placeholder="Password"
                 minlength="8"
                 required
-                [formControl]="rePassword"
+                [formControl]="password"
                 autocomplete="on"
               />
               <button
@@ -90,31 +90,7 @@
               </button>
             </mat-form-field>
           </div>
-          <div class="input">
-            <span class="material-icons _icon">
-              enhanced_encryption
-              </span>
-            <mat-form-field class="userName">
-            <input
-              matInput
-              type="password"
-              placeholder="Repeat Password"
-              minlength="8"
-              required
-              [formControl]="password"
-              autocomplete="on"
-            />
-            <button
-              mat-button
-              matSuffix
-              mat-icon-button
-              aria-label="Clear"
-              type="button"
-              (click)="clearPassword()"
-            >
-              <mat-icon class="asthetic-adds">close</mat-icon>
-            </button>
-          </mat-form-field></div>
+        
         </div>
           <div class="accounts">
             <mat-radio-group aria-label="Select an option" [formControl]="accountType" class="Accounts">

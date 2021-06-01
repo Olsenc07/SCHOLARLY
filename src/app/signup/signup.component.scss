@@ -110,7 +110,6 @@
 
 .twoPassword {
   display: flex;
-  margin: 2% 0%;
   width: 100%;
   flex-direction: column;
 }
@@ -148,6 +147,13 @@
   margin: 0% 15% 0% 15%;
 }
 .input {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 2%;
+}
+.inputTop {
   display: flex;
   justify-content: center;
   flex-direction: row;
