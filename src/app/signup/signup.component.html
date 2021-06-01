@@ -170,7 +170,7 @@
 </form>
       </mat-tab>
     
-      <mat-tab>
+      <mat-tab class="sndPage">
         <ng-template mat-tab-label>
           <mat-icon class=""><span class="material-icons-two-tone">
             badge
@@ -179,23 +179,27 @@
         </ng-template>
         <!-- Upload one profile pic -->
         <div> <input #fileInputs class="upload"  type="file" (change)="onFileChange($event)" (click)="this.profilePic=null" [formControl]="profilePic" multiple ></div>
-        <div>
+        <div class="pics">
+        <div class="pP">
           <image-cropper 
           [imageChangedEvent]="imgChangeEvt" 
           [maintainAspectRatio]="true" 
-          [aspectRatio]="4 / 4"
+          [aspectRatio]=" 1 / 1"
           [resizeToWidth]="256" 
           format="png" 
           (imageCropped)="cropImg($event)" 
           (imageLoaded)="imgLoad()"
           (cropperReady)="initCropper()" 
           (loadImageFailed)="imgFailed()">
+          
         </image-cropper>
         </div>
-        <div class="col-md-4">
+        <div class="previewPic">
           <h6>Image Preview</h6>
           <img [src]="cropImgPreview" />
         </div>
+      </div>
+        
         <div class="input">
           <i class="far fa-address-card _icon"></i>
           <mat-form-field>

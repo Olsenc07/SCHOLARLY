@@ -182,6 +182,22 @@
   display: flex;
   width: 100%;
 }
+.previewPic {
+  border-radius: 50%;
+}
+.pP {
+  display: flex;
+  height: 50%;
+  width: 100%;
+  justify-content: center;
+}
+.pics {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 .sport-layout {
   display: flex;
   flex-direction: column;
@@ -285,4 +301,9 @@
   display: flex;
   flex-direction: column;
   margin-bottom: 20%;
+}
+.sndPage {
+  display: flex;
+  width: 100%;
+  height: 100%;
 }
