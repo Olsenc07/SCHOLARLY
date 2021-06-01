@@ -19,6 +19,7 @@ import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {MatDialog} from '@angular/material/dialog';
 import { ClassListService } from '../services/class.service';
+import { ImageCroppedEvent } from 'ngx-image-cropper';
 
 
 
@@ -54,6 +55,7 @@ export const MY_FORMATS = {
   ],
 })
 export class SignupComponent implements OnInit {
+
 visible = true;
 selectable = true;
 removable = true;
@@ -124,6 +126,27 @@ requiredForm = new FormGroup({
 
 
 date = new FormControl(moment());
+
+imgChangeEvt: any = '';
+    cropImgPreview: any = '';
+
+    onFileChange(event: any): void {
+        this.imgChangeEvt = event;
+    }
+    cropImg(e: ImageCroppedEvent): void {
+        this.cropImgPreview = e.base64;
+    }
+
+    imgLoad(): void {
+      // display cropper tool
+  }
+
+  initCropper(): void {
+      // init cropper
+  }
+  imgFailed(): void {
+      // error msg
+  }
 
  constructor(
     public dialog: MatDialog,

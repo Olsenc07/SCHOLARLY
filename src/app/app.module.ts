@@ -32,6 +32,7 @@ import {MatChipsModule} from '@angular/material/chips';
 import {MatTreeModule} from '@angular/material/tree';
 import { MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { ImageCropperModule } from 'ngx-image-cropper';
 
 
 
@@ -66,6 +67,7 @@ import { QuestionsComponent} from './search/search.component';
 import { SchoolWComponent} from './search/search.component';
 import { SpiritualityComponent} from './search/search.component';
 import { UpcomingEComponent} from './search/search.component';
+
 
 
 @NgModule({
@@ -133,6 +135,7 @@ import { UpcomingEComponent} from './search/search.component';
     MatTreeModule,
     MatAutocompleteModule,
     MatFormFieldModule,
+    ImageCropperModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 

@@ -178,7 +178,24 @@
           Personalize
         </ng-template>
         <!-- Upload one profile pic -->
-        <div> <input #fileInputs class="upload"  type="file" onchange="onFileSelected" (click)="this.profilePic=null" [formControl]="profilePic" multiple ></div>
+        <div> <input #fileInputs class="upload"  type="file" (change)="onFileChange($event)" (click)="this.profilePic=null" [formControl]="profilePic" multiple ></div>
+        <div>
+          <image-cropper 
+          [imageChangedEvent]="imgChangeEvt" 
+          [maintainAspectRatio]="true" 
+          [aspectRatio]="4 / 4"
+          [resizeToWidth]="256" 
+          format="png" 
+          (imageCropped)="cropImg($event)" 
+          (imageLoaded)="imgLoad()"
+          (cropperReady)="initCropper()" 
+          (loadImageFailed)="imgFailed()">
+        </image-cropper>
+        </div>
+        <div class="col-md-4">
+          <h6>Image Preview</h6>
+          <img [src]="cropImgPreview" />
+        </div>
         <div class="input">
           <i class="far fa-address-card _icon"></i>
           <mat-form-field>
