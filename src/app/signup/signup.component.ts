@@ -81,7 +81,8 @@ genders: Gender[] = [
 
 
 MatIconModule: any;
-
+cropImgPreview: any = '';
+imgChangeEvt: any = '';
 username: FormControl = new FormControl('');
 password: FormControl = new FormControl('');
 major: FormControl = new FormControl('');
@@ -123,16 +124,15 @@ requiredForm = new FormGroup({
     accountType: this.accountType,
     termsCheck: this.termsCheck,
   });
+  personalizeForm = new FormGroup({
+  });
 
 
 date = new FormControl(moment());
-
-imgChangeEvt: any = '';
-    cropImgPreview: any = '';
-
     onFileChange(event: any): void {
         this.imgChangeEvt = event;
     }
+    // Passes value as base64 string of cropped area!!
     cropImg(e: ImageCroppedEvent): void {
         this.cropImgPreview = e.base64;
     }
@@ -279,7 +279,9 @@ clearName(): void {
   }
 
 
-
+onSndNext(): any {
+  console.log(this.personalizeForm.value);
+}
 onSubmit(): void {
     // TODO: wire up to login request
     console.log(this.signupForm.value);

@@ -178,28 +178,29 @@
           Personalize
         </ng-template>
         <!-- Upload one profile pic -->
-        <div> <input #fileInputs class="upload"  type="file" (change)="onFileChange($event)" (click)="this.profilePic=null" [formControl]="profilePic" multiple ></div>
+       
+        <div> <h2>Upload Profile Picture</h2> <input #fileInputs class="upload" accept="image/*" type="file" (change)="onFileChange($event)" (click)="this.profilePic=null"  multiple ></div>
         <div class="pics">
         <div class="pP">
           <image-cropper 
           [imageChangedEvent]="imgChangeEvt" 
           [maintainAspectRatio]="true" 
           [aspectRatio]=" 1 / 1"
-          [resizeToWidth]="256" 
+          [resizeToWidth]="200" 
           format="png" 
           (imageCropped)="cropImg($event)" 
           (imageLoaded)="imgLoad()"
           (cropperReady)="initCropper()" 
           (loadImageFailed)="imgFailed()">
-          
-        </image-cropper>
+         </image-cropper>
         </div>
-        <div class="previewPic">
-          <h6>Image Preview</h6>
-          <img [src]="cropImgPreview" />
+        <div class="PreviewPic" >
+          <h2 class="Preview" >Image Preview</h2>
+          <img class="previewPic" [src]="cropImgPreview"/>
         </div>
       </div>
         
+      <div class="personalize">
         <div class="input">
           <i class="far fa-address-card _icon"></i>
           <mat-form-field>
@@ -207,6 +208,7 @@
               matInput
               placeholder="Full Name"
               [formControl]="name"
+             
             />
             <button
               mat-button
@@ -254,11 +256,13 @@
 </div>
 <div class="input"><i class="far fa-edit _icon">Bio</i>
   <div class="display"><textarea class="bio"></textarea></div></div>
+</div>
 <!-- Ability to upload as many pics/ videos wanted, displasy in features one for each scroll -->
-<div > <input #fileInputs class="upload"  type="file" onchange="onFileSelected" (click)="this.features=null" [formControl]="features" multiple ></div>
+<div > <input #fileInputs class="upload" accept="image/* | video/*" type="file" onchange="onFileSelected" (click)="this.features=null" [formControl]="features" multiple ></div>
 <div class="createBtn">
 <button mat-flat-button  class="cBtnB" (click)="changeTab1R()">Back</button>
-<button mat-raised-button class="cBtn" (click)="changeTab1()">Next</button>
+<button type="submit"  mat-raised-button class="cBtn" (ngSubmit)="onSndNext()"  (click)="changeTab1()"
+>Next</button>
 </div>
       </mat-tab>
     
