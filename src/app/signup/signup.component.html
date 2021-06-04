@@ -172,21 +172,20 @@
     
       <mat-tab class="sndPage">
         <ng-template mat-tab-label>
-          <mat-icon class=""><span class="material-icons-two-tone">
+          <mat-icon ><span class="material-icons-two-tone">
             badge
             </span></mat-icon>
           Personalize
         </ng-template>
         <!-- Upload one profile pic -->
-       
-        <div> <h2>Upload Profile Picture</h2> <input #fileInputs class="upload" accept="image/*" type="file" (change)="onFileChange($event)" (click)="this.profilePic=null"  multiple ></div>
+       <div class="personalizeLarge">
         <div class="pics">
-        <div class="pP">
-          <image-cropper 
+          <div class="space"><h2 class="text">Upload Profile Picture</h2> <input #fileInputs class="upload" accept="image/*" type="file" (change)="onFileChange($event)" (click)="this.profilePic=null"  multiple ></div>
+               <image-cropper 
           [imageChangedEvent]="imgChangeEvt" 
           [maintainAspectRatio]="true" 
-          [aspectRatio]=" 1 / 1"
-          [resizeToWidth]="200" 
+          [aspectRatio]=" 7 / 7"
+          [resizeToWidth]="170" 
           format="png" 
           (imageCropped)="cropImg($event)" 
           (imageLoaded)="imgLoad()"
@@ -194,12 +193,20 @@
           (loadImageFailed)="imgFailed()">
          </image-cropper>
         </div>
+        <div class="rowP">
+          <i class="fas fa-camera _icon2"></i>
+          <i class="far fa-hand-point-right _icon3"></i>
+          <i class="fas fa-crop-alt _icon2"></i>
+          <i class="far fa-hand-point-right _icon3"></i>
+        <i class="fas fa-portrait _icon2"></i>
+       
+        </div>
         <div class="PreviewPic" >
           <h2 class="Preview" >Image Preview</h2>
           <img class="previewPic" [src]="cropImgPreview"/>
         </div>
-      </div>
-        
+      
+    </div>
       <div class="personalize">
         <div class="input">
           <i class="far fa-address-card _icon"></i>
@@ -245,7 +252,8 @@
 
          
          <div class="input">
-            <!-- Birthday Text --><div class="column">
+           <!-- Birthday picker -->
+            <div class="column">
             <i class="fas fa-birthday-cake icon"></i><p class="asthetic-adds ">Birthday</p></div>
  <mat-form-field appearance="fill" >
    <mat-label>Choose a date:</mat-label>
@@ -257,15 +265,33 @@
 <div class="input"><i class="far fa-edit _icon">Bio</i>
   <div class="display"><textarea class="bio"></textarea></div></div>
 </div>
-<!-- Ability to upload as many pics/ videos wanted, displasy in features one for each scroll -->
-<div > <input #fileInputs class="upload" accept="image/* | video/*" type="file" onchange="onFileSelected" (click)="this.features=null" [formControl]="features" multiple ></div>
 <div class="createBtn">
 <button mat-flat-button  class="cBtnB" (click)="changeTab1R()">Back</button>
-<button type="submit"  mat-raised-button class="cBtn" (ngSubmit)="onSndNext()"  (click)="changeTab1()"
+<button type="submit"  mat-raised-button class="cBtn"   (click)="changeTab1()"
 >Next</button>
 </div>
       </mat-tab>
-    
+    <!-- SnapShots -->
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <span class="material-icons">
+          add_to_photos
+          </span>
+          
+          
+      SnapShots
+      </ng-template>
+      <div class="snapShots">
+      <!-- Ability to upload as many pics/ videos wanted, displasy in features one for each scroll -->
+<div > <input #fileInputs class="upload" accept="image/* | video/*" type="file" onchange="onFileSelected" (click)="this.features=null" [formControl]="features" multiple ></div>
+      <div class="createBtn">
+        <button mat-flat-button  class="cBtnB" (click)="changeTab2R()">Back</button>
+        <button type="submit"  mat-raised-button class="cBtn"   (click)="changeTab2()"
+        >Next</button>
+        </div>
+      </div>
+
+    </mat-tab>
       <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon class=""><span class="material-icons-two-tone">
@@ -453,11 +479,14 @@
       
       
       <div class="createBtn">
-        <button mat-flat-button class="cBtnB" (click)="changeTab2()">Back</button>
+        <button mat-flat-button class="cBtnB" (click)="changeTab3()">Back</button>
         <i class="fas fa-user-graduate cBtnI"></i>
 <button mat-raised-button class="cBtn"  (ngSubmit)="onSubmit()">Create</button>
 </div>
       </mat-tab>
+
+
+
     </mat-tab-group>
 
     

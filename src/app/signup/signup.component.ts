@@ -124,8 +124,7 @@ requiredForm = new FormGroup({
     accountType: this.accountType,
     termsCheck: this.termsCheck,
   });
-  personalizeForm = new FormGroup({
-  });
+ 
 
 
 date = new FormControl(moment());
@@ -275,13 +274,17 @@ clearName(): void {
     this.selectedIndex = this.selectedIndex === 1 ? 0 : 1;
   }
   changeTab2(): void {
+    this.selectedIndex = this.selectedIndex === 2 ? 3 : 2;
+  }
+  changeTab2R(): void {
     this.selectedIndex = this.selectedIndex === 2 ? 1 : 2;
+  }
+  changeTab3(): void {
+    this.selectedIndex = this.selectedIndex === 3 ? 2 : 3;
   }
 
 
-onSndNext(): any {
-  console.log(this.personalizeForm.value);
-}
+
 onSubmit(): void {
     // TODO: wire up to login request
     console.log(this.signupForm.value);

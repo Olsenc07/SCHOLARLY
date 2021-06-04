@@ -21,40 +21,6 @@
   display: flex;
   width: 100%;
 }
-.column {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-right: 1%;
-}
-.courses {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-}
-.displayB {
-  display: flex;
-  justify-content: center;
-}
-@media (min-width: 1024px) {
-  .display {
-    display: flex;
-    width: 50%;
-  }
-}
-@media (max-width: 1024px) {
-  .display {
-    display: flex;
-    width: 100%;
-  }
-}
-.entire-page {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  overflow-y: scroll;
-}
 .btmText {
   display: flex;
   justify-content: center;
@@ -104,8 +70,60 @@
   flex-direction: row;
   margin: 2% 0%;
 }
+.column {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 .display {
   display: flex;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 1%;
+}
+.courses {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.displayB {
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 1024px) {
+  .display {
+    display: flex;
+    width: 50%;
+  }
+}
+@media (max-width: 1024px) {
+  .display {
+    display: flex;
+    width: 100%;
+  }
+}
+.entire-page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+.existing-account-layout {
+  display: flex;
+  justify-content: center;
+  color: #418bba;
+  border-color: #707070;
+}
+
+.existed-centered {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 2%;
 }
 
 .twoPassword {
@@ -120,6 +138,21 @@
   font-size: xx-large;
   flex-direction: column;
   color: #418bba;
+}
+._icon2 {
+  display: flex;
+  justify-content: center;
+  font-size: 100px;
+  flex-direction: column;
+  color: #418bba;
+}
+._icon3 {
+  display: flex;
+  justify-content: center;
+  font-size: xx-large;
+  color: #418bba;
+  margin: 0% 15%;
+  flex-direction: column;
 }
 .icon {
   display: flex;
@@ -182,16 +215,22 @@
   display: flex;
   width: 100%;
 }
+.personalizeLarge {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  max-height: 350px;
+  margin: 3% 0%;
+}
 .personalize {
   display: flex;
-  height: 100%;
   width: 100%;
   flex-direction: column;
 }
 .PreviewPic {
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
 }
 .previewPic {
   border-radius: 50%;
@@ -206,21 +245,28 @@
   height: 100%;
   width: 100%;
   justify-content: center;
-  object-fit: contain;
 }
 .pics {
-  width: 30%;
-  height: 10%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  object-fit: contain;
+  max-width: 250px;
 }
 .sport-layout {
   display: flex;
   flex-direction: column;
   margin: 3% 0%;
   justify-content: space-around;
+}
+.snapShots {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.space {
+  display: flex;
+  margin: 2% 0%;
+  flex-direction: column;
 }
 .right-inputs {
   display: flex;
@@ -240,6 +286,15 @@
     justify-content: center;
     flex-direction: column;
   }
+}
+.rowP {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.text {
+  display: flex;
+  justify-content: center;
 }
 .gender {
   display: flex;
@@ -277,22 +332,8 @@
   border-color: #418bba;
 }
 .material-icons {
-  border-radius: 7%;
   color: #418bba;
   border-color: #707070;
-}
-.existing-account-layout {
-  display: flex;
-  justify-content: center;
-  color: #418bba;
-  border-color: #707070;
-}
-
-.existed-centered {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin-top: 2%;
 }
 
 .terms {
