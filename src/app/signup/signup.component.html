@@ -273,27 +273,51 @@
 >Next</button>
 </div>
       </mat-tab>
+
+
+
     <!-- SnapShots -->
     <mat-tab>
+      <form [formGroup]="myForm">
       <ng-template mat-tab-label>
         <span class="material-icons">
           add_to_photos
           </span>
-          
-          
       SnapShots
       </ng-template>
       <div class="snapShots">
       <!-- Ability to upload as many pics/ videos wanted, displasy in features one for each scroll -->
-<div > <input #fileInputs class="upload" accept="image/* | video/*" type="file" onchange="onFileSelected" (click)="this.features=null" [formControl]="features" multiple ></div>
-      <div class="createBtn">
+<!-- <div > <input #fileInputs class="upload" accept="image/* | video/*" type="file" onchange="onFileSelected" (click)="this.features=null" [formControl]="features" multiple ></div> -->
+<div class="form-group">
+  <label for="file">File</label>
+  <input  matInput
+      [formControl]="file"
+      id="file" 
+      type="file" 
+      class=""
+      multiple="" 
+      (change)="onImgChange($event)">
+  <div *ngIf="f.file.touched && f.file.invalid" class="">
+      <div *ngIf="f.file.errors && f.file.errors.required">File is required.</div>
+  </div>
+</div>
+
+<img *ngFor='let url of images'  [src]="url" height="150" width="200px" style="margin: 3px;">      
+
+
+<div class="createBtn">
         <button mat-flat-button  class="cBtnB" (click)="changeTab2R()">Back</button>
         <button type="submit"  mat-raised-button class="cBtn"   (click)="changeTab2()"
         >Next</button>
         </div>
       </div>
-
+     </form> 
     </mat-tab>
+
+
+
+
+
       <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon class=""><span class="material-icons-two-tone">
