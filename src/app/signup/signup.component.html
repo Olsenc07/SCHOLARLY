@@ -171,6 +171,7 @@
       </mat-tab>
     
       <mat-tab class="sndPage">
+        <form [formGroup]="personalizeForm" >
         <ng-template mat-tab-label>
           <mat-icon ><span class="material-icons-two-tone">
             badge
@@ -180,7 +181,7 @@
         <!-- Upload one profile pic -->
        <div class="personalizeLarge">
         <div class="pics">
-          <div class="space"><h2 class="text">Upload Profile Picture</h2> <input #fileInputs class="upload" accept="image/*" type="file" (change)="onFileChange($event)" (click)="this.profilePic=null"  multiple ></div>
+          <div class="space"><h2 class="text">Upload Profile Picture</h2> <input #fileInputs class="upload" accept="image/*" type="file" (change)="onImgChange($event)" (click)="this.profilePic=null"  multiple ></div>
           <div class="cropper">    
           <image-cropper 
           [imageChangedEvent]="imgChangeEvt" 
@@ -265,20 +266,22 @@
  </mat-form-field>
 </div>
 <div class="input"><i class="far fa-edit _icon">Bio</i>
-  <div class="display"><textarea class="bio"></textarea></div></div>
+  <div class="display"><textarea [formControl]="bio" class="bio"></textarea></div></div>
 </div>
 <div class="createBtn">
 <button mat-flat-button  class="cBtnB" (click)="changeTab1R()">Back</button>
-<button type="submit"  mat-raised-button class="cBtn"   (click)="changeTab1()"
+<button mat-button  class="cBtnBl" (click)="changeTab1()">Skip For Now</button>
+<button type="submit" (ngSubmit)="onSubmitPartTwo()"  mat-raised-button class="cBtn"   (click)="changeTab1()"
 >Next</button>
 </div>
+</form>
       </mat-tab>
 
 
 
     <!-- SnapShots -->
     <mat-tab>
-      <form [formGroup]="myForm">
+      <form [formGroup]="snapShotForm">
       <ng-template mat-tab-label>
         <span class="material-icons">
           add_to_photos
@@ -286,30 +289,15 @@
       SnapShots
       </ng-template>
       <div class="snapShots">
-      <!-- Ability to upload as many pics/ videos wanted, displasy in features one for each scroll -->
-<!-- <div > <input #fileInputs class="upload" accept="image/* | video/*" type="file" onchange="onFileSelected" (click)="this.features=null" [formControl]="features" multiple ></div> -->
-<div class="form-group">
-  <label for="file">File</label>
-  <input  matInput
-      [formControl]="file"
-      id="file" 
-      type="file" 
-      class=""
-      multiple="" 
-      (change)="onImgChange($event)">
-  <div *ngIf="f.file.touched && f.file.invalid" class="">
-      <div *ngIf="f.file.errors && f.file.errors.required">File is required.</div>
-  </div>
-</div>
-
-<img *ngFor='let url of images'  [src]="url" height="150" width="200px" style="margin: 3px;">      
-
-
-<div class="createBtn">
-        <button mat-flat-button  class="cBtnB" (click)="changeTab2R()">Back</button>
-        <button type="submit"  mat-raised-button class="cBtn"   (click)="changeTab2()"
-        >Next</button>
-        </div>
+        <h2 class="center-text">
+          Get started by adding your first Snap Shot
+        </h2>
+        <div class="createBtn">
+          <button mat-flat-button  class="cBtnB" (click)="changeTab2R()">Back</button>
+          <button mat-button  class="cBtnBl" (click)="changeTab3()">Skip For Now</button>
+          <button type="submit"  mat-raised-button class="cBtn" (ngSubmit)="onSubmitPartThree()"  (click)="changeTab3()"
+          >Next</button>
+          </div>
       </div>
      </form> 
     </mat-tab>

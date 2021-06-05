@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef, ViewChild, Input, NgModule } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import {
   MomentDateAdapter,
   MAT_MOMENT_DATE_ADAPTER_OPTIONS,
@@ -83,9 +83,6 @@ genders: Gender[] = [
 
 
 
-images: string[] = [];
-file: FormControl =  new FormControl('');
-fileSource: FormControl = new FormControl('');
 MatIconModule: any;
 cropImgPreview: any = '';
 imgChangeEvt: any = '';
@@ -103,26 +100,9 @@ email: FormControl = new FormControl('');
 termsCheck: FormControl = new FormControl('');
 profilePic: FormControl = new FormControl('');
 accountType: FormControl = new FormControl('');
-features: FormControl = new FormControl('');
+bio: FormControl = new FormControl('');
 
-signupForm = new FormGroup({
-    username: this.username,
-    password: this.password,
-    genderChoice: this.genderChoice,
-    email: this.email,
-    termsCheck: this.termsCheck,
-    accountType: this.accountType,
-    profilePic: this.profilePic,
-    birthday: this.birthday,
-    name: this.name,
-    sport: this.sport,
-    club: this.club,
-    major: this.major,
-    minor: this.minor,
-    pronouns: this.pronouns,
-    features: this.features,
-    file: this.file,
-  });
+
 requiredForm = new FormGroup({
     email: this.email,
     username: this.username,
@@ -131,10 +111,28 @@ requiredForm = new FormGroup({
     accountType: this.accountType,
     termsCheck: this.termsCheck,
   });
- myForm = new FormGroup({
-  file: this.file,
- });
 
+personalizeForm = new FormGroup({
+  profilePic: this.profilePic,
+  name: this.name,
+  pronouns: this.pronouns,
+  birthday: this.birthday,
+  bio: this.bio,
+});
+
+ snapShotForm = new FormGroup({
+ 
+ });
+ signupForm = new FormGroup({
+  courseCodeCtrl: this.courseCodeCtrl,
+  courseCodeCtrlP: this.courseCodeCtrlP,
+  sport: this.sport,
+  club: this.club,
+  major: this.major,
+  minor: this.minor,
+  requiredForm: this.requiredForm,
+  personalizeForm: this.personalizeForm,
+});
 
 date = new FormControl(moment());
     onImgChange(event: any): void {
@@ -173,34 +171,13 @@ date = new FormControl(moment());
     );
   }
 
-// Multiple pic/video uploads
-  get f(): any{
-    return this.myForm.controls;
-  }
-
-  onFileChange(event): any {
-    if (event.target.files && event.target.files[0]) {
-        const filesAmount = event.target.files.length;
-        for (let i = 0; i < filesAmount; i++) {
-                const reader = new FileReader();
-
-                // tslint:disable-next-line: no-shadowed-variable
-                reader.onload = (event: any) => {
-                  console.log(event.target.result);
-                  this.images.push(event.target.result);
-                  this.myForm.patchValue({
-                      fileSource: this.images
-                   });
-                };
-                reader.readAsDataURL(event.target.files[i]);
-        }
-    }
-  }
 
 
 
-  // tslint:disable-next-line: typedef
-formatLabel(value: number) {
+
+
+
+formatLabel(value: number): string {
     if (value >= 100) {
       return Math.round(value / 1) + '+';
     }
@@ -321,13 +298,22 @@ clearName(): void {
 
 
 
-onSubmit(): void {
-    // TODO: wire up to login request
-    console.log(this.signupForm.value);
-  }
+
 onSubmitPartOne(): void {
     // TODO: wire up to login request
     console.log(this.requiredForm.value);
+  }
+  onSubmitPartTwo(): void {
+    // TODO: wire up to login request
+    console.log(this.personalizeForm.value);
+  }
+  onSubmitPartThree(): void {
+    // TODO: wire up to login request
+    console.log(this.snapShotForm.value);
+  }
+  onSubmit(): void {
+    // TODO: wire up to login request
+    console.log(this.signupForm.value);
   }
 
 ngOnInit(): void {}
