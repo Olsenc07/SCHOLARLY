@@ -290,12 +290,32 @@
       </ng-template>
       <div class="snapShots">
         <h2 class="center-text">
-          Get started by adding your first Snap Shot
+          Get started by adding your first Snap Shots
         </h2>
         <span class="material-icons icon">
           photo_library
           </span>
-          
+<div class="rowP">
+   <!-- Image Preview -->
+   
+   <div class="column">
+    <input type="file" [formControl]="snapShot1" accept="image/* video/*" (change)="imagePreview($event)" />
+    <img [src]="url" class="imagePreview">
+  </div>
+<!-- 2 -->
+
+<div class="column" >
+  <input type="file" [formControl]="snapShot2" accept="image/* video/*" (change)="imagePreview2($event)" />
+  <img [src]="url2" class="imagePreview">
+</div>
+<!-- 3 -->
+
+<div class="column" >
+  <input type="file" [formControl]="snapShot3" accept="image/* video/*" (change)="imagePreview3($event)" />
+  <img [src]="url3" class="imagePreview">
+</div>
+</div>
+
           
         <div class="createBtn">
           <button mat-flat-button  class="cBtnB" (click)="changeTab2R()">Back</button>

@@ -81,8 +81,9 @@ genders: Gender[] = [
 {name: 'Perfer Not To Answer'},
 ];
 
-
-
+url: string;
+url2: string;
+url3: string;
 MatIconModule: any;
 cropImgPreview: any = '';
 imgChangeEvt: any = '';
@@ -101,6 +102,9 @@ termsCheck: FormControl = new FormControl('');
 profilePic: FormControl = new FormControl('');
 accountType: FormControl = new FormControl('');
 bio: FormControl = new FormControl('');
+snapShot1: FormControl = new FormControl('');
+snapShot2: FormControl = new FormControl('');
+snapShot3: FormControl = new FormControl('');
 
 
 requiredForm = new FormGroup({
@@ -121,7 +125,9 @@ personalizeForm = new FormGroup({
 });
 
  snapShotForm = new FormGroup({
- 
+ snapShot1: this.snapShot1,
+ snapShot2: this.snapShot2,
+ snapShot3: this.snapShot3,
  });
  signupForm = new FormGroup({
   courseCodeCtrl: this.courseCodeCtrl,
@@ -154,6 +160,43 @@ date = new FormControl(moment());
       // error msg
   }
 
+  // SnapShot
+  imagePreview(event: any): void {
+    if (event.target.files && event.target.files[0]) {
+      const reader = new FileReader();
+
+      reader.readAsDataURL(event.target.files[0]); // read file as data url
+
+      reader.onload = (Event: any) => { // called once readAsDataURL is completed
+        console.log(Event);
+        this.url = Event.target.result;
+      };
+    }
+  }
+  imagePreview2(event: any): void {
+    if (event.target.files && event.target.files[0]) {
+      const reader = new FileReader();
+
+      reader.readAsDataURL(event.target.files[0]); // read file as data url
+
+      reader.onload = (Event: any) => { // called once readAsDataURL is completed
+        console.log(Event);
+        this.url2 = Event.target.result;
+      };
+    }
+  }
+  imagePreview3(event: any): void {
+    if (event.target.files && event.target.files[0]) {
+      const reader = new FileReader();
+
+      reader.readAsDataURL(event.target.files[0]); // read file as data url
+
+      reader.onload = (Event: any) => { // called once readAsDataURL is completed
+        console.log(Event);
+        this.url3 = Event.target.result;
+      };
+    }
+  }
  constructor(
     public dialog: MatDialog,
     public classListService: ClassListService,
@@ -170,12 +213,6 @@ date = new FormControl(moment());
       )
     );
   }
-
-
-
-
-
-
 
 formatLabel(value: number): string {
     if (value >= 100) {
@@ -317,6 +354,7 @@ onSubmitPartOne(): void {
   }
 
 ngOnInit(): void {}
+ // Image Preview
 
 
 }

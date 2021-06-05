@@ -81,11 +81,7 @@
 .cropper {
   display: flex;
 }
-.column {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
+
 .display {
   display: flex;
 }
@@ -189,6 +185,11 @@
   flex-direction: column;
   justify-content: center;
   margin: 0% 15% 0% 15%;
+}
+.imagePreview {
+  display: flex;
+  width: 250px;
+  height: 250px;
 }
 .input {
   display: flex;
@@ -303,6 +304,7 @@
   display: flex;
   justify-content: space-around;
   flex-direction: row;
+  margin: 2% 0%;
 }
 .text {
   display: flex;
