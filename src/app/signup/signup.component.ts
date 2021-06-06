@@ -25,6 +25,7 @@ import { HttpClient  } from '@angular/common/http';
 import { NgxImageZoomModule } from 'ngx-image-zoom';
 
 
+
 interface Gender {
   name: string;
 }
@@ -100,6 +101,7 @@ birthday: FormControl = new FormControl('');
 genderChoice: FormControl = new FormControl('');
 email: FormControl = new FormControl('');
 termsCheck: FormControl = new FormControl('');
+// PP isn't connected properly i dont think, since image is being cropped then returned as a base 64 value
 profilePic: FormControl = new FormControl('');
 accountType: FormControl = new FormControl('');
 bio: FormControl = new FormControl('');
@@ -139,13 +141,14 @@ personalizeForm = new FormGroup({
   minor: this.minor,
   requiredForm: this.requiredForm,
   personalizeForm: this.personalizeForm,
+ snapShotForm: this.snapShotForm,
 });
 
 date = new FormControl(moment());
     onImgChange(event: any): void {
         this.imgChangeEvt = event;
     }
-    // Passes value as base64 string of cropped area!!
+    // Passes value as base64 string of cropped area!! But where does form controller come into play?
     cropImg(e: ImageCroppedEvent): void {
         this.cropImgPreview = e.base64;
     }
@@ -315,6 +318,22 @@ clearName(): void {
   clearEmail(): void {
     this.email.setValue('');
   }
+clearProfilePic(): void {
+    this.profilePic.setValue('');
+    document.getElementById('ProfilePic').removeAttribute('src');
+  }
+clearPic1(): void {
+  this.snapShot1.setValue('');
+  document.getElementById('firstP').removeAttribute('src');
+}
+clearPic2(): void {
+  this.snapShot2.setValue('');
+  document.getElementById('secondP').removeAttribute('src');
+}
+clearPic3(): void {
+  this.snapShot3.setValue('');
+  document.getElementById('thirdP').removeAttribute('src');
+}
   changeTab(): void {
     this.selectedIndex = this.selectedIndex === 0 ? 1 : 0;
   }

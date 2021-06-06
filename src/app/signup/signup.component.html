@@ -181,7 +181,8 @@
         <!-- Upload one profile pic -->
        <div class="personalizeLarge">
         <div class="pics">
-          <div class="space"><h2 class="text">Upload Profile Picture</h2> <input #fileInputs class="upload" accept="image/*" type="file" (change)="onImgChange($event)" (click)="this.profilePic=null"  multiple ></div>
+          <div class="space"><h2 class="text">Upload Profile Picture</h2> <input #fileInputs class="upload" accept="image/*" type="file" (change)="onImgChange($event)" 
+           [formControl]="profilePic" (click)="this.profilePic=null"  multiple ></div>
           <div class="cropper">    
           <image-cropper 
           [imageChangedEvent]="imgChangeEvt" 
@@ -193,8 +194,9 @@
           (imageLoaded)="imgLoad()"
           (cropperReady)="initCropper()" 
           (loadImageFailed)="imgFailed()">
-         </image-cropper>
+          </image-cropper>
          </div>
+         <button mat-flat-button color="primary" (click)="clearProfilePic()">Clear File</button>
         </div>
         <div class="rowP">
           <i class="fas fa-camera _icon2"></i>
@@ -206,7 +208,8 @@
         </div>
         <div class="PreviewPic" >
           <h2 class="Preview" >Image Preview</h2>
-          <img class="previewPic" [src]="cropImgPreview"/>
+          <img class="previewPic" id="ProfilePic" [src]="cropImgPreview" />
+          
         </div>
       
     </div>
@@ -299,21 +302,27 @@
    <!-- Image Preview -->
    
    <div class="column">
+    <h2 class="Preview">Image Preview</h2>
     <input type="file" [formControl]="snapShot1" accept="image/* video/*" (change)="imagePreview($event)" />
-    <img [src]="url" class="imagePreview">
+    <img [src]="url" id="firstP" class="imagePreview">
+    <button mat-flat-button color="primary" (click)="clearPic1()">Clear File</button>
   </div>
 <!-- 2 -->
 
 <div class="column" >
+  <h2 class="Preview">Image Preview</h2>
   <input type="file" [formControl]="snapShot2" accept="image/* video/*" (change)="imagePreview2($event)" />
-  <img [src]="url2" class="imagePreview">
+  <img [src]="url2" id="secondP" class="imagePreview">
+  <button mat-flat-button color="primary" (click)="clearPic2()">Clear File</button>
 </div>
 <!-- 3 -->
 <!-- <ngx-image-zoom
 > -->
 <div class="column" >
+  <h2 class="Preview">Image Preview</h2>
   <input type="file" [formControl]="snapShot3" accept="image/* video/*" (change)="imagePreview3($event)" />
-  <img [src]="url3" class="imagePreview">
+  <img [src]="url3" id="thirdP" class="imagePreview" >
+  <button mat-flat-button color="primary" (click)="clearPic3()">Clear File</button>
 </div>
 <!-- </ngx-image-zoom> -->
 </div>
