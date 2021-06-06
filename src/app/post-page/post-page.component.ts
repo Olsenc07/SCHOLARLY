@@ -84,6 +84,8 @@ enum BooleanOptions {
 })
 
 export class PostPageComponent implements OnInit {
+  url: string;
+
   selectedIndex = 0;
 
   visible = true;
@@ -176,6 +178,8 @@ export class PostPageComponent implements OnInit {
       relaxedEvent: this.relaxedEvent,
     });
 
+    
+
     public searchOptions: SearchOption[] = [
     { name: 'Blues Clubs', value: SearchValues.BLUE_CLUBS },
     { name: 'Buy & Sell', value: SearchValues.MISCELL_BUY_SELL },
@@ -204,6 +208,20 @@ export class PostPageComponent implements OnInit {
   openDialog(): void {
     this.dialog.open(DialogElementsComponent);
   }
+  imagePreview(event: any): void {
+    if (event.target.files && event.target.files[0]) {
+      const reader = new FileReader();
+
+      reader.readAsDataURL(event.target.files[0]); // read file as data url
+
+      reader.onload = (Event: any) => { // called once readAsDataURL is completed
+        console.log(Event);
+        this.url = Event.target.result;
+      };
+    }
+  }
+
+
   ngOnInit(): void {
     this.firstFormGroup = this.FORMBuilder.group({
       firstCtrl: ['']

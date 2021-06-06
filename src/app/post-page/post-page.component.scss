@@ -19,6 +19,11 @@
   justify-content: center;
   box-sizing: border-box;
 }
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .entire-page {
   display: flex;
   position: relative;
@@ -89,7 +94,11 @@
   height: 100%;
   font-size: x-large;
 }
-
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .columnM {
   display: flex;
   flex-direction: row;
@@ -171,6 +180,11 @@
   width: 100%;
   height: 75%;
   flex-direction: column;
+}
+.imagePreview {
+  display: flex;
+  width: 300px;
+  height: 300px;
 }
 mat-slide-toggle {
   width: fit-content;
@@ -277,9 +291,8 @@ p {
   justify-content: center;
 }
 .pre-file-img {
-  background-image: url(../../assets/Pics/WhiteSquareInAppLogo.jpg);
   width: 100%;
-  height: 100%;
+
   background-size: cover;
 }
 .post-descriptionD {
@@ -293,15 +306,6 @@ p {
   width: 100%;
   height: 50%;
   margin-bottom: 5%;
-}
-.post-pic-video {
-  display: flex;
-  margin-top: 8%;
-  background-image: url(../../assets/Pics/WhiteSquareInAppLogo.jpg);
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  justify-content: center;
 }
 .post {
   display: flex;
@@ -325,6 +329,11 @@ p {
 .row {
   display: flex;
   flex-direction: row;
+}
+.rowP {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 @media (min-width: 1024px) {
   .right {
@@ -469,16 +478,12 @@ p {
 
 .uploadD {
   display: flex;
-  height: 100%;
-  width: 100%;
-  border: ridge;
   box-sizing: border-box;
+  margin: 4% 0%;
 }
 .upload {
   display: flex;
-  height: 100%;
-  width: 100%;
-  border: ridge;
+  margin: 2%;
   box-sizing: border-box;
 }
 

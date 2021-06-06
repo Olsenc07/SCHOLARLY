@@ -309,11 +309,13 @@
   <img [src]="url2" class="imagePreview">
 </div>
 <!-- 3 -->
-
+<!-- <ngx-image-zoom
+> -->
 <div class="column" >
   <input type="file" [formControl]="snapShot3" accept="image/* video/*" (change)="imagePreview3($event)" />
   <img [src]="url3" class="imagePreview">
 </div>
+<!-- </ngx-image-zoom> -->
 </div>
 
           
@@ -520,7 +522,7 @@
       <div class="createBtn">
         <button mat-flat-button class="cBtnB" (click)="changeTab3()">Back</button>
         <i class="fas fa-user-graduate cBtnI"></i>
-<button mat-raised-button class="cBtn"  (ngSubmit)="onSubmit()">Create</button>
+<button mat-raised-button class="cBtn" routerLink="/search" (ngSubmit)="onSubmit()">Create</button>
 </div>
       </mat-tab>
 

@@ -22,6 +22,7 @@ import { ClassListService } from '../services/class.service';
 import { ImageCroppedEvent } from 'ngx-image-cropper';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClient  } from '@angular/common/http';
+import { NgxImageZoomModule } from 'ngx-image-zoom';
 
 
 interface Gender {
