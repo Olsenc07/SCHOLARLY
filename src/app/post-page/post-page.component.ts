@@ -178,8 +178,6 @@ export class PostPageComponent implements OnInit {
       relaxedEvent: this.relaxedEvent,
     });
 
-    
-
     public searchOptions: SearchOption[] = [
     { name: 'Blues Clubs', value: SearchValues.BLUE_CLUBS },
     { name: 'Buy & Sell', value: SearchValues.MISCELL_BUY_SELL },
@@ -220,7 +218,11 @@ export class PostPageComponent implements OnInit {
       };
     }
   }
-
+  clearUpload(): void {
+    this.upload.setValue('');
+    document.getElementById('upload').removeAttribute('src');
+    document.getElementById('upload2').removeAttribute('src');
+  }
 
   ngOnInit(): void {
     this.firstFormGroup = this.FORMBuilder.group({

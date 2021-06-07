@@ -181,8 +181,8 @@
         <!-- Upload one profile pic -->
        <div class="personalizeLarge">
         <div class="pics">
-          <div class="space"><h2 class="text">Upload Profile Picture</h2> <input #fileInputs class="upload" accept="image/*" type="file" (change)="onImgChange($event)" 
-           [formControl]="profilePic" (click)="this.profilePic=null"  multiple ></div>
+          <div class="space"><h2 class="text">Upload Profile Picture</h2> <input #fileInputs class="upload" accept="image/* video/*" type="file" (change)="onImgChange($event)" 
+           [formControl]="profilePic"  ></div>
           <div class="cropper">    
           <image-cropper 
           [imageChangedEvent]="imgChangeEvt" 
@@ -199,10 +199,10 @@
          <button mat-flat-button color="primary" (click)="clearProfilePic()">Clear File</button>
         </div>
         <div class="rowP">
-          <i class="fas fa-camera _icon2"></i>
+          <!-- <i class="fas fa-camera _icon2"></i>
           <i class="far fa-hand-point-right _icon3"></i>
           <i class="fas fa-crop-alt _icon2"></i>
-          <i class="far fa-hand-point-right _icon3"></i>
+          <i class="far fa-hand-point-right _icon3"></i> -->
         <i class="fas fa-portrait _icon2"></i>
        
         </div>
@@ -330,18 +330,18 @@
           
         <div class="createBtn">
           <button mat-flat-button  class="cBtnB" (click)="changeTab2R()">Back</button>
+          <div class="skip1">
           <button mat-button  class="cBtnBl" (click)="changeTab3()">Skip For Now</button>
+        </div>
           <button type="submit"  mat-raised-button class="cBtn" (ngSubmit)="onSubmitPartThree()"  (click)="changeTab3()"
           >Next</button>
           </div>
       </div>
+      <div class="skip2">
+        <button mat-button  class="cBtnBl" (click)="changeTab3()">Skip For Now</button>
+      </div>
      </form> 
     </mat-tab>
-
-
-
-
-
       <mat-tab>
         <ng-template mat-tab-label>
           <mat-icon class=""><span class="material-icons-two-tone">

@@ -27,8 +27,9 @@
         </div>
         <!-- Upload pic/video -->
         <div class="column" >
-         <div class="rowP"> <input #fileInput class="uploadD" accept="image/* video/*" type="file" (change)="imagePreview($event)" (click)="this.value=null" [formControl]="value" multiple></div>
-          <div class="rowP"> <img [src]="url" class="imagePreview"></div>
+         <div class="rowP"> <input #fileInput class="uploadD" accept="image/* video/*" type="file" (change)="imagePreview($event)" (click)="this.value=null" [formControl]="upload" multiple></div>
+          <div class="rowP"> <img [src]="url" id="upload" class="imagePreview"> </div>
+          <div class="rowP clear"><button mat-flat-button color="primary" (click)="clearUpload()">Clear Upload</button></div>
         </div>
         
       </div>
@@ -317,8 +318,9 @@
         <textarea class="postM" placeholder="What do you wanna say?"></textarea>
       </div>   
       <div class=" column"  >
-       <div class="rowP"> <input #fileInputs class="upload" accept="image/* video/*" type="file" (change)="imagePreview($event)" (click)="this.value=null" [formControl]="value" multiple ></div>
-        <div class="rowP"> <img [src]="url" class="imagePreview"></div>
+       <div class="rowP"> <input #fileInputs class="upload" accept="image/* video/*" type="file" (change)="imagePreview($event)" (click)="this.value=null" [formControl]="upload" multiple ></div>
+        <div class="rowP"> <img [src]="url" id="upload2" class="imagePreview"></div>
+        <div class="rowP clear"><button mat-flat-button color="primary" (click)="clearUpload()">Clear Upload</button></div>
       </div>
   
 
