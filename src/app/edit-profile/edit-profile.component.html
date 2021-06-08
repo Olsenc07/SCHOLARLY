@@ -168,6 +168,117 @@
           </button>
         </div>
       </div>
+      <!-- Completed Courses -->
+
+<div class="row">
+  <div class="courses">
+    <div class="input">
+  <i class="fas fa-check _icon"></i>
+<mat-form-field class="example-chip-list">
+  <mat-label>Completed Courses</mat-label>
+  <mat-chip-list #chipList aria-label="Fruit selection">
+    <mat-chip
+      *ngFor="let code of classes"
+      [selectable]="selectable"
+      [removable]="removable"
+      (removed)="remove(code)">
+      {{code}}
+      <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+    </mat-chip>
+    <input
+      placeholder="Choose completed courses"
+      #codeInputP
+      [formControl]="courseCodeCtrl"
+      [matAutocomplete]="auto"
+      [matChipInputFor]="chipList"
+      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+      (matChipInputTokenEnd)="add($event)">
+  </mat-chip-list>
+  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+    <mat-option *ngFor="let code of filteredCodes | async" [value]="code">
+      {{code}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
+</div>
+</div>
+
+
+<!-- Pursuing Courses -->
+<div class="courses">
+  <div class="input">
+<i class="fas fa-tasks _icon"></i>
+
+<mat-form-field class="example-chip-list">
+  <mat-label>Pursuing Courses</mat-label>
+  <mat-chip-list #chipListP aria-label="Fruit selection">
+    <mat-chip
+      *ngFor="let codeP of classesP"
+      [selectable]="selectable"
+      [removable]="removable"
+      (removed)="removeP(codeP)">
+      {{codeP}}
+      <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+    </mat-chip>
+    <input
+      placeholder="Choose completed courses"
+      #codeInputP
+      [formControl]="courseCodeCtrlP"
+      [matAutocomplete]="autoP"
+      [matChipInputFor]="chipListP"
+      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+      (matChipInputTokenEnd)="addP($event)">
+  </mat-chip-list>
+  <mat-autocomplete #autoP="matAutocomplete" (optionSelected)="selectedP($event)">
+    <mat-option *ngFor="let codeP of filteredCodesP | async" [valueP]="codeP">
+      {{codeP}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
+</div>
+</div>
+<div class="groups-j"><div class="words">Groups Joined</div></div>
+          
+<div class="activityM">
+  <!-- Right side -->
+  <!-- Recent Posts text  -->
+  <div class="right-side">
+    <!-- Recent Posts box-->
+    <div class="recent-post-layout">
+      <div class="recent">
+        <p class="text">Recents</p>
+      </div>
+      <div class="posts"></div>
+
+      <mat-divider></mat-divider>
+      <!-- Current Conversations text -->
+      <div class="features">
+        <div class="current"></div>
+        
+      </div>
+
+      <!-- Current Conversations box, need to add internal symbols
+& activity things in box -->
+
+      <div class="text_"></div>
+    </div>
+  </div>
+   <!-- Image Preview -->
+   <div class="column">
+    <h2 class="Preview">Image Preview</h2>
+    <input type="file" [formControl]="snapShot1" accept="image/* video/*" (change)="imagePreview($event)" />
+    <img [src]="url" id="firstP" class="imagePreview">
+    <button mat-flat-button color="primary" (click)="clearPic1()">Clear File</button>
+  </div>
+</div>
+<!-- Snap shots -->
+<div class="features">
+  snapshots
+  <div class="current"></div>
+  
+</div>
+</div>
+
       <!-- right column -->
       <div class="right-column">
         <!-- Public or Private account -->
