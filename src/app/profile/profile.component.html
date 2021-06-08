@@ -10,30 +10,35 @@
       <h2 class="hide-input">Olsen07</h2>
       <div class="row">
         <div class="hide-input">Male</div>
-        
       </div>
+      <mat-divider class="margin"></mat-divider>
     </div>
 
     <!-- Major/Minor -->
     <div class="major-minor">
-      <input placeholder="Major/Minor" class="major-box" />
+     <div class="centerR"> Major</div>
+    <div class="centerR">Minor</div>  
+    <mat-divider class="margin"></mat-divider>
     </div>
     <!-- Sport/Club -->
     <div class="major-minor">
-      <input placeholder="Sport/Club" class="major-box" />
+      <div class="centerR"> Sport</div>
+      <div class="centerR">Club</div>
+      <mat-divider class="margin"></mat-divider>
     </div>
 
-    <!-- Bio: Full name & age input text & Pronouns -->
-    <div class="bio-name-age">
-      <div  class="text-2" >Chase Olsen 23</div><div>He/Him</div>
+<div class="major-minor">
+      <h3 class="centerR">
+        Followers
+       <!-- tracks value of followers -->
+      </h3>
+</div>
+<div class="major-minor">
+      <h3 class="centerR">
+        Following
+        <!-- tracks value of following -->
+      </h3>
     </div>
-
-    <!-- bio box -->
-    <div class="bio-box">
-      <textarea class="bio-input"> </textarea>
-    </div>
-    
-
     <div class="messageM">
       <button class="spaceMF" (click)="followClicked()">
         <h2 class="centerM">
@@ -55,30 +60,17 @@
   <div class="middle">
     <!-- User-Name -->
     <div class="top-middle">
-      <div class="user-name"></div>
-    
-      <h3 class="follow">
-        Followers
-        <input
-          type="number"
-          class="number"
-          id="steper"
-          name="members"
-          step="1"
-          value="0"
-        />
-      </h3>
-      <h3 class="follow">
-        Following
-        <input
-          type="readonly"
-          class="number"
-          id="steper"
-          name="members"
-          step="1"
-          value="0"
-        />
-      </h3>
+
+   <!-- Bio: Full name & age input text & Pronouns -->
+   <div class="bio-name-age">
+    <div  class="text-2" >Chase Olsen 23</div><div>He/Him</div>
+  </div>
+
+  <!-- bio box -->
+  <div class="bio-box">
+    <textarea class="bio-input"> </textarea>
+  </div>
+
     </div>
     <div></div>
     <!-- DESKTOP -->
