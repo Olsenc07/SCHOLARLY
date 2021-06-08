@@ -5,51 +5,149 @@
       <!-- left column -->
       <div class="left-column">
         <!-- input pic & has this default pic before-->
-        <div class="pic-box">
-          <img
-            Src="../../assets/Pics/WhiteSquareInAppLogo.jpg"
-    
-            class="pic"
-          />
-        </div>
-
-        <!-- text -->
-        <div>
-          <p class="text">Bio:</p>
-        </div>
-
-        <!-- Bio box -->
-        <input class="bio-box" />
+        <!-- Upload one profile pic -->
+        <div class="personalizeLarge">
+          <div class="pics">
+            <div class="space"><h2 class="text">Upload Profile Picture</h2> <input #fileInputs class="upload" accept="image/* video/*" type="file" (change)="onImgChange($event)" 
+             [formControl]="profilePic"  ></div>
+            <div class="cropper">    
+            <image-cropper 
+            [imageChangedEvent]="imgChangeEvt" 
+            [maintainAspectRatio]="true" 
+            [aspectRatio]=" 7 / 7"
+            [resizeToWidth]="170" 
+            format="png" 
+            (imageCropped)="cropImg($event)" 
+            (imageLoaded)="imgLoad()"
+            (cropperReady)="initCropper()" 
+            (loadImageFailed)="imgFailed()">
+            </image-cropper>
+           </div>
+           <button mat-flat-button color="primary" (click)="clearProfilePic()">Clear File</button>
+          </div>
+          <div class="rowP">
+            <!-- <i class="fas fa-camera _icon2"></i>
+            <i class="far fa-hand-point-right _icon3"></i>
+            <i class="fas fa-crop-alt _icon2"></i>
+            <i class="far fa-hand-point-right _icon3"></i> -->
+          <i class="fas fa-portrait _icon2"></i>
+         
+          </div>
+          <div class="PreviewPic" >
+            <h2 class="Preview" >Image Preview</h2>
+            <img class="previewPic" id="ProfilePic" [src]="cropImgPreview" />
+            
+          </div>
+        
+      </div>
+      
+  <mat-form-field class="inputP" >
+            <input
+              matInput
+              placeholder="Prefered Pronouns"
+              [formControl]="pronouns"
+            />
+            <button
+              mat-button
+              matSuffix
+              mat-icon-button
+              aria-label="Clear"
+              type="button"
+              (click)="clearName()"
+            >
+              <mat-icon class="asthetic-adds">close</mat-icon>
+            </button>
+          </mat-form-field>
+        <!-- Bio -->
+        <div class="input"><i class="far fa-edit _icon">Bio</i>
+          <div class="display"><textarea [formControl]="bio" class="bio"></textarea></div></div>
 
         <!-- Text Field Major/Minor -->
-        <mat-form-field class="major"
-          ><mat-label>Major/Minor</mat-label>
-          <input
-            matInput
-            formControlName="major"
-            autocomplete="on"
-            placeholder="Major/Minor:"
-          />
-          <button
-            mat-button
-            matSuffix
-            mat-icon-button
-            aria-label="Clear"
-            type="button"
-            (click)="clearMajor()"
-          >
-            <mat-icon class="clear-button">close</mat-icon>
-          </button>
-        </mat-form-field>
+       <div class="major-layout">
+        <div class="input">
+       <span class="material-icons _icon">
+         looks_one
+         </span>
+       <mat-form-field >
+         <input
+         class="major"
+           matInput
+           placeholder="Major"
+           [formControl]="major"
+         />
+         <button
+           mat-button
+           matSuffix
+           mat-icon-button
+           aria-label="Clear"
+           type="button"
+           (click)="clearMajor()"
+         >
+           <mat-icon class="asthetic-adds">close</mat-icon>
+         </button>
+       </mat-form-field>
+     </div>
+     
+     <div class="input">
+       <span class="material-icons _icon">
+         looks_two
+         </span>
+       <mat-form-field >
+         <input
+         class="major"
+           matInput
+           placeholder="Minor"
+           [formControl]="minor"
+           
+         />
+         <button
+           mat-button
+           matSuffix
+           mat-icon-button
+           aria-label="Clear"
+           type="button"
+           (click)="clearMinor()"
+         >
+           <mat-icon class="asthetic-adds">close</mat-icon>
+         </button>
+       </mat-form-field>
+     </div>
+       </div>
 
         <!-- Text Field Sport/Club -->
-        <mat-form-field class="sport"
-          ><mat-label>Sport/Club</mat-label>
+        <div class="input"> 
+          <span class="material-icons _icon">
+            emoji_events
+            </span>
+            <mat-form-field >
+              <input 
+                matInput
+                placeholder="What sport do you play?"
+                [formControl]="sport"
+               
+              />
+              <button
+                mat-button
+                matSuffix
+                mat-icon-button
+                aria-label="Clear"
+                type="button"
+                (click)="clearSport()"
+              >
+                <mat-icon class="asthetic-adds">close</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+          <div class="input">
+            <span class="material-icons _icon">
+            group
+            </span>
+        <mat-form-field >
           <input
+          class="major"
             matInput
-            formControlName="sport"
-            autocomplete="on"
-            placeholder="Sport/Club:"
+            placeholder="What club are you apart of? "
+            [formControl]="club"
           />
           <button
             mat-button
@@ -57,12 +155,12 @@
             mat-icon-button
             aria-label="Clear"
             type="button"
-            (click)="clearSport()"
+            (click)="clearClub()"
           >
-            <mat-icon class="clear-button">close</mat-icon>
+            <mat-icon class="asthetic-adds">close</mat-icon>
           </button>
         </mat-form-field>
-
+      </div>
         <!-- cancel button -->
         <div class="cancel">
           <button mat-button type="button" routerLink="/profile" class="button">
@@ -72,27 +170,31 @@
       </div>
       <!-- right column -->
       <div class="right-column">
-        <!-- Public or Privte account -->
-        <div class="private-public">
-          <div class="private">
-            <mat-radio-group aria-label="Select an option">
-              <mat-radio-button value="">Private Account</mat-radio-button>
-              <div class="">
-                <button mat-button (click)="openDialog()"><mat-icon>info</mat-icon></button>
-              </div>
-            </mat-radio-group>
+        <!-- Public or Private account -->
+        <div class="layout">
+          <mat-radio-button value="1">Private Account</mat-radio-button>
+          <div class="tooltip">
+            <span class="material-icons"> info </span>
+            <!-- <span class="tooltiptext"
+              >You choose to accept or decline members to your group and
+              friend list. Profile is only viewable to friends</span
+            > -->
           </div>
+        
+      </div>
+    
 
-          <div class="public">
-            <mat-radio-group aria-label="Select an option">
-              <mat-radio-button value="">Public Account</mat-radio-button>
-              <div class="">
-                <button mat-button (click)="openDialog()"><mat-icon>info</mat-icon></button>
-  
-              </div>
-            </mat-radio-group>
-          </div>
+    
+      <div class="layout">
+        <mat-radio-button value="2">Public Account</mat-radio-button>
+        <div class="tooltip">
+          <span class="material-icons"> info </span>
+          <!-- <span class="tooltiptext"
+            >Members are automatically accepted to your group & friends
+            list.</span
+          > -->
         </div>
+      </div>
         <!-- Full Name Textfield -->
         <mat-form-field class="text-field-password" style="width: 200px;"
           ><mat-label>Full Name</mat-label>
@@ -134,46 +236,16 @@
         
         
 
-        <!-- Text FieldGender: -->
-        <mat-form-field class="text-field-gender" style="width: 200px;"
-          ><mat-label>Gender</mat-label>
-          <input
-            matInput
-            formControlName="gender"
-            autocomplete="on"
-            placeholder="Gender:"
-          />
-          <button 
-            mat-button 
-            matSuffix 
-            mat-icon-button 
-            aria-label="Clear" 
-            type="button"
-            (click)="clearGender()">
-            <mat-icon class="clear-button">close</mat-icon>
-          </button>
+        <!-- Gender -->
+        <mat-form-field appearance="fill" class="gender">
+          <mat-label>Gender</mat-label>
+          <mat-select [formControl]="genderChoice" required>
+            <mat-option *ngFor="let gender of genders" [value]="gender">
+              {{gender.name}}
+            </mat-option>
+          </mat-select>
         </mat-form-field>
-
-        <!-- Text FieldRelationship: -->
-        <mat-form-field class="text-field-relationship" style="width: 200px;"
-          ><mat-label>Relationship Status:</mat-label>
-          <input
-            matInput
-            formControlName="relationship"
-            autocomplete="on"
-            placeholder="Relationship Status:"
-          />
-          <button
-            mat-button
-            matSuffix
-            mat-icon-button
-            aria-label="Clear"
-            type="button"
-            (click)="clearRelationship()"
-          >
-            <mat-icon class="clear-button">close</mat-icon>
-          </button>
-        </mat-form-field>
+      
 
         <!-- done button -->
         <button

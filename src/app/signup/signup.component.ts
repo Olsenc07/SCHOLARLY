@@ -57,9 +57,6 @@ export const MY_FORMATS = {
   ],
 })
 export class SignupComponent implements OnInit {
-
-
-
 visible = true;
 selectable = true;
 removable = true;
