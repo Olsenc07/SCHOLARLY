@@ -50,18 +50,59 @@
     width: 75%;
   }
 }
+.done {
+  justify-content: center;
+  display: flex;
+}
 .gender {
   display: flex;
   justify-content: center;
   width: 100%;
 }
+@media (min-width: 1024px) {
+  .work {
+    display: flex;
+    margin-left: 36%;
+    margin-right: 36%;
+    margin-top: 2%;
+  }
+}
+@media (max-width: 1024px) {
+  .work {
+    display: flex;
+    margin-top: 2%;
+  }
+}
+@media (min-width: 1024px) {
+  .groups-jj {
+    display: flex;
+    justify-content: center;
+    margin: 1% 21%;
+    height: 100px;
+    border: ridge;
+    box-sizing: border-box;
+    overflow-y: scroll;
+  }
+}
+@media (max-width: 1024px) {
+  .groups-jj {
+    display: flex;
+    justify-content: center;
+    margin: 1% 0%;
+    height: 100px;
+    border: ridge;
+    box-sizing: border-box;
+    overflow-y: scroll;
+  }
+}
 .groups-j {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 50%;
+  height: 260px;
   border: ridge;
   box-sizing: border-box;
+  overflow-x: scroll;
 }
 .top {
   display: flex;

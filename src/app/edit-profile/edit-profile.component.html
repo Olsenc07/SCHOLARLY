@@ -255,26 +255,30 @@
         
   
           <!-- done button -->
+          
           <button
             mat-button
             type="submit"
-            [disabled]="!editForm.valid"
             routerLink="/profile"
             class="button"
           >
             Done
           </button>
         
+        
       </div></div></mat-tab>
     <mat-tab label="Your Activities">
       <div class="entire-page">
        
         <div class="twoBoxs">
-      <div class="groups-j"><div class="words">Groups Joined</div></div> 
+          
+      <div class="groups-jj">Groups Joined</div> 
     <!-- Recent Posts box-->
+    <div class="work">
     <div class="groups-j">
-        <p>Recents</p>
-    </div>
+        Recents
+  </div>
+</div>
   </div>
     
     
@@ -359,7 +363,19 @@
 </div>
 
 
-</div></mat-tab>
+</div>
+  <!-- done button -->
+<div class="done">
+  <button
+  mat-button
+  type="submit"
+  routerLink="/profile"
+  class="button"
+>
+  Done
+</button>
+</div>
+</mat-tab>
   
   </mat-tab-group>
   
