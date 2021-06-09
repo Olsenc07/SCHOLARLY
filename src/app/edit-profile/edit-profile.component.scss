@@ -6,7 +6,7 @@
 .Accounts {
   display: flex;
   justify-content: space-around;
-  width: 50%;
+  width: 100%;
 }
 .asthetic-adds {
   color: #418bba;
@@ -38,10 +38,17 @@
   display: flex;
   max-height: 260px;
 }
-
-.display {
-  display: flex;
-  width: 50%;
+@media (min-width: 1024px) {
+  .display {
+    display: flex;
+    width: 50%;
+  }
+}
+@media (max-width: 1024px) {
+  .display {
+    display: flex;
+    width: 75%;
+  }
 }
 .gender {
   display: flex;
@@ -125,6 +132,16 @@
     overflow-x: scroll;
   }
 }
+@media (min-width: 1024px) {
+  .smaller {
+    width: 30%;
+  }
+}
+@media (max-width: 1024px) {
+  .smaller {
+    width: 50%;
+  }
+}
 .snapShot {
   display: flex;
   width: 100%;
@@ -168,6 +185,11 @@
 .text {
   color: #0e3379;
 }
+.twoBoxs {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
 
 .bio-box {
   padding: 25px;
@@ -175,14 +197,17 @@
   border-radius: 16px;
 }
 
-.major-text {
-  position: relative;
-
-  font-size: 30;
-  width: 171px;
-  height: 35px;
-  color: #707070;
-  border-color: #418bba;
+@media (min-width: 1024px) {
+  ::ng-deep mat-form-field {
+    display: flex;
+    width: 40%;
+  }
+}
+@media (max-width: 1024px) {
+  ::ng-deep mat-form-field {
+    display: flex;
+    width: 100%;
+  }
 }
 .icon {
   display: flex;
@@ -225,29 +250,9 @@
   justify-content: center;
   flex-direction: row;
 }
-.major-textfield {
-  position: relative;
-  width: 696.89px;
-
-  height: 75.74px;
-  border-radius: 7%;
-  border-color: #707070;
-}
-
-.club-text {
-  position: relative;
-  width: 155px;
-  height: 35px;
-  color: #707070;
-  border-color: #418bba;
-}
-
-.club-textfield {
-  position: relative;
-  width: 155px;
-  height: 35px;
-  border-radius: 7%;
-  border-color: #707070;
+.inputText {
+  display: flex;
+  width: 35%;
 }
 
 .tooltip .tooltiptext {
