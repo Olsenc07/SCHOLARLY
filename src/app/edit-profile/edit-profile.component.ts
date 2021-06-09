@@ -70,7 +70,8 @@ profilePic: FormControl = new FormControl('');
   name: FormControl = new FormControl('');
   pronouns: FormControl = new FormControl('');
   minor: FormControl = new FormControl('');
-  snapShot1: FormControl = new FormControl('');
+  snapShot: FormControl = new FormControl('');
+  accountType: FormControl = new FormControl('');
 
   club: FormControl = new FormControl('');
   birthday: FormControl = new FormControl('');
@@ -185,6 +186,7 @@ removeP(codeP: string): void {
     this.codeInput.nativeElement.value = '';
     this.courseCodeCtrl.setValue(null);
   }
+  
   // Pursuing Classes
 selectedP(event: MatAutocompleteSelectedEvent): void {
   this.classesP.push(event.option.viewValue);
@@ -224,7 +226,7 @@ clearClub(): void {
   }
 
   clearPic1(): void {
-    this.snapShot1.setValue('');
+    this.snapShot.setValue('');
     document.getElementById('firstP').removeAttribute('src');
   }
 

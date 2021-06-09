@@ -1,32 +1,98 @@
+.accounts {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.Accounts {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+}
+.asthetic-adds {
+  color: #418bba;
+  border-color: #707070;
+  display: flex;
+}
+.bio {
+  display: flex;
+  width: 100%;
+}
 .entire-page {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  width: 100%;
 }
 .courses {
   display: flex;
   width: 100%;
   flex-direction: column;
 }
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0% 2%;
+}
+.cropper {
+  display: flex;
+  max-height: 260px;
+}
+
+.display {
+  display: flex;
+  width: 50%;
+}
+.gender {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.groups-j {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 50%;
+  border: ridge;
+  box-sizing: border-box;
+}
 .top {
   display: flex;
   justify-content: center;
   margin-top: 2%;
 }
+
+.major-layout {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 .middle {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
 }
 .left-column {
   display: flex;
   flex-direction: column;
 }
+.imagePreview {
+  display: flex;
+  width: 270px;
+  height: 270px;
+  margin-bottom: 3%;
+}
 .input {
   display: flex;
   justify-content: center;
   flex-direction: row;
   width: 100%;
-  margin-bottom: 2%;
+}
+.recent-post-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: ridge;
 }
 @media (min-width: 1024px) {
   .row {
@@ -41,6 +107,28 @@
     justify-content: center;
     flex-direction: column;
   }
+}
+@media (min-width: 900px) {
+  .rowP {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    margin: 2% 0%;
+    overflow-x: scroll;
+  }
+}
+@media (max-width: 900px) {
+  .rowP {
+    display: flex;
+    flex-direction: row;
+    margin: 2% 0%;
+    overflow-x: scroll;
+  }
+}
+.snapShot {
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
 .right-column {
   display: flex;
@@ -66,6 +154,12 @@
   width: 90%;
   height: 100%;
 }
+.pics {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 250px;
+}
 .layout {
   margin-bottom: 2%;
   display: flex;
@@ -90,7 +184,47 @@
   color: #707070;
   border-color: #418bba;
 }
-
+.icon {
+  display: flex;
+  justify-content: center;
+  margin-right: 1%;
+  font-size: xx-large;
+  color: #418bba;
+}
+._icon {
+  display: flex;
+  justify-content: center;
+  margin-right: 1%;
+  font-size: xx-large;
+  flex-direction: column;
+  color: #418bba;
+}
+@media (min-width: 660px) {
+  ._icon2 {
+    display: flex;
+    justify-content: center;
+    font-size: 70px;
+    flex-direction: column;
+    color: #418bba;
+  }
+}
+@media (max-width: 660px) {
+  ._icon2 {
+    display: none;
+  }
+}
+.input {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 2%;
+}
+.inputP {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
 .major-textfield {
   position: relative;
   width: 696.89px;
@@ -114,12 +248,6 @@
   height: 35px;
   border-radius: 7%;
   border-color: #707070;
-}
-
-.button {
-  margin: 8px 0;
-  font-size: 40px;
-  color: #707070;
 }
 
 .tooltip .tooltiptext {
@@ -174,13 +302,4 @@
   border-radius: 7%;
   border-color: #707070;
   font-size: 30;
-}
-.cancel {
-  margin: 13% 2% 1% 2%;
-}
-.sport {
-  margin: 5%;
-}
-.major {
-  margin: 5%;
 }
