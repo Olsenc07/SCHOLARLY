@@ -13,6 +13,7 @@ import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import { ClassListService } from '../services/class.service';
+import {MatButtonModule} from '@angular/material/button';
 
 
 interface Gender {
@@ -65,28 +66,37 @@ imgChangeEvt: any = '';
 // PP isn't connected properly i dont think, since image is being cropped then returned as a base 64 value
 profilePic: FormControl = new FormControl('');
   major: FormControl = new FormControl('');
+  minor: FormControl = new FormControl('');
   sport: FormControl = new FormControl('');
+  club: FormControl = new FormControl('');
   bio: FormControl = new FormControl('');
   name: FormControl = new FormControl('');
   pronouns: FormControl = new FormControl('');
-  minor: FormControl = new FormControl('');
   snapShot: FormControl = new FormControl('');
   accountType: FormControl = new FormControl('');
-
-  club: FormControl = new FormControl('');
   birthday: FormControl = new FormControl('');
   relationship: FormControl = new FormControl('');
   genderChoice: FormControl = new FormControl('');
   date: FormControl = new FormControl(moment());
+  
+
 
   editForm = new FormGroup({
     major: this.major,
+    minor: this.minor,
     sport: this.sport,
+    club: this.club,
     name: this.name,
+    price: this.pronouns,
     birthday: this.birthday,
     relationship: this.relationship,
     genderChoice: this.genderChoice,
     date: this.date,
+    accountType: this.accountType,
+    profilePic: this.profilePic,
+    courseCodeCtrl: this.courseCodeCtrl,
+    courseCodeCtrlP: this.courseCodeCtrlP,
+
   });
   selectedIndex = 0;
   genders: Gender[] = [
@@ -127,8 +137,8 @@ imgFailed(): void {
     }
   }
   constructor(public dialog: MatDialog,
-    public classListService: ClassListService,
-    private http: HttpClient,) {
+              public classListService: ClassListService,
+              private http: HttpClient, ) {
     this.filteredCodes = this.courseCodeCtrl.valueChanges.pipe(
       map((code: string | null) =>
         code ? this._filter(code) : this.classListService.allClasses().slice()
@@ -186,7 +196,6 @@ removeP(codeP: string): void {
     this.codeInput.nativeElement.value = '';
     this.courseCodeCtrl.setValue(null);
   }
-  
   // Pursuing Classes
 selectedP(event: MatAutocompleteSelectedEvent): void {
   this.classesP.push(event.option.viewValue);

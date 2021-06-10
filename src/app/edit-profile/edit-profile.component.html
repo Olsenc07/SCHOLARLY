@@ -1,6 +1,12 @@
 <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
   <mat-tab-group mat-align-tabs="center">
     <mat-tab label="Your Display"><div class="entire-page">
+      <button class="display1" routerLink="/profile">
+      <span class="material-icons">
+        arrow_back_ios
+        </span>
+      </button>
+      <mat-divider></mat-divider>
       <!-- lower box -->
       <div class="middle">
     
@@ -255,15 +261,18 @@
         
   
           <!-- done button -->
-          
+          <div class="done">
           <button
-            mat-button
+            mat-raised-button
+            color="primary"
             type="submit"
             routerLink="/profile"
             class="button"
+            (click)="onSubmit()"
           >
             Done
           </button>
+          </div>
         
         
       </div></div></mat-tab>
@@ -281,11 +290,6 @@
 </div>
   </div>
     
-    
-
-     
-    
-  
    <!-- Image Preview -->
    <div class="column">
     <h2 class="snapShot">Add A SnapShot</h2>
@@ -362,19 +366,21 @@
 </div>
 </div>
 
-
-</div>
   <!-- done button -->
-<div class="done">
-  <button
-  mat-button
-  type="submit"
-  routerLink="/profile"
-  class="button"
->
-  Done
-</button>
+  <div class="done">
+    <button
+    mat-raised-button
+    color="primary"
+    type="submit"
+    routerLink="/profile"
+    class="button"
+    (click)="onSubmit()"
+  >
+    Done
+  </button>
+  </div>
 </div>
+
 </mat-tab>
   
   </mat-tab-group>
