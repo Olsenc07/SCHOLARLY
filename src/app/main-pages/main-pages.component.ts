@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { from } from 'rxjs';
+import {MatCardModule} from '@angular/material/card';
 
 @Component({
   selector: 'app-main-pages',
@@ -10,8 +11,6 @@ import { from } from 'rxjs';
 export class MainPagesComponent implements OnInit {
 
   main: FormControl = new FormControl('');
-  
-
   mainForm = new FormGroup({
     main: this.main,
 

@@ -1,27 +1,19 @@
-<form [formGroup]="mainForm" (ngSubmit)="onSubmit()">
+ <form [formGroup]="mainForm" (ngSubmit)="onSubmit()" class="entire-page">
 <!-- Entire page -->
 <div class="entire-page">
-<!-- Left Side -->
-<div class="left">
-  <textarea class="left-input" rows="48" cols="20"> </textarea>
-</div>
+
   <!-- Middle -->
   <div class="middle-large">
     
-    <div class="middle-middle">
+   
       
       <!-- middle ish -->
       <div class="middle">
         <!-- Search Bar -->
           
-<form class="search" >
-  <input type="text" 
-   class="search-input" placeholder="Search.." name="search">
-  <button type="submit"><span class="material-icons" >search</span></button>
- 
-</form>
-        <!-- Specifics text -->
-        <p class="text" style="font-size: large;">Specifics: <input placeholder="" class="text" /></p>
+
+        <!-- Specifics text {{}} after : -->
+        <p class="text" style="font-size: large;">Specifics: </p>
 
         <!-- text beside Specifics that indicates which 
 page your own for that given main category -->
@@ -29,38 +21,27 @@ page your own for that given main category -->
         <!-- Specifics box which gets filled depending
 on which main category page your on-->
         <div class="specifics-input">
-          <textarea class="specifics-fill" rows="30" cols="40"> </textarea>
+          <div class="specifics-fill" > </div>
         </div>
       </div>
-    </div>
+    
   </div>
   <!-- Right wall -->
   <div class="right-wall">
     
 
-    <!-- posts text -->
-    <div>
-      <p class="text" style="font-size: large;">Posts: <input placeholder="" class="text" /></p>
+    <!-- Specific choice appears at top of feed and dissapears as user scrolls -->
+    <div class="top">
+      <!-- {{specific}} -->
     </div>
 
     <!-- text beside posts that indicates which 
 specific posts you are viewing -->
 
     <!-- Posts box which should be a scroll view -->
-    <div>
-      <textarea class="specifics-fill" rows="40" cols="57"> </textarea>
+    <div class="feed">
+      <div class="specifics-fill" > </div>
     </div>
   </div>
 </div>
 </form>
-
-
-
- <!-- Info Icon which just displays a message related to specifc page
-       on hover -->
-<!--  <div class="tooltip" style="margin-top: 35%">
-    <span class="material-icons" style="font-size: 40px"> info </span>
-    <span class="tooltiptext"
-      >This messages depends on which page is loaded in</span
-    >
-  </div> -->

@@ -34,6 +34,7 @@ import { MatAutocompleteModule} from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ImageCropperModule } from 'ngx-image-cropper';
 import { NgxImageZoomModule } from 'ngx-image-zoom';
+import {MatCardModule} from '@angular/material/card';
 
 
 
@@ -138,6 +139,7 @@ import { UpcomingEComponent} from './search/search.component';
     MatFormFieldModule,
     ImageCropperModule,
     NgxImageZoomModule,
+    MatCardModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
