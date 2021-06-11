@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { from } from 'rxjs';
 import {MatCardModule} from '@angular/material/card';
+import {MatDialog} from '@angular/material/dialog';
+import {MatRadioModule} from '@angular/material/radio';
 
 @Component({
   selector: 'app-main-pages',
@@ -16,7 +18,7 @@ export class MainPagesComponent implements OnInit {
 
   });
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -28,7 +30,12 @@ export class MainPagesComponent implements OnInit {
     // TODO: wire up to login request
     console.log(this.mainForm.value);
   }
-
+  // Fills same way just for different reasons
+  // Each button opens this page by there should be 4 different functions with each sharin the open attendence comp, but each sends diff values/reasoning
+    openAttendanceSheet(): void {
+      this.dialog.open(AttendanceComponent);
+    }
+  
 }
 @Component({
   selector: 'app-main-pages',

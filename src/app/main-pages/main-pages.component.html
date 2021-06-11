@@ -72,9 +72,19 @@ on which main category page your on-->
       </mat-card-content>
       <mat-card-actions>
 <!-- Star button that takes you to that group chat. Attending, Maybe, Can't Attend with list from bottom which shows pp and username -->
-<div class="rowActions"><div class="column"><p class="fas fa-user-tag"></p>#</div>
-<p class="far fa-comments"></p></div>
+<div class="row">
+<div class="rowActions"><div class="column"><button mat-icon-button (click)="openAttendanceSheet()" ><p class="fas fa-user-tag"></p></button><p>#</p></div>
+<p class="far fa-comments center" routerLink="/groups"></p></div>
+<div class="attendance">
 
+  <mat-radio-group aria-label="Select an option" class="row">
+  
+ <div class="row"> <mat-radio-button  class="center" value="1"></mat-radio-button><button mat-button (click)="openAttendanceSheet()">Attending</button></div>
+ <div class="row"> <mat-radio-button  class="center" value="2"></mat-radio-button> <button (click)="openAttendanceSheet()" mat-button>Maybe</button></div>
+ <div class="row"> <mat-radio-button  class="center" value="3"></mat-radio-button> <button (click)="openAttendanceSheet()" mat-button>Not Attending</button></div>
+</mat-radio-group>
+</div>
+</div>
       </mat-card-actions>
       
       
