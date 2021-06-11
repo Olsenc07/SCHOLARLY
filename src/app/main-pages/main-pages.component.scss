@@ -26,11 +26,18 @@
   flex-direction: column;
   justify-content: center;
 }
+.columnAttend {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: fit-content;
+}
 .center {
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
+
 .left {
   display: flex;
   justify-content: center;
@@ -39,6 +46,10 @@
 }
 .left-input {
   background-color: #2196f3;
+}
+::ng-deep .mat-radio-label {
+  display: flex;
+  justify-content: center;
 }
 @media (min-width: 1024px) {
   .middle-large {

@@ -50,11 +50,13 @@ import { MainPagesComponent } from './main-pages/main-pages.component';
 import { SignupComponent } from './signup/signup.component';
 import { TermsPopUpComponent } from './signup/signup.component';
 import { AttendanceComponent } from './main-pages/main-pages.component';
+import { BottomSheetComponent } from './profile/profile.component';
+
 
 import { HomePageComponent } from './home-page/home-page.component';
 import { FriendsActivityComponent } from './friends-activity/friends-activity.component';
 import { PostPageComponent } from './post-page/post-page.component';
-import { ProfileBottomSheetComponent } from './profile/bottom-sheet/bottom-sheet.component';
+
 import { DialogElementsComponent } from './post-page/post-page.component';
 import { BluesCOptionComponent} from './search/search.component';
 import { BuySComponent} from './search/search.component';
@@ -86,7 +88,6 @@ import { UpcomingEComponent} from './search/search.component';
     FriendsActivityComponent,
     PostPageComponent,
     SearchComponent,
-    ProfileBottomSheetComponent,
     DialogElementsComponent ,
     BluesCOptionComponent,
     BuySComponent,
@@ -103,6 +104,7 @@ import { UpcomingEComponent} from './search/search.component';
     UpcomingEComponent,
     TermsPopUpComponent,
     AttendanceComponent,
+    BottomSheetComponent,
   ],
   imports: [
     BrowserModule,

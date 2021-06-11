@@ -1,7 +1,7 @@
 <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
   <mat-tab-group mat-align-tabs="center">
     <mat-tab label="Your Display"><div class="entire-page">
-      <button class="display1" routerLink="/profile">
+      <button mat-icon-button class="display1" routerLink="/profile">
       <span class="material-icons">
         arrow_back_ios
         </span>
@@ -30,7 +30,7 @@
               (loadImageFailed)="imgFailed()">
               </image-cropper>
              </div>
-             <button mat-flat-button color="primary" (click)="clearProfilePic()">Clear File</button>
+            <div class="snapShot"><button mat-stroked-button  (click)="clearProfilePic()">Clear File</button></div> 
             </div>
             <div class="rowP">
               <!-- <i class="fas fa-camera _icon2"></i>
@@ -294,8 +294,9 @@
    <div class="column">
     <h2 class="snapShot">Add A SnapShot</h2>
     <div class="snapShot"><input type="file" [formControl]="snapShot" accept="image/* video/*" (change)="imagePreview($event)" /></div>
+    
    <div class="snapShot"><img [src]="url" id="firstP" class="imagePreview"></div>
-    <div class="snapShot"><button mat-flat-button color="primary" (click)="clearPic1()">Clear File</button></div>
+    <div class="snapShot"><button mat-stroked-button  (click)="clearPic1()">Clear File</button></div>
   </div>
 
 

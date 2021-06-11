@@ -52,11 +52,13 @@
 }
 .display1 {
   display: flex;
+  margin-left: 5%;
 }
 .done {
   justify-content: center;
   display: flex;
   width: 100%;
+  margin-bottom: 5%;
 }
 .entire-page {
   display: flex;
@@ -138,7 +140,6 @@
   display: flex;
   width: 270px;
   height: 270px;
-  margin-bottom: 3%;
 }
 .input {
   display: flex;
@@ -198,6 +199,7 @@
   width: 100%;
   justify-content: center;
 }
+
 .right-column {
   display: flex;
   flex-direction: column;
