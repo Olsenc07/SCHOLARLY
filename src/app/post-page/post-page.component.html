@@ -194,8 +194,8 @@
             </div>
             <div class="column">
       
-              <div class="amount-peopleD">
-                <label for="points" class="fas fa-user" style="color: #70ade2;">Amount of people</label>
+              <div class="amount-peopleD"><div class="row"><div class="material-icons row" style="color: #70ade2;">people</div>
+                <label for="points">Amount of people</label></div>
               
                 <mat-slider
                 thumbLabel
@@ -221,14 +221,14 @@
       <form [formGroup]="thirdFormGroup" (ngSubmit)="onthirdFormSubmit()">
         <ng-template matStepLabel>Services</ng-template>
         <div class="column_">
-        <div class="row"><div class="material-icons" style="color: rgb(104, 11, 11);">  directions_car</div><p style="color: rgb(104, 11, 11);">Able to drive members </p><mat-checkbox class="btn"  
+        <div class="row"><p class="fas fa-car" style="color: rgb(104, 11, 11);">Able to drive members </p><mat-checkbox class="btn"  
         ></mat-checkbox
       ></div>
     <!-- formControlName="checked2"  -->
      
   
   
-    <div  class="row"> <div class="material-icons" style="color: green">attach_money</div><p style="color: green">Service involving payment </p><mat-checkbox class="btn" 
+    <div  class="row"> <p class="fas fa-dollar-sign" style="color: green"></p><p style="color: green">Service involving payment </p><mat-checkbox class="btn" 
     ></mat-checkbox
   ></div>
     <!-- formControlName="checked3" -->

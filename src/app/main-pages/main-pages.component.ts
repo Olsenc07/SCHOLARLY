@@ -30,3 +30,9 @@ export class MainPagesComponent implements OnInit {
   }
 
 }
+@Component({
+  selector: 'app-main-pages',
+  templateUrl: './attendance.component.html',
+  styleUrls: ['./attendance.component.scss'],
+})
+export class AttendanceComponent {}

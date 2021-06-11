@@ -49,7 +49,7 @@ import { GroupChatsComponent } from './group-chats/group-chats.component';
 import { MainPagesComponent } from './main-pages/main-pages.component';
 import { SignupComponent } from './signup/signup.component';
 import { TermsPopUpComponent } from './signup/signup.component';
-
+import { AttendanceComponent } from './main-pages/main-pages.component';
 
 import { HomePageComponent } from './home-page/home-page.component';
 import { FriendsActivityComponent } from './friends-activity/friends-activity.component';
@@ -102,6 +102,7 @@ import { UpcomingEComponent} from './search/search.component';
     SpiritualityComponent,
     UpcomingEComponent,
     TermsPopUpComponent,
+    AttendanceComponent,
   ],
   imports: [
     BrowserModule,
