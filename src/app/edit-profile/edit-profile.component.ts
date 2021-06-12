@@ -16,6 +16,7 @@ import { ClassListService } from '../services/class.service';
 import {MatButtonModule} from '@angular/material/button';
 
 
+
 interface Gender {
   name: string;
 }
@@ -244,6 +245,11 @@ clearClub(): void {
   onSubmit(): void {
     // TODO: wire up to login request
     console.log(this.editForm.value);
+  }
+  function($scope): any{
+    const longTxt = 100;
+    $scope.longTxt = longTxt;
+    $scope.text = '';
   }
 }
 @Component({
