@@ -78,7 +78,6 @@ profilePic: FormControl = new FormControl('');
   relationship: FormControl = new FormControl('');
   genderChoice: FormControl = new FormControl('');
   date: FormControl = new FormControl(moment());
-  
 
 
   editForm = new FormGroup({
@@ -227,6 +226,9 @@ clearClub(): void {
 
   clearName(): void {
     this.name.setValue('');
+  }
+  clearBio(): void {
+    this.bio.setValue('');
   }
 
   clearProfilePic(): void {

@@ -90,8 +90,20 @@
             </mat-form-field>
             </div>
           <!-- Bio -->
-          <div class="input"><i class="far fa-edit _icon">Bio</i>
-            <div class="display"><textarea [formControl]="bio" class="bio"></textarea></div></div>
+          <div class="input">
+            <div class="display">
+              <mat-form-field ><input matInput
+              placeholder="Bio" [formControl]="bio" class="bio" maxlength="100">  <button
+              mat-button
+              matSuffix
+              mat-icon-button
+              aria-label="Clear"
+              type="button"
+              (click)="clearBio()"
+            >
+              <mat-icon class="asthetic-adds">close</mat-icon>
+            </button></mat-form-field>
+             </div></div>
   
           <!-- Text Field Major/Minor -->
          <div class="major-layout">
@@ -99,6 +111,7 @@
          <span class="material-icons _icon">
            looks_one
            </span>
+           
          <mat-form-field >
            <input
            class="major"
@@ -153,7 +166,7 @@
               <mat-form-field >
                 <input 
                   matInput
-                  placeholder="What sport do you play?"
+                  placeholder="Do you play a sport?"
                   [formControl]="sport"
                  
                 />
@@ -177,7 +190,7 @@
             <input
             class="major"
               matInput
-              placeholder="What club are you apart of? "
+              placeholder="Are you apart of a club? "
               [formControl]="club"
             />
             <button
