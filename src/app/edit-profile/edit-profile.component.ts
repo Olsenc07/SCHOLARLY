@@ -247,7 +247,6 @@ clearClub(): void {
     // TODO: wire up to login request
     console.log(this.editForm.value);
   }
- 
 }
 @Component({
   selector: 'app-edit-profile',
