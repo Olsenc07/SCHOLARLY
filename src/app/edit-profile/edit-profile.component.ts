@@ -47,6 +47,7 @@ export const MY_FORMATS = {
 ]
 })
 export class EditProfileComponent implements OnInit {
+  Bio = '';
   visible = true;
   selectable = true;
   removable = true;
@@ -246,11 +247,7 @@ clearClub(): void {
     // TODO: wire up to login request
     console.log(this.editForm.value);
   }
-  function($scope): any{
-    const longTxt = 100;
-    $scope.longTxt = longTxt;
-    $scope.text = '';
-  }
+ 
 }
 @Component({
   selector: 'app-edit-profile',

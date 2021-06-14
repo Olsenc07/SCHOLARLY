@@ -92,8 +92,9 @@
           <!-- Bio -->
           <div class="input">
             <div class="display">
-              <mat-form-field ng-controller="txtController"><input matInput
-              placeholder="Bio " [formControl]="bio" class="bio" maxlength="{{ longTxt }}">  <button
+              <mat-form-field ><input matInput [(ngModel)]="Bio"
+              placeholder="Bio " [formControl]="bio" class="bio" maxlength = "100"> 
+               <button
               mat-button
               matSuffix
               mat-icon-button
@@ -103,8 +104,11 @@
             >
               <mat-icon class="asthetic-adds">close</mat-icon>
             </button>
-            {{longTxt - text.length}}
+          
           </mat-form-field>
+          <div>
+            {{ 100 - Bio.length }}
+          </div>
              </div></div>
   
           <!-- Text Field Major/Minor -->
