@@ -126,6 +126,10 @@
 }
 .top {
   display: flex;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: 400;
+  margin-bottom: 2%;
 }
 .specifics-fill {
   display: flex;
@@ -148,6 +152,10 @@
   display: flex;
   justify-content: center;
 }
+.nameTitle {
+  display: flex;
+  width: 100%;
+}
 .postText {
   display: flex;
   width: 100%;
@@ -156,8 +164,50 @@
   overflow-y: visible;
   margin-left: 1%;
 }
+.postTitle {
+  display: flex;
+  font-weight: 500;
+  font-size: large;
+  flex-direction: column;
+  justify-content: center;
+}
+.postLocation {
+  display: flex;
+  font-weight: 400;
+  font-size: large;
+  flex-direction: column;
+  justify-content: center;
+}
+.postTime {
+  display: flex;
+  font-weight: 400;
+  font-size: large;
+  flex-direction: column;
+  justify-content: center;
+}
 p {
   display: flex;
   font-size: x-large;
   justify-content: center;
+}
+.profilePic {
+  display: flex;
+  border-radius: 50%;
+  border: groove;
+  margin-right: 2%;
+  margin-bottom: 1%;
+}
+
+.userName {
+  display: flex;
+  font-weight: 500;
+  font-size: large;
+  margin-right: 1%;
+  flex-direction: column;
+  justify-content: center;
+}
+.mat-card-avatar {
+  display: flex;
+  height: 60px;
+  width: 60px;
 }

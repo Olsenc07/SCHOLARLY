@@ -8,7 +8,7 @@
     <div class="left_1">
       <mat-form-field class="text-input"
         ><mat-label>Title of Post</mat-label>
-        <input matInput [formControl]="title" placeholder="" />
+        <input matInput  maxlength="35" [formControl]="postTitle">
         <button
         mat-button
         matSuffix
@@ -20,6 +20,7 @@
         <mat-icon class="clear-button">close</mat-icon>
       </button>
       </mat-form-field>      
+     
       <!-- Description of Post -->
       <div class="column_1">
         <div class="post-descriptionD">
@@ -302,7 +303,7 @@
   
     <mat-form-field class="text-inputM"
         ><mat-label>Title of Post</mat-label>
-        <input matInput [formControl]="title" placeholder="" />
+        <input matInput [formControl]="title"  maxlength="35"  />
         <button
         mat-button
         matSuffix
@@ -314,6 +315,7 @@
         <mat-icon class="clear-button">close</mat-icon>
       </button>
       </mat-form-field>   
+     
       <div class="post-descriptionM">
         <textarea class="postM" placeholder="What do you wanna say?"></textarea>
       </div>   

@@ -4,19 +4,14 @@
   
   <!-- Middle -->
   <div class="middle-large">
-    
-   
-      
       <!-- middle ish -->
       <div class="middle">
-        <!-- Search Bar -->
-          
-
         <!-- Specifics text {{}} after : -->
         <p class="text" style="font-size: large;">Specifics: </p>
 
         <!-- text beside Specifics that indicates which 
 page your own for that given main category -->
+<!-- {{Specific}} -->
 
         <!-- Specifics box which gets filled depending
 on which main category page your on-->
@@ -32,24 +27,22 @@ on which main category page your on-->
 
     <!-- Specific choice appears at top of feed and dissapears as user scrolls -->
     <div class="top">
-      <!-- {{specific}} -->
+      <!-- {{specific}} --> 
     </div>
 
     <!-- Posts box which should be a scroll view -->
     <div class="feed">
-      <mat-card class="specifics-fill" >
-        <mat-card-header>
+      <mat-card class="specifics-fill" > 
           <!-- Profile Pic -->
-<div mat-card-avatar></div>
-<mat-card-title>
-  <div class="row">
-    <!-- {{userName}} --><div>Olsen07</div>
-    <!-- {{title}} --><div>Best Post</div> 
-     <!--{{Location}} --><div>Location</div>  
-      <!--{{date}} --><div>Date/Time</div>  
-  </div>
-</mat-card-title>
-        </mat-card-header>
+  
+          <div class="row">
+            <div mat-card-avatar class="profilePic"> <!-- {{profilePic}} --></div>
+    <div class="nameTitle"><!-- {{userName}}: --><div class="userName">Olsen07:</div>
+    <!-- {{title}} --><div class="postTitle">Post Title</div> </div>
+     <!--{{Location}} --><div class="postLocation">Location</div>  
+      <!--{{date}} --><div class="postTime">Date/Time</div>  
+          </div>
+
         <!-- Takes upload img/video from post page {{upload}} -->
       <img class="middle-card">
       <mat-card-content>

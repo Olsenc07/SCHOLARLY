@@ -97,6 +97,7 @@ profilePic: FormControl = new FormControl('');
     profilePic: this.profilePic,
     courseCodeCtrl: this.courseCodeCtrl,
     courseCodeCtrlP: this.courseCodeCtrlP,
+    bio: this.bio,
 
   });
   selectedIndex = 0;
