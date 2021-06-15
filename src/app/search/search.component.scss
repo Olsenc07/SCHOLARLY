@@ -138,14 +138,14 @@
 }
 @media (min-width: 1025px) {
   .specifics-text_ {
-    margin-left: 35%;
-    color: #0e3379;
-    font-size: large;
+    display: flex;
+    justify-content: center;
   }
   .specific-text-layout {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-top: 2%;
   }
   .recents-text {
     font-size: x-large;
@@ -322,6 +322,11 @@
   display: flex;
   width: 100%;
   flex-direction: column;
+}
+.specificBtn {
+  border: transparent;
+  background-color: rgb(65, 88, 165);
+  color: white;
 }
 @media (max-width: 1025px) {
   .mat-list-base .mat-list-item,

@@ -11,40 +11,33 @@
         <div class="title-categories">
           <!-- Specifics text-->
           <div class="specific-text-layout">
-            <button
-              mat-icon-button
-              type="button"
-              routerLink="/main"
-              color="primary"
-              class="action-button"
-            >
-              <p class="specifics-text_">Specific Pages:</p>
-             
-            </button>
+              <h2 class="specifics-text_">Specific Pages:</h2>
           </div>
 
           <!-- categeory filter box -->
           <div class="input-boxs">
+            
             <mat-chip-list class="mat-list-text">
               <mat-chip
                 
                 [multiple]="false"
                 *ngFor="let opt of specificOptions"
                 [value]="opt"
-                
+          
               >
+              <button  class="specificBtn" routerLink="/main">
                 {{ opt }}
+              </button>
               </mat-chip>
             </mat-chip-list>
+         
           </div>
         </div>
       </div>
 
       <!-- middle -->
       <div class="middle-column-large">
-       
         <!-- Category box -->
-
         <div class="input-boxs ">
           <h2 class="center">Main Categories </h2>
           <mat-form-field>
@@ -74,7 +67,7 @@
       <div class="right-column">
         <!-- Recents tetx -->
         <div class="center">
-          <p class="recents-text">Recent Feed</p>
+          <h2 class="recents-text">Recent Feed</h2>
           
         </div>
         <div class="recents"></div>
