@@ -2,12 +2,12 @@
 <!-- Entire page -->
 <div class="entire-page">
   
-  <!-- Middle -->
+  <!-- Extra Search Desktop -->
   <div class="middle-large">
       <!-- middle ish -->
       <div class="middle">
         <!-- Specifics text {{}} after : -->
-        <p class="text" style="font-size: large;">Specifics: </p>
+        <p class="text" style="font-size: large;">Similar search options </p>
 
         <!-- text beside Specifics that indicates which 
 page your own for that given main category -->
@@ -16,17 +16,64 @@ page your own for that given main category -->
         <!-- Specifics box which gets filled depending
 on which main category page your on-->
         <div class="specifics-input">
-          <div class="specifics-fill" > </div>
+          <div class="specifics-fill" >  <mat-chip-list class="mat-list-text">
+            <mat-chip
+              
+              [multiple]="false"
+              *ngFor="let opt of specificOptions"
+              [value]="opt"
+              
+            >
+              {{ opt }}
+            </mat-chip>
+          </mat-chip-list> </div>
         </div>
       </div>
     
   </div>
+ <!-- Extra Search Mobile -->
+ <div class="middle-large-mobile">
+ <mat-drawer-container>
+   <mat-drawer #drawer mode="side">
+ <div class="middle">
+  <!-- Specifics text {{}} after : -->
+  <p class="text" style="font-size: large;"> </p>
+
+  <!-- text beside Specifics that indicates which 
+page your own for that given main category -->
+<!-- {{Specific}} -->
+
+  <!-- Specifics box which gets filled depending
+on which main category page your on-->
+  <div class="specifics-input">
+    <div class="specifics-fill" >  <mat-chip-list class="mat-list-text">
+      <mat-chip
+        
+        [multiple]="false"
+        *ngFor="let opt of specificOptions"
+        [value]="opt"
+        
+      >
+        {{ opt }}
+      </mat-chip>
+    </mat-chip-list> </div>
+  </div>
+</div>
+</mat-drawer>
+</mat-drawer-container>
+</div>
   <!-- Right wall -->
   <div class="right-wall">
     
 
     <!-- Specific choice appears at top of feed and dissapears as user scrolls -->
     <div class="top">
+      <div class="specificChoice">
+     Specific Choice...</div>
+     <div class="hide ">
+      <button type="button" mat-icon-button class="expandBtn"  (click)="drawer.toggle()"> <div class="fas fa-angle-double-right"></div>
+      </button>
+    </div>
       <!-- {{specific}} --> 
     </div>
 
