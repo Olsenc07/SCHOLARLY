@@ -84,10 +84,10 @@ on which main category page your on-->
   
           <div class="row">
             <div mat-card-avatar class="profilePic"> <!-- {{profilePic}} --></div>
-    <div class="nameTitle"><!-- {{userName}}: --><div class="userName">Olsen07:</div>
-    <!-- {{title}} --><div class="postTitle">Post Title</div> </div>
-     <!--{{Location}} --><div class="postLocation">Location</div>  
-      <!--{{date}} --><div class="postTime">Date/Time</div>  
+    <div class="nameTitle"><!-- {{userName}}: --><div class="userName textSize">Olsen07:</div>
+    <!-- {{title}} --><div class="postTitle textSize">Post Title</div> </div>
+     <!--{{Location}} --><div class="postLocation textSize">Location</div>  
+      <!--{{date}} --><div class="postTime textSize">Date/Time</div>  
           </div>
 
         <!-- Takes upload img/video from post page {{upload}} -->
@@ -110,20 +110,21 @@ on which main category page your on-->
           <!-- number of how many are welcome
              <div>{{value}}</div> or says all -->
       </mat-card-content>
-      <mat-card-actions>
+      <mat-card-actions >
 <!-- Star button that takes you to that group chat. Attending, Maybe, Can't Attend with list from bottom which shows pp and username -->
-<div class="row">
+
   <div class="attendance">
     <mat-radio-group aria-label="Select an option" class="row">
-   <div class="columnAttend"><button mat-button (click)="openAttendanceSheet()">Attending</button> <mat-radio-button  class="center" value="1"></mat-radio-button></div>
-   <div class="columnAttend"> <button (click)="openAttendanceSheet()" mat-button>Maybe</button><mat-radio-button  class="center" value="2"></mat-radio-button> </div>
-   <div class="columnAttend"> <button (click)="openAttendanceSheet()" mat-button>Not Attending</button><mat-radio-button  class="center" value="3"></mat-radio-button> </div>
+   <div class="columnAttend"><button mat-button (click)="openAttendanceSheet()" class="textSize">Attending</button> <mat-radio-button  class="center" value="1"></mat-radio-button></div>
+   <div class="columnAttend"> <button (click)="openAttendanceSheet()" mat-button class="textSize">Maybe</button><mat-radio-button  class="center" value="2"></mat-radio-button> </div>
+   <div class="columnAttend"> <button (click)="openAttendanceSheet()" mat-button class="textSize">Not Attending</button><mat-radio-button  class="center" value="3"></mat-radio-button> </div>
   </mat-radio-group>
-  </div>
-<div class="rowActions"><div class="column"><button mat-icon-button (click)="openAttendanceSheet()" ><p class="fas fa-user-tag"></p></button><p>#</p></div>
-<p class="far fa-comments center" routerLink="/groups"></p></div>
+  
+  <div class="row">
+<button mat-icon-button (click)="openAttendanceSheet()" ><p class="fas fa-user-tag"></p></button>
+<p class="far fa-comments center" routerLink="/groups"></p></div></div>
 
-</div>
+
       </mat-card-actions>
       
       

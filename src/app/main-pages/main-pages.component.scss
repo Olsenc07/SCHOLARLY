@@ -12,6 +12,7 @@
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+  width: 75%;
 }
 .booleans {
   display: flex;
@@ -20,6 +21,7 @@
   width: 55%;
   margin-top: 1%;
 }
+
 .column {
   display: flex;
   margin-right: 12%;
@@ -62,7 +64,20 @@
     margin-bottom: 1%;
   }
 }
-
+@media (min-width: 500px) {
+  .mat-card-avatar {
+    display: flex;
+    height: 60px;
+    width: 60px;
+  }
+}
+@media (max-width: 500px) {
+  .mat-card-avatar {
+    display: flex;
+    height: 50px;
+    width: 50px;
+  }
+}
 ::ng-deep .mat-radio-label {
   display: flex;
   justify-content: center;
@@ -150,6 +165,16 @@
   color: #000000;
   border-color: #418bba;
 }
+@media (min-width: 500px) {
+  .textSize {
+    font-size: medium;
+  }
+}
+@media (max-width: 500px) {
+  .textSize {
+    font-size: smaller;
+  }
+}
 .top {
   display: flex;
   justify-content: center;
@@ -188,39 +213,64 @@
   display: flex;
   width: 100%;
 }
-.postText {
-  display: flex;
-  width: 100%;
-  border: groove;
-  // height: fit-content;
-  overflow-y: visible;
-  margin-left: 1%;
+@media (min-width: 600px) {
+  .postText {
+    display: flex;
+    width: 100%;
+    border: groove;
+    overflow-y: visible;
+    margin-left: 1%;
+  }
+}
+@media (min-width: 400px) {
+  .postText {
+    display: flex;
+    width: 80%;
+    border: groove;
+    overflow-y: visible;
+    margin-left: 1%;
+  }
+}
+@media (max-width: 400px) {
+  .postText {
+    display: flex;
+    width: 55%;
+    border: groove;
+    overflow-y: visible;
+    margin-left: 1%;
+  }
 }
 .postTitle {
   display: flex;
   font-weight: 500;
-  font-size: large;
   flex-direction: column;
   justify-content: center;
 }
 .postLocation {
   display: flex;
   font-weight: 400;
-  font-size: large;
   flex-direction: column;
   justify-content: center;
 }
 .postTime {
   display: flex;
   font-weight: 400;
-  font-size: large;
   flex-direction: column;
   justify-content: center;
 }
-p {
-  display: flex;
-  font-size: x-large;
-  justify-content: center;
+@media (min-width: 600px) {
+  p {
+    display: flex;
+    font-size: x-large;
+    justify-content: center;
+  }
+}
+@media (max-width: 600px) {
+  p {
+    display: flex;
+    font-size: medium;
+    justify-content: center;
+  }
 }
 .profilePic {
   display: flex;
@@ -233,13 +283,7 @@ p {
 .userName {
   display: flex;
   font-weight: 500;
-  font-size: large;
   margin-right: 1%;
   flex-direction: column;
   justify-content: center;
-}
-.mat-card-avatar {
-  display: flex;
-  height: 60px;
-  width: 60px;
 }
