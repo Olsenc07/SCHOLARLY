@@ -48,6 +48,11 @@
   width: 100%;
   justify-content: space-evenly;
 }
+p {
+  display: flex;
+  font-size: x-large;
+  justify-content: center;
+}
 .profilePic {
   display: flex;
   border-radius: 50%;

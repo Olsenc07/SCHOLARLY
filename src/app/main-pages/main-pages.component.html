@@ -76,69 +76,9 @@ on which main category page your on-->
     </div>
       <!-- {{specific}} --> 
     </div>
-
-    <!-- Posts box which should be a scroll view -->
-    <div class="feed">
-      <mat-card class="specifics-fill" > 
-          <!-- Profile Pic -->
+    <app-card class="fit"></app-card>
   
-          <div class="row">
-            <div mat-card-avatar class="profilePic"> <!-- {{profilePic}} --></div>
-    <div class="nameTitle"><!-- {{userName}}: --><mat-card-title class="userName textSize">Olsen07</mat-card-title>
-    <!-- {{title}} --><mat-card-subtitle class="postTitle textSize">Post Title</mat-card-subtitle> </div>
-     <!--{{Location}} --><div class="postLocation textSize">Location</div>  
-      <!--{{date}} --><div class="postTime textSize">Date/Time</div>  
-          </div>
-
-        <!-- Takes upload img/video from post page {{upload}} -->
-      <img class="middle-card">
-      <mat-card-content>
-       
-      
-<!-- Star button that takes you to that group chat. Attending, Maybe, Can't Attend with list from bottom which shows pp and username -->
-
-
-  <div class="center">
-    <div class="row">
-      <div class="center1">
-     <div class="center"> <button mat-icon-button  (click)="openAttendanceSheet()" ><p class="fas fa-user-tag"></p></button></div>
-     <div class="center"> <button  mat-icon-button ><p class="far fa-comments center" routerLink="/groups"></p></button> </div></div>
-      
-  <mat-radio-group aria-label="Select an option" class="row">
- <div class="columnAttend"><button mat-button (click)="openAttendanceSheet()" class="textSize">Attending</button> <mat-radio-button  class="center" value="1"></mat-radio-button></div>
- <div class="columnAttend"> <button (click)="openAttendanceSheet()" mat-button class="textSize">Maybe</button><mat-radio-button  class="center" value="2"></mat-radio-button> </div>
- <div class="columnAttend"> <button (click)="openAttendanceSheet()" mat-button class="textSize">Not Attending</button><mat-radio-button  class="center" value="3"></mat-radio-button> </div>
-</mat-radio-group>
 </div>
-
-
-
-
-      
-        </div>
-          <!-- number of how many are welcome
-             <div>{{value}}</div> or says all -->
-      </mat-card-content>
-      <mat-card-actions >
-           <!-- Import the boolean icons with no color originally then the what did user say.. if null then display="none" -->
-    <div class="row">
-          <div class="booleans">
-        <p class="fas fa-venus"></p>
-        <p class="fas fa-transgender-alt"></p>
-        <p class="fas fa-mars" ></p>
-        <p class="fas fa-user-friends"></p>
-        <p class="fas fa-car"></p>
-        <p class="fas fa-dollar-sign"></p>
-          <p class="fas fa-user-tie" ></p>
-          <p class="fas fa-glass-cheers" ></p></div>
-          <div class="postText"></div>
-</div>
-      </mat-card-actions>
-      
-      
-      
-      </mat-card>
-    </div>
-  </div>
+ 
 </div>
 </form>
