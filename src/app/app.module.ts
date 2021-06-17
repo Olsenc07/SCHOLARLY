@@ -71,7 +71,7 @@ import { QuestionsComponent} from './search/search.component';
 import { SchoolWComponent} from './search/search.component';
 import { SpiritualityComponent} from './search/search.component';
 import { UpcomingEComponent} from './search/search.component';
-
+import { ReusableCardComponent } from './reusable-card/reusable-card.component';
 
 
 @NgModule({
@@ -105,6 +105,7 @@ import { UpcomingEComponent} from './search/search.component';
     TermsPopUpComponent,
     AttendanceComponent,
     BottomSheetComponent,
+    ReusableCardComponent,
   ],
   imports: [
     BrowserModule,
