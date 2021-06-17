@@ -16,9 +16,9 @@
 }
 .booleans {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   height: 100%;
-  width: 55%;
+  width: 100%;
   margin-top: 1%;
 }
 
@@ -34,10 +34,26 @@
   justify-content: center;
   width: fit-content;
 }
+
 .center {
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+@media (max-width: 350px) {
+  .center1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+@media (min-width: 350px) {
+  .center1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
 }
 .expandBtn {
   font-size: x-large;
@@ -133,6 +149,7 @@
   display: flex;
   flex-direction: row;
   width: 100%;
+  justify-content: space-evenly;
 }
 .rowActions {
   display: flex;
@@ -159,6 +176,7 @@
     height: 100%;
   }
 }
+
 .text {
   justify-content: center;
   display: flex;
@@ -173,6 +191,11 @@
 @media (max-width: 500px) {
   .textSize {
     font-size: smaller;
+  }
+}
+@media (max-width: 400px) {
+  .textSize {
+    font-size: x-small;
   }
 }
 .top {
@@ -213,33 +236,15 @@
   display: flex;
   width: 100%;
 }
-@media (min-width: 600px) {
-  .postText {
-    display: flex;
-    width: 100%;
-    border: groove;
-    overflow-y: visible;
-    margin-left: 1%;
-  }
+
+.postText {
+  display: flex;
+  width: 100%;
+  border: groove;
+  overflow-y: visible;
+  margin-left: 1%;
 }
-@media (min-width: 400px) {
-  .postText {
-    display: flex;
-    width: 80%;
-    border: groove;
-    overflow-y: visible;
-    margin-left: 1%;
-  }
-}
-@media (max-width: 400px) {
-  .postText {
-    display: flex;
-    width: 55%;
-    border: groove;
-    overflow-y: visible;
-    margin-left: 1%;
-  }
-}
+
 .postTitle {
   display: flex;
   font-weight: 500;
