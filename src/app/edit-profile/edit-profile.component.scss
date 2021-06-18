@@ -17,11 +17,26 @@
   display: flex;
   width: 100%;
 }
+.bio-box {
+  padding: 25px;
+  border: 1px solid gray;
+  border-radius: 16px;
+}
+.birthday-text {
+  width: 121px;
+  height: 35px;
+  color: #707070;
+  border-color: #418bba;
+}
 .button {
   display: flex;
   justify-self: center;
 }
-
+.center{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 .courses {
   display: flex;
   width: 100%;
@@ -32,7 +47,6 @@
   flex-direction: column;
   justify-content: center;
   margin: 0% 2%;
-  overflow-x: scroll;
 }
 .cropper {
   display: flex;
@@ -67,24 +81,26 @@
   height: 100%;
   width: 100%;
 }
+.full-name-text {
+  position: relative;
+  font-size: 30;
+  width: 143px;
+  height: 35px;
+  color: #707070;
+  border-color: #418bba;
+}
+
+.full-name-textfield {
+  position: relative;
+  width: 456.89px;
+  height: 75.74px;
+  border-radius: 7%;
+  border-color: #707070;
+}
 .gender {
   display: flex;
   justify-content: center;
   width: 100%;
-}
-@media (min-width: 1024px) {
-  .work {
-    display: flex;
-    margin-left: 36%;
-    margin-right: 36%;
-    margin-top: 2%;
-  }
-}
-@media (max-width: 1024px) {
-  .work {
-    display: flex;
-    margin-top: 2%;
-  }
 }
 @media (min-width: 1024px) {
   .groups-jj {
@@ -111,8 +127,7 @@
 .groups-j {
   display: flex;
   justify-content: center;
-  width: 100%;
-  height: 260px;
+  height: 100%;
   border: ridge;
   box-sizing: border-box;
   overflow-x: scroll;
@@ -168,6 +183,10 @@
     flex-direction: column;
   }
 }
+.rowT{
+  display: flex;
+  flex-direction: row;
+}
 @media (min-width: 900px) {
   .rowP {
     display: flex;
@@ -198,6 +217,7 @@
 .snapShot {
   display: flex;
   width: 100%;
+  height: 100%;
   justify-content: center;
 }
 
@@ -244,11 +264,7 @@
   flex-direction: column;
 }
 
-.bio-box {
-  padding: 25px;
-  border: 1px solid gray;
-  border-radius: 16px;
-}
+
 
 @media (min-width: 1024px) {
   ::ng-deep mat-form-field {
@@ -321,29 +337,6 @@
   border-color: #418bba;
 }
 
-.full-name-text {
-  position: relative;
-  font-size: 30;
-  width: 143px;
-  height: 35px;
-  color: #707070;
-  border-color: #418bba;
-}
-
-.full-name-textfield {
-  position: relative;
-  width: 456.89px;
-  height: 75.74px;
-  border-radius: 7%;
-  border-color: #707070;
-}
-
-.birthday-text {
-  width: 121px;
-  height: 35px;
-  color: #707070;
-  border-color: #418bba;
-}
 
 .text-field-gender {
   position: relative;
@@ -360,4 +353,11 @@
   border-radius: 7%;
   border-color: #707070;
   font-size: 30;
+}
+.work {
+  display: flex;
+  margin-top: 2%;
+  width: 100%;
+  height: 415px;
+  justify-content: center;
 }
