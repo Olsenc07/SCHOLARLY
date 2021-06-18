@@ -84,6 +84,9 @@
 .current {
   margin-left: 15%;
 }
+.fit{
+  width:100%
+}
 .friends-format {
   display: flex;
   margin: 3% 9% 1% 5%;
@@ -238,10 +241,9 @@
 }
 .posts {
   display: flex;
-  height: 70%;
+  height: 100%;
   color: #0e3379;
-  overflow-y: scroll;
-  border-color: transparent;
+width:100%;
 }
 .pic {
   display: flex;
@@ -249,6 +251,10 @@
   border-radius: 50%;
   margin-top: 1%;
   height: 100%;
+}
+.pics{
+  display: flex;
+  height:100%
 }
 .profile-pic {
   display: flex;
@@ -354,10 +360,7 @@
 }
 .text_ {
   display: flex;
-  border-color: transparent;
   height: 100%;
-  color: #0e3379;
-
   overflow-y: scroll;
 }
 .top-middle {
