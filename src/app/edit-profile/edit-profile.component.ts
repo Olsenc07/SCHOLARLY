@@ -16,6 +16,7 @@ import { ClassListService } from '../services/class.service';
 import {MatButtonModule} from '@angular/material/button';
 
 
+
 interface Gender {
   name: string;
 }
@@ -46,6 +47,7 @@ export const MY_FORMATS = {
 ]
 })
 export class EditProfileComponent implements OnInit {
+  Bio = '';
   visible = true;
   selectable = true;
   removable = true;
@@ -95,6 +97,7 @@ profilePic: FormControl = new FormControl('');
     profilePic: this.profilePic,
     courseCodeCtrl: this.courseCodeCtrl,
     courseCodeCtrlP: this.courseCodeCtrlP,
+    bio: this.bio,
 
   });
   selectedIndex = 0;

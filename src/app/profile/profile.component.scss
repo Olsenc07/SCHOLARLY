@@ -17,7 +17,7 @@
 }
 .bio-name-age {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .bio-box {
@@ -31,9 +31,6 @@
 .bio-input {
   width: 90%;
   height: 100%;
-  border-radius: 10px;
-
-  background-color: #d1d6eb;
 }
 .center {
   display: flex;
@@ -87,6 +84,9 @@
 .current {
   margin-left: 15%;
 }
+.fit{
+  width:100%
+}
 .friends-format {
   display: flex;
   margin: 3% 9% 1% 5%;
@@ -135,6 +135,11 @@
     flex-direction: row;
   }
 }
+@media (min-width: 1024px) {
+  .hideM{
+    display: none;
+  }
+  }
 .Highlights {
   display: flex;
   height: 100%;
@@ -200,17 +205,13 @@
   display: flex;
   height: 100%;
 }
-@media (min-width: 1024px) {
-  mat-tab-group {
-    display: none;
-  }
-}
-@media (max-width: 1024px) {
+
+
   mat-tab-group {
     display: flex;
     height: 100%;
   }
-}
+
 
 .messageM {
   display: flex;
@@ -241,10 +242,8 @@
 }
 .posts {
   display: flex;
-  height: 70%;
-  color: #0e3379;
-  overflow-y: scroll;
-  border-color: transparent;
+  height: 100%; 
+  width:100%;
 }
 .pic {
   display: flex;
@@ -252,6 +251,10 @@
   border-radius: 50%;
   margin-top: 1%;
   height: 100%;
+}
+.pics{
+  display: flex;
+  height:100%
 }
 .profile-pic {
   display: flex;
@@ -264,10 +267,7 @@
   justify-content: center;
   background-color: rgb(235, 235, 245);
 }
-.recent {
-  margin-left: 5%;
-  margin-top: 1%;
-}
+
 .row {
   display: flex;
   flex-direction: row;
@@ -355,12 +355,9 @@
   background-color: rgb(235, 235, 245);
   justify-content: center;
 }
-.text_ {
+.showCase {
   display: flex;
-  border-color: transparent;
   height: 100%;
-  color: #0e3379;
-
   overflow-y: scroll;
 }
 .top-middle {

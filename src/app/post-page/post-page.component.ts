@@ -84,6 +84,8 @@ enum BooleanOptions {
 })
 
 export class PostPageComponent implements OnInit {
+
+
   url: string;
 
   selectedIndex = 0;
@@ -112,6 +114,7 @@ export class PostPageComponent implements OnInit {
   @ViewChild('autoM') matAutocompleteM: MatAutocomplete;
 
   isLinear = false;
+  postTitle: FormControl = new FormControl('');
   time: FormControl = new FormControl('');
   checked1: FormControl = new FormControl('');
   checked2: FormControl = new FormControl('');

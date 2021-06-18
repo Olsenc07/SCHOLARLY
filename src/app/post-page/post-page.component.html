@@ -8,7 +8,7 @@
     <div class="left_1">
       <mat-form-field class="text-input"
         ><mat-label>Title of Post</mat-label>
-        <input matInput [formControl]="title" placeholder="" />
+        <input matInput  maxlength="35" [formControl]="postTitle">
         <button
         mat-button
         matSuffix
@@ -20,6 +20,7 @@
         <mat-icon class="clear-button">close</mat-icon>
       </button>
       </mat-form-field>      
+     
       <!-- Description of Post -->
       <div class="column_1">
         <div class="post-descriptionD">
@@ -192,7 +193,7 @@
             
               </mat-radio-group>
             </div>
-            <div class="column">
+            <!-- <div class="column">
       
               <div class="amount-peopleD"><div class="row"><div class="material-icons row" style="color: #70ade2;">people</div>
                 <label for="points">Amount of people</label></div>
@@ -208,7 +209,7 @@
                 
               
               </div>
-            </div>
+            </div> -->
             
         <div>
           <button mat-button matStepperPrevious>Back</button>
@@ -302,7 +303,7 @@
   
     <mat-form-field class="text-inputM"
         ><mat-label>Title of Post</mat-label>
-        <input matInput [formControl]="title" placeholder="" />
+        <input matInput [formControl]="title"  maxlength="35"  />
         <button
         mat-button
         matSuffix
@@ -314,6 +315,7 @@
         <mat-icon class="clear-button">close</mat-icon>
       </button>
       </mat-form-field>   
+     
       <div class="post-descriptionM">
         <textarea class="postM" placeholder="What do you wanna say?"></textarea>
       </div>   
@@ -466,7 +468,7 @@
           
             </mat-radio-group>
           </div>
-          <div class="column">
+          <!-- <div class="column">
     
             <div class="amount-peopleD">
               <label for="points" class="fas fa-user" style="color: #70ade2;">Amount of people</label>
@@ -477,12 +479,12 @@
       
               min="1"
               max="100"></mat-slider>
-            <!-- [formControl]="checked1" -->
+            !-- [formControl]="checked1" --
               <mat-checkbox  >All Welcome</mat-checkbox>
               
             
             </div>
-          </div>
+          </div> -->
           
       <div>
         <button mat-button matStepperPrevious>Back</button>

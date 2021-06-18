@@ -57,6 +57,7 @@ export const MY_FORMATS = {
   ],
 })
 export class SignupComponent implements OnInit {
+  Bio = '';
 visible = true;
 selectable = true;
 removable = true;
@@ -285,7 +286,9 @@ selectedP(event: MatAutocompleteSelectedEvent): void {
       .filter((code) => code.toLowerCase().indexOf(filterValue) === 0);
   }
 
-
+  clearBio(): void {
+    this.bio.setValue('');
+  }
 clearUsername(): void {
     this.username.setValue('');
   }
