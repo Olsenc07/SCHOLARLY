@@ -14,16 +14,31 @@
                     </mat-card-subtitle>
                 </div>
             </div>
-            <div class="row1"><button mat-icon-button><i class="far fa-check-circle"></i></button>
+            <div class="row1"><button mat-icon-button class="btn"><i class="far fa-check-circle green"></i></button>
 
-                <button mat-icon-button> <i class="far fa-times-circle"></i></button>
+                <button mat-icon-button class="btn"> <i class="far fa-times-circle red"></i></button>
             </div>
 
         </div>
 
         <mat-card-content class="row">
-            Courses Shared
-            <div>#</div>
+            <mat-expansion-panel class="width">
+                <mat-expansion-panel-header>
+                    <mat-panel-title class="width">
+                        Courses Shared
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        <!-- {{courses.length}} -->
+                        #
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <div class="classes">#</div>
+
+
+
+            </mat-expansion-panel>
+
         </mat-card-content>
     </div>
 </mat-card>

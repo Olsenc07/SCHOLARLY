@@ -6,7 +6,7 @@
       <!-- Friend request box -->
       <div class="friends-request-box">
         <div class="friends-request">
-          <div>Friend Requests</div>
+          <div class="title">Friend Requests</div>
           <app-card-request></app-card-request>
         </div>
       </div>
@@ -107,9 +107,9 @@
 
 
                   <div class="following-box">
-
                     <div class="follower-s">
-                      <p>Friend Requests</p>
+                      <div class="title">Friend Requests</div>
+                      <app-card-request></app-card-request>
                     </div>
                     <mat-divider></mat-divider>
                     <div class="followers">
@@ -176,7 +176,9 @@
           </mat-tab>
           <mat-tab label=" Friend's Activity">
             <div class="friends-activity-box">
-              <div class="friends-activity"></div>
+              <div class="friends-activity">
+                <app-card-brief class="fit"></app-card-brief>
+              </div>
             </div>
           </mat-tab>
         </mat-tab-group>

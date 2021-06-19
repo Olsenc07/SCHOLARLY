@@ -35,6 +35,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ImageCropperModule } from 'ngx-image-cropper';
 import { NgxImageZoomModule } from 'ngx-image-zoom';
 import { MatCardModule } from '@angular/material/card';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 
 
@@ -147,6 +148,7 @@ import { ReusableCardRequestComponent } from './reusable-card-request/reusable-c
     ImageCropperModule,
     NgxImageZoomModule,
     MatCardModule,
+    MatExpansionModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
