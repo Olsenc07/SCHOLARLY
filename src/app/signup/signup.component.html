@@ -1,114 +1,73 @@
 <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
   <div class="entire-page">
-    
-<mat-tab-group [selectedIndex]="selectedIndex" mat-align-tabs="center" >
-      
-      <mat-tab >
-        <form [formGroup]="requiredForm" >
-        <ng-template mat-tab-label>
-          <mat-icon ><span class="material-icons-two-tone">
-            verified
-            </span></mat-icon>
-            Required
-        </ng-template>
-        <div class="inputTop">
-          <span class="material-icons _icon">
-            school
-            </span>
-        <mat-form-field >
-          <input 
-            matInput
-            placeholder="School Email"
-            [formControl]="email"
-            required
-          />
-          <button
-            mat-button
-            matSuffix
-            mat-icon-button
-            aria-label="Clear"
-            type="button"
-            (click)="clearEmail()"
-          >
-            <mat-icon>close</mat-icon>
-          </button>
-        </mat-form-field>
-      </div>
-      
-      <div class="userIn">
-        <span class="material-icons _icon">
-          account_circle
-          </span>
-      <mat-form-field >
-        <input
-          matInput
-          type="text"
-          [formControl]="username"
-          placeholder="Username"
-          required
-          autocomplete="on"
-        />
 
-        <button
-          mat-button
-          matSuffix
-          mat-icon-button
-          aria-label="Clear"
-          type="button"
-          (click)="clearUsername()"
-        >
-          <mat-icon>close</mat-icon>
-        </button>
-      </mat-form-field>
-      </div>
-     <div class="twoPassword">
-      <div class="input">
-        <span class="material-icons _icon">
-          lock
-          </span>
-      <mat-form-field class="userName"
-              ><mat-label>Password min 8 characters</mat-label>
-              <input
-                matInput
-                type="password"
-                placeholder="Password"
-                minlength="8"
-                required
-                [formControl]="password"
-                autocomplete="on"
-              />
-              <button
-                mat-button
-                matSuffix
-                mat-icon-button
-                color="primary"
-                aria-label="Clear"
-                type="button"
-                (click)="clearPassword()"
-              >
+    <mat-tab-group [selectedIndex]="selectedIndex" mat-align-tabs="center">
+
+      <mat-tab>
+        <form [formGroup]="requiredForm">
+          <ng-template mat-tab-label>
+            <mat-icon><span class="material-icons-two-tone">
+                verified
+              </span></mat-icon>
+            Required
+          </ng-template>
+          <div class="inputTop">
+            <span class="material-icons _icon">
+              school
+            </span>
+            <mat-form-field>
+              <input matInput placeholder="School Email" [formControl]="email" required />
+              <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearEmail()">
                 <mat-icon>close</mat-icon>
               </button>
             </mat-form-field>
           </div>
-        
-        </div>
+
+          <div class="userIn">
+            <span class="material-icons _icon">
+              account_circle
+            </span>
+            <mat-form-field>
+              <input matInput type="text" [formControl]="username" placeholder="Username" required autocomplete="on" />
+
+              <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearUsername()">
+                <mat-icon>close</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+          <div class="twoPassword">
+            <div class="input">
+              <span class="material-icons _icon">
+                lock
+              </span>
+              <mat-form-field class="userName">
+                <mat-label>Password min 8 characters</mat-label>
+                <input matInput type="password" placeholder="Password" minlength="8" required [formControl]="password"
+                  autocomplete="on" />
+                <button mat-button matSuffix mat-icon-button color="primary" aria-label="Clear" type="button"
+                  (click)="clearPassword()">
+                  <mat-icon>close</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
+
+          </div>
           <div class="accounts">
             <mat-radio-group aria-label="Select an option" [formControl]="accountType" class="Accounts">
-            
-              <div class="layout">
-                  <mat-radio-button value="1">Private Account</mat-radio-button>
-                  <div class="tooltip">
-                    <span class="material-icons"> info </span>
-                    <!-- <span class="tooltiptext"
-                      >You choose to accept or decline members to your group and
-                      friend list. Profile is only viewable to friends</span
-                    > -->
-                  </div>
-                
-              </div>
-            
 
-            
+              <div class="layout">
+                <mat-radio-button value="1">Private Account</mat-radio-button>
+                <div class="tooltip">
+                  <span class="material-icons"> info </span>
+                  <!-- <span class="tooltiptext"
+                      >You choose to accept or decline friend list. Profile is only viewable to friends</span
+                    > -->
+                </div>
+
+              </div>
+
+
+
               <div class="layout">
                 <mat-radio-button value="2">Public Account</mat-radio-button>
                 <div class="tooltip">
@@ -119,8 +78,8 @@
                   > -->
                 </div>
               </div>
-            
-          </mat-radio-group>
+
+            </mat-radio-group>
           </div>
           <mat-form-field appearance="fill" class="gender">
             <mat-label>Gender</mat-label>
@@ -131,315 +90,87 @@
             </mat-select>
           </mat-form-field>
 
-          
- <!-- Terms/Conditions text and button -->
- <div class="btmText">
-  <p class="center-text">By checking this box, 
-    you are agreeing to the</p>
-    <div class="checkBox"><button
-    mat-button (click)="openDialog()"
-    >
-      Terms & Conditions
-    </button><mat-checkbox class="displayB" required [formControl]="termsCheck"></mat-checkbox></div>
-</div>
-<div class="existing-account-layout">
-  <button
-    type="submit"
-    [disabled]="!requiredForm.valid"
-    mat-flat-button
-    class="existing-account-layout"
-    (ngSubmit)="onSubmitPartOne()"
-    (click)="changeTab()"
-  >
-    Next
-  </button>
- 
-</div>
-<!-- I have an existing account Button  -->
-<div class="existed-centered">
-  <button
-    mat-flat-button
-    routerLink="/login"
-    class="existing-account-layout"
-  >
-    I have an existing account
-  </button>
+
+          <!-- Terms/Conditions text and button -->
+          <div class="btmText">
+            <p class="center-text">By checking this box,
+              you are agreeing to the</p>
+            <div class="checkBox"><button mat-button (click)="openDialog()">
+                Terms & Conditions
+              </button>
+              <mat-checkbox class="displayB" required [formControl]="termsCheck"></mat-checkbox>
+            </div>
+          </div>
+          <div class="existing-account-layout">
+            <button type="submit" [disabled]="!requiredForm.valid" mat-flat-button class="existing-account-layout"
+              (ngSubmit)="onSubmitPartOne()" (click)="changeTab()">
+              Next
+            </button>
+
+          </div>
+          <!-- I have an existing account Button  -->
+          <div class="existed-centered">
+            <button mat-flat-button routerLink="/login" class="existing-account-layout">
+              I have an existing account
+            </button>
 
 
-</div>
-</form>
+          </div>
+        </form>
       </mat-tab>
-    
+
       <mat-tab class="sndPage">
-        <form [formGroup]="personalizeForm" >
-        <ng-template mat-tab-label>
-          <mat-icon ><span class="material-icons-two-tone">
-            badge
-            </span></mat-icon>
-          Personalize
-        </ng-template>
-        <!-- Upload one profile pic -->
-       <div class="personalizeLarge">
-        <div class="pics">
-          <div class="space"><h2 class="text">Upload Profile Picture</h2> <input #fileInputs class="upload" accept="image/* video/*" type="file" (change)="onImgChange($event)" 
-           [formControl]="profilePic"  ></div>
-          <div class="cropper">    
-          <image-cropper 
-          [imageChangedEvent]="imgChangeEvt" 
-          [maintainAspectRatio]="true" 
-          [aspectRatio]=" 7 / 7"
-          [resizeToWidth]="170" 
-          format="png" 
-          (imageCropped)="cropImg($event)" 
-          (imageLoaded)="imgLoad()"
-          (cropperReady)="initCropper()" 
-          (loadImageFailed)="imgFailed()">
-          </image-cropper>
-         </div>
-         <button mat-flat-button color="primary" (click)="clearProfilePic()">Clear File</button>
-        </div>
-        <div class="rowP">
-          <!-- <i class="fas fa-camera _icon2"></i>
+        <form [formGroup]="personalizeForm">
+          <ng-template mat-tab-label>
+            <mat-icon><span class="material-icons-two-tone">
+                badge
+              </span></mat-icon>
+            Personalize
+          </ng-template>
+          <!-- Upload one profile pic -->
+          <div class="personalizeLarge">
+            <div class="pics">
+              <div class="space">
+                <h2 class="text">Upload Profile Picture</h2> <input #fileInputs class="upload" accept="image/* video/*"
+                  type="file" (change)="onImgChange($event)" [formControl]="profilePic">
+              </div>
+              <div class="cropper">
+                <image-cropper [imageChangedEvent]="imgChangeEvt" [maintainAspectRatio]="true" [aspectRatio]=" 7 / 7"
+                  [resizeToWidth]="170" format="png" (imageCropped)="cropImg($event)" (imageLoaded)="imgLoad()"
+                  (cropperReady)="initCropper()" (loadImageFailed)="imgFailed()">
+                </image-cropper>
+              </div>
+              <button mat-flat-button color="primary" (click)="clearProfilePic()">Clear File</button>
+            </div>
+            <div class="rowP">
+              <!-- <i class="fas fa-camera _icon2"></i>
           <i class="far fa-hand-point-right _icon3"></i>
           <i class="fas fa-crop-alt _icon2"></i>
           <i class="far fa-hand-point-right _icon3"></i> -->
-        <i class="fas fa-portrait _icon2"></i>
-       
-        </div>
-        <div class="PreviewPic" >
-          <h2 class="Preview" >Image Preview</h2>
-          <img class="previewPic" id="ProfilePic" [src]="cropImgPreview" />
-          
-        </div>
-      
-    </div>
-      <div class="personalize">
-        <div class="input">
-          <i class="far fa-address-card _icon"></i>
-          <mat-form-field>
-            <input
-              matInput
-              placeholder="Full Name"
-              [formControl]="name"
-             
-            />
-            <button
-              mat-button
-              matSuffix
-              mat-icon-button
-              aria-label="Clear"
-              type="button"
-              (click)="clearName()"
-            >
-              <mat-icon class="asthetic-adds">close</mat-icon>
-            </button>
-          </mat-form-field>
-        </div>
-        <div class="inputP">
-          <mat-form-field class="inputP" >
-            <input
-              matInput
-              placeholder="Prefered Pronouns"
-              [formControl]="pronouns"
-            />
-            <button
-              mat-button
-              matSuffix
-              mat-icon-button
-              aria-label="Clear"
-              type="button"
-              (click)="clearName()"
-            >
-              <mat-icon class="asthetic-adds">close</mat-icon>
-            </button>
-          </mat-form-field>
-        </div>
-        
+              <i class="fas fa-portrait _icon2"></i>
 
-         
-         <div class="input">
-           <!-- Birthday picker -->
-            <div class="column">
-            <i class="fas fa-birthday-cake icon"></i><p class="asthetic-adds ">Birthday</p></div>
- <mat-form-field appearance="fill" >
-   <mat-label>Choose a date:</mat-label>
-   <input matInput [matDatepicker]="dp" [formControl]="date">
-   <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
-   <mat-datepicker #dp></mat-datepicker>
- </mat-form-field>
-</div>
-<div class="input">
-  <div class="display">
-    <mat-form-field ><input matInput [(ngModel)]="Bio"
-    placeholder="Bio " [formControl]="bio" class="bio" maxlength = "100"> 
-     <button
-    mat-button
-    matSuffix
-    mat-icon-button
-    aria-label="Clear"
-    type="button"
-    (click)="clearBio()"
-  >
-    <mat-icon class="asthetic-adds">close</mat-icon>
-  </button>
+            </div>
+            <div class="PreviewPic">
+              <h2 class="Preview">Image Preview</h2>
+              <img class="previewPic" id="ProfilePic" [src]="cropImgPreview" />
 
-</mat-form-field>
-<div matBadge= "{{ 100 - Bio.length }}" >
-  
-</div>
-   </div></div>
-</div>
-<div class="createBtn">
-<button mat-flat-button  class="cBtnB" (click)="changeTab1R()">Back</button>
-<button mat-button  class="cBtnBl" (click)="changeTab1()">Skip For Now</button>
-<button type="submit" (ngSubmit)="onSubmitPartTwo()"  mat-raised-button class="cBtn"   (click)="changeTab1()"
->Next</button>
-</div>
-</form>
-      </mat-tab>
+            </div>
 
-
-
-    <!-- SnapShots -->
-    <mat-tab>
-      <form [formGroup]="snapShotForm">
-      <ng-template mat-tab-label>
-        <span class="material-icons">
-          add_to_photos
-          </span>
-      SnapShots
-      </ng-template>
-      <div class="snapShots">
-        <h2 class="center-text">
-          Get started by adding your first Snap Shots
-        </h2>
-        <span class="material-icons icon">
-          photo_library
-          </span>
-<div class="rowP">
-   <!-- Image Preview -->
-   <div class="column">
-    <h2 class="Preview">Image Preview</h2>
-    <input type="file" [formControl]="snapShot1" accept="image/* video/*" (change)="imagePreview($event)" />
-    <img [src]="url" id="firstP" class="imagePreview">
-    <button mat-flat-button color="primary" (click)="clearPic1()">Clear File</button>
-  </div>
-<!-- 2 -->
-<div class="column" >
-  <h2 class="Preview">Image Preview</h2>
-  <input type="file" [formControl]="snapShot2" accept="image/* video/*" (change)="imagePreview2($event)" />
-  <img [src]="url2" id="secondP" class="imagePreview">
-  <button mat-flat-button color="primary" (click)="clearPic2()">Clear File</button>
-</div>
-<!-- 3 -->
-<!-- <ngx-image-zoom
-> -->
-<div class="column" >
-  <h2 class="Preview">Image Preview</h2>
-  <input type="file" [formControl]="snapShot3" accept="image/* video/*" (change)="imagePreview3($event)" />
-  <img [src]="url3" id="thirdP" class="imagePreview" >
-  <button mat-flat-button color="primary" (click)="clearPic3()">Clear File</button>
-</div>
-<!-- </ngx-image-zoom> -->
-</div>
-
-          
-        <div class="createBtn">
-          <button mat-flat-button  class="cBtnB" (click)="changeTab2R()">Back</button>
-          <div class="skip1">
-          <button mat-button  class="cBtnBl" (click)="changeTab3()">Skip For Now</button>
-        </div>
-          <button type="submit"  mat-raised-button class="cBtn" (ngSubmit)="onSubmitPartThree()"  (click)="changeTab3()"
-          >Next</button>
           </div>
-      </div>
-      <div class="skip2">
-        <button mat-button  class="cBtnBl" (click)="changeTab3()">Skip For Now</button>
-      </div>
-     </form> 
-    </mat-tab>
-      <mat-tab>
-        <ng-template mat-tab-label>
-          <mat-icon class=""><span class="material-icons-two-tone">
-            school
-            </span></mat-icon>
-          Academic
-        </ng-template>
-    
-         <!-- Text Field Major/Minor -->
-         <div class="major-layout">
-           <div class="input">
-          <span class="material-icons _icon">
-            looks_one
-            </span>
-          <mat-form-field >
-            <input
-            class="major"
-              matInput
-              placeholder="Major"
-              [formControl]="major"
-            />
-            <button
-              mat-button
-              matSuffix
-              mat-icon-button
-              aria-label="Clear"
-              type="button"
-              (click)="clearMajor()"
-            >
-              <mat-icon class="asthetic-adds">close</mat-icon>
-            </button>
-          </mat-form-field>
-        </div>
-        
-        <div class="input">
-          <span class="material-icons _icon">
-            looks_two
-            </span>
-          <mat-form-field >
-            <input
-            class="major"
-              matInput
-              placeholder="Minor"
-              [formControl]="minor"
-              
-            />
-            <button
-              mat-button
-              matSuffix
-              mat-icon-button
-              aria-label="Clear"
-              type="button"
-              (click)="clearMinor()"
-            >
-              <mat-icon class="asthetic-adds">close</mat-icon>
-            </button>
-          </mat-form-field>
-        </div>
-          </div>
-        <div class="sport-layout">
-         
-
-
-          <div class="input"> 
-            <span class="material-icons _icon">
-              emoji_events
-              </span>
-              <mat-form-field >
-                <input 
-                  matInput
-                  placeholder="What sport do you play?"
-                  [formControl]="sport"
-                 
-                />
-                <button
-                  mat-button
-                  matSuffix
-                  mat-icon-button
-                  aria-label="Clear"
-                  type="button"
-                  (click)="clearSport()"
-                >
+          <div class="personalize">
+            <div class="input">
+              <i class="far fa-address-card _icon"></i>
+              <mat-form-field>
+                <input matInput placeholder="Full Name" [formControl]="name" />
+                <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearName()">
+                  <mat-icon class="asthetic-adds">close</mat-icon>
+                </button>
+              </mat-form-field>
+            </div>
+            <div class="inputP">
+              <mat-form-field class="inputP">
+                <input matInput placeholder="Prefered Pronouns" [formControl]="pronouns" />
+                <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearName()">
                   <mat-icon class="asthetic-adds">close</mat-icon>
                 </button>
               </mat-form-field>
@@ -448,115 +179,238 @@
 
 
             <div class="input">
-              <span class="material-icons _icon">
+              <!-- Birthday picker -->
+              <div class="column">
+                <i class="fas fa-birthday-cake icon"></i>
+                <p class="asthetic-adds ">Birthday</p>
+              </div>
+              <mat-form-field appearance="fill">
+                <mat-label>Choose a date:</mat-label>
+                <input matInput [matDatepicker]="dp" [formControl]="date">
+                <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+                <mat-datepicker #dp></mat-datepicker>
+              </mat-form-field>
+            </div>
+            <div class="input">
+              <div class="display">
+                <mat-form-field><input matInput [(ngModel)]="Bio" placeholder="Bio " [formControl]="bio" class="bio"
+                    maxlength="100">
+                  <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearBio()">
+                    <mat-icon class="asthetic-adds">close</mat-icon>
+                  </button>
+
+                </mat-form-field>
+                <div matBadge="{{ 100 - Bio.length }}">
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="createBtn">
+            <button mat-flat-button class="cBtnB" (click)="changeTab1R()">Back</button>
+            <button mat-button class="cBtnBl" (click)="changeTab1()">Skip For Now</button>
+            <button type="submit" (ngSubmit)="onSubmitPartTwo()" mat-raised-button class="cBtn"
+              (click)="changeTab1()">Next</button>
+          </div>
+        </form>
+      </mat-tab>
+
+
+
+      <!-- SnapShots -->
+      <mat-tab>
+        <form [formGroup]="snapShotForm">
+          <ng-template mat-tab-label>
+            <span class="material-icons">
+              add_to_photos
+            </span>
+            SnapShots
+          </ng-template>
+          <div class="snapShots">
+            <h2 class="center-text">
+              Get started by adding your first Snap Shots
+            </h2>
+            <span class="material-icons icon">
+              photo_library
+            </span>
+            <div class="rowP">
+              <!-- Image Preview -->
+              <div class="column">
+                <h2 class="Preview">Image Preview</h2>
+                <input type="file" [formControl]="snapShot1" accept="image/* video/*" (change)="imagePreview($event)" />
+                <img [src]="url" id="firstP" class="imagePreview">
+                <button mat-flat-button color="primary" (click)="clearPic1()">Clear File</button>
+              </div>
+              <!-- 2 -->
+              <div class="column">
+                <h2 class="Preview">Image Preview</h2>
+                <input type="file" [formControl]="snapShot2" accept="image/* video/*"
+                  (change)="imagePreview2($event)" />
+                <img [src]="url2" id="secondP" class="imagePreview">
+                <button mat-flat-button color="primary" (click)="clearPic2()">Clear File</button>
+              </div>
+              <!-- 3 -->
+              <!-- <ngx-image-zoom
+> -->
+              <div class="column">
+                <h2 class="Preview">Image Preview</h2>
+                <input type="file" [formControl]="snapShot3" accept="image/* video/*"
+                  (change)="imagePreview3($event)" />
+                <img [src]="url3" id="thirdP" class="imagePreview">
+                <button mat-flat-button color="primary" (click)="clearPic3()">Clear File</button>
+              </div>
+              <!-- </ngx-image-zoom> -->
+            </div>
+
+
+            <div class="createBtn">
+              <button mat-flat-button class="cBtnB" (click)="changeTab2R()">Back</button>
+              <div class="skip1">
+                <button mat-button class="cBtnBl" (click)="changeTab3()">Skip For Now</button>
+              </div>
+              <button type="submit" mat-raised-button class="cBtn" (ngSubmit)="onSubmitPartThree()"
+                (click)="changeTab3()">Next</button>
+            </div>
+          </div>
+          <div class="skip2">
+            <button mat-button class="cBtnBl" (click)="changeTab3()">Skip For Now</button>
+          </div>
+        </form>
+      </mat-tab>
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <mat-icon class=""><span class="material-icons-two-tone">
+              school
+            </span></mat-icon>
+          Academic
+        </ng-template>
+
+        <!-- Text Field Major/Minor -->
+        <div class="major-layout">
+          <div class="input">
+            <span class="material-icons _icon">
+              looks_one
+            </span>
+            <mat-form-field>
+              <input class="major" matInput placeholder="Major" [formControl]="major" />
+              <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearMajor()">
+                <mat-icon class="asthetic-adds">close</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+
+          <div class="input">
+            <span class="material-icons _icon">
+              looks_two
+            </span>
+            <mat-form-field>
+              <input class="major" matInput placeholder="Minor" [formControl]="minor" />
+              <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearMinor()">
+                <mat-icon class="asthetic-adds">close</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="sport-layout">
+
+
+
+          <div class="input">
+            <span class="material-icons _icon">
+              emoji_events
+            </span>
+            <mat-form-field>
+              <input matInput placeholder="What sport do you play?" [formControl]="sport" />
+              <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearSport()">
+                <mat-icon class="asthetic-adds">close</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+
+
+
+          <div class="input">
+            <span class="material-icons _icon">
               group
-              </span>
-          <mat-form-field >
-            <input
-            class="major"
-              matInput
-              placeholder="What club are you apart of? "
-              [formControl]="club"
-            />
-            <button
-              mat-button
-              matSuffix
-              mat-icon-button
-              aria-label="Clear"
-              type="button"
-              (click)="clearClub()"
-            >
-              <mat-icon class="asthetic-adds">close</mat-icon>
-            </button>
-          </mat-form-field>
+            </span>
+            <mat-form-field>
+              <input class="major" matInput placeholder="What club are you apart of? " [formControl]="club" />
+              <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearClub()">
+                <mat-icon class="asthetic-adds">close</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
         </div>
+        <!-- Completed Courses -->
+        <div class="row">
+          <div class="courses">
+            <div class="input">
+              <i class="fas fa-check _icon"></i>
+              <mat-form-field class="example-chip-list">
+                <mat-label>Completed Courses</mat-label>
+                <mat-chip-list #chipList aria-label="Fruit selection">
+                  <mat-chip *ngFor="let code of classes" [selectable]="selectable" [removable]="removable"
+                    (removed)="remove(code)">
+                    {{code}}
+                    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                  </mat-chip>
+                  <input placeholder="Choose completed courses" #codeInputP [formControl]="courseCodeCtrl"
+                    [matAutocomplete]="auto" [matChipInputFor]="chipList"
+                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="add($event)">
+                </mat-chip-list>
+                <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+                  <mat-option *ngFor="let code of filteredCodes | async" [value]="code">
+                    {{code}}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+            </div>
+          </div>
+
+
+          <!-- Pursuing Courses -->
+          <div class="courses">
+            <div class="input">
+              <i class="fas fa-tasks _icon"></i>
+
+              <mat-form-field class="example-chip-list">
+                <mat-label>Pursuing Courses</mat-label>
+                <mat-chip-list #chipListP aria-label="Fruit selection">
+                  <mat-chip *ngFor="let codeP of classesP" [selectable]="selectable" [removable]="removable"
+                    (removed)="removeP(codeP)">
+                    {{codeP}}
+                    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                  </mat-chip>
+                  <input placeholder="Choose completed courses" #codeInputP [formControl]="courseCodeCtrlP"
+                    [matAutocomplete]="autoP" [matChipInputFor]="chipListP"
+                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="addP($event)">
+                </mat-chip-list>
+                <mat-autocomplete #autoP="matAutocomplete" (optionSelected)="selectedP($event)">
+                  <mat-option *ngFor="let codeP of filteredCodesP | async" [valueP]="codeP">
+                    {{codeP}}
+                  </mat-option>
+                </mat-autocomplete>
+              </mat-form-field>
+            </div>
+          </div>
         </div>
-<!-- Completed Courses -->
-<div class="row">
-  <div class="courses">
-    <div class="input">
-  <i class="fas fa-check _icon"></i>
-<mat-form-field class="example-chip-list">
-  <mat-label>Completed Courses</mat-label>
-  <mat-chip-list #chipList aria-label="Fruit selection">
-    <mat-chip
-      *ngFor="let code of classes"
-      [selectable]="selectable"
-      [removable]="removable"
-      (removed)="remove(code)">
-      {{code}}
-      <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-    </mat-chip>
-    <input
-      placeholder="Choose completed courses"
-      #codeInputP
-      [formControl]="courseCodeCtrl"
-      [matAutocomplete]="auto"
-      [matChipInputFor]="chipList"
-      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-      (matChipInputTokenEnd)="add($event)">
-  </mat-chip-list>
-  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
-    <mat-option *ngFor="let code of filteredCodes | async" [value]="code">
-      {{code}}
-    </mat-option>
-  </mat-autocomplete>
-</mat-form-field>
-</div>
-</div>
 
 
-<!-- Pursuing Courses -->
-<div class="courses">
-  <div class="input">
-<i class="fas fa-tasks _icon"></i>
 
-<mat-form-field class="example-chip-list">
-  <mat-label>Pursuing Courses</mat-label>
-  <mat-chip-list #chipListP aria-label="Fruit selection">
-    <mat-chip
-      *ngFor="let codeP of classesP"
-      [selectable]="selectable"
-      [removable]="removable"
-      (removed)="removeP(codeP)">
-      {{codeP}}
-      <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-    </mat-chip>
-    <input
-      placeholder="Choose completed courses"
-      #codeInputP
-      [formControl]="courseCodeCtrlP"
-      [matAutocomplete]="autoP"
-      [matChipInputFor]="chipListP"
-      [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-      (matChipInputTokenEnd)="addP($event)">
-  </mat-chip-list>
-  <mat-autocomplete #autoP="matAutocomplete" (optionSelected)="selectedP($event)">
-    <mat-option *ngFor="let codeP of filteredCodesP | async" [valueP]="codeP">
-      {{codeP}}
-    </mat-option>
-  </mat-autocomplete>
-</mat-form-field>
-</div>
-</div>
-</div>
-
-      
-      
-      <div class="createBtn">
-        <button mat-flat-button class="cBtnB" (click)="changeTab3()">Back</button>
-        <i class="fas fa-user-graduate cBtnI"></i>
-<button mat-raised-button class="cBtn" routerLink="/search" (ngSubmit)="onSubmit()">Create</button>
-</div>
+        <div class="createBtn">
+          <button mat-flat-button class="cBtnB" (click)="changeTab3()">Back</button>
+          <i class="fas fa-user-graduate cBtnI"></i>
+          <button mat-raised-button class="cBtn" routerLink="/search" (ngSubmit)="onSubmit()">Create</button>
+        </div>
       </mat-tab>
 
 
 
     </mat-tab-group>
 
-    
-      </div>
-      
-    
-  
+
+  </div>
+
+
+
 </form>
