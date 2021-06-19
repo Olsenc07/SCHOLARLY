@@ -17,7 +17,7 @@ export class AppComponent implements OnInit {
   faCoffee = faCoffee;
   title = 'angular-SCHOLARLY';
 
- isHomeScreen$: Observable<boolean>;
+  isHomeScreen$: Observable<boolean>;
 
   isPostScreen$: Observable<boolean>;
 
@@ -89,7 +89,7 @@ export class AppComponent implements OnInit {
     this.searchBox.classList.toggle('active');
   }
 
-  clearSearch(): void{
+  clearSearch(): void {
     this.search.setValue('');
   }
 

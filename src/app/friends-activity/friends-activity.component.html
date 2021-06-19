@@ -1,181 +1,187 @@
 <div style="background-color: rgb(235, 235, 245)" class="entire-page">
   <!-- Left column -->
   <div class="column">
-  <div class="left-column">
-    <!-- logo -->
-    <div class="logo-box">
-      <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" class="logo" />
-    </div>
-    <!-- Friend request box -->
-    <div class="friends-request-box">
-      <div class="friends-request"><p>Friend Requests</p> </div>
-    </div>
-    <!-- Friends activity box -->
-    <div class="hide">
-    <div class="friends-activity-box">
-      <div class="friends-activity" ></div> 
-    </div>
-  </div>
-  </div>
-  <!-- Tablet/Mobile search bar -->
-  
-  <div class="search-friends">
-    <div class="hide1">
-  <div class="searchM"><form class="search" >
-    <input type="text" 
-     class="search-input" placeholder="Search.." name="search">
-    <button type="submit"><span class="material-icons">search</span></button>
-  </form></div></div>
-  <!-- Middle column -->
-  <div class="columnD columnM ">
-    
+    <div class="left-column">
 
-
-<div class="row yo">
-  
-    
-  <div class="middle">
-    <div class="friend_count">
-      <div class="center">
-      Following
+      <!-- Friend request box -->
+      <div class="friends-request-box">
+        <div class="friends-request">
+          <div>Friend Requests</div>
+          <app-card-request></app-card-request>
+        </div>
       </div>
-      <div class="center">
-      <input type="number" class="number" id="steper" name="members" step="1" value="0" />
+      <!-- Friends activity box -->
+      <div class="hide">
+        <div class="friends-activity-box">
+          <div class="friends-activity">
+            <app-card-brief class="fit"></app-card-brief>
+          </div>
+        </div>
       </div>
     </div>
+    <!-- Tablet/Mobile search bar -->
 
-    <div class="following-box">
-      <div class="followers" > </div>
+    <div class="search-friends">
+      <div class="hide1">
+        <div class="searchM">
+          <form class="search">
+            <input type="text" class="search-input" placeholder="Search.." name="search">
+            <button type="submit"><span class="material-icons">search</span></button>
+          </form>
+        </div>
+      </div>
+      <!-- Middle column -->
+      <div class="columnD columnM ">
+
+
+
+        <div class="row yo">
+
+
+          <div class="middle">
+            <div class="friend_count">
+              <div class="center">
+                Following
+              </div>
+              <div class="center">
+                <input type="number" class="number" id="steper" name="members" step="1" value="0" />
+              </div>
+            </div>
+
+            <div class="following-box">
+              <div class="followers"> </div>
+            </div>
+          </div>
+
+          <!-- mutual friends -->
+          <div class="hide">
+            <div class="middle-middle">
+              <!-- Search Bar Desktop -->
+              <form class="search">
+                <input type="text" class="search-input" placeholder="Search.." name="search">
+                <button type="submit"><span class="material-icons">search</span></button>
+              </form>
+            </div>
+            <div class="friend_count">
+              <div class="center">
+                Mutual Friends
+              </div>
+              <div class="center">
+                <input type="number" class="number" id="steper" name="members" step="1" value="0" />
+              </div>
+            </div>
+            <div class="mutual-box">
+              <div class="follow-m"> </div>
+            </div>
+          </div>
+          <!-- Right column -->
+
+
+
+          <div class="right">
+            <div class="friend_count">
+              <div class="center">
+                Followers
+              </div>
+              <div class="center">
+                <input type="number" class="number" id="steper" name="members" step="1" value="0" />
+              </div>
+            </div>
+            <div class="following-box">
+              <div class="followers"> </div>
+            </div>
+          </div>
+
+
+        </div>
+
+
+
+
+
+        <div class=" column_">
+          <mat-tab-group mat-align-tabs="center">
+            <div class="row">
+              <mat-tab label="Followers">
+                <div class="middle">
+
+
+                  <div class="following-box">
+
+                    <div class="follower-s">
+                      <p>Friend Requests</p>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <div class="followers">
+                      <div class="center">
+                        <input type="number" class="number" id="steper" name="members" step="1" value="0" />
+                      </div>
+                    </div>
+                  </div>
+                  <mat-divider></mat-divider>
+                </div>
+              </mat-tab>
+              <!-- mutual friends -->
+              <div class="hide">
+                <div class="middle-middle">
+                  <!-- Search Bar Desktop -->
+                  <form class="search">
+                    <input type="text" class="search-input" placeholder="Search.." name="search">
+                    <button type="submit"><span class="material-icons">search</span></button>
+                  </form>
+                </div>
+                <p>
+                  Mutual Friends
+                </p>
+                <div class="mutual-box">
+                  <div class="follow-m"> </div>
+                </div>
+              </div>
+              <!-- Right column -->
+
+
+              <mat-tab label="Following">
+                <div class="right">
+
+                  <div class="following-box">
+
+                    <div class="followers">
+                      <div class="center">
+                        <input type="number" class="number" id="steper" name="members" step="1" value="0" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </mat-tab>
+            </div>
+          </mat-tab-group>
+
+        </div>
+      </div>
+      <div class="bottomM">
+        <mat-tab-group mat-align-tabs="center">
+          <mat-tab label="Mutual">
+            <div class="mutual-largest">
+              <div class="mutual-box">
+                <div class="center">
+
+                </div>
+                <div class="follow-m">
+                  <div class="center">
+                    <input type="number" class="number" id="steper" name="members" step="1" value="0" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </mat-tab>
+          <mat-tab label=" Friend's Activity">
+            <div class="friends-activity-box">
+              <div class="friends-activity"></div>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
     </div>
-  </div>
 
-  <!-- mutual friends -->
-  <div class="hide">    
-  <div class="middle-middle">
-            <!-- Search Bar Desktop -->
- <form class="search" >
-  <input type="text" 
-   class="search-input" placeholder="Search.." name="search">
-  <button type="submit"><span class="material-icons">search</span></button>
-</form>
-</div>   
-<div class="friend_count">
-  <div class="center">
-    Mutual Friends
-  </div>
-  <div class="center">
-    <input type="number" class="number" id="steper" name="members" step="1" value="0"/>
   </div>
 </div>
-    <div class="mutual-box">
-      <div class="follow-m"> </div>
-    </div>
-  </div>
-  <!-- Right column -->
-
-  
-
-  <div class="right">
-    <div class="friend_count">
-      <div class="center">
-      Followers
-      </div>
-      <div class="center">
-      <input type="number" class="number" id="steper" name="members" step="1" value="0"/>
-      </div>
-    </div>
-    <div class="following-box">
-      <div class="followers" > </div>
-    </div>
-     </div>
-    
-    
-      </div>
-
-
-
-
-
-<div class=" column_">
-  <mat-tab-group mat-align-tabs="center">
-    <div class="row">
-    <mat-tab label="Followers">
-  <div class="middle">
-    
-
-    <div class="following-box">
-      
-      <div class="follower-s" >
-        <p>Friend Requests</p>
-      </div>
-      <mat-divider></mat-divider>
-      <div class="followers">
-        <div class="center">
-          <input type="number" class="number" id="steper" name="members" step="1" value="0"/>
-          </div>
-      </div>
-    </div>
-    <mat-divider></mat-divider>
-  </div>
-</mat-tab>
-  <!-- mutual friends -->
-  <div class="hide">    
-  <div class="middle-middle">
-            <!-- Search Bar Desktop -->
- <form class="search" >
-  <input type="text" 
-   class="search-input" placeholder="Search.." name="search">
-  <button type="submit"><span class="material-icons">search</span></button>
-</form>
-</div>   
-  <p>
-    Mutual Friends
-  </p>
-    <div class="mutual-box">
-      <div class="follow-m"> </div>
-    </div>
-  </div>
-  <!-- Right column -->
-
-  
-  <mat-tab label="Following" > 
-  <div class="right">
-   
-    <div class="following-box">
-
-      <div class="followers" ><div class="center">
-          <input type="number" class="number" id="steper" name="members" step="1" value="0"/>
-          </div> </div>
-    </div>
-     </div>
-    </mat-tab>
-  </div>
-    </mat-tab-group>
-      
-      </div>
-    </div>
-    <div class="bottomM">
-      <mat-tab-group mat-align-tabs="center" >
-        <mat-tab label="Mutual">
-      <div class="mutual-largest">
-      <div class="mutual-box">
-        <div class="center">
-          
-          </div>
-      <div class="follow-m"><div class="center">
-        <input type="number" class="number" id="steper" name="members" step="1" value="0"/>
-        </div> </div>
-    </div>
-      </div>
-    </mat-tab>
-    <mat-tab label=" Friend's Activity">
-      <div class="friends-activity-box">
-        <div class="friends-activity" ></div> 
-      </div>
-    </mat-tab>
-    </mat-tab-group>
-  </div>
-  </div>
-          
-          </div>
-                 </div>
