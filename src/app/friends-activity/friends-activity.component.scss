@@ -8,6 +8,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    height: 100%;
   }
 }
 @media (max-width: 1024px) {
@@ -88,8 +89,8 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 2% 1% 1% 4%;
-    width: 37%;
+    margin: 2% 1% 1% 2%;
+    width: 30%;
   }
 }
 @media (max-width: 1024px) {
@@ -111,6 +112,25 @@
     display: none;
   }
 }
+@media (max-width: 1024px) {
+  .hide_ {
+    display: none;
+  }
+}
+@media (min-width: 1024px) {
+  .hide_ {
+    display: flex;
+    height: 100%;
+    border: ridge;
+    background-color: white;
+  }
+}
+@media (min-width: 1024px) {
+  .hide {
+   width: 30%;
+  
+  }
+}
 
 @media (max-width: 1024px) {
   .search-friends {
@@ -127,13 +147,7 @@
     width: 70%;
   }
 }
-.row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-}
+
 
 .friend_count {
   display: flex;
@@ -164,7 +178,8 @@
 @media (min-width: 1024px) {
   .followers {
     display: flex;
-    width: 17vw;
+    width: 100%;
+    background-color: white;
     height: 100%;
   }
 }
@@ -191,6 +206,7 @@
   width: 100%;
   border: ridge;
   flex-direction: column;
+  background-color: white;
 }
 @media (min-width: 1024px) {
   mat-tab-group {
@@ -202,8 +218,9 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 2% 5% 2% 2%;
+    margin: 2% ;
     overflow-y: scroll;
+    width: 30%;
   }
 }
 
@@ -232,8 +249,8 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin: 2% 2% 2% 5%;
-
+    margin: 2%;
+    width: 30%;
     overflow-y: scroll;
   }
 }
@@ -247,7 +264,12 @@
     overflow-y: scroll;
   }
 }
-
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
 @media (min-width: 1024px) {
   .mutual-largest {
     display: none;
@@ -300,17 +322,15 @@
     width: 80%;
   }
 }
-.mutual {
-  margin: 10% 2% 2% 2%;
-}
+
 @media (min-width: 1024px) {
   .friends-request-box {
     display: flex;
     justify-content: center;
     flex-direction: column;
     margin: 1% 0%;
-    overflow-y: scroll;
     width: 100%;
+    height: 47%;
   }
 }
 @media (min-width: 1024px) {
@@ -366,6 +386,7 @@
 .title{
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 .number {
   width: 50px;
