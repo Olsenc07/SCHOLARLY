@@ -2,7 +2,6 @@
   <!-- Left column -->
   <div class="column">
     <div class="left-column">
-
       <!-- Friend request box -->
       <div class="friends-request-box">
         <div class="friends-request">
@@ -18,14 +17,13 @@
       <div class="hide_">
         <div class="friends-activity-box">
           <div class="friends-activity">
-            Activity
+            <div class="row">Friends Activity</div>
             <app-card-brief class="fit"></app-card-brief>
           </div>
         </div>
       </div>
     </div>
     <!-- Tablet/Mobile search bar -->
-
     <div class="search-friends">
       <div class="hide1">
         <div class="searchM">
@@ -44,7 +42,10 @@
                 Following
               </div>
               <div class="center">
-                <input type="number" class="number" id="steper" name="members" step="1" value="0" />
+                <div>
+                  <!-- {{Value}} -->
+                  0
+                </div>
               </div>
             </div>
 
@@ -69,7 +70,10 @@
                 Mutual Friends
               </div>
               <div class="center">
-                <input type="number" class="number" id="steper" name="members" step="1" value="0" />
+                <div>
+                  <!-- {{Value}} -->
+                  0
+                </div>
               </div>
             </div>
             <div class="mutual-box">
@@ -88,7 +92,10 @@
                 Followers
               </div>
               <div class="center">
-                <input type="number" class="number" id="steper" name="members" step="1" value="0" />
+                <div>
+                  <!-- {{Value}} -->
+                  0
+                </div>
               </div>
             </div>
             <div class="following-box">
@@ -114,13 +121,20 @@
 
                   <div class="following-box">
                     <div class="follower-s">
-                      <div class="title">Friend Requests</div>
+                      <div class="row">
+                        <div class="title">Friend Requests</div><button mat-icon-button><i
+                            class="fas fa-arrow-circle-right title"></i>
+                        </button>
+                      </div>
                       <app-card-request></app-card-request>
                     </div>
-                    <mat-divider></mat-divider>
                     <div class="followers">
-                      <div class="center">
-                        <input type="number" class="number" id="steper" name="members" step="1" value="0" />
+                      <div class="center1">
+                        <div class="center">
+                          <!-- {{Value}} -->
+                          0
+                        </div>
+                        <app-card-user class="width"></app-card-user>
                       </div>
                     </div>
                   </div>
@@ -137,7 +151,7 @@
                   </form>
                 </div>
                 <p>
-                  Mutual Friends
+                  Mutual
                 </p>
                 <div class="mutual-box">
                   <div class="follow-m"> </div>
@@ -152,8 +166,12 @@
                   <div class="following-box">
 
                     <div class="followers">
-                      <div class="center">
-                        <input type="number" class="number" id="steper" name="members" step="1" value="0" />
+                      <div class="center1">
+                        <div class="center">
+                          <!-- {{Value}} -->
+                          0
+                        </div>
+                        <app-card-user class="width"></app-card-user>
                       </div>
                     </div>
                   </div>
@@ -173,8 +191,12 @@
 
                 </div>
                 <div class="follow-m">
-                  <div class="center">
-                    <input type="number" class="number" id="steper" name="members" step="1" value="0" />
+                  <div class="center1">
+                    <div class="center">
+                      <!-- {{Value}} -->
+                      0
+                    </div>
+                    <app-card-user class="width"></app-card-user>
                   </div>
                 </div>
               </div>
