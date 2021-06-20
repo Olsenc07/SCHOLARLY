@@ -27,14 +27,15 @@ import { MatListModule } from '@angular/material/list';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatStepperModule } from '@angular/material/stepper';
-import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
-import {MatChipsModule} from '@angular/material/chips';
-import {MatTreeModule} from '@angular/material/tree';
-import { MatAutocompleteModule} from '@angular/material/autocomplete';
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatTreeModule } from '@angular/material/tree';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { ImageCropperModule } from 'ngx-image-cropper';
 import { NgxImageZoomModule } from 'ngx-image-zoom';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 
 
@@ -58,21 +59,22 @@ import { FriendsActivityComponent } from './friends-activity/friends-activity.co
 import { PostPageComponent } from './post-page/post-page.component';
 
 import { DialogElementsComponent } from './post-page/post-page.component';
-import { BluesCOptionComponent} from './search/search.component';
-import { BuySComponent} from './search/search.component';
-import { CollegeConComponent} from './search/search.component';
-import { CoursesAEComponent} from './search/search.component';
-import { CoursesFMComponent} from './search/search.component';
-import { CoursesNZComponent} from './search/search.component';
-import { EntrepOppComponent} from './search/search.component';
-import { HelpingHComponent} from './search/search.component';
-import { HousingComponent} from './search/search.component';
-import { QuestionsComponent} from './search/search.component';
-import { SchoolWComponent} from './search/search.component';
-import { SpiritualityComponent} from './search/search.component';
-import { UpcomingEComponent} from './search/search.component';
+import { BluesCOptionComponent } from './search/search.component';
+import { BuySComponent } from './search/search.component';
+import { CollegeConComponent } from './search/search.component';
+import { CoursesAEComponent } from './search/search.component';
+import { CoursesFMComponent } from './search/search.component';
+import { CoursesNZComponent } from './search/search.component';
+import { EntrepOppComponent } from './search/search.component';
+import { HelpingHComponent } from './search/search.component';
+import { HousingComponent } from './search/search.component';
+import { QuestionsComponent } from './search/search.component';
+import { SchoolWComponent } from './search/search.component';
+import { SpiritualityComponent } from './search/search.component';
+import { UpcomingEComponent } from './search/search.component';
 import { ReusableCardComponent } from './reusable-card/reusable-card.component';
-
+import { ReusableCardBriefComponent } from './reusable-card-brief/reusable-card-brief.component';
+import { ReusableCardRequestComponent } from './reusable-card-request/reusable-card-request.component';
 
 @NgModule({
   declarations: [
@@ -88,7 +90,7 @@ import { ReusableCardComponent } from './reusable-card/reusable-card.component';
     FriendsActivityComponent,
     PostPageComponent,
     SearchComponent,
-    DialogElementsComponent ,
+    DialogElementsComponent,
     BluesCOptionComponent,
     BuySComponent,
     CollegeConComponent,
@@ -106,6 +108,8 @@ import { ReusableCardComponent } from './reusable-card/reusable-card.component';
     AttendanceComponent,
     BottomSheetComponent,
     ReusableCardComponent,
+    ReusableCardBriefComponent,
+    ReusableCardRequestComponent,
   ],
   imports: [
     BrowserModule,
@@ -144,6 +148,7 @@ import { ReusableCardComponent } from './reusable-card/reusable-card.component';
     ImageCropperModule,
     NgxImageZoomModule,
     MatCardModule,
+    MatExpansionModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 
