@@ -1,14 +1,16 @@
 <mat-nav-list>
   <a href="https://google.com/" mat-list-item (click)="openLink($event)">
     <span mat-line>Link One</span>
-    <span mat-line>Sub text</span>
+    <span mat-line>
+      <app-card-convo></app-card-convo>
+    </span>
   </a>
 
-  
-    <span mat-line>
-    <button type="button" routerLink="/groups" >
+
+  <span mat-line>
+    <button type="button" routerLink="/groups">
       Group Chat
     </button></span>
-    
-  
+
+
 </mat-nav-list>

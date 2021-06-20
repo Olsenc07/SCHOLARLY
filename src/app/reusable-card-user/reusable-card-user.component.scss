@@ -1,0 +1,44 @@
+.center{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .mat-card-avatar{
+    width: 50px;
+    height: 50px;
+  }
+  @media (min-width: 500px) {
+    .textSize {
+      font-size: medium;
+    }
+  }
+  @media (max-width: 500px) {
+    .textSize {
+      font-size: smaller;
+    }
+  }
+  .profilePic {
+    display: flex;
+    border-radius: 50%;
+    border: groove;
+    margin-right: 2%;
+    margin-bottom: 1%;
+  }
+  .userName {
+    display: flex;
+    font-weight: 500;
+    margin-right: 1%;
+    flex-direction: column;
+    justify-content: center;
+  }
