@@ -1,16 +1,21 @@
 <mat-nav-list>
-  <a href="https://google.com/" mat-list-item (click)="openLink($event)">
-    <span mat-line>Link One</span>
-    <span mat-line>
-      <app-card-convo></app-card-convo>
-    </span>
-  </a>
+  <span mat-line>
+    <button type="button" routerLink="/groups" class="fit">
+      <app-card-convo class="fit"></app-card-convo>
+    </button>
+  </span>
+  <span mat-line>
+    <button type="button" routerLink="/groups" class="fit">
+      <app-card-convo class="fit"></app-card-convo>
+    </button>
+  </span>
 
 
   <span mat-line>
-    <button type="button" routerLink="/groups">
-      Group Chat
-    </button></span>
+    <button type="button" routerLink="/groups" class="fit">
+      <app-card-convo class="fit"></app-card-convo>
+    </button>
+  </span>
 
 
 </mat-nav-list>

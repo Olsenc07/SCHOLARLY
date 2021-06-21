@@ -136,7 +136,6 @@
 
           <div class="input">
             <!-- Birthday picker -->
-
             <mat-form-field appearance="fill">
               <mat-label>Birthday</mat-label>
               <input matInput [matDatepicker]="dp" [formControl]="date">
@@ -216,7 +215,16 @@
       <div class="entire-page">
 
 
-        <div class="groups-jj">Groups Joined</div>
+        <div class="groups-jj">
+          <div class="row">
+            <div class="words">
+              <div class="column1">Groups Joined</div>
+              <button mat-icon-button><i class="fas fa-arrow-circle-right title1"></i>
+              </button>
+            </div>
+          </div>
+          <app-card-brief></app-card-brief>
+        </div>
         <!-- Recent Posts box-->
         <div class="work">
           <div class="groups-j">
