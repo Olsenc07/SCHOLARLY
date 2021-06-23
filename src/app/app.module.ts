@@ -77,7 +77,7 @@ import { ReusableCardBriefComponent } from './reusable-card-brief/reusable-card-
 import { ReusableCardRequestComponent } from './reusable-card-request/reusable-card-request.component';
 import { ReusableCardUserComponent } from './reusable-card-user/reusable-card-user.component';
 import { ReusableCardConvoComponent } from './reusable-card-convo/reusable-card-convo.component';
-
+import { GroupMembersComponent } from './group-members/group-members.component';
 
 
 @NgModule({
@@ -116,7 +116,7 @@ import { ReusableCardConvoComponent } from './reusable-card-convo/reusable-card-
     ReusableCardRequestComponent,
     ReusableCardUserComponent,
     ReusableCardConvoComponent,
-
+    GroupMembersComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
-
+import { GroupMembersComponent } from './group-members/group-members.component';
 
 @Component({
   selector: 'app-group-chats',
@@ -22,19 +22,5 @@ export class GroupChatsComponent implements OnInit {
   }
 
 
-
-}
-@Component({
-  selector: 'app-group-members',
-  templateUrl: './group-members.component.html',
-  styleUrls: ['./group-members.component.scss']
-})
-
-export class GroupMembersComponent {
-  constructor(private bottomSheetRef: MatBottomSheetRef<GroupMembersComponent>) { }
-  openLink(event: MouseEvent): void {
-    this.bottomSheetRef.dismiss();
-    event.preventDefault();
-  }
 
 }

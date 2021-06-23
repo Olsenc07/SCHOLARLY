@@ -14,11 +14,19 @@
   width: 100%;
   margin: 0% 3%;
 }}
+@media(min-width:1024px){
 .columnM{
   display: flex;
   justify-content: center;
   flex-direction: column;
-}
+  margin-left: 2%;
+}}
+@media(max-width:1024px){
+.columnM{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}}
 .entire-page {
   display: flex;
   flex-direction: row;
@@ -53,15 +61,7 @@
   .mobile{
     display: none;
   }}
-  @media(min-width:1024px){
-    .mobile1{
-      display: none;
-    }}
-  @media(max-width:1024px){
-    .mobile{
-      display: flex;
-    margin-right: 2%;
-    }}
+  
 .membersBox { 
   display: flex;
   width: 100%;
