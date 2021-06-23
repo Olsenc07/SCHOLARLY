@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
-import { GroupMembersComponent } from './group-members/group-members.component';
+import { GroupMembersComponent } from '../group-members/group-members.component';
 
 @Component({
   selector: 'app-group-chats',
