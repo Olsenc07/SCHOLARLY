@@ -78,6 +78,8 @@ import { ReusableCardRequestComponent } from './reusable-card-request/reusable-c
 import { ReusableCardUserComponent } from './reusable-card-user/reusable-card-user.component';
 import { ReusableCardConvoComponent } from './reusable-card-convo/reusable-card-convo.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -114,6 +116,7 @@ import { ReusableCardConvoComponent } from './reusable-card-convo/reusable-card-
     ReusableCardRequestComponent,
     ReusableCardUserComponent,
     ReusableCardConvoComponent,
+
   ],
   imports: [
     BrowserModule,
