@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
-import {MatBadgeModule} from '@angular/material/badge';
+import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
+import { GroupMembersComponent } from '../group-members/group-members.component';
 
 @Component({
   selector: 'app-group-chats',
@@ -11,9 +12,15 @@ export class GroupChatsComponent implements OnInit {
   faCoffee = faCoffee;
   MatBadgeModule;
 
-  constructor() { }
+  constructor(private _bottomSheet: MatBottomSheet) { }
+
+  openChat(): void {
+    this._bottomSheet.open(GroupMembersComponent);
+  }
 
   ngOnInit(): void {
   }
+
+
 
 }

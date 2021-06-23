@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import {MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
+import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
 
 
 enum SearchValues {
@@ -49,9 +49,6 @@ export class MainPagesComponent implements OnInit {
   public selectedOption: string;
   public specificOptions: string[];
 
-
-
-
   main: FormControl = new FormControl('');
   mainForm = new FormGroup({
     main: this.main,
@@ -64,7 +61,7 @@ export class MainPagesComponent implements OnInit {
     switch (value) {
       case SearchValues.COLLEGE_CONNECTION:
         this.specificOptions = [
-           'Applied Science & Engineering',
+          'Applied Science & Engineering',
           'Architecture, Landscape & Design',
           'Arts & Science',
           'Continuing Studies',
@@ -303,9 +300,9 @@ export class MainPagesComponent implements OnInit {
   // Fills same way just for different reasons
   // Each button opens this page by there should be 4 different functions with each
   // sharin the open attendence comp, but each sends diff values/reasoning
-    openAttendanceSheet(): void {
-      this.bottomSheet.open(AttendanceComponent);
-    }
+  openAttendanceSheet(): void {
+    this.bottomSheet.open(AttendanceComponent);
+  }
 }
 @Component({
   selector: 'app-main-pages',
@@ -313,7 +310,7 @@ export class MainPagesComponent implements OnInit {
   styleUrls: ['./attendance.component.scss'],
 })
 export class AttendanceComponent {
-  constructor(private bottomSheetRef: MatBottomSheetRef<AttendanceComponent>) {}
+  constructor(private bottomSheetRef: MatBottomSheetRef<AttendanceComponent>) { }
 
   openLink(event: MouseEvent): void {
     this.bottomSheetRef.dismiss();

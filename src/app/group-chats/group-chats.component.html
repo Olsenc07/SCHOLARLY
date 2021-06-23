@@ -2,27 +2,39 @@
 
   <div class="left">
     <label for="members" class="title">Members</label>
+
+    <div class="searchM">
+      <form class="search">
+        <input type="text" class="search-input" placeholder="Search.." name="search">
+        <button type="submit"><span class="material-icons">search</span></button>
+      </form>
+    </div>
     <span class="membersBox">
       <app-card-user class="fit"></app-card-user>
-      <!-- For mobile icon button to display members in the chat room -->
-      <i class="fas fa-user-graduate mobile"></i>
 
     </span>
   </div>
   <div class="column">
     <label class="row">
-      <!-- {{Group}} -->
-      Group Name
+      <!-- For mobile icon button to display members in the chat room -->
+      <button mat-icon-button (click)="openChat()" class="mobile"><i class="fas fa-user-graduate mobile"></i></button>
+      <div class="columnM">
+        <!-- {{Group}} -->
+        Group Name
+      </div>
+
     </label>
     <!-- Icon indicators -->
     <div class="row-icons">
-      <p class="fas fa-venus"></p>
-      <p class="fas fa-transgender-alt"></p>
-      <p class="fas fa-mars"></p>
-      <p class="fas fa-car"></p>
-      <p class="fas fa-dollar-sign"></p>
-      <p class="fas fa-user-tie"></p>
-      <p class="fas fa-glass-cheers"></p>
+      <div class="space">
+        <p class="fas fa-venus"></p>
+        <p class="fas fa-transgender-alt"></p>
+        <p class="fas fa-mars"></p>
+        <p class="fas fa-car"></p>
+        <p class="fas fa-dollar-sign"></p>
+        <p class="fas fa-user-tie"></p>
+        <p class="fas fa-glass-cheers"></p>
+      </div>
     </div>
     <!-- Message area -->
     <div class="middle">
