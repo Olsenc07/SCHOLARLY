@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
-
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @Component({
   selector: 'app-profile',
@@ -11,7 +11,7 @@ export class ProfileComponent {
   showFiller = false;
   // TODO: initial following value would need to be loaded from database - for now, always start with false
   following = false;
-  constructor(private bottomSheet: MatBottomSheet) {}
+  constructor(private bottomSheet: MatBottomSheet) { }
 
   openBottomSheet(): void {
     this.bottomSheet.open(BottomSheetComponent);
@@ -27,7 +27,7 @@ export class ProfileComponent {
   styleUrls: ['./bottom-sheet.component.scss'],
 })
 export class BottomSheetComponent {
-  constructor(private bottomSheetRef: MatBottomSheetRef<BottomSheetComponent>) {}
+  constructor(private bottomSheetRef: MatBottomSheetRef<BottomSheetComponent>) { }
 
   openLink(event: MouseEvent): void {
     this.bottomSheetRef.dismiss();
