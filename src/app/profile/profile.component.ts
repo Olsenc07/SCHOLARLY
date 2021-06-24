@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
-import { MatGridListModule } from '@angular/material/grid-list';
 
 @Component({
   selector: 'app-profile',
