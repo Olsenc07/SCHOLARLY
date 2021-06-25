@@ -177,7 +177,22 @@
       </mat-tab>
       <!-- Snap shots -->
       <mat-tab label="Showcase">
-        <div class="showCase"></div>
+        <div class="showCase">
+          <mat-grid-list cols="2" rowHeight="2:1" colspan rowspan>
+            <!-- *ngFor -->
+            <div class="column">
+              <div class="row">
+                <mat-grid-tile></mat-grid-tile>
+                <mat-grid-tile></mat-grid-tile>
+              </div>
+
+              <div class="row">
+                <mat-grid-tile></mat-grid-tile>
+                <mat-grid-tile></mat-grid-tile>
+              </div>
+            </div>
+          </mat-grid-list>
+        </div>
       </mat-tab>
     </mat-tab-group>
   </div>
