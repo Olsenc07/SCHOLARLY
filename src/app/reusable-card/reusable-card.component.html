@@ -10,7 +10,7 @@
           <mat-card-subtitle class="postTitle textSize">Post Title</mat-card-subtitle>
         </div>
         <div class="row2">
-          <div class="row1">
+          <div class="column">
             <div mat-card-avatar class="profilePic">
               <!-- {{profilePic}} -->
             </div>
@@ -19,9 +19,10 @@
               <mat-card-title class="userName textSize">Olsen07</mat-card-title>
             </div>
           </div>
+
           <div class="row1">
-            <div class="column">
-              <mat-card-title class="textSize">
+            <div class="column_">
+              <mat-card-title class="textSize row1">
                 <!-- {{Specific}} -->Specific Page
               </mat-card-title>
               <mat-card-subtitle class="row1">
@@ -41,18 +42,18 @@
     <img class="middle-card">
     <mat-card-content>
 
-      <div class="switch">
-        <!-- Star button that takes you to that group chat. Attending, Maybe, Can't Attend with list from bottom which shows pp and username -->
-        <div class="row">
-          <div class="center1">
-            <div class="center"> <button mat-icon-button (click)="openAttendanceSheet()">
-                <p class="fas fa-user-tag"></p>
-              </button></div>
-            <div class="center"> <button mat-icon-button>
-                <p class="far fa-comments center" routerLink="/groups"></p>
-              </button> </div>
-          </div>
 
+      <!-- Star button that takes you to that group chat. Attending, Maybe, Can't Attend with list from bottom which shows pp and username -->
+      <div class="rowM">
+        <div class="center1">
+          <div class="center"> <button mat-icon-button (click)="openAttendanceSheet()">
+              <p class="fas fa-user-tag"></p>
+            </button></div>
+          <div class="center"> <button mat-icon-button>
+              <p class="far fa-comments center" routerLink="/groups"></p>
+            </button> </div>
+        </div>
+        <div class="fit_">
           <mat-radio-group aria-label="Select an option" class="row">
             <div class="columnAttend"><button mat-button (click)="openAttendanceSheet()"
                 class="textSize">Attending</button>
@@ -69,6 +70,7 @@
           </mat-radio-group>
         </div>
       </div>
+
 
 
 

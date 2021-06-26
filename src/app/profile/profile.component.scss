@@ -233,7 +233,7 @@ mat-grid-tile {
   flex-direction: column;
   margin-top: 10%;
 }
-@media(min-width:600px){
+@media(min-width:532px){
 .middle {
   display: flex;
   flex-direction: column;
@@ -241,12 +241,12 @@ mat-grid-tile {
   width: 100%;
   height: 90%;
 }}
-@media(max-width:600px){
+@media(max-width:532px){
   .middle {
     display: flex;
     flex-direction: column;
     margin: 1% 1% 1% 3%;
-    width: 64%;
+    width: 60%;
     height: 90%;
   }}
 
