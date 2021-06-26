@@ -4,25 +4,36 @@
     <!-- Profile Pic -->
 
     <div class="row">
-      <div mat-card-avatar class="profilePic">
-        <!-- {{profilePic}} -->
-      </div>
-      <div class="nameTitle">
-        <!-- {{userName}}: -->
-        <mat-card-title class="userName textSize">Olsen07</mat-card-title>
-        <!-- {{title}} -->
-        <mat-card-subtitle class="postTitle textSize">Post Title</mat-card-subtitle>
-      </div>
-      <div>
-        <mat-card-title class="textSize">
-          <!-- {{Specific}} -->Specific Page
-        </mat-card-title>
-        <mat-card-subtitle class="row1">
-          <!--{{Location}} -->
-          <div class="postLocation textSize">Location</div>
-          <!--{{date}} -->
-          <div class="postTime textSize">Date/Time</div>
-        </mat-card-subtitle>
+      <div class="column">
+        <div class="centerT">
+          <!-- {{title}} -->
+          <mat-card-subtitle class="postTitle textSize">Post Title</mat-card-subtitle>
+        </div>
+        <div class="row2">
+          <div class="row1">
+            <div mat-card-avatar class="profilePic">
+              <!-- {{profilePic}} -->
+            </div>
+            <div class="nameTitle">
+              <!-- {{userName}}: -->
+              <mat-card-title class="userName textSize">Olsen07</mat-card-title>
+            </div>
+          </div>
+          <div class="row1">
+            <div class="column">
+              <mat-card-title class="textSize">
+                <!-- {{Specific}} -->Specific Page
+              </mat-card-title>
+              <mat-card-subtitle class="row1">
+                <!--{{Location}} -->
+                <div class="postLocation textSize">Location</div>
+                <!--{{date}} -->
+                <div class="postTime textSize">Date/Time</div>
+              </mat-card-subtitle>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -30,11 +41,8 @@
     <img class="middle-card">
     <mat-card-content>
 
-
-      <!-- Star button that takes you to that group chat. Attending, Maybe, Can't Attend with list from bottom which shows pp and username -->
-
-
-      <div class="center">
+      <div class="switch">
+        <!-- Star button that takes you to that group chat. Attending, Maybe, Can't Attend with list from bottom which shows pp and username -->
         <div class="row">
           <div class="center1">
             <div class="center"> <button mat-icon-button (click)="openAttendanceSheet()">
@@ -60,12 +68,12 @@
             </div>
           </mat-radio-group>
         </div>
-
-
-
-
-
       </div>
+
+
+
+
+
       <!-- number of how many are welcome
            <div>{{value}}</div> or says all -->
     </mat-card-content>

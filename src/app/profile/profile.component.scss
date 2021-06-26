@@ -233,14 +233,23 @@ mat-grid-tile {
   flex-direction: column;
   margin-top: 10%;
 }
-
+@media(min-width:600px){
 .middle {
   display: flex;
   flex-direction: column;
   margin: 1% 1% 1% 3%;
   width: 100%;
   height: 90%;
-}
+}}
+@media(max-width:600px){
+  .middle {
+    display: flex;
+    flex-direction: column;
+    margin: 1% 1% 1% 3%;
+    width: 64%;
+    height: 90%;
+  }}
+
 .number {
   width: 25%;
   background-color: #ebebf5;
@@ -271,11 +280,20 @@ mat-grid-tile {
   display: flex;
   height:100%
 }
+@media(min-width:550px){
 .profile-pic {
   display: flex;
   height: 15vh;
   justify-content: center;
 }
+}
+@media(max-width:550px){
+  .profile-pic {
+    display: flex;
+    height: 11vh;
+    justify-content: center;
+  }
+  }
 
 .relationship {
   display: flex;
