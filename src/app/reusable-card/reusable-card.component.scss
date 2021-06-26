@@ -15,24 +15,23 @@
   justify-content: center;
   flex-direction: column;
 }
-@media (max-width: 350px) {
-  .center1 {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-}
-@media (min-width: 350px) {
   .center1 {
     display: flex;
     justify-content: center;
     flex-direction: row;
   }
-}
+
 .column{
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+.column_{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-end;
 }
 .columnAttend {
   display: flex;
@@ -49,6 +48,10 @@
   width: 100%;
   height: 100%;
 }
+.fit_{
+  display: flex;
+  overflow-x: scroll;
+}
 .specifics-fill {
   display: flex;
   width: 100%;
@@ -63,9 +66,20 @@
   justify-content: space-evenly;
   
 }
+@media(max-width:650px){
+.rowM{
+  display: flex;
+  flex-direction: column;
+}}
+@media(min-width:650px){
+  .rowM{
+    display: flex;
+    flex-direction: row;
+  }}
 .row1{
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 .row2{
   display: flex;
@@ -73,18 +87,7 @@
   justify-content: space-between;
   width: 100%;
 }
-@media(min-width:512px){
-.switch{
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-}}
-@media(max-width:512px){
-  .switch{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }}
+
 p {
   display: flex;
   font-size: x-large;
