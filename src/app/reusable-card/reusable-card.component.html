@@ -59,30 +59,32 @@
         <button mat-button [matMenuTriggerFor]="menu">Attendance</button>
         <mat-menu #menu="matMenu" class="spaceH">
 
-          <div mat-menu-item>
-
-            <div class="columnAttend" (click)="openAttendanceSheet()"><button mat-button
-                class="textSize">Attending</button>
-
-              <mat-radio-button class="center" value="1"></mat-radio-button>
+          <div class="row1">
+            <div mat-menu-item>
+              <div class="columnAttend" (click)="openAttendanceSheet()">
+                Attending
+              </div>
             </div>
-
+            <mat-radio-button class="center" value="1"></mat-radio-button>
           </div>
-
-          <div mat-menu-item>
-            <div class="columnAttend" (click)="openAttendanceSheet()"> <button mat-button
-                class="textSize">Maybe</button>
-              <mat-radio-button class="center" value="2"></mat-radio-button>
+          <div class="row1">
+            <div mat-menu-item>
+              <div class="columnAttend" (click)="openAttendanceSheet()">
+                Maybe
+              </div>
             </div>
+            <mat-radio-button class="center" value="2"></mat-radio-button>
           </div>
-          <div mat-menu-item>
-            <div class="columnAttend" (click)="openAttendanceSheet()"> <button mat-button class="textSize">Not
-                Attending</button>
-              <mat-radio-button class="center" value="3"></mat-radio-button>
+          <div class="row1">
+            <div mat-menu-item>
+
+              <div class="columnAttend" (click)="openAttendanceSheet()">
+                Not
+                Attending
+              </div>
             </div>
+            <mat-radio-button class="center" value="3"></mat-radio-button>
           </div>
-
-
         </mat-menu>
         <!-- Dispplays you attending status -->
         <div>
