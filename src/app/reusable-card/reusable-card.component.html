@@ -53,22 +53,43 @@
               <p class="far fa-comments center" routerLink="/groups"></p>
             </button> </div>
         </div>
-        <div class="fit_">
-          <mat-radio-group aria-label="Select an option" class="row">
-            <div class="columnAttend"><button mat-button (click)="openAttendanceSheet()"
+
+
+
+        <button mat-button [matMenuTriggerFor]="menu">Attendance</button>
+        <mat-menu #menu="matMenu" class="spaceH">
+
+          <div mat-menu-item>
+
+            <div class="columnAttend" (click)="openAttendanceSheet()"><button mat-button
                 class="textSize">Attending</button>
+
               <mat-radio-button class="center" value="1"></mat-radio-button>
             </div>
-            <div class="columnAttend"> <button (click)="openAttendanceSheet()" mat-button
+
+          </div>
+
+          <div mat-menu-item>
+            <div class="columnAttend" (click)="openAttendanceSheet()"> <button mat-button
                 class="textSize">Maybe</button>
               <mat-radio-button class="center" value="2"></mat-radio-button>
             </div>
-            <div class="columnAttend"> <button (click)="openAttendanceSheet()" mat-button class="textSize">Not
+          </div>
+          <div mat-menu-item>
+            <div class="columnAttend" (click)="openAttendanceSheet()"> <button mat-button class="textSize">Not
                 Attending</button>
               <mat-radio-button class="center" value="3"></mat-radio-button>
             </div>
-          </mat-radio-group>
+          </div>
+
+
+        </mat-menu>
+        <!-- Dispplays you attending status -->
+        <div>
+          <!-- {{value}} -->
         </div>
+
+
       </div>
 
 

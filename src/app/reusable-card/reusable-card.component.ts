@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {MatBottomSheet  } from '@angular/material/bottom-sheet';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { AttendanceComponent } from '../main-pages/main-pages.component';
 
 @Component({
@@ -10,9 +10,9 @@ import { AttendanceComponent } from '../main-pages/main-pages.component';
 export class ReusableCardComponent {
     openAttendanceSheet(): void {
         this.bottomSheet.open(AttendanceComponent);
-      }
+    }
 
-
-constructor(private bottomSheet: MatBottomSheet){}
+    panelOpenState = false;
+    constructor(private bottomSheet: MatBottomSheet) { }
 }
 
