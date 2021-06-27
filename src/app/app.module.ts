@@ -78,7 +78,7 @@ import { ReusableCardRequestComponent } from './reusable-card-request/reusable-c
 import { ReusableCardUserComponent } from './reusable-card-user/reusable-card-user.component';
 import { ReusableCardConvoComponent } from './reusable-card-convo/reusable-card-convo.component';
 import { GroupMembersComponent } from './group-members/group-members.component';
-
+import { TaggedComponent } from './main-pages/main-pages.component';
 
 @NgModule({
   declarations: [
@@ -117,6 +117,7 @@ import { GroupMembersComponent } from './group-members/group-members.component';
     ReusableCardUserComponent,
     ReusableCardConvoComponent,
     GroupMembersComponent,
+    TaggedComponent,
   ],
   imports: [
     BrowserModule,

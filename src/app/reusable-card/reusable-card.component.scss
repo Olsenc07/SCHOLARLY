@@ -15,16 +15,32 @@
   justify-content: center;
   flex-direction: column;
 }
+.centerB {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+}
+@media(min-width:390px){
   .center1 {
     display: flex;
     justify-content: center;
     flex-direction: row;
+  }}
+  @media(max-width:390px){
+  .center1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
   }
-
+  }
 .column{
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+.column1{
+  display: flex;
+  flex-direction: column;
 }
 .column_{
   display: flex;
@@ -35,14 +51,20 @@
 }
 .columnAttend {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
-  width: fit-content;
+ 
 }
-.mat-card-avatar{
-  width: 50px;
-  height: 50px;
-}
+@media(min-width:400px){
+  .mat-card-avatar{
+    width: 50px;
+    height: 50px;
+  }}
+  @media(max-width:400px){
+    .mat-card-avatar{
+      width: 40px;
+      height: 40px;
+    }}
 .feed {
   display: flex;
   width: 100%;
@@ -50,7 +72,7 @@
 }
 .fit_{
   display: flex;
-  overflow-x: scroll;
+  
 }
 .specifics-fill {
   display: flex;
@@ -64,18 +86,12 @@
   flex-direction: row;
   width: 100%;
   justify-content: space-evenly;
-  
 }
-@media(max-width:650px){
-.rowM{
-  display: flex;
-  flex-direction: column;
-}}
-@media(min-width:650px){
   .rowM{
     display: flex;
     flex-direction: row;
-  }}
+    justify-content: space-between;
+  }
 .row1{
   display: flex;
   flex-direction: row;
@@ -122,7 +138,7 @@ p {
   display: flex;
   width: 100%;
   overflow-y: visible;
-  margin-left: 1%;
+  height: fit-content;
 }
 
 .middle-card {
