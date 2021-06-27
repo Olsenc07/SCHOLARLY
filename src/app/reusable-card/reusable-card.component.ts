@@ -12,8 +12,13 @@ export class ReusableCardComponent {
     openAttendanceSheet(): void {
         this.bottomSheet.open(AttendanceComponent);
     }
-
-
+    selectedAttend: string = '';
+    attendances: any = [
+        'Attending', 'Maybe', 'Not Attending'
+    ];
+    radioChange(event: any) {
+        this.selectedAttend = event.target.value;
+    }
 
 
     panelOpenState = false;

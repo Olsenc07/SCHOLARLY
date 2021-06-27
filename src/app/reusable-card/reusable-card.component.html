@@ -55,45 +55,27 @@
         </div>
 
 
+        <div class="column1">
+          <button mat-button [matMenuTriggerFor]="menu" class="row1">Attendance</button>
+          <mat-menu #menu="matMenu" class="center">
 
-        <button mat-button [matMenuTriggerFor]="menu">Attendance</button>
-        <mat-menu #menu="matMenu" class="spaceH">
+            <div *ngFor="let attendance of attendances" class="centerB">
 
-          <div class="row1">
-            <div mat-menu-item>
-              <div class="columnAttend" (click)="openAttendanceSheet()">
-                Attending
-              </div>
-            </div>
-            <mat-radio-button class="center" name="choice" value="Attending">
-            </mat-radio-button>
-          </div>
-          <div class="row1">
-            <div mat-menu-item>
-              <div class="columnAttend" (click)="openAttendanceSheet()">
-                Maybe
-              </div>
-            </div>
-            <mat-radio-button class="center" name="choice" value="Maybe"></mat-radio-button>
-          </div>
-          <div class="row1">
-            <div mat-menu-item>
+              <input type="radio" name="attend" value="{{attendance}}" class="center" (change)="radioChange($event)">
+              <div>{{attendance}}</div>
 
-              <div class="columnAttend" (click)="openAttendanceSheet()">
-                Not
-                Attending
-              </div>
+
+
             </div>
-            <mat-radio-button class="center" name="choice" value="Not Attending"></mat-radio-button>
+
+          </mat-menu>
+          <!-- Dispplays you attending status -->
+          <div class="center1">
+            {{selectedAttend}}
+
           </div>
-        </mat-menu>
-        <!-- Dispplays you attending status -->
-        <div>
-          <!-- {attendance} -->
 
         </div>
-
-
       </div>
 
 

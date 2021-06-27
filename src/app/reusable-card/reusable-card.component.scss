@@ -15,6 +15,11 @@
   justify-content: center;
   flex-direction: column;
 }
+.centerB {
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+}
   .center1 {
     display: flex;
     justify-content: center;
@@ -25,6 +30,10 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+.column1{
+  display: flex;
+  flex-direction: column;
 }
 .column_{
   display: flex;
@@ -60,12 +69,7 @@
   flex-direction: column;
 }
 
-.spaceH{
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  flex-direction: column;
-}
+
 .row {
   display: flex;
   flex-direction: row;
