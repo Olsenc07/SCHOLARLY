@@ -317,3 +317,16 @@ export class AttendanceComponent {
     event.preventDefault();
   }
 }
+@Component({
+  selector: 'app-main-pages',
+  templateUrl: './tagged.component.html',
+  styleUrls: ['./tagged.component.scss'],
+})
+export class TaggedComponent {
+  constructor(private bottomSheetRef: MatBottomSheetRef<AttendanceComponent>) { }
+
+  openLink(event: MouseEvent): void {
+    this.bottomSheetRef.dismiss();
+    event.preventDefault();
+  }
+}

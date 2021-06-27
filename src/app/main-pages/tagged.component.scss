@@ -1,11 +1,10 @@
 .column{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    height: 100%;
     overflow-y: scroll;
+    height: 100%;
 }
-.row{
+.center{
     display: flex;
     flex-direction: row;
     justify-content: center;
