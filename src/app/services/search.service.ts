@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 
+
 enum SearchValues {
     COLLEGE_CONNECTION = 'college-connection',
     BLUE_CLUBS = 'blue-clubs',
@@ -44,7 +45,8 @@ export class SearchListService {
         { name: 'Questions', value: SearchValues.U_OF_T_QS },
         { name: 'Upcoming Events', value: SearchValues.UPCOMING_EVENTS },
     ];
-    specificOptions: string[];
+    public selectedOption: string;
+    public specificOptions: string[];
     constructor() { }
 
     onSearchSelection(value: string): void {
