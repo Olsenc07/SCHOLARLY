@@ -45,6 +45,7 @@ export class SearchListService {
         { name: 'Questions', value: SearchValues.U_OF_T_QS },
         { name: 'Upcoming Events', value: SearchValues.UPCOMING_EVENTS },
     ];
+
     public selectedOption: string;
     public specificOptions: string[];
     constructor() { }

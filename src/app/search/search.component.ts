@@ -30,7 +30,6 @@ export class SearchComponent implements OnInit {
   public specificOptions: string[];
   constructor(public dialog: MatDialog,
     public SearchListService: SearchListService) {
-    this.SearchListService;
     this.SearchListService.onSearchSelection
   }
 
