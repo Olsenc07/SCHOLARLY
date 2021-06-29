@@ -178,18 +178,17 @@
       <!-- Snap shots -->
       <mat-tab label="Showcase">
         <div class="showCase">
-          <mat-grid-list cols="2" rowHeight="2:1" colspan rowspan>
+          <mat-grid-list
+            style="display: flex; width: 100%; height: 100%; border: solid; justify-content: center; flex-direction: row;"
+            cols="2" rowHeight="2:1" colspan rowspan>
             <!-- *ngFor -->
             <div class="column">
-              <div class="row">
-                <mat-grid-tile></mat-grid-tile>
-                <mat-grid-tile></mat-grid-tile>
-              </div>
 
-              <div class="row">
-                <mat-grid-tile></mat-grid-tile>
-                <mat-grid-tile></mat-grid-tile>
-              </div>
+              <mat-grid-tile style="height: 100%; width: 100%; justify-content: center; display: flex;">
+                <div style="width: 50%; height: 50%
+                ; justify-content: center; display: flex; border: solid; flex-direction: row;"></div>
+              </mat-grid-tile>
+
             </div>
           </mat-grid-list>
         </div>

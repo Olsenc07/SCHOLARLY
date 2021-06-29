@@ -281,8 +281,4 @@ export class SearchListService {
                 this.specificOptions = [];
         }
     }
-
-
-
-
 }
