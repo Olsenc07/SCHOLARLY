@@ -74,10 +74,13 @@
   margin-top: 15%;
 }
 .column{
+  margin-right: 2%;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 100%;
+  width: 99%;
+  
+  box-sizing: border-box;
 }
 
 @media (min-width: 410px) {
@@ -221,12 +224,10 @@ mat-grid-tile {
   height: 100%;
 }
 
-
   mat-tab-group {
     display: flex;
     height: 100%;
   }
-
 
 .messageM {
   display: flex;
@@ -332,7 +333,36 @@ mat-grid-tile {
   height: 100%;
   border: ridge;
 }
-
+.showCase {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+}
+@media(min-width:600px){
+.show-case{
+  display: flex;
+  width: 50%;
+  height: 50%;
+  justify-content: center;
+  border: groove;
+  margin-left: 25%;
+}}
+@media(max-width:600px){
+.show-case{
+  display: flex;
+  width: 100%;
+  height: 50%;
+  justify-content: center;
+  border: groove;
+}}
+.show-case1{
+  display: flex;
+  width: 100%;
+  height: 50%;
+  justify-content: center;
+  border: groove;
+}
 .search-format {
   display: flex;
   flex-direction: column;
@@ -389,12 +419,7 @@ mat-grid-tile {
   background-color: rgb(235, 235, 245);
   justify-content: center;
 }
-.showCase {
-  display: flex;
-  height: 100%;
-  width: 100%;
-  overflow-y: scroll;
-}
+
 .top-middle {
   display: flex;
   flex-direction: column;
@@ -403,6 +428,14 @@ mat-grid-tile {
 .top-items {
   display: flex;
   flex-direction: row;
+}
+.tile{
+  height: 100%; 
+  width: 100%; 
+  justify-content: center; 
+  display: flex;
+  flex-direction: column;
+ 
 }
 .title{
   display: flex;
