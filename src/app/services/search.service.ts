@@ -46,8 +46,19 @@ export class SearchListService {
         { name: 'Upcoming Events', value: SearchValues.UPCOMING_EVENTS },
     ];
 
+    getSearchOptions(): SearchOption[] {
+        return this.searchOptions
+    }
+
     public selectedOption: string;
+    getSelectedOption(): string {
+        return this.selectedOption
+    }
     public specificOptions: string[];
+    getSpecificOptions(): string[] {
+        return this.specificOptions
+    }
+
     constructor() { }
 
     onSearchSelection(value: string): void {

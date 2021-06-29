@@ -39,8 +39,9 @@
 
             <mat-chip-list aria-label="First Choice">
 
-              <mat-chip (click)="onSearchSelection(opt.value)" [selected]="opt.name" [multiple]="false"
-                *ngFor="let opt of searchOptions" [value]="opt.name">
+              <mat-chip onload="getSearchOptionsInfo()" (click)="onSearchSelection(opt.value)"
+                (click)="getSelectedOptionInfo() " (click)="getSpecificOptionsInfo()" [selected]="opt.name"
+                [multiple]="false" *ngFor="let opt of searchOptions" [value]="opt.name">
                 <mat-radio-button class="horizontal_list"> {{ opt.name }}</mat-radio-button>
 
               </mat-chip>
