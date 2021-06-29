@@ -61,13 +61,15 @@ on which main category page your on-->
       <!-- General choice appears at top of feed and dissapears as user scrolls -->
       <div class="top">
         <div class="specificChoice">
-          Main Choice...</div>
+          {{specific}}
+
+        </div>
         <div class="hide ">
           <button type="button" mat-icon-button class="expandBtn" (click)="drawer.toggle()">
             <div class="fas fa-angle-double-right"></div>
           </button>
         </div>
-        <!-- {{specific}} -->
+
       </div>
       <app-card class="fit"></app-card>
 

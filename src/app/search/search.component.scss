@@ -26,7 +26,10 @@
   margin-top: 2%;
   font-size: x-large;
 }
-
+.column{display: flex;
+  justify-content: center;
+  flex-direction: column;}
+ 
 
 .main-layout {
   display: flex;
@@ -357,21 +360,18 @@
 @media (max-width: 1025px) and (min-width: 901px) {
   .fix2 {
     font-size: 3vh;
-
     margin-bottom: 1%;
   }
 }
 @media (max-width: 900px) {
   .fix2 {
     font-size: 2vh;
-
     margin-bottom: 1%;
   }
 }
 @media (min-height: 800px) {
   .fix2 {
     font-size: 2vh;
-
     margin-bottom: 1%;
   }
 }

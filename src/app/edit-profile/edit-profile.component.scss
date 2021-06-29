@@ -299,6 +299,10 @@
   justify-content: center;
   max-width: 250px;
 }
+.Preview{
+  display: flex;
+  justify-content: center;
+}
 .layout {
   margin-bottom: 2%;
   display: flex;
@@ -306,6 +310,8 @@
 }
 .text {
   color: #0e3379;
+  display: flex;
+  justify-content: center;
 }
 .twoBoxs {
   display: flex;

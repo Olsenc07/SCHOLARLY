@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
+
 
 
 enum SearchValues {
@@ -30,6 +31,9 @@ interface SearchOption {
   styleUrls: ['./main-pages.component.scss']
 })
 export class MainPagesComponent implements OnInit {
+
+  @Input() specific = '';
+
   public searchOptions: SearchOption[] = [
     { name: 'Blues Clubs', value: SearchValues.BLUE_CLUBS },
     { name: 'Buy & Sell', value: SearchValues.MISCELL_BUY_SELL },
