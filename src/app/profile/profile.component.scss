@@ -224,6 +224,21 @@ mat-grid-tile {
   height: 100%;
 }
 
+// scrollable mat group headers
+::ng-deep .mat-tab-header {
+  overflow-x: scroll !important;
+}
+
+::ng-deep .mat-tab-label-container { 
+  overflow: visible !important;
+}
+// Hides scroll bar
+::ng-deep .mat-tab-header::-webkit-scrollbar {
+  display: none;
+}
+
+
+
   mat-tab-group {
     display: flex;
     height: 100%;
