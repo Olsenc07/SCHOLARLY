@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { SearchListService } from '../services/search.service';
-
 
 enum SearchValues {
   COLLEGE_CONNECTION = 'college-connection',
@@ -22,13 +22,11 @@ enum SearchValues {
 interface SearchOption {
   value: string;
   name: string;
-
 }
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss'],
-  providers: [SearchListService]
 })
 export class SearchComponent implements OnInit {
   search: FormControl = new FormControl('');
@@ -36,33 +34,32 @@ export class SearchComponent implements OnInit {
     search: this.search,
   });
 
+  public selectedOption: string;
+  public specificOptions: string[];
+
   // Attempting to use search.service
 
   searchOptions: SearchOption[];
 
-  getSearchOptionsInfo() {
-    this.searchOptions = this.SearchListService.getSearchOptions()
-  }
-
-  getSelectedOptionInfo() {
-    this.selectedOption = this.SearchListService.getSelectedOption()
-  }
-  getSpecificOptionsInfo() {
-    this.specificOptions = this.SearchListService.getSpecificOptions()
-  }
-
-
-
-
-
   // 13 search pages
-  public selectedOption: string;
-  public specificOptions: string[];
-  constructor(public dialog: MatDialog,
-    public SearchListService: SearchListService) {
-    this.SearchListService.onSearchSelection
+  constructor(
+    public dialog: MatDialog,
+    public searchListService: SearchListService,
+    private router: Router
+  ) {}
+
+  ngOnInit(): void {
+    this.searchOptions = this.searchListService.getSearchOptions();
   }
 
+  navigateToPage(value): void {
+    this.router.navigateByUrl('/main');
+  }
+
+  onSearchSelection(value): void {
+    console.log(value);
+    this.specificOptions = this.searchListService.onSearchSelection(value);
+  }
 
   // Will delete these once I figure out the cleaner way
   openDialog1(): void {
@@ -107,17 +104,8 @@ export class SearchComponent implements OnInit {
     this.dialog.open(UpcomingEComponent);
   }
 
-
-
-
-  ngOnInit(): void { }
-
   clearSearch(): void {
     this.search.setValue('');
-  }
-  onSubmit(): void {
-    // TODO: wire up to login request
-    console.log(this.searchForm.value);
   }
 }
 @Component({
@@ -125,7 +113,6 @@ export class SearchComponent implements OnInit {
   templateUrl: './BluesC-option.component.html',
 })
 export class BluesCOptionComponent {
-
   public specificOptions1 = [
     'Academic',
     'Arts',
@@ -151,9 +138,7 @@ export class BluesCOptionComponent {
   templateUrl: './BuyS.component.html',
 })
 export class BuySComponent {
-  public specificOptions2 = [
-    'Buy/Sell', 'Miscellaneous',
-  ];
+  public specificOptions2 = ['Buy/Sell', 'Miscellaneous'];
 }
 @Component({
   selector: 'app-post-page',
@@ -319,7 +304,8 @@ export class EntrepOppComponent {
   templateUrl: './HelpingH.component.html',
 })
 export class HelpingHComponent {
-  public specificOptions8 = ['Cleaning',
+  public specificOptions8 = [
+    'Cleaning',
     'Cooking & Groceries',
     'Designing',
     'Electronic Based',
@@ -334,7 +320,8 @@ export class HelpingHComponent {
   templateUrl: './Housing.component.html',
 })
 export class HousingComponent {
-  public specificOptions9 = ['Buy & Sell',
+  public specificOptions9 = [
+    'Buy & Sell',
     'ISO Residence',
     'Questions & Advice',
     'Roomate Wanted',

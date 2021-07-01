@@ -37,9 +37,6 @@ import { NgxImageZoomModule } from 'ngx-image-zoom';
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
 
-
-
-
 import { routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
@@ -52,7 +49,6 @@ import { SignupComponent } from './signup/signup.component';
 import { TermsPopUpComponent } from './signup/signup.component';
 import { AttendanceComponent } from './main-pages/main-pages.component';
 import { BottomSheetComponent } from './profile/profile.component';
-
 
 import { HomePageComponent } from './home-page/home-page.component';
 import { FriendsActivityComponent } from './friends-activity/friends-activity.component';
@@ -79,6 +75,7 @@ import { ReusableCardUserComponent } from './reusable-card-user/reusable-card-us
 import { ReusableCardConvoComponent } from './reusable-card-convo/reusable-card-convo.component';
 import { GroupMembersComponent } from './group-members/group-members.component';
 import { TaggedComponent } from './main-pages/main-pages.component';
+import { SearchListService } from './services/search.service';
 
 @NgModule({
   declarations: [
@@ -159,9 +156,7 @@ import { TaggedComponent } from './main-pages/main-pages.component';
     MatExpansionModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-
-  providers: [],
+  providers: [SearchListService],
   bootstrap: [AppComponent],
 })
-export class AppModule {
-}
+export class AppModule {}
