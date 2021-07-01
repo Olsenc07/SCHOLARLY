@@ -1,21 +1,30 @@
-import { Component, OnInit, ElementRef, ViewChild, } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import {MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS} from '@angular/material-moment-adapter';
-import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
+import {
+  MomentDateAdapter,
+  MAT_MOMENT_DATE_ADAPTER_OPTIONS,
+} from '@angular/material-moment-adapter';
+import {
+  DateAdapter,
+  MAT_DATE_FORMATS,
+  MAT_DATE_LOCALE,
+} from '@angular/material/core';
 import * as _moment from 'moment';
-import { default as _rollupMoment} from 'moment';
-import {MatDialog} from '@angular/material/dialog';
+import { default as _rollupMoment } from 'moment';
+import { MatDialog } from '@angular/material/dialog';
 import { ImageCroppedEvent } from 'ngx-image-cropper';
-import { HttpClient  } from '@angular/common/http';
-import {MatAutocompleteSelectedEvent, MatAutocomplete} from '@angular/material/autocomplete';
-import {MatChipInputEvent} from '@angular/material/chips';
-import {COMMA, ENTER} from '@angular/cdk/keycodes';
-import {Observable} from 'rxjs';
-import {map} from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import {
+  MatAutocompleteSelectedEvent,
+  MatAutocomplete,
+} from '@angular/material/autocomplete';
+import { MatChipInputEvent } from '@angular/material/chips';
+import { COMMA, ENTER } from '@angular/cdk/keycodes';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { ClassListService } from '../services/class.service';
-import {MatButtonModule} from '@angular/material/button';
-
-
+import { MatButtonModule } from '@angular/material/button';
+import { Profile, StoreService } from '../services/store.service';
 
 interface Gender {
   name: string;
@@ -38,13 +47,13 @@ export const MY_FORMATS = {
   styleUrls: ['./edit-profile.component.scss'],
   providers: [
     {
-    provide: DateAdapter,
-    useClass: MomentDateAdapter,
-    deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS]
-  },
+      provide: DateAdapter,
+      useClass: MomentDateAdapter,
+      deps: [MAT_DATE_LOCALE, MAT_MOMENT_DATE_ADAPTER_OPTIONS],
+    },
 
-  {provide: MAT_DATE_FORMATS, useValue: MY_FORMATS},
-]
+    { provide: MAT_DATE_FORMATS, useValue: MY_FORMATS },
+  ],
 })
 export class EditProfileComponent implements OnInit {
   Bio = '';
@@ -64,9 +73,9 @@ export class EditProfileComponent implements OnInit {
   @ViewChild('autoP') matAutocompleteP: MatAutocomplete;
   url: string;
   cropImgPreview: any = '';
-imgChangeEvt: any = '';
-// PP isn't connected properly i dont think, since image is being cropped then returned as a base 64 value
-profilePic: FormControl = new FormControl('');
+  imgChangeEvt: any = '';
+  // PP isn't connected properly i dont think, since image is being cropped then returned as a base 64 value
+  profilePic: FormControl = new FormControl('');
   major: FormControl = new FormControl('');
   minor: FormControl = new FormControl('');
   sport: FormControl = new FormControl('');
@@ -79,8 +88,8 @@ profilePic: FormControl = new FormControl('');
   birthday: FormControl = new FormControl('');
   relationship: FormControl = new FormControl('');
   genderChoice: FormControl = new FormControl('');
+  pursuingCourses: FormControl = new FormControl([]);
   date: FormControl = new FormControl(moment());
-
 
   editForm = new FormGroup({
     major: this.major,
@@ -98,49 +107,21 @@ profilePic: FormControl = new FormControl('');
     courseCodeCtrl: this.courseCodeCtrl,
     courseCodeCtrlP: this.courseCodeCtrlP,
     bio: this.bio,
-
   });
   selectedIndex = 0;
   genders: Gender[] = [
-  {name: 'Female'},
-  {name: 'Male'},
-  {name: 'Other'},
-  {name: 'Perfer Not To Answer'},
+    { name: 'Female' },
+    { name: 'Male' },
+    { name: 'Other' },
+    { name: 'Perfer Not To Answer' },
   ];
-  onImgChange(event: any): void {
-    this.imgChangeEvt = event;
-}
-  // Passes value as base64 string of cropped area!! But where does form controller come into play?
-  cropImg(e: ImageCroppedEvent): void {
-    this.cropImgPreview = e.base64;
-}
 
-imgLoad(): void {
-  // display cropper tool
-}
-
-initCropper(): void {
-  // init cropper
-}
-imgFailed(): void {
-  // error msg
-}
-  // SnapShot
-  imagePreview(event: any): void {
-    if (event.target.files && event.target.files[0]) {
-      const reader = new FileReader();
-
-      reader.readAsDataURL(event.target.files[0]); // read file as data url
-
-      reader.onload = (Event: any) => { // called once readAsDataURL is completed
-        console.log(Event);
-        this.url = Event.target.result;
-      };
-    }
-  }
-  constructor(public dialog: MatDialog,
-              public classListService: ClassListService,
-              private http: HttpClient, ) {
+  constructor(
+    public dialog: MatDialog,
+    public classListService: ClassListService,
+    private http: HttpClient,
+    private storeService: StoreService
+  ) {
     this.filteredCodes = this.courseCodeCtrl.valueChanges.pipe(
       map((code: string | null) =>
         code ? this._filter(code) : this.classListService.allClasses().slice()
@@ -151,7 +132,42 @@ imgFailed(): void {
         code ? this._filter(code) : this.classListService.allClasses().slice()
       )
     );
-  }add(event: MatChipInputEvent): void {
+  }
+
+  onImgChange(event: any): void {
+    this.imgChangeEvt = event;
+  }
+  // Passes value as base64 string of cropped area!! But where does form controller come into play?
+  cropImg(e: ImageCroppedEvent): void {
+    this.cropImgPreview = e.base64;
+  }
+
+  imgLoad(): void {
+    // display cropper tool
+  }
+
+  initCropper(): void {
+    // init cropper
+  }
+  imgFailed(): void {
+    // error msg
+  }
+  // SnapShot
+  imagePreview(event: any): void {
+    if (event.target.files && event.target.files[0]) {
+      const reader = new FileReader();
+
+      reader.readAsDataURL(event.target.files[0]); // read file as data url
+
+      reader.onload = (Event: any) => {
+        // called once readAsDataURL is completed
+        console.log(Event);
+        this.url = Event.target.result;
+      };
+    }
+  }
+
+  add(event: MatChipInputEvent): void {
     const value = (event.value || '').trim();
 
     // Add our course code
@@ -164,20 +180,20 @@ imgFailed(): void {
 
     this.courseCodeCtrl.setValue(null);
   }
-// Pursuing Courses
-addP(event: MatChipInputEvent): void {
-  const valueP = (event.value || '').trim();
+  // Pursuing Courses
+  addP(event: MatChipInputEvent): void {
+    const valueP = (event.value || '').trim();
 
-  // Add our course code
-  if (valueP) {
-    this.classesP.push(valueP);
+    // Add our course code
+    if (valueP) {
+      this.classesP.push(valueP);
+    }
+
+    // Clear the input value
+    // event.chipInput!.clear();
+
+    this.courseCodeCtrlP.setValue(null);
   }
-
-  // Clear the input value
-  // event.chipInput!.clear();
-
-  this.courseCodeCtrlP.setValue(null);
-}
   openDialog(): void {
     this.dialog.open(PopUpComponent);
   }
@@ -187,7 +203,7 @@ addP(event: MatChipInputEvent): void {
       this.classes.splice(index, 1);
     }
   }
-removeP(codeP: string): void {
+  removeP(codeP: string): void {
     const indexP = this.classesP.indexOf(codeP);
     if (indexP >= 0) {
       this.classesP.splice(indexP, 1);
@@ -199,19 +215,18 @@ removeP(codeP: string): void {
     this.courseCodeCtrl.setValue(null);
   }
   // Pursuing Classes
-selectedP(event: MatAutocompleteSelectedEvent): void {
-  this.classesP.push(event.option.viewValue);
-  this.codeInputP.nativeElement.value = '';
-  this.courseCodeCtrlP.setValue(null);
-}
-private _filter(value: string): string[] {
-  const filterValue = value.toLowerCase();
+  selectedP(event: MatAutocompleteSelectedEvent): void {
+    this.classesP.push(event.option.viewValue);
+    this.codeInputP.nativeElement.value = '';
+    this.courseCodeCtrlP.setValue(null);
+  }
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
 
-
-  return this.classListService
-    .allClasses()
-    .filter((code) => code.toLowerCase().indexOf(filterValue) === 0);
-}
+    return this.classListService
+      .allClasses()
+      .filter((code) => code.toLowerCase().indexOf(filterValue) === 0);
+  }
   ngOnInit(): void {}
 
   clearMajor(): void {
@@ -223,7 +238,7 @@ private _filter(value: string): string[] {
   clearSport(): void {
     this.sport.setValue('');
   }
-clearClub(): void {
+  clearClub(): void {
     this.club.setValue('');
   }
 
@@ -245,13 +260,20 @@ clearClub(): void {
   }
 
   onSubmit(): void {
-    // TODO: wire up to login request
     console.log(this.editForm.value);
+    // TODO: convert form fields to Profile
+
+    let profile: Profile = {
+      pursuingCourses: this.pursuingCourses.value,
+    };
+
+    // TODO: replace null with Profile object
+    this.storeService.setProfile(profile);
   }
 }
 @Component({
   selector: 'app-edit-profile',
   templateUrl: './pop-up-editP.component.html',
-  styleUrls: ['./pop-up-editP.component.scss']
+  styleUrls: ['./pop-up-editP.component.scss'],
 })
 export class PopUpComponent {}
