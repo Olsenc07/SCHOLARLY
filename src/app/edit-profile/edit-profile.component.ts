@@ -107,6 +107,7 @@ export class EditProfileComponent implements OnInit {
     courseCodeCtrl: this.courseCodeCtrl,
     courseCodeCtrlP: this.courseCodeCtrlP,
     bio: this.bio,
+    pursuingCourses: this.pursuingCourses,
   });
   selectedIndex = 0;
   genders: Gender[] = [
@@ -227,7 +228,7 @@ export class EditProfileComponent implements OnInit {
       .allClasses()
       .filter((code) => code.toLowerCase().indexOf(filterValue) === 0);
   }
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   clearMajor(): void {
     this.major.setValue('');
@@ -268,7 +269,7 @@ export class EditProfileComponent implements OnInit {
     };
 
     // TODO: replace null with Profile object
-    this.storeService.setProfile(profile);
+    // this.storeService.setProfile(pursuingCourses);
   }
 }
 @Component({
@@ -276,4 +277,4 @@ export class EditProfileComponent implements OnInit {
   templateUrl: './pop-up-editP.component.html',
   styleUrls: ['./pop-up-editP.component.scss'],
 })
-export class PopUpComponent {}
+export class PopUpComponent { }

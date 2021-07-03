@@ -9,23 +9,28 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class RetrievePasswordComponent implements OnInit {
   password: FormControl = new FormControl('');
-  email: FormControl = new FormControl('');
+  emailRetrieval: FormControl = new FormControl('');
+  emailLogin: FormControl = new FormControl('');
 
   loginForm = new FormGroup({
-    email: this.email,
+    emailRetrieval: this.emailRetrieval,
+    emailLogin: this.emailLogin,
     password: this.password,
   });
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   clearPassword(): void {
     this.password.setValue('');
   }
 
   clearEmail(): void {
-    this.email.setValue('');
+    this.emailRetrieval.setValue('');
+  }
+  clearEmail1(): void {
+    this.emailLogin.setValue('');
   }
   onSubmit(): void {
     // TODO: wire up to login request
