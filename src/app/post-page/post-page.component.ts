@@ -84,7 +84,7 @@ enum BooleanOptions {
 })
 
 export class PostPageComponent implements OnInit {
-
+  Title = '';
 
   url: string;
 
@@ -132,9 +132,9 @@ export class PostPageComponent implements OnInit {
   male: FormControl = new FormControl('');
   female: FormControl = new FormControl('');
   all: FormControl = new FormControl('');
-  views: FormControl = new FormControl('');
-  likes: FormControl = new FormControl('');
-  comments: FormControl = new FormControl('');
+  title: FormControl = new FormControl('');
+
+
   peopleAmount: FormControl = new FormControl('');
   location: FormControl = new FormControl('');
   search: FormControl = new FormControl('');
@@ -155,6 +155,7 @@ export class PostPageComponent implements OnInit {
     relaxedEvent: this.relaxedEvent,
   });
   postForm = new FormGroup({
+    // Desktop
     postTitle: this.postTitle,
     description: this.description,
     postUpload: this.postUpload,
@@ -169,7 +170,9 @@ export class PostPageComponent implements OnInit {
     male: this.male,
     female: this.female,
     all: this.all,
-    comments: this.comments,
+    // Mobile
+    title: this.title,
+
     peopleAmount: this.peopleAmount,
     location: this.location,
     search: this.search,
@@ -536,8 +539,10 @@ export class PostPageComponent implements OnInit {
     return value;
   }
   clearTitle(): void {
+    this.postTitle.setValue('');
     this.title.setValue('');
   }
+
 
 
   clearLocation(): void {

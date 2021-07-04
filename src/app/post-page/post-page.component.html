@@ -6,14 +6,17 @@
       <!-- Title of post input -->
       <!-- formControlName="title" -->
       <div class="left_1">
-        <mat-form-field class="text-input">
-          <mat-label>Title of Post</mat-label>
-          <input matInput maxlength="35" [formControl]="postTitle">
-          <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearTitle()">
-            <mat-icon class="clear-button">close</mat-icon>
-          </button>
-        </mat-form-field>
-
+        <div class="row">
+          <mat-form-field class="text-input">
+            <mat-label>Title of Post</mat-label>
+            <input matInput maxlength="35" [formControl]="postTitle" [(ngModel)]="Title">
+            <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearTitle()">
+              <mat-icon class="clear-button">close</mat-icon>
+            </button>
+          </mat-form-field>
+          <div class="column" matBadge="{{ 35 - Title.length }}">
+          </div>
+        </div>
         <!-- Description of Post -->
         <div class="column_1">
           <div class="post-descriptionD">
@@ -155,23 +158,7 @@
 
               </mat-radio-group>
             </div>
-            <!-- <div class="column">
-      
-              <div class="amount-peopleD"><div class="row"><div class="material-icons row" style="color: #70ade2;">people</div>
-                <label for="points">Amount of people</label></div>
-              
-                <mat-slider
-                thumbLabel
-                [displayWith]="formatLabel"
-        
-                min="1"
-                max="100"></mat-slider>
-              
-                <mat-checkbox [formControl]="checked1" >All Welcome</mat-checkbox>
-                
-              
-              </div>
-            </div> -->
+
 
             <div>
               <button mat-button matStepperPrevious>Back</button>
@@ -265,15 +252,18 @@
       <mat-tab label="Specialize" disabled>
         <div class="mobile-page">
 
+          <div class="row">
+            <mat-form-field class="text-input">
+              <mat-label>Title of Post</mat-label>
+              <input matInput [formControl]="title" maxlength="35" [(ngModel)]="Title" />
+              <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearTitle()">
+                <mat-icon class="clear-button">close</mat-icon>
+              </button>
 
-          <mat-form-field class="text-inputM">
-            <mat-label>Title of Post</mat-label>
-            <input matInput [formControl]="title" maxlength="35" />
-            <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearTitle()">
-              <mat-icon class="clear-button">close</mat-icon>
-            </button>
-          </mat-form-field>
-
+            </mat-form-field>
+            <div matBadge="{{ 35 - Title.length }}">
+            </div>
+          </div>
           <div class="post-descriptionM">
             <textarea class="postM" placeholder="What do you wanna say?"></textarea>
           </div>

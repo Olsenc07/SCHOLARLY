@@ -329,10 +329,19 @@ p {
   width: 100%;
   flex-direction: row;
 }
+@media(min-width:1024px){
 .row {
   display: flex;
   flex-direction: row;
-}
+  margin-top: 5%;
+}}
+@media(max-width:1024px){
+  .row {
+    display: flex;
+    flex-direction: row;
+    width: 97%;
+    margin-top: 2%;
+  }}
 .rowP {
   display: flex;
   flex-direction: row;
@@ -451,7 +460,6 @@ p {
   margin-bottom: 3%;
 }
 .text-input {
-  margin-top: 5%;
   width: 100%;
 }
 @media (min-width: 1024px) {
