@@ -115,15 +115,15 @@ export class PostPageComponent implements OnInit {
 
   isLinear = false;
   postTitle: FormControl = new FormControl('');
+  postUpload: FormControl = new FormControl('');
+  postLocation: FormControl = new FormControl('');
   time: FormControl = new FormControl('');
   checked1: FormControl = new FormControl('');
   checked2: FormControl = new FormControl('');
   checked3: FormControl = new FormControl('');
   value: FormControl = new FormControl('');
-  title: FormControl = new FormControl('');
   description: FormControl = new FormControl('');
   date: FormControl = new FormControl(moment());
-  taggedFriends: FormControl = new FormControl('');
   upload: FormControl = new FormControl('');
   driver: FormControl = new FormControl('');
   paymentService: FormControl = new FormControl('');
@@ -140,12 +140,27 @@ export class PostPageComponent implements OnInit {
   search: FormControl = new FormControl('');
 
 
-
-  postForm = new FormGroup({
-    title: this.title,
-    description: this.description,
+  firstFormGroup = new FormGroup({
     date: this.date,
-    taggedFriends: this.taggedFriends,
+  });
+  secondFormGroup = new FormGroup({
+    peopleAmount: this.peopleAmount,
+  });
+  thirdFormGroup = new FormGroup({
+    driver: this.driver,
+    paymentService: this.paymentService,
+  });
+  fourthFormGroup = new FormGroup({
+    formaEvent: this.formalEvent,
+    relaxedEvent: this.relaxedEvent,
+  });
+  postForm = new FormGroup({
+    postTitle: this.postTitle,
+    description: this.description,
+    postUpload: this.postUpload,
+    friendCtrl: this.friendCtrl,
+    postLocation: this.postLocation,
+    firstFormGroup: this.firstFormGroup,
     upload: this.upload,
     driver: this.driver,
     paymentService: this.paymentService,
@@ -164,20 +179,7 @@ export class PostPageComponent implements OnInit {
     value: this.value,
     time: this.time,
   });
-  firstFormGroup = new FormGroup({
-    date: this.date,
-  });
-  secondFormGroup = new FormGroup({
-    peopleAmount: this.peopleAmount,
-  });
-  thirdFormGroup = new FormGroup({
-    driver: this.driver,
-    paymentService: this.paymentService,
-  });
-  fourthFormGroup = new FormGroup({
-    formaEvent: this.formalEvent,
-    relaxedEvent: this.relaxedEvent,
-  });
+
 
   public searchOptions: SearchOption[] = [
     { name: 'Blues Clubs', value: SearchValues.BLUE_CLUBS },

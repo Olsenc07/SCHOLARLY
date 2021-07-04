@@ -1,196 +1,158 @@
 <form [formGroup]="postForm" (ngSubmit)="onFormSubmit()" class="largest-page">
-  
-<div class="entire-page">
-  <!-- LEFT DESKTOP VIEW -->
-  <div class="left">
-    <!-- Title of post input -->
-    <!-- formControlName="title" -->
-    <div class="left_1">
-      <mat-form-field class="text-input"
-        ><mat-label>Title of Post</mat-label>
-        <input matInput  maxlength="35" [formControl]="postTitle">
-        <button
-        mat-button
-        matSuffix
-        mat-icon-button
-        aria-label="Clear"
-        type="button"
-        (click)="clearTitle()"
-      >
-        <mat-icon class="clear-button">close</mat-icon>
-      </button>
-      </mat-form-field>      
-     
-      <!-- Description of Post -->
-      <div class="column_1">
-        <div class="post-descriptionD">
-          <textarea class="post" placeholder="What do you wanna say?"></textarea>
+
+  <div class="entire-page">
+    <!-- LEFT DESKTOP VIEW -->
+    <div class="left">
+      <!-- Title of post input -->
+      <!-- formControlName="title" -->
+      <div class="left_1">
+        <mat-form-field class="text-input">
+          <mat-label>Title of Post</mat-label>
+          <input matInput maxlength="35" [formControl]="postTitle">
+          <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearTitle()">
+            <mat-icon class="clear-button">close</mat-icon>
+          </button>
+        </mat-form-field>
+
+        <!-- Description of Post -->
+        <div class="column_1">
+          <div class="post-descriptionD">
+            <textarea class="post" placeholder="What do you wanna say?" [formControl]="description"></textarea>
+          </div>
+          <!-- Upload pic/video -->
+          <div class="column">
+            <div class="rowP"> <input #fileInput class="uploadD" accept="image/* video/*" type="file"
+                (change)="imagePreview($event)" (click)="this.value=null" [formControl]="postUpload" multiple></div>
+            <div class="rowP"> <img [src]="url" id="upload" class="imagePreview"> </div>
+            <div class="rowP clear"><button mat-flat-button color="primary" (click)="clearUpload()">Clear
+                Upload</button></div>
+          </div>
+
         </div>
-        <!-- Upload pic/video -->
-        <div class="column" >
-         <div class="rowP"> <input #fileInput class="uploadD" accept="image/* video/*" type="file" (change)="imagePreview($event)" (click)="this.value=null" [formControl]="upload" multiple></div>
-          <div class="rowP"> <img [src]="url" id="upload" class="imagePreview"> </div>
-          <div class="rowP clear"><button mat-flat-button color="primary" (click)="clearUpload()">Clear Upload</button></div>
-        </div>
-        
       </div>
-    </div>
       <!-- back button -->
       <div class="back-button">
         <button mat-raised-button routerLink="/search" class="text">Cancel</button>
       </div>
-  </div>
+    </div>
 
-<!-- MIDDLE DESKTOP VIEW -->
+    <!-- MIDDLE DESKTOP VIEW -->
 
-<div class="middle">
-  <!-- Choosing date  -->
+    <div class="middle">
 
-
-<!-- Newest Box -->
-<div class="column_2">
- <!-- tag friends -->
- <!-- formControlName="taggedFriends" -->
- <!-- Shows the friends you tagged, can click an x to easily remove them "angular material CHIPS!!
+      <!-- Newest Box -->
+      <div class="column_2">
+        <!-- tag friends -->
+        <!-- Shows the friends you tagged, can click an x to easily remove them "angular material CHIPS!!
     as well can tag where friend is on the pic" and include scroll  -->
- 
-
-<div class="column_">
-     <h2>Tag Friends: Start typing...</h2>
-     
-     <mat-form-field >
-      
-      <mat-chip-list #chipList aria-label="Friends selection" >
-        <mat-chip
-          *ngFor="let friend of friends"
-          [selectable]="selectable"
-          [removable]="removable"
-          (removed)="remove(friend)">
-          {{friend}}
-          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-        </mat-chip>
-        <input
-          #friendInput
-          [formControl]="friendCtrl"
-          [matAutocomplete]="auto"
-          [matChipInputFor]="chipList"
-          [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-          (matChipInputTokenEnd)="add($event)">
-      </mat-chip-list>
-      <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
-        <mat-option *ngFor="let friend of filteredFriends | async" [value]="friend">
-          {{friend}}
-        </mat-option>
-      </mat-autocomplete>
-    </mat-form-field>
-  </div>
- 
-</div>
-
-<div class="location">
-<div class="centerD">Where do you want your post?</div> <div class="textM"> Main Categories </div>
- <mat-form-field>
-   
-   <mat-chip-list aria-label="First Choice"  >
-     
-     <mat-chip
-     (click)="onSearchSelection(opt.value)"
-     [selected]="opt.name"
-     [multiple]="false"
-     *ngFor="let opt of searchOptions"
-     [value]="opt.name"
-     >
-     <mat-radio-button  class="horizontal_list"
-     > {{ opt.name }}</mat-radio-button>
-   
-     </mat-chip>
-  </mat-chip-list>
-  </mat-form-field>
-</div>
 
 
-<div class="location-options" > 
+        <div class="column_">
+          <h2>Tag Friends: Start typing...</h2>
 
- <mat-chip-list class="mat-list-text">
-   <mat-chip
-     
-     [multiple]="false"
-     *ngFor="let opt of specificOptions"
-     [value]="opt"
-     
-   ><mat-radio-button >
-     {{ opt }}</mat-radio-button>
-   </mat-chip>
- </mat-chip-list>
+          <mat-form-field>
 
-</div>
+            <mat-chip-list #chipList aria-label="Friends selection">
+              <mat-chip *ngFor="let friend of friends" [selectable]="selectable" [removable]="removable"
+                (removed)="remove(friend)">
+                {{friend}}
+                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+              </mat-chip>
+              <input #friendInput [formControl]="friendCtrl" [matAutocomplete]="auto" [matChipInputFor]="chipList"
+                [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="add($event)">
+            </mat-chip-list>
+            <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+              <mat-option *ngFor="let friend of filteredFriends | async" [value]="friend">
+                {{friend}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        </div>
 
-
-
-
-
-
-</div>
-
-<!-- RIGHT DESKTOP VIEW -->
- <div class="right">
-  
-  <!-- Step1 -->
-  <mat-vertical-stepper [linear]="isLinear" #stepper >
-    <mat-step [stepControl]="firstFormGroup" class="column_">
-      <form [formGroup]="firstFormGroup" (ngSubmit)="onfirstFormSubmit()">
-        <ng-template matStepLabel>When & Where</ng-template>
-        <mat-form-field appearance="fill">
-          <mat-label>Choose a date:</mat-label>
-          <input matInput [matDatepicker]="D" [formControl]="date" >
-          <mat-datepicker-toggle matSuffix [for]="D"></mat-datepicker-toggle>
-          <mat-datepicker #D></mat-datepicker>
-        </mat-form-field>
-        <!-- Time -->
-        <div class="ngx-timepicker-field-example" >
-          <ngx-timepicker-field [defaultTime]="'12:00 am'" >
-            <input matInput [formControl]="time">
-          </ngx-timepicker-field>
       </div>
 
+      <div class="location">
+        <div class="centerD">Where do you want your post?</div>
+        <div class="textM"> Main Categories </div>
         <mat-form-field>
-          <mat-label>Location</mat-label>
-          <input matInput formControlName="firstCtrl" >
-          
+
+          <mat-chip-list aria-label="First Choice">
+
+            <mat-chip (click)="onSearchSelection(opt.value)" [selected]="opt.name" [multiple]="false"
+              *ngFor="let opt of searchOptions" [value]="opt.name">
+              <mat-radio-button class="horizontal_list"> {{ opt.name }}</mat-radio-button>
+
+            </mat-chip>
+          </mat-chip-list>
         </mat-form-field>
-        <div>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
-      <!-- Step 2 -->
-    <mat-step [stepControl]="secondFormGroup" >
-      <form [formGroup]="secondFormGroup" (ngSubmit)="onsecondFormSubmit()">
-        <ng-template matStepLabel>Whos Welcome To Join</ng-template>
-        
-                 <div class="trioD">
-                  <mat-radio-group aria-label="Select an option">
-                  
-                  <div class="margin">
-                  <p class="fas fa-venus"  style="color: #d230b5;">Females</p>
-                  <mat-radio-button  class="btn_" value="3"  required
-                    ></mat-radio-button
-                  >
-                </div>
-                  <div class="margin">
-                  <p class="fas fa-transgender-alt"  style="color: #26dd2f;">All</p>
-                  
-                  <mat-radio-button class="btn_" value="4"  required
-                    ></mat-radio-button
-                  >
+      </div>
+
+
+      <div class="location-options">
+
+        <mat-chip-list class="mat-list-text">
+          <mat-chip [multiple]="false" *ngFor="let opt of specificOptions" [value]="opt" [formControl]="postLocation">
+            <mat-radio-button>
+              {{ opt }}</mat-radio-button>
+          </mat-chip>
+        </mat-chip-list>
+
+      </div>
+    </div>
+
+    <!-- RIGHT DESKTOP VIEW -->
+    <div class="right">
+
+      <!-- Step1 -->
+      <mat-vertical-stepper [linear]="isLinear" #stepper>
+        <mat-step [stepControl]="firstFormGroup" class="column_">
+          <form [formGroup]="firstFormGroup" (ngSubmit)="onfirstFormSubmit()">
+            <ng-template matStepLabel>When & Where</ng-template>
+            <mat-form-field appearance="fill">
+              <mat-label>Choose a date:</mat-label>
+              <input matInput [matDatepicker]="D" [formControl]="date">
+              <mat-datepicker-toggle matSuffix [for]="D"></mat-datepicker-toggle>
+              <mat-datepicker #D></mat-datepicker>
+            </mat-form-field>
+            <!-- Time -->
+            <div class="ngx-timepicker-field-example">
+              <ngx-timepicker-field [defaultTime]="'12:00 am'">
+                <input matInput [formControl]="time">
+              </ngx-timepicker-field>
+            </div>
+
+            <mat-form-field>
+              <mat-label>Location</mat-label>
+              <input matInput formControlName="firstCtrl">
+
+            </mat-form-field>
+            <div>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+        <!-- Step 2 -->
+        <mat-step [stepControl]="secondFormGroup">
+          <form [formGroup]="secondFormGroup" (ngSubmit)="onsecondFormSubmit()">
+            <ng-template matStepLabel>Whos Welcome To Join</ng-template>
+
+            <div class="trioD">
+              <mat-radio-group aria-label="Select an option">
+
+                <div class="margin">
+                  <p class="fas fa-venus" style="color: #d230b5;">Females</p>
+                  <mat-radio-button class="btn_" value="3" required></mat-radio-button>
                 </div>
                 <div class="margin">
-                  <p class="fas fa-mars"  style="color: #4e30d2;">Males</p>
-                  <mat-radio-button class="btn_" value="5"  required
-                    ></mat-radio-button
-                  >
+                  <p class="fas fa-transgender-alt" style="color: #26dd2f;">All</p>
+
+                  <mat-radio-button class="btn_" value="4" required></mat-radio-button>
                 </div>
-            
+                <div class="margin">
+                  <p class="fas fa-mars" style="color: #4e30d2;">Males</p>
+                  <mat-radio-button class="btn_" value="5" required></mat-radio-button>
+                </div>
+
               </mat-radio-group>
             </div>
             <!-- <div class="column">
@@ -210,265 +172,246 @@
               
               </div>
             </div> -->
-            
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
-    <!-- Step3 -->
-    <mat-step [stepControl]="thirdFormGroup">
-      <form [formGroup]="thirdFormGroup" (ngSubmit)="onthirdFormSubmit()">
-        <ng-template matStepLabel>Services</ng-template>
-        <div class="column_">
-        <div class="row"><p class="fas fa-car" style="color: rgb(104, 11, 11);">Able to drive members </p><mat-checkbox class="btn"  
-        ></mat-checkbox
-      ></div>
-    <!-- formControlName="checked2"  -->
-     
-  
-  
-    <div  class="row"> <p class="fas fa-dollar-sign" style="color: green"></p><p style="color: green">Service involving payment </p><mat-checkbox class="btn" 
-    ></mat-checkbox
-  ></div>
-    <!-- formControlName="checked3" -->
-    
-  </div>
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
-    <!-- Step4 -->
-    <mat-step [stepControl]="fourthFormGroup">
-      <form [formGroup]="fourthFormGroup" (ngSubmit)="onfourthFormSubmit()">
-        <ng-template matStepLabel>Type Of Event</ng-template>
-        <button mat-button (click)="openDialog()"><mat-icon>info</mat-icon></button>
-        <mat-radio-group aria-label="Select an option">
-          <div class="columnM">
-          <div class="column"> 
-        <p class="fas fa-user-tie" style="color: #e9c215;">Formal event</p>
-            <mat-radio-button  value="6" required
-              >
 
-            </mat-radio-button>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
             </div>
+          </form>
+        </mat-step>
+        <!-- Step3 -->
+        <mat-step [stepControl]="thirdFormGroup">
+          <form [formGroup]="thirdFormGroup" (ngSubmit)="onthirdFormSubmit()">
+            <ng-template matStepLabel>Services</ng-template>
+            <div class="column_">
+              <div class="row">
+                <p class="fas fa-car" style="color: rgb(104, 11, 11);">Able to drive members </p>
+                <mat-checkbox class="btn"></mat-checkbox>
+              </div>
+              <!-- formControlName="checked2"  -->
+
+
+
+              <div class="row">
+                <p class="fas fa-dollar-sign" style="color: green"></p>
+                <p style="color: green">Service involving payment </p>
+                <mat-checkbox class="btn"></mat-checkbox>
+              </div>
+              <!-- formControlName="checked3" -->
+
             </div>
-          <div class="column"> 
-        <p class="fas fa-glass-cheers" style="color: gold;">Relaxed event</p>
-            <mat-radio-button value="7"   required
-              >
-        
-            </mat-radio-button>
-          </div>
-          </mat-radio-group>
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button matStepperNext>Next</button>
-        </div>
-      </form>
-    </mat-step>
-<!-- Step 5 -->
-<mat-step>
-<ng-template matStepLabel>Time To Post</ng-template>
-<div>
-  <button mat-button matStepperPrevious>Back</button>
-  <button mat-button (click)="stepper.reset()">Reset</button>
-</div>
-</mat-step>
-  </mat-vertical-stepper>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+        <!-- Step4 -->
+        <mat-step [stepControl]="fourthFormGroup">
+          <form [formGroup]="fourthFormGroup" (ngSubmit)="onfourthFormSubmit()">
+            <ng-template matStepLabel>Type Of Event</ng-template>
+            <button mat-button (click)="openDialog()">
+              <mat-icon>info</mat-icon>
+            </button>
+            <mat-radio-group aria-label="Select an option">
+              <div class="columnM">
+                <div class="column">
+                  <p class="fas fa-user-tie" style="color: #e9c215;">Formal event</p>
+                  <mat-radio-button value="6" required>
 
-
-  
-    <span class="post-final">
-      <button mat-raised-button class="text">
-        Post
-        <span class="material-icons"> arrow_forward </span>
-      </button>
-    </span>
-
-
-</div>  
-  
-  <!--  MOBILE VIEW -->
-  <!-- Need to fix selected index for next and back buttons, If ser clicks create or specilaize then function takes a double click to work -->
-  <mat-tab-group  mat-align-tabs="center" [selectedIndex]="selectedIndex"  >
-    
-   
-    <mat-tab label="Specialize" disabled  >
-      <div class="mobile-page">
-      
-  
-    <mat-form-field class="text-inputM"
-        ><mat-label>Title of Post</mat-label>
-        <input matInput [formControl]="title"  maxlength="35"  />
-        <button
-        mat-button
-        matSuffix
-        mat-icon-button
-        aria-label="Clear"
-        type="button"
-        (click)="clearTitle()"
-      >
-        <mat-icon class="clear-button">close</mat-icon>
-      </button>
-      </mat-form-field>   
-     
-      <div class="post-descriptionM">
-        <textarea class="postM" placeholder="What do you wanna say?"></textarea>
-      </div>   
-      <div class=" column"  >
-       <div class="rowP"> <input #fileInputs class="upload" accept="image/* video/*" type="file" (change)="imagePreview($event)" (click)="this.value=null" [formControl]="upload" multiple ></div>
-        <div class="rowP"> <img [src]="url" id="upload2" class="imagePreview"></div>
-        <div class="rowP clear"><button mat-flat-button color="primary" (click)="clearUpload()">Clear Upload</button></div>
-      </div>
-  
-
-
-      <div class="column_">
-        <h2>Tag Friends: Start typing...</h2>
-        
-        <mat-form-field >
-         
-         <mat-chip-list #chipListM aria-label="Friends selectionM" >
-           <mat-chip
-             *ngFor="let friendM of friendsM"
-             [selectable]="selectable"
-             [removable]="removable"
-             (removed)="removeM(friendM)">
-             {{friendM}}
-             <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-           </mat-chip>
-           <input
-             #friendInputM
-             [formControl]="friendCtrlM"
-             [matAutocomplete]="autoM"
-             [matChipInputFor]="chipListM"
-             [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-             (matChipInputTokenEnd)="addM($event)">
-         </mat-chip-list>
-         <mat-autocomplete #autoM="matAutocomplete" (optionSelected)="selectedM($event)">
-           <mat-option *ngFor="let friendM of filteredFriendsM | async" [valueM]="friendM">
-             {{friendM}}
-           </mat-option>
-         </mat-autocomplete>
-       </mat-form-field>
-     </div>
-
-
-
-
-    <div class="back-button">
-      <button mat-raised-button routerLink="/search" class="text" >Cancel</button>
-      <button mat-raised-button color="primary" (click)="changeTab1()"  class="text">Next 
-        <span class="material-icons"> arrow_forward </span>
-      </button>
-    </div>
-
-  
-</div>
-</mat-tab>
-
-<mat-tab label="Create" disabled  >
-  <div class="right-mid">
-    
-  
-        <div class="center">
-          <h2 class="center">Where do you want your post?</h2> <div class="text_"> Main Categories </div>
-        <mat-selection-list #options [multiple]="false" class="second-list">
-  <mat-form-field appearance="fill">
-    <mat-label>Page</mat-label>
-   
-   <mat-select>
-      <mat-option>None</mat-option>
-      <mat-option (click)="onSearchSelection(opt.value)"
-      [selected]="opt.name"
-      [multiple]="false"
-      *ngFor="let opt of searchOptions"
-      [value]="opt.name">
-    
-    {{ opt.name }}</mat-option> 
-    </mat-select>
-   
-  </mat-form-field>
-        </mat-selection-list> 
-  
-  <!-- 2nd select-->
-  <div class="second-select-mobile">
-  <mat-chip-list>
-    <mat-chip  *ngFor="let opt of specificOptions"
-    [value]="opt">
-    <mat-radio-button>
-    {{ opt }}
-  </mat-radio-button>
-    </mat-chip>
-  </mat-chip-list>
-  </div>
-</div>
-
-
-
-<!-- Step1 -->
-<mat-vertical-stepper [linear]="isLinear" #stepper >
-  <mat-step [stepControl]="firstFormGroup" class="column_">
-    <form [formGroup]="firstFormGroup" (ngSubmit)="onfirstFormSubmit()">
-      <ng-template matStepLabel>When & Where</ng-template>
-      <mat-form-field appearance="fill">
-        <mat-label>Choose a date:</mat-label>
-        <input matInput [matDatepicker]="M" [formControl]="date" >
-        <mat-datepicker-toggle matSuffix [for]="M"></mat-datepicker-toggle>
-        <mat-datepicker #M></mat-datepicker>
-      </mat-form-field>
-      <!-- Time -->
-      <div class="ngx-timepicker-field-example" >
-        <ngx-timepicker-field [defaultTime]="'12:00 am'" >
-          <input matInput [formControl]="time">
-        </ngx-timepicker-field>
-    </div>
-
-      <mat-form-field>
-        <mat-label>Location</mat-label>
-        <input matInput formControlName="firstCtrl" >
-        
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-  <!-- Step 2 -->
-  <mat-step [stepControl]="secondFormGroup" >
-    <form [formGroup]="secondFormGroup" (ngSubmit)="onsecondFormSubmit()">
-      <ng-template matStepLabel>Whos Welcome To Join</ng-template>
-      
-               <div class="trioD">
-                <mat-radio-group aria-label="Select an option">
-                
-                <div class="margin">
-                <p class="fas fa-venus"  style="color: #d230b5;">Females</p>
-                <mat-radio-button  class="btn_" value="3" name="genderM" required
-                  ></mat-radio-button
-                >
+                  </mat-radio-button>
+                </div>
               </div>
-                <div class="margin">
-                <p class="fas fa-transgender-alt"  style="color: #26dd2f;">All</p>
-                
-                <mat-radio-button class="btn_" value="4" name="genderM"  required
-                  ></mat-radio-button
-                >
+              <div class="column">
+                <p class="fas fa-glass-cheers" style="color: gold;">Relaxed event</p>
+                <mat-radio-button value="7" required>
+
+                </mat-radio-button>
               </div>
-              <div class="margin">
-                <p class="fas fa-mars"  style="color: #4e30d2;">Males</p>
-                <mat-radio-button class="btn_" value="5" name="genderM" required
-                  ></mat-radio-button
-                >
-              </div>
-          
             </mat-radio-group>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+        <!-- Step 5 -->
+        <mat-step>
+          <ng-template matStepLabel>Time To Post</ng-template>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button (click)="stepper.reset()">Reset</button>
           </div>
-          <!-- <div class="column">
+        </mat-step>
+      </mat-vertical-stepper>
+
+
+
+      <span class="post-final">
+        <button mat-raised-button class="text">
+          Post
+          <span class="material-icons"> arrow_forward </span>
+        </button>
+      </span>
+
+
+    </div>
+
+    <!--  MOBILE VIEW -->
+    <!-- Need to fix selected index for next and back buttons, If ser clicks create or specilaize then function takes a double click to work -->
+    <mat-tab-group mat-align-tabs="center" [selectedIndex]="selectedIndex">
+
+
+      <mat-tab label="Specialize" disabled>
+        <div class="mobile-page">
+
+
+          <mat-form-field class="text-inputM">
+            <mat-label>Title of Post</mat-label>
+            <input matInput [formControl]="title" maxlength="35" />
+            <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearTitle()">
+              <mat-icon class="clear-button">close</mat-icon>
+            </button>
+          </mat-form-field>
+
+          <div class="post-descriptionM">
+            <textarea class="postM" placeholder="What do you wanna say?"></textarea>
+          </div>
+          <div class=" column">
+            <div class="rowP"> <input #fileInputs class="upload" accept="image/* video/*" type="file"
+                (change)="imagePreview($event)" (click)="this.value=null" [formControl]="upload" multiple></div>
+            <div class="rowP"> <img [src]="url" id="upload2" class="imagePreview"></div>
+            <div class="rowP clear"><button mat-flat-button color="primary" (click)="clearUpload()">Clear
+                Upload</button></div>
+          </div>
+
+
+
+          <div class="column_">
+            <h2>Tag Friends: Start typing...</h2>
+
+            <mat-form-field>
+
+              <mat-chip-list #chipListM aria-label="Friends selectionM">
+                <mat-chip *ngFor="let friendM of friendsM" [selectable]="selectable" [removable]="removable"
+                  (removed)="removeM(friendM)">
+                  {{friendM}}
+                  <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                </mat-chip>
+                <input #friendInputM [formControl]="friendCtrlM" [matAutocomplete]="autoM" [matChipInputFor]="chipListM"
+                  [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="addM($event)">
+              </mat-chip-list>
+              <mat-autocomplete #autoM="matAutocomplete" (optionSelected)="selectedM($event)">
+                <mat-option *ngFor="let friendM of filteredFriendsM | async" [valueM]="friendM">
+                  {{friendM}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+          </div>
+
+
+
+
+          <div class="back-button">
+            <button mat-raised-button routerLink="/search" class="text">Cancel</button>
+            <button mat-raised-button color="primary" (click)="changeTab1()" class="text">Next
+              <span class="material-icons"> arrow_forward </span>
+            </button>
+          </div>
+
+
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Create" disabled>
+        <div class="right-mid">
+
+
+          <div class="center">
+            <h2 class="center">Where do you want your post?</h2>
+            <div class="text_"> Main Categories </div>
+            <mat-selection-list #options [multiple]="false" class="second-list">
+              <mat-form-field appearance="fill">
+                <mat-label>Page</mat-label>
+
+                <mat-select>
+                  <mat-option>None</mat-option>
+                  <mat-option (click)="onSearchSelection(opt.value)" [selected]="opt.name" [multiple]="false"
+                    *ngFor="let opt of searchOptions" [value]="opt.name">
+
+                    {{ opt.name }}</mat-option>
+                </mat-select>
+
+              </mat-form-field>
+            </mat-selection-list>
+
+            <!-- 2nd select-->
+            <div class="second-select-mobile">
+              <mat-chip-list>
+                <mat-chip *ngFor="let opt of specificOptions" [value]="opt">
+                  <mat-radio-button>
+                    {{ opt }}
+                  </mat-radio-button>
+                </mat-chip>
+              </mat-chip-list>
+            </div>
+          </div>
+
+
+
+          <!-- Step1 -->
+          <mat-vertical-stepper [linear]="isLinear" #stepper>
+            <mat-step [stepControl]="firstFormGroup" class="column_">
+              <form [formGroup]="firstFormGroup" (ngSubmit)="onfirstFormSubmit()">
+                <ng-template matStepLabel>When & Where</ng-template>
+                <mat-form-field appearance="fill">
+                  <mat-label>Choose a date:</mat-label>
+                  <input matInput [matDatepicker]="M" [formControl]="date">
+                  <mat-datepicker-toggle matSuffix [for]="M"></mat-datepicker-toggle>
+                  <mat-datepicker #M></mat-datepicker>
+                </mat-form-field>
+                <!-- Time -->
+                <div class="ngx-timepicker-field-example">
+                  <ngx-timepicker-field [defaultTime]="'12:00 am'">
+                    <input matInput [formControl]="time">
+                  </ngx-timepicker-field>
+                </div>
+
+                <mat-form-field>
+                  <mat-label>Location</mat-label>
+                  <input matInput formControlName="firstCtrl">
+
+                </mat-form-field>
+                <div>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+            </mat-step>
+            <!-- Step 2 -->
+            <mat-step [stepControl]="secondFormGroup">
+              <form [formGroup]="secondFormGroup" (ngSubmit)="onsecondFormSubmit()">
+                <ng-template matStepLabel>Whos Welcome To Join</ng-template>
+
+                <div class="trioD">
+                  <mat-radio-group aria-label="Select an option">
+
+                    <div class="margin">
+                      <p class="fas fa-venus" style="color: #d230b5;">Females</p>
+                      <mat-radio-button class="btn_" value="3" name="genderM" required></mat-radio-button>
+                    </div>
+                    <div class="margin">
+                      <p class="fas fa-transgender-alt" style="color: #26dd2f;">All</p>
+
+                      <mat-radio-button class="btn_" value="4" name="genderM" required></mat-radio-button>
+                    </div>
+                    <div class="margin">
+                      <p class="fas fa-mars" style="color: #4e30d2;">Males</p>
+                      <mat-radio-button class="btn_" value="5" name="genderM" required></mat-radio-button>
+                    </div>
+
+                  </mat-radio-group>
+                </div>
+                <!-- <div class="column">
     
             <div class="amount-peopleD">
               <label for="points" class="fas fa-user" style="color: #70ade2;">Amount of people</label>
@@ -485,91 +428,95 @@
             
             </div>
           </div> -->
-          
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-  <!-- Step3 -->
-  <mat-step [stepControl]="thirdFormGroup">
-    <form [formGroup]="thirdFormGroup" (ngSubmit)="onthirdFormSubmit()">
-      <ng-template matStepLabel>Services</ng-template>
-      <div class="column_">
-      <div class="row"><div class="material-icons" style="color: rgb(104, 11, 11);">  directions_car</div><p style="color: rgb(104, 11, 11);">Able to drive members </p>    <mat-checkbox class="btn"  
-      ></mat-checkbox
-    ></div>
-  <!-- [formControl]="checked2"  -->
-  
+
+                <div>
+                  <button mat-button matStepperPrevious>Back</button>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+            </mat-step>
+            <!-- Step3 -->
+            <mat-step [stepControl]="thirdFormGroup">
+              <form [formGroup]="thirdFormGroup" (ngSubmit)="onthirdFormSubmit()">
+                <ng-template matStepLabel>Services</ng-template>
+                <div class="column_">
+                  <div class="row">
+                    <div class="material-icons" style="color: rgb(104, 11, 11);"> directions_car</div>
+                    <p style="color: rgb(104, 11, 11);">Able to drive members </p>
+                    <mat-checkbox class="btn"></mat-checkbox>
+                  </div>
+                  <!-- [formControl]="checked2"  -->
 
 
-  <div  class="row"> <div class="material-icons" style="color: green">attach_money</div><p style="color: green">Service involving payment </p>  <mat-checkbox   class="btn" 
-  ></mat-checkbox
-></div>
-  <!-- [formControl]="checked3" -->
 
-</div>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-  <!-- Step4 -->
-  <mat-step [stepControl]="fourthFormGroup">
-    <form [formGroup]="fourthFormGroup" (ngSubmit)="onfourthFormSubmit()">
-      <ng-template matStepLabel>Type Of Event</ng-template><button mat-button (click)="openDialog()"><mat-icon>info</mat-icon></button>
-      
-      <mat-radio-group aria-label="Select an option">
-        <div class="columnM">
-        <div class="column"> 
-      <p class="fas fa-user-tie" style="color: #e9c215;">Formal event</p>
-          <mat-radio-button  value="6" required
-            >
-            
-          </mat-radio-button>
+                  <div class="row">
+                    <div class="material-icons" style="color: green">attach_money</div>
+                    <p style="color: green">Service involving payment </p>
+                    <mat-checkbox class="btn"></mat-checkbox>
+                  </div>
+                  <!-- [formControl]="checked3" -->
+
+                </div>
+                <div>
+                  <button mat-button matStepperPrevious>Back</button>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+            </mat-step>
+            <!-- Step4 -->
+            <mat-step [stepControl]="fourthFormGroup">
+              <form [formGroup]="fourthFormGroup" (ngSubmit)="onfourthFormSubmit()">
+                <ng-template matStepLabel>Type Of Event</ng-template><button mat-button (click)="openDialog()">
+                  <mat-icon>info</mat-icon>
+                </button>
+
+                <mat-radio-group aria-label="Select an option">
+                  <div class="columnM">
+                    <div class="column">
+                      <p class="fas fa-user-tie" style="color: #e9c215;">Formal event</p>
+                      <mat-radio-button value="6" required>
+
+                      </mat-radio-button>
+                    </div>
+                    <div class="column">
+                      <p class="fas fa-glass-cheers" style="color: gold;">Relaxed event</p>
+                      <mat-radio-button value="7" required>
+
+                      </mat-radio-button>
+                    </div>
+                  </div>
+                </mat-radio-group>
+                <div>
+                  <button mat-button matStepperPrevious>Back</button>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+            </mat-step>
+            <!-- Step 5 -->
+            <mat-step>
+              <ng-template matStepLabel>Time To Post</ng-template>
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button (click)="stepper.reset()">Reset</button>
+              </div>
+            </mat-step>
+
+          </mat-vertical-stepper>
+
+
+
+          <div class="back-button">
+            <button mat-raised-button class="text" (click)="changeTab()">
+              <span class="material-icons"> arrow_back </span>
+              Back
+            </button>
+            <button mat-raised-button color="primary" class="text">
+              Post
+              <span class="material-icons"> arrow_forward </span>
+            </button>
+          </div>
         </div>
-        <div class="column"> 
-      <p class="fas fa-glass-cheers" style="color: gold;">Relaxed event</p>
-          <mat-radio-button value="7"   required
-            >
-            
-          </mat-radio-button>
-        </div>
-      </div>
-        </mat-radio-group>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-<!-- Step 5 -->
-<mat-step>
-<ng-template matStepLabel>Time To Post</ng-template>
-<div>
-<button mat-button matStepperPrevious>Back</button>
-<button mat-button (click)="stepper.reset()">Reset</button>
-</div>
-</mat-step>
-
-</mat-vertical-stepper>
-
-
-
-  <div class="back-button">
-    <button mat-raised-button class="text" (click)="changeTab()">
-      <span class="material-icons"> arrow_back </span>
-      Back
-    </button>
-    <button mat-raised-button color="primary" class="text">
-      Post
-      <span class="material-icons"> arrow_forward </span>
-    </button>
-      </div>
-</div>
-</mat-tab>
-  </mat-tab-group>
-    </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
 </form>
