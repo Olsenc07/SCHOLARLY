@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import {  FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import {
   MomentDateAdapter,
   MAT_MOMENT_DATE_ADAPTER_OPTIONS,
@@ -10,13 +10,13 @@ import {
   MAT_DATE_LOCALE,
 } from '@angular/material/core';
 import * as _moment from 'moment';
-import { default as _rollupMoment} from 'moment';
-import {MatDialog} from '@angular/material/dialog';
-import {COMMA, ENTER} from '@angular/cdk/keycodes';
-import {MatAutocompleteSelectedEvent, MatAutocomplete} from '@angular/material/autocomplete';
-import {MatChipInputEvent} from '@angular/material/chips';
-import {Observable} from 'rxjs';
-import {map } from 'rxjs/operators';
+import { default as _rollupMoment } from 'moment';
+import { MatDialog } from '@angular/material/dialog';
+import { COMMA, ENTER } from '@angular/cdk/keycodes';
+import { MatAutocompleteSelectedEvent, MatAutocomplete } from '@angular/material/autocomplete';
+import { MatChipInputEvent } from '@angular/material/chips';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 
 
@@ -122,66 +122,64 @@ export class PostPageComponent implements OnInit {
   value: FormControl = new FormControl('');
   title: FormControl = new FormControl('');
   description: FormControl = new FormControl('');
-  date: FormControl =  new FormControl(moment());
-  taggedFriends: FormControl =  new FormControl('');
-  upload: FormControl =  new FormControl('');
-  driver: FormControl =  new FormControl('');
-  paymentService: FormControl =  new FormControl('');
-  formalEvent: FormControl =  new FormControl('');
-  relaxedEvent: FormControl =  new FormControl('');
-  male: FormControl =  new FormControl('');
-  female: FormControl =  new FormControl('');
-  all: FormControl =  new FormControl('');
-  views: FormControl =  new FormControl('');
-  likes: FormControl =  new FormControl('');
-  comments: FormControl =  new FormControl('');
-  peopleAmount: FormControl =  new FormControl('');
-  location: FormControl =  new FormControl('');
-  search: FormControl =  new FormControl('');
+  date: FormControl = new FormControl(moment());
+  taggedFriends: FormControl = new FormControl('');
+  upload: FormControl = new FormControl('');
+  driver: FormControl = new FormControl('');
+  paymentService: FormControl = new FormControl('');
+  formalEvent: FormControl = new FormControl('');
+  relaxedEvent: FormControl = new FormControl('');
+  male: FormControl = new FormControl('');
+  female: FormControl = new FormControl('');
+  all: FormControl = new FormControl('');
+  views: FormControl = new FormControl('');
+  likes: FormControl = new FormControl('');
+  comments: FormControl = new FormControl('');
+  peopleAmount: FormControl = new FormControl('');
+  location: FormControl = new FormControl('');
+  search: FormControl = new FormControl('');
 
 
 
-    postForm = new FormGroup({
-      title: this.title,
-      description: this.description,
-      date: this.date,
-      taggedFriends: this.taggedFriends,
-      upload: this.upload,
-      driver: this.driver,
-      paymentService: this.paymentService,
-      formaEvent: this.formalEvent,
-      relaxedEvent: this.relaxedEvent,
-      male: this.male,
-      female: this.female,
-      all: this.all,
-      views: this.views,
-      likes: this.likes,
-      comments: this.comments,
-      peopleAmount: this.peopleAmount,
-      location: this.location,
-      search: this.search,
-      checked1: this.checked1,
-      checked2: this.checked2,
-      checked3: this.checked3,
-      value: this.value,
-      time: this.time,
-    });
-    firstFormGroup = new FormGroup({
-      date: this.date,
-    });
-    secondFormGroup = new FormGroup({
-      peopleAmount: this.peopleAmount,
-    });
-    thirdFormGroup = new FormGroup({
-      driver: this.driver,
-      paymentService: this.paymentService,
-    });
-    fourthFormGroup = new FormGroup({
-      formaEvent: this.formalEvent,
-      relaxedEvent: this.relaxedEvent,
-    });
+  postForm = new FormGroup({
+    title: this.title,
+    description: this.description,
+    date: this.date,
+    taggedFriends: this.taggedFriends,
+    upload: this.upload,
+    driver: this.driver,
+    paymentService: this.paymentService,
+    formaEvent: this.formalEvent,
+    relaxedEvent: this.relaxedEvent,
+    male: this.male,
+    female: this.female,
+    all: this.all,
+    comments: this.comments,
+    peopleAmount: this.peopleAmount,
+    location: this.location,
+    search: this.search,
+    checked1: this.checked1,
+    checked2: this.checked2,
+    checked3: this.checked3,
+    value: this.value,
+    time: this.time,
+  });
+  firstFormGroup = new FormGroup({
+    date: this.date,
+  });
+  secondFormGroup = new FormGroup({
+    peopleAmount: this.peopleAmount,
+  });
+  thirdFormGroup = new FormGroup({
+    driver: this.driver,
+    paymentService: this.paymentService,
+  });
+  fourthFormGroup = new FormGroup({
+    formaEvent: this.formalEvent,
+    relaxedEvent: this.relaxedEvent,
+  });
 
-    public searchOptions: SearchOption[] = [
+  public searchOptions: SearchOption[] = [
     { name: 'Blues Clubs', value: SearchValues.BLUE_CLUBS },
     { name: 'Buy & Sell', value: SearchValues.MISCELL_BUY_SELL },
     { name: 'College Connection', value: SearchValues.COLLEGE_CONNECTION },
@@ -195,17 +193,17 @@ export class PostPageComponent implements OnInit {
     { name: 'Spirituality', value: SearchValues.SPIRITUALITY },
     { name: 'Questions', value: SearchValues.U_OF_T_QS },
     { name: 'Upcoming Events', value: SearchValues.UPCOMING_EVENTS },
-    ];
-    public selectedOption: string;
-    public specificOptions: string[];
-  constructor(public dialog: MatDialog, private FORMBuilder: FormBuilder ) {
+  ];
+  public selectedOption: string;
+  public specificOptions: string[];
+  constructor(public dialog: MatDialog, private FORMBuilder: FormBuilder) {
     // Desktop tag friends
     this.filteredFriends = this.friendCtrl.valueChanges.pipe(
       map((friend: string | null) => friend ? this._filter(friend) : this.allFriends.slice()));
-      // Mobile tag friends
+    // Mobile tag friends
     this.filteredFriendsM = this.friendCtrlM.valueChanges.pipe(
-        map((friendM: string | null) => friendM ? this._filterM(friendM) : this.allFriendsM.slice()));
-    }
+      map((friendM: string | null) => friendM ? this._filterM(friendM) : this.allFriendsM.slice()));
+  }
   openDialog(): void {
     this.dialog.open(DialogElementsComponent);
   }
@@ -252,7 +250,7 @@ export class PostPageComponent implements OnInit {
     // event.chipInput!.clear();
 
     this.friendCtrl.setValue(null);
- }
+  }
   remove(friend: string): void {
     const index = this.friends.indexOf(friend);
     if (index >= 0) {
@@ -269,34 +267,33 @@ export class PostPageComponent implements OnInit {
     const filterValue = value.toLowerCase();
     return this.allFriends.filter(friend => friend.toLowerCase().indexOf(filterValue) === 0);
   }
-// Mobile tag friends
-addM(event: MatChipInputEvent): void {
-  const valueM = (event.value || '').trim();
+  // Mobile tag friends
+  addM(event: MatChipInputEvent): void {
+    const valueM = (event.value || '').trim();
 
-  if (valueM) {
-    this.friendsM.push(valueM);
-  }
+    if (valueM) {
+      this.friendsM.push(valueM);
+    }
 
-  this.friendCtrlM.setValue(null);
-}
-selectedM(event: MatAutocompleteSelectedEvent): void {
-  this.friendsM.push(event.option.viewValue);
-  this.friendInputM.nativeElement.value = '';
-  this.friendCtrlM.setValue(null);
-}
-removeM( friendM: string): void {
-  const indexM = this.friendsM.indexOf(friendM);
-  if (indexM >= 0) {
-    this.friendsM.splice(indexM, 1);
+    this.friendCtrlM.setValue(null);
   }
-}
-private _filterM(valueM: string): string[] {
-  const filterValueM = valueM.toLowerCase();
-  return this.allFriendsM.filter(friendM => friendM.toLowerCase().indexOf(filterValueM) === 0);
-}
-// First step at ability to uplaod img/file attempt
- OnFileSelected(event: Event): void
-{}
+  selectedM(event: MatAutocompleteSelectedEvent): void {
+    this.friendsM.push(event.option.viewValue);
+    this.friendInputM.nativeElement.value = '';
+    this.friendCtrlM.setValue(null);
+  }
+  removeM(friendM: string): void {
+    const indexM = this.friendsM.indexOf(friendM);
+    if (indexM >= 0) {
+      this.friendsM.splice(indexM, 1);
+    }
+  }
+  private _filterM(valueM: string): string[] {
+    const filterValueM = valueM.toLowerCase();
+    return this.allFriendsM.filter(friendM => friendM.toLowerCase().indexOf(filterValueM) === 0);
+  }
+  // First step at ability to uplaod img/file attempt
+  OnFileSelected(event: Event): void { }
   onSearchSelection(value: string): void {
     switch (value) {
       case SearchValues.COLLEGE_CONNECTION:
@@ -536,12 +533,12 @@ private _filterM(valueM: string): string[] {
     }
     return value;
   }
-  clearTitle(): void{
-  this.title.setValue('');
-}
+  clearTitle(): void {
+    this.title.setValue('');
+  }
 
 
-  clearLocation(): void{
+  clearLocation(): void {
     this.location.setValue('');
   }
 
@@ -581,7 +578,7 @@ private _filterM(valueM: string): string[] {
   templateUrl: './dialog-elements.component.html',
   styleUrls: ['./dialog-elements.component.scss'],
 })
-export class DialogElementsComponent {}
+export class DialogElementsComponent { }
 
 
 

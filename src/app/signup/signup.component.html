@@ -152,8 +152,9 @@
             </div>
             <div class="PreviewPic">
               <h2 class="Preview">Image Preview</h2>
-              <img class="previewPic" id="ProfilePic" [src]="cropImgPreview" />
-
+              <div class="center">
+                <img class="previewPic" id="ProfilePic" [src]="cropImgPreview" />
+              </div>
             </div>
 
           </div>
@@ -208,9 +209,14 @@
           </div>
           <div class="createBtn">
             <button mat-flat-button class="cBtnB" (click)="changeTab1R()">Back</button>
-            <button mat-button class="cBtnBl" (click)="changeTab1()">Skip For Now</button>
+            <div class="skip1">
+              <button mat-button class="cBtnBl" (click)="changeTab1()">Skip For Now</button>
+            </div>
             <button type="submit" (ngSubmit)="onSubmitPartTwo()" mat-raised-button class="cBtn"
               (click)="changeTab1()">Next</button>
+          </div>
+          <div class="skip2">
+            <button mat-button class="cBtnBl" (click)="changeTab1()">Skip For Now</button>
           </div>
         </form>
       </mat-tab>
@@ -249,9 +255,9 @@
                 <img [src]="url2" id="secondP" class="imagePreview">
                 <button mat-flat-button color="primary" (click)="clearPic2()">Clear File</button>
               </div>
-              <!-- 3 -->
-              <!-- <ngx-image-zoom
-> -->
+
+
+
               <div class="column">
                 <h2 class="Preview">Image Preview</h2>
                 <input type="file" [formControl]="snapShot3" accept="image/* video/*"
