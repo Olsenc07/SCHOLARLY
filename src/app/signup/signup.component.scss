@@ -104,7 +104,8 @@
 @media (min-width: 1024px) {
   .display {
     display: flex;
-    width: 50%;
+    width: 100%;
+    justify-content: center;
   }
 }
 @media (max-width: 1024px) {

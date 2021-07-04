@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { from } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
@@ -13,13 +13,18 @@ export class RetrievePasswordComponent implements OnInit {
   emailLogin: FormControl = new FormControl('');
 
   loginForm = new FormGroup({
-    emailRetrieval: this.emailRetrieval,
     emailLogin: this.emailLogin,
     password: this.password,
   });
 
-  constructor() { }
+  retrievalForm = new FormGroup({
+    emailRetrieval: this.emailRetrieval
+  });
+  constructor(private _snackBar: MatSnackBar) { }
 
+  openSnackBar() {
+    this._snackBar.open('Check your email and follow steps to reset your password', 'Got It!!');
+  }
   ngOnInit(): void { }
 
   clearPassword(): void {
@@ -35,5 +40,9 @@ export class RetrievePasswordComponent implements OnInit {
   onSubmit(): void {
     // TODO: wire up to login request
     console.log(this.loginForm.value);
+  }
+  onSubmit1(): void {
+    // TODO: wire up to login request
+    console.log(this.retrievalForm.value);
   }
 }
