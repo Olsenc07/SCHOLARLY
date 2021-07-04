@@ -115,16 +115,20 @@ export class PostPageComponent implements OnInit {
 
   isLinear = false;
   postTitle: FormControl = new FormControl('');
+  postTitleM: FormControl = new FormControl('');
   postUpload: FormControl = new FormControl('');
   postLocation: FormControl = new FormControl('');
+  postLocationM: FormControl = new FormControl('');
+  locationEvent: FormControl = new FormControl('');
   time: FormControl = new FormControl('');
-  checked1: FormControl = new FormControl('');
-  checked2: FormControl = new FormControl('');
-  checked3: FormControl = new FormControl('');
+  timeM: FormControl = new FormControl('');
+
   value: FormControl = new FormControl('');
   description: FormControl = new FormControl('');
   date: FormControl = new FormControl(moment());
+  dateM: FormControl = new FormControl(moment());
   upload: FormControl = new FormControl('');
+  uploadM: FormControl = new FormControl('');
   driver: FormControl = new FormControl('');
   paymentService: FormControl = new FormControl('');
   formalEvent: FormControl = new FormControl('');
@@ -132,27 +136,28 @@ export class PostPageComponent implements OnInit {
   male: FormControl = new FormControl('');
   female: FormControl = new FormControl('');
   all: FormControl = new FormControl('');
-  title: FormControl = new FormControl('');
+  driverM: FormControl = new FormControl('');
+  paymentServiceM: FormControl = new FormControl('');
+  formalEventM: FormControl = new FormControl('');
+  relaxedEventM: FormControl = new FormControl('');
+  maleM: FormControl = new FormControl('');
+  femaleM: FormControl = new FormControl('');
+  allM: FormControl = new FormControl('');
 
-
-  peopleAmount: FormControl = new FormControl('');
   location: FormControl = new FormControl('');
   search: FormControl = new FormControl('');
 
-
   firstFormGroup = new FormGroup({
-    date: this.date,
+
   });
   secondFormGroup = new FormGroup({
-    peopleAmount: this.peopleAmount,
+
   });
   thirdFormGroup = new FormGroup({
-    driver: this.driver,
-    paymentService: this.paymentService,
+
   });
   fourthFormGroup = new FormGroup({
-    formaEvent: this.formalEvent,
-    relaxedEvent: this.relaxedEvent,
+
   });
   postForm = new FormGroup({
     // Desktop
@@ -161,26 +166,27 @@ export class PostPageComponent implements OnInit {
     postUpload: this.postUpload,
     friendCtrl: this.friendCtrl,
     postLocation: this.postLocation,
-    firstFormGroup: this.firstFormGroup,
+    locationEvent: this.locationEvent,
     upload: this.upload,
     driver: this.driver,
     paymentService: this.paymentService,
-    formaEvent: this.formalEvent,
+    formalEvent: this.formalEvent,
     relaxedEvent: this.relaxedEvent,
     male: this.male,
     female: this.female,
     all: this.all,
+    date: this.date,
+    time: this.time,
     // Mobile
-    title: this.title,
-
-    peopleAmount: this.peopleAmount,
+    postTitleM: this.postTitleM,
+    postLocationM: this.postLocationM,
     location: this.location,
     search: this.search,
-    checked1: this.checked1,
-    checked2: this.checked2,
-    checked3: this.checked3,
+
     value: this.value,
-    time: this.time,
+    uploadM: this.uploadM,
+    dateM: this.dateM,
+    timeM: this.timeM,
   });
 
 
@@ -231,6 +237,8 @@ export class PostPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+
     this.firstFormGroup = this.FORMBuilder.group({
       firstCtrl: ['']
     });
@@ -555,24 +563,7 @@ export class PostPageComponent implements OnInit {
     console.log(this.postForm.value);
   }
 
-  onfirstFormSubmit(): void {
-    // TODO: wire up to post request
-    console.log(this.firstFormGroup.value);
-  }
 
-  onsecondFormSubmit(): void {
-    // TODO: wire up to post request
-    console.log(this.secondFormGroup.value);
-  }
-
-  onthirdFormSubmit(): void {
-    // TODO: wire up to post request
-    console.log(this.thirdFormGroup.value);
-  }
-  onfourthFormSubmit(): void {
-    // TODO: wire up to post request
-    console.log(this.fourthFormGroup.value);
-  }
   changeTab(): void {
     this.selectedIndex = this.selectedIndex === 1 ? 0 : 1;
   }
