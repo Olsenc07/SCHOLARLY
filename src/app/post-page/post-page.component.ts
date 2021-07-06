@@ -59,6 +59,7 @@ export class PostPageComponent implements OnInit {
   searchOptions: SearchOption[];
 
   Title = '';
+  TitleM = '';
 
   url: string;
 
@@ -94,8 +95,6 @@ export class PostPageComponent implements OnInit {
   postLocationM: FormControl = new FormControl('');
   locationEvent: FormControl = new FormControl('');
   time: FormControl = new FormControl('');
-
-
   value: FormControl = new FormControl('');
   postDescription: FormControl = new FormControl('');
   date: FormControl = new FormControl(moment());
@@ -188,10 +187,9 @@ export class PostPageComponent implements OnInit {
     dateM: this.dateM,
     timeM: this.timeM,
     friendCtrlM: this.friendCtrlM,
-
   })
 
-  constructor(public dialog: MatDialog, private FORMBuilder: FormBuilder, public searchListService: SearchListService) {
+  constructor(public dialog: MatDialog, public searchListService: SearchListService, private FORMBuilder: FormBuilder) {
     // Desktop tag friends
     this.filteredFriends = this.friendCtrl.valueChanges.pipe(
       map((friend: string | null) => friend ? this._filter(friend) : this.allFriends.slice()));
@@ -307,8 +305,6 @@ export class PostPageComponent implements OnInit {
     const filterValueM = valueM.toLowerCase();
     return this.allFriendsM.filter(friendM => friendM.toLowerCase().indexOf(filterValueM) === 0);
   }
-
-
 
 
   formatLabel(value: number): any {

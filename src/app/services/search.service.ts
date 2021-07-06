@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 
 enum SearchValues {
   COLLEGE_CONNECTION = 'college-connection',
@@ -23,7 +23,7 @@ interface SearchOption {
 @Injectable({
   providedIn: 'root',
 })
-export class SearchListService {
+export class SearchListService implements OnInit {
   public searchOptions: SearchOption[] = [
     { name: 'Blues Clubs', value: SearchValues.BLUE_CLUBS },
     { name: 'Buy & Sell', value: SearchValues.MISCELL_BUY_SELL },
@@ -42,7 +42,7 @@ export class SearchListService {
 
   public specificOptions: string[];
 
-  constructor() {}
+  constructor() { }
 
   getSearchOptions(): SearchOption[] {
     return this.searchOptions;
@@ -279,5 +279,7 @@ export class SearchListService {
         specificOptions = [];
     }
     return specificOptions;
+  }
+  ngOnInit(): void {
   }
 }

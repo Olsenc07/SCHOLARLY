@@ -4,7 +4,7 @@
     <!-- LEFT DESKTOP VIEW -->
     <div class="left">
       <!-- Title of post input -->
-      <!-- formControlName="title" -->
+
       <div class="left_1">
         <div class="row">
           <mat-form-field class="text-input">
@@ -20,7 +20,7 @@
         <!-- Description of Post -->
         <div class="column_1">
           <div class="post-descriptionD">
-            <textarea class="post" placeholder="What do you wanna say?" [formControl]="postDescription"></textarea>
+            <input class="post" placeholder="What do you wanna say?" [formControl]="postDescription" />
           </div>
           <!-- Upload pic/video -->
           <div class="column">
@@ -83,7 +83,6 @@
           <mat-chip (click)="onSearchSelection(opt.value)" [selected]="opt.name" [multiple]="false"
             *ngFor="let opt of searchOptions" [value]="opt.name">
             <mat-radio-button class="horizontal_list"> {{ opt.name }}</mat-radio-button>
-
           </mat-chip>
         </mat-chip-list>
 
@@ -91,11 +90,11 @@
 
 
       <div class="location-options">
-
         <mat-chip-list class="mat-list-text">
           <mat-chip [multiple]="false" *ngFor="let opt of specificOptions" [value]="opt">
             <mat-radio-button [formControl]="postLocation">
-              {{ opt }}</mat-radio-button>
+              {{ opt }}
+            </mat-radio-button>
           </mat-chip>
         </mat-chip-list>
 
@@ -239,7 +238,14 @@
 
 
 
-<form [formGroup]="postFormM" class="largest-page">
+
+
+
+
+
+
+
+<form [formGroup]="postFormM" class="bottom-mobile">
   <!-- MOBILE VIEW -->
   <!-- Need to fix selected index for next and back buttons, If ser clicks create or specilaize then function takes a
   double click to work -->
@@ -252,13 +258,12 @@
         <div class="row">
           <mat-form-field class="text-input">
             <mat-label>Title of Post</mat-label>
-            <input matInput [formControl]="postTitleM" maxlength="35" [(ngModel)]="Title" />
+            <input matInput [formControl]="postTitleM" maxlength="35" [(ngModel)]="TitleM" />
             <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearTitle()">
               <mat-icon class="clear-button">close</mat-icon>
             </button>
-
           </mat-form-field>
-          <div matBadge="{{ 35 - Title.length }}">
+          <div matBadge="{{ 35 - TitleM.length }}">
           </div>
         </div>
         <div class="post-descriptionM">
@@ -271,8 +276,6 @@
           <div class="rowP clear"><button mat-flat-button color="primary" (click)="clearUpload()">Clear
               Upload</button></div>
         </div>
-
-
 
         <div class="column_">
           <h2>Tag Friends: Start typing...</h2>
@@ -325,7 +328,6 @@
                 <mat-option>None</mat-option>
                 <mat-option (click)="onSearchSelection(opt.value)" [selected]="opt.name" [multiple]="false"
                   *ngFor="let opt of searchOptions" [value]="opt.name">
-
                   {{ opt.name }}</mat-option>
               </mat-select>
 
@@ -364,9 +366,9 @@
               </ngx-timepicker-field>
             </div>
 
-            <mat-form-field>
+            <mat-form-field appearance="fill">
               <mat-label>Location</mat-label>
-              <input matInput>
+              <input matInput [formControl]="locationEventM">
 
             </mat-form-field>
             <div>
