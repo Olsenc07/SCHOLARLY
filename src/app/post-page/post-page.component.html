@@ -78,13 +78,20 @@
         <div class="textM"> Main Categories </div>
 
 
-        <mat-chip-list aria-label="First Choice">
+        <mat-selection-list #options [multiple]="false" class="second-list">
+          <mat-form-field appearance="fill">
+            <mat-label>Page</mat-label>
 
-          <mat-chip (click)="onSearchSelection(opt.value)" [selected]="opt.name" [multiple]="false"
-            *ngFor="let opt of searchOptions" [value]="opt.name">
-            <mat-radio-button class="horizontal_list"> {{ opt.name }}</mat-radio-button>
-          </mat-chip>
-        </mat-chip-list>
+            <mat-select>
+              <mat-option>None</mat-option>
+              <mat-option (click)="onSearchSelection(opt.value)" [selected]="opt.name" [multiple]="false"
+                *ngFor="let opt of searchOptions" [value]="opt.name">
+
+                {{ opt.name }}</mat-option>
+            </mat-select>
+
+          </mat-form-field>
+        </mat-selection-list>
 
       </div>
 

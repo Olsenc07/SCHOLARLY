@@ -269,7 +269,7 @@ export class EditProfileComponent implements OnInit {
     };
 
     // TODO: replace null with Profile object
-    // this.storeService.setProfile(pursuingCourses);
+    this.storeService.setProfile(profile);
   }
 }
 @Component({
