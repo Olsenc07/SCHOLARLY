@@ -4,6 +4,7 @@
   justify-content: center;
   width: 100%;
   height: 100%;
+  flex-direction: row;
   box-sizing: border-box;
 }}
 @media(max-width:1024px){
@@ -75,12 +76,12 @@
 }
 .btn {
   display: flex;
-  margin-left: 3%;
+  height: 100%;
+  margin-left: 2%;
 }
 .btn_ {
   display: flex;
   justify-content: center;
-  width: 10%;
 }
 .btm-rightM {
   display: flex;
@@ -136,7 +137,11 @@
 .description-input {
   width: 75%;
 }
-
+// Move
+.icon {
+  font-size: large;
+  margin-right: 2%;
+}
 .friends-search {
   display: flex;
   justify-content: center;
@@ -211,6 +216,12 @@ mat-chip .mat-list-text {
 .mat-radio-group {
   display: flex;
   width: 100%;
+  justify-content: space-evenly;
+}
+
+::ng-deep .mat-radio-label {
+  justify-content: center;
+ 
 }
 
 ::ng-deep mat-form-field{
@@ -232,7 +243,6 @@ width: 100%;
 .margin {
   display: flex;
   flex-direction: column;
-  margin-right: 7%;
 }
 @media (max-width: 1024px) {
   .mobile-page {
@@ -466,7 +476,6 @@ p {
 .trioD {
   display: flex;
   flex-direction: row;
-  margin-top: 3%;
   margin-bottom: 3%;
 }
 .text-input {

@@ -56,7 +56,7 @@ interface SearchOption {
 export class PostPageComponent implements OnInit {
   public selectedOption: string;
   public specificOptions: string[];
-  searchOptions: SearchOption[];
+  public searchOptions: SearchOption[];
 
   Title = '';
   TitleM = '';
@@ -106,8 +106,6 @@ export class PostPageComponent implements OnInit {
   male: FormControl = new FormControl('');
   female: FormControl = new FormControl('');
   all: FormControl = new FormControl('');
-
-  location: FormControl = new FormControl('');
   search: FormControl = new FormControl('');
 
   firstFormGroup = new FormGroup({
@@ -180,7 +178,6 @@ export class PostPageComponent implements OnInit {
   postFormM = new FormGroup({
     postTitleM: this.postTitleM,
     postLocationM: this.postLocationM,
-    location: this.location,
     search: this.search,
     value: this.value,
     uploadM: this.uploadM,
@@ -317,13 +314,6 @@ export class PostPageComponent implements OnInit {
     this.postTitle.setValue('');
     this.postTitleM.setValue('');
   }
-
-
-
-  clearLocation(): void {
-    this.location.setValue('');
-  }
-
 
   onFormSubmit(): void {
     // TODO: wire up to post request
