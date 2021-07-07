@@ -59,7 +59,7 @@ export class PostPageComponent implements OnInit {
   public searchOptions: SearchOption[];
 
   Title = '';
-  TitleM = '';
+
 
   url: string;
 
@@ -79,14 +79,7 @@ export class PostPageComponent implements OnInit {
   @ViewChild('auto') matAutocomplete: MatAutocomplete;
   // allFriends should filter through your friend list desktop
   allFriends: string[] = [''];
-  // Mobile tag friends
-  friendCtrlM = new FormControl();
-  filteredFriendsM: Observable<string[]>;
-  friendsM: string[] = [];
-  // allFriends should filter through your friend list mobile
-  allFriendsM: string[] = [''];
-  @ViewChild('friendInputM') friendInputM: ElementRef<HTMLInputElement>;
-  @ViewChild('autoM') matAutocompleteM: MatAutocomplete;
+
 
   isLinear = false;
   postTitle: FormControl = new FormControl('');
@@ -140,59 +133,18 @@ export class PostPageComponent implements OnInit {
     upload: this.upload,
   });
 
-  // Mobile
-  driverM: FormControl = new FormControl('');
-  paymentServiceM: FormControl = new FormControl('');
-  formalEventM: FormControl = new FormControl('');
-  relaxedEventM: FormControl = new FormControl('');
-  maleM: FormControl = new FormControl('');
-  femaleM: FormControl = new FormControl('');
-  allM: FormControl = new FormControl('');
-  uploadM: FormControl = new FormControl('');
-  postTitleM: FormControl = new FormControl('');
-  dateM: FormControl = new FormControl('');
-  locationEventM: FormControl = new FormControl('');
-  timeM: FormControl = new FormControl('');
 
 
-  firstFormGroupM = new FormGroup({
-    dateM: this.dateM,
-    timeM: this.timeM,
-    locationEventM: this.locationEventM,
-  });
-  secondFormGroupM = new FormGroup({
-    maleM: this.maleM,
-    femaleM: this.femaleM,
-    allM: this.allM,
-  });
-  thirdFormGroupM = new FormGroup({
-    driverM: this.driverM,
-    paymentServiceM: this.paymentServiceM,
-  });
-  fourthFormGroupM = new FormGroup({
-    formalEventM: this.formalEventM,
-    relaxedEventM: this.relaxedEventM,
-  });
 
 
-  postFormM = new FormGroup({
-    postTitleM: this.postTitleM,
-    postLocationM: this.postLocationM,
-    search: this.search,
-    value: this.value,
-    uploadM: this.uploadM,
-    dateM: this.dateM,
-    timeM: this.timeM,
-    friendCtrlM: this.friendCtrlM,
-  })
+
+
 
   constructor(public dialog: MatDialog, public searchListService: SearchListService, private FORMBuilder: FormBuilder) {
     // Desktop tag friends
     this.filteredFriends = this.friendCtrl.valueChanges.pipe(
       map((friend: string | null) => friend ? this._filter(friend) : this.allFriends.slice()));
-    // Mobile tag friends
-    this.filteredFriendsM = this.friendCtrlM.valueChanges.pipe(
-      map((friendM: string | null) => friendM ? this._filterM(friendM) : this.allFriendsM.slice()));
+
   }
   openDialog(): void {
     this.dialog.open(DialogElementsComponent);
@@ -232,18 +184,7 @@ export class PostPageComponent implements OnInit {
     });
 
 
-    this.firstFormGroupM = this.FORMBuilder.group({
-      firstCtrlM: ['']
-    });
-    this.secondFormGroupM = this.FORMBuilder.group({
-      secondCtrlM: ['']
-    });
-    this.thirdFormGroupM = this.FORMBuilder.group({
-      thirdCtrlM: ['']
-    });
-    this.fourthFormGroupM = this.FORMBuilder.group({
-      fourthCtrlM: ['']
-    });
+
   }
   onSearchSelection(value): void {
     console.log(value);
@@ -277,31 +218,7 @@ export class PostPageComponent implements OnInit {
     const filterValue = value.toLowerCase();
     return this.allFriends.filter(friend => friend.toLowerCase().indexOf(filterValue) === 0);
   }
-  // Mobile tag friends
-  addM(event: MatChipInputEvent): void {
-    const valueM = (event.value || '').trim();
 
-    if (valueM) {
-      this.friendsM.push(valueM);
-    }
-
-    this.friendCtrlM.setValue(null);
-  }
-  selectedM(event: MatAutocompleteSelectedEvent): void {
-    this.friendsM.push(event.option.viewValue);
-    this.friendInputM.nativeElement.value = '';
-    this.friendCtrlM.setValue(null);
-  }
-  removeM(friendM: string): void {
-    const indexM = this.friendsM.indexOf(friendM);
-    if (indexM >= 0) {
-      this.friendsM.splice(indexM, 1);
-    }
-  }
-  private _filterM(valueM: string): string[] {
-    const filterValueM = valueM.toLowerCase();
-    return this.allFriendsM.filter(friendM => friendM.toLowerCase().indexOf(filterValueM) === 0);
-  }
 
 
   formatLabel(value: number): any {
@@ -312,7 +229,6 @@ export class PostPageComponent implements OnInit {
   }
   clearTitle(): void {
     this.postTitle.setValue('');
-    this.postTitleM.setValue('');
   }
 
   onFormSubmit(): void {
@@ -324,15 +240,6 @@ export class PostPageComponent implements OnInit {
     console.log(this.postForm.value);
   }
 
-
-  onFormSubmitM(): void {
-    // TODO: wire up to post request
-    console.log(this.firstFormGroupM.value);
-    console.log(this.secondFormGroupM.value);
-    console.log(this.thirdFormGroupM.value);
-    console.log(this.fourthFormGroupM.value);
-    console.log(this.postFormM.value);
-  }
 
   changeTab(): void {
     this.selectedIndex = this.selectedIndex === 1 ? 0 : 1;

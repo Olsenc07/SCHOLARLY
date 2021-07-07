@@ -23,7 +23,7 @@ interface SearchOption {
 @Injectable({
   providedIn: 'root',
 })
-export class SearchListService implements OnInit {
+export class SearchListService {
   public searchOptions: SearchOption[] = [
     { name: 'Blues Clubs', value: SearchValues.BLUE_CLUBS },
     { name: 'Buy & Sell', value: SearchValues.MISCELL_BUY_SELL },
@@ -280,6 +280,5 @@ export class SearchListService implements OnInit {
     }
     return specificOptions;
   }
-  ngOnInit(): void {
-  }
+
 }
