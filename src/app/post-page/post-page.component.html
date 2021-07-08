@@ -4,7 +4,12 @@
     <!-- LEFT DESKTOP VIEW -->
     <div class="left">
       <!-- Title of post input -->
-
+      <!-- back button -->
+      <div class="back-button_">
+        <button mat-icon-button routerLink="/search" class="text-"><span class="material-icons">
+            arrow_back_ios
+          </span></button>
+      </div>
       <div class="left_1">
         <div class="row">
           <mat-form-field class="text-input">
@@ -73,6 +78,7 @@
 
       </div>
 
+
       <div class="location">
         <div class="centerD">Where do you want your post?</div>
         <div class="textM"> Main Categories </div>
@@ -93,19 +99,20 @@
           </mat-form-field>
         </mat-selection-list>
 
+
+
+
+        <div class="location-options">
+          <mat-chip-list class="mat-list-text">
+            <mat-chip [multiple]="false" *ngFor="let opt of specificOptions" [value]="opt">
+              <mat-radio-button [formControl]="postLocation">
+                {{ opt }}
+              </mat-radio-button>
+            </mat-chip>
+          </mat-chip-list>
+        </div>
       </div>
 
-
-      <div class="location-options">
-        <mat-chip-list class="mat-list-text">
-          <mat-chip [multiple]="false" *ngFor="let opt of specificOptions" [value]="opt">
-            <mat-radio-button [formControl]="postLocation">
-              {{ opt }}
-            </mat-radio-button>
-          </mat-chip>
-        </mat-chip-list>
-
-      </div>
     </div>
 
     <!-- RIGHT DESKTOP VIEW -->
