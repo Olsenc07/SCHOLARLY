@@ -85,7 +85,6 @@ export class PostPageComponent implements OnInit {
   postTitle: FormControl = new FormControl('');
   postUpload: FormControl = new FormControl('');
   postLocation: FormControl = new FormControl('');
-  postLocationM: FormControl = new FormControl('');
   locationEvent: FormControl = new FormControl('');
   time: FormControl = new FormControl('');
   value: FormControl = new FormControl('');
@@ -132,14 +131,6 @@ export class PostPageComponent implements OnInit {
     friendCtrl: this.friendCtrl,
     upload: this.upload,
   });
-
-
-
-
-
-
-
-
   constructor(public dialog: MatDialog, public searchListService: SearchListService, private FORMBuilder: FormBuilder) {
     // Desktop tag friends
     this.filteredFriends = this.friendCtrl.valueChanges.pipe(

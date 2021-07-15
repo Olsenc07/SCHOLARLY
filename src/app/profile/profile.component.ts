@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
 
 @Component({
@@ -19,6 +20,11 @@ export class ProfileComponent {
   followClicked(): void {
     this.following = !this.following;
   }
+  // Why does this addition delay the right chip from displaying in html????????
+  // Wok on home pages htmls form controls!!!!!!
+  // Does this need its own form group? Triggered at the same time?
+  // messageRequest: FormControl = new FormControl('');
+
 }
 @Component({
   selector: 'app-profile',
