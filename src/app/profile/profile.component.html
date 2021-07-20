@@ -97,8 +97,10 @@
               <div class="words1">Completed</div>
             </div>
             <div class="completed-courses">
-              <div class="words1">Pursuing</div>
-              <!-- {{Profile}} -->
+              <div class="words1">Pursuing
+                {{ profile$$ | async }}
+              </div>
+
             </div>
           </div>
         </div>

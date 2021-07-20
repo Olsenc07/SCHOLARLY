@@ -3,7 +3,7 @@ import { ReplaySubject } from 'rxjs';
 
 export interface Profile {
   // TODO: other profile fields
-  pursuingCourses: string[];
+  CodePursuing: string[];
 }
 
 @Injectable({
@@ -11,8 +11,9 @@ export interface Profile {
 })
 export class StoreService {
   profile$$: ReplaySubject<Profile> = new ReplaySubject<Profile>(1);
+  static profile$$: string;
 
-  constructor() {}
+  constructor() { }
 
   setProfile(profile: Profile): void {
     this.profile$$.next(profile);

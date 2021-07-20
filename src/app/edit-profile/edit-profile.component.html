@@ -280,7 +280,7 @@
                     {{codeP}}
                     <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
                   </mat-chip>
-                  <input placeholder="Choose completed courses" #codeInputP [formControl]="courseCodeCtrlP"
+                  <input placeholder="Choose pursuing courses" #codeInputP [formControl]="CodePursuing"
                     [matAutocomplete]="autoP" [matChipInputFor]="chipListP"
                     [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="addP($event)">
                 </mat-chip-list>

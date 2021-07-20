@@ -23,7 +23,6 @@ import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ClassListService } from '../services/class.service';
-import { MatButtonModule } from '@angular/material/button';
 import { Profile, StoreService } from '../services/store.service';
 
 interface Gender {
@@ -61,8 +60,6 @@ export class EditProfileComponent implements OnInit {
   selectable = true;
   removable = true;
   separatorKeysCodes: number[] = [ENTER, COMMA];
-  courseCodeCtrl = new FormControl();
-  courseCodeCtrlP = new FormControl();
   filteredCodes: Observable<string[]>;
   filteredCodesP: Observable<string[]>;
   classes: string[] = [];
@@ -88,8 +85,9 @@ export class EditProfileComponent implements OnInit {
   birthday: FormControl = new FormControl('');
   relationship: FormControl = new FormControl('');
   genderChoice: FormControl = new FormControl('');
-  pursuingCourses: FormControl = new FormControl([]);
   date: FormControl = new FormControl(moment());
+  courseCodeCtrl: FormControl = new FormControl([]);
+  CodePursuing: FormControl = new FormControl([]);
 
   editForm = new FormGroup({
     major: this.major,
@@ -105,9 +103,8 @@ export class EditProfileComponent implements OnInit {
     accountType: this.accountType,
     profilePic: this.profilePic,
     courseCodeCtrl: this.courseCodeCtrl,
-    courseCodeCtrlP: this.courseCodeCtrlP,
+    CodePursuing: this.CodePursuing,
     bio: this.bio,
-    pursuingCourses: this.pursuingCourses,
   });
   selectedIndex = 0;
   genders: Gender[] = [
@@ -128,7 +125,7 @@ export class EditProfileComponent implements OnInit {
         code ? this._filter(code) : this.classListService.allClasses().slice()
       )
     );
-    this.filteredCodesP = this.courseCodeCtrlP.valueChanges.pipe(
+    this.filteredCodesP = this.CodePursuing.valueChanges.pipe(
       map((code: string | null) =>
         code ? this._filter(code) : this.classListService.allClasses().slice()
       )
@@ -193,7 +190,7 @@ export class EditProfileComponent implements OnInit {
     // Clear the input value
     // event.chipInput!.clear();
 
-    this.courseCodeCtrlP.setValue(null);
+    this.CodePursuing.setValue(null);
   }
   openDialog(): void {
     this.dialog.open(PopUpComponent);
@@ -219,7 +216,7 @@ export class EditProfileComponent implements OnInit {
   selectedP(event: MatAutocompleteSelectedEvent): void {
     this.classesP.push(event.option.viewValue);
     this.codeInputP.nativeElement.value = '';
-    this.courseCodeCtrlP.setValue(null);
+    this.CodePursuing.setValue(null);
   }
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
@@ -265,7 +262,7 @@ export class EditProfileComponent implements OnInit {
     // TODO: convert form fields to Profile
 
     let profile: Profile = {
-      pursuingCourses: this.pursuingCourses.value,
+      CodePursuing: this.CodePursuing.value,
     };
 
     // TODO: replace null with Profile object
