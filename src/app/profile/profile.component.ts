@@ -14,6 +14,8 @@ export class ProfileComponent {
 
   profile$$ = StoreService.profile$$
 
+
+
   showFiller = false;
   // TODO: initial following value would need to be loaded from database - for now, always start with false
   following = false;

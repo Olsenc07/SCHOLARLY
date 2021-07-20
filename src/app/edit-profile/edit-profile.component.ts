@@ -86,7 +86,7 @@ export class EditProfileComponent implements OnInit {
   relationship: FormControl = new FormControl('');
   genderChoice: FormControl = new FormControl('');
   date: FormControl = new FormControl(moment());
-  courseCodeCtrl: FormControl = new FormControl([]);
+  CodeCompleted: FormControl = new FormControl([]);
   CodePursuing: FormControl = new FormControl([]);
 
   editForm = new FormGroup({
@@ -102,7 +102,7 @@ export class EditProfileComponent implements OnInit {
     date: this.date,
     accountType: this.accountType,
     profilePic: this.profilePic,
-    courseCodeCtrl: this.courseCodeCtrl,
+    CodeCompleted: this.CodeCompleted,
     CodePursuing: this.CodePursuing,
     bio: this.bio,
   });
@@ -120,7 +120,7 @@ export class EditProfileComponent implements OnInit {
     private http: HttpClient,
     private storeService: StoreService
   ) {
-    this.filteredCodes = this.courseCodeCtrl.valueChanges.pipe(
+    this.filteredCodes = this.CodeCompleted.valueChanges.pipe(
       map((code: string | null) =>
         code ? this._filter(code) : this.classListService.allClasses().slice()
       )
@@ -176,7 +176,7 @@ export class EditProfileComponent implements OnInit {
     // Clear the input value
     // event.chipInput!.clear();
 
-    this.courseCodeCtrl.setValue(null);
+    this.CodeCompleted.setValue(null);
   }
   // Pursuing Courses
   addP(event: MatChipInputEvent): void {
@@ -210,7 +210,7 @@ export class EditProfileComponent implements OnInit {
   selected(event: MatAutocompleteSelectedEvent): void {
     this.classes.push(event.option.viewValue);
     this.codeInput.nativeElement.value = '';
-    this.courseCodeCtrl.setValue(null);
+    this.CodeCompleted.setValue(null);
   }
   // Pursuing Classes
   selectedP(event: MatAutocompleteSelectedEvent): void {
@@ -263,6 +263,7 @@ export class EditProfileComponent implements OnInit {
 
     let profile: Profile = {
       CodePursuing: this.CodePursuing.value,
+      CodeCompleted: this.CodeCompleted.value,
     };
 
     // TODO: replace null with Profile object

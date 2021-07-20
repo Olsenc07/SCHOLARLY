@@ -94,7 +94,9 @@
 
           <div class="row_1">
             <div class="completed-courses">
-              <div class="words1">Completed</div>
+              <div class="words1">Completed
+                {{ profile$$ | async }}
+              </div>
             </div>
             <div class="completed-courses">
               <div class="words1">Pursuing

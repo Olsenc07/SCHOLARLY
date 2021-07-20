@@ -14,7 +14,7 @@
         <div class="row">
           <mat-form-field class="text-input">
             <mat-label>Title of Post</mat-label>
-            <input matInput maxlength="35" [formControl]="postTitle" [(ngModel)]="Title">
+            <input matInput maxlength="35" [formControl]="postTitle">
             <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearTitle()">
               <mat-icon class="clear-button">close</mat-icon>
             </button>
@@ -25,11 +25,11 @@
         <!-- Description of Post -->
         <div class="column_1">
           <div class="post-descriptionD">
-            <input class="post" placeholder="What do you wanna say?" [formControl]="postDescription" />
+            <input matInput class="post" placeholder="What do you wanna say?" [formControl]="postDescription" />
           </div>
           <!-- Upload pic/video -->
           <div class="column">
-            <div class="rowP"> <input #fileInput class="uploadD" accept="image/* video/*" type="file"
+            <div class="rowP"> <input #fileInput matInput class="uploadD" accept="image/* video/*"
                 (change)="imagePreview($event)" (click)="this.value=null" [formControl]="postUpload" multiple></div>
             <div class="rowP"> <img [src]="url" id="upload" class="imagePreview"> </div>
             <div class="rowP clear"><button mat-flat-button color="primary" (click)="clearUpload()">Clear
@@ -66,7 +66,7 @@
                 <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
               </mat-chip>
               <input #friendInput [formControl]="friendCtrl" [matAutocomplete]="auto" [matChipInputFor]="chipList"
-                [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="add($event)">
+                [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="add($event)" matInput>
             </mat-chip-list>
             <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
               <mat-option *ngFor="let friend of filteredFriends | async" [value]="friend">
