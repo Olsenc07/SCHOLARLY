@@ -225,7 +225,6 @@
     background-color: rgb(235, 235, 245);
     overflow: hidden;
     scroll-behavior: smooth;
-    overflow-y: scroll;
     flex-direction: column;
     display: flex;
     justify-content: center;
@@ -241,6 +240,9 @@
 .mat-chip {
   background-color: rgb(65, 88, 165) !important;
   color: rgb(252, 252, 252) !important;
+}
+.hideAll{
+  display: none;
 }
 @media (max-width: 1024px) {
   .hide {

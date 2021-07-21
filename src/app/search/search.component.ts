@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
@@ -22,8 +22,24 @@ export class SearchComponent implements OnInit {
 
   public selectedOption: string;
   public specificOptions: string[];
+  public searchOptions: SearchOption[];
+  main = '';
 
-  searchOptions: SearchOption[];
+
+  ngOnInit(): void {
+    this.searchOptions = this.searchListService.getSearchOptions();
+
+  }
+
+
+  onSearchSelection(value: string, name: string, specificOptions: string[]): void {
+    console.log(value);
+    console.log(specificOptions);
+    console.log(this.searchOptions);
+    this.specificOptions = this.searchListService.onSearchSelection(value);
+
+
+  }
 
   // 13 search pages
   constructor(
@@ -32,18 +48,13 @@ export class SearchComponent implements OnInit {
     private router: Router
   ) { }
 
-  ngOnInit(): void {
-    this.searchOptions = this.searchListService.getSearchOptions();
-  }
-
   navigateToPage(value): void {
     this.router.navigateByUrl('/main');
   }
 
-  onSearchSelection(value): void {
-    console.log(value);
-    this.specificOptions = this.searchListService.onSearchSelection(value);
-  }
+
+
+
 
   // Will delete these once I figure out the cleaner way
   openDialog1(): void {
@@ -371,3 +382,5 @@ export class UpcomingEComponent {
     'Video & Board Games',
   ];
 }
+
+
