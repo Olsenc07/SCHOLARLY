@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
+
 
 
 
@@ -10,8 +11,13 @@ import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-shee
   styleUrls: ['./main-pages.component.scss']
 })
 export class MainPagesComponent implements OnInit {
-
+  @Input() category = '';
   @Input() specific = '';
+  @Input() specificOptions = [''];
+
+  ngOnChanges(changes: SimpleChanges) {
+    changes.specificOptions
+  }
 
   main: FormControl = new FormControl('');
   mainForm = new FormGroup({

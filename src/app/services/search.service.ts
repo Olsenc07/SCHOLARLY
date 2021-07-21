@@ -46,6 +46,7 @@ export class SearchListService {
 
   getSearchOptions(): SearchOption[] {
     return this.searchOptions;
+
   }
 
 

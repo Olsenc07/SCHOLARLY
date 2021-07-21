@@ -7,7 +7,7 @@
       <!-- middle ish -->
       <div class="middle">
         <!-- Specifics text {{}} after : -->
-        <p class="text" style="font-size: large;">Similar search options </p>
+        <p class="text" style="font-size: large;">Similar search options: {{ category }} </p>
 
         <!-- text beside Specifics that indicates which 
 page your own for that given main category -->
@@ -16,9 +16,12 @@ page your own for that given main category -->
         <!-- Specifics box which gets filled depending
 on which main category page your on-->
         <div class="specifics-input">
-          <div class="specifics-fill">
+          <!-- <div class="specifics-fill">
 
-          </div>
+          </div> -->
+
+          {{ specificOptions }}
+
         </div>
       </div>
 
@@ -31,9 +34,6 @@ on which main category page your on-->
             <!-- Specifics text {{}} after : -->
             <p class="text" style="font-size: large;"> </p>
 
-            <!-- text beside Specifics that indicates which 
-page your own for that given main category -->
-            <!-- {{Specific}} -->
 
             <!-- Specifics box which gets filled depending
 on which main category page your on-->

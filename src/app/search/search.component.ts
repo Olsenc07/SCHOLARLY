@@ -23,6 +23,23 @@ export class SearchComponent implements OnInit {
   public selectedOption: string;
   public specificOptions: string[];
   public searchOptions: SearchOption[];
+  main = '';
+
+
+  ngOnInit(): void {
+    this.searchOptions = this.searchListService.getSearchOptions();
+
+  }
+
+
+  onSearchSelection(value: string, name: string, specificOptions: string[]): void {
+    console.log(value);
+    console.log(specificOptions);
+    console.log(this.searchOptions);
+    this.specificOptions = this.searchListService.onSearchSelection(value);
+
+
+  }
 
   // 13 search pages
   constructor(
@@ -30,16 +47,6 @@ export class SearchComponent implements OnInit {
     public searchListService: SearchListService,
     private router: Router
   ) { }
-
-  ngOnInit(): void {
-    this.searchOptions = this.searchListService.getSearchOptions();
-  }
-
-  onSearchSelection(value: string): string[] {
-    console.log(value);
-    this.specificOptions = this.searchListService.onSearchSelection(value);
-    return this.specificOptions;
-  }
 
   navigateToPage(value): void {
     this.router.navigateByUrl('/main');
