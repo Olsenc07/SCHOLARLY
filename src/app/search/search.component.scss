@@ -242,6 +242,9 @@
   background-color: rgb(65, 88, 165) !important;
   color: rgb(252, 252, 252) !important;
 }
+.hideAll{
+  display: none;
+}
 @media (max-width: 1024px) {
   .hide {
     display: none;

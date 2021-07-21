@@ -40,13 +40,14 @@ export class SearchListService {
     { name: 'Upcoming Events', value: SearchValues.UPCOMING_EVENTS },
   ];
 
-  public specificOptions: string[];
+
 
   constructor() { }
 
   getSearchOptions(): SearchOption[] {
     return this.searchOptions;
   }
+
 
   onSearchSelection(value: string): string[] {
     let specificOptions: string[];
@@ -279,6 +280,7 @@ export class SearchListService {
         specificOptions = [];
     }
     return specificOptions;
+
   }
 
 }

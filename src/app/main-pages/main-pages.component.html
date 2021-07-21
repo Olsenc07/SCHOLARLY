@@ -17,11 +17,7 @@ page your own for that given main category -->
 on which main category page your on-->
         <div class="specifics-input">
           <div class="specifics-fill">
-            <mat-chip-list class="mat-list-text">
-              <mat-chip [multiple]="false" *ngFor="let opt of specificOptions" [value]="opt">
-                {{ opt }}
-              </mat-chip>
-            </mat-chip-list>
+
           </div>
         </div>
       </div>
@@ -43,11 +39,7 @@ page your own for that given main category -->
 on which main category page your on-->
             <div class="specifics-input">
               <div class="specifics-fill">
-                <mat-chip-list class="mat-list-text">
-                  <mat-chip [multiple]="false" *ngFor="let opt of specificOptions" [value]="opt">
-                    {{ opt }}
-                  </mat-chip>
-                </mat-chip-list>
+
               </div>
             </div>
           </div>
@@ -61,7 +53,7 @@ on which main category page your on-->
       <!-- General choice appears at top of feed and dissapears as user scrolls -->
       <div class="top">
         <div class="specificChoice">
-          {{specific}}
+          {{ specific }}
 
         </div>
         <div class="hide ">
