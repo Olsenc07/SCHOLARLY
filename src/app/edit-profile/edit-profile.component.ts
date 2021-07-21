@@ -23,7 +23,6 @@ import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ClassListService } from '../services/class.service';
-import { MatButtonModule } from '@angular/material/button';
 import { Profile, StoreService } from '../services/store.service';
 
 interface Gender {
@@ -61,8 +60,6 @@ export class EditProfileComponent implements OnInit {
   selectable = true;
   removable = true;
   separatorKeysCodes: number[] = [ENTER, COMMA];
-  courseCodeCtrl = new FormControl();
-  courseCodeCtrlP = new FormControl();
   filteredCodes: Observable<string[]>;
   filteredCodesP: Observable<string[]>;
   classes: string[] = [];
@@ -88,8 +85,9 @@ export class EditProfileComponent implements OnInit {
   birthday: FormControl = new FormControl('');
   relationship: FormControl = new FormControl('');
   genderChoice: FormControl = new FormControl('');
-  pursuingCourses: FormControl = new FormControl([]);
   date: FormControl = new FormControl(moment());
+  CodeCompleted: FormControl = new FormControl([]);
+  CodePursuing: FormControl = new FormControl([]);
 
   editForm = new FormGroup({
     major: this.major,
@@ -104,8 +102,8 @@ export class EditProfileComponent implements OnInit {
     date: this.date,
     accountType: this.accountType,
     profilePic: this.profilePic,
-    courseCodeCtrl: this.courseCodeCtrl,
-    courseCodeCtrlP: this.courseCodeCtrlP,
+    CodeCompleted: this.CodeCompleted,
+    CodePursuing: this.CodePursuing,
     bio: this.bio,
   });
   selectedIndex = 0;
@@ -122,12 +120,12 @@ export class EditProfileComponent implements OnInit {
     private http: HttpClient,
     private storeService: StoreService
   ) {
-    this.filteredCodes = this.courseCodeCtrl.valueChanges.pipe(
+    this.filteredCodes = this.CodeCompleted.valueChanges.pipe(
       map((code: string | null) =>
         code ? this._filter(code) : this.classListService.allClasses().slice()
       )
     );
-    this.filteredCodesP = this.courseCodeCtrlP.valueChanges.pipe(
+    this.filteredCodesP = this.CodePursuing.valueChanges.pipe(
       map((code: string | null) =>
         code ? this._filter(code) : this.classListService.allClasses().slice()
       )
@@ -178,7 +176,7 @@ export class EditProfileComponent implements OnInit {
     // Clear the input value
     // event.chipInput!.clear();
 
-    this.courseCodeCtrl.setValue(null);
+    this.CodeCompleted.setValue(null);
   }
   // Pursuing Courses
   addP(event: MatChipInputEvent): void {
@@ -192,7 +190,7 @@ export class EditProfileComponent implements OnInit {
     // Clear the input value
     // event.chipInput!.clear();
 
-    this.courseCodeCtrlP.setValue(null);
+    this.CodePursuing.setValue(null);
   }
   openDialog(): void {
     this.dialog.open(PopUpComponent);
@@ -212,13 +210,13 @@ export class EditProfileComponent implements OnInit {
   selected(event: MatAutocompleteSelectedEvent): void {
     this.classes.push(event.option.viewValue);
     this.codeInput.nativeElement.value = '';
-    this.courseCodeCtrl.setValue(null);
+    this.CodeCompleted.setValue(null);
   }
   // Pursuing Classes
   selectedP(event: MatAutocompleteSelectedEvent): void {
     this.classesP.push(event.option.viewValue);
     this.codeInputP.nativeElement.value = '';
-    this.courseCodeCtrlP.setValue(null);
+    this.CodePursuing.setValue(null);
   }
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
@@ -227,7 +225,7 @@ export class EditProfileComponent implements OnInit {
       .allClasses()
       .filter((code) => code.toLowerCase().indexOf(filterValue) === 0);
   }
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   clearMajor(): void {
     this.major.setValue('');
@@ -264,7 +262,8 @@ export class EditProfileComponent implements OnInit {
     // TODO: convert form fields to Profile
 
     let profile: Profile = {
-      pursuingCourses: this.pursuingCourses.value,
+      CodePursuing: this.CodePursuing.value,
+      CodeCompleted: this.CodeCompleted.value,
     };
 
     // TODO: replace null with Profile object
@@ -276,4 +275,4 @@ export class EditProfileComponent implements OnInit {
   templateUrl: './pop-up-editP.component.html',
   styleUrls: ['./pop-up-editP.component.scss'],
 })
-export class PopUpComponent {}
+export class PopUpComponent { }

@@ -3,18 +3,25 @@ import { ReplaySubject } from 'rxjs';
 
 export interface Profile {
   // TODO: other profile fields
-  pursuingCourses: string[];
+  CodePursuing: string[];
+  CodeCompleted: string[];
 }
 
 @Injectable({
   providedIn: 'root',
 })
 export class StoreService {
-  profile$$: ReplaySubject<Profile> = new ReplaySubject<Profile>(1);
+  profile$$: ReplaySubject<Profile> = new ReplaySubject<Profile>(0);
+  static profile$$: string;
 
-  constructor() {}
+
+
+  constructor() { }
 
   setProfile(profile: Profile): void {
     this.profile$$.next(profile);
   }
+
+
+
 }

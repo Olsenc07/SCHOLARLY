@@ -36,6 +36,8 @@ import { ImageCropperModule } from 'ngx-image-cropper';
 import { NgxImageZoomModule } from 'ngx-image-zoom';
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 import { routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -154,9 +156,10 @@ import { SearchListService } from './services/search.service';
     NgxImageZoomModule,
     MatCardModule,
     MatExpansionModule,
+    MatSnackBarModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [SearchListService],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

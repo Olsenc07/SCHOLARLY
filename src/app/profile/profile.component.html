@@ -46,6 +46,7 @@
         </h2>
         <!-- Switches to Unfollow btn option  -->
       </button>
+      <!-- [formControl]="messageRequest" but causes a delay in loading -->
       <button class="spaceMM" routerLink="/groups">
         <h2 class="centerM">Message</h2>
       </button>
@@ -93,10 +94,15 @@
 
           <div class="row_1">
             <div class="completed-courses">
-              <div class="words1">Completed</div>
+              <div class="words1">Completed
+                {{ profile$$ | async }}
+              </div>
             </div>
             <div class="completed-courses">
-              <div class="words1">Pursuing</div>
+              <div class="words1">Pursuing
+                {{ profile$$ | async }}
+              </div>
+
             </div>
           </div>
         </div>

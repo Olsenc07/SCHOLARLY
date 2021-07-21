@@ -4,21 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { SearchListService } from '../services/search.service';
 
-enum SearchValues {
-  COLLEGE_CONNECTION = 'college-connection',
-  BLUE_CLUBS = 'blue-clubs',
-  COURSE_A_E = 'course-a-e',
-  COURSE_F_M = 'course-f-m',
-  COURSE_N_Z = 'course-n-z',
-  ENTREP_IDEA = 'entrep',
-  HELP_WANTED = 'help',
-  HOUSING = 'housing',
-  MISCELL_BUY_SELL = 'buy-sell',
-  SCHOOL_WORK = 'school-work',
-  SPIRITUALITY = 'spiritituality',
-  U_OF_T_QS = 'questions',
-  UPCOMING_EVENTS = 'upcoming-events',
-}
+
 interface SearchOption {
   value: string;
   name: string;
@@ -37,8 +23,6 @@ export class SearchComponent implements OnInit {
   public selectedOption: string;
   public specificOptions: string[];
 
-  // Attempting to use search.service
-
   searchOptions: SearchOption[];
 
   // 13 search pages
@@ -46,7 +30,7 @@ export class SearchComponent implements OnInit {
     public dialog: MatDialog,
     public searchListService: SearchListService,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.searchOptions = this.searchListService.getSearchOptions();
@@ -74,11 +58,9 @@ export class SearchComponent implements OnInit {
   openDialog4(): void {
     this.dialog.open(CoursesAEComponent);
   }
-
   openDialog5(): void {
     this.dialog.open(CoursesFMComponent);
   }
-
   openDialog6(): void {
     this.dialog.open(CoursesNZComponent);
   }

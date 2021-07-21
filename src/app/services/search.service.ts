@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 
 enum SearchValues {
   COLLEGE_CONNECTION = 'college-connection',
@@ -42,7 +42,7 @@ export class SearchListService {
 
   public specificOptions: string[];
 
-  constructor() {}
+  constructor() { }
 
   getSearchOptions(): SearchOption[] {
     return this.searchOptions;
@@ -280,4 +280,5 @@ export class SearchListService {
     }
     return specificOptions;
   }
+
 }
