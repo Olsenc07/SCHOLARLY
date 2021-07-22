@@ -7,11 +7,10 @@
       <!-- middle ish -->
       <div class="middle">
         <!-- Specifics text {{}} after : -->
-        <p class="text" style="font-size: large;">Similar search options: {{ category }} </p>
+        <p class="text" style="font-size: large;">Similar search options:
+          {{ specificOptions }} </p>
 
-        <!-- text beside Specifics that indicates which 
-page your own for that given main category -->
-        <!-- {{Specific}} -->
+
 
         <!-- Specifics box which gets filled depending
 on which main category page your on-->
@@ -20,7 +19,6 @@ on which main category page your on-->
 
           </div> -->
 
-          {{ specificOptions }}
 
         </div>
       </div>
@@ -61,8 +59,9 @@ on which main category page your on-->
             <div class="fas fa-angle-double-right"></div>
           </button>
         </div>
-
+        {{ category }}
       </div>
+
       <app-card class="fit"></app-card>
 
     </div>
