@@ -42,42 +42,46 @@
       </div>
     </div>
     <!-- Mobile -->
+    <div class="hide1">
+      <div class="topM">
+        <div class="column">
 
-    <div class="topM">
-      <div class="column">
-        <mat-selection-list #options [multiple]="false" class="second-list">
-          <mat-form-field appearance="fill">
-            <mat-label>Main Categories</mat-label>
+          <mat-selection-list #options [multiple]="false" class="second-list">
+            <mat-form-field appearance="fill">
+              <mat-label>Main Categories</mat-label>
 
-            <mat-select>
-              <mat-option>None</mat-option>
-              <mat-option (click)="onSearchSelection(opt.value)" [selected]="opt.name" [multiple]="false"
-                *ngFor="let opt of searchOptions" [value]="opt.name">
+              <mat-select>
+                <mat-option>None</mat-option>
+                <mat-option (click)="onSearchSelection(opt.value)" [selected]="opt.name" [multiple]="false"
+                  *ngFor="let opt of searchOptions" [value]="opt.name">
 
-                {{ opt.name }}</mat-option>
-            </mat-select>
+                  {{ opt.name }}</mat-option>
+              </mat-select>
 
-          </mat-form-field>
-        </mat-selection-list>
+            </mat-form-field>
+          </mat-selection-list>
 
-        <!-- Second choice -->
-        <div class="location-options">
-          <mat-chip-list class="mat-list-text">
-            <mat-chip [multiple]="false" *ngFor="let opt of specificOptions" [value]="opt"
-              (click)="navigateToPage(opt)">
-              <mat-radio-button>
-                {{ opt }}
-              </mat-radio-button>
-            </mat-chip>
-          </mat-chip-list>
+          <!-- Second choice -->
+          <div class="location-options">
+            <mat-chip-list class="mat-list-text">
+              <mat-chip [multiple]="false" *ngFor="let opt of specificOptions" [value]="opt"
+                (click)="navigateToPage(opt)">
+                <mat-radio-button>
+                  {{ opt }}
+                </mat-radio-button>
+              </mat-chip>
+            </mat-chip-list>
+          </div>
+
+
         </div>
 
+        <app-card></app-card>
+        <br>
+        <br>
 
-      </div>
-      <div class="hide1">
         <app-card></app-card>
-        <app-card></app-card>
-        <!-- Then cards keep getting filled in!! Jst was testing the overflow scroll -->
+        <!-- Then cards keep getting filled in!! Just was testing the overflow scroll -->
       </div>
     </div>
   </div>

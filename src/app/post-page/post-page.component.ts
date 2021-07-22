@@ -163,16 +163,22 @@ export class PostPageComponent implements OnInit {
     this.searchOptions = this.searchListService.getSearchOptions();
 
     this.firstFormGroup = this.FORMBuilder.group({
-      firstCtrl: ['']
+      date: [''],
+      time: [''],
+      locationEvent: ['']
     });
     this.secondFormGroup = this.FORMBuilder.group({
-      secondCtrl: ['']
+      female: false,
+      all: [''],
+      male: [''],
     });
     this.thirdFormGroup = this.FORMBuilder.group({
-      thirdCtrl: ['']
+      driver: [''],
+      paymentService: [''],
     });
     this.fourthFormGroup = this.FORMBuilder.group({
-      fourthCtrl: ['']
+      formalEvent: [''],
+      relaxedEvent: [''],
     });
 
 
