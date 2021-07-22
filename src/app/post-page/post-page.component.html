@@ -65,7 +65,7 @@
                 {{friend}}
                 <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
               </mat-chip>
-              <input #friendInput [formControl]="friendCtrl" [matAutocomplete]="auto" [matChipInputFor]="chipList"
+              <input #friendInput [matAutocomplete]="auto" [matChipInputFor]="chipList"
                 [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="add($event)" matInput>
             </mat-chip-list>
             <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
@@ -105,7 +105,7 @@
         <div class="location-options">
           <mat-chip-list class="mat-list-text">
             <mat-chip [multiple]="false" *ngFor="let opt of specificOptions" [value]="opt">
-              <mat-radio-button [formControl]="postLocation">
+              <mat-radio-button>
                 {{ opt }}
               </mat-radio-button>
             </mat-chip>
@@ -125,20 +125,20 @@
             <ng-template matStepLabel>When & Where</ng-template>
             <mat-form-field appearance="fill">
               <mat-label>Choose a date:</mat-label>
-              <input matInput [matDatepicker]="D" [formControl]="date">
+              <input matInput [matDatepicker]="D" formControlName="date">
               <mat-datepicker-toggle matSuffix [for]="D"></mat-datepicker-toggle>
               <mat-datepicker #D></mat-datepicker>
             </mat-form-field>
             <!-- Time -->
             <div class="ngx-timepicker-field-example">
               <ngx-timepicker-field [defaultTime]="'12:00 am'">
-                <input matInput [formControl]="time">
+                <input matInput formControlName="time">
               </ngx-timepicker-field>
             </div>
 
             <mat-form-field appearance="fill">
               <mat-label>Location</mat-label>
-              <input matInput [formControl]="locationEvent">
+              <input matInput formControlName="locationEvent">
 
             </mat-form-field>
             <div>
@@ -156,16 +156,16 @@
 
                 <div class="margin">
                   <p class="fas fa-venus" style="color: #d230b5;">Females</p>
-                  <mat-radio-button class="btn_" value="3" [formControl]="female" required></mat-radio-button>
+                  <mat-radio-button class="btn_" value="3" required></mat-radio-button>
                 </div>
                 <div class="margin">
                   <p class="fas fa-transgender-alt" style="color: #26dd2f;">All</p>
 
-                  <mat-radio-button class="btn_" value="4" [formControl]="all" required></mat-radio-button>
+                  <mat-radio-button class="btn_" value="4" required></mat-radio-button>
                 </div>
                 <div class="margin">
                   <p class="fas fa-mars" style="color: #4e30d2;">Males</p>
-                  <mat-radio-button class="btn_" value="5" [formControl]="male" required></mat-radio-button>
+                  <mat-radio-button class="btn_" value="5" required></mat-radio-button>
                 </div>
 
               </mat-radio-group>
@@ -185,14 +185,14 @@
               <div class="row">
                 <p class="fas fa-car icon" style="color: rgb(104, 11, 11);"> </p>
                 <div> Able to drive members</div>
-                <mat-checkbox class="btn" [formControl]="driver"></mat-checkbox>
+                <mat-checkbox class="btn" formControlName="driver"></mat-checkbox>
               </div>
 
               <div class="row">
                 <p class="fas fa-dollar-sign icon" style="color: green"></p>
                 <div>Service involving payment </div>
 
-                <mat-checkbox class="btn" [formControl]="paymentService"></mat-checkbox>
+                <mat-checkbox class="btn" formControlName="paymentService"></mat-checkbox>
               </div>
 
             </div>
@@ -214,14 +214,14 @@
               <div class="columnM">
                 <div class="column">
                   <p class="fas fa-user-tie" style="color: #e9c215;">Formal event</p>
-                  <mat-radio-button value="6" [formControl]="formalEvent" required>
+                  <mat-radio-button value="6" required>
 
                   </mat-radio-button>
                 </div>
               </div>
               <div class="column">
                 <p class="fas fa-glass-cheers" style="color: gold;">Relaxed event</p>
-                <mat-radio-button value="7" [formControl]="relaxedEvent" required>
+                <mat-radio-button value="7" required>
 
                 </mat-radio-button>
               </div>
