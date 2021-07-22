@@ -1,33 +1,36 @@
-import { Component, OnInit, Input, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
-
-
-
+import {
+  MatBottomSheet,
+  MatBottomSheetRef,
+} from '@angular/material/bottom-sheet';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-main-pages',
   templateUrl: './main-pages.component.html',
-  styleUrls: ['./main-pages.component.scss']
+  styleUrls: ['./main-pages.component.scss'],
 })
 export class MainPagesComponent implements OnInit {
-  @Input() category = '';
-  @Input() specific = '';
-  @Input() specificOptions = [''];
-
-  ngOnChanges(changes: SimpleChanges) {
-    changes.specificOptions
-  }
+  category: string;
+  specific: string;
+  specificOptions: string;
 
   main: FormControl = new FormControl('');
   mainForm = new FormGroup({
     main: this.main,
-
   });
 
-  constructor(private bottomSheet: MatBottomSheet) { }
+  constructor(
+    private bottomSheet: MatBottomSheet,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
+    this.route.queryParams.subscribe((params) => {
+      console.log(params);
+      this.category = params?.category;
+    });
   }
 
   clearMain(): void {
@@ -44,26 +47,28 @@ export class MainPagesComponent implements OnInit {
     this.bottomSheet.open(AttendanceComponent);
   }
 }
+
 @Component({
   selector: 'app-main-attendance',
   templateUrl: './attendance.component.html',
   styleUrls: ['./attendance.component.scss'],
 })
 export class AttendanceComponent {
-  constructor(private bottomSheetRef: MatBottomSheetRef<AttendanceComponent>) { }
+  constructor(private bottomSheetRef: MatBottomSheetRef<AttendanceComponent>) {}
 
   openLink(event: MouseEvent): void {
     this.bottomSheetRef.dismiss();
     event.preventDefault();
   }
 }
+
 @Component({
   selector: 'app-main-tagged',
   templateUrl: './tagged.component.html',
   styleUrls: ['./tagged.component.scss'],
 })
 export class TaggedComponent {
-  constructor(private bottomSheetRef: MatBottomSheetRef<AttendanceComponent>) { }
+  constructor(private bottomSheetRef: MatBottomSheetRef<AttendanceComponent>) {}
 
   openLink(event: MouseEvent): void {
     this.bottomSheetRef.dismiss();

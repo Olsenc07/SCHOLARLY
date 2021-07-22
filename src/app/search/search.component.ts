@@ -4,7 +4,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { SearchListService } from '../services/search.service';
 
-
 interface SearchOption {
   value: string;
   name: string;
@@ -25,20 +24,12 @@ export class SearchComponent implements OnInit {
   public searchOptions: SearchOption[];
   main = '';
 
-
   ngOnInit(): void {
     this.searchOptions = this.searchListService.getSearchOptions();
-
   }
 
-
-  onSearchSelection(value: string, name: string, specificOptions: string[]): void {
-    console.log(value);
-    console.log(specificOptions);
-    console.log(this.searchOptions);
+  onSearchSelection(value: string): void {
     this.specificOptions = this.searchListService.onSearchSelection(value);
-
-
   }
 
   // 13 search pages
@@ -46,15 +37,11 @@ export class SearchComponent implements OnInit {
     public dialog: MatDialog,
     public searchListService: SearchListService,
     private router: Router
-  ) { }
+  ) {}
 
   navigateToPage(value): void {
-    this.router.navigateByUrl('/main');
+    this.router.navigate(['/main'], { queryParams: { category: value } });
   }
-
-
-
-
 
   // Will delete these once I figure out the cleaner way
   openDialog1(): void {
@@ -382,5 +369,3 @@ export class UpcomingEComponent {
     'Video & Board Games',
   ];
 }
-
-

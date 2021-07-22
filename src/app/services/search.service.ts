@@ -40,15 +40,28 @@ export class SearchListService {
     { name: 'Upcoming Events', value: SearchValues.UPCOMING_EVENTS },
   ];
 
-
-
-  constructor() { }
+  constructor() {}
 
   getSearchOptions(): SearchOption[] {
     return this.searchOptions;
-
   }
 
+  /* TODO: ideally all of these would be SearchOption's instead of strings
+
+  so for example:
+  specificOptions = [
+    'Applied Science & Engineering'
+  ]
+
+  would become:
+  specificOptions = [
+     { name: 'Applied Science & Engineering', value: SearchValues.APPLIED_SCIENCE }
+  ]
+
+  That way we can easily access them by their value.
+
+  This isn't something we need right away, it would just help cleanup some things
+  */
 
   onSearchSelection(value: string): string[] {
     let specificOptions: string[];
@@ -281,7 +294,5 @@ export class SearchListService {
         specificOptions = [];
     }
     return specificOptions;
-
   }
-
 }
