@@ -7,25 +7,12 @@
         <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" class="logo" />
       </div>
 
-      <div class="title-categories">
-        <!-- Specifics text-->
-        <div class="specific-text-layout">
-          <h2 class="specifics-text_">Specific Pages:</h2>
-        </div>
-
-        <!-- categeory filter box -->
-        <div class="input-boxs">
-          <mat-chip-list class="mat-list-text">
-            <mat-chip
-              [multiple]="false"
-              *ngFor="let opt of specificOptions"
-              [value]="opt"
-              (click)="navigateToPage(opt)"
-            >
-              {{ opt }}
-            </mat-chip>
-          </mat-chip-list>
-        </div>
+      <div class="input-boxs">
+        <mat-chip-list class="mat-list-text">
+          <mat-chip [multiple]="false" *ngFor="let opt of specificOptions" [value]="opt" (click)="navigateToPage(opt)">
+            {{ opt }}
+          </mat-chip>
+        </mat-chip-list>
       </div>
     </div>
 
@@ -36,16 +23,10 @@
         <h2 class="center">Main Categories</h2>
 
         <mat-chip-list aria-label="First Choice">
-          <mat-chip
-            (click)="onSearchSelection(opt.value)"
-            [selected]="opt.name"
-            [multiple]="false"
-            *ngFor="let opt of searchOptions"
-            [value]="opt.name"
-          >
+          <mat-chip (click)="onSearchSelection(opt.value)" [selected]="opt.name" [multiple]="false"
+            *ngFor="let opt of searchOptions" [value]="opt.name">
             <mat-radio-button class="horizontal_list">
-              {{ opt.name }}</mat-radio-button
-            >
+              {{ opt.name }}</mat-radio-button>
           </mat-chip>
         </mat-chip-list>
       </div>
@@ -64,87 +45,34 @@
 
     <div class="topM">
       <div class="column">
-        <div class="centerM">Main Categories</div>
+        <mat-selection-list #options [multiple]="false" class="second-list">
+          <mat-form-field appearance="fill">
+            <mat-label>Main Categories</mat-label>
 
-        <mat-form-field>
-          <mat-chip-list aria-label="First Choice">
-            <mat-chip mat-button (click)="openDialog1()">
-              <mat-radio-button></mat-radio-button> Blues Clubs
-            </mat-chip>
+            <mat-select>
+              <mat-option>None</mat-option>
+              <mat-option (click)="onSearchSelection(opt.value)" [selected]="opt.name" [multiple]="false"
+                *ngFor="let opt of searchOptions" [value]="opt.name">
 
-            <mat-chip>
-              <mat-radio-button mat-button (click)="openDialog2()">
-                Buy & Sell</mat-radio-button
-              >
-            </mat-chip>
+                {{ opt.name }}</mat-option>
+            </mat-select>
 
-            <mat-chip>
-              <mat-radio-button mat-button (click)="openDialog3()">
-                College Connection</mat-radio-button
-              >
-            </mat-chip>
+          </mat-form-field>
+        </mat-selection-list>
 
-            <mat-chip>
-              <mat-radio-button mat-button (click)="openDialog4()">
-                Courses A-E</mat-radio-button
-              >
-            </mat-chip>
-
-            <mat-chip>
-              <mat-radio-button mat-button (click)="openDialog5()">
-                Courses F-M</mat-radio-button
-              >
-            </mat-chip>
-
-            <mat-chip>
-              <mat-radio-button mat-button (click)="openDialog6()">
-                Courses N-Z</mat-radio-button
-              >
-            </mat-chip>
-
-            <mat-chip>
-              <mat-radio-button mat-button (click)="openDialog7()">
-                Entrepreneurial Opportunities</mat-radio-button
-              >
-            </mat-chip>
-
-            <mat-chip>
-              <mat-radio-button mat-button (click)="openDialog8()">
-                Helping Hand</mat-radio-button
-              >
-            </mat-chip>
-
-            <mat-chip>
-              <mat-radio-button mat-button (click)="openDialog9()">
-                Housing</mat-radio-button
-              >
-            </mat-chip>
-
-            <mat-chip>
-              <mat-radio-button mat-button (click)="openDialog10()">
-                Questions</mat-radio-button
-              >
-            </mat-chip>
-
-            <mat-chip>
-              <mat-radio-button mat-button (click)="openDialog11()">
-                School Work</mat-radio-button
-              >
-            </mat-chip>
-
-            <mat-chip>
-              <mat-radio-button mat-button (click)="openDialog12()">
-                Spirituality</mat-radio-button
-              >
-            </mat-chip>
-
-            <mat-chip>
-              <mat-radio-button mat-button (click)="openDialog13()">
-                Upcoming Events</mat-radio-button
-              >
+        <!-- Second choice -->
+        <div class="location-options">
+          <mat-chip-list class="mat-list-text">
+            <mat-chip [multiple]="false" *ngFor="let opt of specificOptions" [value]="opt"
+              (click)="navigateToPage(opt)">
+              <mat-radio-button>
+                {{ opt }}
+              </mat-radio-button>
             </mat-chip>
           </mat-chip-list>
-        </mat-form-field>
+        </div>
+
+
       </div>
       <div class="hide1">
         <app-card></app-card>
