@@ -319,11 +319,17 @@ p {
   width: 100%;
   background-size: cover;
 }
+@media(min-width:1024px){
 .post-descriptionD {
   display: flex;
   width: 100%;
+}}
+@media(max-width:1024px){
+.post-descriptionD {
+  display: flex;
+  width: 97%;
 }
-
+}
 .post-descriptionM {
   display: flex;
   width: 100%;
@@ -334,14 +340,12 @@ p {
   display: flex;
   width: 100%;
   height: 100%;
-  border: ridge;
   overflow-y: scroll;
 }
 .postM {
   display: flex;
   width: 100%;
   height: 100%;
-  border: ridge;
   overflow-y: scroll;
 }
 .post-location {
@@ -368,6 +372,10 @@ p {
   flex-direction: row;
   justify-content: center;
 }
+.row_{
+  display: flex;
+  flex-direction: row;
+}
 @media(min-width:1024px){
   .right {
     display: flex;
@@ -385,6 +393,7 @@ p {
     box-sizing: border-box;
     width: 100%;
     height: 100%;
+    margin-bottom: 12%;
     position: relative;
   }}
 
@@ -515,7 +524,7 @@ p {
 .uploadD {
   display: flex;
   box-sizing: border-box;
-  margin: 4% 0%;
+  margin: 4% 0% 0%;
 }
 .upload {
   display: flex;
