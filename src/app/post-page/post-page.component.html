@@ -25,11 +25,13 @@
         <!-- Description of Post -->
         <div class="column_1">
           <div class="post-descriptionD">
-            <input matInput class="post" placeholder="What do you wanna say?" [formControl]="postDescription" />
+            <mat-form-field>
+              <input matInput class="post" placeholder="What do you wanna say?" [formControl]="postDescription" />
+            </mat-form-field>
           </div>
           <!-- Upload pic/video -->
           <div class="column">
-            <div class="rowP"> <input #fileInput matInput class="uploadD" accept="image/* video/*"
+            <div class="rowP"> <input #fileInput class="uploadD" accept="image/* video/*" type="file"
                 (change)="imagePreview($event)" (click)="this.value=null" [formControl]="postUpload" multiple></div>
             <div class="rowP"> <img [src]="url" id="upload" class="imagePreview"> </div>
             <div class="rowP clear"><button mat-flat-button color="primary" (click)="clearUpload()">Clear
@@ -235,19 +237,16 @@
         <!-- Step 5 -->
         <mat-step>
           <ng-template matStepLabel>Time To Post</ng-template>
-          <div>
+          <div class="row_">
             <button mat-button matStepperPrevious>Back</button>
-            <button mat-button (click)="stepper.reset()">Reset</button>
+            <button mat-raised-button color="primary" class="text" (ngSubmit)="onFormSubmit()">Post
+              <span class="material-icons"> arrow_forward </span>
+            </button>
           </div>
         </mat-step>
       </mat-vertical-stepper>
 
-      <span class="post-final">
-        <button mat-raised-button class="text" (ngSubmit)="onFormSubmit()">
-          Post
-          <span class="material-icons"> arrow_forward </span>
-        </button>
-      </span>
+
 
     </div>
   </div>

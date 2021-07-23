@@ -46,11 +46,6 @@ export class AppComponent implements OnInit {
     document.getElementsByClassName('search-box__icon')[0]?.addEventListener('click', this.activateSearch);
     this.searchBox = document.getElementsByClassName('search-box')[0];
 
-    this.isHomeScreen$ = this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd),
-      map((event: NavigationEnd) => event.url === '/' || event.url === '/login')
-    );
-
     this.isPostScreen$ = this.router.events.pipe(
       filter(event => event instanceof NavigationEnd),
       map((event: NavigationEnd) => event.url === '/' || event.url === '/post-page')
@@ -79,6 +74,10 @@ export class AppComponent implements OnInit {
     this.isEditProfileScreen$ = this.router.events.pipe(
       filter(event => event instanceof NavigationEnd),
       map((event: NavigationEnd) => event.url === '/' || event.url === '/edit-profile')
+    );
+    this.isHomeScreen$ = this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd),
+      map((event: NavigationEnd) => event.url === '/' || event.url === '/login')
     );
 
   }
