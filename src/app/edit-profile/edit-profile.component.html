@@ -2,14 +2,14 @@
   <mat-tab-group mat-align-tabs="center">
     <mat-tab label="Your Display">
       <div class="entire-page">
-        <div class="rowT">
+        <!-- <div class="rowT">
           <button mat-icon-button class="display1" routerLink="/profile">
             <span class="material-icons">
               arrow_back_ios
             </span>
           </button>
 
-        </div>
+        </div> -->
 
         <!-- lower box -->
         <div class="middle">
@@ -17,19 +17,21 @@
           <!-- input pic & has this default pic before-->
           <!-- Upload one profile pic -->
           <div class="personalizeLarge">
-            <div class="pics">
-              <!-- Profile Pic is currently filled with pic being used rn -->
-              <div class="space">
-                <h2 class="text">Change Profile Picture</h2> <input #fileInputs class="upload" accept="image/* video/*"
-                  type="file" (change)="onImgChange($event)" [formControl]="profilePic">
+            <div class="centerR">
+              <div class="pics">
+                <!-- Profile Pic is currently filled with pic being used rn -->
+                <div class="space">
+                  <h2 class="text">Change Profile Picture</h2> <input #fileInputs class="upload"
+                    accept="image/* video/*" type="file" (change)="onImgChange($event)" [formControl]="profilePic">
+                </div>
+                <div class="cropper">
+                  <image-cropper [imageChangedEvent]="imgChangeEvt" [maintainAspectRatio]="true" [aspectRatio]=" 7 / 7"
+                    [resizeToWidth]="170" format="png" (imageCropped)="cropImg($event)" (imageLoaded)="imgLoad()"
+                    (cropperReady)="initCropper()" (loadImageFailed)="imgFailed()">
+                  </image-cropper>
+                </div>
+                <div class="snapShot"><button mat-stroked-button (click)="clearProfilePic()">Clear File</button></div>
               </div>
-              <div class="cropper">
-                <image-cropper [imageChangedEvent]="imgChangeEvt" [maintainAspectRatio]="true" [aspectRatio]=" 7 / 7"
-                  [resizeToWidth]="170" format="png" (imageCropped)="cropImg($event)" (imageLoaded)="imgLoad()"
-                  (cropperReady)="initCropper()" (loadImageFailed)="imgFailed()">
-                </image-cropper>
-              </div>
-              <div class="snapShot"><button mat-stroked-button (click)="clearProfilePic()">Clear File</button></div>
             </div>
             <div class="rowP">
               <!-- <i class="fas fa-camera _icon2"></i>
@@ -40,9 +42,11 @@
 
             </div>
             <div class="PreviewPic">
-              <h2 class="Preview">Image Preview</h2>
-              <img class="previewPic" id="ProfilePic" [src]="cropImgPreview" />
+              <div class="center">
+                <h2 class="Preview">Image Preview</h2>
 
+                <img class="previewPic" id="ProfilePic" [src]="cropImgPreview" />
+              </div>
             </div>
 
           </div>

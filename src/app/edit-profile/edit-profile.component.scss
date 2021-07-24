@@ -31,11 +31,17 @@
 .button {
   display: flex;
   justify-self: center;
+  margin-bottom: 5%;
 }
 .center{
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+.centerR{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
 }
 .courses {
   display: flex;
@@ -80,12 +86,14 @@
   display: flex;
   width: 100%;
   margin-bottom: 5%;
+  
 }
 .entire-page {
   display: flex;
   flex-direction: column;
   height: 100%;
   width: 100%;
+  margin-bottom: 2%;
 }
 .fit{
   display: flex;
@@ -191,11 +199,13 @@
   flex-direction: column;
   justify-content: space-around;
 }
+
 .middle {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 .left-column {
   display: flex;
   flex-direction: column;
@@ -246,10 +256,8 @@
 }
 @media (max-width: 900px) {
   .rowP {
-    display: flex;
-    flex-direction: row;
-    margin: 2% 0%;
-    overflow-x: scroll;
+    display: none;
+   
   }
 }
 @media (min-width: 1024px) {
@@ -273,13 +281,21 @@
   display: flex;
   flex-direction: column;
 }
+@media(min-width:1024px) {
 .personalizeLarge {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
   max-height: 350px;
   margin: 1% 0% 3%;
-}
+}}
+@media(max-width:1024px) {
+.personalizeLarge {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  margin: 1% 0% 3%;
+}}
 .private-public {
   display: flex;
   flex-direction: row;
@@ -303,6 +319,12 @@
   display: flex;
   justify-content: center;
 }
+
+@media(max-width:1024px){
+.PreviewPic{
+  display: flex;
+  justify-content: center;
+}}
 .layout {
   margin-bottom: 2%;
   display: flex;
@@ -344,7 +366,7 @@
   flex-direction: column;
   color: #418bba;
 }
-@media (min-width: 660px) {
+@media (min-width: 900px) {
   ._icon2 {
     display: flex;
     justify-content: center;
@@ -353,7 +375,7 @@
     color: #418bba;
   }
 }
-@media (max-width: 660px) {
+@media (max-width: 900px) {
   ._icon2 {
     display: none;
   }
@@ -364,6 +386,7 @@
   flex-direction: row;
   width: 100%;
   margin-bottom: 2%;
+  margin-top: inherit;
 }
 .inputP {
   display: flex;
@@ -372,7 +395,7 @@
 }
 .inputText {
   display: flex;
-  width: 35%;
+  
 }
 
 .tooltip .tooltiptext {
