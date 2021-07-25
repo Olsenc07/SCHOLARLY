@@ -16,10 +16,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { MatAutocompleteSelectedEvent, MatAutocomplete } from '@angular/material/autocomplete';
 import { MatChipInputEvent } from '@angular/material/chips';
-import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { SearchListService } from '../services/search.service';
-
+import { BehaviorSubject, Observable } from 'rxjs';
 
 const moment = _rollupMoment || _moment;
 export const MY_FORMATS = {
@@ -59,9 +58,6 @@ export class PostPageComponent implements OnInit {
   public specificOptions: string[];
   public searchOptions: SearchOption[];
 
-  Title = '';
-
-
   url: string;
 
   selectedIndex = 0;
@@ -83,7 +79,8 @@ export class PostPageComponent implements OnInit {
 
 
   isLinear = false;
-  postTitle: FormControl = new FormControl('');
+  Title: FormControl = new FormControl('');
+  public TitleLength = new BehaviorSubject(0);
   postUpload: FormControl = new FormControl('');
   postLocation: FormControl = new FormControl('');
   locationEvent: FormControl = new FormControl('');
@@ -121,7 +118,7 @@ export class PostPageComponent implements OnInit {
   });
   postForm = new FormGroup({
     // Desktop
-    postTitle: this.postTitle,
+    Title: this.Title,
     postDescription: this.postDescription,
     postUpload: this.postUpload,
     firstFormGroup: this.firstFormGroup,
@@ -133,6 +130,7 @@ export class PostPageComponent implements OnInit {
     upload: this.upload,
   });
   constructor(public dialog: MatDialog, public searchListService: SearchListService, private FORMBuilder: FormBuilder) {
+    this.Title.valueChanges.subscribe((v) => this.TitleLength.next(v.length));
     // Desktop tag friends
     this.filteredFriends = this.friendCtrl.valueChanges.pipe(
       map((friend: string | null) => friend ? this._filter(friend) : this.allFriends.slice()));
@@ -226,7 +224,7 @@ export class PostPageComponent implements OnInit {
     return value;
   }
   clearTitle(): void {
-    this.postTitle.setValue('');
+    this.Title.setValue('');
   }
 
   onFormSubmit(): void {

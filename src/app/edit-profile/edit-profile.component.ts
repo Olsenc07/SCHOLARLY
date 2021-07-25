@@ -20,7 +20,7 @@ import {
 } from '@angular/material/autocomplete';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ClassListService } from '../services/class.service';
 import { Profile, StoreService } from '../services/store.service';
@@ -78,6 +78,7 @@ export class EditProfileComponent implements OnInit {
   sport: FormControl = new FormControl('');
   club: FormControl = new FormControl('');
   bio: FormControl = new FormControl('');
+  public bioLength = new BehaviorSubject(0);
   name: FormControl = new FormControl('');
   pronouns: FormControl = new FormControl('');
   snapShot: FormControl = new FormControl('');
@@ -104,6 +105,7 @@ export class EditProfileComponent implements OnInit {
     profilePic: this.profilePic,
     CodeCompleted: this.CodeCompleted,
     CodePursuing: this.CodePursuing,
+    bio: this.bio,
 
   });
   selectedIndex = 0;
@@ -120,6 +122,7 @@ export class EditProfileComponent implements OnInit {
     private http: HttpClient,
     private storeService: StoreService
   ) {
+    this.bio.valueChanges.subscribe((v) => this.bioLength.next(v.length));
     this.filteredCodes = this.CodeCompleted.valueChanges.pipe(
       map((code: string | null) =>
         code ? this._filter(code) : this.classListService.allClasses().slice()
