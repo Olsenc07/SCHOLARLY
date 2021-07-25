@@ -87,8 +87,8 @@ export class EditProfileComponent implements OnInit {
   relationship: FormControl = new FormControl('');
   genderChoice: FormControl = new FormControl('');
   date: FormControl = new FormControl(moment());
-  CodeCompleted: FormControl = new FormControl([]);
-  CodePursuing: FormControl = new FormControl([]);
+  CodeCompleted: FormControl = new FormControl('');
+  CodePursuing: FormControl = new FormControl('');
 
   editForm = new FormGroup({
     major: this.major,
@@ -123,14 +123,15 @@ export class EditProfileComponent implements OnInit {
     private storeService: StoreService
   ) {
     this.bio.valueChanges.subscribe((v) => this.bioLength.next(v.length));
+
     this.filteredCodes = this.CodeCompleted.valueChanges.pipe(
       map((code: string | null) =>
         code ? this._filter(code) : this.classListService.allClasses().slice()
       )
     );
     this.filteredCodesP = this.CodePursuing.valueChanges.pipe(
-      map((code: string | null) =>
-        code ? this._filter(code) : this.classListService.allClasses().slice()
+      map((codeP: string | null) =>
+        codeP ? this._filter(codeP) : this.classListService.allClasses().slice()
       )
     );
   }
@@ -210,6 +211,7 @@ export class EditProfileComponent implements OnInit {
       this.classesP.splice(indexP, 1);
     }
   }
+  // Completed Classes
   selected(event: MatAutocompleteSelectedEvent): void {
     this.classes.push(event.option.viewValue);
     this.codeInput.nativeElement.value = '';
