@@ -221,6 +221,9 @@
         <div class="groups-jj">
           <div class="row">
             <div class="words">
+              <!-- button scrolls through posts and then user can delete what they wish -->
+              <button mat-icon-button><i class="fas fa-arrow-circle-left title1"></i>
+              </button>
               <div class="column1">Groups Joined</div>
               <button mat-icon-button><i class="fas fa-arrow-circle-right title1"></i>
               </button>
@@ -231,18 +234,33 @@
         <!-- Recent Posts box-->
         <div class="work">
           <div class="groups-j">
+            <div class="row">
+              <div class="words">
+                <button mat-icon-button><i class="fas fa-arrow-circle-left title1"></i>
+                </button>
+                <div class="column1">Posts</div>
+                <!-- button scrolls through posts and then user can delete what they wish -->
+                <button mat-icon-button><i class="fas fa-arrow-circle-right title1"></i>
+                </button>
+              </div>
+            </div>
             <app-card class="fit"></app-card>
           </div>
         </div>
 
         <!-- Image Preview -->
         <div class="column">
-          <h2 class="snapShot">Add A SnapShot</h2>
-          <div class="snapShot"><input type="file" [formControl]="snapShot" accept="image/* video/*"
-              (change)="imagePreview($event)" /></div>
+          <h2 class="snapshot">Add A SnapShot</h2>
+          <div class="snapshot">
+            <input type="file" class="snapshot" [formControl]="snapShot" accept="image/* video/*"
+              (change)="imagePreview($event)">
+          </div>
+          <div class="imageBox">
+            <img [src]="url" id="firstP" class="imagePreview">
+          </div>
 
-          <div class="snapShot"><img [src]="url" id="firstP" class="imagePreview"></div>
-          <div class="snapShot"><button mat-stroked-button (click)="clearPic1()">Clear File</button></div>
+
+          <div class="snapshotClear"><button mat-stroked-button (click)="clearPic1()">Clear File</button></div>
         </div>
 
 

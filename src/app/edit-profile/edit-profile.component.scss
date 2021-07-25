@@ -48,12 +48,7 @@
   width: 100%;
   flex-direction: column;
 }
-.column {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0% 2%;
-}
+
 .column1 {
   display: flex;
   flex-direction: column;
@@ -61,7 +56,7 @@
 }
 .cropper {
   display: flex;
-  max-height: 260px;
+// May need a max height
 }
 @media (min-width: 1024px) {
   .display {
@@ -143,9 +138,54 @@
     overflow-y: scroll;
   }
 }
+
+@media(min-width:1024px){
+  .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 0% 30%;
+    max-width: 50%;
+    
+  }}
+  @media(max-width:1024px)and(min-width:875px){
+  .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 0% 25%;
+    
+  }}
+  @media(max-width:875px)and(min-width:500px){
+  .column {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin: 0% 20%;
+   
+  }}
+  @media(max-width:500px){
+  .column {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+   
+  }
+  }
+.fa-arrow-circle-left{
+  font-size: large;
+}
+.fa-arrow-circle-right{
+  font-size: large;
+}
 @media(min-width:1024px){
 .groups-j {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   height: 100%;
   width: 100%;
@@ -156,6 +196,7 @@
 @media(max-width:1024px)and(min-width:875px){
 .groups-j {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   height: 100%;
   width: 100%;
@@ -165,6 +206,7 @@
 @media(max-width:875px)and(min-width:500px){
 .groups-j {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   height: 100%;
   width: 100%;
@@ -174,6 +216,7 @@
 @media(max-width:500px){
 .groups-j {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   height: 100%;
   width: 100%;
@@ -190,7 +233,6 @@
 ::ng-deep .mat-tab-body-content{
   overflow: unset !important;
 }
-
 
 .major-layout {
   display: flex;
@@ -210,8 +252,9 @@
 }
 .imagePreview {
   display: flex;
-  width: 270px;
-  height: 270px;
+ 
+    width: 100%;
+ 
 }
 .input {
   display: flex;
@@ -268,13 +311,29 @@
     width: 50%;
   }
 }
+
+
+.imageBox{
+  display: flex;
+  height: 100%;
+}
+.snapshot {
+  display: flex;
+  justify-content: center;
+}
+.snapshotClear {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 5%;
+}
 .snapShot {
   display: flex;
   width: 100%;
   height: 100%;
   justify-content: center;
+  flex-direction: column;
 }
-
 .right-column {
   display: flex;
   flex-direction: column;
@@ -378,6 +437,9 @@
     display: none;
   }
 }
+
+
+
 .input {
   display: flex;
   justify-content: center;
