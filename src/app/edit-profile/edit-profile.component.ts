@@ -104,7 +104,7 @@ export class EditProfileComponent implements OnInit {
     profilePic: this.profilePic,
     CodeCompleted: this.CodeCompleted,
     CodePursuing: this.CodePursuing,
-    bio: this.bio,
+
   });
   selectedIndex = 0;
   genders: Gender[] = [
@@ -210,13 +210,13 @@ export class EditProfileComponent implements OnInit {
   selected(event: MatAutocompleteSelectedEvent): void {
     this.classes.push(event.option.viewValue);
     this.codeInput.nativeElement.value = '';
-    this.CodeCompleted.setValue(null);
+    this.CodeCompleted.setValue('');
   }
   // Pursuing Classes
   selectedP(event: MatAutocompleteSelectedEvent): void {
     this.classesP.push(event.option.viewValue);
     this.codeInputP.nativeElement.value = '';
-    this.CodePursuing.setValue(null);
+    this.CodePursuing.setValue('');
   }
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();

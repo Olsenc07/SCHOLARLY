@@ -11,7 +11,7 @@ export interface Profile {
   providedIn: 'root',
 })
 export class StoreService {
-  profile$$: ReplaySubject<Profile> = new ReplaySubject<Profile>(0);
+  profile$$: ReplaySubject<Profile> = new ReplaySubject<Profile>(1);
   static profile$$: string;
 
 

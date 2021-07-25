@@ -194,6 +194,12 @@
   margin-top: 2%;
 }
 
+// Allows smooth scroll for entire page
+::ng-deep .mat-tab-body-content{
+  overflow: unset !important;
+}
+
+
 .major-layout {
   display: flex;
   flex-direction: column;
