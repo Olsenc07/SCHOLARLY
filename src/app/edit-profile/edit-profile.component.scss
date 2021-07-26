@@ -268,20 +268,13 @@
   height: 100%;
   border: ridge;
 }
-@media (min-width: 1024px) {
+
   .row {
     display: flex;
     justify-content: center;
     flex-direction: row;
   }
-}
-@media (max-width: 1024px) {
-  .row {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
-}
+
 .rowT{
   display: flex;
   flex-direction: row;
