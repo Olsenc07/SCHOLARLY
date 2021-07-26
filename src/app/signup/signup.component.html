@@ -16,8 +16,9 @@
               school
             </span>
             <mat-form-field>
+              <!-- only utoronto.ca should be excepted -->
               <input matInput placeholder="School Email" [formControl]="email" required />
-              <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearEmail()">
+              <button mat-button matSuffix mat-icon-button aria-label=" Clear" type="button" (click)="clearEmail()">
                 <mat-icon>close</mat-icon>
               </button>
             </mat-form-field>
@@ -28,7 +29,7 @@
               account_circle
             </span>
             <mat-form-field>
-              <input matInput type="text" [formControl]="username" placeholder="Username" required autocomplete="on" />
+              <input matInput [formControl]="username" placeholder="Username" required autocomplete="on" />
 
               <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearUsername()">
                 <mat-icon>close</mat-icon>
@@ -53,7 +54,7 @@
 
           </div>
           <div class="accounts">
-            <mat-radio-group aria-label="Select an option" [formControl]="accountType" class="Accounts">
+            <mat-radio-group aria-label="Select an option" [formControl]="accountType" class="Accounts" required>
 
               <div class="layout">
                 <mat-radio-button value="1">Private Account</mat-radio-button>
@@ -217,7 +218,7 @@
 
 
       <!-- SnapShots -->
-      <mat-tab disabled>
+      <mat-tab>
         <form [formGroup]="snapShotForm">
           <ng-template mat-tab-label>
             <span class="material-icons">

@@ -73,10 +73,11 @@ export class SignupComponent implements OnInit {
 
   selectedIndex = 0;
   genders: Gender[] = [
+    { name: '' },
     { name: 'Female' },
     { name: 'Male' },
     { name: 'Other' },
-    { name: 'Perfer Not To Answer' },
+
   ];
 
   url: string;
@@ -85,7 +86,7 @@ export class SignupComponent implements OnInit {
   MatIconModule: any;
   cropImgPreview: any = '';
   imgChangeEvt: any = '';
-  username: FormControl = new FormControl('');
+  username: FormControl = new FormControl('', Validators.pattern('[a-zA-Z0-9_]*'));
   password: FormControl = new FormControl('');
   major: FormControl = new FormControl('');
   minor: FormControl = new FormControl('');
@@ -95,7 +96,7 @@ export class SignupComponent implements OnInit {
   pronouns: FormControl = new FormControl('');
   birthday: FormControl = new FormControl('');
   genderChoice: FormControl = new FormControl('');
-  email: FormControl = new FormControl('');
+  email: FormControl = new FormControl('', Validators.email);
   termsCheck: FormControl = new FormControl('');
   // PP isn't connected properly i dont think, since image is being cropped then returned as a base 64 value
   profilePic: FormControl = new FormControl('');
