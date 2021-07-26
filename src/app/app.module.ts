@@ -49,6 +49,8 @@ import { GroupChatsComponent } from './group-chats/group-chats.component';
 import { MainPagesComponent } from './main-pages/main-pages.component';
 import { SignupComponent } from './signup/signup.component';
 import { TermsPopUpComponent } from './signup/signup.component';
+import { AccountTextComponent } from './signup/signup.component';
+
 import { AttendanceComponent } from './main-pages/main-pages.component';
 import { BottomSheetComponent } from './profile/profile.component';
 
@@ -93,6 +95,7 @@ import { SearchListService } from './services/search.service';
     ReusableCardConvoComponent,
     GroupMembersComponent,
     TaggedComponent,
+    AccountTextComponent,
   ],
   imports: [
     BrowserModule,

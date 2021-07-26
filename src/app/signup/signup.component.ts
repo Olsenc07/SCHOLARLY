@@ -253,9 +253,7 @@ export class SignupComponent implements OnInit {
   }
 
 
-  openDialog(): void {
-    this.dialog.open(TermsPopUpComponent);
-  }
+
   remove(code: string): void {
     const index = this.classes.indexOf(code);
     if (index >= 0) {
@@ -379,6 +377,13 @@ export class SignupComponent implements OnInit {
   // Image Preview
 
 
+  openDialog(): void {
+    this.dialog.open(TermsPopUpComponent);
+  }
+  openDialogAccount(): void {
+    this.dialog.open(AccountTextComponent);
+  }
+
 }
 
 @Component({
@@ -387,3 +392,10 @@ export class SignupComponent implements OnInit {
   styleUrls: ['./terms-popup.component.scss'],
 })
 export class TermsPopUpComponent { }
+
+@Component({
+  selector: 'app-accountText-page',
+  templateUrl: './account-popup.component.html',
+  styleUrls: ['./account-popup.component.scss'],
+})
+export class AccountTextComponent { }
