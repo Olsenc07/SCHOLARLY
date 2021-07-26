@@ -170,7 +170,6 @@
   position: relative;
   width: 100%;
   height: 100%;
-  border: ridge;
   box-sizing: border-box;
 }
 
@@ -238,8 +237,6 @@ mat-grid-tile {
 ::ng-deep .mat-tab-header::-webkit-scrollbar {
   display: none;
 }
-
-
 
   mat-tab-group {
     display: flex;

@@ -55,7 +55,6 @@ export const MY_FORMATS = {
   ],
 })
 export class EditProfileComponent implements OnInit {
-  Bio = '';
   visible = true;
   selectable = true;
   removable = true;

@@ -11,19 +11,18 @@ import {
 } from '@angular/material/core';
 import * as _moment from 'moment';
 
-import { default as _rollupMoment} from 'moment';
-import {MatAutocompleteSelectedEvent, MatAutocomplete} from '@angular/material/autocomplete';
-import {MatChipInputEvent} from '@angular/material/chips';
-import {COMMA, ENTER} from '@angular/cdk/keycodes';
-import {Observable} from 'rxjs';
-import {map} from 'rxjs/operators';
-import {MatDialog} from '@angular/material/dialog';
+import { default as _rollupMoment } from 'moment';
+import { MatAutocompleteSelectedEvent, MatAutocomplete } from '@angular/material/autocomplete';
+import { MatChipInputEvent } from '@angular/material/chips';
+import { COMMA, ENTER } from '@angular/cdk/keycodes';
+import { map } from 'rxjs/operators';
+import { MatDialog } from '@angular/material/dialog';
 import { ClassListService } from '../services/class.service';
 import { ImageCroppedEvent } from 'ngx-image-cropper';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClient  } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { NgxImageZoomModule } from 'ngx-image-zoom';
-
+import { BehaviorSubject, Observable } from 'rxjs';
 
 
 interface Gender {
@@ -57,58 +56,58 @@ export const MY_FORMATS = {
   ],
 })
 export class SignupComponent implements OnInit {
-  Bio = '';
-visible = true;
-selectable = true;
-removable = true;
-separatorKeysCodes: number[] = [ENTER, COMMA];
-courseCodeCtrl = new FormControl();
-courseCodeCtrlP = new FormControl();
-filteredCodes: Observable<string[]>;
-filteredCodesP: Observable<string[]>;
-classes: string[] = [];
-classesP: string[] = [];
-@ViewChild('codeInput') codeInput: ElementRef<HTMLInputElement>;
-@ViewChild('codeInputP') codeInputP: ElementRef<HTMLInputElement>;
-@ViewChild('auto') matAutocomplete: MatAutocomplete;
-@ViewChild('autoP') matAutocompleteP: MatAutocomplete;
+  visible = true;
+  selectable = true;
+  removable = true;
+  separatorKeysCodes: number[] = [ENTER, COMMA];
+  courseCodeCtrl = new FormControl();
+  courseCodeCtrlP = new FormControl();
+  filteredCodes: Observable<string[]>;
+  filteredCodesP: Observable<string[]>;
+  classes: string[] = [];
+  classesP: string[] = [];
+  @ViewChild('codeInput') codeInput: ElementRef<HTMLInputElement>;
+  @ViewChild('codeInputP') codeInputP: ElementRef<HTMLInputElement>;
+  @ViewChild('auto') matAutocomplete: MatAutocomplete;
+  @ViewChild('autoP') matAutocompleteP: MatAutocomplete;
 
-selectedIndex = 0;
-genders: Gender[] = [
-{name: 'Female'},
-{name: 'Male'},
-{name: 'Other'},
-{name: 'Perfer Not To Answer'},
-];
+  selectedIndex = 0;
+  genders: Gender[] = [
+    { name: 'Female' },
+    { name: 'Male' },
+    { name: 'Other' },
+    { name: 'Perfer Not To Answer' },
+  ];
 
-url: string;
-url2: string;
-url3: string;
-MatIconModule: any;
-cropImgPreview: any = '';
-imgChangeEvt: any = '';
-username: FormControl = new FormControl('');
-password: FormControl = new FormControl('');
-major: FormControl = new FormControl('');
-minor: FormControl = new FormControl('');
-sport: FormControl = new FormControl('');
-club: FormControl = new FormControl('');
-name: FormControl = new FormControl('');
-pronouns: FormControl = new FormControl('');
-birthday: FormControl = new FormControl('');
-genderChoice: FormControl = new FormControl('');
-email: FormControl = new FormControl('');
-termsCheck: FormControl = new FormControl('');
-// PP isn't connected properly i dont think, since image is being cropped then returned as a base 64 value
-profilePic: FormControl = new FormControl('');
-accountType: FormControl = new FormControl('');
-bio: FormControl = new FormControl('');
-snapShot1: FormControl = new FormControl('');
-snapShot2: FormControl = new FormControl('');
-snapShot3: FormControl = new FormControl('');
+  url: string;
+  url2: string;
+  url3: string;
+  MatIconModule: any;
+  cropImgPreview: any = '';
+  imgChangeEvt: any = '';
+  username: FormControl = new FormControl('');
+  password: FormControl = new FormControl('');
+  major: FormControl = new FormControl('');
+  minor: FormControl = new FormControl('');
+  sport: FormControl = new FormControl('');
+  club: FormControl = new FormControl('');
+  name: FormControl = new FormControl('');
+  pronouns: FormControl = new FormControl('');
+  birthday: FormControl = new FormControl('');
+  genderChoice: FormControl = new FormControl('');
+  email: FormControl = new FormControl('');
+  termsCheck: FormControl = new FormControl('');
+  // PP isn't connected properly i dont think, since image is being cropped then returned as a base 64 value
+  profilePic: FormControl = new FormControl('');
+  accountType: FormControl = new FormControl('');
+  bio: FormControl = new FormControl('');
+  public bioLength = new BehaviorSubject(0);
+  snapShot1: FormControl = new FormControl('');
+  snapShot2: FormControl = new FormControl('');
+  snapShot3: FormControl = new FormControl('');
 
 
-requiredForm = new FormGroup({
+  requiredForm = new FormGroup({
     email: this.email,
     username: this.username,
     password: this.password,
@@ -117,49 +116,49 @@ requiredForm = new FormGroup({
     termsCheck: this.termsCheck,
   });
 
-personalizeForm = new FormGroup({
-  profilePic: this.profilePic,
-  name: this.name,
-  pronouns: this.pronouns,
-  birthday: this.birthday,
-  bio: this.bio,
-});
+  personalizeForm = new FormGroup({
+    profilePic: this.profilePic,
+    name: this.name,
+    pronouns: this.pronouns,
+    birthday: this.birthday,
+    bio: this.bio,
+  });
 
- snapShotForm = new FormGroup({
- snapShot1: this.snapShot1,
- snapShot2: this.snapShot2,
- snapShot3: this.snapShot3,
- });
- signupForm = new FormGroup({
-  courseCodeCtrl: this.courseCodeCtrl,
-  courseCodeCtrlP: this.courseCodeCtrlP,
-  sport: this.sport,
-  club: this.club,
-  major: this.major,
-  minor: this.minor,
-  requiredForm: this.requiredForm,
-  personalizeForm: this.personalizeForm,
- snapShotForm: this.snapShotForm,
-});
+  snapShotForm = new FormGroup({
+    snapShot1: this.snapShot1,
+    snapShot2: this.snapShot2,
+    snapShot3: this.snapShot3,
+  });
+  signupForm = new FormGroup({
+    courseCodeCtrl: this.courseCodeCtrl,
+    courseCodeCtrlP: this.courseCodeCtrlP,
+    sport: this.sport,
+    club: this.club,
+    major: this.major,
+    minor: this.minor,
+    requiredForm: this.requiredForm,
+    personalizeForm: this.personalizeForm,
+    snapShotForm: this.snapShotForm,
+  });
 
-date = new FormControl(moment());
-    onImgChange(event: any): void {
-        this.imgChangeEvt = event;
-    }
-    // Passes value as base64 string of cropped area!! But where does form controller come into play?
-    cropImg(e: ImageCroppedEvent): void {
-        this.cropImgPreview = e.base64;
-    }
+  date = new FormControl(moment());
+  onImgChange(event: any): void {
+    this.imgChangeEvt = event;
+  }
+  // Passes value as base64 string of cropped area!! But where does form controller come into play?
+  cropImg(e: ImageCroppedEvent): void {
+    this.cropImgPreview = e.base64;
+  }
 
-    imgLoad(): void {
-      // display cropper tool
+  imgLoad(): void {
+    // display cropper tool
   }
 
   initCropper(): void {
-      // init cropper
+    // init cropper
   }
   imgFailed(): void {
-      // error msg
+    // error msg
   }
 
   // SnapShot
@@ -199,11 +198,14 @@ date = new FormControl(moment());
       };
     }
   }
- constructor(
+  constructor(
     public dialog: MatDialog,
     public classListService: ClassListService,
     private http: HttpClient,
   ) {
+    this.bio.valueChanges.subscribe((v) => this.bioLength.next(v.length));
+
+
     this.filteredCodes = this.courseCodeCtrl.valueChanges.pipe(
       map((code: string | null) =>
         code ? this._filter(code) : this.classListService.allClasses().slice()
@@ -216,13 +218,13 @@ date = new FormControl(moment());
     );
   }
 
-formatLabel(value: number): string {
+  formatLabel(value: number): string {
     if (value >= 100) {
       return Math.round(value / 1) + '+';
     }
   }
 
-add(event: MatChipInputEvent): void {
+  add(event: MatChipInputEvent): void {
     const value = (event.value || '').trim();
 
     // Add our course code
@@ -235,48 +237,48 @@ add(event: MatChipInputEvent): void {
 
     this.courseCodeCtrl.setValue(null);
   }
-// Pursuing Courses
-addP(event: MatChipInputEvent): void {
-  const valueP = (event.value || '').trim();
+  // Pursuing Courses
+  addP(event: MatChipInputEvent): void {
+    const valueP = (event.value || '').trim();
 
-  // Add our course code
-  if (valueP) {
-    this.classesP.push(valueP);
+    // Add our course code
+    if (valueP) {
+      this.classesP.push(valueP);
+    }
+
+    // Clear the input value
+    // event.chipInput!.clear();
+
+    this.courseCodeCtrlP.setValue(null);
   }
 
-  // Clear the input value
-  // event.chipInput!.clear();
 
-  this.courseCodeCtrlP.setValue(null);
-}
-
-
-openDialog(): void {
-  this.dialog.open(TermsPopUpComponent);
-}
-remove(code: string): void {
+  openDialog(): void {
+    this.dialog.open(TermsPopUpComponent);
+  }
+  remove(code: string): void {
     const index = this.classes.indexOf(code);
     if (index >= 0) {
       this.classes.splice(index, 1);
     }
   }
-removeP(codeP: string): void {
+  removeP(codeP: string): void {
     const indexP = this.classesP.indexOf(codeP);
     if (indexP >= 0) {
       this.classesP.splice(indexP, 1);
     }
   }
-selected(event: MatAutocompleteSelectedEvent): void {
+  selected(event: MatAutocompleteSelectedEvent): void {
     this.classes.push(event.option.viewValue);
     this.codeInput.nativeElement.value = '';
     this.courseCodeCtrl.setValue(null);
   }
   // Pursuing Classes
-selectedP(event: MatAutocompleteSelectedEvent): void {
-  this.classesP.push(event.option.viewValue);
-  this.codeInputP.nativeElement.value = '';
-  this.courseCodeCtrlP.setValue(null);
-}
+  selectedP(event: MatAutocompleteSelectedEvent): void {
+    this.classesP.push(event.option.viewValue);
+    this.codeInputP.nativeElement.value = '';
+    this.courseCodeCtrlP.setValue(null);
+  }
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
 
@@ -289,51 +291,51 @@ selectedP(event: MatAutocompleteSelectedEvent): void {
   clearBio(): void {
     this.bio.setValue('');
   }
-clearUsername(): void {
+  clearUsername(): void {
     this.username.setValue('');
   }
 
-clearPassword(): void {
+  clearPassword(): void {
     this.password.setValue('');
   }
 
-clearMajor(): void {
+  clearMajor(): void {
     this.major.setValue('');
   }
-clearMinor(): void {
+  clearMinor(): void {
     this.minor.setValue('');
   }
 
-clearSport(): void {
+  clearSport(): void {
     this.sport.setValue('');
   }
-clearClub(): void {
+  clearClub(): void {
     this.club.setValue('');
   }
 
-clearName(): void {
+  clearName(): void {
     this.name.setValue('');
   }
 
   clearEmail(): void {
     this.email.setValue('');
   }
-clearProfilePic(): void {
+  clearProfilePic(): void {
     this.profilePic.setValue('');
     document.getElementById('ProfilePic').removeAttribute('src');
   }
-clearPic1(): void {
-  this.snapShot1.setValue('');
-  document.getElementById('firstP').removeAttribute('src');
-}
-clearPic2(): void {
-  this.snapShot2.setValue('');
-  document.getElementById('secondP').removeAttribute('src');
-}
-clearPic3(): void {
-  this.snapShot3.setValue('');
-  document.getElementById('thirdP').removeAttribute('src');
-}
+  clearPic1(): void {
+    this.snapShot1.setValue('');
+    document.getElementById('firstP').removeAttribute('src');
+  }
+  clearPic2(): void {
+    this.snapShot2.setValue('');
+    document.getElementById('secondP').removeAttribute('src');
+  }
+  clearPic3(): void {
+    this.snapShot3.setValue('');
+    document.getElementById('thirdP').removeAttribute('src');
+  }
   changeTab(): void {
     this.selectedIndex = this.selectedIndex === 0 ? 1 : 0;
   }
@@ -356,7 +358,7 @@ clearPic3(): void {
 
 
 
-onSubmitPartOne(): void {
+  onSubmitPartOne(): void {
     // TODO: wire up to login request
     console.log(this.requiredForm.value);
   }
@@ -373,8 +375,8 @@ onSubmitPartOne(): void {
     console.log(this.signupForm.value);
   }
 
-ngOnInit(): void {}
- // Image Preview
+  ngOnInit(): void { }
+  // Image Preview
 
 
 }
@@ -384,4 +386,4 @@ ngOnInit(): void {}
   templateUrl: './terms-popup.component.html',
   styleUrls: ['./terms-popup.component.scss'],
 })
-export class TermsPopUpComponent {}
+export class TermsPopUpComponent { }
