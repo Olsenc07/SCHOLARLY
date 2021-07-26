@@ -1,15 +1,15 @@
 <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
   <mat-tab-group mat-align-tabs="center">
-    <mat-tab label="Your Display">
+    <mat-tab label="Display">
       <div class="entire-page">
-        <div class="rowT">
+        <!-- <div class="rowT">
           <button mat-icon-button class="display1" routerLink="/profile">
             <span class="material-icons">
               arrow_back_ios
             </span>
           </button>
 
-        </div>
+        </div> -->
 
         <!-- lower box -->
         <div class="middle">
@@ -17,19 +17,21 @@
           <!-- input pic & has this default pic before-->
           <!-- Upload one profile pic -->
           <div class="personalizeLarge">
-            <div class="pics">
-              <!-- Profile Pic is currently filled with pic being used rn -->
-              <div class="space">
-                <h2 class="text">Change Profile Picture</h2> <input #fileInputs class="upload" accept="image/* video/*"
-                  type="file" (change)="onImgChange($event)" [formControl]="profilePic">
+            <div class="centerR">
+              <div class="pics">
+                <!-- Profile Pic is currently filled with pic being used rn -->
+                <div class="space">
+                  <h2 class="text">Change Profile Picture</h2> <input #fileInputs class="upload"
+                    accept="image/* video/*" type="file" (change)="onImgChange($event)" [formControl]="profilePic">
+                </div>
+                <div class="cropper">
+                  <image-cropper [imageChangedEvent]="imgChangeEvt" [maintainAspectRatio]="true" [aspectRatio]=" 7 / 7"
+                    [resizeToWidth]="170" format="png" (imageCropped)="cropImg($event)" (imageLoaded)="imgLoad()"
+                    (cropperReady)="initCropper()" (loadImageFailed)="imgFailed()">
+                  </image-cropper>
+                </div>
+                <div class="snapShot"><button mat-stroked-button (click)="clearProfilePic()">Clear File</button></div>
               </div>
-              <div class="cropper">
-                <image-cropper [imageChangedEvent]="imgChangeEvt" [maintainAspectRatio]="true" [aspectRatio]=" 7 / 7"
-                  [resizeToWidth]="170" format="png" (imageCropped)="cropImg($event)" (imageLoaded)="imgLoad()"
-                  (cropperReady)="initCropper()" (loadImageFailed)="imgFailed()">
-                </image-cropper>
-              </div>
-              <div class="snapShot"><button mat-stroked-button (click)="clearProfilePic()">Clear File</button></div>
             </div>
             <div class="rowP">
               <!-- <i class="fas fa-camera _icon2"></i>
@@ -40,9 +42,11 @@
 
             </div>
             <div class="PreviewPic">
-              <h2 class="Preview">Image Preview</h2>
-              <img class="previewPic" id="ProfilePic" [src]="cropImgPreview" />
+              <div class="center">
+                <h2 class="Preview">Image Preview</h2>
 
+                <img class="previewPic" id="ProfilePic" [src]="cropImgPreview" />
+              </div>
             </div>
 
           </div>
@@ -68,14 +72,13 @@
           <!-- Bio -->
           <div class="input">
             <div class="display">
-              <mat-form-field><input matInput [(ngModel)]="Bio" placeholder="Bio " [formControl]="bio" class="bio"
-                  maxlength="100">
+              <mat-form-field><input matInput [(formControl)]="bio" placeholder="Bio " class="bio" maxlength="100">
                 <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearBio()">
                   <mat-icon class="asthetic-adds">close</mat-icon>
                 </button>
 
               </mat-form-field>
-              <div matBadge="{{ 100 - Bio.length }}">
+              <div matBadge="{{ 100 - (bioLength | async)}}">
 
               </div>
             </div>
@@ -211,13 +214,16 @@
         </div>
       </div>
     </mat-tab>
-    <mat-tab label="Your Activities">
+    <mat-tab label="Activities">
       <div class="entire-page">
 
 
         <div class="groups-jj">
           <div class="row">
             <div class="words">
+              <!-- button scrolls through posts and then user can delete what they wish -->
+              <button mat-icon-button><i class="fas fa-arrow-circle-left title1"></i>
+              </button>
               <div class="column1">Groups Joined</div>
               <button mat-icon-button><i class="fas fa-arrow-circle-right title1"></i>
               </button>
@@ -228,18 +234,33 @@
         <!-- Recent Posts box-->
         <div class="work">
           <div class="groups-j">
+            <div class="row">
+              <div class="words">
+                <button mat-icon-button><i class="fas fa-arrow-circle-left title1"></i>
+                </button>
+                <div class="column1">Posts</div>
+                <!-- button scrolls through posts and then user can delete what they wish -->
+                <button mat-icon-button><i class="fas fa-arrow-circle-right title1"></i>
+                </button>
+              </div>
+            </div>
             <app-card class="fit"></app-card>
           </div>
         </div>
 
         <!-- Image Preview -->
         <div class="column">
-          <h2 class="snapShot">Add A SnapShot</h2>
-          <div class="snapShot"><input type="file" [formControl]="snapShot" accept="image/* video/*"
-              (change)="imagePreview($event)" /></div>
+          <h2 class="snapshot">Add A SnapShot</h2>
+          <div class="snapshot">
+            <input type="file" class="snapshot" [formControl]="snapShot" accept="image/* video/*"
+              (change)="imagePreview($event)">
+          </div>
+          <div class="imageBox">
+            <img [src]="url" id="firstP" class="imagePreview">
+          </div>
 
-          <div class="snapShot"><img [src]="url" id="firstP" class="imagePreview"></div>
-          <div class="snapShot"><button mat-stroked-button (click)="clearPic1()">Clear File</button></div>
+
+          <div class="snapshotClear"><button mat-stroked-button (click)="clearPic1()">Clear File</button></div>
         </div>
 
 
@@ -255,7 +276,7 @@
                     {{code}}
                     <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
                   </mat-chip>
-                  <input placeholder="Choose completed courses" #codeInputP [formControl]="CodeCompleted"
+                  <input placeholder="Choose completed courses" #codeInput [formControl]="CodeCompleted"
                     [matAutocomplete]="auto" [matChipInputFor]="chipList"
                     [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="add($event)">
                 </mat-chip-list>

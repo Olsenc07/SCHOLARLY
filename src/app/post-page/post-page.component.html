@@ -14,12 +14,12 @@
         <div class="row">
           <mat-form-field class="text-input">
             <mat-label>Title of Post</mat-label>
-            <input matInput maxlength="35" [formControl]="postTitle">
+            <input matInput maxlength="35" [formControl]="Title">
             <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearTitle()">
               <mat-icon class="clear-button">close</mat-icon>
             </button>
           </mat-form-field>
-          <div class="column" matBadge="{{ 35 - Title.length }}">
+          <div class="column" matBadge="{{ 35 - (TitleLength | async) }}">
           </div>
         </div>
         <!-- Description of Post -->

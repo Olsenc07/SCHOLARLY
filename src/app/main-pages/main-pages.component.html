@@ -7,8 +7,8 @@
       <!-- middle ish -->
       <div class="middle">
         <!-- Specifics text {{}} after : -->
-        <p class="text" style="font-size: large;">Similar search options:
-          {{ specificOptions }} </p>
+        <div class="text" style="font-size: large;">Similar Searches
+          {{ specificOptions }} </div>
 
 
 
@@ -24,26 +24,7 @@ on which main category page your on-->
       </div>
 
     </div>
-    <!-- Extra Search Mobile -->
-    <div class="middle-large-mobile">
-      <mat-drawer-container>
-        <mat-drawer #drawer mode="side">
-          <div class="middle">
-            <!-- Specifics text {{}} after : -->
-            <p class="text" style="font-size: large;"> </p>
 
-
-            <!-- Specifics box which gets filled depending
-on which main category page your on-->
-            <div class="specifics-input">
-              <div class="specifics-fill">
-
-              </div>
-            </div>
-          </div>
-        </mat-drawer>
-      </mat-drawer-container>
-    </div>
     <!-- Right wall -->
     <div class="right-wall">
 
@@ -54,11 +35,7 @@ on which main category page your on-->
           {{ specific }}
 
         </div>
-        <div class="hide ">
-          <button type="button" mat-icon-button class="expandBtn" (click)="drawer.toggle()">
-            <div class="fas fa-angle-double-right"></div>
-          </button>
-        </div>
+
         {{ category }}
       </div>
 

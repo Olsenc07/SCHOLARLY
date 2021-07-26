@@ -20,7 +20,7 @@ import {
 } from '@angular/material/autocomplete';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ClassListService } from '../services/class.service';
 import { Profile, StoreService } from '../services/store.service';
@@ -78,6 +78,7 @@ export class EditProfileComponent implements OnInit {
   sport: FormControl = new FormControl('');
   club: FormControl = new FormControl('');
   bio: FormControl = new FormControl('');
+  public bioLength = new BehaviorSubject(0);
   name: FormControl = new FormControl('');
   pronouns: FormControl = new FormControl('');
   snapShot: FormControl = new FormControl('');
@@ -86,8 +87,8 @@ export class EditProfileComponent implements OnInit {
   relationship: FormControl = new FormControl('');
   genderChoice: FormControl = new FormControl('');
   date: FormControl = new FormControl(moment());
-  CodeCompleted: FormControl = new FormControl([]);
-  CodePursuing: FormControl = new FormControl([]);
+  CodeCompleted: FormControl = new FormControl('');
+  CodePursuing: FormControl = new FormControl('');
 
   editForm = new FormGroup({
     major: this.major,
@@ -105,6 +106,7 @@ export class EditProfileComponent implements OnInit {
     CodeCompleted: this.CodeCompleted,
     CodePursuing: this.CodePursuing,
     bio: this.bio,
+
   });
   selectedIndex = 0;
   genders: Gender[] = [
@@ -120,14 +122,16 @@ export class EditProfileComponent implements OnInit {
     private http: HttpClient,
     private storeService: StoreService
   ) {
+    this.bio.valueChanges.subscribe((v) => this.bioLength.next(v.length));
+
     this.filteredCodes = this.CodeCompleted.valueChanges.pipe(
       map((code: string | null) =>
         code ? this._filter(code) : this.classListService.allClasses().slice()
       )
     );
     this.filteredCodesP = this.CodePursuing.valueChanges.pipe(
-      map((code: string | null) =>
-        code ? this._filter(code) : this.classListService.allClasses().slice()
+      map((codeP: string | null) =>
+        codeP ? this._filter(codeP) : this.classListService.allClasses().slice()
       )
     );
   }
@@ -207,16 +211,17 @@ export class EditProfileComponent implements OnInit {
       this.classesP.splice(indexP, 1);
     }
   }
+  // Completed Classes
   selected(event: MatAutocompleteSelectedEvent): void {
     this.classes.push(event.option.viewValue);
     this.codeInput.nativeElement.value = '';
-    this.CodeCompleted.setValue(null);
+    this.CodeCompleted.setValue('');
   }
   // Pursuing Classes
   selectedP(event: MatAutocompleteSelectedEvent): void {
     this.classesP.push(event.option.viewValue);
     this.codeInputP.nativeElement.value = '';
-    this.CodePursuing.setValue(null);
+    this.CodePursuing.setValue('');
   }
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();

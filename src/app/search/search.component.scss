@@ -30,7 +30,9 @@
   justify-content: center;
   flex-direction: column;}
  
-
+.display{
+  display: contents;
+}
 .main-layout {
   display: flex;
   flex-direction: row;
