@@ -30,10 +30,11 @@
             </mat-form-field>
           </div>
           <!-- Upload pic/video -->
-          <div class="column">
+          <div class="column_">
+            <h2 class="center">Upload Post</h2>
             <div class="rowP"> <input #fileInput class="uploadD" accept="image/* video/*" type="file"
                 (change)="imagePreview($event)" (click)="this.value=null" [formControl]="postUpload" multiple></div>
-            <div class="rowP"> <img [src]="url" id="upload" class="imagePreview"> </div>
+            <img [src]="url" id="upload" class="imagePreview">
             <div class="rowP clear"><button mat-flat-button color="primary" (click)="clearUpload()">Clear
                 Upload</button></div>
           </div>
