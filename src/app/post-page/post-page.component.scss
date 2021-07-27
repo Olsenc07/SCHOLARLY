@@ -110,6 +110,9 @@
   flex-direction: column;
   font-size: x-large;
 }
+.contents{
+  display: contents;
+}
 .column {
   display: flex;
   flex-direction: column;
@@ -213,9 +216,6 @@
   margin-right: 5%;
   margin-left: 5%;
 }
-
-
-
 @media(min-width:1024px){
 .left_1 {
   display: flex;
@@ -233,7 +233,9 @@
 .imagePreview {
   display: flex;
   height: fit-content;
- margin: 0% 25%;
+  padding: 0% 25%;
+  box-sizing: border-box;
+  width: 100%;
 }}
 @media(max-width:500px){
   .imagePreview {

@@ -34,7 +34,7 @@
             <h2 class="center">Upload Post</h2>
             <div class="rowP"> <input #fileInput class="uploadD" accept="image/* video/*" type="file"
                 (change)="imagePreview($event)" (click)="this.value=null" [formControl]="postUpload" multiple></div>
-            <img [src]="url" id="upload" class="imagePreview">
+            <div class="contents"> <img [src]="url" id="upload" class="imagePreview"></div>
             <div class="rowP clear"><button mat-flat-button color="primary" (click)="clearUpload()">Clear
                 Upload</button></div>
           </div>
