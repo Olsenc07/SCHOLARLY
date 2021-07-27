@@ -3,14 +3,10 @@ import { ReplaySubject } from 'rxjs';
 
 export interface Profile {
   // TODO: other profile fields
-
-
   // No connection to their subjects
   CodePursuing: string[];
   CodeCompleted: string[];
-
   name: string;
-
 }
 
 @Injectable({
@@ -20,13 +16,11 @@ export class StoreService {
   profile$$: ReplaySubject<Profile> = new ReplaySubject<Profile>(1);
   static profile$$: string[];
 
-  name$$: ReplaySubject<Profile> = new ReplaySubject<Profile>(1);
-  static name$$: string;
+
   constructor() { }
 
   setProfile(profile: Profile): void {
     this.profile$$.next(profile);
-    this.name$$.next(profile);
   }
 
 
