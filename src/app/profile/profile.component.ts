@@ -14,6 +14,8 @@ export class ProfileComponent {
 
   profile$$ = StoreService.profile$$
 
+  name$$ = StoreService.name$$
+
 
 
   showFiller = false;

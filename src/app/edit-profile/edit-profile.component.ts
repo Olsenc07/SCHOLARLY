@@ -83,7 +83,6 @@ export class EditProfileComponent implements OnInit {
   snapShot: FormControl = new FormControl('');
   accountType: FormControl = new FormControl('');
   birthday: FormControl = new FormControl('');
-  relationship: FormControl = new FormControl('');
   genderChoice: FormControl = new FormControl('');
   date: FormControl = new FormControl(moment());
   CodeCompleted: FormControl = new FormControl('');
@@ -97,7 +96,6 @@ export class EditProfileComponent implements OnInit {
     name: this.name,
     price: this.pronouns,
     birthday: this.birthday,
-    relationship: this.relationship,
     genderChoice: this.genderChoice,
     date: this.date,
     accountType: this.accountType,
@@ -109,10 +107,11 @@ export class EditProfileComponent implements OnInit {
   });
   selectedIndex = 0;
   genders: Gender[] = [
+    { name: '' },
     { name: 'Female' },
     { name: 'Male' },
     { name: 'Other' },
-    { name: 'Perfer Not To Answer' },
+
   ];
 
   constructor(
@@ -268,6 +267,7 @@ export class EditProfileComponent implements OnInit {
     let profile: Profile = {
       CodePursuing: this.CodePursuing.value,
       CodeCompleted: this.CodeCompleted.value,
+      name: this.name.value,
     };
 
     // TODO: replace null with Profile object
