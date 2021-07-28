@@ -24,7 +24,12 @@ export class ProfileComponent {
   showFiller = false;
   // TODO: initial following value would need to be loaded from database - for now, always start with false
   following = false;
-  constructor(private bottomSheet: MatBottomSheet) { }
+  constructor(private bottomSheet: MatBottomSheet) {
+    // profile$$.profile$$.subscribe((profile) => {
+    //   // this.profile$$ = profile;
+    //   // return name;
+    // })
+  }
 
   openBottomSheet(): void {
     this.bottomSheet.open(BottomSheetComponent);

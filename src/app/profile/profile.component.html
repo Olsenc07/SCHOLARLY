@@ -7,38 +7,39 @@
 
     <!-- gender input text, relationship status input text -->
     <div class="center">
-      <h2 class="hide-input"> {{ profile$$ | async }}Olsen07</h2>
+      <h2 class="hide-input"> {{ profile$$ | async }}
+        Olsen07</h2>
       <div class="row">
         <div class="hide-input">Male</div>
       </div>
-      <mat-divider class="margin"></mat-divider>
-    </div>
 
+    </div>
+    <mat-divider class="margin"></mat-divider>
     <!-- Major/Minor -->
     <div class="major-minor">
       <div class="centerR"> Major</div>
       <div class="centerR">Minor</div>
-      <mat-divider class="margin"></mat-divider>
+
     </div>
+    <mat-divider class="margin"></mat-divider>
     <!-- Sport/Club -->
     <div class="major-minor">
       <div class="centerR"> Sport</div>
       <div class="centerR">Club</div>
-      <mat-divider class="margin"></mat-divider>
-    </div>
 
+    </div>
+    <mat-divider class="margin"></mat-divider>
     <div class="major-minor">
       <h3 class="centerR">
         Followers
         <!-- tracks value of followers -->
       </h3>
-    </div>
-    <div class="major-minor">
       <h3 class="centerR">
         Following
         <!-- tracks value of following -->
       </h3>
     </div>
+
     <div class="messageM">
       <button class="spaceMF" (click)="followClicked()">
         <div class="centerM">

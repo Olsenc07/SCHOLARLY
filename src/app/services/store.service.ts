@@ -9,13 +9,14 @@ export interface Profile {
   name: string;
 }
 
+
+
 @Injectable({
   providedIn: 'root',
 })
 export class StoreService {
   profile$$: ReplaySubject<Profile> = new ReplaySubject<Profile>(1);
   static profile$$: string[];
-
 
   constructor() { }
 
