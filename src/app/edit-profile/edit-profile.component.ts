@@ -259,6 +259,30 @@ export class EditProfileComponent implements OnInit {
     this.snapShot.setValue('');
     document.getElementById('firstP').removeAttribute('src');
   }
+  previousGroupCard(): void {
+    // go back one card
+  }
+
+  nextGroupCard(): void {
+    // go forward one card
+  }
+
+  leaveGroup(): void {
+    // leave the group that is being displayed
+  }
+
+  previousPostCard(): void {
+    // go back one post
+  }
+
+  nextPostCard(): void {
+    // go forward one post
+  }
+
+  deletePost(): void {
+    // delete post thats being displayed
+  }
+
 
   onSubmit(): void {
     console.log(this.editForm.value);

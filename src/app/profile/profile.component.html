@@ -41,14 +41,14 @@
     </div>
     <div class="messageM">
       <button class="spaceMF" (click)="followClicked()">
-        <h2 class="centerM">
+        <div class="centerM">
           {{ following ? "Unfollow" : "Follow" }}
-        </h2>
+        </div>
         <!-- Switches to Unfollow btn option  -->
       </button>
       <!-- [formControl]="messageRequest" but causes a delay in loading -->
       <button class="spaceMM" routerLink="/groups">
-        <h2 class="centerM">Message</h2>
+        <div class="centerM">Message</div>
       </button>
     </div>
     <!-- <div class="conversations" *ngIf="id != id">
