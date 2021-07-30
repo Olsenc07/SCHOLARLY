@@ -37,8 +37,13 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  justify-content: space-between;
+    height: 100%;
 }
-
+.center_{
+  display: flex;
+  justify-content: center;
+}
 .centerR {
   display: flex;
   justify-content: center;
@@ -130,8 +135,9 @@
   justify-content: center;
   display: flex;
   margin: 1% 0% 2% 0%;
-  width: 100%;
+  flex-direction: column;
   border: hidden;
+ 
   background-color: rgb(235, 235, 245);
 }
 @media (max-width: 1024px) {
@@ -172,8 +178,6 @@
   height: 100%;
   box-sizing: border-box;
 }
-
-
 .left-side {
   display: flex;
   flex-direction: column;
@@ -181,7 +185,6 @@
   width: 35%;
   box-sizing: border-box;
   height: 79vh;
-  justify-content: space-between;
   position: relative;
 }
 mat-grid-list{

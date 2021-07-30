@@ -7,50 +7,66 @@
 
     <!-- gender input text, relationship status input text -->
     <div class="center">
-      <h2 class="hide-input"> {{ profile$$ | async }}
-        Olsen07</h2>
-      <div class="row">
-        <div class="hide-input">Male</div>
+      <h2 class="hide-input">
+        <div class="center_">
+          {{ profile$$ | async }}
+          Olsen07
+        </div>
+        <div class="center_">
+          <button mat-icon-button routerLink="/groups">
+            <span class="material-icons">
+              chat
+            </span>
+          </button>
+        </div>
+        <div class="center_">
+          <!-- {{gender$$ | async}} -->
+          Male
+        </div>
+
+      </h2>
+
+
+
+
+
+      <mat-divider class="margin"></mat-divider>
+      <!-- Major/Minor -->
+      <div class="major-minor">
+        <div class="centerR"> Major</div>
+        <div class="centerR">Minor</div>
+
+      </div>
+      <mat-divider class="margin"></mat-divider>
+      <!-- Sport/Club -->
+      <div class="major-minor">
+        <div class="centerR"> Sport</div>
+        <div class="centerR">Club</div>
+
+      </div>
+      <mat-divider class="margin"></mat-divider>
+      <div class="major-minor">
+        <h3 class="centerR">
+          Followers
+          <!-- tracks value of followers -->
+        </h3>
+        <h3 class="centerR">
+          Following
+          <!-- tracks value of following -->
+        </h3>
       </div>
 
-    </div>
-    <mat-divider class="margin"></mat-divider>
-    <!-- Major/Minor -->
-    <div class="major-minor">
-      <div class="centerR"> Major</div>
-      <div class="centerR">Minor</div>
+      <div class="messageM">
+        <button class="spaceMF" (click)="followClicked()">
+          <div class="centerM">
+            {{ following ? "Unfollow" : "Follow" }}
+          </div>
+          <!-- Switches to Unfollow btn option  -->
+        </button>
 
-    </div>
-    <mat-divider class="margin"></mat-divider>
-    <!-- Sport/Club -->
-    <div class="major-minor">
-      <div class="centerR"> Sport</div>
-      <div class="centerR">Club</div>
 
-    </div>
-    <mat-divider class="margin"></mat-divider>
-    <div class="major-minor">
-      <h3 class="centerR">
-        Followers
-        <!-- tracks value of followers -->
-      </h3>
-      <h3 class="centerR">
-        Following
-        <!-- tracks value of following -->
-      </h3>
-    </div>
 
-    <div class="messageM">
-      <button class="spaceMF" (click)="followClicked()">
-        <div class="centerM">
-          {{ following ? "Unfollow" : "Follow" }}
-        </div>
-        <!-- Switches to Unfollow btn option  -->
-      </button>
-      <!-- [formControl]="messageRequest" but causes a delay in loading -->
-      <button class="spaceMM" routerLink="/groups">
-        <div class="centerM">Message</div>
-      </button>
+      </div>
     </div>
     <!-- <div class="conversations" *ngIf="id != id">
       <button mat-raised-button (click)="openBottomSheet()" class="convo-text">
