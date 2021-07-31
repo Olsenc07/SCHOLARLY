@@ -80,11 +80,11 @@ export class EditProfileComponent implements OnInit {
   public bioLength = new BehaviorSubject(0);
   name: FormControl = new FormControl('');
   pronouns: FormControl = new FormControl('');
-  snapShot: FormControl = new FormControl('');
+  showCase: FormControl = new FormControl('');
   accountType: FormControl = new FormControl('');
   birthday: FormControl = new FormControl('');
   genderChoice: FormControl = new FormControl('');
-  date: FormControl = new FormControl(moment());
+
   CodeCompleted: FormControl = new FormControl('');
   CodePursuing: FormControl = new FormControl('');
 
@@ -94,15 +94,15 @@ export class EditProfileComponent implements OnInit {
     sport: this.sport,
     club: this.club,
     name: this.name,
-    price: this.pronouns,
-    birthday: this.birthday,
+    pronouns: this.pronouns,
     genderChoice: this.genderChoice,
-    date: this.date,
+    birthday: this.birthday,
     accountType: this.accountType,
     profilePic: this.profilePic,
     CodeCompleted: this.CodeCompleted,
     CodePursuing: this.CodePursuing,
     bio: this.bio,
+    showCase: this.showCase,
 
   });
   selectedIndex = 0;
@@ -256,7 +256,7 @@ export class EditProfileComponent implements OnInit {
   }
 
   clearPic1(): void {
-    this.snapShot.setValue('');
+    this.showCase.setValue('');
     document.getElementById('firstP').removeAttribute('src');
   }
   previousGroupCard(): void {

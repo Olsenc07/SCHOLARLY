@@ -7,24 +7,26 @@
 
     <!-- gender input text, relationship status input text -->
     <div class="center">
-      <h2 class="hide-input">
-        <div class="center_">
-          {{ profile$$ | async }}
-          Olsen07
+      <div class="hide-input">
+        <div class="uNameMsg">
+          <div class="centerR">
+            {{ profile$$ | async }}
+            Olsen07
+          </div>
+          <div>
+            <button mat-icon-button routerLink="/groups" style="color: blue;">
+              <span class="material-icons">
+                chat
+              </span>
+            </button>
+          </div>
         </div>
-        <div class="center_">
-          <button mat-icon-button routerLink="/groups">
-            <span class="material-icons">
-              chat
-            </span>
-          </button>
-        </div>
-        <div class="center_">
+        <div class="centerR">
           <!-- {{gender$$ | async}} -->
           Male
         </div>
 
-      </h2>
+      </div>
 
 
 
@@ -46,14 +48,14 @@
       </div>
       <mat-divider class="margin"></mat-divider>
       <div class="major-minor">
-        <h3 class="centerR">
+        <div class="centerR">
           Followers
           <!-- tracks value of followers -->
-        </h3>
-        <h3 class="centerR">
+        </div>
+        <div class="centerR">
           Following
           <!-- tracks value of following -->
-        </h3>
+        </div>
       </div>
 
       <div class="messageM">

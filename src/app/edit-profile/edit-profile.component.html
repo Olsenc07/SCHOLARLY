@@ -141,7 +141,7 @@
             <!-- Birthday picker -->
             <mat-form-field appearance="fill">
               <mat-label>Birthday</mat-label>
-              <input matInput [matDatepicker]="dp" [formControl]="date">
+              <input matInput [matDatepicker]="dp" [formControl]="birthday">
               <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
               <mat-datepicker #dp></mat-datepicker>
             </mat-form-field>
@@ -265,9 +265,9 @@
 
         <!-- Image Preview -->
         <div class="column">
-          <h2 class="snapshot">Add A SnapShot</h2>
+          <h2 class="snapshot">Add A Showcase</h2>
           <div class="snapshot">
-            <input type="file" class="snapshot" [formControl]="snapShot" accept="image/* video/*"
+            <input type="file" class="snapshot" [formControl]="showCase" accept="image/* video/*"
               (change)="imagePreview($event)">
           </div>
           <div class="imageBox">
