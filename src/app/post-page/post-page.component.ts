@@ -20,13 +20,16 @@ import { map } from 'rxjs/operators';
 import { SearchListService } from '../services/search.service';
 import { BehaviorSubject, Observable } from 'rxjs';
 
-const moment = _rollupMoment || _moment;
+const moment = _moment();
+
+
+
 export const MY_FORMATS = {
   parse: {
-    dateInput: 'LL',
+    dateInput: 'DD MMMM YYYY',
   },
   display: {
-    dateInput: 'LL',
+    dateInput: 'DD MMMM YYYY',
     monthYearLabel: 'MMM YYYY',
     dateA11yLabel: 'LL',
     monthYearA11yLabel: 'MMMM YYYY',
@@ -87,7 +90,7 @@ export class PostPageComponent implements OnInit {
   time: FormControl = new FormControl('');
   value: FormControl = new FormControl('');
   postDescription: FormControl = new FormControl('');
-  date: FormControl = new FormControl(moment());
+  date: FormControl = new FormControl(moment);
   upload: FormControl = new FormControl('');
   driver: FormControl = new FormControl('');
   paymentService: FormControl = new FormControl('');
@@ -98,11 +101,7 @@ export class PostPageComponent implements OnInit {
   all: FormControl = new FormControl('');
   search: FormControl = new FormControl('');
 
-  firstFormGroup = new FormGroup({
-    date: this.date,
-    time: this.time,
-    locationEvent: this.locationEvent,
-  });
+  firstFormGroup: FormGroup;
   secondFormGroup = new FormGroup({
     male: this.male,
     female: this.female,
@@ -121,7 +120,7 @@ export class PostPageComponent implements OnInit {
     Title: this.Title,
     postDescription: this.postDescription,
     postUpload: this.postUpload,
-    firstFormGroup: this.firstFormGroup,
+    // firstFormGroup :this.firstFormGroup,
     secondFormGroup: this.secondFormGroup,
     thirdFormGroup: this.thirdFormGroup,
     fourthFormGroup: this.fourthFormGroup,
@@ -161,14 +160,14 @@ export class PostPageComponent implements OnInit {
     this.searchOptions = this.searchListService.getSearchOptions();
 
     this.firstFormGroup = this.FORMBuilder.group({
-      date: [''],
-      time: [''],
-      locationEvent: ['']
+      date: '',
+      time: '',
+      locationEvent: '',
     });
     this.secondFormGroup = this.FORMBuilder.group({
-      female: false,
-      all: [''],
-      male: [''],
+      female: Boolean,
+      all: Boolean,
+      male: Boolean,
     });
     this.thirdFormGroup = this.FORMBuilder.group({
       driver: [''],
@@ -234,7 +233,7 @@ export class PostPageComponent implements OnInit {
     console.log(this.thirdFormGroup.value);
     console.log(this.fourthFormGroup.value);
     console.log(this.postForm.value);
-  }
+  };
 
 
   changeTab(): void {

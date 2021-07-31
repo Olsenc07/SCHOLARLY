@@ -69,6 +69,11 @@ import { ReusableCardConvoComponent } from './reusable-card-convo/reusable-card-
 import { GroupMembersComponent } from './group-members/group-members.component';
 import { TaggedComponent } from './main-pages/main-pages.component';
 import { SearchListService } from './services/search.service';
+import { PostService } from './services/post.service';
+import { ClassListService } from './services/class.service';
+import { StoreService } from './services/store.service';
+
+
 
 @NgModule({
   declarations: [
@@ -138,7 +143,7 @@ import { SearchListService } from './services/search.service';
     MatSnackBarModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [SearchListService],
+  providers: [SearchListService, PostService, ClassListService, StoreService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

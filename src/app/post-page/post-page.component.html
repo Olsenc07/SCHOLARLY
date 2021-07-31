@@ -133,14 +133,18 @@
               <mat-datepicker #D></mat-datepicker>
             </mat-form-field>
             <!-- Time -->
-            <div class="ngx-timepicker-field-example">
-              <ngx-timepicker-field [defaultTime]="'12:00 am'">
-                <input matInput formControlName="time">
-              </ngx-timepicker-field>
+            <div class="default-time-example">
+              <mat-form-field appearance="fill">
+                <mat-label>Time:</mat-label>
+                <input matInput formControlName="time" [ngxTimepicker]="toggleTimepicker">
+                <ngx-material-timepicker-toggle matSuffix [for]="toggleTimepicker"></ngx-material-timepicker-toggle>
+                <ngx-material-timepicker #toggleTimepicker>
+                </ngx-material-timepicker>
+              </mat-form-field>
             </div>
 
             <mat-form-field appearance="fill">
-              <mat-label>Location</mat-label>
+              <mat-label>Location:</mat-label>
               <input matInput formControlName="locationEvent">
 
             </mat-form-field>
@@ -240,7 +244,7 @@
           <ng-template matStepLabel>Time To Post</ng-template>
           <div class="row_">
             <button mat-button matStepperPrevious>Back</button>
-            <button mat-raised-button color="primary" class="text" (ngSubmit)="onFormSubmit()">Post
+            <button mat-raised-button color="primary" class="text" (click)="onFormSubmit()">Post
               <span class="material-icons"> arrow_forward </span>
             </button>
           </div>

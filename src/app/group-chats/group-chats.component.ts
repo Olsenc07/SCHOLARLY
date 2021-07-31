@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { GroupMembersComponent } from '../group-members/group-members.component';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-group-chats',
@@ -11,6 +12,9 @@ import { GroupMembersComponent } from '../group-members/group-members.component'
 export class GroupChatsComponent implements OnInit {
   faCoffee = faCoffee;
   MatBadgeModule;
+
+  // filters members, not entirely neeeded...
+  search: FormControl = new FormControl('');
 
   constructor(private _bottomSheet: MatBottomSheet) { }
 
