@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators, Form } from '@angular/forms';
 
 import {
   MomentDateAdapter,
@@ -35,14 +35,12 @@ export const MY_FORMATS = {
 };
 
 export interface firstFormGroup {
-  // date: string;
+  date: string;
   time: string;
   locationEvent: string;
 };
 
-export interface secondFormGroup {
 
-}
 
 
 interface SearchOption {
@@ -70,11 +68,6 @@ export class PostPageComponent implements OnInit {
   public specificOptions: string[];
   public searchOptions: SearchOption[];
 
-
-
-  female: boolean;
-
-
   url: string;
 
   selectedIndex = 0;
@@ -98,37 +91,38 @@ export class PostPageComponent implements OnInit {
   isLinear = false;
   Title: FormControl = new FormControl('');
   public TitleLength = new BehaviorSubject(0);
-  postUpload: FormControl = new FormControl('');
+  upload: FormControl = new FormControl('');
   postLocation: FormControl = new FormControl('');
   locationEvent: FormControl = new FormControl('');
   time: FormControl = new FormControl('');
   value: FormControl = new FormControl('');
   postDescription: FormControl = new FormControl('');
-  // date: FormControl = new FormControl(moment);
-  upload: FormControl = new FormControl('');
   driver: FormControl = new FormControl('');
   paymentService: FormControl = new FormControl('');
   formalEvent: FormControl = new FormControl('');
   relaxedEvent: FormControl = new FormControl('');
   search: FormControl = new FormControl('');
 
+
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
   fourthFormGroup: FormGroup;
+  locationFormGroup: FormGroup;
+
+
 
   postForm = new FormGroup({
     // Desktop
     Title: this.Title,
     postDescription: this.postDescription,
-    postUpload: this.postUpload,
+    upload: this.upload,
     // firstFormGroup :this.firstFormGroup,
     // secondFormGroup: this.secondFormGroup,
     // thirdFormGroup: this.thirdFormGroup,
     // fourthFormGroup: this.fourthFormGroup,
     postLocation: this.postLocation,
     friendCtrl: this.friendCtrl,
-    upload: this.upload,
   });
   constructor(public dialog: MatDialog, public searchListService: SearchListService, private fb: FormBuilder) {
     this.Title.valueChanges.subscribe((v) => this.TitleLength.next(v.length));
@@ -138,17 +132,33 @@ export class PostPageComponent implements OnInit {
 
 
 
+    this.locationFormGroup = this.fb.group({
+      postLocation: new FormControl(''),
+    });
+
+    this.firstFormGroup = this.fb.group({
+      date: new FormControl(''),
+      time: new FormControl(''),
+      locationEvent: new FormControl(''),
+    });
+
+    this.secondFormGroup = this.fb.group({
+      gender: new FormControl(''),
+    });
+
+
+    this.thirdFormGroup = this.fb.group({
+      driver: new FormControl(''),
+      paymentService: new FormControl(''),
+    });
+    this.fourthFormGroup = this.fb.group({
+      event: new FormControl(''),
+    });
+
+
+
 
   }
-
-  firstFormGroup = this.fb.group({
-    date: new FormControl(''),
-    time: new FormControl(''),
-    locationEvent: new FormControl(''),
-  });
-
-
-
   openDialog(): void {
     this.dialog.open(DialogElementsComponent);
   }
@@ -172,26 +182,6 @@ export class PostPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.searchOptions = this.searchListService.getSearchOptions();
-
-
-    this.secondFormGroup = this.fb.group({
-      female: new FormControl(this.female),
-      all: new FormControl(''),
-      male: new FormControl(''),
-    });
-    this.thirdFormGroup = this.fb.group({
-      driver: [''],
-      paymentService: [''],
-    });
-    this.fourthFormGroup = this.fb.group({
-      formalEvent: [''],
-      relaxedEvent: [''],
-    });
-
-
-
-
-
 
   }
   onSearchSelection(value): void {
@@ -241,6 +231,7 @@ export class PostPageComponent implements OnInit {
 
   onFormSubmit(): void {
     // TODO: wire up to post request
+    console.log(this.locationFormGroup.value)
     console.log(this.firstFormGroup.value);
     console.log(this.secondFormGroup.value);
     console.log(this.thirdFormGroup.value);

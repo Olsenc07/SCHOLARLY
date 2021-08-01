@@ -1,4 +1,4 @@
-<form [formGroup]="postForm" class="entire-page">
+<form [formGroup]="postForm" class="entire-page" (ngSubmit)="onFormSubmit()">
 
   <div class="largest-page">
     <!-- LEFT DESKTOP VIEW -->
@@ -33,7 +33,7 @@
           <div class="column_">
             <h2 class="center">Upload Post</h2>
             <div class="rowP"> <input #fileInput class="uploadD" accept="image/* video/*" type="file"
-                (change)="imagePreview($event)" (click)="this.value=null" [formControl]="postUpload" multiple></div>
+                (change)="imagePreview($event)" (click)="this.value=null" [formControl]="upload" multiple></div>
             <div class="contents"> <img [src]="url" id="upload" class="imagePreview"></div>
             <div class="rowP clear"><button mat-flat-button color="primary" (click)="clearUpload()">Clear
                 Upload</button></div>
@@ -108,9 +108,11 @@
         <div class="location-options">
           <mat-chip-list class="mat-list-text">
             <mat-chip [multiple]="false" *ngFor="let opt of specificOptions" [value]="opt">
-              <mat-radio-button>
-                {{ opt }}
-              </mat-radio-button>
+              <mat-radio-group formControlName="postLocation">
+                <mat-radio-button [value]="opt">
+                  {{ opt }}
+                </mat-radio-button>
+              </mat-radio-group>
             </mat-chip>
           </mat-chip-list>
         </div>
@@ -155,23 +157,23 @@
         </mat-step>
         <!-- Step 2 -->
         <mat-step [stepControl]="secondFormGroup">
-          <form [formGroup]="secondFormGroup" (ngSubmit)="onSubmit2()">
+          <form [formGroup]="secondFormGroup">
             <ng-template matStepLabel>Whos Welcome To Join</ng-template>
 
             <div class="trioD">
-              <mat-radio-group aria-label="Select an option" value="gWelcome">
+              <mat-radio-group aria-label="Select an option" formControlName="gender">
 
                 <div class="margin">
                   <p class="fas fa-venus" style="color: #d230b5;">Females</p>
-                  <mat-radio-button class="btn_" value="Female"></mat-radio-button>
+                  <mat-radio-button class="btn_" value="female"></mat-radio-button>
                 </div>
                 <div class="margin">
                   <p class="fas fa-transgender-alt" style="color: #26dd2f;">All</p>
-                  <mat-radio-button class="btn_" value="All"></mat-radio-button>
+                  <mat-radio-button class="btn_" value="all"></mat-radio-button>
                 </div>
                 <div class="margin">
                   <p class="fas fa-mars" style="color: #4e30d2;">Males</p>
-                  <mat-radio-button class="btn_" value="Male"></mat-radio-button>
+                  <mat-radio-button class="btn_" value="male"></mat-radio-button>
                 </div>
 
               </mat-radio-group>
@@ -213,21 +215,21 @@
           <form [formGroup]="fourthFormGroup">
             <ng-template matStepLabel>Type Of Event</ng-template>
 
-            <mat-radio-group aria-label="Select an option">
+            <mat-radio-group aria-label="Select an option" formControlName="event">
               <button mat-button (click)="openDialog()">
                 <mat-icon>info</mat-icon>
               </button>
               <div class="columnM">
                 <div class="column">
                   <p class="fas fa-user-tie" style="color: #e9c215;">Formal event</p>
-                  <mat-radio-button value="6" required>
+                  <mat-radio-button value="formal" required>
 
                   </mat-radio-button>
                 </div>
               </div>
               <div class="column">
                 <p class="fas fa-glass-cheers" style="color: gold;">Relaxed event</p>
-                <mat-radio-button value="7" required>
+                <mat-radio-button value="relaxed" required>
 
                 </mat-radio-button>
               </div>
@@ -243,7 +245,7 @@
           <ng-template matStepLabel>Time To Post</ng-template>
           <div class="row_">
             <button mat-button matStepperPrevious>Back</button>
-            <button mat-raised-button color="primary" class="text" (click)="onFormSubmit()">Post
+            <button mat-raised-button color="primary" class="text">Post
               <span class="material-icons"> arrow_forward </span>
             </button>
           </div>
