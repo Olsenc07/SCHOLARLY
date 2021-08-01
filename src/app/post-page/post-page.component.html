@@ -155,24 +155,23 @@
         </mat-step>
         <!-- Step 2 -->
         <mat-step [stepControl]="secondFormGroup">
-          <form [formGroup]="secondFormGroup">
+          <form [formGroup]="secondFormGroup" (ngSubmit)="onSubmit2()">
             <ng-template matStepLabel>Whos Welcome To Join</ng-template>
 
             <div class="trioD">
-              <mat-radio-group aria-label="Select an option">
+              <mat-radio-group aria-label="Select an option" value="gWelcome">
 
                 <div class="margin">
                   <p class="fas fa-venus" style="color: #d230b5;">Females</p>
-                  <mat-radio-button class="btn_" value="3" required></mat-radio-button>
+                  <mat-radio-button class="btn_" value="Female"></mat-radio-button>
                 </div>
                 <div class="margin">
                   <p class="fas fa-transgender-alt" style="color: #26dd2f;">All</p>
-
-                  <mat-radio-button class="btn_" value="4" required></mat-radio-button>
+                  <mat-radio-button class="btn_" value="All"></mat-radio-button>
                 </div>
                 <div class="margin">
                   <p class="fas fa-mars" style="color: #4e30d2;">Males</p>
-                  <mat-radio-button class="btn_" value="5" required></mat-radio-button>
+                  <mat-radio-button class="btn_" value="Male"></mat-radio-button>
                 </div>
 
               </mat-radio-group>

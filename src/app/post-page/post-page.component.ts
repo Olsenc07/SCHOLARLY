@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 import {
   MomentDateAdapter,
@@ -22,8 +22,6 @@ import { BehaviorSubject, Observable } from 'rxjs';
 
 const moment = _moment();
 
-
-
 export const MY_FORMATS = {
   parse: {
     dateInput: 'DD MMMM YYYY',
@@ -35,6 +33,17 @@ export const MY_FORMATS = {
     monthYearA11yLabel: 'MMMM YYYY',
   },
 };
+
+export interface firstFormGroup {
+  // date: string;
+  time: string;
+  locationEvent: string;
+};
+
+export interface secondFormGroup {
+
+}
+
 
 interface SearchOption {
   value: string;
@@ -60,6 +69,11 @@ export class PostPageComponent implements OnInit {
   public selectedOption: string;
   public specificOptions: string[];
   public searchOptions: SearchOption[];
+
+
+
+  female: boolean;
+
 
   url: string;
 
@@ -90,51 +104,51 @@ export class PostPageComponent implements OnInit {
   time: FormControl = new FormControl('');
   value: FormControl = new FormControl('');
   postDescription: FormControl = new FormControl('');
-  date: FormControl = new FormControl(moment);
+  // date: FormControl = new FormControl(moment);
   upload: FormControl = new FormControl('');
   driver: FormControl = new FormControl('');
   paymentService: FormControl = new FormControl('');
   formalEvent: FormControl = new FormControl('');
   relaxedEvent: FormControl = new FormControl('');
-  male: FormControl = new FormControl('');
-  female: FormControl = new FormControl('');
-  all: FormControl = new FormControl('');
   search: FormControl = new FormControl('');
 
   firstFormGroup: FormGroup;
-  secondFormGroup = new FormGroup({
-    male: this.male,
-    female: this.female,
-    all: this.all,
-  });
-  thirdFormGroup = new FormGroup({
-    driver: this.driver,
-    paymentService: this.paymentService,
-  });
-  fourthFormGroup = new FormGroup({
-    formalEvent: this.formalEvent,
-    relaxedEvent: this.relaxedEvent,
-  });
+  secondFormGroup: FormGroup;
+  thirdFormGroup: FormGroup;
+  fourthFormGroup: FormGroup;
+
   postForm = new FormGroup({
     // Desktop
     Title: this.Title,
     postDescription: this.postDescription,
     postUpload: this.postUpload,
     // firstFormGroup :this.firstFormGroup,
-    secondFormGroup: this.secondFormGroup,
-    thirdFormGroup: this.thirdFormGroup,
-    fourthFormGroup: this.fourthFormGroup,
+    // secondFormGroup: this.secondFormGroup,
+    // thirdFormGroup: this.thirdFormGroup,
+    // fourthFormGroup: this.fourthFormGroup,
     postLocation: this.postLocation,
     friendCtrl: this.friendCtrl,
     upload: this.upload,
   });
-  constructor(public dialog: MatDialog, public searchListService: SearchListService, private FORMBuilder: FormBuilder) {
+  constructor(public dialog: MatDialog, public searchListService: SearchListService, private fb: FormBuilder) {
     this.Title.valueChanges.subscribe((v) => this.TitleLength.next(v.length));
     // Desktop tag friends
     this.filteredFriends = this.friendCtrl.valueChanges.pipe(
       map((friend: string | null) => friend ? this._filter(friend) : this.allFriends.slice()));
 
+
+
+
   }
+
+  firstFormGroup = this.fb.group({
+    date: new FormControl(''),
+    time: new FormControl(''),
+    locationEvent: new FormControl(''),
+  });
+
+
+
   openDialog(): void {
     this.dialog.open(DialogElementsComponent);
   }
@@ -159,24 +173,23 @@ export class PostPageComponent implements OnInit {
   ngOnInit(): void {
     this.searchOptions = this.searchListService.getSearchOptions();
 
-    this.firstFormGroup = this.FORMBuilder.group({
-      date: '',
-      time: '',
-      locationEvent: '',
+
+    this.secondFormGroup = this.fb.group({
+      female: new FormControl(this.female),
+      all: new FormControl(''),
+      male: new FormControl(''),
     });
-    this.secondFormGroup = this.FORMBuilder.group({
-      female: Boolean,
-      all: Boolean,
-      male: Boolean,
-    });
-    this.thirdFormGroup = this.FORMBuilder.group({
+    this.thirdFormGroup = this.fb.group({
       driver: [''],
       paymentService: [''],
     });
-    this.fourthFormGroup = this.FORMBuilder.group({
+    this.fourthFormGroup = this.fb.group({
       formalEvent: [''],
       relaxedEvent: [''],
     });
+
+
+
 
 
 
