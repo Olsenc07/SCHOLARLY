@@ -68,9 +68,12 @@
                 {{friend}}
                 <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
               </mat-chip>
-              <input #friendInput [matAutocomplete]="auto" [matChipInputFor]="chipList"
-                [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="add($event)" matInput>
+              <input matInput #friendInput [matAutocomplete]="auto" [matChipInputFor]="chipList"
+                [formControl]="friendCtrl" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                (matChipInputTokenEnd)="add($event)">
             </mat-chip-list>
+
+            <!-- Connect to friends list -->
             <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
               <mat-option *ngFor="let friend of filteredFriends | async" [value]="friend">
                 {{friend}}
@@ -102,12 +105,9 @@
           </mat-form-field>
         </mat-selection-list>
 
-
-
-
         <div class="location-options">
           <mat-chip-list class="mat-list-text">
-            <mat-chip [multiple]="false" *ngFor="let opt of specificOptions" [value]="opt">
+            <mat-chip [multiple]="false" *ngFor="let opt of specificOptions">
               <mat-radio-group formControlName="postLocation">
                 <mat-radio-button [value]="opt">
                   {{ opt }}

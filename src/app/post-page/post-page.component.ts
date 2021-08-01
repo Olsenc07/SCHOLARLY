@@ -108,7 +108,7 @@ export class PostPageComponent implements OnInit {
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
   fourthFormGroup: FormGroup;
-  locationFormGroup: FormGroup;
+
 
 
 
@@ -130,11 +130,6 @@ export class PostPageComponent implements OnInit {
     this.filteredFriends = this.friendCtrl.valueChanges.pipe(
       map((friend: string | null) => friend ? this._filter(friend) : this.allFriends.slice()));
 
-
-
-    this.locationFormGroup = this.fb.group({
-      postLocation: new FormControl(''),
-    });
 
     this.firstFormGroup = this.fb.group({
       date: new FormControl(''),
@@ -198,7 +193,7 @@ export class PostPageComponent implements OnInit {
     // Clear the input value
     // event.chipInput!.clear();
 
-    this.friendCtrl.setValue(null);
+    this.friendCtrl.setValue('');
   }
   remove(friend: string): void {
     const index = this.friends.indexOf(friend);
@@ -210,7 +205,7 @@ export class PostPageComponent implements OnInit {
   selected(event: MatAutocompleteSelectedEvent): void {
     this.friends.push(event.option.viewValue);
     this.friendInput.nativeElement.value = '';
-    this.friendCtrl.setValue(null);
+    this.friendCtrl.setValue('');
   }
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
@@ -231,7 +226,6 @@ export class PostPageComponent implements OnInit {
 
   onFormSubmit(): void {
     // TODO: wire up to post request
-    console.log(this.locationFormGroup.value)
     console.log(this.firstFormGroup.value);
     console.log(this.secondFormGroup.value);
     console.log(this.thirdFormGroup.value);
