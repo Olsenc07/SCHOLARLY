@@ -209,6 +209,7 @@ export class EditProfileComponent implements OnInit {
       this.classesP.splice(indexP, 1);
     }
   }
+
   // Completed Classes
   selected(event: MatAutocompleteSelectedEvent): void {
     this.classes.push(event.option.viewValue);
@@ -292,6 +293,7 @@ export class EditProfileComponent implements OnInit {
       CodePursuing: this.CodePursuing.value,
       CodeCompleted: this.CodeCompleted.value,
       name: this.name.value,
+
     };
 
     // TODO: replace null with Profile object

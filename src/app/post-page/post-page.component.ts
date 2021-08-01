@@ -19,6 +19,7 @@ import { MatChipInputEvent } from '@angular/material/chips';
 import { map } from 'rxjs/operators';
 import { SearchListService } from '../services/search.service';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { Post, PostService } from '../services/post.service';
 
 const moment = _moment();
 
@@ -33,15 +34,6 @@ export const MY_FORMATS = {
     monthYearA11yLabel: 'MMMM YYYY',
   },
 };
-
-export interface firstFormGroup {
-  date: string;
-  time: string;
-  locationEvent: string;
-};
-
-
-
 
 interface SearchOption {
   value: string;
@@ -93,16 +85,10 @@ export class PostPageComponent implements OnInit {
   public TitleLength = new BehaviorSubject(0);
   upload: FormControl = new FormControl('');
   postLocation: FormControl = new FormControl('');
-  locationEvent: FormControl = new FormControl('');
-  time: FormControl = new FormControl('');
-  value: FormControl = new FormControl('');
   postDescription: FormControl = new FormControl('');
-  driver: FormControl = new FormControl('');
-  paymentService: FormControl = new FormControl('');
-  formalEvent: FormControl = new FormControl('');
-  relaxedEvent: FormControl = new FormControl('');
   search: FormControl = new FormControl('');
-
+  value: FormControl = new FormControl('');
+  date: FormControl = new FormControl('');
 
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
@@ -117,6 +103,7 @@ export class PostPageComponent implements OnInit {
     Title: this.Title,
     postDescription: this.postDescription,
     upload: this.upload,
+
     // firstFormGroup :this.firstFormGroup,
     // secondFormGroup: this.secondFormGroup,
     // thirdFormGroup: this.thirdFormGroup,
@@ -124,7 +111,7 @@ export class PostPageComponent implements OnInit {
     postLocation: this.postLocation,
     friendCtrl: this.friendCtrl,
   });
-  constructor(public dialog: MatDialog, public searchListService: SearchListService, private fb: FormBuilder) {
+  constructor(public dialog: MatDialog, public searchListService: SearchListService, private fb: FormBuilder, private postService: PostService) {
     this.Title.valueChanges.subscribe((v) => this.TitleLength.next(v.length));
     // Desktop tag friends
     this.filteredFriends = this.friendCtrl.valueChanges.pipe(
@@ -231,6 +218,23 @@ export class PostPageComponent implements OnInit {
     console.log(this.thirdFormGroup.value);
     console.log(this.fourthFormGroup.value);
     console.log(this.postForm.value);
+
+
+    let post: Post = {
+      Title: this.Title.value,
+      PostDescription: this.postDescription.value,
+      Upload: this.upload.value,
+      PostLocation: this.postLocation.value,
+      FriendCtrl: this.friendCtrl.value,
+      FirstFormGroup: this.firstFormGroup.value,
+      SecondFormGroup: this.secondFormGroup.value,
+      ThirdFormGroup: this.thirdFormGroup.value,
+      FourthFormGroup: this.fourthFormGroup.value,
+    }
+
+    this.postService.setPost(post);
+
+
   };
 
 

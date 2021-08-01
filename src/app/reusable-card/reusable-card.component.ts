@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { AttendanceComponent } from '../main-pages/main-pages.component';
 import { TaggedComponent } from '../main-pages/main-pages.component';
+import { PostService } from '../services/post.service';
 
 @Component({
     selector: 'app-card',
@@ -9,6 +10,13 @@ import { TaggedComponent } from '../main-pages/main-pages.component';
     styleUrls: ['./reusable-card.component.scss'],
 })
 export class ReusableCardComponent {
+
+    post$$ = PostService.post$$;
+
+
+
+
+
     openAttendanceSheet(): void {
         this.bottomSheet.open(AttendanceComponent);
     }
