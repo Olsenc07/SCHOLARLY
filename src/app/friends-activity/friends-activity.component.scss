@@ -36,7 +36,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    height: 90%;
+    height: 100%;
     width: 100%;
   }
 }
@@ -97,6 +97,7 @@
     flex-direction: column;
     margin: 2% 1% 1% 2%;
     width: 30%;
+    height: 100%;
   }
 }
 @media (max-width: 1024px) {
@@ -129,12 +130,16 @@
     height: 100%;
     border: ridge;
     background-color: white;
+    margin-top: 20%;
   }
 }
 @media (min-width: 1024px) {
   .hide {
    width: 30%;
-  
+  box-sizing: border-box;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   }
 }
 
@@ -222,7 +227,7 @@
     justify-content: center;
     flex-direction: column;
     margin: 2% ;
-    overflow-y: scroll;
+    height: 100%;
     width: 30%;
   }
 }
@@ -255,6 +260,7 @@
     margin: 2%;
     width: 30%;
     overflow-y: scroll;
+    height: 100%;
   }
 }
 @media (max-width: 1024px) {
@@ -312,7 +318,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    height: 65%;
+    height: 100%;
     width: 100%;
   }
 }

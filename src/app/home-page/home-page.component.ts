@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home-page',
@@ -9,16 +9,16 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class HomePageComponent implements OnInit {
 
   password: FormControl = new FormControl('');
-  email: FormControl = new FormControl('');
+  email: FormControl = new FormControl('', Validators.email);
 
   loginForm = new FormGroup({
     email: this.email,
     password: this.password,
   });
 
-  constructor() {}
+  constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   clearPassword(): void {
     this.password.setValue('');

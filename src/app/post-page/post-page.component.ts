@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder, Validators, Form } from '@angular/forms';
 
 import {
   MomentDateAdapter,
@@ -19,14 +19,16 @@ import { MatChipInputEvent } from '@angular/material/chips';
 import { map } from 'rxjs/operators';
 import { SearchListService } from '../services/search.service';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { Post, PostService } from '../services/post.service';
 
-const moment = _rollupMoment || _moment;
+const moment = _moment();
+
 export const MY_FORMATS = {
   parse: {
-    dateInput: 'LL',
+    dateInput: 'DD MMMM YYYY',
   },
   display: {
-    dateInput: 'LL',
+    dateInput: 'DD MMMM YYYY',
     monthYearLabel: 'MMM YYYY',
     dateA11yLabel: 'LL',
     monthYearA11yLabel: 'MMMM YYYY',
@@ -67,7 +69,7 @@ export class PostPageComponent implements OnInit {
   removable = true;
   separatorKeysCodes: number[] = [ENTER, COMMA];
   // Desktop tag friends
-  friendCtrl = new FormControl();
+  friendCtrl: FormControl = new FormControl();
   filteredFriends: Observable<string[]>;
   friends: string[] = [];
   @ViewChild('friendInput') friendInput: ElementRef<HTMLInputElement>;
@@ -81,59 +83,62 @@ export class PostPageComponent implements OnInit {
   isLinear = false;
   Title: FormControl = new FormControl('');
   public TitleLength = new BehaviorSubject(0);
-  postUpload: FormControl = new FormControl('');
-  postLocation: FormControl = new FormControl('');
-  locationEvent: FormControl = new FormControl('');
-  time: FormControl = new FormControl('');
-  value: FormControl = new FormControl('');
-  postDescription: FormControl = new FormControl('');
-  date: FormControl = new FormControl(moment());
   upload: FormControl = new FormControl('');
-  driver: FormControl = new FormControl('');
-  paymentService: FormControl = new FormControl('');
-  formalEvent: FormControl = new FormControl('');
-  relaxedEvent: FormControl = new FormControl('');
-  male: FormControl = new FormControl('');
-  female: FormControl = new FormControl('');
-  all: FormControl = new FormControl('');
+  postLocation: FormControl = new FormControl('');
+  postDescription: FormControl = new FormControl('');
   search: FormControl = new FormControl('');
+  value: FormControl = new FormControl('');
+  date: FormControl = new FormControl('');
 
-  firstFormGroup = new FormGroup({
-    date: this.date,
-    time: this.time,
-    locationEvent: this.locationEvent,
-  });
-  secondFormGroup = new FormGroup({
-    male: this.male,
-    female: this.female,
-    all: this.all,
-  });
-  thirdFormGroup = new FormGroup({
-    driver: this.driver,
-    paymentService: this.paymentService,
-  });
-  fourthFormGroup = new FormGroup({
-    formalEvent: this.formalEvent,
-    relaxedEvent: this.relaxedEvent,
-  });
+  firstFormGroup: FormGroup;
+  secondFormGroup: FormGroup;
+  thirdFormGroup: FormGroup;
+  fourthFormGroup: FormGroup;
+
+
+
+
   postForm = new FormGroup({
     // Desktop
     Title: this.Title,
     postDescription: this.postDescription,
-    postUpload: this.postUpload,
-    firstFormGroup: this.firstFormGroup,
-    secondFormGroup: this.secondFormGroup,
-    thirdFormGroup: this.thirdFormGroup,
-    fourthFormGroup: this.fourthFormGroup,
+    upload: this.upload,
+
+    // firstFormGroup :this.firstFormGroup,
+    // secondFormGroup: this.secondFormGroup,
+    // thirdFormGroup: this.thirdFormGroup,
+    // fourthFormGroup: this.fourthFormGroup,
     postLocation: this.postLocation,
     friendCtrl: this.friendCtrl,
-    upload: this.upload,
   });
-  constructor(public dialog: MatDialog, public searchListService: SearchListService, private FORMBuilder: FormBuilder) {
+  constructor(public dialog: MatDialog, public searchListService: SearchListService, private fb: FormBuilder, private postService: PostService) {
     this.Title.valueChanges.subscribe((v) => this.TitleLength.next(v.length));
     // Desktop tag friends
     this.filteredFriends = this.friendCtrl.valueChanges.pipe(
       map((friend: string | null) => friend ? this._filter(friend) : this.allFriends.slice()));
+
+
+    this.firstFormGroup = this.fb.group({
+      date: new FormControl(''),
+      time: new FormControl(''),
+      locationEvent: new FormControl(''),
+    });
+
+    this.secondFormGroup = this.fb.group({
+      gender: new FormControl(''),
+    });
+
+
+    this.thirdFormGroup = this.fb.group({
+      driver: new FormControl(''),
+      paymentService: new FormControl(''),
+    });
+    this.fourthFormGroup = this.fb.group({
+      event: new FormControl(''),
+    });
+
+
+
 
   }
   openDialog(): void {
@@ -160,27 +165,6 @@ export class PostPageComponent implements OnInit {
   ngOnInit(): void {
     this.searchOptions = this.searchListService.getSearchOptions();
 
-    this.firstFormGroup = this.FORMBuilder.group({
-      date: [''],
-      time: [''],
-      locationEvent: ['']
-    });
-    this.secondFormGroup = this.FORMBuilder.group({
-      female: false,
-      all: [''],
-      male: [''],
-    });
-    this.thirdFormGroup = this.FORMBuilder.group({
-      driver: [''],
-      paymentService: [''],
-    });
-    this.fourthFormGroup = this.FORMBuilder.group({
-      formalEvent: [''],
-      relaxedEvent: [''],
-    });
-
-
-
   }
   onSearchSelection(value): void {
     console.log(value);
@@ -196,7 +180,7 @@ export class PostPageComponent implements OnInit {
     // Clear the input value
     // event.chipInput!.clear();
 
-    this.friendCtrl.setValue(null);
+    this.friendCtrl.setValue('');
   }
   remove(friend: string): void {
     const index = this.friends.indexOf(friend);
@@ -208,7 +192,7 @@ export class PostPageComponent implements OnInit {
   selected(event: MatAutocompleteSelectedEvent): void {
     this.friends.push(event.option.viewValue);
     this.friendInput.nativeElement.value = '';
-    this.friendCtrl.setValue(null);
+    this.friendCtrl.setValue('');
   }
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
@@ -234,7 +218,24 @@ export class PostPageComponent implements OnInit {
     console.log(this.thirdFormGroup.value);
     console.log(this.fourthFormGroup.value);
     console.log(this.postForm.value);
-  }
+
+
+    let post: Post = {
+      Title: this.Title.value,
+      PostDescription: this.postDescription.value,
+      Upload: this.upload.value,
+      PostLocation: this.postLocation.value,
+      FriendCtrl: this.friendCtrl.value,
+      FirstFormGroup: this.firstFormGroup.value,
+      SecondFormGroup: this.secondFormGroup.value,
+      ThirdFormGroup: this.thirdFormGroup.value,
+      FourthFormGroup: this.fourthFormGroup.value,
+    }
+
+    this.postService.setPost(post);
+
+
+  };
 
 
   changeTab(): void {

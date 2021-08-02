@@ -31,6 +31,8 @@ export class AppComponent implements OnInit {
 
   isEditProfileScreen$: Observable<boolean>;
 
+  isRetrievePScreen$: Observable<boolean>;
+
   searchBox: Element;
 
   search: FormControl = new FormControl('');
@@ -78,6 +80,10 @@ export class AppComponent implements OnInit {
     this.isHomeScreen$ = this.router.events.pipe(
       filter(event => event instanceof NavigationEnd),
       map((event: NavigationEnd) => event.url === '/' || event.url === '/login')
+    );
+    this.isRetrievePScreen$ = this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd),
+      map((event: NavigationEnd) => event.url === '/' || event.url === '/retrieve-password')
     );
 
   }

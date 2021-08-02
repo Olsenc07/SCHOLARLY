@@ -155,7 +155,6 @@
     width: 100%;
     box-sizing: border-box;
     height: 100%;
-    border-style: groove;
     position: relative;
   }
 }
@@ -328,7 +327,9 @@
   justify-content: center;
   min-width: 15%;
 }
-.second-list{padding-top: 0px}
+.second-list{
+  padding-top: 0px;
+}
 .searchM {
   display: flex;
   width: 100%;

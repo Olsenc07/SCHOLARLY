@@ -12,6 +12,7 @@
   display: flex;
   justify-content: space-around;
   flex-direction: row;
+  margin-bottom: 3%;
 }
 .align-bottom {
   display: flex;
@@ -95,6 +96,8 @@
   flex-direction: column;
   justify-content: center;
   margin: 0% 2%;
+  width: 100%;
+  height: fit-content;
 }
 .courses {
   display: flex;
@@ -226,8 +229,7 @@
 }
 .imagePreview {
   display: flex;
-  width: 270px;
-  height: 270px;
+  width: 100%;
   margin-bottom: 3%;
 }
 .input {

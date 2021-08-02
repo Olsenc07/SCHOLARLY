@@ -1,4 +1,4 @@
-<form [formGroup]="postForm" class="entire-page">
+<form [formGroup]="postForm" class="entire-page" (ngSubmit)="onFormSubmit()">
 
   <div class="largest-page">
     <!-- LEFT DESKTOP VIEW -->
@@ -30,10 +30,11 @@
             </mat-form-field>
           </div>
           <!-- Upload pic/video -->
-          <div class="column">
+          <div class="column_">
+            <h2 class="center">Upload Post</h2>
             <div class="rowP"> <input #fileInput class="uploadD" accept="image/* video/*" type="file"
-                (change)="imagePreview($event)" (click)="this.value=null" [formControl]="postUpload" multiple></div>
-            <div class="rowP"> <img [src]="url" id="upload" class="imagePreview"> </div>
+                (change)="imagePreview($event)" (click)="this.value=null" [formControl]="upload" multiple></div>
+            <div class="contents"> <img [src]="url" id="upload" class="imagePreview"></div>
             <div class="rowP clear"><button mat-flat-button color="primary" (click)="clearUpload()">Clear
                 Upload</button></div>
           </div>
@@ -67,9 +68,12 @@
                 {{friend}}
                 <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
               </mat-chip>
-              <input #friendInput [matAutocomplete]="auto" [matChipInputFor]="chipList"
-                [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="add($event)" matInput>
+              <input matInput #friendInput [matAutocomplete]="auto" [matChipInputFor]="chipList"
+                [formControl]="friendCtrl" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                (matChipInputTokenEnd)="add($event)">
             </mat-chip-list>
+
+            <!-- Connect to friends list -->
             <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
               <mat-option *ngFor="let friend of filteredFriends | async" [value]="friend">
                 {{friend}}
@@ -101,15 +105,14 @@
           </mat-form-field>
         </mat-selection-list>
 
-
-
-
         <div class="location-options">
           <mat-chip-list class="mat-list-text">
-            <mat-chip [multiple]="false" *ngFor="let opt of specificOptions" [value]="opt">
-              <mat-radio-button>
-                {{ opt }}
-              </mat-radio-button>
+            <mat-chip [multiple]="false" *ngFor="let opt of specificOptions">
+              <mat-radio-group formControlName="postLocation">
+                <mat-radio-button [value]="opt">
+                  {{ opt }}
+                </mat-radio-button>
+              </mat-radio-group>
             </mat-chip>
           </mat-chip-list>
         </div>
@@ -132,14 +135,18 @@
               <mat-datepicker #D></mat-datepicker>
             </mat-form-field>
             <!-- Time -->
-            <div class="ngx-timepicker-field-example">
-              <ngx-timepicker-field [defaultTime]="'12:00 am'">
-                <input matInput formControlName="time">
-              </ngx-timepicker-field>
+            <div class="default-time-example">
+              <mat-form-field appearance="fill">
+                <mat-label>Time:</mat-label>
+                <input matInput formControlName="time" [ngxTimepicker]="toggleTimepicker">
+                <ngx-material-timepicker-toggle matSuffix [for]="toggleTimepicker"></ngx-material-timepicker-toggle>
+                <ngx-material-timepicker #toggleTimepicker>
+                </ngx-material-timepicker>
+              </mat-form-field>
             </div>
 
             <mat-form-field appearance="fill">
-              <mat-label>Location</mat-label>
+              <mat-label>Location:</mat-label>
               <input matInput formControlName="locationEvent">
 
             </mat-form-field>
@@ -154,20 +161,19 @@
             <ng-template matStepLabel>Whos Welcome To Join</ng-template>
 
             <div class="trioD">
-              <mat-radio-group aria-label="Select an option">
+              <mat-radio-group aria-label="Select an option" formControlName="gender">
 
                 <div class="margin">
                   <p class="fas fa-venus" style="color: #d230b5;">Females</p>
-                  <mat-radio-button class="btn_" value="3" required></mat-radio-button>
+                  <mat-radio-button class="btn_" value="female"></mat-radio-button>
                 </div>
                 <div class="margin">
                   <p class="fas fa-transgender-alt" style="color: #26dd2f;">All</p>
-
-                  <mat-radio-button class="btn_" value="4" required></mat-radio-button>
+                  <mat-radio-button class="btn_" value="all"></mat-radio-button>
                 </div>
                 <div class="margin">
                   <p class="fas fa-mars" style="color: #4e30d2;">Males</p>
-                  <mat-radio-button class="btn_" value="5" required></mat-radio-button>
+                  <mat-radio-button class="btn_" value="male"></mat-radio-button>
                 </div>
 
               </mat-radio-group>
@@ -209,21 +215,21 @@
           <form [formGroup]="fourthFormGroup">
             <ng-template matStepLabel>Type Of Event</ng-template>
 
-            <mat-radio-group aria-label="Select an option">
+            <mat-radio-group aria-label="Select an option" formControlName="event">
               <button mat-button (click)="openDialog()">
                 <mat-icon>info</mat-icon>
               </button>
               <div class="columnM">
                 <div class="column">
                   <p class="fas fa-user-tie" style="color: #e9c215;">Formal event</p>
-                  <mat-radio-button value="6" required>
+                  <mat-radio-button value="formal" required>
 
                   </mat-radio-button>
                 </div>
               </div>
               <div class="column">
                 <p class="fas fa-glass-cheers" style="color: gold;">Relaxed event</p>
-                <mat-radio-button value="7" required>
+                <mat-radio-button value="relaxed" required>
 
                 </mat-radio-button>
               </div>
@@ -239,7 +245,7 @@
           <ng-template matStepLabel>Time To Post</ng-template>
           <div class="row_">
             <button mat-button matStepperPrevious>Back</button>
-            <button mat-raised-button color="primary" class="text" (ngSubmit)="onFormSubmit()">Post
+            <button mat-raised-button color="primary" class="text">Post
               <span class="material-icons"> arrow_forward </span>
             </button>
           </div>

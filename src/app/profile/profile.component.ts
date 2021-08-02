@@ -3,6 +3,9 @@ import { FormControl } from '@angular/forms';
 import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { StoreService } from '../services/store.service';
 
+
+
+
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -12,14 +15,21 @@ export class ProfileComponent {
   // Connecting store.servie to display course in profile. 
   // Edit profile -> store -> profile
 
-  profile$$ = StoreService.profile$$
+  profile$$ = StoreService.profile$$;
+
+
 
 
 
   showFiller = false;
   // TODO: initial following value would need to be loaded from database - for now, always start with false
   following = false;
-  constructor(private bottomSheet: MatBottomSheet) { }
+  constructor(private bottomSheet: MatBottomSheet) {
+    // profile$$.profile$$.subscribe((profile) => {
+    //   // this.profile$$ = profile;
+    //   // return name;
+    // })
+  }
 
   openBottomSheet(): void {
     this.bottomSheet.open(BottomSheetComponent);

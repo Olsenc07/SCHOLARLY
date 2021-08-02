@@ -55,7 +55,6 @@ export const MY_FORMATS = {
   ],
 })
 export class EditProfileComponent implements OnInit {
-  Bio = '';
   visible = true;
   selectable = true;
   removable = true;
@@ -81,12 +80,11 @@ export class EditProfileComponent implements OnInit {
   public bioLength = new BehaviorSubject(0);
   name: FormControl = new FormControl('');
   pronouns: FormControl = new FormControl('');
-  snapShot: FormControl = new FormControl('');
+  showCase: FormControl = new FormControl('');
   accountType: FormControl = new FormControl('');
   birthday: FormControl = new FormControl('');
-  relationship: FormControl = new FormControl('');
   genderChoice: FormControl = new FormControl('');
-  date: FormControl = new FormControl(moment());
+
   CodeCompleted: FormControl = new FormControl('');
   CodePursuing: FormControl = new FormControl('');
 
@@ -96,24 +94,24 @@ export class EditProfileComponent implements OnInit {
     sport: this.sport,
     club: this.club,
     name: this.name,
-    price: this.pronouns,
-    birthday: this.birthday,
-    relationship: this.relationship,
+    pronouns: this.pronouns,
     genderChoice: this.genderChoice,
-    date: this.date,
+    birthday: this.birthday,
     accountType: this.accountType,
     profilePic: this.profilePic,
     CodeCompleted: this.CodeCompleted,
     CodePursuing: this.CodePursuing,
     bio: this.bio,
+    showCase: this.showCase,
 
   });
   selectedIndex = 0;
   genders: Gender[] = [
+    { name: '' },
     { name: 'Female' },
     { name: 'Male' },
     { name: 'Other' },
-    { name: 'Perfer Not To Answer' },
+
   ];
 
   constructor(
@@ -211,6 +209,7 @@ export class EditProfileComponent implements OnInit {
       this.classesP.splice(indexP, 1);
     }
   }
+
   // Completed Classes
   selected(event: MatAutocompleteSelectedEvent): void {
     this.classes.push(event.option.viewValue);
@@ -258,9 +257,33 @@ export class EditProfileComponent implements OnInit {
   }
 
   clearPic1(): void {
-    this.snapShot.setValue('');
+    this.showCase.setValue('');
     document.getElementById('firstP').removeAttribute('src');
   }
+  previousGroupCard(): void {
+    // go back one card
+  }
+
+  nextGroupCard(): void {
+    // go forward one card
+  }
+
+  leaveGroup(): void {
+    // leave the group that is being displayed
+  }
+
+  previousPostCard(): void {
+    // go back one post
+  }
+
+  nextPostCard(): void {
+    // go forward one post
+  }
+
+  deletePost(): void {
+    // delete post thats being displayed
+  }
+
 
   onSubmit(): void {
     console.log(this.editForm.value);
@@ -269,6 +292,8 @@ export class EditProfileComponent implements OnInit {
     let profile: Profile = {
       CodePursuing: this.CodePursuing.value,
       CodeCompleted: this.CodeCompleted.value,
+      name: this.name.value,
+
     };
 
     // TODO: replace null with Profile object

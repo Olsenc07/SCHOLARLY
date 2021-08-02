@@ -3,7 +3,7 @@
 
     <mat-tab-group [selectedIndex]="selectedIndex" mat-align-tabs="center">
 
-      <mat-tab>
+      <mat-tab disabled>
         <form [formGroup]="requiredForm">
           <ng-template mat-tab-label>
             <mat-icon><span class="material-icons-two-tone">
@@ -16,8 +16,9 @@
               school
             </span>
             <mat-form-field>
+              <!-- only utoronto.ca should be excepted -->
               <input matInput placeholder="School Email" [formControl]="email" required />
-              <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearEmail()">
+              <button mat-button matSuffix mat-icon-button aria-label=" Clear" type="button" (click)="clearEmail()">
                 <mat-icon>close</mat-icon>
               </button>
             </mat-form-field>
@@ -28,7 +29,7 @@
               account_circle
             </span>
             <mat-form-field>
-              <input matInput type="text" [formControl]="username" placeholder="Username" required autocomplete="on" />
+              <input matInput [formControl]="username" placeholder="Username" required autocomplete="on" />
 
               <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearUsername()">
                 <mat-icon>close</mat-icon>
@@ -53,30 +54,24 @@
 
           </div>
           <div class="accounts">
-            <mat-radio-group aria-label="Select an option" [formControl]="accountType" class="Accounts">
+            <mat-radio-group aria-label="Select an option" [formControl]="accountType" class="Accounts" required>
 
               <div class="layout">
                 <mat-radio-button value="1">Private Account</mat-radio-button>
-                <div class="tooltip">
-                  <span class="material-icons"> info </span>
-                  <!-- <span class="tooltiptext"
-                      >You choose to accept or decline friend list. Profile is only viewable to friends</span
-                    > -->
-                </div>
+
 
               </div>
+              <div class="tooltip">
+                <button mat-button (click)="openDialogAccount()">
+                  <span class="material-icons"> info </span>
 
+                </button>
+              </div>
 
 
               <div class="layout">
                 <mat-radio-button value="2">Public Account</mat-radio-button>
-                <div class="tooltip">
-                  <span class="material-icons"> info </span>
-                  <!-- <span class="tooltiptext"
-                    >Members are automatically accepted to your group & friends
-                    list.</span
-                  > -->
-                </div>
+
               </div>
 
             </mat-radio-group>
@@ -119,7 +114,7 @@
         </form>
       </mat-tab>
 
-      <mat-tab class="sndPage">
+      <mat-tab class="sndPage" disabled>
         <form [formGroup]="personalizeForm">
           <ng-template mat-tab-label>
             <mat-icon><span class="material-icons-two-tone">
@@ -194,14 +189,13 @@
             </div>
             <div class="input">
               <div class="display">
-                <mat-form-field><input matInput [(ngModel)]="Bio" placeholder="Bio " [formControl]="bio" class="bio"
-                    maxlength="100">
+                <mat-form-field><input matInput placeholder="Bio" [(formControl)]="bio" class="bio" maxlength="100">
                   <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearBio()">
                     <mat-icon class="asthetic-adds">close</mat-icon>
                   </button>
 
                 </mat-form-field>
-                <div matBadge="{{ 100 - Bio.length }}">
+                <div matBadge="{{ 100 - (bioLength | async) }}">
 
                 </div>
               </div>
@@ -224,7 +218,7 @@
 
 
       <!-- SnapShots -->
-      <mat-tab>
+      <mat-tab disabled>
         <form [formGroup]="snapShotForm">
           <ng-template mat-tab-label>
             <span class="material-icons">
@@ -283,7 +277,7 @@
           </div>
         </form>
       </mat-tab>
-      <mat-tab>
+      <mat-tab disabled>
         <ng-template mat-tab-label>
           <mat-icon class=""><span class="material-icons-two-tone">
               school
@@ -326,7 +320,7 @@
               emoji_events
             </span>
             <mat-form-field>
-              <input matInput placeholder="What sport do you play?" [formControl]="sport" />
+              <input matInput placeholder="Do you play a sport?" [formControl]="sport" />
               <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearSport()">
                 <mat-icon class="asthetic-adds">close</mat-icon>
               </button>
@@ -340,7 +334,7 @@
               group
             </span>
             <mat-form-field>
-              <input class="major" matInput placeholder="What club are you apart of? " [formControl]="club" />
+              <input class="major" matInput placeholder="Are you apart of a club?  " [formControl]="club" />
               <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearClub()">
                 <mat-icon class="asthetic-adds">close</mat-icon>
               </button>
