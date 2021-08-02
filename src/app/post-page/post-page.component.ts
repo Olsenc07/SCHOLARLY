@@ -69,7 +69,7 @@ export class PostPageComponent implements OnInit {
   removable = true;
   separatorKeysCodes: number[] = [ENTER, COMMA];
   // Desktop tag friends
-  friendCtrl = new FormControl();
+  friendCtrl: FormControl = new FormControl();
   filteredFriends: Observable<string[]>;
   friends: string[] = [];
   @ViewChild('friendInput') friendInput: ElementRef<HTMLInputElement>;

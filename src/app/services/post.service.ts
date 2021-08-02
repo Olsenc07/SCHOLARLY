@@ -16,7 +16,9 @@ export interface Post {
 
 
 }
-
+@Injectable({
+    providedIn: 'root',
+})
 export class PostService {
     post$$: ReplaySubject<Post> = new ReplaySubject<Post>(1);
     static post$$: string[];

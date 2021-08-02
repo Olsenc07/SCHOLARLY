@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-retrieve-password',
@@ -9,8 +9,8 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class RetrievePasswordComponent implements OnInit {
   password: FormControl = new FormControl('');
-  emailRetrieval: FormControl = new FormControl('');
-  emailLogin: FormControl = new FormControl('');
+  emailRetrieval: FormControl = new FormControl('', Validators.email);
+  emailLogin: FormControl = new FormControl('', Validators.email);
 
   loginForm = new FormGroup({
     emailLogin: this.emailLogin,
@@ -40,6 +40,7 @@ export class RetrievePasswordComponent implements OnInit {
   onSubmit(): void {
     // TODO: wire up to login request
     console.log(this.loginForm.value);
+
   }
   onSubmit1(): void {
     // TODO: wire up to login request
