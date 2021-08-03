@@ -40,12 +40,36 @@
       <!-- Import the boolean icons with no color originally then the what did user say.. if null then display="none" -->
       <div class="row">
         <div class="booleans">
+          <!-- the gender$ observable should check its value and if it matches female, male , or all 
+          then displays appropriate class
+        
+        or make indivi observables for each one and === true
+        -->
+
+          <!-- [ngClass]="(gender$ | async ) === female
+          ? 'female' : 'hide' "  -->
           <p class="fas fa-venus"></p>
+          <!-- [ngClass]="(gender$ | async ) === all
+          ? 'all' : 'hide' " -->
           <p class="fas fa-transgender-alt"></p>
+          <!-- [ngClass]="(gender$ | async ) === male
+          ? 'male' : 'hide' "  -->
           <p class="fas fa-mars"></p>
+
+
+          <!-- [ngClass]="(boolean$.driver | async ) === true
+          ? 'car' : 'hide' "  -->
           <p class="fas fa-car"></p>
+          <!-- [ngClass]="(boolean$.paymentService | async ) === true
+          ? 'money' : 'hide' " -->
           <p class="fas fa-dollar-sign"></p>
+
+
+          <!-- [ngClass]="(event$ | async ) === formal
+          ? 'formal' : 'hide' " -->
           <p class="fas fa-user-tie"></p>
+          <!-- [ngClass]="(event$ | async ) === relaxed
+          ? 'relaxed' : 'hide' " -->
           <p class="fas fa-glass-cheers"></p>
         </div>
 

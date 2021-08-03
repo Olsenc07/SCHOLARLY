@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ReplaySubject } from 'rxjs';
+import { ReplaySubject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 
@@ -22,6 +22,17 @@ export interface Post {
 export class PostService {
     post$$: ReplaySubject<Post> = new ReplaySubject<Post>(1);
     static post$$: string[];
+
+    gender$: Observable<Post> = new Observable;
+    static gender$: string[];
+
+    booleans$: Observable<Post> = new Observable;
+    static booleans$: boolean;
+
+    event$: Observable<Post> = new Observable;
+    static event$: string[];
+
+
 
     constructor() { }
 
