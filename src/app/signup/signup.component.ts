@@ -60,8 +60,7 @@ export class SignupComponent implements OnInit {
   selectable = true;
   removable = true;
   separatorKeysCodes: number[] = [ENTER, COMMA];
-  courseCodeCtrl = new FormControl();
-  courseCodeCtrlP = new FormControl();
+
   filteredCodes: Observable<string[]>;
   filteredCodesP: Observable<string[]>;
   classes: string[] = [];
@@ -100,6 +99,8 @@ export class SignupComponent implements OnInit {
   termsCheck: FormControl = new FormControl('');
   // PP isn't connected properly i dont think, since image is being cropped then returned as a base 64 value
   profilePic: FormControl = new FormControl('');
+  courseCodeCtrl: FormControl = new FormControl('');
+  courseCodeCtrlP: FormControl = new FormControl('');
 
   bio: FormControl = new FormControl('');
   public bioLength = new BehaviorSubject(0);
@@ -213,8 +214,8 @@ export class SignupComponent implements OnInit {
       )
     );
     this.filteredCodesP = this.courseCodeCtrlP.valueChanges.pipe(
-      map((code: string | null) =>
-        code ? this._filter(code) : this.classListService.allClasses().slice()
+      map((codeP: string | null) =>
+        codeP ? this._filter(codeP) : this.classListService.allClasses().slice()
       )
     );
   }

@@ -381,12 +381,12 @@
                     {{codeP}}
                     <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
                   </mat-chip>
-                  <input placeholder="Choose completed courses" #codeInputP [formControl]="courseCodeCtrlP"
+                  <input placeholder="Choose pursuing courses" #codeInputP [formControl]="courseCodeCtrlP"
                     [matAutocomplete]="autoP" [matChipInputFor]="chipListP"
                     [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="addP($event)">
                 </mat-chip-list>
                 <mat-autocomplete #autoP="matAutocomplete" (optionSelected)="selectedP($event)">
-                  <mat-option *ngFor="let codeP of filteredCodesP | async" [valueP]="codeP">
+                  <mat-option *ngFor="let codeP of filteredCodesP | async" [value]="codeP">
                     {{codeP}}
                   </mat-option>
                 </mat-autocomplete>
