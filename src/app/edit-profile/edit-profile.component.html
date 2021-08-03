@@ -165,39 +165,30 @@
 
 
           <!-- Public or Private account -->
+
           <div class="accounts">
-            <mat-radio-group aria-label="Select an option" [formControl]="accountType" class="Accounts">
+            <mat-radio-group aria-label="Select an option" formControlName="accountType" class="Accounts">
 
               <div class="layout">
-                <mat-radio-button value="1">Private Account</mat-radio-button>
-                <div class="tooltip">
-                  <span class="material-icons"> info </span>
-                  <!-- <span class="tooltiptext"
-                      >You choose to accept or decline members to your group and
-                      friend list. Profile is only viewable to friends</span
-                    > -->
-                </div>
+                <mat-radio-button value="private">Private Account</mat-radio-button>
 
+
+              </div>
+              <div class="tooltip">
+                <button mat-button (click)="openDialogAccount()">
+                  <span class="material-icons"> info </span>
+
+                </button>
               </div>
 
 
-
               <div class="layout">
-                <mat-radio-button value="2">Public Account</mat-radio-button>
-                <div class="tooltip">
-                  <span class="material-icons"> info </span>
-                  <!-- <span class="tooltiptext"
-                    >Members are automatically accepted to your group & friends
-                    list.</span
-                  > -->
-                </div>
+                <mat-radio-button value="public">Public Account</mat-radio-button>
+
               </div>
 
             </mat-radio-group>
-
-
           </div>
-
 
 
 
@@ -279,7 +270,7 @@
         </div>
 
 
-        <div class="row">
+        <div class="column1">
           <div class="courses">
             <div class="input">
               <i class="fas fa-check _icon"></i>
@@ -295,11 +286,13 @@
                     [matAutocomplete]="auto" [matChipInputFor]="chipList"
                     [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="add($event)">
                 </mat-chip-list>
-                <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
-                  <mat-option *ngFor="let code of filteredCodes | async" [value]="code">
-                    {{code}}
-                  </mat-option>
-                </mat-autocomplete>
+                <cdk-virtual-scroll-viewport itemSize="10">
+                  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+                    <mat-option *ngFor="let code of filteredCodes | async" [value]="code">
+                      {{code}}
+                    </mat-option>
+                  </mat-autocomplete>
+                </cdk-virtual-scroll-viewport>
               </mat-form-field>
             </div>
           </div>
@@ -310,6 +303,7 @@
 
               <mat-form-field class="example-chip-list">
                 <mat-label>Pursuing Courses</mat-label>
+
                 <mat-chip-list #chipListP aria-label="Fruit selection2">
                   <mat-chip *ngFor="let codeP of classesP" [selectable]="selectable" [removable]="removable"
                     (removed)="removeP(codeP)">
@@ -320,11 +314,13 @@
                     [matAutocomplete]="autoP" [matChipInputFor]="chipListP"
                     [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="addP($event)">
                 </mat-chip-list>
-                <mat-autocomplete #autoP="matAutocomplete" (optionSelected)="selectedP($event)">
-                  <mat-option *ngFor="let codeP of filteredCodesP | async" [valueP]="codeP">
-                    {{codeP}}
-                  </mat-option>
-                </mat-autocomplete>
+                <cdk-virtual-scroll-viewport itemSize="10">
+                  <mat-autocomplete #autoP="matAutocomplete" (optionSelected)="selectedP($event)">
+                    <mat-option *cdkVirtualFor="let codeP of filteredCodesP | async" [valueP]="codeP">
+                      {{codeP}}
+                    </mat-option>
+                  </mat-autocomplete>
+                </cdk-virtual-scroll-viewport>
               </mat-form-field>
             </div>
           </div>

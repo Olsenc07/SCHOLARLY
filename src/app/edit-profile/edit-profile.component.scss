@@ -376,9 +376,9 @@
   justify-content: center;
 }}
 .layout {
-  margin-bottom: 2%;
   display: flex;
-  justify-content: row;
+  flex-direction: column;
+  justify-content: center;
 }
 .text {
   color: #0e3379;

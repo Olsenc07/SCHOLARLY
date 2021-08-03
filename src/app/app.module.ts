@@ -37,6 +37,7 @@ import { NgxImageZoomModule } from 'ngx-image-zoom';
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 
 import { routingComponents } from './app-routing.module';
@@ -141,6 +142,7 @@ import { StoreService } from './services/store.service';
     MatCardModule,
     MatExpansionModule,
     MatSnackBarModule,
+    ScrollingModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [SearchListService, PostService, ClassListService, StoreService],

@@ -402,9 +402,9 @@
   width: 100%;
 }
 .layout {
-  margin-bottom: 2%;
   display: flex;
-  justify-content: row;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .text-layout {
