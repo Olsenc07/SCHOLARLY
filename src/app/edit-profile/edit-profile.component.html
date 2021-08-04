@@ -21,8 +21,9 @@
               <div class="pics">
                 <!-- Profile Pic is currently filled with pic being used rn -->
                 <div class="space">
-                  <h2 class="text">Change Profile Picture</h2> <input #fileInputs class="upload"
-                    accept="image/* video/*" type="file" (change)="onImgChange($event)" [formControl]="profilePic">
+                  <h2 class="text">Change Profile Picture</h2>
+                  <input #fileInputs class="upload" accept="image/* video/*" type="file" (change)="onImgChange($event)"
+                    [formControl]="profilePic">
                 </div>
                 <div class="cropper">
                   <image-cropper [imageChangedEvent]="imgChangeEvt" [maintainAspectRatio]="true" [aspectRatio]=" 7 / 7"
@@ -41,7 +42,10 @@
               <i class="fas fa-portrait _icon2"></i>
 
             </div>
-            <div class="PreviewPic">
+
+
+            <!-- NgIf -->
+            <div class="PreviewPic" *ngIf="profilePic.value ">
               <div class="center">
                 <h2 class="Preview">Image Preview</h2>
 
