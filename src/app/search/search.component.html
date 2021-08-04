@@ -7,7 +7,9 @@
         <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" class="logo" />
       </div>
 
-      <div class="input-boxs">
+
+      <div class="input-boxs" *ngIf="opt >= 1">
+        <div class="center">Specific Search</div>
         <mat-chip-list class="mat-list-text">
           <mat-chip [multiple]="false" *ngFor="let opt of specificOptions" [value]="opt" (click)="navigateToPage(opt)">
             {{ opt }}
@@ -18,13 +20,14 @@
 
     <!-- middle -->
     <div class="middle-column-large">
+      <div class="label">What are you looking for?</div>
       <!-- Category box -->
       <div class="input-boxs">
-        <h2 class="center">Main Categories</h2>
+        <div class="center">Main Categories</div>
 
         <mat-chip-list aria-label="First Choice">
-          <mat-chip (click)="onSearchSelection(opt.value)" [selected]="opt.name" [multiple]="false"
-            *ngFor="let opt of searchOptions" [value]="opt.name">
+          <mat-chip (click)="onSearchSelection(opt.value)" (click)="displaySpecificSearch()" [selected]="opt.name"
+            [multiple]="false" *ngFor="let opt of searchOptions" [value]="opt.name">
             <mat-radio-button class="horizontal_list">
               {{ opt.name }}</mat-radio-button>
           </mat-chip>
@@ -35,9 +38,10 @@
     <div class="right-column">
       <!-- Recents tetx -->
       <div class="center">
-        <h2 class="recents-text">Recent Feed</h2>
+        <div class="recents-text">Recent Feed</div>
       </div>
       <div class="recents">
+        <app-card class="hide"></app-card>
         <app-card class="hide"></app-card>
       </div>
     </div>
@@ -45,7 +49,6 @@
     <div class="hide1">
       <div class="topM">
         <div class="column">
-
           <mat-selection-list #options [multiple]="false" class="second-list">
             <mat-form-field appearance="fill">
               <mat-label>Main Categories</mat-label>
@@ -66,9 +69,9 @@
             <mat-chip-list class="mat-list-text">
               <mat-chip [multiple]="false" *ngFor="let opt of specificOptions" [value]="opt"
                 (click)="navigateToPage(opt)">
-                <mat-radio-button>
-                  {{ opt }}
-                </mat-radio-button>
+
+                {{ opt }}
+
               </mat-chip>
             </mat-chip-list>
           </div>

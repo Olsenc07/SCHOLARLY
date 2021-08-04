@@ -15,15 +15,23 @@ interface SearchOption {
 })
 export class SearchComponent implements OnInit {
 
+
   search: FormControl = new FormControl('');
   searchForm = new FormGroup({
     search: this.search,
+    mainChoice: new FormControl(''),
   });
 
   public selectedOption: string;
   public specificOptions: string[];
   public searchOptions: SearchOption[];
   main = '';
+
+  public opt = 0;
+  displaySpecificSearch() {
+    this.opt++;
+  }
+
 
   ngOnInit(): void {
     this.searchOptions = this.searchListService.getSearchOptions();

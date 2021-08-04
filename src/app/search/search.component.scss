@@ -19,6 +19,8 @@
 .center {
   display: flex;
   justify-content: center;
+  margin: 2% 0%;
+  font-size: x-large;
 }
 .centerM {
   display: flex;
@@ -40,6 +42,12 @@
   height: 100%;
   position: fixed;
 }
+.label{
+  display: flex;
+  justify-content: center;
+  font-size: x-large;
+  font-weight: 900;
+}
 @media (min-width: 1025px) {
   .left-column {
     display: flex;
@@ -47,6 +55,7 @@
     justify-content: center;
     margin: 1% 2% 2% 2%;
     width: 100%;
+    height: 100%;
   }
 }
 
@@ -72,15 +81,14 @@
 }
 @media (min-width: 1025px) {
   .middle-column-large {
-    display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 2%;
     width: 100%;
-    height: 72vh;
+    height: 100%;
+    margin-top: 2%;
   }
 }
-@media (max-width: 1025px) and (min-height: 433px) {
+@media (max-width: 1025px) {
   .middle-column-large {
     display: flex;
     flex-direction: row;
@@ -91,15 +99,9 @@
     height: 17vh;
   }
 }
-@media (max-height: 433px) {
+@media (max-width: 1025px) {
   .middle-column-large {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: fit-content;
-    position: relative;
-    overflow-x: scroll;
-    height: 21vh;
+    display: none;
   }
 }
 @media (min-width: 1025px) {
@@ -108,7 +110,7 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    margin: 1% 0% 0% 2%;
+    margin: 0% 1% 0% 2%;
     height: 100%;
     box-sizing: border-box;
   }
@@ -156,6 +158,8 @@
     box-sizing: border-box;
     height: 100%;
     position: relative;
+    flex-direction: column;
+    overflow-y: scroll;
   }
 }
 @media (max-width: 1025px) {
@@ -220,7 +224,7 @@
   height: 100%;
   overflow-y: scroll;
 }}
-@media (min-width: 1025px) {
+
   .input-boxs {
     background-color: rgb(235, 235, 245);
     overflow: hidden;
@@ -230,12 +234,8 @@
     justify-content: center;
     margin: 8% 0%;
   }
-}
-@media (max-width: 1025px) {
-  .input-boxs {
-    display: none;
-  }
-}
+
+
 
 .mat-chip {
   background-color: rgb(65, 88, 165) !important;
