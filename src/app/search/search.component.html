@@ -2,13 +2,16 @@
   <!-- Entire page -->
   <div class="main-layout">
     <div class="left-column">
-      <!-- Profile picture!! School logo or delete -->
+      <!-- ADDDDDDSSSSSS!!!!!! Profile picture!! School logo or delete -->
       <div class="logo-layout">
-        <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" class="logo" />
+        <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" />
+        <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" />
+        <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" />
+        <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" />
       </div>
 
 
-      <div class="input-boxs" *ngIf="opt >= 1">
+      <div class="input-boxs_" *ngIf="opt >= 1">
         <div class="center">Specific Search</div>
         <mat-chip-list class="mat-list-text">
           <mat-chip [multiple]="false" *ngFor="let opt of specificOptions" [value]="opt" (click)="navigateToPage(opt)">
