@@ -10,6 +10,12 @@
   overflow-x: hidden;
   overflow-y: hidden;
 }
+.adds{
+  display: flex;
+  height: 100%;
+  margin: 1% 0%;
+  justify-content: center;
+}
 .category-box {
   padding: 16px;
   border: 1px solid gray;
@@ -116,8 +122,8 @@
 }
 @media (max-width: 1025px) {
   .right-column {
-    display: flex;
-    position: relative;
+    display: none;
+  
   }
 }
 // Reacting to mobile and tablet sizes
@@ -144,7 +150,12 @@
     font-size: x-large;
   }
   .logo-layout {
-    display: flex;
+    justify-content: center;
+    height: 100%;
+    flex-direction: column;
+    overflow-y: scroll;
+  }
+  .logo-layoutP {
     justify-content: center;
     height: 29%;
     flex-direction: column;
