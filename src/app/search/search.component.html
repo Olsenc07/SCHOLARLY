@@ -2,11 +2,11 @@
   <!-- Entire page -->
   <div class="main-layout">
     <div class="left-column">
+      <div class="center"> Recommendations</div>
       <!-- ADDDDDDSSSSSS!!!!!! Profile picture!! School logo or delete -->
       <div [ngClass]="opt >=1 ? 'logo-layoutP' : 'logo-layout' ">
         <!-- There will be just one div then ngfor will loop through a list of images/adds. as well as some 
         suggestions or something..... mixed in.    Adds will also be mixed into feed!!!!! -->
-        <div class="center"> Recommendations</div>
         <div class="adds"> <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" /></div>
         <div class="adds"> <img Src="../../assets/Pics/BlueSquareAppLogo.jpg" /></div>
         <div class="adds"> <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" /></div>
@@ -44,11 +44,17 @@
     <div class="right-column">
       <!-- Recents tetx -->
       <div class="center">
-        <div class="recents-text">Recent Feed</div>
+        Recent Feed
       </div>
       <div class="recents">
         <app-card class="hide"></app-card>
+        <!-- Add but also post cards can be posts, just have add company 
+        fill out a card!! -->
+        <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" />
         <app-card class="hide"></app-card>
+        <!-- Add but also post cards can be posts, just have add company 
+        fill out a card!! -->
+        <img Src="../../assets/Pics/BlueSquareAppLogo.jpg" />
       </div>
     </div>
 
@@ -59,7 +65,23 @@
     <!-- Mobile -->
     <div class="hide1">
       <div class="topM">
+
+
+        <div class="center"> Recommendations</div>
+        <!-- ADDDDDDSSSSSS!!!!!! Profile picture!! School logo or delete -->
+        <div class="logo-layoutM">
+          <!-- There will be just one div then ngfor will loop through a list of images/adds. as well as some 
+          suggestions or something..... mixed in.    Adds will also be mixed into feed!!!!! -->
+          <div class="adds"> <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" /></div>
+          <div class="adds"> <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" /></div>
+          <div class="adds"> <img Src="../../assets/Pics/BlueSquareAppLogo.jpg" /></div>
+          <div class="adds"> <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" /></div>
+        </div>
+
+
+
         <div class="column">
+          <div class="label">What are you looking for?</div>
           <mat-selection-list #options [multiple]="false" class="second-list">
             <mat-form-field appearance="fill">
               <mat-label>Main Categories</mat-label>
@@ -89,9 +111,13 @@
 
 
         </div>
-
+        <div class="center">
+          Recent Feed
+        </div>
         <app-card class="display"></app-card>
-
+        <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" />
+        <app-card class="display"></app-card>
+        <img Src="../../assets/Pics/BlueSquareAppLogo.jpg" />
         <!-- Then cards keep getting filled in!! Just was testing the overflow scroll -->
       </div>
     </div>
