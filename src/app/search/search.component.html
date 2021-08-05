@@ -7,10 +7,9 @@
       <div [ngClass]="opt >=1 ? 'logo-layoutP' : 'logo-layout' ">
         <!-- There will be just one div then ngfor will loop through a list of images/adds. as well as some 
         suggestions or something..... mixed in.    Adds will also be mixed into feed!!!!! -->
-        <div class="adds"> <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" /></div>
-        <div class="adds"> <img Src="../../assets/Pics/BlueSquareAppLogo.jpg" /></div>
-        <div class="adds"> <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" /></div>
-        <div class="adds"> <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" /></div>
+        <div class="adds">
+          <img *ngFor="let feed of feeds" [src]="feed" />
+        </div>
       </div>
 
 
@@ -69,15 +68,16 @@
 
         <div class="center"> Recommendations</div>
         <!-- ADDDDDDSSSSSS!!!!!! Profile picture!! School logo or delete -->
-        <div class="logo-layoutM">
-          <!-- There will be just one div then ngfor will loop through a list of images/adds. as well as some 
-          suggestions or something..... mixed in.    Adds will also be mixed into feed!!!!! -->
-          <div class="adds"> <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" /></div>
-          <div class="adds"> <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" /></div>
-          <div class="adds"> <img Src="../../assets/Pics/BlueSquareAppLogo.jpg" /></div>
-          <div class="adds"> <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" /></div>
-        </div>
 
+        <div class="logo-layoutM">
+          <!-- Adds and recommecndations will be mixed into feed!!!!! -->
+
+          <div class="adds">
+            <cdk-virtual-scroll-viewport orientation="horizontal" itemSize="10"><img *cdkVirtualFor="let feed of feeds"
+                [src]="feed" /> </cdk-virtual-scroll-viewport>
+          </div>
+
+        </div>
 
 
         <div class="column">

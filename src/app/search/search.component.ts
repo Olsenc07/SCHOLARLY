@@ -15,6 +15,19 @@ interface SearchOption {
 })
 export class SearchComponent implements OnInit {
 
+  // Should pull in from data base, adds and reccomendations of whatever I decide
+  // make sure they display nicely and one add doesnt get way more time then others
+  feeds = ['../../assets/Pics/WhiteSquareInAppLogo.jpg',
+    '../../assets/Pics/WhiteSquareInAppLogo.jpg',
+    '../../assets/Pics/WhiteSquareInAppLogo.jpg',
+    '../../assets/Pics/BlueSquareAppLogo.jpg',
+    '../../assets/Pics/WhiteSquareInAppLogo.jpg',
+    '../../assets/Pics/WhiteSquareInAppLogo.jpg',
+    '../../assets/Pics/WhiteSquareInAppLogo.jpg',
+    '../../assets/Pics/BlueSquareAppLogo.jpg'];
+
+
+
 
   search: FormControl = new FormControl('');
   searchForm = new FormGroup({

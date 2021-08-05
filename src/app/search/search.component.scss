@@ -13,15 +13,16 @@
 @media(min-width:1024px){
 .adds{
   display: flex;
-  height: 100%;
   margin: 1% 0%;
   justify-content: center;
+  flex-direction: column;
 }}
 @media(max-width:1024px){
 .adds{
   display: flex;
   margin: 0% 1%;
   justify-content: center;
+  
 }}
 .category-box {
   padding: 16px;
