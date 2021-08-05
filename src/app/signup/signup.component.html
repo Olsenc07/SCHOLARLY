@@ -54,10 +54,10 @@
 
           </div>
           <div class="accounts">
-            <mat-radio-group aria-label="Select an option" [formControl]="accountType" class="Accounts" required>
+            <mat-radio-group aria-label="Select an option" formControlName="accountType" class="Accounts" required>
 
               <div class="layout">
-                <mat-radio-button value="1">Private Account</mat-radio-button>
+                <mat-radio-button value="private">Private Account</mat-radio-button>
 
 
               </div>
@@ -70,7 +70,7 @@
 
 
               <div class="layout">
-                <mat-radio-button value="2">Public Account</mat-radio-button>
+                <mat-radio-button value="public">Public Account</mat-radio-button>
 
               </div>
 
@@ -97,8 +97,8 @@
             </div>
           </div>
           <div class="existing-account-layout">
-            <button type="submit" [disabled]="!requiredForm.valid" mat-flat-button class="existing-account-layout"
-              (ngSubmit)="onSubmitPartOne()" (click)="changeTab()">
+            <button type="button" [disabled]="!requiredForm.valid" mat-flat-button class="existing-account-layout"
+              (click)="onSubmitPartOne()" (click)="changeTab()">
               Next
             </button>
 
@@ -135,7 +135,7 @@
                   (cropperReady)="initCropper()" (loadImageFailed)="imgFailed()">
                 </image-cropper>
               </div>
-              <button mat-flat-button color="primary" (click)="clearProfilePic()">Clear File</button>
+              <button type="button" mat-flat-button color="primary" (click)="clearProfilePic()">Clear File</button>
             </div>
             <div class="rowP">
               <!-- <i class="fas fa-camera _icon2"></i>
@@ -181,8 +181,8 @@
                 <p class="asthetic-adds ">Birthday</p>
               </div>
               <mat-form-field appearance="fill">
-                <mat-label>Choose a date:</mat-label>
-                <input matInput [matDatepicker]="dp" [formControl]="date">
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="dp" [formControl]="birthday">
                 <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
                 <mat-datepicker #dp></mat-datepicker>
               </mat-form-field>
@@ -206,7 +206,7 @@
             <div class="skip1">
               <button mat-button class="cBtnBl" (click)="changeTab1()">Skip For Now</button>
             </div>
-            <button type="submit" (ngSubmit)="onSubmitPartTwo()" mat-raised-button class="cBtn"
+            <button type="button" (click)="onSubmitPartTwo()" mat-raised-button class="cBtn"
               (click)="changeTab1()">Next</button>
           </div>
           <div class="skip2">
@@ -268,7 +268,7 @@
               <div class="skip1">
                 <button mat-button class="cBtnBl" (click)="changeTab3()">Skip For Now</button>
               </div>
-              <button type="submit" mat-raised-button class="cBtn" (ngSubmit)="onSubmitPartThree()"
+              <button type="button" mat-raised-button class="cBtn" (click)="onSubmitPartThree()"
                 (click)="changeTab3()">Next</button>
             </div>
           </div>
@@ -358,11 +358,13 @@
                     [matAutocomplete]="auto" [matChipInputFor]="chipList"
                     [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="add($event)">
                 </mat-chip-list>
-                <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
-                  <mat-option *ngFor="let code of filteredCodes | async" [value]="code">
-                    {{code}}
-                  </mat-option>
-                </mat-autocomplete>
+                <cdk-virtual-scroll-viewport itemSize="10">
+                  <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+                    <mat-option *cdkVirtualFor="let code of filteredCodes | async" [value]="code">
+                      {{code}}
+                    </mat-option>
+                  </mat-autocomplete>
+                </cdk-virtual-scroll-viewport>
               </mat-form-field>
             </div>
           </div>
@@ -381,15 +383,17 @@
                     {{codeP}}
                     <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
                   </mat-chip>
-                  <input placeholder="Choose completed courses" #codeInputP [formControl]="courseCodeCtrlP"
+                  <input placeholder="Choose pursuing courses" #codeInputP [formControl]="courseCodeCtrlP"
                     [matAutocomplete]="autoP" [matChipInputFor]="chipListP"
                     [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="addP($event)">
                 </mat-chip-list>
-                <mat-autocomplete #autoP="matAutocomplete" (optionSelected)="selectedP($event)">
-                  <mat-option *ngFor="let codeP of filteredCodesP | async" [valueP]="codeP">
-                    {{codeP}}
-                  </mat-option>
-                </mat-autocomplete>
+                <cdk-virtual-scroll-viewport itemSize="10">
+                  <mat-autocomplete #autoP="matAutocomplete" (optionSelected)="selectedP($event)">
+                    <mat-option *cdkVirtualFor="let codeP of filteredCodesP | async" [value]="codeP">
+                      {{codeP}}
+                    </mat-option>
+                  </mat-autocomplete>
+                </cdk-virtual-scroll-viewport>
               </mat-form-field>
             </div>
           </div>
@@ -400,17 +404,9 @@
         <div class="createBtn">
           <button mat-flat-button class="cBtnB" (click)="changeTab3()">Back</button>
           <i class="fas fa-user-graduate cBtnI"></i>
-          <button mat-raised-button class="cBtn" routerLink="/search" (ngSubmit)="onSubmit()">Create</button>
+          <button mat-raised-button class="cBtn" routerLink="/search" type="button" (click)="onSubmit()">Create</button>
         </div>
       </mat-tab>
-
-
-
     </mat-tab-group>
-
-
   </div>
-
-
-
 </form>

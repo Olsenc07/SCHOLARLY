@@ -60,8 +60,7 @@ export class SignupComponent implements OnInit {
   selectable = true;
   removable = true;
   separatorKeysCodes: number[] = [ENTER, COMMA];
-  courseCodeCtrl = new FormControl();
-  courseCodeCtrlP = new FormControl();
+
   filteredCodes: Observable<string[]>;
   filteredCodesP: Observable<string[]>;
   classes: string[] = [];
@@ -94,13 +93,15 @@ export class SignupComponent implements OnInit {
   club: FormControl = new FormControl('');
   name: FormControl = new FormControl('');
   pronouns: FormControl = new FormControl('');
-  birthday: FormControl = new FormControl('');
+  birthday: FormControl = new FormControl();
   genderChoice: FormControl = new FormControl('');
   email: FormControl = new FormControl('', Validators.email);
   termsCheck: FormControl = new FormControl('');
   // PP isn't connected properly i dont think, since image is being cropped then returned as a base 64 value
   profilePic: FormControl = new FormControl('');
-  accountType: FormControl = new FormControl('');
+  courseCodeCtrl: FormControl = new FormControl('');
+  courseCodeCtrlP: FormControl = new FormControl('');
+
   bio: FormControl = new FormControl('');
   public bioLength = new BehaviorSubject(0);
   snapShot1: FormControl = new FormControl('');
@@ -113,7 +114,7 @@ export class SignupComponent implements OnInit {
     username: this.username,
     password: this.password,
     genderChoice: this.genderChoice,
-    accountType: this.accountType,
+    accountType: new FormControl(''),
     termsCheck: this.termsCheck,
   });
 
@@ -142,7 +143,7 @@ export class SignupComponent implements OnInit {
     snapShotForm: this.snapShotForm,
   });
 
-  date = new FormControl(moment());
+
   onImgChange(event: any): void {
     this.imgChangeEvt = event;
   }
@@ -213,8 +214,8 @@ export class SignupComponent implements OnInit {
       )
     );
     this.filteredCodesP = this.courseCodeCtrlP.valueChanges.pipe(
-      map((code: string | null) =>
-        code ? this._filter(code) : this.classListService.allClasses().slice()
+      map((codeP: string | null) =>
+        codeP ? this._filter(codeP) : this.classListService.allClasses().slice()
       )
     );
   }

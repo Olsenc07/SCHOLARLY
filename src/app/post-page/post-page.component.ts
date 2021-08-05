@@ -69,7 +69,7 @@ export class PostPageComponent implements OnInit {
   removable = true;
   separatorKeysCodes: number[] = [ENTER, COMMA];
   // Desktop tag friends
-  friendCtrl: FormControl = new FormControl();
+  friendCtrl: FormControl = new FormControl(['']);
   filteredFriends: Observable<string[]>;
   friends: string[] = [];
   @ViewChild('friendInput') friendInput: ElementRef<HTMLInputElement>;
@@ -103,13 +103,10 @@ export class PostPageComponent implements OnInit {
     Title: this.Title,
     postDescription: this.postDescription,
     upload: this.upload,
-
-    // firstFormGroup :this.firstFormGroup,
-    // secondFormGroup: this.secondFormGroup,
-    // thirdFormGroup: this.thirdFormGroup,
-    // fourthFormGroup: this.fourthFormGroup,
     postLocation: this.postLocation,
     friendCtrl: this.friendCtrl,
+
+
   });
   constructor(public dialog: MatDialog, public searchListService: SearchListService, private fb: FormBuilder, private postService: PostService) {
     this.Title.valueChanges.subscribe((v) => this.TitleLength.next(v.length));

@@ -1,13 +1,30 @@
+@media(min-width:1024px){
 .accounts {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
-}
+  margin-bottom: 3%;
+}}
+@media(max-width:1024px){
+  .accounts {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    
+  }}
+@media(min-width:1024px){
 .Accounts {
   display: flex;
   justify-content: space-around;
   width: 100%;
-}
+  max-width: 45%;
+}}
+@media(max-width:1024px){
+  .Accounts {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }}
 .asthetic-adds {
   color: #418bba;
   border-color: #707070;
@@ -33,6 +50,16 @@
   justify-self: center;
   margin-bottom: 5%;
 }
+@media(min-width:1024px){
+.c_r{
+  display: flex;
+  flex-direction: row;
+}}
+@media(max-width:1024px){
+.c_r{
+  display: flex;
+  flex-direction: column;
+}}
 .center{
   display: flex;
   justify-content: center;
@@ -48,7 +75,48 @@
   width: 100%;
   flex-direction: column;
 }
-
+@media(min-width:1024px){
+  .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 0% 30%;
+    max-width: 50%;
+    
+  }}
+  @media(max-width:1024px)and(min-width:875px){
+  .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 0% 25%;
+    
+  }}
+  @media(max-width:875px)and(min-width:500px){
+  .column {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin: 0% 20%;
+   
+  }}
+  @media(max-width:500px){
+  .column {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-sizing: border-box;
+   
+  }
+  }
+.column_ {  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 1%;
+}
 .column1 {
   display: flex;
   flex-direction: column;
@@ -139,43 +207,7 @@
   }
 }
 
-@media(min-width:1024px){
-  .column {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-sizing: border-box;
-    margin: 0% 30%;
-    max-width: 50%;
-    
-  }}
-  @media(max-width:1024px)and(min-width:875px){
-  .column {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-sizing: border-box;
-    margin: 0% 25%;
-    
-  }}
-  @media(max-width:875px)and(min-width:500px){
-  .column {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    box-sizing: border-box;
-    margin: 0% 20%;
-   
-  }}
-  @media(max-width:500px){
-  .column {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    box-sizing: border-box;
-   
-  }
-  }
+
 .fa-arrow-circle-left{
   font-size: large;
 }
@@ -279,7 +311,7 @@
   display: flex;
   flex-direction: row;
 }
-@media (min-width: 900px) {
+@media (min-width: 1024px) {
   .rowP {
     display: flex;
     justify-content: space-around;
@@ -288,7 +320,7 @@
     overflow-x: scroll;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .rowP {
     display: none;
    
@@ -331,21 +363,22 @@
   display: flex;
   flex-direction: column;
 }
-@media(min-width:1024px) {
+
+@media(min-width:1024px){
 .personalizeLarge {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
-  max-height: 350px;
   margin: 1% 0% 3%;
 }}
-@media(max-width:1024px) {
-.personalizeLarge {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: column;
-  margin: 1% 0% 3%;
-}}
+@media(max-width:1024px){
+  .personalizeLarge {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    margin: 1% 0% 3%;
+  }}
+
 .private-public {
   display: flex;
   flex-direction: row;
@@ -370,15 +403,15 @@
   justify-content: center;
 }
 
-@media(max-width:1024px){
 .PreviewPic{
   display: flex;
   justify-content: center;
-}}
+  flex-direction: row;
+}
 .layout {
-  margin-bottom: 2%;
   display: flex;
-  justify-content: row;
+  flex-direction: column;
+  justify-content: center;
 }
 .text {
   color: #0e3379;

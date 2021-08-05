@@ -12,6 +12,9 @@ import { PostService } from '../services/post.service';
 export class ReusableCardComponent {
 
     post$$ = PostService.post$$;
+    gender$ = PostService.gender$;
+    booleans$ = PostService.booleans$;
+    event$ = PostService.event$;
 
 
 

@@ -24,6 +24,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ClassListService } from '../services/class.service';
 import { Profile, StoreService } from '../services/store.service';
+import { AccountTextComponent } from '../signup/signup.component'
+
 
 interface Gender {
   name: string;
@@ -81,7 +83,6 @@ export class EditProfileComponent implements OnInit {
   name: FormControl = new FormControl('');
   pronouns: FormControl = new FormControl('');
   showCase: FormControl = new FormControl('');
-  accountType: FormControl = new FormControl('');
   birthday: FormControl = new FormControl('');
   genderChoice: FormControl = new FormControl('');
 
@@ -97,7 +98,7 @@ export class EditProfileComponent implements OnInit {
     pronouns: this.pronouns,
     genderChoice: this.genderChoice,
     birthday: this.birthday,
-    accountType: this.accountType,
+    accountType: new FormControl(''),
     profilePic: this.profilePic,
     CodeCompleted: this.CodeCompleted,
     CodePursuing: this.CodePursuing,
@@ -194,9 +195,7 @@ export class EditProfileComponent implements OnInit {
 
     this.CodePursuing.setValue(null);
   }
-  openDialog(): void {
-    this.dialog.open(PopUpComponent);
-  }
+
   remove(code: string): void {
     const index = this.classes.indexOf(code);
     if (index >= 0) {
@@ -284,6 +283,9 @@ export class EditProfileComponent implements OnInit {
     // delete post thats being displayed
   }
 
+  openDialogAccount(): void {
+    this.dialog.open(AccountTextComponent);
+  }
 
   onSubmit(): void {
     console.log(this.editForm.value);
@@ -300,9 +302,3 @@ export class EditProfileComponent implements OnInit {
     this.storeService.setProfile(profile);
   }
 }
-@Component({
-  selector: 'app-edit-profile',
-  templateUrl: './pop-up-editP.component.html',
-  styleUrls: ['./pop-up-editP.component.scss'],
-})
-export class PopUpComponent { }
