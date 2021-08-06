@@ -1,9 +1,12 @@
 <div class="entire-page">
   <!-- Entire page -->
   <div class="main-layout">
+
     <div class="left-column">
+
       <div class="center"> Recommendations</div>
-      <!-- ADDDDDDSSSSSS!!!!!! Profile picture!! School logo or delete -->
+      <!-- Reccomendations and adds -->
+      <!-- Limit load in amount at a time -->
       <div [ngClass]="opt >=1 ? 'logo-layoutP' : 'logo-layout' ">
         <!-- Then each card is filled uniquely passed off {{ }}  values in feed-->
         <app-card-request class="adds" *ngFor="let feed of feeds">
@@ -20,6 +23,7 @@
           </mat-chip>
         </mat-chip-list>
       </div>
+
     </div>
 
     <!-- middle -->

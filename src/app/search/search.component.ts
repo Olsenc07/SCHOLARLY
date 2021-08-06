@@ -23,7 +23,34 @@ export class SearchComponent implements OnInit {
   // Check mark could take you to that adds website, x could remove it from list
   // or just not be there.. course drop down display:none. bio could be ad info or whstever and logo in profile pic
   // Larger adds get main post cards filled.
-  feeds = [{ "profilePic": "", "userName": "", "Bio": "" }
+  feeds = [{
+    "profilePic": "", "userName": "", "Bio": "",
+    "Major": "", "Minor": "", "Sport": "", "Club": ""
+  },
+  {
+    "profilePic": "", "userName": "", "Bio": "",
+    "Major": "", "Minor": "", "Sport": "", "Club": ""
+  },
+  {
+    "profilePic": "", "userName": "", "Bio": "",
+    "Major": "", "Minor": "", "Sport": "", "Club": ""
+  },
+  {
+    "profilePic": "", "userName": "", "Bio": "",
+    "Major": "", "Minor": "", "Sport": "", "Club": ""
+  },
+  {
+    "profilePic": "", "userName": "", "Bio": "",
+    "Major": "", "Minor": "", "Sport": "", "Club": ""
+  },
+  {
+    "profilePic": "", "userName": "", "Bio": "",
+    "Major": "", "Minor": "", "Sport": "", "Club": ""
+  },
+  {
+    "profilePic": "", "userName": "", "Bio": "",
+    "Major": "", "Minor": "", "Sport": "", "Club": ""
+  }
   ];
   // Mock list but these are needed to fill app-card-request in ngFor
   // Will be pulled from back end, but how does the selector know to fill???
