@@ -279,6 +279,7 @@ mat-grid-list{
 }
 .posts {
   display: flex;
+  flex-direction: column;
   height: 100%; 
   width:100%;
 }

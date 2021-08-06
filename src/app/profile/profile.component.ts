@@ -24,6 +24,41 @@ export class ProfileComponent {
   showFiller = false;
   // TODO: initial following value would need to be loaded from database - for now, always start with false
   following = false;
+
+
+  posts = [{
+    "profilePic": "", "Title": "",
+    "Specific": "", "Location": "", "Date": "", "Upload": ""
+  },
+  {
+    "profilePic": "", "Title": "",
+    "Specific": "", "Location": "", "Date": "", "Upload": ""
+  },
+  {
+    "profilePic": "", "Title": "",
+    "Specific": "", "Location": "", "Date": "", "Upload": ""
+  },
+  {
+    "profilePic": "", "Title": "",
+    "Specific": "", "Location": "", "Date": "", "Upload": ""
+  },
+  {
+    "profilePic": "", "Title": "",
+    "Specific": "", "Location": "", "Date": "", "Upload": ""
+  },
+  {
+    "profilePic": "", "Title": "",
+    "Specific": "", "Location": "", "Date": "", "Upload": ""
+  },
+  {
+    "profilePic": "", "Title": "",
+    "Specific": "", "Location": "", "Date": "", "Upload": ""
+  }
+  ];
+
+
+
+
   constructor(private bottomSheet: MatBottomSheet) {
     // profile$$.profile$$.subscribe((profile) => {
     //   // this.profile$$ = profile;
