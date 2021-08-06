@@ -67,19 +67,18 @@
     <!-- Mobile -->
     <div class="hide1">
       <div class="topM">
-
-
         <div class="center"> Recommendations</div>
-        <!-- ADDDDDDSSSSSS!!!!!! Profile picture!! School logo or delete -->
+        <!-- ADDDDDDSSSSSS!!-->
 
         <div class="logo-layoutM">
           <!-- Adds and recommecndations will be mixed into feed!!!!! -->
+          <div class="fit">
+            <app-card-request class="adds" *ngFor="let feed of feeds">
 
-          <div class="adds">
-            <cdk-virtual-scroll-viewport orientation="horizontal" itemSize="10"><img *cdkVirtualFor="let feed of feeds"
-                [src]="feed" /> </cdk-virtual-scroll-viewport>
+              {{feed}}
+
+            </app-card-request>
           </div>
-
         </div>
 
 
