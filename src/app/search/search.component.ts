@@ -15,17 +15,18 @@ interface SearchOption {
 })
 export class SearchComponent implements OnInit {
 
-  // Should pull in from data base, adds and reccomendations of whatever I decide
+  // Should pull in from data base(with the cards"reccomendations"), adds and reccomendations of whatever I decide
   // make sure they display nicely and one add doesnt get way more time then others
-  feeds = ['../../assets/Pics/WhiteSquareInAppLogo.jpg',
-    '../../assets/Pics/WhiteSquareInAppLogo.jpg',
-    '../../assets/Pics/WhiteSquareInAppLogo.jpg',
-    '../../assets/Pics/BlueSquareAppLogo.jpg',
-    '../../assets/Pics/WhiteSquareInAppLogo.jpg',
-    '../../assets/Pics/WhiteSquareInAppLogo.jpg',
-    '../../assets/Pics/WhiteSquareInAppLogo.jpg',
-    '../../assets/Pics/BlueSquareAppLogo.jpg'];
-
+  // cards will be 'https://.../..' etc from a database
+  // If needed make adds the same card format. So the same look its sidplayed
+  // just filled with either recomendations "friend request card style" or add in this style
+  // Check mark could take you to that adds website, x could remove it from list
+  // or just not be there.. course drop down display:none. bio could be ad info or whstever and logo in profile pic
+  // Larger adds get main post cards filled.
+  feeds = [{ "profilePic": "", "userName": "", "Bio": "" }
+  ];
+  // Mock list but these are needed to fill app-card-request in ngFor
+  // Will be pulled from back end, but how does the selector know to fill???
 
 
 

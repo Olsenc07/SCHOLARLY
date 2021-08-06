@@ -5,11 +5,10 @@
       <div class="center"> Recommendations</div>
       <!-- ADDDDDDSSSSSS!!!!!! Profile picture!! School logo or delete -->
       <div [ngClass]="opt >=1 ? 'logo-layoutP' : 'logo-layout' ">
-        <!-- There will be just one div then ngfor will loop through a list of images/adds. as well as some 
-        suggestions or something..... mixed in.    Adds will also be mixed into feed!!!!! -->
-        <div class="adds">
-          <img *ngFor="let feed of feeds" [src]="feed" />
-        </div>
+        <!-- Then each card is filled uniquely passed off {{ }}  values in feed-->
+        <app-card-request class="adds" *ngFor="let feed of feeds">
+          {{feed}}
+        </app-card-request>
       </div>
 
 
