@@ -24,6 +24,7 @@
         <div class="centerR">
           <!-- {{gender$$ | async}} -->
           Male
+          <!-- {{age}}{{pronouns}} -->
         </div>
 
       </div>
@@ -80,8 +81,9 @@
       <!-- Bio: Full name & age input text & Pronouns *ngIf="bio.value " -->
       <div class="bio-name-age">
         <div class="text-2">
-          <!-- {{fullname}}{{age}}{{pronouns}} -->
-          Chaz 24 He/Him
+          <!-- {{fullname}} -->
+          Chase Olsen: There are more planes in the sea then submarines in the sky.
+
         </div>
       </div>
 
@@ -142,16 +144,10 @@
             <mat-tab label="Showcase">
               <div class="showCase">
 
-                <!-- *ngFor to load in more tiles-->
+
                 <div class="column">
 
-                  <div class="show-case1">
-
-                    <img style="width: inherit;" src="../../assets/Pics/IMG-8413.PNG" />
-
-                  </div>
-
-
+                  <img class="img" *ngFor="let showCase of showCases" src={{showCase}} />
 
                 </div>
 
@@ -196,27 +192,18 @@
 
       <mat-tab label="Activity">
         <!-- Recent Posts text  -->
-        <div class="HighlightsM">
-          <div class="highlights-layout">
-            <!-- Recent Posts box-->
-            <app-card class="fit"></app-card>
-          </div>
+        <div class="posts">
+          <app-card *ngFor="let post of posts">
+            {{post}}
+          </app-card>
         </div>
       </mat-tab>
       <!-- Snap shots -->
       <mat-tab label="Showcase">
         <div class="showCase">
 
-          <!-- *ngFor to load in more tiles-->
           <div class="column">
-
-
-            <mat-grid-tile class="tile">
-
-              <div class="show-case"></div>
-              <div class="show-case"></div>
-
-            </mat-grid-tile>
+            <img class="img" *ngFor="let showCase of showCases" src={{showCase}} />
           </div>
 
         </div>

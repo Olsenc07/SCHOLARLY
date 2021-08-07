@@ -18,9 +18,6 @@ export class ProfileComponent {
   profile$$ = StoreService.profile$$;
 
 
-
-
-
   showFiller = false;
   // TODO: initial following value would need to be loaded from database - for now, always start with false
   following = false;
@@ -56,6 +53,10 @@ export class ProfileComponent {
   }
   ];
 
+  showCases = ['../../assets/Pics/IMG-8413.PNG', '../../assets/Pics/IMG-8619.PNG',
+    '../../assets/Pics/IMG-8413.PNG', '../../assets/Pics/IMG-8413.PNG', '../../assets/Pics/IMG-8619.PNG',
+    '../../assets/Pics/IMG-8413.PNG', '../../assets/Pics/IMG-8413.PNG'
+  ];
 
 
 

@@ -17,7 +17,6 @@
 }
 .bio-name-age {
   display: flex;
-  justify-content: center;
 }
 
 .bio-box {
@@ -78,14 +77,29 @@
   width: 100%;
   margin-top: 15%;
 }
+@media(min-width:1024px){
+  .column{
+    margin-right: 2%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 99%;
+    padding: 0% 15%;
+    height: fit-content;
+    box-sizing: border-box;
+  }}
+@media(max-width:1024px){
 .column{
   margin-right: 2%;
   display: flex;
   justify-content: center;
   flex-direction: column;
   width: 99%;
+  padding: 0% 15%;
+  height: fit-content;
   box-sizing: border-box;
-}
+  margin-bottom: 22%;
+}}
 
 @media (min-width: 410px) {
   .convo-text {
@@ -177,6 +191,11 @@
   width: 100%;
   height: 100%;
   box-sizing: border-box;
+}
+.img{
+  width: inherit;
+  height: inherit;
+  margin: 2% 0%;
 }
 .left-side {
   display: flex;
@@ -281,6 +300,7 @@ mat-grid-list{
   display: flex;
   flex-direction: column;
   height: 100%; 
+  overflow-y: scroll;
   width:100%;
 }
 .pic {
@@ -348,11 +368,9 @@ mat-grid-list{
 .showCase {
   display: flex;
   height: 100%;
-  width: 100%;
+  width: 99%;
   overflow-y: scroll;
 }
-
-
 .show-case{
   display: flex;
   width: 100%;
@@ -366,6 +384,8 @@ mat-grid-list{
   height: 100%;
   justify-content: center;
   border: groove;
+  flex-direction: column;
+  overflow-y: scroll;
 }
 .search-format {
   display: flex;
