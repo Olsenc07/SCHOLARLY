@@ -287,7 +287,7 @@
               <i class="fas fa-check _icon"></i>
               <mat-form-field class="example-chip-list">
                 <mat-label>Completed Courses</mat-label>
-                <mat-chip-list #chipList aria-label="Fruit selection1">
+                <mat-chip-list #chipList aria-label="Class Code">
                   <mat-chip *ngFor="let code of classes" [selectable]="selectable" [removable]="removable"
                     (removed)="remove(code)">
                     {{code}}
@@ -315,7 +315,7 @@
               <mat-form-field class="example-chip-list">
                 <mat-label>Pursuing Courses</mat-label>
 
-                <mat-chip-list #chipListP aria-label="Fruit selection2">
+                <mat-chip-list #chipListP aria-label="Class CodeP">
                   <mat-chip *ngFor="let codeP of classesP" [selectable]="selectable" [removable]="removable"
                     (removed)="removeP(codeP)">
                     {{codeP}}

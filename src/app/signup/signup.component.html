@@ -348,13 +348,13 @@
               <i class="fas fa-check _icon"></i>
               <mat-form-field class="example-chip-list">
                 <mat-label>Completed Courses</mat-label>
-                <mat-chip-list #chipList aria-label="Fruit selection">
+                <mat-chip-list #chipList aria-label="Class Code">
                   <mat-chip *ngFor="let code of classes" [selectable]="selectable" [removable]="removable"
                     (removed)="remove(code)">
                     {{code}}
                     <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
                   </mat-chip>
-                  <input placeholder="Choose completed courses" #codeInputP [formControl]="courseCodeCtrl"
+                  <input placeholder="Choose completed courses" #codeInput [formControl]="courseCodeCtrl"
                     [matAutocomplete]="auto" [matChipInputFor]="chipList"
                     [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="add($event)">
                 </mat-chip-list>
@@ -377,7 +377,7 @@
 
               <mat-form-field class="example-chip-list">
                 <mat-label>Pursuing Courses</mat-label>
-                <mat-chip-list #chipListP aria-label="Fruit selection">
+                <mat-chip-list #chipListP aria-label="Class CodeP">
                   <mat-chip *ngFor="let codeP of classesP" [selectable]="selectable" [removable]="removable"
                     (removed)="removeP(codeP)">
                     {{codeP}}
@@ -389,7 +389,7 @@
                 </mat-chip-list>
                 <cdk-virtual-scroll-viewport itemSize="10">
                   <mat-autocomplete #autoP="matAutocomplete" (optionSelected)="selectedP($event)">
-                    <mat-option *cdkVirtualFor="let codeP of filteredCodesP | async" [value]="codeP">
+                    <mat-option *cdkVirtualFor="let codeP of filteredCodesP | async" [valueP]="codeP">
                       {{codeP}}
                     </mat-option>
                   </mat-autocomplete>
