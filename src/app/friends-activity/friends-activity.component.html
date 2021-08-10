@@ -12,7 +12,12 @@
                 class="fas fa-arrow-circle-right title"></i>
             </button>
           </div>
-          <app-card-request></app-card-request>
+          <!-- <div class="fit"> -->
+          <!-- If ids are on friend list -->
+          <app-card-request class="adds" *ngFor="let feed of feeds">
+            {{feed}}
+          </app-card-request>
+          <!-- </div> -->
         </div>
       </div>
       <!-- Friends activity box -->
