@@ -33,6 +33,8 @@ export class AppComponent implements OnInit {
 
   isRetrievePScreen$: Observable<boolean>;
 
+  isMessagesScreen$: Observable<boolean>;
+
   searchBox: Element;
 
   search: FormControl = new FormControl('');
@@ -84,6 +86,10 @@ export class AppComponent implements OnInit {
     this.isRetrievePScreen$ = this.router.events.pipe(
       filter(event => event instanceof NavigationEnd),
       map((event: NavigationEnd) => event.url === '/' || event.url === '/retrieve-password')
+    );
+    this.isMessagesScreen$ = this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd),
+      map((event: NavigationEnd) => event.url === '/' || event.url === '/messages')
     );
 
   }

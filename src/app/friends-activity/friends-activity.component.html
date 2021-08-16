@@ -6,18 +6,15 @@
       <div class="friends-request-box">
         <div class="friends-request">
           <div class="row">
-            <button mat-icon-button><i class="fas fa-arrow-circle-left title"></i>
-            </button>
-            <div class="title">Friend Requests</div><button mat-icon-button><i
-                class="fas fa-arrow-circle-right title"></i>
-            </button>
+
+            <div class="title">Friend Requests</div>
           </div>
-          <!-- <div class="fit"> -->
-          <!-- If ids are on friend list -->
-          <app-card-request class="adds" *ngFor="let feed of feeds">
-            {{feed}}
-          </app-card-request>
-          <!-- </div> -->
+          <div class="fit">
+            <!-- If ids are on friend list -->
+            <app-card-request class="adds" *ngFor="let feed of feeds">
+              {{feed}}
+            </app-card-request>
+          </div>
         </div>
       </div>
       <!-- Friends activity box -->

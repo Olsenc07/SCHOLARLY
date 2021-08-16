@@ -68,17 +68,27 @@
               </button>
             </div>
             <div class="icon-btn-fit">
-              <button mat-icon-button type="button" routerLink="/profile" class="a_up">
-                <mat-icon [ngClass]="(isProfileScreen$ | async ) === true
-            ? 'ProfileOn' : 'profile'">account_circle</mat-icon>
-              </button>
-            </div>
-            <div class="icon-btn-fit">
               <button mat-icon-button type="button" routerLink="/post-page" class="a_up">
                 <mat-icon [ngClass]="(isPostScreen$ | async ) === true
                 ? 'PostOn' : 'post' ">add_circle</mat-icon>
               </button>
             </div>
+
+            <div class="icon-btn-fit">
+              <button mat-icon-button type="button" routerLink="/messages" class="a_up">
+                <i [ngClass]="(isMessagesScreen$ | async ) === true
+                ? 'MessageOn' : 'message' 
+                " class="far fa-comment-dots"></i>
+              </button>
+            </div>
+
+            <div class="icon-btn-fit">
+              <button mat-icon-button type="button" routerLink="/profile" class="a_up">
+                <mat-icon [ngClass]="(isProfileScreen$ | async ) === true
+            ? 'ProfileOn' : 'profile'">account_circle</mat-icon>
+              </button>
+            </div>
+
           </div>
           <button mat-icon-button [matMenuTriggerFor]="settingsMenu" type="button" class="b_up">
             <mat-icon class="settings">settings</mat-icon>
@@ -136,17 +146,27 @@
             </button>
           </div>
           <div class="icon-btn-fit">
-            <button mat-icon-button type="button" routerLink="/profile" class="a_up">
-              <mat-icon [ngClass]="(isProfileScreen$ | async ) === true
-      ? 'ProfileOnM' : 'profileM' ">account_circle</mat-icon>
-            </button>
-          </div>
-          <div class="icon-btn-fit">
             <button mat-icon-button type="button" routerLink="/post-page" class="a_up">
               <mat-icon [ngClass]="(isPostScreen$ | async ) === true
               ? 'PostOnM' : 'postM' ">add_circle</mat-icon>
             </button>
           </div>
+
+          <div class="icon-btn-fit">
+            <button mat-icon-button type="button" routerLink="/messages" class="a_up">
+              <i [ngClass]="(isMessagesScreen$ | async ) === true
+              ? 'MessageOnM' : 'messageM' 
+              " class="far fa-comment-dots"></i>
+            </button>
+          </div>
+
+          <div class="icon-btn-fit">
+            <button mat-icon-button type="button" routerLink="/profile" class="a_up">
+              <mat-icon [ngClass]="(isProfileScreen$ | async ) === true
+      ? 'ProfileOnM' : 'profileM' ">account_circle</mat-icon>
+            </button>
+          </div>
+
         </div>
       </mat-toolbar>
     </ng-container>

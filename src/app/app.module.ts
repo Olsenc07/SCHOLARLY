@@ -47,6 +47,7 @@ import { RetrievePasswordComponent } from './retrieve-password/retrieve-password
 import { ProfileComponent } from './profile/profile.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { GroupChatsComponent } from './group-chats/group-chats.component';
+import { MessagingComponent } from './messaging/messaging.component';
 import { MainPagesComponent } from './main-pages/main-pages.component';
 import { SignupComponent } from './signup/signup.component';
 import { TermsPopUpComponent } from './signup/signup.component';
@@ -102,6 +103,7 @@ import { StoreService } from './services/store.service';
     GroupMembersComponent,
     TaggedComponent,
     AccountTextComponent,
+    MessagingComponent,
   ],
   imports: [
     BrowserModule,
