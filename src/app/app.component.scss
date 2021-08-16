@@ -59,7 +59,8 @@ h4:focus {
 // top nav icon
 .icon-btn-fit {
   display: flex;
-  justify-content: center;
+ height: 100%;
+ width: 100%;
   flex-direction: column;
   box-sizing: content-box;
 }
@@ -67,8 +68,9 @@ h4:focus {
   display: flex;
   justify-content: center;
   box-sizing: border-box;
-  height: auto;
-  width: auto;
+  height: 100%;
+  width: 100%;
+  align-items: center;
 }
 .b_up {
   margin-left: 10%;
@@ -86,12 +88,12 @@ h4:focus {
 .search-box {
   position: relative;
   width: 80%;
-  height: 18px;
   display: flex;
   flex-direction: row;
   display: inline-block;
-  margin-top: 1%;
   border-style: hidden;
+  justify-content: center;
+  align-items: center;
 }
 .search-box__icon {
   position: absolute;
@@ -127,12 +129,16 @@ h4:focus {
   box-sizing: content-box;
   opacity: 1;
 }
+@media(min-width:1025px){
 .large-screen-icons {
   display: flex;
   justify-content: center;
   flex-direction: row;
   width: 60%;
-}
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}}
 @media (max-width: 1025px) {
   .large-screen-icons {
     display: none;
@@ -144,9 +150,16 @@ h4:focus {
     display: none;
   }
 }
-.small_icons {
+@media(max-width:1025px){
+.small-icons {
   display: flex;
-}
+  justify-content: center;
+  flex-direction: row;
+
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}}
 // Bottom Nav
 @media (max-width: 1025px) {
   .lower {
@@ -172,7 +185,7 @@ h4:focus {
 .PublicOnM {
   display: flex;
   justify-content: center;
-  color: gray;
+  color: cornflowerblue;
   font-size: 7vmax;
 }
 
@@ -185,11 +198,21 @@ h4:focus {
 .PostOnM {
   display: flex;
   justify-content: center;
-  color: gray;
+  color: cornflowerblue;
   font-size: 7vmax;
 }
-
-
+.messageM{
+  display: flex;
+  color: #f5f5f5;
+  justify-content: center;
+  font-size: 6vmax;
+}
+.MessageOnM{
+  font-size: 7vmax;
+  display: flex;
+  color: cornflowerblue;
+  justify-content: center;
+}
 .groupsM {
   color: #f5f5f5;
   display: flex;
@@ -199,7 +222,7 @@ h4:focus {
 .GroupsOnM {
   font-size: 7vmax;
   display: flex;
-  color: gray;
+  color: cornflowerblue;
   justify-content: center;
 }
 .profileM {
@@ -211,14 +234,14 @@ h4:focus {
 .ProfileOnM {
   display: flex;
   font-size: 7vmax;
-  color: gray;
+  color: cornflowerblue;
   justify-content: center;
 }
 .postM {
   color: #f5f5f5;
   display: flex;
   justify-content: center;
-  font-size: 7vmax;
+  font-size: 6vmax;
 }
 .d_settings {
   margin-top: 8%;
@@ -228,17 +251,20 @@ h4:focus {
     flex-direction: row;
     justify-content: space-around;
     width: 100%;
+    height: 100%;
   }
   .public {
     font-size: 4vw;
     display: flex;
     color: #f5f5f5;
     justify-content: center;
+    width: 100%;
+    height: 100%;
   }
   .PublicOn {
     display: flex;
     justify-content: center;
-    color: gray;
+    color: cornflowerblue;
     font-size: 5vw;
   }
   .groups {
@@ -250,7 +276,7 @@ h4:focus {
   .GroupsOn {
     font-size: 5vw;
     display: flex;
-    color: gray;
+    color: cornflowerblue;
     justify-content: center;
   }
   .profile {
@@ -262,7 +288,7 @@ h4:focus {
   .ProfileOn {
     display: flex;
     font-size: 5vw;
-    color: gray;
+    color: cornflowerblue;
     justify-content: center;
   }
   .post {
@@ -274,7 +300,19 @@ h4:focus {
   .PostOn {
     display: flex;
     font-size: 5vw;
-    color: gray;
+    color: cornflowerblue;
+    justify-content: center;
+  }
+  .message{
+    color: #f5f5f5;
+    font-size: 4vw;
+    display: flex;
+    justify-content: center;
+  }
+  .MessageOn{
+    display: flex;
+    font-size: 5vw;
+    color: cornflowerblue;
     justify-content: center;
   }
   .search-box__input:focus {

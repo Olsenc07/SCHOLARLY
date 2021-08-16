@@ -1,16 +1,17 @@
 <div class="entire-page">
   <!-- Entire page -->
   <div class="main-layout">
+
     <div class="left-column">
+
       <div class="center"> Recommendations</div>
-      <!-- ADDDDDDSSSSSS!!!!!! Profile picture!! School logo or delete -->
+      <!-- Reccomendations and adds -->
+      <!-- Limit load in amount at a time -->
       <div [ngClass]="opt >=1 ? 'logo-layoutP' : 'logo-layout' ">
-        <!-- There will be just one div then ngfor will loop through a list of images/adds. as well as some 
-        suggestions or something..... mixed in.    Adds will also be mixed into feed!!!!! -->
-        <div class="adds"> <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" /></div>
-        <div class="adds"> <img Src="../../assets/Pics/BlueSquareAppLogo.jpg" /></div>
-        <div class="adds"> <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" /></div>
-        <div class="adds"> <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" /></div>
+        <!-- Then each card is filled uniquely passed off {{ }}  values in feed-->
+        <app-card-request class="adds" *ngFor="let feed of feeds">
+          {{feed}}
+        </app-card-request>
       </div>
 
 
@@ -22,6 +23,7 @@
           </mat-chip>
         </mat-chip-list>
       </div>
+
     </div>
 
     <!-- middle -->
@@ -47,14 +49,10 @@
         Recent Feed
       </div>
       <div class="recents">
-        <app-card class="hide"></app-card>
-        <!-- Add but also post cards can be posts, just have add company 
-        fill out a card!! -->
-        <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" />
-        <app-card class="hide"></app-card>
-        <!-- Add but also post cards can be posts, just have add company 
-        fill out a card!! -->
-        <img Src="../../assets/Pics/BlueSquareAppLogo.jpg" />
+        <app-card class="hide" *ngFor="let post of posts">
+          {{post}}
+        </app-card>
+
       </div>
     </div>
 
@@ -65,19 +63,20 @@
     <!-- Mobile -->
     <div class="hide1">
       <div class="topM">
-
-
         <div class="center"> Recommendations</div>
-        <!-- ADDDDDDSSSSSS!!!!!! Profile picture!! School logo or delete -->
-        <div class="logo-layoutM">
-          <!-- There will be just one div then ngfor will loop through a list of images/adds. as well as some 
-          suggestions or something..... mixed in.    Adds will also be mixed into feed!!!!! -->
-          <div class="adds"> <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" /></div>
-          <div class="adds"> <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" /></div>
-          <div class="adds"> <img Src="../../assets/Pics/BlueSquareAppLogo.jpg" /></div>
-          <div class="adds"> <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" /></div>
-        </div>
+        <!-- ADDDDDDSSSSSS!!-->
 
+        <div class="logo-layoutM">
+          <!-- Adds and recommecndations will be mixed into feed!!!!! -->
+          <div class="fit">
+            <!-- If user does not make in friend list -->
+            <app-card-request class="adds" *ngFor="let feed of feeds">
+
+              {{feed}}
+
+            </app-card-request>
+          </div>
+        </div>
 
 
         <div class="column">
@@ -114,10 +113,10 @@
         <div class="center">
           Recent Feed
         </div>
-        <app-card class="display"></app-card>
-        <img Src="../../assets/Pics/WhiteSquareInAppLogo.jpg" />
-        <app-card class="display"></app-card>
-        <img Src="../../assets/Pics/BlueSquareAppLogo.jpg" />
+        <app-card class="display" *ngFor="let post of posts">
+          {{post}}
+        </app-card>
+
         <!-- Then cards keep getting filled in!! Just was testing the overflow scroll -->
       </div>
     </div>

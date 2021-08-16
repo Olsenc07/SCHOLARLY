@@ -2,7 +2,17 @@
     display: flex;
     font-size: xx-large;
     justify-content: center;
-    margin-right: 15%;
+}
+.center{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.center1{
+  display: flex;
+  justify-content: center;
+  margin: 4% 0%;
+  text-align: center;
 }
 .column{
     display: flex;
@@ -33,7 +43,14 @@
       display: flex;
       flex-direction: row;
       justify-content: center;
+      box-sizing: border-box;
   }
+  .row_{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+   width: 100%;
+}
  
   .profilePic {
     display: flex;

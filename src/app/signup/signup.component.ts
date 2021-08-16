@@ -271,13 +271,13 @@ export class SignupComponent implements OnInit {
   selected(event: MatAutocompleteSelectedEvent): void {
     this.classes.push(event.option.viewValue);
     this.codeInput.nativeElement.value = '';
-    this.courseCodeCtrl.setValue(null);
+    this.courseCodeCtrl.setValue('');
   }
   // Pursuing Classes
   selectedP(event: MatAutocompleteSelectedEvent): void {
     this.classesP.push(event.option.viewValue);
     this.codeInputP.nativeElement.value = '';
-    this.courseCodeCtrlP.setValue(null);
+    this.courseCodeCtrlP.setValue('');
   }
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();

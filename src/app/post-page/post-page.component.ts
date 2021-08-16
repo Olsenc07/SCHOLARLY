@@ -108,6 +108,13 @@ export class PostPageComponent implements OnInit {
 
 
   });
+
+
+
+
+
+
+
   constructor(public dialog: MatDialog, public searchListService: SearchListService, private fb: FormBuilder, private postService: PostService) {
     this.Title.valueChanges.subscribe((v) => this.TitleLength.next(v.length));
     // Desktop tag friends
@@ -177,7 +184,7 @@ export class PostPageComponent implements OnInit {
     // Clear the input value
     // event.chipInput!.clear();
 
-    this.friendCtrl.setValue('');
+    this.friendCtrl.setValue(null);
   }
   remove(friend: string): void {
     const index = this.friends.indexOf(friend);

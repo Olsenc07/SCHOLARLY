@@ -12,6 +12,7 @@ import { RetrievePasswordComponent } from './retrieve-password/retrieve-password
 import { SearchComponent } from './search/search.component';
 import { SignupComponent } from './signup/signup.component';
 import { MainPagesComponent } from './main-pages/main-pages.component';
+import { MessagingComponent } from './messaging/messaging.component';
 
 
 export const routingComponents = [
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'friends-activity', component: FriendsActivityComponent },
   { path: 'groups', component: GroupChatsComponent },
   { path: 'main', component: MainPagesComponent },
+  { path: 'messages', component: MessagingComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 ];
 
@@ -41,4 +43,4 @@ const routes: Routes = [
   exports: [RouterModule],
   bootstrap: [AppComponent],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
