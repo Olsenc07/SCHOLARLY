@@ -73,7 +73,9 @@ h4:focus {
   align-items: center;
 }
 .b_up {
-  margin-left: 10%;
+  display: flex;
+  justify-content: center;
+  margin: 0% 2%;
 }
 
 .look-nice {
@@ -134,7 +136,7 @@ h4:focus {
   display: flex;
   justify-content: center;
   flex-direction: row;
-  width: 60%;
+  width: 70%;
   height: 100%;
   justify-content: center;
   align-items: center;
@@ -155,7 +157,6 @@ h4:focus {
   display: flex;
   justify-content: center;
   flex-direction: row;
-
   height: 100%;
   justify-content: center;
   align-items: center;
@@ -375,4 +376,7 @@ h4:focus {
   .search-box__input {
     font-size: 4vw;
   }
+}
+::ng-deep .mat-toolbar-single-row{
+  padding: 0px !important;
 }
