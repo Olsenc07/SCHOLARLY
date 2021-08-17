@@ -501,6 +501,9 @@ p {
   height: 20%;
   justify-content: center;
 }
+::ng-deep .timepicker-dial__control{
+  outline: none;
+}
 .trio {
   display: flex;
   flex-direction: row;

@@ -96,41 +96,46 @@ h4:focus {
   border-style: hidden;
   justify-content: center;
   align-items: center;
+  margin-right: 5%;
 }
 .search-box__icon {
-  position: absolute;
+ display: flex;
   font-size: 26px;
   right: 10%;
   color: lightblue;
-  cursor: pointer;
+  background-color: white;
+  padding: 1%;
 }
 
 .search-box__input {
-  transition: right, 0.7s;
+  // transition: right, 0.7s;
   right: 0;
   top: 0;
   bottom: 0;
   padding: 1px;
   width: 20%;
-  color: rgb(35, 155, 224);
-  font-style: italic;
-  font-size: 1vw;
+  font-size: initial;
   float: right;
   position: relative;
-  border-radius: 5%;
-  margin-right: 10%;
-  opacity: 0.7%;
+  // border-radius: 5%;
+  // margin-right: 10%;
+  // opacity: 0.7%;
   height: 25px;
-  cursor: pointer;
+  // cursor: pointer;
+  outline: none;
+  border: none;
+  width: 100%;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: initial;
 }
 
 // transition to the left and have box initially invisible
-.search-box__input:focus {
-  width: 50%;
-  visibility: visible;
-  box-sizing: content-box;
-  opacity: 1;
-}
+// .search-box__input:focus {
+//   width: 50%;
+//   visibility: visible;
+//   box-sizing: content-box;
+//   opacity: 1;
+// }
 @media(min-width:1025px){
 .large-screen-icons {
   display: flex;
@@ -181,35 +186,35 @@ h4:focus {
   display: flex;
   color: #f5f5f5;
   justify-content: center;
-  font-size: 6vmax;
+  font-size: 5vmax;
 }
 .PublicOnM {
   display: flex;
   justify-content: center;
   color: cornflowerblue;
-  font-size: 7vmax;
+  font-size: 6vmax;
 }
 
 .postM {
   display: flex;
   color: #f5f5f5;
   justify-content: center;
-  font-size: 6vmax;
+  font-size: 5vmax;
 }
 .PostOnM {
   display: flex;
   justify-content: center;
   color: cornflowerblue;
-  font-size: 7vmax;
+  font-size: 6vmax;
 }
 .messageM{
   display: flex;
   color: #f5f5f5;
   justify-content: center;
-  font-size: 6vmax;
+  font-size: 5vmax;
 }
 .MessageOnM{
-  font-size: 7vmax;
+  font-size: 6vmax;
   display: flex;
   color: cornflowerblue;
   justify-content: center;
@@ -218,10 +223,10 @@ h4:focus {
   color: #f5f5f5;
   display: flex;
   justify-content: center;
-  font-size: 6vmax;
+  font-size: 5vmax;
 }
 .GroupsOnM {
-  font-size: 7vmax;
+  font-size: 6vmax;
   display: flex;
   color: cornflowerblue;
   justify-content: center;
@@ -230,11 +235,11 @@ h4:focus {
   color: #f5f5f5;
   display: flex;
   justify-content: center;
-  font-size: 6vmax;
+  font-size: 5vmax;
 }
 .ProfileOnM {
   display: flex;
-  font-size: 7vmax;
+  font-size: 6vmax;
   color: cornflowerblue;
   justify-content: center;
 }
@@ -242,7 +247,7 @@ h4:focus {
   color: #f5f5f5;
   display: flex;
   justify-content: center;
-  font-size: 6vmax;
+  font-size: 5vmax;
 }
 .d_settings {
   margin-top: 8%;
@@ -255,7 +260,7 @@ h4:focus {
     height: 100%;
   }
   .public {
-    font-size: 4vw;
+    font-size: 3vmax;
     display: flex;
     color: #f5f5f5;
     justify-content: center;
@@ -266,62 +271,63 @@ h4:focus {
     display: flex;
     justify-content: center;
     color: cornflowerblue;
-    font-size: 5vw;
+    font-size: 4vmax;
   }
   .groups {
     color: #f5f5f5;
-    font-size: 4vw;
+    font-size: 3vmax;
     display: flex;
     justify-content: center;
   }
   .GroupsOn {
-    font-size: 5vw;
+    font-size: 4vmax;
     display: flex;
     color: cornflowerblue;
     justify-content: center;
   }
   .profile {
     color: #f5f5f5;
-    font-size: 4vw;
+    font-size: 3vmax;
     display: flex;
     justify-content: center;
   }
   .ProfileOn {
     display: flex;
-    font-size: 5vw;
+    font-size: 4vmax;
     color: cornflowerblue;
     justify-content: center;
   }
   .post {
     color: #f5f5f5;
-    font-size: 4vw;
+    font-size: 3vw;
     display: flex;
     justify-content: center;
   }
   .PostOn {
     display: flex;
-    font-size: 5vw;
+    font-size: 4vw;
     color: cornflowerblue;
     justify-content: center;
   }
   .message{
     color: #f5f5f5;
-    font-size: 4vw;
+    font-size: 3vw;
     display: flex;
     justify-content: center;
   }
   .MessageOn{
     display: flex;
-    font-size: 5vw;
+    font-size: 4vw;
     color: cornflowerblue;
     justify-content: center;
   }
-  .search-box__input:focus {
-    width: 105%;
-    visibility: visible;
-    box-sizing: content-box;
-    opacity: 1;
-  }
+  // .search-box__input {
+  //   width: 105%;
+  //   visibility: visible;
+  //   box-sizing: content-box;
+  //   opacity: 1;
+  // }
+  @media(max-width:1024px){
   .search-box__input {
     transition: right, 0.7s;
     right: 0;
@@ -329,8 +335,6 @@ h4:focus {
     bottom: 0;
     padding: 1px;
     width: 10%;
-    color: rgb(35, 155, 224);
-    font-style: italic;
     font-size: 1.8vw;
     float: right;
     position: relative;
@@ -339,7 +343,8 @@ h4:focus {
     opacity: 0.7%;
     height: 25px;
     cursor: pointer;
-  }
+    outline: none;
+  }}
 @media (max-width: 1024px) {
   .search-box__input:focus {
     width: 145%;
@@ -354,8 +359,6 @@ h4:focus {
     bottom: 0;
     padding: 1px;
     width: 20%;
-    color: rgb(35, 155, 224);
-    font-style: italic;
     font-size: 2vw;
     float: right;
     position: relative;

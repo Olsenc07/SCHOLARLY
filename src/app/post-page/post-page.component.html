@@ -95,7 +95,7 @@
             <mat-label>Page</mat-label>
 
             <mat-select>
-              <mat-option>None</mat-option>
+
               <mat-option (click)="onSearchSelection(opt.value)" [selected]="opt.name" [multiple]="false"
                 *ngFor="let opt of searchOptions" [value]="opt.name">
 
