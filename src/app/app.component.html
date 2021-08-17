@@ -32,10 +32,13 @@
 
         <div class="small-icons">
           <div class="search-box">
-            <i class="fas fa-search search-box__icon ">
-              <input class="search-box__input fas" placeholder="Search Fellow Scholars"
-                autocomplete="additional-name" />
-            </i>
+            <button mat-icon-button type="button" (click)="search_()">
+              <mat-icon class="material-icons search-box__icon ">
+                <input placeholder="Search Fellow Scholars" autocomplete="additional-name"
+                  [ngClass]="searchPop === false  ? 'search-box__input' : 'search-box__input,fas,search-box__input_' " />
+                search
+              </mat-icon>
+            </button>
           </div>
 
           <button mat-icon-button [matMenuTriggerFor]="settingsMenu" type="button">

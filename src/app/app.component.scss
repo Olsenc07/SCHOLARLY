@@ -86,7 +86,7 @@ h4:focus {
   display: hide;
 }
 // New Add focus!!! hide input box until icon is focused and then is visbile and expands
-
+@media(min-width:1025px){
 .search-box {
   position: relative;
   width: 80%;
@@ -105,8 +105,9 @@ h4:focus {
   color: lightblue;
   background-color: white;
   padding: 1%;
+  border: ridge;
+    border-color: azure;
 }
-
 .search-box__input {
   // transition: right, 0.7s;
   right: 0;
@@ -128,7 +129,7 @@ h4:focus {
   font-family: 'Font Awesome 5 Free';
   font-weight: initial;
 }
-
+}
 // transition to the left and have box initially invisible
 // .search-box__input:focus {
 //   width: 50%;
@@ -160,10 +161,10 @@ h4:focus {
 @media(max-width:1025px){
 .small-icons {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   flex-direction: row;
   height: 100%;
-  justify-content: center;
+  width: 100%;
   align-items: center;
 }}
 // Bottom Nav
@@ -321,65 +322,64 @@ h4:focus {
     color: cornflowerblue;
     justify-content: center;
   }
-  // .search-box__input {
-  //   width: 105%;
-  //   visibility: visible;
-  //   box-sizing: content-box;
-  //   opacity: 1;
-  // }
-  @media(max-width:1024px){
+
+  @media(max-width:1025px){
   .search-box__input {
-    transition: right, 0.7s;
+    transition: left, .5s;
     right: 0;
-    top: 0;
-    bottom: 0;
     padding: 1px;
-    width: 10%;
-    font-size: 1.8vw;
+    max-width: fit-content;
+    font-size: inherit;
     float: right;
-    position: relative;
+    position: absolute;
     border-radius: 5%;
-    margin-right: 10%;
+  display: flex;
+  flex-direction: row;
     opacity: 0.7%;
-    height: 25px;
+    height: fit-content;
     cursor: pointer;
     outline: none;
-  }}
-@media (max-width: 1024px) {
-  .search-box__input:focus {
-    width: 145%;
+    font-family: 'Font Awesome 5 Free';
+  font-weight: initial;
+     background-color: white;
+    
+  }
+  .search-box__icon {
+     color: lightblue;
+    display: flex;
+    
+   }
+  .search-box{
+    display: flex;
+    margin-right: 3%;
+  }
+  .search-box__input_ {
+    width: 100%;
     visibility: visible;
     box-sizing: content-box;
     opacity: 1;
+    display: flex;
+    
   }
-  .search-box__input {
-    transition: right, 0.7s;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    padding: 1px;
-    width: 20%;
-    font-size: 2vw;
-    float: right;
-    position: relative;
-    border-radius: 5%;
-    margin-right: 10%;
-    opacity: 0.7%;
-    height: 25px;
-    cursor: pointer;
-  }
+
+  // .search-box__input {
+  //   transition: left, 1.2s;
+  //   right: 0;
+  //   top: 0;
+  //   bottom: 0;
+  //   padding: 1px;
+  //   max-width: fit-content;
+  //   font-size: 2vw;
+  //   float: right;
+  //   position: absolute;
+  //   border-radius: 5%;
+  //   margin-right: 10%;
+  //   opacity: 0.7%;
+  //   height: 25px;
+  //   cursor: pointer;
+  // }
 }
-@media (max-width: 600px) {
-  .search-box__input:focus {
-    width: 135%;
-    visibility: visible;
-    box-sizing: content-box;
-    opacity: 1;
-  }
-  .search-box__input {
-    font-size: 4vw;
-  }
-}
+  
 ::ng-deep .mat-toolbar-single-row{
   padding: 0px !important;
 }

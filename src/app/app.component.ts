@@ -13,7 +13,7 @@ import { filter, map, tap } from 'rxjs/operators';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-
+  searchPop = false;
   faCoffee = faCoffee;
   title = 'angular-SCHOLARLY';
 
@@ -98,6 +98,10 @@ export class AppComponent implements OnInit {
   // searchIcon.addEventListener("click", activateSearch);
   activateSearch(): void {
     this.searchBox.classList.toggle('active');
+  }
+
+  search_(): void {
+    this.searchPop = !this.searchPop;
   }
 
   clearSearch(): void {
