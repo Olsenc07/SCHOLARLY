@@ -104,12 +104,13 @@
   display: flex;
   justify-content: center;
 }
-
 .centerD {
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
   font-size: x-large;
+  color: #7e7171;
+  font-family: 'Font Awesome 5 Free';
 }
 .contents{
   display: contents;
@@ -135,11 +136,13 @@
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  height: 100%;
 }
 .column_2 {
   display: flex;
   flex-direction: column;
   height: 30%;
+  margin-top: 4%;
   overflow-y: scroll;
 }
 
@@ -265,7 +268,10 @@ mat-chip .mat-list-text {
   justify-content: center;
  
 }
-
+::ng-deep  .mat-step-text-label{
+color: #7e7171;
+font-family: 'Font Awesome 5 Free';
+}
 ::ng-deep mat-form-field{
 display: flex;
 width: 100%;
@@ -320,11 +326,20 @@ width: 100%;
   width: 100%;
   overflow-y: scroll;
 }
+.hide{
+  display: none;
+}
 p {
   display: flex;
   color: #0b38dc;
   justify-content: center;
 }
+// .Photo{
+//   display: flex;
+//   justify-content: center;
+//   flex-direction: column;
+//   box-sizing: border-box;
+// }
 .post-final {
   display: flex;
   position: relative;
@@ -369,6 +384,11 @@ p {
   height: 40%;
   width: 100%;
   flex-direction: row;
+}
+.Photo{
+  font-size: xx-large;
+  display: flex;
+  justify-content: center;
 }
 @media(min-width:1024px){
 .row {
@@ -462,6 +482,10 @@ p {
   overflow-y: scroll;
   height: 100%;
 }
+.show{
+  display: flex;
+  height: 100%;
+}
 .tagged-friends {
   display: flex;
   scroll-behavior: smooth;
@@ -474,7 +498,9 @@ p {
   display: flex;
   justify-content: center;
   font-size: large;
-  margin: 4% 0%;
+  margin: 4% 0% 0% 0%;
+  color: #7e7171;
+  font-family: 'Font Awesome 5 Free';
 }
 .text_ {
   display: flex;
@@ -495,7 +521,11 @@ p {
   justify-content: center;
   margin: 0% 5%;
 }
-
+.textT{
+  color: #7e7171;
+  font-family: 'Font Awesome 5 Free';
+  font-size: initial;
+}
 .tagged-friends-box {
   display: flex;
   height: 20%;
@@ -540,13 +570,13 @@ p {
   }
   @media(min-width:1024px){
 .uploadD {
-  display: flex;
+  display: none;
   box-sizing: border-box;
   width: 100%;
 }}
 @media(max-width:1024px){
 .uploadD {
-  display: flex;
+  display: none;
   box-sizing: border-box;
 }
 }

@@ -40,7 +40,7 @@ export class SearchListService {
     { name: 'Upcoming Events', value: SearchValues.UPCOMING_EVENTS },
   ];
 
-  constructor() {}
+  constructor() { }
 
   getSearchOptions(): SearchOption[] {
     return this.searchOptions;
@@ -122,7 +122,7 @@ export class SearchListService {
           'Acturial Science',
           'American Studies',
           'Anatomy',
-          'Anthropology,',
+          'Anthropology',
           'Archaeology',
           'Architecture & Visual Studies',
           'Art History',

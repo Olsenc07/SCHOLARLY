@@ -26,15 +26,26 @@
         <div class="column_1">
           <div class="post-descriptionD">
             <mat-form-field>
-              <input matInput class="post" placeholder="What do you wanna say?" [formControl]="postDescription" />
+              <textarea matInput class="post" placeholder="What do you wanna say?"
+                [formControl]="postDescription"></textarea>
             </mat-form-field>
           </div>
           <!-- Upload pic/video -->
           <div class="column_">
-            <h2 class="center">Upload Post</h2>
-            <div class="rowP"> <input #fileInput class="uploadD" accept="image/* video/*" type="file"
-                (change)="imagePreview($event)" (click)="this.value=null" [formControl]="upload" multiple></div>
-            <div class="contents"> <img [src]="url" id="upload" class="imagePreview"></div>
+            <h2 class="centerD">Upload Post</h2>
+            <div class="rowP">
+              <button mat-icon-button (click)="uploadFile()">
+                <div class="material-icons Photo">
+                  add_a_photo
+
+                  <input #fileInput id="fileInput" class="uploadD" accept="image/* video/*" type="file"
+                    (click)="imagePreview($event)" [formControl]="upload" multiple>
+                </div>
+              </button>
+            </div>
+            <!-- Only when upload holds a value -->
+            <div class="contents"> <img [src]="url" id="uploadI" [ngClass]="upload.value ? 'show' : 'hide' "
+                class="imagePreview"></div>
             <div class="rowP clear"><button mat-flat-button color="primary" (click)="clearUpload()">Clear
                 Upload</button></div>
           </div>
@@ -60,7 +71,7 @@
 
         <div class="column_">
           <mat-form-field appearance="fill">
-            <h2>Tag Friends: Start typing...</h2>
+            <div class="centerD">Tag Friends: Start typing...</div>
 
             <mat-chip-list #chipList aria-label="Friends selection">
               <mat-chip *ngFor="let friend of friends" [selectable]="selectable" [removable]="removable"
@@ -68,7 +79,7 @@
                 {{friend}}
                 <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
               </mat-chip>
-              <input matInput #friendInput [matAutocomplete]="auto" [matChipInputFor]="chipList"
+              <input matInput #friendInput [matAutocomplete]="auto" [matChipInputFor]="chipList" class="textT"
                 [formControl]="friendCtrl" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
                 (matChipInputTokenEnd)="add($event)">
             </mat-chip-list>
@@ -86,7 +97,9 @@
 
 
       <div class="location">
+
         <div class="centerD">Where do you want your post?</div>
+
         <div class="textM"> Main Categories </div>
 
 
