@@ -37,14 +37,27 @@ export class AppComponent implements OnInit {
 
   searchBox: Element;
 
+  // allUsers should filter through every user
+  allUsers: string[] = [''];
+
+
   search: FormControl = new FormControl('');
+  filteredSearch: Observable<string[]>;
   searchForm = new FormGroup({
     search: this.search,
   });
 
   constructor(
     private router: Router
-  ) { }
+  ) {
+    this.filteredSearch = this.search.valueChanges.pipe(
+      map((user: string | null) => user ? this._filter(user) : this.allUsers.slice()));
+  }
+
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+    return this.allUsers.filter(user => user.toLowerCase().indexOf(filterValue) === 0);
+  }
 
   ngOnInit(): void {
     document.getElementsByClassName('search-box__icon')[0]?.addEventListener('click', this.activateSearch);
