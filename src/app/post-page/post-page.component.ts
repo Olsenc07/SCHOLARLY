@@ -60,7 +60,8 @@ export class PostPageComponent implements OnInit {
   public specificOptions: string[];
   public searchOptions: SearchOption[];
 
-  url: string;
+  // isUrl$: Observable<string>;
+  url: string[];
 
   selectedIndex = 0;
 
@@ -161,6 +162,7 @@ export class PostPageComponent implements OnInit {
       reader.onload = (Event: any) => { // called once readAsDataURL is completed
         console.log(Event);
         this.url = Event.target.result;
+        // this.isUrl$ = this.url;
       };
     }
   }
