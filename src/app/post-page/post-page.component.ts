@@ -153,6 +153,7 @@ export class PostPageComponent implements OnInit {
   openDialog(): void {
     this.dialog.open(DialogElementsComponent);
   }
+
   imagePreview(event: any): void {
     if (event.target.files && event.target.files[0]) {
       const reader = new FileReader();
