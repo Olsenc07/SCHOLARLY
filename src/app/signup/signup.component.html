@@ -97,8 +97,9 @@
             </div>
           </div>
           <div class="existing-account-layout">
-            <button type="button" [disabled]="!requiredForm.valid" mat-flat-button class="existing-account-layout"
-              (click)="onSubmitPartOne()" (click)="changeTab()">
+            <!-- [disabled]="!requiredForm.valid" -->
+            <button type="button" mat-flat-button class="existing-account-layout" (click)="onSubmitPartOne()"
+              (click)="changeTab()">
               Next
             </button>
 
@@ -123,36 +124,56 @@
             Personalize
           </ng-template>
           <!-- Upload one profile pic -->
-          <div class="personalizeLarge">
-            <div class="pics">
-              <div class="space">
-                <h2 class="text">Upload Profile Picture</h2> <input #fileInputs class="upload" accept="image/* video/*"
-                  type="file" (change)="onImgChange($event)" [formControl]="profilePic">
+          <div class="rowT">
+            <div class="column_1">
+              <div class="centerD">
+                <div class="textU"> Upload Profile Picture</div>
+                <button mat-icon-button class="trash" color="primary" (click)="clearProfilePic()">
+                  <div class=" far fa-trash-alt"></div>
+                </button>
               </div>
-              <div class="cropper">
+
+              <div class="rowP_">
+                <button [ngClass]="profilePic.value ? 'cameraIcon' : 'cameraIcon_' " mat-icon-button
+                  (click)="uploadFileP()">
+                  <div class="material-icons Photo">
+                    add_a_photo
+                  </div>
+                </button>
+                <input #fileInputP id="fileInputP" class="hide" accept="image/* video/*" type="file"
+                  (change)="imagePreviewP($event)" (change)="onImgChange($event)" [formControl]="profilePic" multiple>
+              </div>
+
+              <div class="cropper" [ngClass]="profilePic.value ? 'show' : 'hide' ">
+                <!-- Only when upload holds a value -->
                 <image-cropper [imageChangedEvent]="imgChangeEvt" [maintainAspectRatio]="true" [aspectRatio]=" 7 / 7"
                   [resizeToWidth]="170" format="png" (imageCropped)="cropImg($event)" (imageLoaded)="imgLoad()"
                   (cropperReady)="initCropper()" (loadImageFailed)="imgFailed()">
                 </image-cropper>
               </div>
-              <button type="button" mat-flat-button color="primary" (click)="clearProfilePic()">Clear File</button>
-            </div>
-            <div class="rowP">
-              <!-- <i class="fas fa-camera _icon2"></i>
-          <i class="far fa-hand-point-right _icon3"></i>
-          <i class="fas fa-crop-alt _icon2"></i>
-          <i class="far fa-hand-point-right _icon3"></i> -->
-              <i class="fas fa-portrait _icon2"></i>
 
             </div>
-            <div class="PreviewPic">
-              <h2 class="Preview">Image Preview</h2>
-              <div class="center">
-                <img class="previewPic" id="ProfilePic" [src]="cropImgPreview" />
+
+
+            <div class="personalizeLarge" [ngClass]="profilePic.value ? 'show' : 'hide' ">
+              <div class="rowP">
+                <i class="fas fa-portrait _icon2"></i>
+              </div>
+            </div>
+
+            <div class="personalizeLarge" [ngClass]="profilePic.value ? 'show' : 'hide' ">
+              <div class="PreviewPic">
+                <h2 class="Preview">Image Preview</h2>
+                <div class="center">
+                  <img class="previewPic" id="ProfilePic" [src]="cropImgPreview" />
+                </div>
               </div>
             </div>
 
           </div>
+
+
+
           <div class="personalize">
             <div class="input">
               <i class="far fa-address-card _icon"></i>
@@ -171,8 +192,6 @@
                 </button>
               </mat-form-field>
             </div>
-
-
 
             <div class="input">
               <!-- Birthday picker -->
@@ -235,32 +254,107 @@
               photo_library
             </span>
             <div class="rowP">
-              <!-- Image Preview -->
-              <div class="column">
-                <h2 class="Preview">Image Preview</h2>
-                <input type="file" [formControl]="snapShot1" accept="image/* video/*" (change)="imagePreview($event)" />
-                <img [src]="url" id="firstP" class="imagePreview">
-                <button mat-flat-button color="primary" (click)="clearPic1()">Clear File</button>
+
+
+
+
+              <div class="column_1">
+
+                <!-- Upload pic/video -->
+                <!-- 1 -->
+                <div class="centerD">
+                  <div class="textU"> Add Photo</div>
+                  <button mat-icon-button class="trash" color="primary" (click)="clearPic1()">
+                    <div class=" far fa-trash-alt"></div>
+                  </button>
+
+                </div>
+
+
+                <div class="rowP_">
+                  <button class="cameraIcon" mat-icon-button (click)="uploadFile()">
+                    <div class="material-icons Photo">
+                      add_a_photo
+
+                      <input #fileInput id="fileInput" class="uploadD" accept="image/* video/*" type="file"
+                        (change)="imagePreview($event)" [formControl]="snapShot1" multiple>
+                    </div>
+                  </button>
+                </div>
+                <!-- Only when upload holds a value -->
+                <div class="contents">
+                  <div class="imgBox">
+                    <img [src]="url" id="firstP" [ngClass]="snapShot1.value ? 'show' : 'hide' ">
+                  </div>
+                </div>
+
               </div>
+
+
               <!-- 2 -->
-              <div class="column">
-                <h2 class="Preview">Image Preview</h2>
-                <input type="file" [formControl]="snapShot2" accept="image/* video/*"
-                  (change)="imagePreview2($event)" />
-                <img [src]="url2" id="secondP" class="imagePreview">
-                <button mat-flat-button color="primary" (click)="clearPic2()">Clear File</button>
+              <div class="column_1">
+
+                <!-- Upload pic/video -->
+                <div class="centerD">
+                  <div class="textU"> Add Photo</div>
+                  <button mat-icon-button class="trash" color="primary" (click)="clearPic2()">
+                    <div class=" far fa-trash-alt"></div>
+                  </button>
+
+                </div>
+
+
+                <div class="rowP_">
+                  <button class="cameraIcon" mat-icon-button (click)="uploadFile2()">
+                    <div class="material-icons Photo">
+                      add_a_photo
+
+                      <input #fileInput id="fileInput2" class="uploadD" accept="image/* video/*" type="file"
+                        (change)="imagePreview2($event)" [formControl]="snapShot2" multiple>
+                    </div>
+                  </button>
+                </div>
+                <!-- Only when upload holds a value -->
+                <div class="contents">
+                  <div class="imgBox">
+                    <img [src]="url2" id="firstP" [ngClass]="snapShot2.value ? 'show' : 'hide' ">
+                  </div>
+                </div>
+              </div>
+
+              <!-- 3 -->
+              <div class="column_1">
+
+                <!-- Upload pic/video -->
+                <div class="centerD">
+                  <div class="textU"> Add Photo</div>
+                  <button mat-icon-button class="trash" color="primary" (click)="clearPic3()">
+                    <div class=" far fa-trash-alt"></div>
+                  </button>
+
+                </div>
+
+
+                <div class="rowP_">
+                  <button class="cameraIcon" mat-icon-button (click)="uploadFile3()">
+                    <div class="material-icons Photo">
+                      add_a_photo
+
+                      <input #fileInput id="fileInput3" class="uploadD" accept="image/* video/*" type="file"
+                        (change)="imagePreview3($event)" [formControl]="snapShot3" multiple>
+                    </div>
+                  </button>
+                </div>
+                <!-- Only when upload holds a value -->
+                <div class="contents">
+                  <div class="imgBox">
+                    <img [src]="url3" id="firstP" [ngClass]="snapShot3.value ? 'show' : 'hide' ">
+                  </div>
+                </div>
+
               </div>
 
 
-
-              <div class="column">
-                <h2 class="Preview">Image Preview</h2>
-                <input type="file" [formControl]="snapShot3" accept="image/* video/*"
-                  (change)="imagePreview3($event)" />
-                <img [src]="url3" id="thirdP" class="imagePreview">
-                <button mat-flat-button color="primary" (click)="clearPic3()">Clear File</button>
-              </div>
-              <!-- </ngx-image-zoom> -->
             </div>
 
 

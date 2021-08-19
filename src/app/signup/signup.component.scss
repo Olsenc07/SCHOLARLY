@@ -28,11 +28,56 @@
   flex-direction: column;
   margin-bottom: 2%;
 }
+@media(min-width:800px){
+.cameraIcon{
+  height: 100%;
+    width: 30%;
+    justify-content: center;
+}}
+@media(max-width:800px)and(min-width:500px){
+  .cameraIcon{
+    height: 100%;
+      width: 45%;
+      justify-content: center;
+  }}
+@media(max-width:500px){
+  .cameraIcon{
+    height: 100%;
+      width: 60%;
+      justify-content: center;
+  }}
+
+  @media(min-width:1024px){
+.cameraIcon_{
+  height: 100%;
+  width: 7%;
+  justify-content: center;
+}}
+@media(max-width:1024px)and(min-width:800px){
+  .cameraIcon_{
+    height: 100%;
+    width: 10%;
+    justify-content: center;
+  }}
+  @media(max-width:800px)and(min-width:500px){
+    .cameraIcon_{
+      height: 100%;
+      width: 15%;
+      justify-content: center;
+    }}
+    @media(max-width:500px){
+      .cameraIcon_{
+        height: 100%;
+        width: 21%;
+        justify-content: center;
+      }}
 .center-text {
   display: flex;
   justify-content: center;
   overflow: visible;
   text-align: center;
+  color: #7e7171;
+  font-family: "Font Awesome 5 Free";
 }
 .center{
   display: flex;
@@ -87,9 +132,33 @@
   display: flex;
   max-height: 260px;
 }
-
-.display {
+@media(min-width:1024px){
+  .contents{
+    display: flex;
+   box-sizing: border-box;
+   padding: 0% 20% 0% 20%;
+  
+  }}
+  @media(max-width:1024px){
+  .contents{
+    display: flex;
+   box-sizing: border-box;
+   padding: 0% 30% 0% 30%;
+  
+  }}
+  .column_1 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+.centerD {
   display: flex;
+  justify-content: center;
+  margin-top: 3%;
+  flex-direction: row;
+  font-size: x-large;
+  color: #7e7171;
+  font-family: 'Font Awesome 5 Free';
 }
 .column {
   display: flex;
@@ -97,11 +166,15 @@
   justify-content: center;
   margin-right: 1%;
   height: fit-content;
+  font-family: "Font Awesome 5 Free","Helvetic Neue";
 }
 .courses {
   display: flex;
   width: 100%;
   flex-direction: column;
+}
+.display {
+  display: flex;
 }
 .displayB {
   display: flex;
@@ -144,12 +217,19 @@
   margin-right: 10%;
   margin-bottom: 2%;
 }
-
+.hide{
+  display: none !important;
+}
 .twoPassword {
   display: flex;
   width: 100%;
   flex-direction: column;
 }
+.imgBox{
+  display: flex;
+ width: 100%;
+ height: 100%;
+} 
 ._icon {
   display: flex;
   justify-content: center;
@@ -192,16 +272,33 @@
   ::ng-deep mat-form-field {
     display: flex;
     width: 40%;
+
   }
 }
 @media (max-width: 1024px) {
   ::ng-deep mat-form-field {
     display: flex;
     width: 100%;
+    
   }
 }
-
-
+::ng-deep .mat-form-field {
+  font-family: "Font Awesome 5 Free","Helvetic Neue";
+}
+::ng-deep .mat-radio-button{
+  font-family: "Font Awesome 5 Free","Helvetic Neue";
+}
+::ng-deep .mat-button {
+  font-family: "Font Awesome 5 Free","Helvetic Neue";
+}
+::ng-deep .mat-flat-button {
+  font-family: "Font Awesome 5 Free","Helvetic Neue";
+}
+::ng-deep .mat-option{  
+  font-family: "Font Awesome 5 Free","Helvetic Neue";}
+::ng-deep .mat-tab-label{
+  font-family: "Font Awesome 5 Free","Helvetic Neue";
+}
 
 ::ng-deep .mat-tab-body-wrapper {
   display: flex;
@@ -274,12 +371,17 @@
   flex-direction: row;
   max-height: 350px;
   margin: 1% 0% 3%;
+  color: #7e7171;
+  width: 100%;
+  font-family: "Font Awesome 5 Free";
 }}
 @media(max-width:660px){
   .personalizeLarge {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    color: #7e7171;
+    font-family: "Font Awesome 5 Free";
   }}
 
 .personalize {
@@ -320,6 +422,18 @@
   justify-content: center;
   
 }}
+.Photo{
+  font-size: xxx-large;
+  display: flex;
+  justify-content: center;
+}
+
+.show{
+  display: flex;
+width: 100%;
+height:  fit-content;
+justify-content: center;
+}
 .sport-layout {
   display: flex;
   flex-direction: column;
@@ -381,7 +495,11 @@
     justify-content: space-around;
     flex-direction: row;
     margin: 2% 0%;
+    width: 100%;
+    box-sizing: border-box;
     overflow-x: scroll;
+    color: #7e7171;
+    font-family: "Font Awesome 5 Free";
   }
 }
 @media (max-width: 900px) {
@@ -390,11 +508,33 @@
     flex-direction: row;
     margin: 2% 0%;
     overflow-x: scroll;
+    color: #7e7171;
+    font-family: "Font Awesome 5 Free";
   }
+}
+.rowT{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.rowP_{
+  display: flex;
+  justify-content: center;
 }
 .text {
   display: flex;
   justify-content: center;
+}
+.textU{
+  display: flex; 
+  justify-content: center;
+   flex-direction: column;
+}
+.trash{
+  display: flex;
+  justify-content: center;
+  font-size: x-large;
+  color: #7e7171;
 }
 .gender {
   display: flex;
@@ -457,6 +597,18 @@
   flex-direction: column;
   margin-bottom: 20%;
 }
+@media(min-width:1024px){
+  .uploadD {
+    display: none;
+    box-sizing: border-box;
+    width: 100%;
+  }}
+  @media(max-width:1024px){
+  .uploadD {
+    display: none;
+    box-sizing: border-box;
+  }
+  }
 .sndPage {
   display: flex;
   width: 100%;
