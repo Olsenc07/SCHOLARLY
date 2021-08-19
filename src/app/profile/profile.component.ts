@@ -22,6 +22,10 @@ export class ProfileComponent {
   // TODO: initial following value would need to be loaded from database - for now, always start with false
   following = false;
 
+  // filled in from data base
+  // View breaks if any more are loaded in..
+  groups = ['', '', '', '', '', '', '', '']
+
 
   posts = [{
     "profilePic": "", "Title": "",

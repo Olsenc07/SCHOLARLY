@@ -12,6 +12,7 @@
   display: flex;
   justify-content: center;
   margin: 4% 0%;
+  font-family: "Font Awesome 5 Free";
   text-align: center;
 }
 .column{
@@ -28,10 +29,10 @@
     height: 50px;
 }
 .green{
-    color: green;
+    color: rgb(11, 179, 11);
 }
 .red{
-    color: rgb(219, 60, 60);
+    color: rgb(196, 68, 68);
 }
 .row {
     display: flex;
@@ -62,11 +63,13 @@
   @media (min-width: 500px) {
     .textSize {
       font-size: medium;
+      font-family: "Font Awesome 5 Free";
     }
   }
   @media (max-width: 500px) {
     .textSize {
       font-size: smaller;
+      font-family: "Font Awesome 5 Free";
     }
   }
   .userName {

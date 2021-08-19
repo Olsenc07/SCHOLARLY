@@ -21,11 +21,13 @@
   @media (min-width: 500px) {
     .textSize {
       font-size: medium;
+      font-family: "Font Awesome 5 Free";
     }
   }
   @media (max-width: 500px) {
     .textSize {
       font-size: smaller;
+      font-family: "Font Awesome 5 Free";
     }
   }
   .profilePic {

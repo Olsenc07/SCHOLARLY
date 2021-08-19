@@ -14,7 +14,7 @@
             Olsen07
           </div>
           <div>
-            <button mat-icon-button routerLink="/groups" style="color: blue;">
+            <button class="icon" mat-icon-button routerLink="/groups">
               <span class="material-icons">
                 chat
               </span>
@@ -56,17 +56,16 @@
         </div>
       </div>
 
-      <div class="messageM">
-        <button class="spaceMF" (click)="followClicked()">
-          <div class="centerM">
-            {{ following ? "Unfollow" : "Follow" }}
-          </div>
+      <mat-chip-list class="center_" aria-label="FollowBtn">
+        <mat-chip class="messageM" (click)="followClicked()">
+
+
+          {{ following ? "Unfollow" : "Follow" }}
+
           <!-- Switches to Unfollow btn option  -->
-        </button>
 
-
-
-      </div>
+        </mat-chip>
+      </mat-chip-list>
     </div>
     <!-- <div class="conversations" *ngIf="id != id">
       <button mat-raised-button (click)="openBottomSheet()" class="convo-text">
@@ -79,20 +78,23 @@
     <!-- User-Name -->
     <div class="top-middle">
 
+      <!-- No Bio -->
       <!-- Bio: Full name & age input text & Pronouns *ngIf="bio.value " -->
       <div>
         <div class="text-2">
-          <!-- {{fullname}} -->
-          <div class="fName">Chase Olsen</div>There are more planes in the sea then submarines in the sky.
+
+          <div class="fName">Chase Olsen
+            <!-- {{fullname}} -->
+          </div>
 
         </div>
       </div>
 
       <!-- bio box -->
-      <div class="bio-box">
-        <!-- {{bio}} which will fill the space and adjust the wrappers height -->
+      <!-- <div class="bio-box">
+        -- {{bio}} which will fill the space and adjust the wrappers height --
         <div class="bio-input"> </div>
-      </div>
+      </div> -->
 
     </div>
     <div></div>
@@ -105,30 +107,38 @@
           <div class="groups-j">
             <div class="words">
               <div class="title">
-                <button mat-icon-button><i class="fas fa-arrow-circle-left title1"></i>
-                </button>
-                <div class="title1">Groups Joined</div> <button mat-icon-button><i
+                <!-- <button mat-icon-button><i class="fas fa-arrow-circle-left title1"></i>
+                </button> -->
+                <div class="title1">Groups Joined</div>
+                <!-- <button mat-icon-button><i
                     class="fas fa-arrow-circle-right title1"></i>
-                </button>
+                </button> -->
               </div>
-              <app-card-brief></app-card-brief>
+              <div class="groups_">
+                <app-card-brief class="fit_" *ngFor="let group of groups">
+                  {{group}}
+                </app-card-brief>
+              </div>
             </div>
           </div>
 
           <div class="row_1">
-            <!-- Hidden if not filled in -->
+            <!-- Hidden if neither are filled in -->
+            <!-- <ng-container *ngIf="(completed.value && pursing.value) === false "> -->
+
             <div class="completed-courses">
               <div class="words1">Completed
                 {{ profile$$ | async }}
               </div>
             </div>
-            <!-- Hidden if not filled in -->
+
             <div class="completed-courses">
               <div class="words1">Pursuing
                 {{ profile$$ | async }}
               </div>
 
             </div>
+            <!-- </ng-container> -->
           </div>
         </div>
       </div>
@@ -171,12 +181,14 @@
             <div class="groups-j">
               <div class="words">
                 <div class="title">
-                  <div class="title1">Groups Joined</div> <button mat-icon-button><i
-                      class="fas fa-arrow-circle-right title1"></i>
-                  </button>
-                </div>
-                <app-card-brief></app-card-brief>
+                  <div class="title1">Groups Joined</div>
 
+                </div>
+                <div class="groups_">
+                  <app-card-brief class="fit_" *ngFor="let group of groups">
+                    {{group}}
+                  </app-card-brief>
+                </div>
 
               </div>
             </div>
