@@ -44,7 +44,7 @@
   justify-content: center;
   width: 100%;
   position: absolute;
-  bottom: 0;
+  bottom: 18px;
   margin-bottom: 20%;
 }}
 @media(max-width:1024px){
@@ -87,6 +87,11 @@
   width: 75%;
   height: 100%;
 }
+.cameraIcon{
+  height: 100%;
+    width: 30%;
+    justify-content: center;
+}
 .center {
   display: flex;
   justify-content: center;
@@ -100,13 +105,20 @@
   color: #7e7171;
   font-family: 'Font Awesome 5 Free';
 }
+@media(min-width:1024px){
 .contents{
   display: flex;
-//  height: 100%;
  box-sizing: border-box;
  padding: 0% 21% 35% 21%;
 
-}
+}}
+@media(max-width:1024px){
+.contents{
+  display: flex;
+ box-sizing: border-box;
+ padding: 0% 30% 0% 30%;
+
+}}
 .column {
   display: flex;
   flex-direction: column;
@@ -119,7 +131,6 @@
 
 }
 .column_1 {
-  // display: flex;
   flex-direction: column;
   height: fit-content;
   overflow-y: scroll;
@@ -140,9 +151,7 @@
   overflow-y: scroll;
 }
 
-.clear {
-  margin: 2% 0%;
-}
+
 .column {
   display: flex;
   flex-direction: column;
@@ -177,8 +186,6 @@
   justify-content: center;
   overflow-y: scroll;
 }
-
-
 
 .friends-search {
   display: flex;
@@ -285,6 +292,7 @@ mat-chip .mat-list-text {
   display: flex;
   height: 100%;
   width: 100%;
+  font-family: 'Font Awesome 5 Free';
 }
 .mat-slide-toggle {
   margin: 8px 0;
@@ -298,7 +306,12 @@ mat-chip .mat-list-text {
 }
 ::ng-deep .mat-radio-label {
   justify-content: center;
- 
+}
+::ng-deep .mat-raised-button{
+  font-family: 'Font Awesome 5 Free';
+}
+::ng-deep .mat-button {
+  font-family: 'Font Awesome 5 Free';
 }
 ::ng-deep  .mat-step-text-label{
 color: #7e7171;
@@ -369,15 +382,10 @@ width: 100%;
 }
 p {
   display: flex;
-  color: #0b38dc;
+  color: #7e7171;
   justify-content: center;
 }
-// .Photo{
-//   display: flex;
-//   justify-content: center;
-//   flex-direction: column;
-//   box-sizing: border-box;
-// }
+
 .post-final {
   display: flex;
   position: relative;
@@ -424,7 +432,7 @@ p {
   flex-direction: row;
 }
 .Photo{
-  font-size: xx-large;
+  font-size: xxx-large;
   display: flex;
   justify-content: center;
 }
@@ -554,7 +562,13 @@ justify-content: center;
   justify-content: center;
   margin-left: 2%;
 }
-
+.textP{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: #7e7171;
+    font-family: "Font Awesome 5 Free";
+}
 .text {
   display: flex;
   width: 100%;
