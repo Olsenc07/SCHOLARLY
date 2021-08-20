@@ -291,7 +291,11 @@ mat-grid-list{
 ::ng-deep .mat-tab-label-container { 
   overflow: visible !important;
 }
-
+::ng-deep .mat-tab-label{
+color: #7e7171;
+font-family: "Font Awesome 5 Free";
+font-weight: 900;
+}
 // Hides scroll bar
 ::ng-deep .mat-tab-header::-webkit-scrollbar {
   display: none;
@@ -497,9 +501,9 @@ mat-grid-list{
 .text_cent {
   display: flex;
   margin: 2% 0% 1% 0%;
-  
-  color: gray;
-  
+  color: #7e7171;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
   justify-content: center;
 }
 
@@ -532,6 +536,8 @@ mat-grid-list{
   justify-content: center;
   flex-direction: column;
   font-family: 'Font Awesome 5 Free';
+  font-weight: 500;
+    color: #7e7171;
 }
 .uNameMsg{
   display: flex;
