@@ -60,10 +60,18 @@
   display: flex;
   flex-direction: column;
 }}
+.centerD {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  font-size: large;
+
+}
 .center{
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
+    width: 100%;
 }
 .centerR{
   display: flex;
@@ -207,7 +215,8 @@
   }
 }
 
-
+.far{ color: #7e7171;
+}
 .fa-arrow-circle-left{
   font-size: large;
 }
@@ -255,6 +264,9 @@
   box-sizing: border-box;
 }
 }
+.hide{
+  display: none !important;
+}
 .top {
   display: flex;
   justify-content: center;
@@ -265,6 +277,7 @@
 ::ng-deep .mat-tab-body-content{
   overflow: unset !important;
 }
+
 
 .major-layout {
   display: flex;
@@ -326,6 +339,11 @@
    
   }
 }
+.rowP_{
+  display: flex;
+  justify-content: center;
+  color: #418bba;
+}
 @media (min-width: 1024px) {
   .smaller {
     width: 30%;
@@ -335,6 +353,15 @@
   .smaller {
     width: 50%;
   }
+}
+.show{
+  display: flex;
+width: 100%;
+justify-content: center;
+}
+.show_{
+  display: flex;
+justify-content: center;
 }
 
 
@@ -401,12 +428,15 @@
 .Preview{
   display: flex;
   justify-content: center;
+  color: #7e7171;
+  font-family: "Font Awesome 5 Free";
+  font-size: large;
 }
 
 .PreviewPic{
   display: flex;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
 }
 .layout {
   display: flex;
@@ -414,9 +444,11 @@
   justify-content: center;
 }
 .text {
-  color: #0e3379;
+  color: #7e7171;
+  font-family: "Font Awesome 5 Free";
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 .twoBoxs {
   display: flex;
@@ -510,6 +542,7 @@
   border-color: #707070;
   font-size: 30;
 }
+
 .work {
   display: flex;
   margin-top: 2%;

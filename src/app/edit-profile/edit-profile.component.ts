@@ -134,7 +134,9 @@ export class EditProfileComponent implements OnInit {
       )
     );
   }
-
+  uploadFileP(): any {
+    document.getElementById('fileInputP').click();
+  };
   onImgChange(event: any): void {
     this.imgChangeEvt = event;
   }
