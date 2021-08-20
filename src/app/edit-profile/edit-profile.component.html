@@ -269,7 +269,7 @@
                 <button mat-icon-button (click)=nextGroupCard()> <i class="fas fa-arrow-circle-right title1"></i>
                 </button>
               </div>
-              <div>
+              <div class="style">
                 <button mat-button (click)=leaveGroup()>Leave Group</button>
 
               </div>
@@ -292,7 +292,7 @@
                   </button>
                 </div>
 
-                <div>
+                <div class="style">
                   <button mat-button (click)=deletePost()>Delete Post</button>
 
                 </div>
@@ -305,17 +305,30 @@
 
         <!-- Image Preview -->
         <div class="column">
-          <h2 class="snapshot">Add A Showcase</h2>
-          <div class="snapshot">
-            <input type="file" class="snapshot" [formControl]="showCase" accept="image/* video/*"
-              (change)="imagePreview($event)">
+          <div class="show_">
+            <div class="snapshot">Add A Showcase</div>
+            <button mat-icon-button class="trash" color="primary" (click)="clearPic1()">
+              <div class=" far fa-trash-alt"></div>
+            </button>
           </div>
+
+          <div class="rowP_">
+            <button class="cameraIcon" mat-icon-button (click)="uploadFile()">
+              <div class="material-icons Photo">
+                add_a_photo
+
+                <input #fileInput id="fileInput" class="uploadD" accept="image/* video/*" type="file"
+                  (change)="imagePreview($event)" [formControl]="showCase" class="hide" multiple>
+              </div>
+            </button>
+          </div>
+
+
+
+
           <div class="imageBox">
-            <img [src]="url" id="firstP" class="imagePreview">
+            <img [src]="url" id="firstP" class="imagePreview" [ngClass]="showCase.value ? 'show' : 'hide' ">
           </div>
-
-
-          <div class="snapshotClear"><button mat-stroked-button (click)="clearPic1()">Clear File</button></div>
         </div>
 
 

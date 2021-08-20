@@ -49,6 +49,8 @@
   display: flex;
   justify-self: center;
   margin-bottom: 5%;
+
+  font-family: "Font Awesome 5 Free";
 }
 @media(min-width:1024px){
 .c_r{
@@ -129,6 +131,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  color: #7e7171;
+    font-family: "Font Awesome 5 Free";
 }
 .cropper {
   display: flex;
@@ -273,11 +277,27 @@
   margin-top: 2%;
 }
 
+::ng-deep .mat-tab-label{
+ 
+    font-family: "Font Awesome 5 Free";
+}
+
 // Allows smooth scroll for entire page
 ::ng-deep .mat-tab-body-content{
   overflow: unset !important;
 }
 
+
+
+::ng-deep .mat-option-text{
+  color: #7e7171;
+  font-family: "Font Awesome 5 Free";
+}
+
+::ng-deep .mat-form-field{
+  color: #7e7171;
+  font-family: "Font Awesome 5 Free";
+}
 
 .major-layout {
   display: flex;
@@ -363,7 +383,9 @@ justify-content: center;
   display: flex;
 justify-content: center;
 }
-
+.style{
+  color: #7e7171;
+  font-family: "Font Awesome 5 Free";}
 
 .imageBox{
   display: flex;
@@ -372,6 +394,10 @@ justify-content: center;
 .snapshot {
   display: flex;
   justify-content: center;
+  color: #7e7171;
+  font-family: "Font Awesome 5 Free";
+  font-size: large;
+  flex-direction: column;
 }
 .snapshotClear {
   display: flex;
@@ -437,6 +463,9 @@ justify-content: center;
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+.previewPic{
+  border-radius: 50%;
 }
 .layout {
   display: flex;

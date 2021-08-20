@@ -134,6 +134,9 @@ export class EditProfileComponent implements OnInit {
       )
     );
   }
+  uploadFile(): any {
+    document.getElementById('fileInput').click();
+  };
   uploadFileP(): any {
     document.getElementById('fileInputP').click();
   };
