@@ -98,7 +98,7 @@
           </div>
           <div class="existing-account-layout">
             <!-- [disabled]="!requiredForm.valid" -->
-            <button type="button" mat-flat-button class="existing-account-layout" (click)="onSubmitPartOne()"
+            <button type="button" mat-raised-button class="existing-account-layout" (click)="onSubmitPartOne()"
               (click)="changeTab()">
               Next
             </button>
@@ -222,7 +222,7 @@
             </div> -->
           </div>
           <div class="createBtn">
-            <button mat-flat-button class="cBtnB" (click)="changeTab1R()">Back</button>
+            <button mat-raised-button class="cBtnB" (click)="changeTab1R()">Back</button>
             <div class="skip1">
               <button mat-button class="cBtnBl" (click)="changeTab1()">Skip For Now</button>
             </div>
@@ -253,13 +253,10 @@
             <span class="material-icons icon">
               photo_library
             </span>
+
+
             <div class="rowP">
-
-
-
-
               <div class="column_1">
-
                 <!-- Upload pic/video -->
                 <!-- 1 -->
                 <div class="centerD">
@@ -353,13 +350,11 @@
                 </div>
 
               </div>
-
-
             </div>
 
 
             <div class="createBtn">
-              <button mat-flat-button class="cBtnB" (click)="changeTab2R()">Back</button>
+              <button mat-raised-button class="cBtnB" (click)="changeTab2R()">Back</button>
               <div class="skip1">
                 <button mat-button class="cBtnBl" (click)="changeTab3()">Skip For Now</button>
               </div>
@@ -497,7 +492,7 @@
 
 
         <div class="createBtn">
-          <button mat-flat-button class="cBtnB" (click)="changeTab3()">Back</button>
+          <button mat-raised-button class="cBtnB" (click)="changeTab3()">Back</button>
           <i class="fas fa-user-graduate cBtnI"></i>
           <button mat-raised-button class="cBtn" routerLink="/search" type="button" (click)="onSubmit()">Create</button>
         </div>
