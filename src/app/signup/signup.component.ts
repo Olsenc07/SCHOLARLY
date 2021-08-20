@@ -18,11 +18,12 @@ import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { map } from 'rxjs/operators';
 import { MatDialog } from '@angular/material/dialog';
 import { ClassListService } from '../services/class.service';
-import { ImageCroppedEvent } from 'ngx-image-cropper';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 import { NgxImageZoomModule } from 'ngx-image-zoom';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { base64ToFile } from './image-cropper/utils/blob.utils';
+import { Dimensions, ImageCroppedEvent } from './image-cropper/interfaces/index';
 
 
 interface Gender {
@@ -83,8 +84,10 @@ export class SignupComponent implements OnInit {
   url2: string;
   url3: string;
   MatIconModule: any;
-  cropImgPreview: string;
-  imgChangeEvt: string;
+  cropImgPreview: any = '';
+  imgChangeEvt: any = '';
+  showCropper = false;
+  containWithinAspectRatio = false;
   username: FormControl = new FormControl('', Validators.pattern('[a-zA-Z0-9_]*'));
   password: FormControl = new FormControl('');
   major: FormControl = new FormControl('');
@@ -142,25 +145,29 @@ export class SignupComponent implements OnInit {
     personalizeForm: this.personalizeForm,
     snapShotForm: this.snapShotForm,
   });
-
+  toggleContainWithinAspectRatio() {
+    this.containWithinAspectRatio = !this.containWithinAspectRatio;
+  }
 
   onImgChange(event: any): void {
     this.imgChangeEvt = event;
   }
   // Passes value as base64 string of cropped area!! But where does form controller come into play?
-  cropImg(e: ImageCroppedEvent): void {
-    this.cropImgPreview = e.base64;
+  cropImg(event: ImageCroppedEvent) {
+    this.cropImgPreview = event.base64;
+    console.log(event, base64ToFile(event.base64));
   }
 
   imgLoad(): void {
-    // display cropper tool
+    this.showCropper = true;
+    console.log('Image loaded');
   }
 
-  initCropper(): void {
-    // init cropper
+  initCropper(sourceImageDimensions: Dimensions) {
+    console.log('Cropper ready', sourceImageDimensions);
   }
-  imgFailed(): void {
-    // error msg
+  imgFailed() {
+    console.log('Load failed');
   }
   // Profiel Pic
   imagePreviewP(event: any): void {
