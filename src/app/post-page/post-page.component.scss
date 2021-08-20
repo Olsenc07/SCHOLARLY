@@ -34,31 +34,18 @@
   justify-content: center;
   box-sizing: border-box;
 }
-.column {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.entire-page {
-  display: flex;
-  position: relative;
-  width: 100%;
-  flex-direction: row;
-  box-sizing: border-box;
-  justify-content: center;
-  overflow-y: scroll;
-}
+
 .all-welcome {
   display: flex;
   flex-direction: row;
 }
 @media(min-width:1024px){
 .back-button {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   width: 100%;
-  margin-top: 5%;
+  position: absolute;
+  bottom: 18px;
+  margin-bottom: 20%;
 }}
 @media(max-width:1024px){
 .back-button {
@@ -100,24 +87,43 @@
   width: 75%;
   height: 100%;
 }
+.cameraIcon{
+  height: 100%;
+    width: 30%;
+    justify-content: center;
+}
 .center {
   display: flex;
   justify-content: center;
 }
-
 .centerD {
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  margin-top: 3%;
+  flex-direction: row;
   font-size: x-large;
+  color: #7e7171;
+  font-family: 'Font Awesome 5 Free';
 }
+@media(min-width:1024px){
 .contents{
-  display: contents;
-}
+  display: flex;
+ box-sizing: border-box;
+ padding: 0% 21% 35% 21%;
+
+}}
+@media(max-width:1024px){
+.contents{
+  display: flex;
+ box-sizing: border-box;
+ padding: 0% 30% 0% 30%;
+
+}}
 .column {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 100%;
 }
 .columnM {
   display: flex;
@@ -125,9 +131,9 @@
 
 }
 .column_1 {
-  display: flex;
   flex-direction: column;
-  height: 100%;
+  height: fit-content;
+  overflow-y: scroll;
 }
 
 .column_ {
@@ -135,25 +141,52 @@
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  height: 100%;
 }
 .column_2 {
   display: flex;
   flex-direction: column;
   height: 30%;
+  margin-top: 4%;
   overflow-y: scroll;
 }
 
-.clear {
-  margin: 2% 0%;
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.description-input {
-  width: 75%;
+@media(min-width:1024px){
+.counter{
+  display: flex;
+ margin-top: 8%;
+}}
+@media(max-width:1024px) and (min-width:420px){
+.counter{
+  display: flex;
+ margin-top: 5%;
+ margin-right: 3%;
+}}
+@media (max-width:420px){
+  .counter{
+    display: flex;
+   margin-top: 5%;
+   margin-right: 5%;
+  }}
+  .description-input {
+    width: 75%;
+  }
+.entire-page {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex-direction: row;
+  box-sizing: border-box;
+  justify-content: center;
+  overflow-y: scroll;
 }
-// Move
-.icon {
-  font-size: large;
-  margin-right: 2%;
-}
+
 .friends-search {
   display: flex;
   justify-content: center;
@@ -220,9 +253,19 @@
 .left_1 {
   display: flex;
   width: 100%;
-  height: 75%;
+  height: 100%;
   flex-direction: column;
+  
 }}
+.imgBox{
+  display: flex;
+ width: 100%;
+ height: 100%;
+}
+.icon {
+  font-size: large;
+  margin-right: 2%;
+}
 @media(min-width:1024px){
 .imagePreview {
   display: flex;
@@ -249,6 +292,7 @@ mat-chip .mat-list-text {
   display: flex;
   height: 100%;
   width: 100%;
+  font-family: 'Font Awesome 5 Free';
 }
 .mat-slide-toggle {
   margin: 8px 0;
@@ -260,12 +304,19 @@ mat-chip .mat-list-text {
   width: 100%;
   justify-content: space-evenly;
 }
-
 ::ng-deep .mat-radio-label {
   justify-content: center;
- 
 }
-
+::ng-deep .mat-raised-button{
+  font-family: 'Font Awesome 5 Free';
+}
+::ng-deep .mat-button {
+  font-family: 'Font Awesome 5 Free';
+}
+::ng-deep  .mat-step-text-label{
+color: #7e7171;
+font-family: 'Font Awesome 5 Free';
+}
 ::ng-deep mat-form-field{
 display: flex;
 width: 100%;
@@ -309,6 +360,12 @@ width: 100%;
     position: relative;
   }
   }
+
+  ::ng-deep .mat-form-field-infix{
+    color: #7e7171;
+    font-family: 'Font Awesome 5 Free';
+  }
+
 .options {
   display: flex;
   flex-direction: column;
@@ -320,11 +377,15 @@ width: 100%;
   width: 100%;
   overflow-y: scroll;
 }
+.hide{
+  display: none;
+}
 p {
   display: flex;
-  color: #0b38dc;
+  color: #7e7171;
   justify-content: center;
 }
+
 .post-final {
   display: flex;
   position: relative;
@@ -343,7 +404,7 @@ p {
 @media(max-width:1024px){
 .post-descriptionD {
   display: flex;
-  width: 97%;
+  width: 100%;
 }
 }
 .post-descriptionM {
@@ -369,6 +430,12 @@ p {
   height: 40%;
   width: 100%;
   flex-direction: row;
+}
+.Photo{
+  font-size: xxx-large;
+  display: flex;
+  color: #418bba;
+  justify-content: center;
 }
 @media(min-width:1024px){
 .row {
@@ -462,6 +529,12 @@ p {
   overflow-y: scroll;
   height: 100%;
 }
+.show{
+  display: flex;
+width: 100%;
+height:  fit-content;
+justify-content: center;
+}
 .tagged-friends {
   display: flex;
   scroll-behavior: smooth;
@@ -474,7 +547,9 @@ p {
   display: flex;
   justify-content: center;
   font-size: large;
-  margin: 4% 0%;
+  margin: 4% 0% 0% 0%;
+  color: #7e7171;
+  font-family: 'Font Awesome 5 Free';
 }
 .text_ {
   display: flex;
@@ -488,18 +563,30 @@ p {
   justify-content: center;
   margin-left: 2%;
 }
-
+.textP{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: #7e7171;
+    font-family: "Font Awesome 5 Free";
+}
 .text {
   display: flex;
   width: 100%;
   justify-content: center;
-  margin: 0% 5%;
 }
-
+.textT{
+  color: #7e7171;
+  font-family: 'Font Awesome 5 Free';
+  font-size: initial;
+}
 .tagged-friends-box {
   display: flex;
   height: 20%;
   justify-content: center;
+}
+::ng-deep .timepicker-dial__control{
+  outline: none;
 }
 .trio {
   display: flex;
@@ -517,7 +604,17 @@ p {
 .text-input {
   width: 100%;
 }
-
+.textU{
+  display: flex; 
+  justify-content: center;
+   flex-direction: column;
+}
+.trash{
+  display: flex;
+  justify-content: center;
+  font-size: x-large;
+  color: #7e7171;
+}
   .top {
     display: flex;
     flex-direction: row;
@@ -537,13 +634,13 @@ p {
   }
   @media(min-width:1024px){
 .uploadD {
-  display: flex;
+  display: none;
   box-sizing: border-box;
   width: 100%;
 }}
 @media(max-width:1024px){
 .uploadD {
-  display: flex;
+  display: none;
   box-sizing: border-box;
 }
 }

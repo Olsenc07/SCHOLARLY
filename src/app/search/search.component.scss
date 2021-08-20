@@ -35,8 +35,13 @@
   display: flex;
   justify-content: center;
   margin: 2% 0%;
-  font-size: xx-large;
-  font-weight: 300;
+  font-size: x-large;
+  color: #7e7171;
+  font-family: 'Font Awesome 5 Free';
+}
+.center_{
+  display: flex; 
+  justify-content: center;
 }
 .centerM {
   display: flex;
@@ -66,10 +71,11 @@
   position: fixed;
 }
 .label{
-  display: flex;
+  display: contents;
   justify-content: center;
-  font-size: x-large;
-  font-weight: 900;
+  font-size: xx-large;
+  color: #7e7171;
+  font-family: 'Font Awesome 5 Free';
 }
 .logo-layoutM{
   display: flex;
@@ -277,6 +283,7 @@
 .mat-chip {
   background-color: rgb(65, 88, 165) !important;
   color: rgb(252, 252, 252) !important;
+  font-family: 'Font Awesome 5 Free';
 }
 .hideAll{
   display: none;
@@ -382,7 +389,18 @@
 mat-form-field {
   width: 100%;
 }
-
+::ng-deep .mat-form-field{
+  font-family: 'Font Awesome 5 Free';
+}
+::ng-deep .mat-radio-label-content{
+  font-family: 'Font Awesome 5 Free';
+}
+::ng-deep .mat-chip-list-wrapper{
+  justify-content: center;
+}
+::ng-deep .mat-select-value-text{
+  font-family: 'Font Awesome 5 Free';
+}
 ::ng-deep .mat-list-base {
  padding-top: 0px
 }

@@ -105,7 +105,7 @@
             <div *ngFor="let attendance of attendances" class="centerB">
 
               <input type="radio" name="attend" value="{{attendance}}" class="center" (change)="radioChange($event)">
-              <div>{{attendance}}</div>
+              <div class="row1">{{attendance}}</div>
 
 
 
@@ -114,7 +114,7 @@
           </mat-menu>
           <!-- Displays your attending status -->
           <div class="center1">
-            <button (click)="openAttendanceSheet()" mat-button class="textSize"> {{selectedAttend}}</button>
+            <button (click)="openAttendanceSheet()" mat-button class="textSize "> {{selectedAttend}}</button>
 
           </div>
 

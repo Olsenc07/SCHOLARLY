@@ -11,40 +11,66 @@
           </span></button>
       </div>
       <div class="left_1">
-        <div class="row">
+        <div class="column">
+          <div class="counter" matBadge="{{ 35 - (TitleLength | async) }}">
+          </div>
           <mat-form-field class="text-input">
-            <mat-label>Title of Post</mat-label>
+            <mat-label>Title</mat-label>
             <input matInput maxlength="35" [formControl]="Title">
-            <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearTitle()">
+            <!-- <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearTitle()">
               <mat-icon class="clear-button">close</mat-icon>
-            </button>
+            </button> -->
+
           </mat-form-field>
-          <div class="column" matBadge="{{ 35 - (TitleLength | async) }}">
+
+
+
+
+          <div class="post-descriptionD">
+            <mat-form-field>
+              <textarea matInput class="post" placeholder="What would you like to say?"
+                [formControl]="postDescription"></textarea>
+            </mat-form-field>
           </div>
         </div>
         <!-- Description of Post -->
         <div class="column_1">
-          <div class="post-descriptionD">
-            <mat-form-field>
-              <input matInput class="post" placeholder="What do you wanna say?" [formControl]="postDescription" />
-            </mat-form-field>
-          </div>
+
           <!-- Upload pic/video -->
-          <div class="column_">
-            <h2 class="center">Upload Post</h2>
-            <div class="rowP"> <input #fileInput class="uploadD" accept="image/* video/*" type="file"
-                (change)="imagePreview($event)" (click)="this.value=null" [formControl]="upload" multiple></div>
-            <div class="contents"> <img [src]="url" id="upload" class="imagePreview"></div>
-            <div class="rowP clear"><button mat-flat-button color="primary" (click)="clearUpload()">Clear
-                Upload</button></div>
+          <!-- <div class="column_"> -->
+          <div class="centerD">
+            <div class="textU"> Upload Post</div>
+            <button mat-icon-button class="trash" color="primary" (click)="clearUpload()">
+              <div class=" far fa-trash-alt"></div>
+            </button>
+
+          </div>
+
+
+          <div class="rowP">
+            <button class="cameraIcon" mat-icon-button (click)="uploadFile()">
+              <div class="material-icons Photo">
+                add_a_photo
+
+                <input #fileInput id="fileInput" class="uploadD" accept="image/* video/*" type="file"
+                  (change)="imagePreview($event)" [formControl]="upload" multiple>
+              </div>
+            </button>
+          </div>
+          <!-- Only when upload holds a value -->
+          <div class="contents">
+            <div class="imgBox">
+              <img [src]="url" id="upload" [ngClass]="upload.value ? 'show' : 'hide' ">
+            </div>
           </div>
 
         </div>
+        <!-- back button -->
+        <div class="back-button">
+          <button mat-raised-button routerLink="/search" class="text">Cancel</button>
+        </div>
       </div>
-      <!-- back button -->
-      <div class="back-button">
-        <button mat-raised-button routerLink="/search" class="text">Cancel</button>
-      </div>
+
     </div>
 
     <!-- MIDDLE DESKTOP VIEW -->
@@ -60,7 +86,7 @@
 
         <div class="column_">
           <mat-form-field appearance="fill">
-            <h2>Tag Friends: Start typing...</h2>
+            <div class="centerD">Tag Friends: start typing...</div>
 
             <mat-chip-list #chipList aria-label="Friends selection">
               <mat-chip *ngFor="let friend of friends" [selectable]="selectable" [removable]="removable"
@@ -68,7 +94,7 @@
                 {{friend}}
                 <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
               </mat-chip>
-              <input matInput #friendInput [matAutocomplete]="auto" [matChipInputFor]="chipList"
+              <input matInput #friendInput [matAutocomplete]="auto" [matChipInputFor]="chipList" class="textT"
                 [formControl]="friendCtrl" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
                 (matChipInputTokenEnd)="add($event)">
             </mat-chip-list>
@@ -86,7 +112,9 @@
 
 
       <div class="location">
+
         <div class="centerD">Where do you want your post?</div>
+
         <div class="textM"> Main Categories </div>
 
 
@@ -95,7 +123,7 @@
             <mat-label>Page</mat-label>
 
             <mat-select>
-              <mat-option>None</mat-option>
+
               <mat-option (click)="onSearchSelection(opt.value)" [selected]="opt.name" [multiple]="false"
                 *ngFor="let opt of searchOptions" [value]="opt.name">
 
@@ -164,15 +192,15 @@
               <mat-radio-group aria-label="Select an option" formControlName="gender">
 
                 <div class="margin">
-                  <p class="fas fa-venus" style="color: #d230b5;">Females</p>
+                  <p class="fas fa-venus">Females</p>
                   <mat-radio-button class="btn_" value="female"></mat-radio-button>
                 </div>
                 <div class="margin">
-                  <p class="fas fa-transgender-alt" style="color: #26dd2f;">All</p>
+                  <p class="fas fa-transgender-alt">All</p>
                   <mat-radio-button class="btn_" value="all"></mat-radio-button>
                 </div>
                 <div class="margin">
-                  <p class="fas fa-mars" style="color: #4e30d2;">Males</p>
+                  <p class="fas fa-mars">Males</p>
                   <mat-radio-button class="btn_" value="male"></mat-radio-button>
                 </div>
 
@@ -191,14 +219,14 @@
             <ng-template matStepLabel>Services</ng-template>
             <div class="column_">
               <div class="row">
-                <p class="fas fa-car icon" style="color: rgb(104, 11, 11);"> </p>
-                <div> Able to drive members</div>
+                <p class="fas fa-car icon"> </p>
+                <div class="textP"> Able to drive members</div>
                 <mat-checkbox class="btn" formControlName="driver"></mat-checkbox>
               </div>
 
               <div class="row">
-                <p class="fas fa-dollar-sign icon" style="color: green"></p>
-                <div>Service involving payment </div>
+                <p class="fas fa-dollar-sign icon"></p>
+                <div class="textP">Service involving payment </div>
 
                 <mat-checkbox class="btn" formControlName="paymentService"></mat-checkbox>
               </div>
@@ -219,16 +247,16 @@
               <button mat-button (click)="openDialog()">
                 <mat-icon>info</mat-icon>
               </button>
-              <div class="columnM">
-                <div class="column">
-                  <p class="fas fa-user-tie" style="color: #e9c215;">Formal event</p>
-                  <mat-radio-button value="formal" required>
 
-                  </mat-radio-button>
-                </div>
-              </div>
               <div class="column">
-                <p class="fas fa-glass-cheers" style="color: gold;">Relaxed event</p>
+                <p class="fas fa-user-tie textP">Formal event</p>
+                <mat-radio-button value="formal" required>
+
+                </mat-radio-button>
+              </div>
+
+              <div class="column">
+                <p class="fas fa-glass-cheers textP">Relaxed event</p>
                 <mat-radio-button value="relaxed" required>
 
                 </mat-radio-button>

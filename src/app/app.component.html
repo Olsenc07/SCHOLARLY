@@ -31,9 +31,14 @@
         <!-- Small screens top nav -->
 
         <div class="small-icons">
-          <div class="search-box">
-            <i type="button" class="fas fa-search search-box__icon"></i>
-            <input class="search-box__input" placeholder="Search Fellow Scholars" />
+          <div [ngClass]="searchPop === false  ? 'search-box' : 'search-box_' ">
+            <button mat-icon-button type="button" (click)="search_()">
+              <mat-icon class="material-icons  "
+                [ngClass]="searchPop === false  ? 'search-box__icon' : 'search-box__icon_' "> search</mat-icon>
+            </button>
+            <input placeholder="Search Fellow Scholars" autocomplete="additional-name" class="standard"
+              [ngClass]="searchPop === false  ? 'searchHide' : 'search-box__input,fas' " />
+
           </div>
 
           <button mat-icon-button [matMenuTriggerFor]="settingsMenu" type="button">
@@ -44,13 +49,19 @@
 
 
 
-
+        <!-- Desktop -->
         <!--Icons autosize to sidenav  -->
         <div class="large-screen-icons">
           <!-- New -->
           <div class="search-box">
-            <i type="button" class="fas fa-search search-box__icon"></i>
-            <input class="search-box__input" placeholder="Search Fellow Scholars" />
+            <i class="fas fa-search search-box__icon "></i>
+            <input matInput type="search" class="search-box__input" placeholder="Search Fellow Scholars"
+              [formControl]="search" />
+            <cdk-virtual-scroll-viewport itemSize="10">
+              <mat-option *cdkVirtualFor="let user of filteredSearch | async" [value]="user">
+                {{user}}
+              </mat-option>
+            </cdk-virtual-scroll-viewport>
           </div>
           <!-- End -->
           <div class="icon-top">

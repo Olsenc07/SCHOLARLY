@@ -13,7 +13,7 @@ import { filter, map, tap } from 'rxjs/operators';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-
+  searchPop = false;
   faCoffee = faCoffee;
   title = 'angular-SCHOLARLY';
 
@@ -37,14 +37,27 @@ export class AppComponent implements OnInit {
 
   searchBox: Element;
 
+  // allUsers should filter through every user
+  allUsers: string[] = [''];
+
+
   search: FormControl = new FormControl('');
+  filteredSearch: Observable<string[]>;
   searchForm = new FormGroup({
     search: this.search,
   });
 
   constructor(
     private router: Router
-  ) { }
+  ) {
+    this.filteredSearch = this.search.valueChanges.pipe(
+      map((user: string | null) => user ? this._filter(user) : this.allUsers.slice()));
+  }
+
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+    return this.allUsers.filter(user => user.toLowerCase().indexOf(filterValue) === 0);
+  }
 
   ngOnInit(): void {
     document.getElementsByClassName('search-box__icon')[0]?.addEventListener('click', this.activateSearch);
@@ -98,6 +111,10 @@ export class AppComponent implements OnInit {
   // searchIcon.addEventListener("click", activateSearch);
   activateSearch(): void {
     this.searchBox.classList.toggle('active');
+  }
+
+  search_(): void {
+    this.searchPop = !this.searchPop;
   }
 
   clearSearch(): void {

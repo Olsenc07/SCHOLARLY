@@ -60,7 +60,7 @@ export class PostPageComponent implements OnInit {
   public specificOptions: string[];
   public searchOptions: SearchOption[];
 
-  url: string;
+  url: string[];
 
   selectedIndex = 0;
 
@@ -145,9 +145,14 @@ export class PostPageComponent implements OnInit {
 
 
   }
+
+  uploadFile(): any {
+    document.getElementById('fileInput').click();
+  };
   openDialog(): void {
     this.dialog.open(DialogElementsComponent);
   }
+
   imagePreview(event: any): void {
     if (event.target.files && event.target.files[0]) {
       const reader = new FileReader();

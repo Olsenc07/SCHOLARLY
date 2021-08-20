@@ -83,8 +83,8 @@ export class SignupComponent implements OnInit {
   url2: string;
   url3: string;
   MatIconModule: any;
-  cropImgPreview: any = '';
-  imgChangeEvt: any = '';
+  cropImgPreview: string;
+  imgChangeEvt: string;
   username: FormControl = new FormControl('', Validators.pattern('[a-zA-Z0-9_]*'));
   password: FormControl = new FormControl('');
   major: FormControl = new FormControl('');
@@ -162,6 +162,19 @@ export class SignupComponent implements OnInit {
   imgFailed(): void {
     // error msg
   }
+  // Profiel Pic
+  imagePreviewP(event: any): void {
+    if (event.target.files && event.target.files[0]) {
+      const reader = new FileReader();
+
+      reader.readAsDataURL(event.target.files[0]); // read file as data url
+
+      reader.onload = (Event: any) => { // called once readAsDataURL is completed
+        console.log(Event);
+        this.cropImgPreview = Event.target.result;
+      };
+    }
+  }
 
   // SnapShot
   imagePreview(event: any): void {
@@ -219,6 +232,19 @@ export class SignupComponent implements OnInit {
       )
     );
   }
+
+  uploadFileP(): any {
+    document.getElementById('fileInputP').click();
+  };
+  uploadFile(): any {
+    document.getElementById('fileInput').click();
+  };
+  uploadFile2(): any {
+    document.getElementById('fileInput2').click();
+  };
+  uploadFile3(): any {
+    document.getElementById('fileInput3').click();
+  };
 
   formatLabel(value: number): string {
     if (value >= 100) {

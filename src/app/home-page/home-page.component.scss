@@ -19,33 +19,34 @@
 @media (min-width: 767px) {
   .main-text {
     display: flex;
-    padding: 8% 2% 0 0;
+    padding: 5% 0% 0% 0%;
     font-size: 3vw;
     line-height: initial;
     color: #0e3379;
-    font-family: "Helvetic Neue", "Courier New", Courier;
+    font-family: "Font Awesome 5 Free";
   }
 }
 
 @media (max-width: 767px) {
   .main-text-small {
     display: flex;
-    padding: 8% 2% 0 0;
+    padding: 5% 0% 0% 0%;
     font-size: 4vw;
     line-height: initial;
     color: #0e3379;
-    font-family: "Helvetic Neue", "Courier New", Courier;
+    font-family: "Font Awesome 5 Free";
   }
 }
 @media (max-width: 500px) {
   .main-text-small {
-    padding: 1% 2% 0 0;
-    font-size: 5vw;
+    padding: 5% 0% 0% 0%;
+    font-size: 4vw;
     line-height: initial;
     color: #0e3379;
-    font-family: "Helvetic Neue", "Courier New", Courier;
+    font-family: "Font Awesome 5 Free";
   }
 }
+@media (min-width: 901px) {
 .log-in-box {
   box-sizing: border-box;
   padding: 0% 5% 5% 5%;
@@ -54,17 +55,28 @@
   width: 100%;
   margin-top: 2%;
   display: flex;
+}}
+@media (max-width: 901px) {
+.log-in-box {
+  box-sizing: border-box;
+  padding: 0% 5% 5% 5%;
+  border: 1px solid gray;
+  border-radius: 16px;
+  width: 100%;
+  height: 100%;
+  margin-top: 2%;
+  display: flex;
 }
-
+}
 .forgot-password {
   margin: 8px 0;
   font-size: 16px;
   color: #0e3379;
-  font-family: "Helvetic Neue", "Courier New", Courier;
+  font-family: "Font Awesome 5 Free, ";
 }
 
 .action-button {
-  font-family: "Helvetic Neue", "Courier New", Courier;
+  font-family: "Font Awesome 5 Free","Helvetic Neue";
 }
 @media (max-height: 545px) {
   .top {
@@ -74,7 +86,7 @@
 @media (min-width: 511px) {
   .tag {
     color: #0e3379;
-    font-family: "Helvetic Neue", "Courier New", Courier;
+    font-family: "Font Awesome 5 Free","Helvetic Neue";
     margin: 3% 0;
     font-size: 17px;
   }
@@ -87,14 +99,14 @@
 
 .text-input {
   width: 100%;
-  font-family: "Helvetic Neue", "Courier New", Courier;
+  font-family: "Font Awesome 5 Free","Helvetic Neue";
   height: 9vh;
   font-size: large;
 }
 @media (max-width: 700px) and (min-width: 402px) {
   .text-input {
     width: 100%;
-    font-family: "Helvetic Neue", "Courier New", Courier;
+    font-family: "Font Awesome 5 Free","Helvetic Neue";
     height: 9vh;
     font-size: medium;
   }
@@ -102,7 +114,7 @@
 @media (max-width: 401px) {
   .text-input {
     width: 100%;
-    font-family: "Helvetic Neue", "Courier New", Courier;
+    font-family: "Font Awesome 5 Free","Helvetic Neue";
     height: 9vh;
     font-size: small;
   }
