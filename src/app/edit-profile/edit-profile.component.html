@@ -16,15 +16,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
           <!-- input pic & has this default pic before-->
           <!-- Upload one profile pic -->
           <div class="personalizeLarge">
@@ -304,23 +295,27 @@
         </div>
 
         <!-- Image Preview -->
-        <div class="column">
-          <div class="show_">
-            <div class="snapshot">Add A Showcase</div>
-            <button mat-icon-button class="trash" color="primary" (click)="clearPic1()">
-              <div class=" far fa-trash-alt"></div>
-            </button>
-          </div>
+        <div class="rowShow">
+          <!-- <div class="column"> -->
+          <div *ngIf=" clicked == false">
+            <div class="row">
+              <div class="snapshot">Add A Showcase</div>
+              <button mat-icon-button class="trash" [ngClass]="showCase.value ? 'show' : 'hide' " color="primary"
+                (click)="clearPic1()">
+                <div class=" far fa-trash-alt"></div>
+              </button>
+            </div>
 
-          <div class="rowP_">
-            <button class="cameraIcon" mat-icon-button (click)="uploadFile()">
-              <div class="material-icons Photo">
-                add_a_photo
+            <div class="rowP_">
+              <button class="cameraIcon" mat-button (click)="uploadFile()">
+                <div class="material-icons Photo">
+                  add_a_photo
 
-                <input #fileInput id="fileInput" class="uploadD" accept="image/* video/*" type="file"
-                  (change)="imagePreview($event)" [formControl]="showCase" class="hide" multiple>
-              </div>
-            </button>
+                  <input #fileInput id="fileInput" class="uploadD" accept="image/* video/*" type="file"
+                    (change)="imagePreview($event)" [formControl]="showCase" class="hide" multiple>
+                </div>
+              </button>
+            </div>
           </div>
 
 
@@ -329,8 +324,36 @@
           <div class="imageBox">
             <img [src]="url" id="firstP" class="imagePreview" [ngClass]="showCase.value ? 'show' : 'hide' ">
           </div>
-        </div>
 
+          <div [ngClass]="showCase.value ? 'hide' : 'show_' ">
+            <div class="column1"> Remove A Showcase</div>
+            <div class="rowE">
+              <button class="rowE_" mat-button (click)="deleteShowCase()" (click)="hideAdd()">
+                <i class="fas fa-minus-circle Photo"></i>
+              </button>
+            </div>
+          </div>
+
+
+          <div class="words" [ngClass]="deleteShowCase() === true ? 'hide' : 'show' ">
+
+            <div class="row">
+              <!-- button scrolls through posts and then user can delete what they wish -->
+              <button mat-icon-button (click)=previousGroupCard()><i class="fas fa-arrow-circle-left title1"></i>
+              </button>
+              <div class="column1">Snap Shots</div>
+              <button mat-icon-button (click)=nextGroupCard()> <i class="fas fa-arrow-circle-right title1"></i>
+              </button>
+            </div>
+            <div class="style">
+              <button mat-button (click)=leaveGroup()>Delete Snap Shot</button>
+
+            </div>
+          </div>
+
+
+          <!-- </div> -->
+        </div>
 
         <div class="c_r">
           <div class="courses">

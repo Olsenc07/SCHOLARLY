@@ -57,6 +57,8 @@ export const MY_FORMATS = {
   ],
 })
 export class EditProfileComponent implements OnInit {
+  clicked = false;
+  removeShowCase = false;
   visible = true;
   selectable = true;
   removable = true;
@@ -83,6 +85,7 @@ export class EditProfileComponent implements OnInit {
   name: FormControl = new FormControl('');
   pronouns: FormControl = new FormControl('');
   showCase: FormControl = new FormControl('');
+  // removeShowCase: FormControl = new FormControl('');
   birthday: FormControl = new FormControl('');
   genderChoice: FormControl = new FormControl('');
 
@@ -104,7 +107,6 @@ export class EditProfileComponent implements OnInit {
     CodePursuing: this.CodePursuing,
     bio: this.bio,
     showCase: this.showCase,
-
   });
   selectedIndex = 0;
   genders: Gender[] = [
@@ -134,6 +136,16 @@ export class EditProfileComponent implements OnInit {
       )
     );
   }
+  deleteShowCase(): boolean {
+    this.removeShowCase = !this.removeShowCase;
+    // console.log(this.removeShowCase);
+    return this.removeShowCase;
+  };
+  hideAdd(): boolean {
+
+    this.clicked = !this.clicked;
+    return this.clicked;
+  };
   uploadFile(): any {
     document.getElementById('fileInput').click();
   };

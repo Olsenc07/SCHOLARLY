@@ -18,12 +18,14 @@
   justify-content: space-around;
   width: 100%;
   max-width: 45%;
+  margin-bottom: 3%;
 }}
 @media(max-width:1024px){
   .Accounts {
     display: flex;
     justify-content: space-around;
     width: 100%;
+    margin-bottom: 3%;
   }}
 .asthetic-adds {
   color: #418bba;
@@ -49,7 +51,6 @@
   display: flex;
   justify-self: center;
   margin-bottom: 5%;
-
   font-family: "Font Awesome 5 Free";
 }
 @media(min-width:1024px){
@@ -128,11 +129,17 @@
   margin-right: 1%;
 }
 .column1 {
+    display: flex;
+    justify-content: center;
+    color: #7e7171;
+    font-family: "Font Awesome 5 Free";
+    font-size: large;
+    flex-direction: column;
+}
+.columnPlain{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  color: #7e7171;
-    font-family: "Font Awesome 5 Free";
 }
 .cropper {
   display: flex;
@@ -156,13 +163,19 @@
   margin-left: 5%;
   justify-content: center;
 }
+@media(min-width:1024px){
+  .done {
+    justify-content: center;
+    display: flex;
+    width: 100%;
+  }}
+@media(max-width:1024px){
 .done {
   justify-content: center;
   display: flex;
   width: 100%;
-  margin-bottom: 5%;
-  
-}
+  margin-bottom: 13%;
+}}
 .entire-page {
   display: flex;
   flex-direction: column;
@@ -170,6 +183,7 @@
   width: 100%;
   margin-bottom: 2%;
 }
+
 .fit{
   display: flex;
   width: 100%;
@@ -190,6 +204,14 @@
   border-radius: 7%;
   border-color: #707070;
 }
+
+
+::ng-deep .mat-radio-label-content{
+  font-family: 'Font Awesome 5 Pro';
+  color: #707070;
+}
+
+
 .gender {
   display: flex;
   justify-content: center;
@@ -219,7 +241,8 @@
   }
 }
 
-.far{ color: #7e7171;
+.far
+{ color: #7e7171;
 }
 .fa-arrow-circle-left{
   font-size: large;
@@ -309,6 +332,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 .left-column {
@@ -317,9 +341,7 @@
 }
 .imagePreview {
   display: flex;
- 
     width: 100%;
- 
 }
 .input {
   display: flex;
@@ -333,11 +355,29 @@
   height: 100%;
   border: ridge;
 }
-
+.rowShow{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  margin: 5% 0%;
+}
   .row {
     display: flex;
     justify-content: center;
     flex-direction: row;
+  }
+
+  .rowE {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+  }
+  .rowE_ {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+   
   }
 
 .rowT{
@@ -364,6 +404,11 @@
   justify-content: center;
   color: #418bba;
 }
+.right-column {
+  display: flex;
+  flex-direction: column;
+}
+
 @media (min-width: 1024px) {
   .smaller {
     width: 30%;
@@ -376,21 +421,29 @@
 }
 .show{
   display: flex;
-width: 100%;
 justify-content: center;
 }
 .show_{
   display: flex;
 justify-content: center;
+flex-direction: column;
 }
 .style{
   color: #7e7171;
   font-family: "Font Awesome 5 Free";}
-
+  @media(min-width:900px){
+    .imageBox{
+      display: flex;
+      height: 100%;
+      max-width: 20%;
+    }}
+  @media(max-width:900px){
 .imageBox{
   display: flex;
   height: 100%;
-}
+  max-width: 50%;
+}}
+@media(min-width:500px){
 .snapshot {
   display: flex;
   justify-content: center;
@@ -398,7 +451,16 @@ justify-content: center;
   font-family: "Font Awesome 5 Free";
   font-size: large;
   flex-direction: column;
-}
+}}
+@media(max-width:500px){
+.snapshot {
+  display: flex;
+  justify-content: center;
+  color: #7e7171;
+  font-family: "Font Awesome 5 Free";
+  font-size: inherit;
+  flex-direction: column;
+}}
 .snapshotClear {
   display: flex;
   width: 100%;
@@ -410,10 +472,6 @@ justify-content: center;
   width: 100%;
   height: 100%;
   justify-content: center;
-  flex-direction: column;
-}
-.right-column {
-  display: flex;
   flex-direction: column;
 }
 
@@ -466,6 +524,9 @@ justify-content: center;
 }
 .previewPic{
   border-radius: 50%;
+}
+.Photo{
+  font-size: xx-large;
 }
 .layout {
   display: flex;
