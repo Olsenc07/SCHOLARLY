@@ -140,6 +140,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 30%;
 }
 .cropper {
   display: flex;
@@ -425,7 +426,6 @@ justify-content: center;
 }
 .show_{
   display: flex;
-justify-content: center;
 flex-direction: column;
 }
 .style{
@@ -443,6 +443,15 @@ flex-direction: column;
   height: 100%;
   max-width: 50%;
 }}
+.imageBox_{
+  display: flex;
+    width: 100%;
+    flex-direction: row;
+    overflow: hidden;
+
+}
+
+
 @media(min-width:500px){
 .snapshot {
   display: flex;
@@ -583,10 +592,7 @@ flex-direction: column;
 @media (max-width: 900px) {
   ._icon2 {
     display: none;
-  }
-}
-
-
+  }}
 
 .input {
   display: flex;
@@ -600,6 +606,10 @@ flex-direction: column;
 .inputText {
   display: flex;
   
+}
+.img{
+  max-width: 50%;
+  max-height: 50%;
 }
 
 .tooltip .tooltiptext {

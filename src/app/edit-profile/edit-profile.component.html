@@ -326,7 +326,7 @@
           </div>
 
           <div [ngClass]="showCase.value ? 'hide' : 'show_' ">
-            <div class="column1"> Remove A Showcase</div>
+            <div class="snapshot"> Remove A Showcase</div>
             <div class="rowE">
               <button class="rowE_" mat-button (click)="deleteShowCase()" (click)="hideAdd()">
                 <i class="fas fa-minus-circle Photo"></i>
@@ -335,19 +335,25 @@
           </div>
 
 
-          <div class="words" [ngClass]="deleteShowCase() === true ? 'hide' : 'show' ">
-
+          <div [ngClass]="clicked === true ? 'show' : 'hide' " class="columnPlain">
             <div class="row">
-              <!-- button scrolls through posts and then user can delete what they wish -->
-              <button mat-icon-button (click)=previousGroupCard()><i class="fas fa-arrow-circle-left title1"></i>
-              </button>
-              <div class="column1">Snap Shots</div>
-              <button mat-icon-button (click)=nextGroupCard()> <i class="fas fa-arrow-circle-right title1"></i>
-              </button>
-            </div>
-            <div class="style">
-              <button mat-button (click)=leaveGroup()>Delete Snap Shot</button>
 
+              <div class="row">
+                <!-- button scrolls through posts and then user can delete what they wish -->
+                <button mat-icon-button (click)=previousGroupCard()><i class="fas fa-arrow-circle-left title1"></i>
+                </button>
+                <div class="column1">Snap Shots</div>
+                <button mat-icon-button (click)=nextGroupCard()> <i class="fas fa-arrow-circle-right title1"></i>
+                </button>
+              </div>
+              <div class="style">
+                <button mat-button (click)=leaveGroup()>Delete Snap Shot</button>
+
+              </div>
+            </div>
+            <div class="imageBox_">
+
+              <img class="img" *ngFor="let showCase of showCases" src={{showCase}} />
             </div>
           </div>
 

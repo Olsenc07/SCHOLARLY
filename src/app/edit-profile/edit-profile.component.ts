@@ -116,7 +116,11 @@ export class EditProfileComponent implements OnInit {
     { name: 'Other' },
 
   ];
-
+  // Connects to save showcases in the data base
+  showCases = ['../../assets/Pics/IMG-8413.PNG', '../../assets/Pics/IMG-8619.PNG',
+    '../../assets/Pics/IMG-8413.PNG', '../../assets/Pics/IMG-8413.PNG', '../../assets/Pics/IMG-8619.PNG',
+    '../../assets/Pics/IMG-8413.PNG', '../../assets/Pics/IMG-8413.PNG'
+  ];
   constructor(
     public dialog: MatDialog,
     public classListService: ClassListService,
