@@ -254,7 +254,7 @@
             <div class="words">
               <div class="row">
                 <!-- button scrolls through posts and then user can delete what they wish -->
-                <button mat-icon-button (click)=previousGroupCard()><i class="fas fa-arrow-circle-left title1"></i>
+                <button mat-icon-button (click)=previousGroupCard1()><i class="fas fa-arrow-circle-left title1"></i>
                 </button>
                 <div class="column1">Groups Joined</div>
                 <button mat-icon-button (click)=nextGroupCard()> <i class="fas fa-arrow-circle-right title1"></i>
@@ -328,7 +328,8 @@
           <div [ngClass]="showCase.value ? 'hide' : 'show_' ">
             <div class="snapshot"> Remove A Showcase</div>
             <div class="rowE">
-              <button class="rowE_" mat-button (click)="deleteShowCase()" (click)="hideAdd()">
+              <button class="rowE_" mat-button (click)="deleteShowCase()" (click)="hideAdd()"
+                (click)="displayShowcase()">
                 <i class="fas fa-minus-circle Photo"></i>
               </button>
             </div>
@@ -347,13 +348,15 @@
                 </button>
               </div>
               <div class="style">
-                <button mat-button (click)=leaveGroup()>Delete Snap Shot</button>
+                <button mat-button (click)=deleteSnapShot()>Delete Snap Shot</button>
 
               </div>
             </div>
             <div class="imageBox_">
+              <!-- *ngFor="let show of showCases; index as i" src="{{show | slice:i}} "
+                [attr.showCase-index]="i" -->
+              <img class="img" *ngFor="let show of list | slice:i; index as i" src="{{show}}" />
 
-              <img class="img" *ngFor="let showCase of showCases" src={{showCase}} />
             </div>
           </div>
 

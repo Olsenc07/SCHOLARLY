@@ -57,6 +57,7 @@ export const MY_FORMATS = {
   ],
 })
 export class EditProfileComponent implements OnInit {
+  i = 0;
   clicked = false;
   removeShowCase = false;
   visible = true;
@@ -116,11 +117,17 @@ export class EditProfileComponent implements OnInit {
     { name: 'Other' },
 
   ];
+
   // Connects to save showcases in the data base
-  showCases = ['../../assets/Pics/IMG-8413.PNG', '../../assets/Pics/IMG-8619.PNG',
-    '../../assets/Pics/IMG-8413.PNG', '../../assets/Pics/IMG-8413.PNG', '../../assets/Pics/IMG-8619.PNG',
-    '../../assets/Pics/IMG-8413.PNG', '../../assets/Pics/IMG-8413.PNG'
+  list = ['../../assets/Pics/IMG-8413.PNG',
+    '../../assets/Pics/IMG-8619.PNG',
+    '../../assets/Pics/IMG-8413.PNG',
+    '../../assets/Pics/IMG-8619.PNG',
+    '../../assets/Pics/IMG-8413.PNG',
+    '../../assets/Pics/IMG-8619.PNG',
+    '../../assets/Pics/IMG-8413.PNG',
   ];
+
   constructor(
     public dialog: MatDialog,
     public classListService: ClassListService,
@@ -140,9 +147,16 @@ export class EditProfileComponent implements OnInit {
       )
     );
   }
+  displayShowcase(): any {
+    // this.showCases.slice(this.i)
+    // console.log(this.showCases);
+    // return this.showCases;
+    this.list = this.list.splice(this.i);
+    return this.list;
+  }
   deleteShowCase(): boolean {
     this.removeShowCase = !this.removeShowCase;
-    // console.log(this.removeShowCase);
+
     return this.removeShowCase;
   };
   hideAdd(): boolean {
@@ -280,14 +294,28 @@ export class EditProfileComponent implements OnInit {
     this.showCase.setValue('');
     document.getElementById('firstP').removeAttribute('src');
   }
-  previousGroupCard(): void {
-    // go back one card
+  previousGroupCard1(): void {
+
+    // return display;
+  }
+  previousGroupCard(): any {
+    var index = --this.i;
+    console.log(this.i);
+    // logs 0
   }
 
   nextGroupCard(): void {
+    var index = ++this.i;
+    console.log(this.i);
     // go forward one card
   }
+  deleteSnapShot(): void {
+    this.list.splice(this.i, 1)
 
+
+    console.log(this.list.length);
+
+  }
   leaveGroup(): void {
     // leave the group that is being displayed
   }
