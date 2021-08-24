@@ -364,7 +364,6 @@
 }
   .row {
     display: flex;
- width: 100%;
     flex-direction: row;
   }
 
@@ -427,6 +426,10 @@ justify-content: center;
 .show_{
   display: flex;
 flex-direction: column;
+justify-content: center;
+}
+.Show{
+  display: flex;
 }
 .style{
   color: #7e7171;
@@ -447,8 +450,7 @@ flex-direction: column;
   display: flex;
     width: 100%;
     flex-direction: row;
-    overflow: hidden;
-
+justify-content: center;
 }
 
 
@@ -541,6 +543,8 @@ flex-direction: column;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-family: 'Font Awesome 5 Pro';
+  color: #707070;
 }
 .text {
   color: #7e7171;
@@ -553,6 +557,7 @@ flex-direction: column;
   display: flex;
   flex-direction: column;
 }
+
 @media (min-width: 1024px) {
   ::ng-deep mat-form-field {
     display: flex;
@@ -611,6 +616,17 @@ flex-direction: column;
   max-width: 50%;
   max-height: 50%;
 }
+
+@media(min-width:1024px){
+.img_{
+  max-width: 75%;
+  max-height: 50%;
+}}
+@media(max-width:1024px){
+  .img_{
+    max-width: 75%;
+    max-height: fit-content;
+  }}
 
 .tooltip .tooltiptext {
   visibility: hidden;

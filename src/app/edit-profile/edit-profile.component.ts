@@ -147,13 +147,7 @@ export class EditProfileComponent implements OnInit {
       )
     );
   }
-  displayShowcase(): any {
-    // this.showCases.slice(this.i)
-    // console.log(this.showCases);
-    // return this.showCases;
-    this.list = this.list.splice(this.i);
-    return this.list;
-  }
+
   deleteShowCase(): boolean {
     this.removeShowCase = !this.removeShowCase;
 
@@ -166,6 +160,7 @@ export class EditProfileComponent implements OnInit {
   };
   uploadFile(): any {
     document.getElementById('fileInput').click();
+
   };
   uploadFileP(): any {
     document.getElementById('fileInputP').click();
@@ -189,6 +184,13 @@ export class EditProfileComponent implements OnInit {
     // error msg
   }
   // SnapShot
+  // After its added to the list. Click save and 
+  // this becomes the updated array, sent back to the data base
+  arrayAdd(event: any): any {
+    this.list.unshift(this.showCase.value)
+    console.log(this.list);
+    return this.list
+  }
   imagePreview(event: any): void {
     if (event.target.files && event.target.files[0]) {
       const reader = new FileReader();
@@ -201,6 +203,7 @@ export class EditProfileComponent implements OnInit {
         this.url = Event.target.result;
       };
     }
+
   }
 
   add(event: MatChipInputEvent): void {
@@ -285,36 +288,43 @@ export class EditProfileComponent implements OnInit {
     this.bio.setValue('');
   }
 
-  clearProfilePic(): void {
+  clearProfilePic(): any {
     this.profilePic.setValue('');
+    this.cropImgPreview = '';
     document.getElementById('ProfilePic').removeAttribute('src');
+
   }
 
   clearPic1(): void {
     this.showCase.setValue('');
+    this.list.shift();
     document.getElementById('firstP').removeAttribute('src');
   }
   previousGroupCard1(): void {
 
     // return display;
   }
-  previousGroupCard(): any {
-    var index = --this.i;
+  previousGroupCard(): number {
+    --this.i;
+    if (0 > this.i) {
+      this.i = this.list.length
+      return this.i
+    }
     console.log(this.i);
-    // logs 0
   }
 
-  nextGroupCard(): void {
-    var index = ++this.i;
+  nextGroupCard(): number {
+    ++this.i;
+    if (this.i >= this.list.length) {
+      this.i = -1
+      return this.i
+    }
     console.log(this.i);
     // go forward one card
   }
   deleteSnapShot(): void {
     this.list.splice(this.i, 1)
-
-
     console.log(this.list.length);
-
   }
   leaveGroup(): void {
     // leave the group that is being displayed
