@@ -323,9 +323,13 @@ export class EditProfileComponent implements OnInit {
     console.log(this.i);
     // go forward one card
   }
-  deleteSnapShot(): void {
+  deleteSnapShot(): number {
     this.list.splice(this.i, 1)
     console.log(this.list.length);
+    if (this.i == this.list.length) {
+      this.i = this.i - 1
+      return this.i
+    }
   }
   leaveGroup(): void {
     // leave the group that is being displayed
