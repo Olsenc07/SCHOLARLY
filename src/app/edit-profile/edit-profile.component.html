@@ -341,25 +341,31 @@
             <div class="rowE">
 
               <div class="row">
+                <!-- Counting badge -->
+
+
                 <!-- button scrolls through posts and then user can delete what they wish -->
                 <button mat-icon-button (click)=previousGroupCard()><i class="fas fa-arrow-circle-left title1"></i>
                 </button>
+
+
+
                 <div class="column1">Snap Shots</div>
+
                 <button mat-icon-button (click)=nextGroupCard()> <i class="fas fa-arrow-circle-right title1"></i>
                 </button>
+
               </div>
-              <div class="style">
+              <div class="style" [ngClass]="list.length == 0 ? 'hide' : 'show' ">
                 <button mat-icon-button (click)=deleteSnapShot() class="trash">
                   <div class=" far fa-trash-alt"></div>
                 </button>
-
               </div>
             </div>
             <div class="imageBox_">
-              <!-- *ngFor="let show of showCases; index as i" src="{{show | slice:i}} "
-                [attr.showCase-index]="i" -->
+              <div class="counter" matBadgePosition="before" matBadge="{{ i + 1 }}"></div>
               <img class="img_" *ngFor="let show of list | slice:i:i+1; index as i" src="{{show}}" />
-
+              <div class="counter" matBadgePosition="after" matBadge="{{ list.length }}"></div>
             </div>
           </div>
 

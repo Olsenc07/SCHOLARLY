@@ -90,6 +90,7 @@ export class EditProfileComponent implements OnInit {
   birthday: FormControl = new FormControl('');
   genderChoice: FormControl = new FormControl('');
 
+
   CodeCompleted: FormControl = new FormControl('');
   CodePursuing: FormControl = new FormControl('');
 
@@ -307,7 +308,7 @@ export class EditProfileComponent implements OnInit {
   previousGroupCard(): number {
     --this.i;
     if (0 > this.i) {
-      this.i = this.list.length
+      this.i = this.list.length - 1
       return this.i
     }
     console.log(this.i);
@@ -316,7 +317,7 @@ export class EditProfileComponent implements OnInit {
   nextGroupCard(): number {
     ++this.i;
     if (this.i >= this.list.length) {
-      this.i = -1
+      this.i = 0
       return this.i
     }
     console.log(this.i);
