@@ -57,7 +57,12 @@ export const MY_FORMATS = {
   ],
 })
 export class EditProfileComponent implements OnInit {
+  // Showcase
   i = 0;
+  // Groups joined
+  g = 0;
+  // Posts
+  p = 0;
   clicked = false;
   removeShowCase = false;
   visible = true;
@@ -305,6 +310,8 @@ export class EditProfileComponent implements OnInit {
 
     // return display;
   }
+
+  // Showcase edit
   previousGroupCard(): number {
     --this.i;
     if (0 > this.i) {
@@ -313,7 +320,6 @@ export class EditProfileComponent implements OnInit {
     }
     console.log(this.i);
   }
-
   nextGroupCard(): number {
     ++this.i;
     if (this.i >= this.list.length) {
@@ -331,6 +337,12 @@ export class EditProfileComponent implements OnInit {
       return this.i
     }
   }
+  // 
+
+
+
+
+
   leaveGroup(): void {
     // leave the group that is being displayed
   }

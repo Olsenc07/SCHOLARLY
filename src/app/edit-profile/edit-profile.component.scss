@@ -123,12 +123,16 @@
     justify-content: center;
     flex-direction: column;
     box-sizing: border-box;
-   
-  }
-  }
+  }}
   .Column{
     display: flex;
     flex-direction: column;
+  }
+  .Column_ {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
   }
 .column_ {  display: flex;
   flex-direction: column;
@@ -153,12 +157,20 @@
       font-size: inherit;
       flex-direction: column;
   }}
+  @media(min-width:500px){
 .columnPlain{
   display: flex;
   flex-direction: column;
   justify-content: center;
   max-width: 30%;
-}
+}}
+@media(max-width:500px){
+  .columnPlain{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 45%;
+  }}
 .cropper {
   display: flex;
 // May need a max height
@@ -260,7 +272,9 @@
 }
 
 .far
-{ color: #7e7171;
+{ 
+  color: #7e7171;
+  font-size: x-large;
 }
 .fa-arrow-circle-left{
   font-size: large;
