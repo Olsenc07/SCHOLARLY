@@ -13,10 +13,17 @@ export interface Profile {
 
 
 
+
+
 @Injectable({
   providedIn: 'root',
 })
 export class StoreService {
+  // Completed and pursing list should be filled from data base
+  // These allow {{ }} to track length of list for badge display
+  static Com = ['', '', '', '', '', '', '', '', '', ''];
+  static Pur = ['', '', '', '', '',];
+
   profile$$: ReplaySubject<Profile> = new ReplaySubject<Profile>(1);
   static profile$$: string[];
 

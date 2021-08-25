@@ -126,15 +126,20 @@
             <!-- Hidden if neither are filled in -->
             <!-- <ng-container *ngIf="(completed.value && pursing.value) === false "> -->
 
-            <div class="completed-courses">
-              <div class="words1">Completed
+            <div [ngClass]="Com == 0 ? 'hide_' : 'completed-courses' ">
+
+              <div class="words1">
+                Completed
                 {{ profile$$ | async }}
+                <div class="counter" matBadgePosition="after" matBadgeOverlap="false" matBadge="{{  Com }}"></div>
               </div>
+
             </div>
 
-            <div class="completed-courses">
+            <div [ngClass]="Pur == 0 ? 'hide_' : 'completed-courses' ">
               <div class="words1">Pursuing
                 {{ profile$$ | async }}
+                <div class="counter" matBadgePosition="after" matBadgeOverlap="false" matBadge="{{  Pur }}"></div>
               </div>
 
             </div>
@@ -194,11 +199,17 @@
             </div>
 
             <div class="row_1">
-              <div class="completed-courses">
-                <div class="words1">Completed</div>
+              <div [ngClass]="Com == 0 ? 'hide_' : 'completed-courses' ">
+                <div class="words1">Completed
+                  {{ profile$$ | async }}
+                  <div class="counter" matBadgePosition="after" matBadgeOverlap="false" matBadge="{{  Com }}"></div>
+                </div>
               </div>
-              <div class="completed-courses">
-                <div class="words1">Pursuing</div>
+              <div [ngClass]="Pur == 0 ? 'hide_' : 'completed-courses' ">
+                <div class="words1">Pursuing
+                  {{ profile$$ | async }}
+                  <div class="counter" matBadgePosition="after" matBadgeOverlap="false" matBadge="{{  Pur }}"></div>
+                </div>
               </div>
             </div>
           </div>

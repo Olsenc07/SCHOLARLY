@@ -40,9 +40,11 @@
           <!-- <div class="column_"> -->
           <div class="centerD">
             <div class="textU"> Upload Post</div>
-            <button mat-icon-button class="trash" color="primary" (click)="clearUpload()">
-              <div class=" far fa-trash-alt"></div>
-            </button>
+            <div [ngClass]="upload.value ? 'Show' : 'hide' ">
+              <button mat-icon-button class="trash" color="primary" (click)="clearUpload()">
+                <div class=" far fa-trash-alt"></div>
+              </button>
+            </div>
 
           </div>
 

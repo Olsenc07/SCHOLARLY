@@ -18,12 +18,14 @@
   justify-content: space-around;
   width: 100%;
   max-width: 45%;
+  margin-bottom: 3%;
 }}
 @media(max-width:1024px){
   .Accounts {
     display: flex;
     justify-content: space-around;
     width: 100%;
+    margin-bottom: 3%;
   }}
 .asthetic-adds {
   color: #418bba;
@@ -49,6 +51,7 @@
   display: flex;
   justify-self: center;
   margin-bottom: 5%;
+  font-family: "Font Awesome 5 Free";
 }
 @media(min-width:1024px){
 .c_r{
@@ -60,15 +63,26 @@
   display: flex;
   flex-direction: column;
 }}
+.centerD {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  font-size: large;
+}
 .center{
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
+    width: 100%;
 }
 .centerR{
   display: flex;
   justify-content: center;
   flex-direction: row;
+  margin-top: 1%;
+}
+.counter{
+  display: flex;
 }
 .courses {
   display: flex;
@@ -109,19 +123,54 @@
     justify-content: center;
     flex-direction: column;
     box-sizing: border-box;
-   
+  }}
+  .Column{
+    display: flex;
+    flex-direction: column;
   }
+  .Column_ {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
   }
 .column_ {  display: flex;
   flex-direction: column;
   justify-content: center;
   margin-right: 1%;
 }
+@media(min-width:1024px){
 .column1 {
+    display: flex;
+    justify-content: center;
+    color: #7e7171;
+    font-family: "Font Awesome 5 Free";
+    font-size: large;
+    flex-direction: column;
+}}
+@media(max-width:1024px){
+  .column1 {
+      display: flex;
+      justify-content: center;
+      color: #7e7171;
+      font-family: "Font Awesome 5 Free";
+      font-size: inherit;
+      flex-direction: column;
+  }}
+  @media(min-width:500px){
+.columnPlain{
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
+  max-width: 30%;
+}}
+@media(max-width:500px){
+  .columnPlain{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 45%;
+  }}
 .cropper {
   display: flex;
 // May need a max height
@@ -144,13 +193,19 @@
   margin-left: 5%;
   justify-content: center;
 }
+@media(min-width:1024px){
+  .done {
+    justify-content: center;
+    display: flex;
+    width: 100%;
+  }}
+@media(max-width:1024px){
 .done {
   justify-content: center;
   display: flex;
   width: 100%;
-  margin-bottom: 5%;
-  
-}
+  margin-bottom: 13%;
+}}
 .entire-page {
   display: flex;
   flex-direction: column;
@@ -158,6 +213,7 @@
   width: 100%;
   margin-bottom: 2%;
 }
+
 .fit{
   display: flex;
   width: 100%;
@@ -178,6 +234,14 @@
   border-radius: 7%;
   border-color: #707070;
 }
+
+
+::ng-deep .mat-radio-label-content{
+  font-family: 'Font Awesome 5 Pro';
+  color: #707070;
+}
+
+
 .gender {
   display: flex;
   justify-content: center;
@@ -188,10 +252,9 @@
     display: flex;
     justify-content: center;
     margin: 1% 21%;
-    border: ridge;
+    // border: ridge;
     box-sizing: border-box;
     flex-direction: column;
-    overflow-y: scroll;
     
   }
 }
@@ -200,14 +263,17 @@
     display: flex;
     justify-content: center;
     margin: 1% 0%;
-    border: ridge;
+    // border: ridge;
     box-sizing: border-box;
     flex-direction: column;
-    overflow-y: scroll;
   }
 }
 
-
+.far
+{ 
+  color: #7e7171;
+  font-size: x-large;
+}
 .fa-arrow-circle-left{
   font-size: large;
 }
@@ -255,15 +321,31 @@
   box-sizing: border-box;
 }
 }
-.top {
-  display: flex;
-  justify-content: center;
-  margin-top: 2%;
+.hide{
+  display: none !important;
+}
+
+
+
+::ng-deep .mat-tab-label{
+    font-family: "Font Awesome 5 Free";
 }
 
 // Allows smooth scroll for entire page
 ::ng-deep .mat-tab-body-content{
   overflow: unset !important;
+}
+
+
+
+::ng-deep .mat-option-text{
+  color: #7e7171;
+  font-family: "Font Awesome 5 Free";
+}
+
+::ng-deep .mat-form-field{
+  color: #7e7171;
+  font-family: "Font Awesome 5 Free";
 }
 
 .major-layout {
@@ -276,6 +358,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 .left-column {
@@ -284,9 +367,7 @@
 }
 .imagePreview {
   display: flex;
- 
     width: 100%;
- 
 }
 .input {
   display: flex;
@@ -300,11 +381,31 @@
   height: 100%;
   border: ridge;
 }
-
+.rowShow{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  margin: 3% 0%;
+}
   .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: #7e7171;
+    font-family: "Font Awesome 5 Free";
+  }
+
+  .rowE {
     display: flex;
     justify-content: center;
     flex-direction: row;
+    width: 100%;
+  }
+  .rowE_ {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+   
   }
 
 .rowT{
@@ -326,6 +427,16 @@
    
   }
 }
+.rowP_{
+  display: flex;
+  justify-content: center;
+  color: #418bba;
+}
+.right-column {
+  display: flex;
+  flex-direction: column;
+}
+
 @media (min-width: 1024px) {
   .smaller {
     width: 30%;
@@ -336,16 +447,60 @@
     width: 50%;
   }
 }
-
-
+.show{
+  display: flex;
+justify-content: center;
+}
+.show_{
+  display: flex;
+flex-direction: column;
+justify-content: center;
+}
+.Show{
+  display: flex;
+}
+.style{
+  color: #7e7171;
+  font-family: "Font Awesome 5 Free";}
+  @media(min-width:900px){
+    .imageBox{
+      display: flex;
+      height: 100%;
+      max-width: 20%;
+    }}
+  @media(max-width:900px){
 .imageBox{
   display: flex;
   height: 100%;
+  max-width: 50%;
+}}
+.imageBox_{
+  display: flex;
+    width: 100%;
+    height: 75%;
+    flex-direction: row;
+justify-content: center;
 }
+
+
+@media(min-width:500px){
 .snapshot {
   display: flex;
   justify-content: center;
-}
+  color: #7e7171;
+  font-family: "Font Awesome 5 Free";
+  font-size: large;
+  flex-direction: column;
+}}
+@media(max-width:500px){
+.snapshot {
+  display: flex;
+  justify-content: center;
+  color: #7e7171;
+  font-family: "Font Awesome 5 Free";
+  font-size: inherit;
+  flex-direction: column;
+}}
 .snapshotClear {
   display: flex;
   width: 100%;
@@ -357,10 +512,6 @@
   width: 100%;
   height: 100%;
   justify-content: center;
-  flex-direction: column;
-}
-.right-column {
-  display: flex;
   flex-direction: column;
 }
 
@@ -401,27 +552,49 @@
 .Preview{
   display: flex;
   justify-content: center;
+  color: #7e7171;
+  font-family: "Font Awesome 5 Free";
+  font-size: large;
 }
 
 .PreviewPic{
   display: flex;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
+}
+.previewPic{
+  border-radius: 50%;
+}
+.Photo{
+  font-size: xxx-large;
 }
 .layout {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-family: 'Font Awesome 5 Pro';
+  color: #707070;
 }
 .text {
-  color: #0e3379;
+  color: #7e7171;
+  font-family: "Font Awesome 5 Free";
   display: flex;
   justify-content: center;
+  flex-direction: column;
+}
+.top {
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+}
+.tooltip{
+  color: #418bba;
 }
 .twoBoxs {
   display: flex;
   flex-direction: column;
 }
+
 @media (min-width: 1024px) {
   ::ng-deep mat-form-field {
     display: flex;
@@ -461,10 +634,7 @@
 @media (max-width: 900px) {
   ._icon2 {
     display: none;
-  }
-}
-
-
+  }}
 
 .input {
   display: flex;
@@ -479,6 +649,21 @@
   display: flex;
   
 }
+.img{
+  max-width: 50%;
+  max-height: 50%;
+}
+
+@media(min-width:900px){
+.img_{
+  max-width: 75%;
+  max-height: 100%;
+}}
+@media(max-width:900px){
+  .img_{
+    max-width: 100%;
+    max-height: fit-content;
+  }}
 
 .tooltip .tooltiptext {
   visibility: hidden;
@@ -510,6 +695,7 @@
   border-color: #707070;
   font-size: 30;
 }
+
 .work {
   display: flex;
   margin-top: 2%;

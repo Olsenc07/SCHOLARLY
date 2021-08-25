@@ -57,6 +57,14 @@ export const MY_FORMATS = {
   ],
 })
 export class EditProfileComponent implements OnInit {
+  // Showcase
+  i = 0;
+  // Groups joined
+  g = 0;
+  // Posts
+  p = 0;
+  clicked = false;
+  removeShowCase = false;
   visible = true;
   selectable = true;
   removable = true;
@@ -83,8 +91,10 @@ export class EditProfileComponent implements OnInit {
   name: FormControl = new FormControl('');
   pronouns: FormControl = new FormControl('');
   showCase: FormControl = new FormControl('');
+  // removeShowCase: FormControl = new FormControl('');
   birthday: FormControl = new FormControl('');
   genderChoice: FormControl = new FormControl('');
+
 
   CodeCompleted: FormControl = new FormControl('');
   CodePursuing: FormControl = new FormControl('');
@@ -104,7 +114,6 @@ export class EditProfileComponent implements OnInit {
     CodePursuing: this.CodePursuing,
     bio: this.bio,
     showCase: this.showCase,
-
   });
   selectedIndex = 0;
   genders: Gender[] = [
@@ -113,6 +122,22 @@ export class EditProfileComponent implements OnInit {
     { name: 'Male' },
     { name: 'Other' },
 
+  ];
+
+  // Group list;
+  gList = ['', '', '', '', '', '', ''];
+
+  // Post list;
+  pList = ['', '', '', '', '', '', ''];
+
+  // Connects to save showcases in the data base
+  list = ['../../assets/Pics/IMG-8413.PNG',
+    '../../assets/Pics/IMG-8619.PNG',
+    '../../assets/Pics/IMG-8413.PNG',
+    '../../assets/Pics/IMG-8619.PNG',
+    '../../assets/Pics/IMG-8413.PNG',
+    '../../assets/Pics/IMG-8619.PNG',
+    '../../assets/Pics/IMG-8413.PNG',
   ];
 
   constructor(
@@ -135,6 +160,23 @@ export class EditProfileComponent implements OnInit {
     );
   }
 
+  deleteShowCase(): boolean {
+    this.removeShowCase = !this.removeShowCase;
+
+    return this.removeShowCase;
+  };
+  hideAdd(): boolean {
+
+    this.clicked = !this.clicked;
+    return this.clicked;
+  };
+  uploadFile(): any {
+    document.getElementById('fileInput').click();
+
+  };
+  uploadFileP(): any {
+    document.getElementById('fileInputP').click();
+  };
   onImgChange(event: any): void {
     this.imgChangeEvt = event;
   }
@@ -154,6 +196,13 @@ export class EditProfileComponent implements OnInit {
     // error msg
   }
   // SnapShot
+  // After its added to the list. Click save and 
+  // this becomes the updated array, sent back to the data base
+  arrayAdd(event: any): any {
+    this.list.unshift(this.showCase.value)
+    console.log(this.list);
+    return this.list
+  }
   imagePreview(event: any): void {
     if (event.target.files && event.target.files[0]) {
       const reader = new FileReader();
@@ -166,6 +215,7 @@ export class EditProfileComponent implements OnInit {
         this.url = Event.target.result;
       };
     }
+
   }
 
   add(event: MatChipInputEvent): void {
@@ -250,37 +300,101 @@ export class EditProfileComponent implements OnInit {
     this.bio.setValue('');
   }
 
-  clearProfilePic(): void {
+  clearProfilePic(): any {
     this.profilePic.setValue('');
+    this.cropImgPreview = '';
     document.getElementById('ProfilePic').removeAttribute('src');
+
   }
 
   clearPic1(): void {
     this.showCase.setValue('');
+    this.list.shift();
     document.getElementById('firstP').removeAttribute('src');
   }
-  previousGroupCard(): void {
-    // go back one card
-  }
+  // Groups joined
+  previousGroupCard(): number {
+    --this.g;
+    if (0 > this.g) {
+      this.g = this.gList.length - 1
+      return this.g
+    }
+    console.log(this.g);
 
-  nextGroupCard(): void {
+  }
+  nextGroupCard(): number {
+    ++this.g;
+    if (this.g >= this.gList.length) {
+      this.g = 0
+      return this.g
+    }
+    console.log(this.g);
     // go forward one card
   }
-
-  leaveGroup(): void {
-    // leave the group that is being displayed
+  leaveGroup(): number {
+    this.gList.splice(this.g, 1)
+    console.log(this.gList.length);
+    if (this.g == this.gList.length) {
+      this.g = this.g - 1
+      return this.g
+    }
   }
 
-  previousPostCard(): void {
-    // go back one post
+
+  // Posts made
+  previousPostCard(): number {
+    --this.p;
+    if (0 > this.p) {
+      this.p = this.pList.length - 1
+      return this.p
+    }
+    console.log(this.p);
+
+  }
+  nextPostCard(): number {
+    ++this.p;
+    if (this.p >= this.pList.length) {
+      this.p = 0
+      return this.p
+    }
+    console.log(this.p);
+    // go forward one card
+  }
+  deletePost(): number {
+    this.pList.splice(this.p, 1)
+    console.log(this.pList.length);
+    if (this.p == this.pList.length) {
+      this.p = this.p - 1
+      return this.p
+    }
   }
 
-  nextPostCard(): void {
-    // go forward one post
-  }
 
-  deletePost(): void {
-    // delete post thats being displayed
+  // Showcase edit
+  previousCard(): number {
+    --this.i;
+    if (0 > this.i) {
+      this.i = this.list.length - 1
+      return this.i
+    }
+    console.log(this.i);
+  }
+  nextCard(): number {
+    ++this.i;
+    if (this.i >= this.list.length) {
+      this.i = 0
+      return this.i
+    }
+    console.log(this.i);
+    // go forward one card
+  }
+  deleteSnapShot(): number {
+    this.list.splice(this.i, 1)
+    console.log(this.list.length);
+    if (this.i == this.list.length) {
+      this.i = this.i - 1
+      return this.i
+    }
   }
 
   openDialogAccount(): void {

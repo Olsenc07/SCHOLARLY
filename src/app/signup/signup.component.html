@@ -57,21 +57,24 @@
             <mat-radio-group aria-label="Select an option" formControlName="accountType" class="Accounts" required>
 
               <div class="layout">
-                <mat-radio-button value="private">Private Account</mat-radio-button>
-
+                Private Account
+                <div class="center_">
+                  <mat-radio-button value="private"></mat-radio-button>
+                </div>
 
               </div>
               <div class="tooltip">
                 <button mat-button (click)="openDialogAccount()">
                   <span class="material-icons"> info </span>
-
                 </button>
               </div>
 
 
               <div class="layout">
-                <mat-radio-button value="public">Public Account</mat-radio-button>
-
+                Public Account
+                <div class="center_">
+                  <mat-radio-button value="public"></mat-radio-button>
+                </div>
               </div>
 
             </mat-radio-group>
@@ -123,55 +126,71 @@
               </span></mat-icon>
             Personalize
           </ng-template>
-          <!-- Upload one profile pic -->
-          <div class="rowT">
-            <div class="column_1">
-              <div class="centerD">
-                <div class="textU"> Upload Profile Picture</div>
-                <button mat-icon-button class="trash" color="primary" (click)="clearProfilePic()">
-                  <div class=" far fa-trash-alt"></div>
-                </button>
-              </div>
 
-              <div class="rowP_">
-                <button [ngClass]="profilePic.value ? 'cameraIcon' : 'cameraIcon_' " mat-button (click)="uploadFileP()">
-                  <div class="material-icons Photo">
-                    add_a_photo
+
+
+
+
+          <div class="middle">
+            <!-- Upload one profile pic -->
+            <div class="personalizeLarge">
+              <div class="centerR">
+                <div class="pics">
+                  <div>
+                    <div class="centerD">
+                      <div class="textU"> Upload Profile Picture</div>
+                      <button mat-icon-button *ngIf="cropImgPreview" (click)="clearProfilePic()">
+                        <div class=" far fa-trash-alt"></div>
+                      </button>
+                    </div>
+
+                    <div class="rowP_">
+                      <button mat-button (click)="uploadFileP()">
+                        <div class="material-icons Photo">
+                          add_a_photo
+                        </div>
+                      </button>
+                      <input #fileInputP id="fileInputP" class="hide" accept="image/* video/*" type="file"
+                        (change)="imagePreviewP($event)" (change)="onImgChange($event)" [formControl]="profilePic"
+                        multiple>
+                    </div>
                   </div>
-                </button>
-                <input #fileInputP id="fileInputP" class="hide" accept="image/* video/*" type="file"
-                  (change)="imagePreviewP($event)" (change)="onImgChange($event)" [formControl]="profilePic" multiple>
-              </div>
-              <!-- class="cropper" [ngClass]="profilePic.value ? 'show' : 'hide' " -->
-              <div>
-                <!-- Only when upload holds a value -->
-                <image-cropper [imageChangedEvent]="imgChangeEvt" [maintainAspectRatio]="true" [aspectRatio]=" 4 / 3"
-                  [onlyScaleDown]="true" [containWithinAspectRatio]="containWithinAspectRatio" [resizeToWidth]="170"
-                  [cropperMinWidth]="128" format="png" (imageCropped)="cropImg($event)" (imageLoaded)="imgLoad()"
-                  [style.display]="showCropper ? null : 'none'" [transform]="transform"
-                  (cropperReady)="initCropper($event)" (loadImageFailed)="imgFailed()">
-                </image-cropper>
-              </div>
+                  <!-- class="cropper" [ngClass]="profilePic.value ? 'show' : 'hide' " -->
+                  <div class="cropper">
+                    <!-- Only when upload holds a value -->
+                    <image-cropper [imageChangedEvent]="imgChangeEvt" [maintainAspectRatio]="true"
+                      [aspectRatio]=" 7 / 7" [containWithinAspectRatio]="containWithinAspectRatio" [resizeToWidth]="170"
+                      format="png" (imageCropped)="cropImg($event)" (imageLoaded)="imgLoad()"
+                      (cropperReady)="initCropper($event)" (loadImageFailed)="imgFailed()"
+                      [ngClass]="profilePic.value ? 'show' : 'hide' ">
+                    </image-cropper>
+                  </div>
 
-            </div>
-
-
-            <div class="personalizeLarge" [ngClass]="profilePic.value ? 'show' : 'hide' ">
-              <div class="rowP">
-                <i class="fas fa-portrait _icon2"></i>
-              </div>
-            </div>
-
-            <div class="personalizeLarge" [ngClass]="profilePic.value ? 'show' : 'hide' ">
-              <div class="PreviewPic">
-                <h2 class="Preview">Image Preview</h2>
-                <div class="center">
-                  <img class="previewPic" id="ProfilePic" [src]="cropImgPreview" />
                 </div>
               </div>
-            </div>
 
+              <div class="personalizeLarge" [ngClass]="profilePic.value ? 'show_' : 'hide' ">
+                <div class="rowP">
+                  <i class="fas fa-portrait _icon2"></i>
+                </div>
+              </div>
+
+              <div class="personalizeLarge" [ngClass]="profilePic.value ? 'show_' : 'hide' ">
+                <div class="PreviewPic">
+                  <h2 class="Preview">Image Preview</h2>
+                  <div class="center">
+                    <img class="previewPic" id="ProfilePic" [src]="cropImgPreview" />
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
           </div>
+
+
+
+
 
 
 
@@ -228,7 +247,7 @@
               <button mat-button class="cBtnBl" (click)="changeTab1()">Skip For Now</button>
             </div>
             <button type="button" (click)="onSubmitPartTwo()" mat-raised-button class="cBtn"
-              (click)="changeTab1()">Next</button>
+              (click)="changeTab1()">Save</button>
           </div>
           <div class="skip2">
             <button mat-button class="cBtnBl" (click)="changeTab1()">Skip For Now</button>
@@ -262,7 +281,8 @@
                 <!-- 1 -->
                 <div class="centerD">
                   <div class="textU"> Add Photo</div>
-                  <button mat-icon-button class="trash" color="primary" (click)="clearPic1()">
+                  <button mat-icon-button class="trash" [ngClass]="snapShot1.value ? 'show_' : 'hide' " color="primary"
+                    (click)="clearPic1()">
                     <div class=" far fa-trash-alt"></div>
                   </button>
 
@@ -270,7 +290,7 @@
 
 
                 <div class="rowP_">
-                  <button class="cameraIcon" mat-icon-button (click)="uploadFile()">
+                  <button class="cameraIcon" mat-button (click)="uploadFile()">
                     <div class="material-icons Photo">
                       add_a_photo
 
@@ -295,7 +315,8 @@
                 <!-- Upload pic/video -->
                 <div class="centerD">
                   <div class="textU"> Add Photo</div>
-                  <button mat-icon-button class="trash" color="primary" (click)="clearPic2()">
+                  <button mat-icon-button class="trash" [ngClass]="snapShot2.value ? 'show_' : 'hide' " color="primary"
+                    (click)="clearPic2()">
                     <div class=" far fa-trash-alt"></div>
                   </button>
 
@@ -303,7 +324,7 @@
 
 
                 <div class="rowP_">
-                  <button class="cameraIcon" mat-icon-button (click)="uploadFile2()">
+                  <button class="cameraIcon" mat-button (click)="uploadFile2()">
                     <div class="material-icons Photo">
                       add_a_photo
 
@@ -326,7 +347,8 @@
                 <!-- Upload pic/video -->
                 <div class="centerD">
                   <div class="textU"> Add Photo</div>
-                  <button mat-icon-button class="trash" color="primary" (click)="clearPic3()">
+                  <button mat-icon-button class="trash" [ngClass]="snapShot3.value ? 'show_' : 'hide' " color="primary"
+                    (click)="clearPic3()">
                     <div class=" far fa-trash-alt"></div>
                   </button>
 
@@ -334,7 +356,7 @@
 
 
                 <div class="rowP_">
-                  <button class="cameraIcon" mat-icon-button (click)="uploadFile3()">
+                  <button class="cameraIcon" mat-button (click)="uploadFile3()">
                     <div class="material-icons Photo">
                       add_a_photo
 
@@ -360,7 +382,7 @@
                 <button mat-button class="cBtnBl" (click)="changeTab3()">Skip For Now</button>
               </div>
               <button type="button" mat-raised-button class="cBtn" (click)="onSubmitPartThree()"
-                (click)="changeTab3()">Next</button>
+                (click)="changeTab3()">Save</button>
             </div>
           </div>
           <div class="skip2">

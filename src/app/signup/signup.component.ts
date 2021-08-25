@@ -22,9 +22,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 import { NgxImageZoomModule } from 'ngx-image-zoom';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { base64ToFile } from './image-cropper/utils/blob.utils';
-import { Dimensions, ImageCroppedEvent } from './image-cropper/interfaces/index';
-
+// import { base64ToFile } from '../../utils/blob.utils';
+import { ImageCroppedEvent, Dimensions } from 'ngx-image-cropper';
 
 interface Gender {
   name: string;
@@ -155,7 +154,7 @@ export class SignupComponent implements OnInit {
   // Passes value as base64 string of cropped area!! But where does form controller come into play?
   cropImg(event: ImageCroppedEvent) {
     this.cropImgPreview = event.base64;
-    console.log(event, base64ToFile(event.base64));
+    // console.log(event, base64ToFile(event.base64));
   }
 
   imgLoad(): void {
@@ -239,6 +238,13 @@ export class SignupComponent implements OnInit {
       )
     );
   }
+
+
+
+
+
+
+
 
   uploadFileP(): any {
     document.getElementById('fileInputP').click();
