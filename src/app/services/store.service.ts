@@ -20,7 +20,7 @@ export interface Profile {
 })
 export class StoreService {
   // Completed and pursing list should be filled from data base
-  // These allow {{ }} to track length of list for badge display
+  // These allow {{ }} to track length of list for badge display aswell
   static Com = [
     'MAT321Y1', 'MAT321Y1', 'MAT321Y1', 'MAT321Y1', 'MAT321Y1', 'MAT321Y1', 'MAT321Y1', 'MAT321Y1', 'MAT321Y1',
     '21Y1', 'MAT321Y1', 'MAT321Y1', 'AT321Y1', 'T321Y1',
