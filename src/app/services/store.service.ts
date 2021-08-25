@@ -21,7 +21,10 @@ export interface Profile {
 export class StoreService {
   // Completed and pursing list should be filled from data base
   // These allow {{ }} to track length of list for badge display
-  static Com = ['', '', '', '', '', '', '', '', '', ''];
+  static Com = [
+    'MAT321Y1', 'MAT321Y1', 'MAT321Y1', 'MAT321Y1', 'MAT321Y1', 'MAT321Y1', 'MAT321Y1', 'MAT321Y1', 'MAT321Y1',
+    '21Y1', 'MAT321Y1', 'MAT321Y1', 'AT321Y1', 'T321Y1',
+    'MAT321Y1', 'MAT321Y1', 'MAT321Y1', 'MAT321Y1'];
   static Pur = ['', '', '', '', '',];
 
   profile$$: ReplaySubject<Profile> = new ReplaySubject<Profile>(1);

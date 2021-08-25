@@ -32,6 +32,7 @@
       <mat-divider class="margin"></mat-divider>
       <!-- Major/Minor -->
       <div class="major-minor">
+        <!-- *ngIf="major.value" -->
         <div class="centerR"> Major</div>
         <div class="centerR">Minor</div>
 
@@ -102,14 +103,14 @@
     <div class="hide">
       <div class="HighlightsM">
         <!-- Hightlight Input box -->
-        <p class="text_cent" *ngIf="posts.length != 7">Highlights</p>
+        <p class="text_cent" *ngIf="posts.length != 0">Highlights</p>
         <div class="highlights-layout">
 
-          <div class="column1" *ngIf="posts.length == 7">
+          <div class="column1" *ngIf="posts.length == 0">
             <div class="row"> No Groups Joined</div><i class="far fa-frown centerR"></i>
           </div>
 
-          <div class="groups-j" *ngIf="posts.length != 7">
+          <div class="groups-j" *ngIf="posts.length != 0">
             <div class="words">
               <div class="title">
 
@@ -125,17 +126,27 @@
           </div>
 
           <div class="row_1">
+            <div class="column1" *ngIf="(Com_ && Pur) == 0">
+              <div class="row"> No Courses Added</div><i class="far fa-frown centerR"></i>
+            </div>
             <!-- Hidden if neither are filled in -->
             <!-- <ng-container *ngIf="(completed.value && pursing.value) === false "> -->
 
-            <div [ngClass]="Com == 0 ? 'hide_' : 'completed-courses' ">
+            <div [ngClass]="Com_ == 0 ? 'hide_' : 'completed-courses' ">
 
               <div class="words1">
                 Completed
                 {{ profile$$ | async }}
-                <div class="counter" matBadgePosition="after" matBadgeOverlap="false" matBadge="{{  Com }}"></div>
+                <div class="counter" matBadgePosition="after" matBadgeOverlap="false" matBadge="{{  Com_ }}"></div>
+
               </div>
 
+              <div class="scroll">
+                <div class="list" *ngFor="let list of Com">
+                  <div class="center_">{{list}}</div>
+                </div>
+
+              </div>
             </div>
 
             <div [ngClass]="Pur == 0 ? 'hide_' : 'completed-courses' ">
@@ -185,11 +196,11 @@
         <div class="HighlightsM">
           <!-- Hightlight Input box -->
           <div class="highlights-layout">
-            <div class="column1" *ngIf="posts.length == 7">
+            <div class="column1" *ngIf="posts.length == 0">
               <div class="row"> No Groups Joined</div><i class="far fa-frown centerR"></i>
             </div>
 
-            <div class="groups-j" *ngIf="posts.length != 7">
+            <div class="groups-j" *ngIf="posts.length != 0">
               <div class="words">
                 <div class="title">
                   <div class="title1">Groups Joined</div>
@@ -205,7 +216,7 @@
             </div>
 
             <div class="row_1">
-              <div [ngClass]="Com == 0 ? 'hide_' : 'completed-courses' ">
+              <div [ngClass]="Com_ == 0 ? 'hide_' : 'completed-courses' ">
                 <div class="words1">Completed
                   {{ profile$$ | async }}
                   <div class="counter" matBadgePosition="after" matBadgeOverlap="false" matBadge="{{  Com }}"></div>

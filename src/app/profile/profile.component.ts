@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { StoreService } from '../services/store.service';
@@ -11,22 +11,31 @@ import { StoreService } from '../services/store.service';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss'],
 })
-export class ProfileComponent {
+export class ProfileComponent implements OnInit {
   // Connecting store.servie to display course in profile. 
   // Edit profile -> store -> profile
 
   profile$$ = StoreService.profile$$;
 
-  Com = StoreService.Com.length;
+  Com_ = StoreService.Com.length;
+  Com = StoreService.Com
   Pur = StoreService.Pur.length;
 
   showFiller = false;
   // TODO: initial following value would need to be loaded from database - for now, always start with false
   following = false;
 
+
+  // fill from saved data
+  // Testing scroll
+  // completed = [
+  //   'MAT321Y1', 'MAT321Y1', 'MAT321Y1', 'MAT321Y1', 'MAT321Y1', 'MAT321Y1', 'MAT321Y1', 'MAT321Y1', 'MAT321Y1',
+  //   '21Y1', 'MAT321Y1', 'MAT321Y1', 'AT321Y1', 'T321Y1',
+  //   'MAT321Y1', 'MAT321Y1', 'MAT321Y1', 'MAT321Y1',];
+
   // filled in from data base
   // View breaks if any more are loaded in..
-  groups = ['', '', '', '', '', '', '', '']
+  groups = ['', '', '', '', '', '', '', ''];
 
 
   posts = [{
@@ -80,10 +89,10 @@ export class ProfileComponent {
   followClicked(): void {
     this.following = !this.following;
   }
-  // Why does this addition delay the right chip from displaying in html????????
-  // Wok on home pages htmls form controls!!!!!!
-  // Does this need its own form group? Triggered at the same time?
-  // messageRequest: FormControl = new FormControl('');
+  ngOnInit(): any {
+    this.Com = this.Com.sort()
+    return this.Com
+  }
 
 }
 @Component({
