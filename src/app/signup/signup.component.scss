@@ -53,6 +53,11 @@
   justify-content: center;
   width: 100%;
 }
+.center_{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
 .checkBox {
   display: flex;
   justify-content: center;
@@ -371,7 +376,17 @@
     color: #7e7171;
     font-family: "Font Awesome 5 Free";
   }}
-
+  @media(min-width:1024px){
+.icon_{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}}
+@media(max-width:1024px){
+  .icon_{
+    display: none !important;
+  }}
 .personalize {
   display: flex;
   width: 100%;
@@ -415,7 +430,9 @@
   display: flex;
   justify-content: center;
 }
-
+.show_{
+  display: flex;
+}
 .show{
   display: flex;
 width: 100%;
@@ -499,11 +516,21 @@ justify-content: center;
     font-family: "Font Awesome 5 Free";
   }
 }
+@media(min-width:1024px){
+  .rowT {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    margin: 1% 0% 3%;
+  }}
+@media(max-width:1024px){
 .rowT{
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
+    justify-content: space-around;
+    flex-direction: column;
+    margin: 1% 0% 3%;
+}}
+
 .rowP_{
   display: flex;
   justify-content: center;
@@ -541,6 +568,8 @@ justify-content: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  color: #7e7171;
+  font-family: "Font Awesome 5 Free";
 }
 
 .text-layout {

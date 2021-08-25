@@ -80,6 +80,7 @@
   display: flex;
   justify-content: center;
   flex-direction: row;
+  margin-top: 1%;
 }
 .counter{
   display: flex;
@@ -252,10 +253,9 @@
     display: flex;
     justify-content: center;
     margin: 1% 21%;
-    border: ridge;
+    // border: ridge;
     box-sizing: border-box;
     flex-direction: column;
-    overflow-y: scroll;
     
   }
 }
@@ -264,10 +264,9 @@
     display: flex;
     justify-content: center;
     margin: 1% 0%;
-    border: ridge;
+    // border: ridge;
     box-sizing: border-box;
     flex-direction: column;
-    overflow-y: scroll;
   }
 }
 
@@ -587,6 +586,9 @@ justify-content: center;
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+.tooltip{
+  color: #418bba;
 }
 .twoBoxs {
   display: flex;

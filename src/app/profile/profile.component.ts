@@ -17,6 +17,8 @@ export class ProfileComponent {
 
   profile$$ = StoreService.profile$$;
 
+  Com = StoreService.Com.length;
+  Pur = StoreService.Pur.length;
 
   showFiller = false;
   // TODO: initial following value would need to be loaded from database - for now, always start with false

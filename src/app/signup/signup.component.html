@@ -57,21 +57,24 @@
             <mat-radio-group aria-label="Select an option" formControlName="accountType" class="Accounts" required>
 
               <div class="layout">
-                <mat-radio-button value="private">Private Account</mat-radio-button>
-
+                Private Account
+                <div class="center_">
+                  <mat-radio-button value="private"></mat-radio-button>
+                </div>
 
               </div>
               <div class="tooltip">
                 <button mat-button (click)="openDialogAccount()">
                   <span class="material-icons"> info </span>
-
                 </button>
               </div>
 
 
               <div class="layout">
-                <mat-radio-button value="public">Public Account</mat-radio-button>
-
+                Public Account
+                <div class="center_">
+                  <mat-radio-button value="public"></mat-radio-button>
+                </div>
               </div>
 
             </mat-radio-group>
@@ -123,12 +126,19 @@
               </span></mat-icon>
             Personalize
           </ng-template>
+
+
+
+
+
+
           <!-- Upload one profile pic -->
           <div class="rowT">
             <div class="column_1">
               <div class="centerD">
                 <div class="textU"> Upload Profile Picture</div>
-                <button mat-icon-button class="trash" color="primary" (click)="clearProfilePic()">
+                <button mat-icon-button class="trash" color="primary" [ngClass]="profilePic.value ? 'show_' : 'hide' "
+                  (click)="clearProfilePic()">
                   <div class=" far fa-trash-alt"></div>
                 </button>
               </div>
@@ -155,7 +165,7 @@
             </div>
 
 
-            <div class="personalizeLarge" [ngClass]="profilePic.value ? 'show' : 'hide' ">
+            <div class="icon_" [ngClass]="profilePic.value ? 'show_' : 'hide' ">
               <div class="rowP">
                 <i class="fas fa-portrait _icon2"></i>
               </div>
@@ -171,6 +181,11 @@
             </div>
 
           </div>
+
+
+
+
+
 
 
 
@@ -261,7 +276,8 @@
                 <!-- 1 -->
                 <div class="centerD">
                   <div class="textU"> Add Photo</div>
-                  <button mat-icon-button class="trash" color="primary" (click)="clearPic1()">
+                  <button mat-icon-button class="trash" [ngClass]="snapShot1.value ? 'show_' : 'hide' " color="primary"
+                    (click)="clearPic1()">
                     <div class=" far fa-trash-alt"></div>
                   </button>
 
@@ -269,7 +285,7 @@
 
 
                 <div class="rowP_">
-                  <button class="cameraIcon" mat-icon-button (click)="uploadFile()">
+                  <button class="cameraIcon" mat-button (click)="uploadFile()">
                     <div class="material-icons Photo">
                       add_a_photo
 
@@ -294,7 +310,8 @@
                 <!-- Upload pic/video -->
                 <div class="centerD">
                   <div class="textU"> Add Photo</div>
-                  <button mat-icon-button class="trash" color="primary" (click)="clearPic2()">
+                  <button mat-icon-button class="trash" [ngClass]="snapShot2.value ? 'show_' : 'hide' " color="primary"
+                    (click)="clearPic2()">
                     <div class=" far fa-trash-alt"></div>
                   </button>
 
@@ -302,7 +319,7 @@
 
 
                 <div class="rowP_">
-                  <button class="cameraIcon" mat-icon-button (click)="uploadFile2()">
+                  <button class="cameraIcon" mat-button (click)="uploadFile2()">
                     <div class="material-icons Photo">
                       add_a_photo
 
@@ -325,7 +342,8 @@
                 <!-- Upload pic/video -->
                 <div class="centerD">
                   <div class="textU"> Add Photo</div>
-                  <button mat-icon-button class="trash" color="primary" (click)="clearPic3()">
+                  <button mat-icon-button class="trash" [ngClass]="snapShot3.value ? 'show_' : 'hide' " color="primary"
+                    (click)="clearPic3()">
                     <div class=" far fa-trash-alt"></div>
                   </button>
 
@@ -333,7 +351,7 @@
 
 
                 <div class="rowP_">
-                  <button class="cameraIcon" mat-icon-button (click)="uploadFile3()">
+                  <button class="cameraIcon" mat-button (click)="uploadFile3()">
                     <div class="material-icons Photo">
                       add_a_photo
 

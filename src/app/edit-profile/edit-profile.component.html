@@ -251,31 +251,57 @@
 
 
         <div class="groups-jj">
-          <div class="row">
+
+
+          <div class="column1" [ngClass]="gList.length == 0 ? 'show' : 'hide' ">
+            <div class="row"> No Groups Joined</div><i class="far fa-frown centerR"></i>
+          </div>
+
+
+          <div class="row" [ngClass]="gList.length == 0 ? 'hide' : 'show' ">
             <div class="words">
               <div class="row">
+                <div class="counter" matBadgePosition="above" matBadge="{{ g + 1 }}"></div>
+
                 <!-- button scrolls through posts and then user can delete what they wish -->
-                <button mat-icon-button (click)=previousGroupCard1()><i class="fas fa-arrow-circle-left title1"></i>
+                <button mat-icon-button (click)=previousGroupCard()><i class="fas fa-arrow-circle-left title1"></i>
                 </button>
                 <div class="column1">Groups Joined</div>
                 <button mat-icon-button (click)=nextGroupCard()> <i class="fas fa-arrow-circle-right title1"></i>
                 </button>
+
               </div>
+
               <div class="style">
+                <div class="counter" matBadgePosition="above" matBadge="{{ gList.length }}"></div>
                 <button mat-button (click)=leaveGroup()>Leave Group</button>
 
               </div>
             </div>
 
           </div>
-          <app-card-brief></app-card-brief>
+
+          <app-card-brief *ngFor="let group of gList | slice:g:g+1; index as g">
+
+            {{group}}
+
+          </app-card-brief>
+
         </div>
         <!-- Recent Posts box-->
         <div class="work">
-          <div class="groups-j">
+          <div class="column1" [ngClass]="pList.length == 0 ? 'show' : 'hide' ">
+            <div class="row"> No Posts Made</div><i class="far fa-frown centerR"></i>
+          </div>
+          <div class="groups-j" [ngClass]="pList.length == 0 ? 'hide' : 'show' ">
+
+
+
             <div class="row">
               <div class="words">
                 <div class="row">
+                  <div class="counter" [ngClass]="pList.length == 0 ? 'hide' : 'show' " matBadgePosition="above"
+                    matBadge="{{ p + 1 }}"></div>
                   <button mat-icon-button (click)=previousPostCard()><i class="fas fa-arrow-circle-left title1"></i>
                   </button>
                   <div class="column1">Posts</div>
@@ -285,13 +311,14 @@
                 </div>
 
                 <div class="style">
+                  <div class="counter" matBadgePosition="above" matBadge="{{ pList.length }}"></div>
                   <button mat-button (click)=deletePost()>Delete Post</button>
 
                 </div>
               </div>
             </div>
 
-            <app-card class="fit"></app-card>
+            <app-card *ngFor="let post of pList | slice:p:p+1; index as p" class="fit">{{post}}</app-card>
           </div>
         </div>
 
@@ -345,14 +372,14 @@
 
 
                 <!-- button scrolls through posts and then user can delete what they wish -->
-                <button mat-icon-button (click)=previousGroupCard()><i class="fas fa-arrow-circle-left title1"></i>
+                <button mat-icon-button (click)=previousCard()><i class="fas fa-arrow-circle-left title1"></i>
                 </button>
 
 
 
                 <div class="column1">Snap Shots</div>
 
-                <button mat-icon-button (click)=nextGroupCard()> <i class="fas fa-arrow-circle-right title1"></i>
+                <button mat-icon-button (click)=nextCard()> <i class="fas fa-arrow-circle-right title1"></i>
                 </button>
 
               </div>

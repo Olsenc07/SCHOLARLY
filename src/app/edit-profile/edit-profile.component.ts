@@ -124,6 +124,12 @@ export class EditProfileComponent implements OnInit {
 
   ];
 
+  // Group list;
+  gList = ['', '', '', '', '', '', ''];
+
+  // Post list;
+  pList = ['', '', '', '', '', '', ''];
+
   // Connects to save showcases in the data base
   list = ['../../assets/Pics/IMG-8413.PNG',
     '../../assets/Pics/IMG-8619.PNG',
@@ -306,13 +312,66 @@ export class EditProfileComponent implements OnInit {
     this.list.shift();
     document.getElementById('firstP').removeAttribute('src');
   }
-  previousGroupCard1(): void {
+  // Groups joined
+  previousGroupCard(): number {
+    --this.g;
+    if (0 > this.g) {
+      this.g = this.gList.length - 1
+      return this.g
+    }
+    console.log(this.g);
 
-    // return display;
+  }
+  nextGroupCard(): number {
+    ++this.g;
+    if (this.g >= this.gList.length) {
+      this.g = 0
+      return this.g
+    }
+    console.log(this.g);
+    // go forward one card
+  }
+  leaveGroup(): number {
+    this.gList.splice(this.g, 1)
+    console.log(this.gList.length);
+    if (this.g == this.gList.length) {
+      this.g = this.g - 1
+      return this.g
+    }
   }
 
+
+  // Posts made
+  previousPostCard(): number {
+    --this.p;
+    if (0 > this.p) {
+      this.p = this.pList.length - 1
+      return this.p
+    }
+    console.log(this.p);
+
+  }
+  nextPostCard(): number {
+    ++this.p;
+    if (this.p >= this.pList.length) {
+      this.p = 0
+      return this.p
+    }
+    console.log(this.p);
+    // go forward one card
+  }
+  deletePost(): number {
+    this.pList.splice(this.p, 1)
+    console.log(this.pList.length);
+    if (this.p == this.pList.length) {
+      this.p = this.p - 1
+      return this.p
+    }
+  }
+
+
   // Showcase edit
-  previousGroupCard(): number {
+  previousCard(): number {
     --this.i;
     if (0 > this.i) {
       this.i = this.list.length - 1
@@ -320,7 +379,7 @@ export class EditProfileComponent implements OnInit {
     }
     console.log(this.i);
   }
-  nextGroupCard(): number {
+  nextCard(): number {
     ++this.i;
     if (this.i >= this.list.length) {
       this.i = 0
@@ -336,27 +395,6 @@ export class EditProfileComponent implements OnInit {
       this.i = this.i - 1
       return this.i
     }
-  }
-  // 
-
-
-
-
-
-  leaveGroup(): void {
-    // leave the group that is being displayed
-  }
-
-  previousPostCard(): void {
-    // go back one post
-  }
-
-  nextPostCard(): void {
-    // go forward one post
-  }
-
-  deletePost(): void {
-    // delete post thats being displayed
   }
 
   openDialogAccount(): void {

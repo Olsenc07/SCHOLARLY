@@ -239,6 +239,13 @@ export class SignupComponent implements OnInit {
     );
   }
 
+
+
+
+
+
+
+
   uploadFileP(): any {
     document.getElementById('fileInputP').click();
   };

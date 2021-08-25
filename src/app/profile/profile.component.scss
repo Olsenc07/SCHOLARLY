@@ -178,6 +178,9 @@
  
   background-color: rgb(235, 235, 245);
 }
+.hide_{
+  display: none;
+}
 @media (max-width: 1024px) {
   .hide {
     display: none;
