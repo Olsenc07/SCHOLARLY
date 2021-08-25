@@ -131,57 +131,62 @@
 
 
 
+          <div class="middle">
+            <!-- Upload one profile pic -->
+            <div class="personalizeLarge">
+              <div class="centerR">
+                <div class="pics">
+                  <div>
+                    <div class="centerD">
+                      <div class="textU"> Upload Profile Picture</div>
+                      <button mat-icon-button *ngIf="cropImgPreview" (click)="clearProfilePic()">
+                        <div class=" far fa-trash-alt"></div>
+                      </button>
+                    </div>
 
-          <!-- Upload one profile pic -->
-          <div class="rowT">
-            <div class="column_1">
-              <div class="centerD">
-                <div class="textU"> Upload Profile Picture</div>
-                <button mat-icon-button class="trash" color="primary" [ngClass]="profilePic.value ? 'show_' : 'hide' "
-                  (click)="clearProfilePic()">
-                  <div class=" far fa-trash-alt"></div>
-                </button>
-              </div>
-
-              <div class="rowP_">
-                <button [ngClass]="profilePic.value ? 'cameraIcon' : 'cameraIcon_' " mat-button (click)="uploadFileP()">
-                  <div class="material-icons Photo">
-                    add_a_photo
+                    <div class="rowP_">
+                      <button mat-button (click)="uploadFileP()">
+                        <div class="material-icons Photo">
+                          add_a_photo
+                        </div>
+                      </button>
+                      <input #fileInputP id="fileInputP" class="hide" accept="image/* video/*" type="file"
+                        (change)="imagePreviewP($event)" (change)="onImgChange($event)" [formControl]="profilePic"
+                        multiple>
+                    </div>
                   </div>
-                </button>
-                <input #fileInputP id="fileInputP" class="hide" accept="image/* video/*" type="file"
-                  (change)="imagePreviewP($event)" (change)="onImgChange($event)" [formControl]="profilePic" multiple>
-              </div>
-              <!-- class="cropper" [ngClass]="profilePic.value ? 'show' : 'hide' " -->
-              <div>
-                <!-- Only when upload holds a value -->
-                <image-cropper [imageChangedEvent]="imgChangeEvt" [maintainAspectRatio]="true" [aspectRatio]=" 7 / 7"
-                  [containWithinAspectRatio]="containWithinAspectRatio" [resizeToWidth]="170" format="png"
-                  (imageCropped)="cropImg($event)" (imageLoaded)="imgLoad()" (cropperReady)="initCropper($event)"
-                  (loadImageFailed)="imgFailed()" [ngClass]="profilePic.value ? 'show' : 'hide' ">
-                </image-cropper>
-              </div>
+                  <!-- class="cropper" [ngClass]="profilePic.value ? 'show' : 'hide' " -->
+                  <div class="cropper">
+                    <!-- Only when upload holds a value -->
+                    <image-cropper [imageChangedEvent]="imgChangeEvt" [maintainAspectRatio]="true"
+                      [aspectRatio]=" 7 / 7" [containWithinAspectRatio]="containWithinAspectRatio" [resizeToWidth]="170"
+                      format="png" (imageCropped)="cropImg($event)" (imageLoaded)="imgLoad()"
+                      (cropperReady)="initCropper($event)" (loadImageFailed)="imgFailed()"
+                      [ngClass]="profilePic.value ? 'show' : 'hide' ">
+                    </image-cropper>
+                  </div>
 
-            </div>
-
-
-            <div class="icon_" [ngClass]="profilePic.value ? 'show_' : 'hide' ">
-              <div class="rowP">
-                <i class="fas fa-portrait _icon2"></i>
-              </div>
-            </div>
-
-            <div class="personalizeLarge" [ngClass]="profilePic.value ? 'show' : 'hide' ">
-              <div class="PreviewPic">
-                <h2 class="Preview">Image Preview</h2>
-                <div class="center">
-                  <img class="previewPic" id="ProfilePic" [src]="cropImgPreview" />
                 </div>
               </div>
+
+              <div class="personalizeLarge" [ngClass]="profilePic.value ? 'show_' : 'hide' ">
+                <div class="rowP">
+                  <i class="fas fa-portrait _icon2"></i>
+                </div>
+              </div>
+
+              <div class="personalizeLarge" [ngClass]="profilePic.value ? 'show_' : 'hide' ">
+                <div class="PreviewPic">
+                  <h2 class="Preview">Image Preview</h2>
+                  <div class="center">
+                    <img class="previewPic" id="ProfilePic" [src]="cropImgPreview" />
+                  </div>
+                </div>
+              </div>
+
+
             </div>
-
           </div>
-
 
 
 
@@ -242,7 +247,7 @@
               <button mat-button class="cBtnBl" (click)="changeTab1()">Skip For Now</button>
             </div>
             <button type="button" (click)="onSubmitPartTwo()" mat-raised-button class="cBtn"
-              (click)="changeTab1()">Next</button>
+              (click)="changeTab1()">Save</button>
           </div>
           <div class="skip2">
             <button mat-button class="cBtnBl" (click)="changeTab1()">Skip For Now</button>
@@ -377,7 +382,7 @@
                 <button mat-button class="cBtnBl" (click)="changeTab3()">Skip For Now</button>
               </div>
               <button type="button" mat-raised-button class="cBtn" (click)="onSubmitPartThree()"
-                (click)="changeTab3()">Next</button>
+                (click)="changeTab3()">Save</button>
             </div>
           </div>
           <div class="skip2">

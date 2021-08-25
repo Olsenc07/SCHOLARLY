@@ -68,7 +68,6 @@
   justify-content: center;
   flex-direction: row;
   font-size: large;
-
 }
 .center{
   display: flex;
@@ -326,11 +325,7 @@
   display: none !important;
 }
 
-.top {
-  display: flex;
-  justify-content: center;
-  margin-top: 2%;
-}
+
 
 ::ng-deep .mat-tab-label{
     font-family: "Font Awesome 5 Free";
@@ -571,7 +566,7 @@ justify-content: center;
   border-radius: 50%;
 }
 .Photo{
-  font-size: xx-large;
+  font-size: xxx-large;
 }
 .layout {
   display: flex;
@@ -586,6 +581,11 @@ justify-content: center;
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+.top {
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
 }
 .tooltip{
   color: #418bba;

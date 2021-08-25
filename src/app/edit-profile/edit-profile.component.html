@@ -22,19 +22,17 @@
             <div class="centerR">
               <div class="pics">
                 <!-- Profile Pic is currently filled with pic being used rn -->
-                <div class="space">
+                <div>
                   <div class="centerD">
                     <div class="text">Change Profile Picture</div>
-                    <button mat-icon-button class="trash" color="primary" (click)="clearProfilePic()"
-                      *ngIf="cropImgPreview">
+                    <button mat-icon-button (click)="clearProfilePic()" *ngIf="cropImgPreview">
                       <div class=" far fa-trash-alt"></div>
                     </button>
                   </div>
 
 
                   <div class="rowP_">
-                    <button [ngClass]="profilePic.value ? 'cameraIcon' : 'cameraIcon_' " mat-button
-                      (click)="uploadFileP()">
+                    <button mat-button (click)="uploadFileP()">
                       <div class="material-icons Photo">
                         add_a_photo
                       </div>
@@ -45,10 +43,6 @@
                   </div>
 
 
-
-
-                  <input #fileInputP class="hide" accept="image/* video/*" type="file" (change)="onImgChange($event)"
-                    [formControl]="profilePic">
                 </div>
                 <div class="cropper">
                   <image-cropper [imageChangedEvent]="imgChangeEvt" [maintainAspectRatio]="true" [aspectRatio]=" 7 / 7"
@@ -60,8 +54,6 @@
 
               </div>
             </div>
-
-
 
 
 
