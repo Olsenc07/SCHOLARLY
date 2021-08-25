@@ -25,18 +25,11 @@
   flex-direction: row-reverse;
   font-size: medium;
 }
-@media(min-width:390px){
+
   .center1 {
     display: flex;
     justify-content: center;
     flex-direction: row;
-  }}
-  @media(max-width:390px){
-  .center1 {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-  }
   }
 .column{
   display: flex;
@@ -130,7 +123,12 @@
   justify-content: space-between;
   width: 100%;
 }
-
+.link{
+  display: flex;
+  width: fit-content;
+ padding: 0px;
+  justify-content: center;
+}
 p {
   display: flex;
   font-size: x-large;

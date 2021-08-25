@@ -79,7 +79,7 @@
     <div class="top-middle">
 
       <!-- No Bio -->
-      <!-- Bio: Full name & age input text & Pronouns *ngIf="bio.value " -->
+      <!-- Pronouns Full name & age   *ngIf="fullname.value " -->
       <div>
         <div class="text-2">
 
@@ -102,17 +102,19 @@
     <div class="hide">
       <div class="HighlightsM">
         <!-- Hightlight Input box -->
-        <p class="text_cent">Highlights</p>
+        <p class="text_cent" *ngIf="posts.length != 7">Highlights</p>
         <div class="highlights-layout">
-          <div class="groups-j">
+
+          <div class="column1" *ngIf="posts.length == 7">
+            <div class="row"> No Groups Joined</div><i class="far fa-frown centerR"></i>
+          </div>
+
+          <div class="groups-j" *ngIf="posts.length != 7">
             <div class="words">
               <div class="title">
-                <!-- <button mat-icon-button><i class="fas fa-arrow-circle-left title1"></i>
-                </button> -->
+
                 <div class="title1">Groups Joined</div>
-                <!-- <button mat-icon-button><i
-                    class="fas fa-arrow-circle-right title1"></i>
-                </button> -->
+
               </div>
               <div class="groups_">
                 <app-card-brief class="fit_" *ngFor="let group of groups">
@@ -183,7 +185,11 @@
         <div class="HighlightsM">
           <!-- Hightlight Input box -->
           <div class="highlights-layout">
-            <div class="groups-j">
+            <div class="column1" *ngIf="posts.length == 7">
+              <div class="row"> No Groups Joined</div><i class="far fa-frown centerR"></i>
+            </div>
+
+            <div class="groups-j" *ngIf="posts.length != 7">
               <div class="words">
                 <div class="title">
                   <div class="title1">Groups Joined</div>
