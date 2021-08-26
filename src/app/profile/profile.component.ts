@@ -26,59 +26,20 @@ export class ProfileComponent implements OnInit {
   // Activity
   groups = StoreService.Groups;
 
+  // Posts
+  posts = StoreService.Posts;
+
+  // show cases, doesnt work when connected to service
+  // showCases = StoreService.ShowCases;
+
   showFiller = false;
   // TODO: initial following value would need to be loaded from database - for now, always start with false
   following = false;
-
-
-  // fill from saved data
-  // Testing scroll
-  // completed = [
-  //   'MAT321Y1', 'MAT321Y1', 'MAT321Y1', 'MAT321Y1', 'MAT321Y1', 'MAT321Y1', 'MAT321Y1', 'MAT321Y1', 'MAT321Y1',
-  //   '21Y1', 'MAT321Y1', 'MAT321Y1', 'AT321Y1', 'T321Y1',
-  //   'MAT321Y1', 'MAT321Y1', 'MAT321Y1', 'MAT321Y1',];
-
-  // filled in from data base
-  // View breaks if any more are loaded in..
-
-
-
-  posts = [{
-    "profilePic": "", "Title": "",
-    "Specific": "", "Location": "", "Date": "", "Upload": ""
-  },
-  {
-    "profilePic": "", "Title": "",
-    "Specific": "", "Location": "", "Date": "", "Upload": ""
-  },
-  {
-    "profilePic": "", "Title": "",
-    "Specific": "", "Location": "", "Date": "", "Upload": ""
-  },
-  {
-    "profilePic": "", "Title": "",
-    "Specific": "", "Location": "", "Date": "", "Upload": ""
-  },
-  {
-    "profilePic": "", "Title": "",
-    "Specific": "", "Location": "", "Date": "", "Upload": ""
-  },
-  {
-    "profilePic": "", "Title": "",
-    "Specific": "", "Location": "", "Date": "", "Upload": ""
-  },
-  {
-    "profilePic": "", "Title": "",
-    "Specific": "", "Location": "", "Date": "", "Upload": ""
-  }
-  ];
 
   showCases = ['../../assets/Pics/IMG-8413.PNG', '../../assets/Pics/IMG-8619.PNG',
     '../../assets/Pics/IMG-8413.PNG', '../../assets/Pics/IMG-8413.PNG', '../../assets/Pics/IMG-8619.PNG',
     '../../assets/Pics/IMG-8413.PNG', '../../assets/Pics/IMG-8413.PNG'
   ];
-
-
 
   constructor(private bottomSheet: MatBottomSheet) {
     // profile$$.profile$$.subscribe((profile) => {
@@ -99,6 +60,8 @@ export class ProfileComponent implements OnInit {
 
 
     this.Pur = this.Pur.map(code => code.toUpperCase()).sort();
+
+    // this.showCases = this.showCases.toString();
     return this.Pur, this.Com
 
   }

@@ -179,14 +179,21 @@
         <div class="right-side">
           <mat-tab-group mat-align-tabs="center">
             <mat-tab label="Activity">
-              <div class="posts">
+              <div class="column1" *ngIf="posts.length == 0">
+                <div class="row"> No Posts Made</div><i class="far fa-frown centerR"></i>
+              </div>
+              <div class="posts" *ngIf="posts.length !== 0">
                 <app-card *ngFor="let post of posts">
                   {{post}}
                 </app-card>
               </div>
             </mat-tab>
             <mat-tab label="Showcase">
-              <div class="showCase">
+              <div class="column1" *ngIf="showCases.length == 0">
+                <div class="row"> No Showcases Added</div><i class="far fa-frown centerR"></i>
+              </div>
+
+              <div class="showCase" *ngIf="showCases.length !== 0">
 
 
                 <div class="column">
@@ -273,8 +280,12 @@
       </mat-tab>
 
       <mat-tab label="Activity">
+        <div class="column1" *ngIf="posts.length == 0">
+          <div class="row"> No Posts Made</div><i class="far fa-frown centerR"></i>
+        </div>
+
         <!-- Recent Posts text  -->
-        <div class="posts">
+        <div class="posts" *ngIf="posts.length !== 0">
           <app-card *ngFor="let post of posts">
             {{post}}
           </app-card>
@@ -282,7 +293,10 @@
       </mat-tab>
       <!-- Snap shots -->
       <mat-tab label="Showcase">
-        <div class="showCase">
+        <div class="column1" *ngIf="showCases.length == 0">
+          <div class="row"> No Showcases Added</div><i class="far fa-frown centerR"></i>
+        </div>
+        <div class="showCase" *ngIf="showCases.length !== 0">
 
           <div class="column">
             <img class="img" *ngFor="let showCase of showCases" src={{showCase}} />
