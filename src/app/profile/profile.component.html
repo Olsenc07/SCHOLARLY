@@ -101,7 +101,7 @@
     <div></div>
     <!-- DESKTOP -->
     <div class="hide">
-      <div [ngClass]="groups.length == 0 ? 'HighlightsM_' : 'HighlightsM' ">
+      <div [ngClass]=" 3 >= groups.length ? 'HighlightsM_' : 'HighlightsM' ">
         <!-- Hightlight Input box -->
         <p class="text_cent" *ngIf="groups.length != 0">Highlights</p>
         <div class="highlights-layout">
@@ -209,7 +209,7 @@
         <div class="HighlightsM">
           <!-- Hightlight Input box -->
           <div class="highlights-layout">
-            <div class="column1" *ngIf="groups.length == 0">
+            <div class="column1" *ngIf="groups.length == 3">
               <div class="row"> No Groups Joined</div><i class="far fa-frown centerR"></i>
             </div>
 

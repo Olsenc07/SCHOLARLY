@@ -17,10 +17,14 @@ export class ProfileComponent implements OnInit {
 
   profile$$ = StoreService.profile$$;
 
+  // Course codes
   Com_ = StoreService.Com.length;
   Com = StoreService.Com
   Pur_ = StoreService.Pur.length;
   Pur = StoreService.Pur;
+
+  // Activity
+  groups = StoreService.Groups;
 
   showFiller = false;
   // TODO: initial following value would need to be loaded from database - for now, always start with false
@@ -36,7 +40,7 @@ export class ProfileComponent implements OnInit {
 
   // filled in from data base
   // View breaks if any more are loaded in..
-  groups = ['', '', '', '', '', '', '', ''];
+
 
 
   posts = [{
