@@ -169,7 +169,8 @@ p {
 .middle-card {
   display: flex;
 border: groove;
-padding-top: 75%;
+width: 100%;
+
 }
 ::ng-deep .mat-radio-label{
   justify-content: center;
