@@ -101,16 +101,16 @@
     <div></div>
     <!-- DESKTOP -->
     <div class="hide">
-      <div class="HighlightsM">
+      <div [ngClass]="groups.length == 0 ? 'HighlightsM_' : 'HighlightsM' ">
         <!-- Hightlight Input box -->
-        <p class="text_cent" *ngIf="posts.length != 0">Highlights</p>
+        <p class="text_cent" *ngIf="groups.length != 0">Highlights</p>
         <div class="highlights-layout">
 
-          <div class="column1" *ngIf="posts.length == 0">
+          <div class="column1" *ngIf="groups.length == 0">
             <div class="row"> No Groups Joined</div><i class="far fa-frown centerR"></i>
           </div>
 
-          <div class="groups-j" *ngIf="posts.length != 0">
+          <div class="groups-j" *ngIf="groups.length != 0">
             <div class="words">
               <div class="title">
 
@@ -126,7 +126,7 @@
           </div>
 
           <div class="row_1">
-            <div class="column1" *ngIf="(Com_ && Pur_) == 0">
+            <div class="column1" *ngIf="Com_ == 0  && Pur_ == 0">
               <div class="row"> No Courses Added</div><i class="far fa-frown centerR"></i>
             </div>
             <!-- Hidden if neither are filled in -->
@@ -209,11 +209,11 @@
         <div class="HighlightsM">
           <!-- Hightlight Input box -->
           <div class="highlights-layout">
-            <div class="column1" *ngIf="posts.length == 0">
+            <div class="column1" *ngIf="groups.length == 0">
               <div class="row"> No Groups Joined</div><i class="far fa-frown centerR"></i>
             </div>
 
-            <div class="groups-j" *ngIf="posts.length != 0">
+            <div class="groups-j" *ngIf="groups.length != 0">
               <div class="words">
                 <div class="title">
                   <div class="title1">Groups Joined</div>
@@ -229,7 +229,7 @@
             </div>
 
             <div class="row_1">
-              <div class="column1" *ngIf="(Com_ && Pur_) == 0">
+              <div class="column1" *ngIf="Com_ == 0 && Pur_ == 0">
                 <div class="row"> No Courses Added</div><i class="far fa-frown centerR"></i>
               </div>
               <!-- Hidden if neither are filled in -->
