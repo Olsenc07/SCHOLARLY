@@ -19,7 +19,8 @@ export class ProfileComponent implements OnInit {
 
   Com_ = StoreService.Com.length;
   Com = StoreService.Com
-  Pur = StoreService.Pur.length;
+  Pur_ = StoreService.Pur.length;
+  Pur = StoreService.Pur;
 
   showFiller = false;
   // TODO: initial following value would need to be loaded from database - for now, always start with false
@@ -90,8 +91,12 @@ export class ProfileComponent implements OnInit {
     this.following = !this.following;
   }
   ngOnInit(): any {
-    this.Com = this.Com.sort()
-    return this.Com
+    this.Com = this.Com.map(code => code.toUpperCase()).sort();
+
+
+    this.Pur = this.Pur.map(code => code.toUpperCase()).sort();
+    return this.Pur, this.Com
+
   }
 
 }
