@@ -20,11 +20,11 @@ export class MainPagesComponent implements OnInit {
   mainForm = new FormGroup({
     main: this.main,
   });
-
+  feeds = ['', ''];
   constructor(
     private bottomSheet: MatBottomSheet,
     private route: ActivatedRoute
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe((params) => {
@@ -54,7 +54,7 @@ export class MainPagesComponent implements OnInit {
   styleUrls: ['./attendance.component.scss'],
 })
 export class AttendanceComponent {
-  constructor(private bottomSheetRef: MatBottomSheetRef<AttendanceComponent>) {}
+  constructor(private bottomSheetRef: MatBottomSheetRef<AttendanceComponent>) { }
 
   openLink(event: MouseEvent): void {
     this.bottomSheetRef.dismiss();
@@ -68,7 +68,7 @@ export class AttendanceComponent {
   styleUrls: ['./tagged.component.scss'],
 })
 export class TaggedComponent {
-  constructor(private bottomSheetRef: MatBottomSheetRef<AttendanceComponent>) {}
+  constructor(private bottomSheetRef: MatBottomSheetRef<AttendanceComponent>) { }
 
   openLink(event: MouseEvent): void {
     this.bottomSheetRef.dismiss();
