@@ -37,8 +37,8 @@ export class ProfileComponent implements OnInit {
   following = false;
 
   showCases = ['../../assets/Pics/IMG-8413.PNG', '../../assets/Pics/IMG-8619.PNG',
-    '../../assets/Pics/IMG-8413.PNG', '../../assets/Pics/IMG-8413.PNG', '../../assets/Pics/IMG-8619.PNG',
-    '../../assets/Pics/IMG-8413.PNG', '../../assets/Pics/IMG-8413.PNG'
+    '../../assets/Pics/WhiteSquareInAppLogo.jpg', '../../assets/Pics/IMG-8413.PNG', '../../assets/Pics/IMG-8619.PNG',
+    '../../assets/Pics/ProperInAppLogo.jpeg ', '../../assets/Pics/IMG-8413.PNG'
   ];
 
   constructor(private bottomSheet: MatBottomSheet) {

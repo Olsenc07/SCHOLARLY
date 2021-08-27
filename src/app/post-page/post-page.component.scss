@@ -109,16 +109,23 @@
 .contents{
   display: flex;
  box-sizing: border-box;
- padding: 0% 21% 35% 21%;
+ padding: 0% 0% 35% 0%;
 
 }}
-@media(max-width:1024px){
+@media(max-width:1024px)and(min-width:700px){
 .contents{
   display: flex;
  box-sizing: border-box;
  padding: 0% 30% 0% 30%;
 
 }}
+@media(max-width:700px){
+  .contents{
+    display: flex;
+   box-sizing: border-box;
+   padding: 0% 20% 0% 20%;
+  
+  }}
 .column {
   display: flex;
   flex-direction: column;
@@ -534,6 +541,7 @@ p {
 width: 100%;
 height:  fit-content;
 justify-content: center;
+aspect-ratio: 4/3;
 }
 .tagged-friends {
   display: flex;

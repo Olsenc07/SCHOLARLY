@@ -83,11 +83,12 @@
     </div>
 
     <!-- Takes upload img/video from post page {{Upload}} -->
-    <div class="upload">
+    <div class="upload" *ngFor="let show of showCases">
       <!-- -->
       <!-- ../../assets/Pics/ProperInAppLogo.jpeg -->
       <!-- ../../assets/Pics/WhiteSquareInAppLogo.jpg -->
-      <img class="middle-card" src="../../assets/Pics/IMG-8413.PNG ">
+
+      <img class="middle-card" src="{{show}}">
     </div>
 
     <div>
