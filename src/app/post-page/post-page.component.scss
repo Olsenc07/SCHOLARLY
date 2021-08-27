@@ -466,6 +466,12 @@ p {
   display: flex;
   flex-direction: row;
 }
+.row__{
+  display: flex;
+  justify-content: center;
+  color: #7e7171;
+  font-family: 'Font Awesome 5 Free';
+}
 @media(min-width:1024px){
   .right {
     display: flex;

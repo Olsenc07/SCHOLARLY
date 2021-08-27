@@ -39,7 +39,11 @@
           <!-- Upload pic/video -->
           <!-- <div class="column_"> -->
           <div class="centerD">
+
             <div class="textU"> Upload Post</div>
+
+
+
             <div [ngClass]="upload.value ? 'Show' : 'hide' ">
               <button mat-icon-button class="trash" color="primary" (click)="clearUpload()">
                 <div class=" far fa-trash-alt"></div>
@@ -48,7 +52,7 @@
 
           </div>
 
-
+          <div class="row__"> Recommended Aspect Ratio 4:3</div>
           <div class="rowP">
             <button class="cameraIcon" mat-button (click)="uploadFile()">
               <div class="material-icons Photo">
