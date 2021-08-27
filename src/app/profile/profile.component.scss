@@ -453,9 +453,15 @@ font-weight: 900;
 .posts {
   display: flex;
   flex-direction: column;
-  height: 100%; 
+// height: 100%;
   overflow-y: scroll;
   width:100%;
+}
+.postCard{
+  box-sizing: border-box;
+  display: flex;
+  height: 100%;
+  width: 100%;
 }
 .pic {
   display: flex;

@@ -183,7 +183,7 @@
                 <div class="row"> No Posts Made</div><i class="far fa-frown centerR"></i>
               </div>
               <div class="posts" *ngIf="posts.length !== 0">
-                <app-card *ngFor="let post of posts">
+                <app-card class="postCard" *ngFor="let post of posts">
                   {{post}}
                 </app-card>
               </div>
