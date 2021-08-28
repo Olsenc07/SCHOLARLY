@@ -74,6 +74,7 @@ justify-content: center;
   display: flex;
   height: 100%;
   height: 50%;
+  justify-content: center;
   flex-direction: column;
 }}
 @media(max-width:1024px){
@@ -104,6 +105,7 @@ justify-content: center;
   font-size: xx-large;
   color: #7e7171;
   font-family: 'Font Awesome 5 Free';
+  margin-top: 2%;
 }
 .logo-layoutM{
   display: flex;
@@ -172,7 +174,7 @@ justify-content: center;
   justify-content: center;
   font-size: 65px;
   color: cornflowerblue;
-  margin-top: 10%;
+  margin-top: 20%;
 }}
 @media(max-width:1024px){
 .post{
@@ -180,7 +182,7 @@ justify-content: center;
   justify-content: center;
   font-size: 65px;
   color: cornflowerblue;
-  margin-top: 20%;
+  margin-top: 7%;
 }}
 @media (min-width: 1025px) {
   .right-column {
@@ -199,11 +201,7 @@ justify-content: center;
   
   }
 }
-.recents{
-  display: flex;
-  justify-content: center;
-  margin-top: 5%;
-}
+
 // Reacting to mobile and tablet sizes
 @media (max-width: 1025px) {
   .logo-layout,
@@ -250,6 +248,11 @@ justify-content: center;
     flex-direction: column;
     overflow-y: scroll;
   }
+}
+.recents_{
+  display: flex;
+  justify-content: center;
+  height: 100%;
 }
 @media (max-width: 1025px) {
   .recentsM {

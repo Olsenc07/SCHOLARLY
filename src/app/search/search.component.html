@@ -50,8 +50,8 @@
       <div class="center" *ngIf="posts.length !== 0">
         Recent Feed
       </div>
-
-      <div class="recents" *ngIf="posts.length == 0">
+      <!-- Only load in so many at a time -->
+      <div class="recents_" *ngIf="posts.length == 0">
         <div class="fill">
           <div class="label_">Post Now</div>
           <!-- <div class="centerR"> <i class="far fa-grin-alt"></i></div> -->
