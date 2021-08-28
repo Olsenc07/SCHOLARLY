@@ -42,6 +42,7 @@
 .center_{
   display: flex; 
   justify-content: center;
+  padding: 1%;
 }
 .centerM {
   display: flex;
@@ -59,10 +60,31 @@
 .display{
   display: contents;
 }
+.fontSize{
+font-size: 65px;
+display: flex;
+justify-content: center;
+}
 .fit{
   width: 100%;
     display: flex;
 }
+@media(min-width:1024px){
+.fill{
+  display: flex;
+  height: 100%;
+  height: 50%;
+  justify-content: center;
+  flex-direction: column;
+}}
+@media(max-width:1024px){
+  .fill{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    height: 75%;
+    flex-direction: column;
+  }}
 .main-layout {
   display: flex;
   flex-direction: row;
@@ -76,6 +98,14 @@
   font-size: xx-large;
   color: #7e7171;
   font-family: 'Font Awesome 5 Free';
+}
+.label_{
+  display: flex;
+  justify-content: center;
+  font-size: xx-large;
+  color: #7e7171;
+  font-family: 'Font Awesome 5 Free';
+  margin-top: 2%;
 }
 .logo-layoutM{
   display: flex;
@@ -138,6 +168,22 @@
     display: none;
   }
 }
+@media(min-width:1024px){
+.post{
+  display: flex;
+  justify-content: center;
+  font-size: 65px;
+  color: cornflowerblue;
+  margin-top: 20%;
+}}
+@media(max-width:1024px){
+.post{
+  display: flex;
+  justify-content: center;
+  font-size: 65px;
+  color: cornflowerblue;
+  margin-top: 7%;
+}}
 @media (min-width: 1025px) {
   .right-column {
     display: flex;
@@ -155,6 +201,7 @@
   
   }
 }
+
 // Reacting to mobile and tablet sizes
 @media (max-width: 1025px) {
   .logo-layout,
@@ -201,6 +248,11 @@
     flex-direction: column;
     overflow-y: scroll;
   }
+}
+.recents_{
+  display: flex;
+  justify-content: center;
+  height: 100%;
 }
 @media (max-width: 1025px) {
   .recentsM {

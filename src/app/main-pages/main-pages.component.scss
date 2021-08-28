@@ -40,6 +40,12 @@
   flex-direction: column;
   justify-content: center;
 }
+.column_{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+}
 .columnAttend {
   display: flex;
   flex-direction: column;
@@ -52,7 +58,10 @@
   justify-content: center;
   flex-direction: column;
 }
-
+.center_{
+  display: flex;
+  justify-content: center;
+}
 @media (max-width: 350px) {
   .center1 {
     display: flex;
@@ -66,6 +75,47 @@
     justify-content: center;
     flex-direction: row;
   }
+}
+@media(min-width:1024px){
+.centerR{
+      display: flex;
+    justify-content: center;
+    font-size: xxx-large;
+    margin-bottom:1% ;
+    justify-content: center;
+    color: #7e7171;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 700;
+}}
+@media(max-width:1024px)and(min-width:600px){
+  .centerR{
+        display: flex;
+      justify-content: center;
+      font-size: xxx-large;
+      margin-bottom:3% ;
+      justify-content: center;
+      color: #7e7171;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 700;
+  }}
+@media(max-width:600px){
+  .centerR{
+        display: flex;
+      justify-content: center;
+      font-size: xxx-large;
+      margin-bottom:6% ;
+      justify-content: center;
+      color: #7e7171;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 700;
+  }}
+.centerR_{
+  display: flex;
+justify-content: center;
+font-size: 65px;
+margin-top: 2%;
+  color: cornflowerblue;;
+justify-content: center;
 }
 .expandBtn {
   font-size: x-large;
@@ -135,20 +185,53 @@
   width: 100%;
   height: 50%;
 }
+@media(min-width:900px){
 .feed {
   display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
-}
+  box-sizing: border-box;
+  padding: 0% 32%;
+}}
+@media(max-width:900px) and (min-width:600px){
+  .feed {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 0% 27%;
+  }}
+@media(max-width:600px){
+  .feed {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    
+  }}
 .fit {
   display: flex;
   height: 100%;
+  width: 100%;
+  margin: .5% 0%;
+}
+.fill{
+  display: flex;
+  margin-top: 7%;
+  height: 100%;
+  justify-content: center;
+  flex-direction: column;
 }
 .row {
   display: flex;
   flex-direction: row;
   width: 100%;
   justify-content: space-evenly;
+  color: #7e7171;
+    font-family: "Font Awesome 5 Free";
 }
 .rowActions {
   display: flex;
@@ -160,7 +243,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 2% 0% 0% 2%;
+    margin: 2% 0% 0% 0%;
     width: 100%;
     height: 100%;
   }
@@ -190,6 +273,8 @@
   font-weight: 400;
   flex-direction: row;
   margin-bottom: 1%;
+  color: #7e7171;
+    font-family: "Font Awesome 5 Free";
 }
 .specificChoice {
   display: flex;

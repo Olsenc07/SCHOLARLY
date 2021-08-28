@@ -16,18 +16,26 @@
                     </div>
                 </div>
 
-                <div class="row1">
-                    <div class="column_">
-                        <mat-card-title class="textSize row1 specific">
-                            <!-- {{Specific}} -->Specific Page
-                        </mat-card-title>
-                        <mat-card-subtitle class="column">
-                            <!--{{Location}} -->
-                            <div class="postLocation textSize">Location</div>
-                            <!--{{date}} -->
-                            <div class="postTime textSize">Date/Time</div>
-                        </mat-card-subtitle>
-                    </div>
+                <div class="column">
+
+                    <!-- Joins user to that group,make sure 
+                        that it doesn't create duplicates!!! -->
+
+                    <mat-card-title class="">
+                        <button mat-button routerLink="/groups">
+                            <div class=" postLocation textSize">Join Group
+                            </div>
+                        </button>
+                    </mat-card-title>
+
+
+                    <mat-card-subtitle class="column">
+                        <!--{{Location}} -->
+                        <div class="postLocation textSize">Location</div>
+                        <!--{{date}} -->
+                        <div class="postTime textSize">Date/Time</div>
+                    </mat-card-subtitle>
+
                 </div>
             </div>
 

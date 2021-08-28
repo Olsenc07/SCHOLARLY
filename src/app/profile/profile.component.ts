@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { StoreService } from '../services/store.service';
@@ -11,60 +11,35 @@ import { StoreService } from '../services/store.service';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss'],
 })
-export class ProfileComponent {
+export class ProfileComponent implements OnInit {
   // Connecting store.servie to display course in profile. 
   // Edit profile -> store -> profile
 
   profile$$ = StoreService.profile$$;
 
-  Com = StoreService.Com.length;
-  Pur = StoreService.Pur.length;
+  // Course codes
+  Com_ = StoreService.Com.length;
+  Com = StoreService.Com
+  Pur_ = StoreService.Pur.length;
+  Pur = StoreService.Pur;
+
+  // Activity
+  groups = StoreService.Groups;
+
+  // Posts
+  posts = StoreService.Posts;
+
+  // show cases, doesnt work when connected to service
+  // showCases = StoreService.ShowCases;
 
   showFiller = false;
   // TODO: initial following value would need to be loaded from database - for now, always start with false
   following = false;
 
-  // filled in from data base
-  // View breaks if any more are loaded in..
-  groups = ['', '', '', '', '', '', '', '']
-
-
-  posts = [{
-    "profilePic": "", "Title": "",
-    "Specific": "", "Location": "", "Date": "", "Upload": ""
-  },
-  {
-    "profilePic": "", "Title": "",
-    "Specific": "", "Location": "", "Date": "", "Upload": ""
-  },
-  {
-    "profilePic": "", "Title": "",
-    "Specific": "", "Location": "", "Date": "", "Upload": ""
-  },
-  {
-    "profilePic": "", "Title": "",
-    "Specific": "", "Location": "", "Date": "", "Upload": ""
-  },
-  {
-    "profilePic": "", "Title": "",
-    "Specific": "", "Location": "", "Date": "", "Upload": ""
-  },
-  {
-    "profilePic": "", "Title": "",
-    "Specific": "", "Location": "", "Date": "", "Upload": ""
-  },
-  {
-    "profilePic": "", "Title": "",
-    "Specific": "", "Location": "", "Date": "", "Upload": ""
-  }
-  ];
-
   showCases = ['../../assets/Pics/IMG-8413.PNG', '../../assets/Pics/IMG-8619.PNG',
-    '../../assets/Pics/IMG-8413.PNG', '../../assets/Pics/IMG-8413.PNG', '../../assets/Pics/IMG-8619.PNG',
-    '../../assets/Pics/IMG-8413.PNG', '../../assets/Pics/IMG-8413.PNG'
+    '../../assets/Pics/WhiteSquareInAppLogo.jpg', '../../assets/Pics/IMG-8413.PNG', '../../assets/Pics/IMG-8619.PNG',
+    '../../assets/Pics/ProperInAppLogo.jpeg ', '../../assets/Pics/IMG-8413.PNG'
   ];
-
-
 
   constructor(private bottomSheet: MatBottomSheet) {
     // profile$$.profile$$.subscribe((profile) => {
@@ -80,10 +55,16 @@ export class ProfileComponent {
   followClicked(): void {
     this.following = !this.following;
   }
-  // Why does this addition delay the right chip from displaying in html????????
-  // Wok on home pages htmls form controls!!!!!!
-  // Does this need its own form group? Triggered at the same time?
-  // messageRequest: FormControl = new FormControl('');
+  ngOnInit(): any {
+    this.Com = this.Com.map(code => code.toUpperCase()).sort();
+
+
+    this.Pur = this.Pur.map(code => code.toUpperCase()).sort();
+
+    // this.showCases = this.showCases.toString();
+    return this.Pur, this.Com
+
+  }
 
 }
 @Component({

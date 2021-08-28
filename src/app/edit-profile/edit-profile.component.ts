@@ -133,6 +133,8 @@ export class EditProfileComponent implements OnInit {
   // Connects to save showcases in the data base
   list = ['../../assets/Pics/IMG-8413.PNG',
     '../../assets/Pics/IMG-8619.PNG',
+    '../../assets/Pics/WhiteSquareInAppLogo.jpg',
+    '../../assets/Pics/ProperInAppLogo.jpeg ',
     '../../assets/Pics/IMG-8413.PNG',
     '../../assets/Pics/IMG-8619.PNG',
     '../../assets/Pics/IMG-8413.PNG',

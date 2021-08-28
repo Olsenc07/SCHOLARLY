@@ -18,8 +18,11 @@
                 <!-- {{profilePic}} -->
               </div>
               <div class="nameTitle">
-                <!-- {{userName}}: -->
-                <mat-card-title class="userName textSize">Olsen07</mat-card-title>
+                <!-- Button directs to that users profile -->
+                <button class="link" mat-button>
+                  <!-- {{userName}}: -->
+                  <mat-card-title class="userName textSize">Olsen07</mat-card-title>
+                </button>
               </div>
             </div>
 
@@ -80,8 +83,13 @@
     </div>
 
     <!-- Takes upload img/video from post page {{Upload}} -->
+    <div class="upload" *ngFor="let show of showCases">
+      <!-- -->
+      <!-- ../../assets/Pics/ProperInAppLogo.jpeg -->
+      <!-- ../../assets/Pics/WhiteSquareInAppLogo.jpg -->
 
-    <img class="middle-card">
+      <img class="middle-card" src="{{show}}">
+    </div>
 
     <div>
 

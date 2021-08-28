@@ -32,6 +32,7 @@
       <mat-divider class="margin"></mat-divider>
       <!-- Major/Minor -->
       <div class="major-minor">
+        <!-- *ngIf="major.value" -->
         <div class="centerR"> Major</div>
         <div class="centerR">Minor</div>
 
@@ -79,7 +80,7 @@
     <div class="top-middle">
 
       <!-- No Bio -->
-      <!-- Bio: Full name & age input text & Pronouns *ngIf="bio.value " -->
+      <!-- Pronouns Full name & age   *ngIf="fullname.value " -->
       <div>
         <div class="text-2">
 
@@ -100,19 +101,21 @@
     <div></div>
     <!-- DESKTOP -->
     <div class="hide">
-      <div class="HighlightsM">
+      <div [ngClass]=" 2 >= groups.length ? 'HighlightsM_' : 'HighlightsM' ">
         <!-- Hightlight Input box -->
-        <p class="text_cent">Highlights</p>
+        <p class="text_cent" *ngIf="groups.length != 0">Highlights</p>
         <div class="highlights-layout">
-          <div class="groups-j">
+
+          <div class="column1" *ngIf="groups.length == 0">
+            <div class="row"> No Groups Joined</div><i class="far fa-frown centerR"></i>
+          </div>
+
+          <div class="groups-j" *ngIf="groups.length != 0">
             <div class="words">
               <div class="title">
-                <!-- <button mat-icon-button><i class="fas fa-arrow-circle-left title1"></i>
-                </button> -->
+
                 <div class="title1">Groups Joined</div>
-                <!-- <button mat-icon-button><i
-                    class="fas fa-arrow-circle-right title1"></i>
-                </button> -->
+
               </div>
               <div class="groups_">
                 <app-card-brief class="fit_" *ngFor="let group of groups">
@@ -123,23 +126,46 @@
           </div>
 
           <div class="row_1">
+            <div class="column1" *ngIf="Com_ == 0  && Pur_ == 0">
+              <div class="row"> No Courses Added</div><i class="far fa-frown centerR"></i>
+            </div>
             <!-- Hidden if neither are filled in -->
-            <!-- <ng-container *ngIf="(completed.value && pursing.value) === false "> -->
 
-            <div [ngClass]="Com == 0 ? 'hide_' : 'completed-courses' ">
 
+            <div [ngClass]="Com_ == 0 ? 'hide_' : 'completed-courses' ">
               <div class="words1">
                 Completed
+                <!-- Courses -->
                 {{ profile$$ | async }}
-                <div class="counter" matBadgePosition="after" matBadgeOverlap="false" matBadge="{{  Com }}"></div>
+                <div class="counter" matBadgePosition="after" matBadgeOverlap="false" matBadge="{{  Com_ }}"></div>
+
               </div>
 
+              <div class="scroll">
+                <mat-chip-list>
+                  <div class="list" *ngFor="let list of Com">
+                    <div class="center__">
+                      <mat-chip class="style" disabled>{{list}}</mat-chip>
+                    </div>
+                  </div>
+                </mat-chip-list>
+              </div>
             </div>
 
-            <div [ngClass]="Pur == 0 ? 'hide_' : 'completed-courses' ">
+            <div [ngClass]="Pur_ == 0 ? 'hide_' : 'completed-courses' ">
               <div class="words1">Pursuing
+                <!-- Courses -->
                 {{ profile$$ | async }}
-                <div class="counter" matBadgePosition="after" matBadgeOverlap="false" matBadge="{{  Pur }}"></div>
+                <div class="counter" matBadgePosition="after" matBadgeOverlap="false" matBadge="{{  Pur_ }}"></div>
+              </div>
+              <div class="scroll">
+                <mat-chip-list>
+                  <div class="list" *ngFor="let list of Pur">
+                    <div class="center__">
+                      <mat-chip class="style" disabled>{{list}}</mat-chip>
+                    </div>
+                  </div>
+                </mat-chip-list>
               </div>
 
             </div>
@@ -153,14 +179,21 @@
         <div class="right-side">
           <mat-tab-group mat-align-tabs="center">
             <mat-tab label="Activity">
-              <div class="posts">
-                <app-card *ngFor="let post of posts">
+              <div class="column1" *ngIf="posts.length == 0">
+                <div class="row"> No Posts Made</div><i class="far fa-frown centerR"></i>
+              </div>
+              <div class="posts" *ngIf="posts.length !== 0">
+                <app-card class="postCard" *ngFor="let post of posts">
                   {{post}}
                 </app-card>
               </div>
             </mat-tab>
             <mat-tab label="Showcase">
-              <div class="showCase">
+              <div class="column1" *ngIf="showCases.length == 0">
+                <div class="row"> No Showcases Added</div><i class="far fa-frown centerR"></i>
+              </div>
+
+              <div class="showCase" *ngIf="showCases.length !== 0">
 
 
                 <div class="column">
@@ -183,7 +216,11 @@
         <div class="HighlightsM">
           <!-- Hightlight Input box -->
           <div class="highlights-layout">
-            <div class="groups-j">
+            <div class="column1" *ngIf="groups.length == 0">
+              <div class="row"> No Groups Joined</div><i class="far fa-frown centerR"></i>
+            </div>
+
+            <div class="groups-j" *ngIf="groups.length != 0">
               <div class="words">
                 <div class="title">
                   <div class="title1">Groups Joined</div>
@@ -199,16 +236,42 @@
             </div>
 
             <div class="row_1">
-              <div [ngClass]="Com == 0 ? 'hide_' : 'completed-courses' ">
+              <div class="column1" *ngIf="Com_ == 0 && Pur_ == 0">
+                <div class="row"> No Courses Added</div><i class="far fa-frown centerR"></i>
+              </div>
+              <!-- Hidden if neither are filled in -->
+
+
+              <div [ngClass]="Com_ == 0 ? 'hide_' : 'completed-courses' ">
                 <div class="words1">Completed
                   {{ profile$$ | async }}
-                  <div class="counter" matBadgePosition="after" matBadgeOverlap="false" matBadge="{{  Com }}"></div>
+                  <div class="counter" matBadgePosition="after" matBadgeOverlap="false" matBadge="{{  Com_ }}"></div>
                 </div>
+
+                <div class="scroll">
+                  <mat-chip-list>
+                    <div class="list" *ngFor="let list of Com">
+                      <div class="center__">
+                        <mat-chip class="style" disabled>{{list}}</mat-chip>
+                      </div>
+                    </div>
+                  </mat-chip-list>
+                </div>
+
               </div>
-              <div [ngClass]="Pur == 0 ? 'hide_' : 'completed-courses' ">
+              <div [ngClass]="Pur_ == 0 ? 'hide_' : 'completed-courses' ">
                 <div class="words1">Pursuing
                   {{ profile$$ | async }}
-                  <div class="counter" matBadgePosition="after" matBadgeOverlap="false" matBadge="{{  Pur }}"></div>
+                  <div class="counter" matBadgePosition="after" matBadgeOverlap="false" matBadge="{{  Pur_ }}"></div>
+                </div>
+                <div class="scroll">
+                  <mat-chip-list>
+                    <div class="list" *ngFor="let list of Pur">
+                      <div class="center__">
+                        <mat-chip class="style" disabled>{{list}}</mat-chip>
+                      </div>
+                    </div>
+                  </mat-chip-list>
                 </div>
               </div>
             </div>
@@ -217,8 +280,12 @@
       </mat-tab>
 
       <mat-tab label="Activity">
+        <div class="column1" *ngIf="posts.length == 0">
+          <div class="row"> No Posts Made</div><i class="far fa-frown centerR"></i>
+        </div>
+
         <!-- Recent Posts text  -->
-        <div class="posts">
+        <div class="posts" *ngIf="posts.length !== 0">
           <app-card *ngFor="let post of posts">
             {{post}}
           </app-card>
@@ -226,7 +293,10 @@
       </mat-tab>
       <!-- Snap shots -->
       <mat-tab label="Showcase">
-        <div class="showCase">
+        <div class="column1" *ngIf="showCases.length == 0">
+          <div class="row"> No Showcases Added</div><i class="far fa-frown centerR"></i>
+        </div>
+        <div class="showCase" *ngIf="showCases.length !== 0">
 
           <div class="column">
             <img class="img" *ngFor="let showCase of showCases" src={{showCase}} />

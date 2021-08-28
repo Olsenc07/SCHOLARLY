@@ -17,7 +17,15 @@ export class ReusableCardComponent {
     event$ = PostService.event$;
 
 
-
+    showCases = [
+        // '../../assets/Pics/IMG-8413.PNG',
+        // '../../assets/Pics/IMG-8619.PNG',
+        '../../assets/Pics/WhiteSquareInAppLogo.jpg',
+        // '../../assets/Pics/IMG-8413.PNG', 
+        // '../../assets/Pics/IMG-8619.PNG',
+        // '../../assets/Pics/ProperInAppLogo.jpeg ',
+        // '../../assets/Pics/IMG-8413.PNG'
+    ];
 
 
     openAttendanceSheet(): void {
