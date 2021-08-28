@@ -3,40 +3,73 @@
   <div class="column">
     <div class="left-column">
       <!-- Friend request box -->
-      <div class="friends-request-box">
-        <div class="friends-request">
-          <div class="row">
 
-            <div class="title">Friend Requests</div>
+
+      <div class="row">
+        <div class="title">Friend Requests</div>
+      </div>
+
+      <div class="fit">
+        <!-- If ids are on friend list -->
+        <app-card-request class="adds" *ngFor="let feed of feeds">
+          {{feed}}
+        </app-card-request>
+      </div>
+
+
+
+      <!-- mutual friends -->
+      <div class="hide">
+        <!-- <div class="middle-middle">
+    <-- Search Bar Desktop --
+  <form class="search">
+    <input type="text" class="search-input" placeholder="Search.." name="search">
+    <button type="submit"><span class="material-icons">search</span></button>
+  </form>
+</div> -->
+        <div class="friend_count">
+          <div class="center">
+            Mutual
           </div>
-          <div class="fit">
-            <!-- If ids are on friend list -->
-            <app-card-request class="adds" *ngFor="let feed of feeds">
-              {{feed}}
-            </app-card-request>
+          <div class="center">
+
+            <!-- {{Value}} -->
+            {{mutuals.length}}
+
+          </div>
+        </div>
+        <div class="mutual-box">
+          <div class="follow-m">
+            <app-card-user *ngFor="let mutual of mutuals" class="width">{{mutual}}</app-card-user>
           </div>
         </div>
       </div>
+
+
+
+
+
+
       <!-- Friends activity box -->
-      <div class="hide_">
+      <!-- <div class="hide_">
         <div class="friends-activity-box">
           <div class="friends-activity">
             <div class="row">Friends Activity</div>
             <app-card-brief class="fit"></app-card-brief>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
     <!-- Tablet/Mobile search bar -->
     <div class="search-friends">
-      <div class="hide1">
+      <!-- <div class="hide1">
         <div class="searchM">
           <form class="search">
             <input type="text" class="search-input" placeholder="Search.." name="search" [formControl]="search">
             <button type="submit"><span class="material-icons">search</span></button>
           </form>
         </div>
-      </div>
+      </div> -->
       <!-- Middle column -->
       <div class="columnD columnM ">
         <div class="row yo">
@@ -47,45 +80,19 @@
               </div>
               <div class="center">
                 <div>
-                  <!-- {{Value}} -->
-                  0
+                  {{following.length}}
                 </div>
               </div>
             </div>
 
             <div class="following-box">
-              <div class="followers">
-                <app-card-user class="width"></app-card-user>
+              <div class="structure">
+                <app-card-user *ngFor="let follow of following" class="width">{{follow}}</app-card-user>
               </div>
             </div>
           </div>
 
-          <!-- mutual friends -->
-          <div class="hide">
-            <div class="middle-middle">
-              <!-- Search Bar Desktop -->
-              <form class="search">
-                <input type="text" class="search-input" placeholder="Search.." name="search">
-                <button type="submit"><span class="material-icons">search</span></button>
-              </form>
-            </div>
-            <div class="friend_count">
-              <div class="center">
-                Mutual
-              </div>
-              <div class="center">
-                <div>
-                  <!-- {{Value}} -->
-                  0
-                </div>
-              </div>
-            </div>
-            <div class="mutual-box">
-              <div class="follow-m">
-                <app-card-user class="width"></app-card-user>
-              </div>
-            </div>
-          </div>
+
           <!-- Right column -->
 
 
@@ -97,14 +104,13 @@
               </div>
               <div class="center">
                 <div>
-                  <!-- {{Value}} -->
-                  0
+                  {{followers.length}}
                 </div>
               </div>
             </div>
             <div class="following-box">
-              <div class="followers">
-                <app-card-user class="width"></app-card-user>
+              <div class="structure">
+                <app-card-user *ngFor="let follow of followers" class="width">{{follow}}</app-card-user>
               </div>
             </div>
           </div>
@@ -147,13 +153,13 @@
               </mat-tab>
               <!-- mutual friends -->
               <div class="hide">
-                <div class="middle-middle">
-                  <!-- Search Bar Desktop -->
+                <!-- <div class="middle-middle">
+                  !-- Search Bar Desktop --
                   <form class="search">
                     <input type="text" class="search-input" placeholder="Search.." name="search">
                     <button type="submit"><span class="material-icons">search</span></button>
                   </form>
-                </div>
+                </div> -->
                 <p>
                   Mutual
                 </p>
@@ -206,15 +212,15 @@
               </div>
             </div>
           </mat-tab>
-          <mat-tab label=" Friend's Activity">
+          <!-- <mat-tab label=" Friend's Activity">
             <div class="friends-activity-box">
               <div class="friends-activity">
                 <app-card-brief class="fit"></app-card-brief>
                 <app-card-brief class="fit"></app-card-brief>
-                <!-- Then cards keep getting filled in!! Jst was testing the overflow scroll -->
-              </div>
-            </div>
-          </mat-tab>
+                !-- Then cards keep getting filled in!! Jst was testing the overflow scroll --
+      </div>
+    </div>
+    </mat-tab> -->
         </mat-tab-group>
       </div>
     </div>

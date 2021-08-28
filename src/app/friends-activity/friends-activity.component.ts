@@ -8,38 +8,79 @@ import { FormControl } from '@angular/forms';
 })
 export class FriendsActivityComponent implements OnInit {
 
-
   feeds = [{
-    "profilePic": "", "userName": "", "Bio": "",
+    "profilePic": "", "userName": "",
     "Major": "", "Minor": "", "Sport": "", "Club": ""
   },
   {
-    "profilePic": "", "userName": "", "Bio": "",
+    "profilePic": "", "userName": "",
+    "Major": "", "Minor": "", "Sport": "", "Club": ""
+  }, {
+    "profilePic": "", "userName": "",
+    "Major": "", "Minor": "", "Sport": "", "Club": ""
+  }, {
+    "profilePic": "", "userName": "",
+    "Major": "", "Minor": "", "Sport": "", "Club": ""
+  }, {
+    "profilePic": "", "userName": "",
     "Major": "", "Minor": "", "Sport": "", "Club": ""
   },
-  {
-    "profilePic": "", "userName": "", "Bio": "",
-    "Major": "", "Minor": "", "Sport": "", "Club": ""
-  },
-  {
-    "profilePic": "", "userName": "", "Bio": "",
-    "Major": "", "Minor": "", "Sport": "", "Club": ""
-  },
-  {
-    "profilePic": "", "userName": "", "Bio": "",
-    "Major": "", "Minor": "", "Sport": "", "Club": ""
-  },
-  {
-    "profilePic": "", "userName": "", "Bio": "",
-    "Major": "", "Minor": "", "Sport": "", "Club": ""
-  },
-  {
-    "profilePic": "", "userName": "", "Bio": "",
-    "Major": "", "Minor": "", "Sport": "", "Club": ""
-  }
   ];
 
+  mutuals = [{
+    "profilePic": "", "userName": "",
+    "Major": "", "Minor": "", "Sport": "", "Club": ""
+  },
+  {
+    "profilePic": "", "userName": "",
+    "Major": "", "Minor": "", "Sport": "", "Club": ""
+  }, {
+    "profilePic": "", "userName": "",
+    "Major": "", "Minor": "", "Sport": "", "Club": ""
+  },
+  {
+    "profilePic": "", "userName": "",
+    "Major": "", "Minor": "", "Sport": "", "Club": ""
+  },
+  {
+    "profilePic": "", "userName": "",
+    "Major": "", "Minor": "", "Sport": "", "Club": ""
+  }];
 
+  following = [{
+    "profilePic": "", "userName": "",
+    "Major": "", "Minor": "", "Sport": "", "Club": ""
+  },
+  {
+    "profilePic": "", "userName": "",
+    "Major": "", "Minor": "", "Sport": "", "Club": ""
+  }, {
+    "profilePic": "", "userName": "",
+    "Major": "", "Minor": "", "Sport": "", "Club": ""
+  },
+  {
+    "profilePic": "", "userName": "",
+    "Major": "", "Minor": "", "Sport": "", "Club": ""
+  },
+  {
+    "profilePic": "", "userName": "",
+    "Major": "", "Minor": "", "Sport": "", "Club": ""
+  }];
+  followers = [{
+    "profilePic": "", "userName": "",
+    "Major": "", "Minor": "", "Sport": "", "Club": ""
+  },
+  {
+    "profilePic": "", "userName": "",
+    "Major": "", "Minor": "", "Sport": "", "Club": ""
+  }, {
+    "profilePic": "", "userName": "",
+    "Major": "", "Minor": "", "Sport": "", "Club": ""
+  },
+  {
+    "profilePic": "", "userName": "",
+    "Major": "", "Minor": "", "Sport": "", "Club": ""
+  }];
 
   // Friend requests from the card...
   accept: FormControl = new FormControl('');
