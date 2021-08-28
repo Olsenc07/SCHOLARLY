@@ -70,13 +70,6 @@
       color: blue;
     }
    
-
-
-
-
-
-
-
 .money{
   display: flex;
   color: gold ;
@@ -193,7 +186,7 @@ p {
 }
 @media (max-width: 550px) {
   .textSize {
-    font-size: smaller;
+    font-size: inherit;
     font-family: "Font Awesome 5 Free";
   }
 }

@@ -191,6 +191,7 @@ justify-content: center;
   flex-direction: column;
   width: 100%;
   height: 100%;
+  overflow-y: scroll;
   box-sizing: border-box;
   padding: 0% 32%;
 }}
@@ -314,24 +315,7 @@ justify-content: center;
   border: groove;
   flex-direction: column;
 }
-@media(min-width:1024px){
-.specifics-input {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  border: groove;
-  overflow-y: scroll;
-  flex-direction: column;
-}}
-@media(max-width:1024px){
-.specifics-input {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  overflow-x: scroll;
-  flex-direction: row;
-}
-}
+
 .text-scroll {
   overflow: scroll;
   color: #707070;
