@@ -26,7 +26,7 @@ export class StoreService {
     , 'ggr101h1', 'hps260h1', 'mat224h1', 'phy256h1'];
   static Pur = ['HPS120h1', 'mat246h1', 'mat334h1', 'phy224h1',
     'jph441h1', 'mat301h1', 'mat315h1', 'phy324h1'];
-  static Groups = ['', '', '', '', ''];
+  static Groups = ['', '', ''];
 
   static Posts = [{
     "profilePic": "", "Title": "",
