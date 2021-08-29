@@ -9,7 +9,14 @@
         <div class="title">Friend Requests</div>
       </div>
 
-      <div class="fit">
+      <div class="fit" *ngIf="feeds.length == 5 ">
+        <div class="noRequests">
+          No requests currently
+          <i class="fas fa-users-slash"></i>
+        </div>
+      </div>
+
+      <div class="fit" *ngIf="feeds.length !== 5">
         <!-- If ids are on friend list -->
         <app-card-request class="adds" *ngFor="let feed of feeds">
           {{feed}}
@@ -29,7 +36,7 @@
 </div> -->
         <div class="friend_count">
           <div class="center">
-            Mutual
+            Mutual Friends
           </div>
           <div class="center">
 
