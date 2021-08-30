@@ -11,7 +11,7 @@
 
       <div class="fit" *ngIf="feeds.length == 5 ">
         <div class="noRequests">
-          No current requests
+          No Current Requests
           <i class="fas fa-users-slash icon"></i>
         </div>
       </div>
@@ -45,11 +45,33 @@
 
           </div>
         </div>
+
+
+
+
         <div class="mutual-box">
-          <div class="follow-m">
+
+
+          <div class="follow-m" *ngIf="mutuals.length == 5">
+
+
+            <div class="message">
+              Click The Hand Shake Icon On Your Friends Lists To Display Mututal Friends
+              <i class="far fa-handshake messageIcon "></i>
+            </div>
+
+
+          </div>
+
+
+          <div class="follow-m" *ngIf="mutuals.length !== 5">
             <app-card-mutual *ngFor="let mutual of mutuals" class="width">{{mutual}}</app-card-mutual>
           </div>
         </div>
+
+
+
+
       </div>
 
 
