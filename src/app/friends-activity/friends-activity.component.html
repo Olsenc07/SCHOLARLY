@@ -52,7 +52,7 @@
         <div class="mutual-box">
 
 
-          <div class="follow-m" *ngIf="mutuals.length == 5">
+          <div class="follow-m" *ngIf="mutuals.length == 0">
 
 
             <div class="message">
@@ -64,7 +64,7 @@
           </div>
 
 
-          <div class="follow-m" *ngIf="mutuals.length !== 5">
+          <div class="follow-m" *ngIf="mutuals.length !== 0">
             <app-card-mutual *ngFor="let mutual of mutuals" class="width">{{mutual}}</app-card-mutual>
           </div>
         </div>

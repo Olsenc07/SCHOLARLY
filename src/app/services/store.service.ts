@@ -59,6 +59,19 @@ export class StoreService {
   ];
 
 
+
+
+  // reusable card fillers
+  static ids = [{
+    "profilePic": "", "userName": "Olsen07",
+    "Gender": "Male", "Major": "Physics and Math", "Minor": "History and Philosophy Of Science"
+    , "Sport": "Mens Varsity Hockey", "Club": "Chess"
+  }
+
+
+  ]
+
+
   profile$$: ReplaySubject<Profile> = new ReplaySubject<Profile>(1);
   static profile$$: string[];
 

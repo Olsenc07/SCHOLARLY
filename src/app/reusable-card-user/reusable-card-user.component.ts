@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { StoreService } from '../services/store.service';
 
 
 @Component({
@@ -8,7 +9,12 @@ import { Component } from '@angular/core';
 })
 export class ReusableCardUserComponent {
     // sends request to data base to get mutual friends list, by clicking on shaking hands emoji
+
+    ids = StoreService.ids;
+
+
     constructor() { }
+
 }
 
 

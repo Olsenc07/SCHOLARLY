@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { StoreService } from '../services/store.service';
 
 @Component({
   selector: 'app-friends-activity',
