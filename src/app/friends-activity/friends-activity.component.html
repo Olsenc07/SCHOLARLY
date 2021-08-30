@@ -5,14 +5,14 @@
       <!-- Friend request box -->
 
 
-      <div class="row">
+      <div class="row" *ngIf="feeds.length !== 5">
         <div class="title">Friend Requests</div>
       </div>
 
       <div class="fit" *ngIf="feeds.length == 5 ">
         <div class="noRequests">
-          No requests currently
-          <i class="fas fa-users-slash"></i>
+          No current requests
+          <i class="fas fa-users-slash icon"></i>
         </div>
       </div>
 
@@ -47,7 +47,7 @@
         </div>
         <div class="mutual-box">
           <div class="follow-m">
-            <app-card-user *ngFor="let mutual of mutuals" class="width">{{mutual}}</app-card-user>
+            <app-card-mutual *ngFor="let mutual of mutuals" class="width">{{mutual}}</app-card-mutual>
           </div>
         </div>
       </div>
@@ -94,7 +94,10 @@
 
             <div class="following-box">
               <div class="structure">
-                <app-card-user *ngFor="let follow of following" class="width">{{follow}}</app-card-user>
+
+                <app-card-user *ngFor="let follow of following" class="width"> {{follow}}
+                </app-card-user>
+
               </div>
             </div>
           </div>

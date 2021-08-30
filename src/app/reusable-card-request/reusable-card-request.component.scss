@@ -8,6 +8,11 @@
   width: 100%;
   flex-direction: column;
   text-align: center;
+  justify-content: space-evenly;
+}
+.center_{
+  display: flex;
+  justify-content: center;
 }
 .center1{
   display: flex;
