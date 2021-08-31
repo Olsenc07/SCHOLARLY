@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StoreService } from '../services/store.service';
 
 @Component({
     selector: 'app-card-request',
@@ -7,6 +8,11 @@ import { Component } from '@angular/core';
 })
 
 export class ReusableCardRequestComponent {
+
+
+    ids = StoreService.ids;
+
+
     constructor() { }
 }
 

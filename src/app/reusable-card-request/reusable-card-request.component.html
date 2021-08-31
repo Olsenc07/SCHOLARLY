@@ -1,17 +1,17 @@
-<mat-card class="row1">
+<mat-card class="row1" *ngFor="let id of ids">
     <div class="column">
         <div class="row">
             <div class="row_">
                 <div mat-card-avatar class="profilePic">
-                    <!-- {{profilePic}} -->
+                    {{id.profilePic}}
                 </div>
                 <div class="column_">
                     <mat-card-title class="userName textSize">
-                        <!-- {{userName}} -->
-                        Olsen07
+                        {{id.userName}}
+
                     </mat-card-title>
-                    <mat-card-subtitle class="gender textSize">Male
-                        <!-- {{Gender}} -->
+                    <mat-card-subtitle class="gender textSize">
+                        {{id.Gender}}
                     </mat-card-subtitle>
                 </div>
             </div>
@@ -25,25 +25,23 @@
         <div class="row">
             <div class="center">
                 <div class="center1">
-                    <!-- {{Major}} -->
-                    Physics and Math
+                    {{id.Major}}
+
                 </div>
                 <mat-card-subtitle class="center1">
-                    <!-- {{Minor}} -->
-                    History & Philosophy
-                    of Science & Technology
+                    {{id.Minor}}
                 </mat-card-subtitle>
             </div>
 
 
             <div class="center">
                 <div class="center1">
-                    <!-- {{Sport}} -->
-                    Mens Varsity Hockey
+                    {{id.Sport}}
+
                 </div>
                 <div class="center1">
-                    <!-- {{Club}} -->
-                    Stand Up Comedy
+                    {{id.Club}}
+
                 </div>
             </div>
 

@@ -1,31 +1,31 @@
-<mat-card>
+<mat-card *ngFor="let id of ids">
     <div class="row">
         <div class="row margin">
             <div mat-card-avatar class="profilePic">
-                {{ids.profilePic}}
+                <img src="{{id.profilePic}}">
             </div>
             <div class="column">
                 <!-- Takes user to that profile pg -->
                 <button mat-button>
                     <mat-card-title class="userName textSize nice">
-                        {{ids.userName}}
+                        {{id.userName}}
                         <!-- Olsen07 -->
                     </mat-card-title>
                 </button>
                 <mat-card-subtitle class="textSize center nice">
-                    {{ids.Gender}}
+                    {{id.Gender}}
                     <!-- Male -->
                 </mat-card-subtitle>
             </div>
         </div>
         <div class="column">
             <mat-card-title class="textSize nice">
-                {{ids.Major}}
-                <!-- Physics and Math -->
+                {{id.Major}}
+
             </mat-card-title>
             <mat-card-subtitle class="textSize nice">
-                {{ids.Minor}}
-                <!-- History and Philosophy of Science -->
+                {{id.Minor}}
+
 
             </mat-card-subtitle>
         </div>
@@ -37,13 +37,13 @@
         </div>
 
         <div>
-            <div class="textSize center padding ">
-                {{ids.Sport}}
-                <!-- Mens Varsity Hockey -->
+            <div class="textSize center padding fade ">
+                {{id.Sport}}
+
             </div>
-            <div class="textSize center padding">
-                {{ids.Club}}
-                <!-- Chess Club -->
+            <div class="textSize center padding fade">
+                {{id.Club}}
+
             </div>
         </div>
 

@@ -11,6 +11,16 @@ export interface Profile {
   name: string;
 }
 
+export interface Ids {
+  profilePic: String;
+  userName: String;
+  Gender: String;
+  Major: String;
+  Minor: String;
+  Sport: String;
+  Club: String;
+}
+
 
 
 
@@ -29,45 +39,44 @@ export class StoreService {
   static Groups = ['', '', ''];
 
   static Posts = [{
-    "profilePic": "", "Title": "",
-    "Specific": "", "Location": "", "Date": "", "Upload": ""
+    profilePic: '', Title: '',
+    Specific: '', Location: '', Date: '', Upload: ''
   },
   {
-    "profilePic": "", "Title": "",
-    "Specific": "", "Location": "", "Date": "", "Upload": ""
+    profilePic: '', Title: '',
+    Specific: '', Location: '', Date: '', Upload: ''
   },
   {
-    "profilePic": "", "Title": "",
-    "Specific": "", "Location": "", "Date": "", "Upload": ""
+    profilePic: '', Title: '',
+    Specific: '', Location: '', Date: '', Upload: ''
   },
   {
-    "profilePic": "", "Title": "",
-    "Specific": "", "Location": "", "Date": "", "Upload": ""
+    profilePic: '', Title: '',
+    Specific: '', Location: '', Date: '', Upload: ''
+  }, {
+    profilePic: '', Title: '',
+    Specific: '', Location: '', Date: '', Upload: ''
   },
   {
-    "profilePic": "", "Title": "",
-    "Specific": "", "Location": "", "Date": "", "Upload": ""
+    profilePic: '', Title: '',
+    Specific: '', Location: '', Date: '', Upload: ''
   },
   {
-    "profilePic": "", "Title": "",
-    "Specific": "", "Location": "", "Date": "", "Upload": ""
+    profilePic: '', Title: '',
+    Specific: '', Location: '', Date: '', Upload: ''
   },
-  {
-    "profilePic": "", "Title": "",
-    "Specific": "", "Location": "", "Date": "", "Upload": ""
-  }
   ];
 
 
 
 
   // reusable card fillers
-  static ids = [{
-    "profilePic": "", "userName": "Olsen07",
-    "Gender": "Male", "Major": "Physics and Math", "Minor": "History and Philosophy Of Science"
-    , "Sport": "Mens Varsity Hockey", "Club": "Chess"
-  }
-
+  static ids: Ids[] = [{
+    profilePic: '../../assets/Pics/IMG-8413.PNG', userName: 'Olsen07',
+    Gender: 'Male', Major: 'Physics and Math',
+    Minor: 'History and Philosophy Of Science',
+    Sport: 'Mens Varsity Hockey', Club: 'Chess'
+  },
 
   ]
 
