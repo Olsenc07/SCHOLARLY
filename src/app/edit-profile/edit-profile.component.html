@@ -67,6 +67,7 @@
               <div class="PreviewPic">
                 <h2 class="Preview">Image Preview</h2>
                 <div class="center">
+                  <!-- save this value for the form control -->
                   <img class="previewPic" id="ProfilePic" [src]="cropImgPreview" />
                 </div>
               </div>
@@ -83,9 +84,9 @@
 
             <mat-form-field>
               <input matInput placeholder="Full Name" [formControl]="name" class="inputText" />
-              <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearName()">
+              <!-- <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearName()">
                 <mat-icon class="asthetic-adds">close</mat-icon>
-              </button>
+              </button> -->
             </mat-form-field>
 
           </div>

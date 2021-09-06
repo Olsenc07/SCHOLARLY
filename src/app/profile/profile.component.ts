@@ -17,6 +17,10 @@ export class ProfileComponent implements OnInit {
 
   profile$$ = StoreService.profile$$;
 
+  // Profile Pic
+  profilePic = StoreService.profile$$;
+
+
   // Course codes
   Com_ = StoreService.Com.length;
   Com = StoreService.Com

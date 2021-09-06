@@ -9,6 +9,7 @@ export interface Profile {
   CodePursuing: string[];
   CodeCompleted: string[];
   name: string;
+  profilePic: string;
 }
 
 export interface Ids {
@@ -20,6 +21,7 @@ export interface Ids {
   Sport: String;
   Club: String;
 }
+
 
 
 
@@ -66,6 +68,8 @@ export class StoreService {
     Specific: '', Location: '', Date: '', Upload: ''
   },
   ];
+
+
 
 
 

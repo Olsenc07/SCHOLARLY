@@ -81,13 +81,13 @@ export class EditProfileComponent implements OnInit {
   cropImgPreview: any = '';
   imgChangeEvt: any = '';
   // PP isn't connected properly i dont think, since image is being cropped then returned as a base 64 value
-  profilePic: FormControl = new FormControl('');
+  profilePic: FormControl = new FormControl(this.cropImgPreview);
   major: FormControl = new FormControl('');
   minor: FormControl = new FormControl('');
   sport: FormControl = new FormControl('');
   club: FormControl = new FormControl('');
-  bio: FormControl = new FormControl('');
-  public bioLength = new BehaviorSubject(0);
+  // bio: FormControl = new FormControl('');
+  // public bioLength = new BehaviorSubject(0);
   name: FormControl = new FormControl('');
   pronouns: FormControl = new FormControl('');
   showCase: FormControl = new FormControl('');
@@ -112,7 +112,7 @@ export class EditProfileComponent implements OnInit {
     profilePic: this.profilePic,
     CodeCompleted: this.CodeCompleted,
     CodePursuing: this.CodePursuing,
-    bio: this.bio,
+    // bio: this.bio,
     showCase: this.showCase,
   });
   selectedIndex = 0;
@@ -148,7 +148,7 @@ export class EditProfileComponent implements OnInit {
     private http: HttpClient,
     private storeService: StoreService
   ) {
-    this.bio.valueChanges.subscribe((v) => this.bioLength.next(v.length));
+    // this.bio.valueChanges.subscribe((v) => this.bioLength.next(v.length));
 
     this.filteredCodes = this.CodeCompleted.valueChanges.pipe(
       map((code: string | null) =>
@@ -182,7 +182,8 @@ export class EditProfileComponent implements OnInit {
   onImgChange(event: any): void {
     this.imgChangeEvt = event;
   }
-  // Passes value as base64 string of cropped area!! But where does form controller come into play?
+  // Passes value as base64 string of cropped area!!
+  //  But where does form controller come into play?
   cropImg(e: ImageCroppedEvent): void {
     this.cropImgPreview = e.base64;
   }
@@ -298,9 +299,9 @@ export class EditProfileComponent implements OnInit {
   clearName(): void {
     this.name.setValue('');
   }
-  clearBio(): void {
-    this.bio.setValue('');
-  }
+  // clearBio(): void {
+  //   this.bio.setValue('');
+  // }
 
   clearProfilePic(): any {
     this.profilePic.setValue('');
@@ -411,7 +412,7 @@ export class EditProfileComponent implements OnInit {
       CodePursuing: this.CodePursuing.value,
       CodeCompleted: this.CodeCompleted.value,
       name: this.name.value,
-
+      profilePic: this.profilePic.value,
     };
 
     // TODO: replace null with Profile object
