@@ -10,6 +10,9 @@ export interface Profile {
   CodeCompleted: string[];
   name: string;
   profilePic: string;
+  // cropImgPreview: string;
+  // Shouldnt be any, its a 
+  cropPicChosen: any;
 }
 
 export interface Ids {

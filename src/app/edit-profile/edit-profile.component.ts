@@ -12,7 +12,7 @@ import {
 import * as _moment from 'moment';
 import { default as _rollupMoment } from 'moment';
 import { MatDialog } from '@angular/material/dialog';
-import { ImageCroppedEvent } from 'ngx-image-cropper';
+import { ImageCroppedEvent, base64ToFile } from 'ngx-image-cropper';
 import { HttpClient } from '@angular/common/http';
 import {
   MatAutocompleteSelectedEvent,
@@ -79,9 +79,9 @@ export class EditProfileComponent implements OnInit {
   @ViewChild('autoP') matAutocompleteP: MatAutocomplete;
   url: string;
   cropImgPreview: any = '';
-  imgChangeEvt: any = '';
+  imgChangeEvent: any = '';
   // PP isn't connected properly i dont think, since image is being cropped then returned as a base 64 value
-  profilePic: FormControl = new FormControl(this.cropImgPreview);
+  profilePic: FormControl = new FormControl('');
   major: FormControl = new FormControl('');
   minor: FormControl = new FormControl('');
   sport: FormControl = new FormControl('');
@@ -180,12 +180,16 @@ export class EditProfileComponent implements OnInit {
     document.getElementById('fileInputP').click();
   };
   onImgChange(event: any): void {
-    this.imgChangeEvt = event;
+    this.imgChangeEvent = event;
   }
   // Passes value as base64 string of cropped area!!
   //  But where does form controller come into play?
-  cropImg(e: ImageCroppedEvent): void {
+  cropImg(e: ImageCroppedEvent): any {
     this.cropImgPreview = e.base64;
+    let File = base64ToFile(this.cropImgPreview)
+    // this.profilePic = this.cropImgPreview
+    // return this.profilePic
+    return File
   }
 
   imgLoad(): void {
@@ -198,6 +202,7 @@ export class EditProfileComponent implements OnInit {
   imgFailed(): void {
     // error msg
   }
+
   // SnapShot
   // After its added to the list. Click save and 
   // this becomes the updated array, sent back to the data base
@@ -206,6 +211,8 @@ export class EditProfileComponent implements OnInit {
     console.log(this.list);
     return this.list
   }
+
+
   imagePreview(event: any): void {
     if (event.target.files && event.target.files[0]) {
       const reader = new FileReader();
@@ -413,6 +420,11 @@ export class EditProfileComponent implements OnInit {
       CodeCompleted: this.CodeCompleted.value,
       name: this.name.value,
       profilePic: this.profilePic.value,
+      // cropImgPreview: this.cropImgPreview,
+
+      // Converted base64 url to a file
+      // Trying to store this chosen cropped value in service
+      cropPicChosen: File,
     };
 
     // TODO: replace null with Profile object
