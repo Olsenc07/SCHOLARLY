@@ -130,26 +130,30 @@
           </div>
 
           <div class="row_1">
-            <div class="column1" *ngIf="Com_ == 0  && Pur_ == 0">
+            <div class="column1" *ngIf=" (profile | async)?.CodeCompleted.length == 0  && Pur_ == 0">
               <div class="row"> No Courses Added</div><i class="far fa-frown centerR"></i>
             </div>
             <!-- Hidden if neither are filled in -->
 
 
-            <div [ngClass]="Com_ == 0 ? 'hide_' : 'completed-courses' ">
+            <div [ngClass]=" (profile | async)?.CodeCompleted.length  == 0 ? 'hide_' : 'completed-courses' ">
               <div class="words1">
                 Completed
                 <!-- Courses -->
-                <div class="counter" matBadgePosition="after" matBadgeOverlap="false" matBadge="{{  Com_ }}"></div>
+                <div class="counter" matBadgePosition="after" matBadgeOverlap="false"
+                  matBadge="{{ (profile | async)?.CodeCompleted.length  }}">
+                </div>
 
               </div>
 
-              <div class="scroll">
+              <div class=" scroll">
                 <mat-chip-list>
-                  <div class="list" *ngFor="let list of Com">
+                  <!-- *ngFor="let list of Com" -->
+                  <div class="list" *ngFor="let profile of profile | async">
                     <div class="center__">
-                      <mat-chip class="style" disabled>{{list}}
-                        {{ (profile | async)?.CodeCompleted }}
+                      <mat-chip class="style" disabled>
+                        <!-- {{list}} -->
+                        {{ profile.CodeCompleted }}
                       </mat-chip>
                     </div>
                   </div>
@@ -160,14 +164,17 @@
             <div [ngClass]="Pur_ == 0 ? 'hide_' : 'completed-courses' ">
               <div class="words1">Pursuing
                 <!-- Courses -->
-                {{ (profile | async)?.CodePursuing }}
+
                 <div class="counter" matBadgePosition="after" matBadgeOverlap="false" matBadge="{{  Pur_ }}"></div>
               </div>
               <div class="scroll">
                 <mat-chip-list>
                   <div class="list" *ngFor="let list of Pur">
                     <div class="center__">
-                      <mat-chip class="style" disabled>{{list}}</mat-chip>
+                      <mat-chip class="style" disabled>
+                        {{list}}
+
+                      </mat-chip>
                     </div>
                   </div>
                 </mat-chip-list>
@@ -241,23 +248,28 @@
             </div>
 
             <div class="row_1">
-              <div class="column1" *ngIf="Com_ == 0 && Pur_ == 0">
+              <div class="column1" *ngIf="(profile | async)?.CodeCompleted.length  == 0 && Pur_ == 0">
                 <div class="row"> No Courses Added</div><i class="far fa-frown centerR"></i>
               </div>
               <!-- Hidden if neither are filled in -->
 
 
-              <div [ngClass]="Com_ == 0 ? 'hide_' : 'completed-courses' ">
+              <div [ngClass]="(profile | async)?.CodeCompleted.length == 0  ? 'hide_' : 'completed-courses' ">
                 <div class="words1">Completed
-                  {{ profile | async }}
-                  <div class="counter" matBadgePosition="after" matBadgeOverlap="false" matBadge="{{  Com_ }}"></div>
+
+                  <div class="counter" matBadgePosition="after" matBadgeOverlap="false"
+                    matBadge="{{(profile | async)?.CodeCompleted.length}}"></div>
                 </div>
 
-                <div class="scroll">
+                <div class=" scroll">
                   <mat-chip-list>
-                    <div class="list" *ngFor="let list of Com">
+                    <!-- *ngFor="let list of Com" -->
+                    <div class="list">
                       <div class="center__">
-                        <mat-chip class="style" disabled>{{list}}</mat-chip>
+                        <mat-chip class="style" disabled>
+                          <!-- {{list}} -->
+                          {{ (profile | async)?.CodeCompleted}}
+                        </mat-chip>
                       </div>
                     </div>
                   </mat-chip-list>

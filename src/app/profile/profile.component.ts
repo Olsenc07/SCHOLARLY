@@ -16,6 +16,8 @@ export class ProfileComponent implements OnInit {
   // Edit profile -> store -> profile
 
   profile = StoreService.profile$$;
+  // profile_ = StoreService.profile$$;
+
 
   // Profile Pic
 
@@ -24,8 +26,8 @@ export class ProfileComponent implements OnInit {
 
 
   // Course codes
-  Com_ = StoreService.Com.length;
-  Com = StoreService.Com
+  // Com_ = StoreService.CodeCompleted.length;
+  // Com = StoreService.CodeCompleted
   Pur_ = StoreService.Pur.length;
   Pur = StoreService.Pur;
 
@@ -62,13 +64,14 @@ export class ProfileComponent implements OnInit {
     this.following = !this.following;
   }
   ngOnInit(): any {
-    this.Com = this.Com.map(code => code.toUpperCase()).sort();
+    // this.Com = this.Com.map(code => code.toUpperCase()).sort();
 
 
     this.Pur = this.Pur.map(code => code.toUpperCase()).sort();
 
     // this.showCases = this.showCases.toString();
-    return this.Pur, this.Com
+    return this.Pur
+    // this.Com
 
   }
 
