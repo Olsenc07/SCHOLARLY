@@ -186,10 +186,10 @@ export class EditProfileComponent implements OnInit {
   //  But where does form controller come into play?
   cropImg(e: ImageCroppedEvent): any {
     this.cropImgPreview = e.base64;
-    let File = base64ToFile(this.cropImgPreview)
+    // let File = base64ToFile(this.cropImgPreview)
     // this.profilePic = this.cropImgPreview
     // return this.profilePic
-    return File
+    return this.cropImgPreview
   }
 
   imgLoad(): void {
@@ -420,11 +420,12 @@ export class EditProfileComponent implements OnInit {
       CodeCompleted: this.CodeCompleted.value,
       name: this.name.value,
       profilePic: this.profilePic.value,
+
       // cropImgPreview: this.cropImgPreview,
 
       // Converted base64 url to a file
       // Trying to store this chosen cropped value in service
-      cropPicChosen: File,
+      // cropPicChosen: File,
     };
 
     // TODO: replace null with Profile object

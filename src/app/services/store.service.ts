@@ -6,23 +6,21 @@ import { HttpClient } from '@angular/common/http';
 export interface Profile {
   // TODO: other profile fields
   // No connection to their subjects
-  CodePursuing: string[];
-  CodeCompleted: string[];
-  name: string;
-  profilePic: string;
-  // cropImgPreview: string;
-  // Shouldnt be any, its a 
-  cropPicChosen: any;
+  CodePursuing: String[];
+  CodeCompleted: String[];
+  name: String;
+  profilePic: String;
 }
 
 export interface Ids {
+
   profilePic: String;
-  userName: String;
   Gender: String;
   Major: String;
   Minor: String;
   Sport: String;
   Club: String;
+  cropImgPreview: String;
 }
 
 
@@ -73,13 +71,10 @@ export class StoreService {
   ];
 
 
-
-
-
-
   // reusable card fillers
   static ids: Ids[] = [{
-    profilePic: '../../assets/Pics/IMG-8413.PNG', userName: 'Olsen07',
+    cropImgPreview: '../../assets/Pics/IMG-8413.PNG',
+    profilePic: '../../assets/Pics/IMG-8413.PNG',
     Gender: 'Male', Major: 'Physics and Math',
     Minor: 'History and Philosophy Of Science',
     Sport: 'Mens Varsity Hockey', Club: 'Chess'
@@ -88,13 +83,13 @@ export class StoreService {
   ]
 
 
-  profile$$: ReplaySubject<Profile> = new ReplaySubject<Profile>(1);
-  static profile$$: string[];
+  static profile$$: ReplaySubject<Profile> = new ReplaySubject<Profile>(1);
+  // static profile$$: string[];
 
   constructor(private http: HttpClient) { }
 
   setProfile(profile: Profile): void {
-    this.profile$$.next(profile);
+    StoreService.profile$$.next(profile);
   }
 
 

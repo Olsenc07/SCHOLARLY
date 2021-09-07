@@ -3,8 +3,8 @@
   <div class="left-side">
     <div class="profile-pic">
       <!-- need to get croppeded value -->
-      <!-- alt="../../assets/Pics/WhiteSquareInAppLogo.jpg" -->
-      <img src="{{profilePic}}" class="pic" />
+      <!-- <img src="../../assets/Pics/WhiteSquareInAppLogo.jpg" class="pic" /> -->
+      <img *ngFor="let id of ids" src="{{id.profilePic}}" class="pic" />
     </div>
 
     <!-- gender input text, relationship status input text -->
@@ -12,7 +12,7 @@
       <div class="hide-input">
         <div class="uNameMsg">
           <div class="centerR_">
-            {{ profile$$ | async }}
+            <!-- This is hard coded once user signs up -->
             Olsen07
           </div>
           <div>
@@ -86,8 +86,10 @@
       <div>
         <div class="text-2">
 
-          <div class="fName">Chase Olsen
-            <!-- {{fullname}} -->
+
+          <div class="fName">
+            <!-- Chase Olsen -->
+            {{ (profile | async)?.name}}
           </div>
 
         </div>
@@ -138,7 +140,6 @@
               <div class="words1">
                 Completed
                 <!-- Courses -->
-                {{ profile$$ | async }}
                 <div class="counter" matBadgePosition="after" matBadgeOverlap="false" matBadge="{{  Com_ }}"></div>
 
               </div>
@@ -147,7 +148,9 @@
                 <mat-chip-list>
                   <div class="list" *ngFor="let list of Com">
                     <div class="center__">
-                      <mat-chip class="style" disabled>{{list}}</mat-chip>
+                      <mat-chip class="style" disabled>{{list}}
+                        {{ (profile | async)?.CodeCompleted }}
+                      </mat-chip>
                     </div>
                   </div>
                 </mat-chip-list>
@@ -157,7 +160,7 @@
             <div [ngClass]="Pur_ == 0 ? 'hide_' : 'completed-courses' ">
               <div class="words1">Pursuing
                 <!-- Courses -->
-                {{ profile$$ | async }}
+                {{ (profile | async)?.CodePursuing }}
                 <div class="counter" matBadgePosition="after" matBadgeOverlap="false" matBadge="{{  Pur_ }}"></div>
               </div>
               <div class="scroll">
@@ -246,7 +249,7 @@
 
               <div [ngClass]="Com_ == 0 ? 'hide_' : 'completed-courses' ">
                 <div class="words1">Completed
-                  {{ profile$$ | async }}
+                  {{ profile | async }}
                   <div class="counter" matBadgePosition="after" matBadgeOverlap="false" matBadge="{{  Com_ }}"></div>
                 </div>
 
@@ -263,7 +266,7 @@
               </div>
               <div [ngClass]="Pur_ == 0 ? 'hide_' : 'completed-courses' ">
                 <div class="words1">Pursuing
-                  {{ profile$$ | async }}
+                  {{ profile | async }}
                   <div class="counter" matBadgePosition="after" matBadgeOverlap="false" matBadge="{{  Pur_ }}"></div>
                 </div>
                 <div class="scroll">

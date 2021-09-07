@@ -15,10 +15,12 @@ export class ProfileComponent implements OnInit {
   // Connecting store.servie to display course in profile. 
   // Edit profile -> store -> profile
 
-  profile$$ = StoreService.profile$$;
+  profile = StoreService.profile$$;
 
   // Profile Pic
-  profilePic = StoreService.profile$$;
+
+  ids = StoreService.ids;
+
 
 
   // Course codes
