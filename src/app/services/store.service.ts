@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ReplaySubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { MomentDateAdapter } from '@angular/material-moment-adapter';
 
 
 export interface Profile {
@@ -17,6 +18,7 @@ export interface Profile {
   Sport: String;
   Club: String;
   profPic: String;
+  Birthday: MomentDateAdapter;
 }
 
 export interface Ids {

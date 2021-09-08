@@ -38,8 +38,8 @@ export const MY_FORMATS = {
   display: {
     dateInput: 'LL',
     monthYearLabel: 'MMM YYYY',
-    dateA11yLabel: 'LL',
-    monthYearA11yLabel: 'MMMM YYYY',
+    dateA12yLabel: 'LL',
+    monthYearA12yLabel: 'MMMM YYYY',
   },
 };
 @Component({
@@ -427,6 +427,7 @@ export class EditProfileComponent implements OnInit {
       Sport: this.sport.value,
       Club: this.club.value,
       profPic: this.cropImgPreview,
+      Birthday: this.birthday.value,
 
 
 

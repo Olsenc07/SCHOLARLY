@@ -5,9 +5,15 @@
       <!-- need to get croppeded value -->
       <!-- <img src="../../assets/Pics/WhiteSquareInAppLogo.jpg" class="pic" /> -->
       <img class="pic" src="{{(profile | async)?.profPic}}">
-      <div class="centerist" *ngIf="(profile| async)?.profilePic == null">
-        <img class="pic" src="../../assets/Pics/WhiteSquareInAppLogo.jpg">
-      </div>
+      <!-- Myabe have an empty img here displayed by an if {
+        else }
+
+        
+      }... -->
+      <!-- <div class="centerist" *ngIf="(profile| async)?.profilePic == null "> -->
+      <!-- <img class="pic" src="../../assets/Pics/WhiteSquareInAppLogo.jpg"> -->
+      <!-- </div> -->
+
       <!-- <img *ngFor="let id of ids" src="{{id.profilePic}}" class="pic" /> -->
     </div>
 
@@ -28,32 +34,35 @@
             </button>
           </div>
         </div>
-        <div class="centerR">
+        <div class="centerR" *ngIf="(profile| async)?.Gender.name !== null">
           <!--  Male -->
           {{ (profile | async)?.Gender.name}}
+          <!-- Eventually just have the age calculated out -->
+          {{ (profile | async)?.Birthday._d}}
 
-          <!-- {{age}}-->
         </div>
 
       </div>
 
       <mat-divider class="margin"></mat-divider>
       <!-- Major/Minor -->
-      <div class="major-minor">
+      <div class="major-minor" *ngIf="(profile| async)?.Major && (profile| async)?.Minor !== null">
         <!-- *ngIf="major.value" -->
-        <div class="centerR">
+        <div class="centerR" *ngIf="(profile| async)?.Major !== null">
           <!-- Major -->
           {{ (profile | async)?.Major}}
         </div>
-        <div class="centerR">
+        <div class="centerR" *ngIf="(profile| async)?.Minor !== null">
           <!-- Minor -->
           {{ (profile | async)?.Minor}}
         </div>
 
       </div>
-      <mat-divider class="margin"></mat-divider>
+      <mat-divider class="margin" *ngIf="((profile| async)?.Major  && (profile| async)?.Minor) !== null">
+
+      </mat-divider>
       <!-- Sport/Club -->
-      <div class="major-minor">
+      <div class="major-minor" *ngIf="((profile| async)?.Sport  && (profile| async)?.Club) !== null">
         <div class="centerR">
           <!-- Sport -->
           {{ (profile | async)?.Sport}}
