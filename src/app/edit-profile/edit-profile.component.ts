@@ -418,11 +418,19 @@ export class EditProfileComponent implements OnInit {
     let profile: Profile = {
       CodePursuing: this.CodePursuing.value,
       CodeCompleted: this.CodeCompleted.value,
-      name: this.name.value,
+      Name: this.name.value,
+      Pronouns: this.pronouns.value,
       profilePic: this.profilePic.value,
+      Gender: this.genderChoice.value,
+      Major: this.major.value,
+      Minor: this.minor.value,
+      Sport: this.sport.value,
+      Club: this.club.value,
+      profPic: this.cropImgPreview,
+
+
 
       // cropImgPreview: this.cropImgPreview,
-
       // Converted base64 url to a file
       // Trying to store this chosen cropped value in service
       // cropPicChosen: File,

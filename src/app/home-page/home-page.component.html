@@ -12,7 +12,7 @@
         <div class="log-in-box" fxLayout="column" fxLayoutAlign="center center">
           <mat-form-field class="text-input">
             <mat-label> Academic Email</mat-label>
-            <input matInput [formControl]="email" autocomplete="on" />
+            <input matInput [formControl]="email" />
             <span matSuffix class="hide"></span>
             <button color="primary" mat-button matSuffix mat-icon-button aria-label="Clear" type="button"
               (click)="clearEmail()">
@@ -21,7 +21,7 @@
           </mat-form-field>
           <mat-form-field class="text-input">
             <mat-label>Password</mat-label>
-            <input matInput [formControl]="password" type="password" placeholder="Password" autocomplete="on" />
+            <input matInput [formControl]="password" type="password" placeholder="Password" />
             <button color="primary" mat-button matSuffix mat-icon-button aria-label="Clear" type="button"
               (click)="clearPassword()">
               <mat-icon>close</mat-icon>

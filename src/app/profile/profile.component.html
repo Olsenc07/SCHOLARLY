@@ -4,7 +4,11 @@
     <div class="profile-pic">
       <!-- need to get croppeded value -->
       <!-- <img src="../../assets/Pics/WhiteSquareInAppLogo.jpg" class="pic" /> -->
-      <img *ngFor="let id of ids" src="{{id.profilePic}}" class="pic" />
+      <img class="pic" src="{{(profile | async)?.profPic}}">
+      <div class="centerist" *ngIf="(profile| async)?.profilePic == null">
+        <img class="pic" src="../../assets/Pics/WhiteSquareInAppLogo.jpg">
+      </div>
+      <!-- <img *ngFor="let id of ids" src="{{id.profilePic}}" class="pic" /> -->
     </div>
 
     <!-- gender input text, relationship status input text -->
@@ -14,6 +18,7 @@
           <div class="centerR_">
             <!-- This is hard coded once user signs up -->
             Olsen07
+
           </div>
           <div>
             <button class="icon" mat-icon-button routerLink="/groups">
@@ -24,9 +29,10 @@
           </div>
         </div>
         <div class="centerR">
-          <!-- {{gender$$ | async}} -->
-          Male
-          <!-- {{age}}{{pronouns}} -->
+          <!--  Male -->
+          {{ (profile | async)?.Gender.name}}
+
+          <!-- {{age}}-->
         </div>
 
       </div>
@@ -35,15 +41,27 @@
       <!-- Major/Minor -->
       <div class="major-minor">
         <!-- *ngIf="major.value" -->
-        <div class="centerR"> Major</div>
-        <div class="centerR">Minor</div>
+        <div class="centerR">
+          <!-- Major -->
+          {{ (profile | async)?.Major}}
+        </div>
+        <div class="centerR">
+          <!-- Minor -->
+          {{ (profile | async)?.Minor}}
+        </div>
 
       </div>
       <mat-divider class="margin"></mat-divider>
       <!-- Sport/Club -->
       <div class="major-minor">
-        <div class="centerR"> Sport</div>
-        <div class="centerR">Club</div>
+        <div class="centerR">
+          <!-- Sport -->
+          {{ (profile | async)?.Sport}}
+        </div>
+        <div class="centerR">
+          <!-- Club -->
+          {{ (profile | async)?.Club}}
+        </div>
 
       </div>
       <!-- [ngClass]="sport.value & club.value  ? 'hiden' : 'margin' " -->
@@ -89,7 +107,8 @@
 
           <div class="fName">
             <!-- Chase Olsen -->
-            {{ (profile | async)?.name}}
+            <!-- {{ (profile | async)?.Pronouns}} -->
+            {{ (profile | async)?.Name}}
           </div>
 
         </div>

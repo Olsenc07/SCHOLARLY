@@ -8,9 +8,15 @@ export interface Profile {
   // No connection to their subjects
   CodePursuing: String[];
   CodeCompleted: String[];
-  name: String;
+  Name: String;
+  Pronouns: String;
   profilePic: String;
-
+  Gender: String;
+  Major: String;
+  Minor: String;
+  Sport: String;
+  Club: String;
+  profPic: String;
 }
 
 export interface Ids {

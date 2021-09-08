@@ -7,9 +7,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./home-page.component.scss'],
 })
 export class HomePageComponent implements OnInit {
-
-  password: FormControl = new FormControl('');
   email: FormControl = new FormControl('', Validators.email);
+  password: FormControl = new FormControl('');
+
 
   loginForm = new FormGroup({
     email: this.email,

@@ -9,7 +9,7 @@ import { StoreService } from '../services/store.service';
 
 export class ReusableCardRequestComponent {
 
-
+    profile = StoreService.profile$$;
     ids = StoreService.ids;
 
 
