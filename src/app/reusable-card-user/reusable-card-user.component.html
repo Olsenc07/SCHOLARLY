@@ -2,7 +2,7 @@
     <div class="row">
         <div class="row margin">
             <div mat-card-avatar class="profilePic">
-                <img src="{{id.profilePic}}">
+                <img class="fit" src="{{(profile | async)?.profPic}}">
             </div>
             <div class="column">
                 <!-- Takes user to that profile pg -->

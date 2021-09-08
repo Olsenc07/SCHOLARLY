@@ -9,7 +9,7 @@ import { StoreService } from '../services/store.service';
 })
 export class ReusableCardUserComponent {
     // sends request to data base to get mutual friends list, by clicking on shaking hands emoji
-
+    profile = StoreService.profile$$;
     ids = StoreService.ids;
 
 

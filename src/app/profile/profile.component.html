@@ -158,18 +158,20 @@
           </div>
 
           <div class="row_1">
+            <!-- This ngIf to adjust to data stroage not hard code like Pur_
+            but need to target observable length.. idk rn -->
             <div class="column1" *ngIf=" (profile | async)?.CodeCompleted.length == 0  && Pur_ == 0">
               <div class="row"> No Courses Added</div><i class="far fa-frown centerR"></i>
             </div>
             <!-- Hidden if neither are filled in -->
 
 
-            <div [ngClass]=" (profile | async)?.CodeCompleted.length  == 0 ? 'hide_' : 'completed-courses' ">
+            <div [ngClass]=" !((profile | async)?.CodeCompleted) ? 'hide_' : 'completed-courses' ">
               <div class="words1">
                 Completed
-                <!-- Courses -->
+                <!-- Courses but need to target list length-->
                 <div class="counter" matBadgePosition="after" matBadgeOverlap="false"
-                  matBadge="{{ (profile | async)?.CodeCompleted.length  }}">
+                  matBadge="{{ (profile | async)?.CodeCompleted  }}">
                 </div>
 
               </div>
@@ -177,11 +179,11 @@
               <div class=" scroll">
                 <mat-chip-list>
                   <!-- *ngFor="let list of Com" -->
-                  <div class="list" *ngFor="let profile of profile | async">
+                  <div class="list" *ngFor="let CodeCompleted  of (profile | async)?.CodeCompleted   ">
                     <div class="center__">
                       <mat-chip class="style" disabled>
                         <!-- {{list}} -->
-                        {{ profile.CodeCompleted }}
+                        {{ CodeCompleted }}
                       </mat-chip>
                     </div>
                   </div>
@@ -189,10 +191,11 @@
               </div>
             </div>
 
+            <!-- "!((profile | async)?.CodePursuing) ? 'hide_' : 'completed-courses' " -->
             <div [ngClass]="Pur_ == 0 ? 'hide_' : 'completed-courses' ">
               <div class="words1">Pursuing
                 <!-- Courses -->
-                {{ profile | async }}
+                {{ (profile | async)?.CodeCompleted }}
                 <div class="counter" matBadgePosition="after" matBadgeOverlap="false" matBadge="{{  Pur_ }}"></div>
               </div>
               <div class="scroll">
