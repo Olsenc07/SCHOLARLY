@@ -83,6 +83,8 @@
   font-family: "Font Awesome 5 Free";
   height: 100%;
   margin-top: 4%;
+  text-align: center;
+  align-items: center;
 }}
 @media(max-width:450px){
   .centerR {
@@ -94,7 +96,19 @@
     font-family: "Font Awesome 5 Free";
     height: 100%;
     margin-top: 4%;
+    text-align: center;
+    align-items: center;
   }}
+    .centerGD{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-size: inherit;
+      color: #7e7171;
+      font-family: "Font Awesome 5 Free";
+      height: 100%;
+      text-align: center;
+    }
 @media(min-width:450px){
 .centerR_ {
   display: flex;
@@ -331,6 +345,14 @@
 .icon{
   color: rgb(173, 211, 236);
 }
+.large{
+  font-size: small;
+  padding-right: 1%;
+}
+.lLarge{
+  font-size: x-small;
+  padding-right: 1%;
+}
 @media(min-width:400px){
 .left-side {
   display: flex;
@@ -349,6 +371,13 @@
     box-sizing: border-box;
     position: relative;
   }}
+  .list{
+    display: flex;
+    justify-content: center;
+    overflow-y: scroll;
+    flex-direction: column;
+    font-family: "Font Awesome 5 Free";
+  }
 mat-grid-list{
   display: flex;
   width: 100%;
@@ -680,13 +709,7 @@ font-weight: 900;
   font-weight: 500;
     color: #7e7171;
 }
-.list{
-  display: flex;
-  justify-content: center;
-  overflow-y: scroll;
-  flex-direction: column;
-  font-family: "Font Awesome 5 Free";
-}
+
 .uNameMsg{
   display: flex;
   justify-content: center;

@@ -1,23 +1,19 @@
 <div class="main-content">
   <!-- input pic & has this default pic before-->
   <div class="left-side">
-    <div class="profile-pic">
+
+    <div class="profile-pic" *ngIf="(profile | async)?.profPic">
       <!-- need to get croppeded value -->
-      <!-- <img src="../../assets/Pics/WhiteSquareInAppLogo.jpg" class="pic" /> -->
       <img class="pic" src="{{(profile | async)?.profPic}}">
-      <!-- Myabe have an empty img here displayed by an if {
-        else }
-
-        
-      }... -->
-      <!-- <div class="centerist" *ngIf="(profile| async)?.profilePic == null "> -->
-      <!-- <img class="pic" src="../../assets/Pics/WhiteSquareInAppLogo.jpg"> -->
-      <!-- </div> -->
-
       <!-- <img *ngFor="let id of ids" src="{{id.profilePic}}" class="pic" /> -->
     </div>
 
-    <!-- gender input text, relationship status input text -->
+    <div class="profile-pic" *ngIf="!(profile | async)?.profPic">
+      <img src="../../assets/Pics/WhiteSquareInAppLogo.jpg" class="pic" />
+    </div>
+
+
+
     <div class="center">
       <div class="hide-input">
         <div class="uNameMsg">
@@ -34,11 +30,15 @@
             </button>
           </div>
         </div>
-        <div class="centerR" *ngIf="(profile| async)?.Gender.name !== null">
-          <!--  Male -->
-          {{ (profile | async)?.Gender.name}}
-          <!-- Eventually just have the age calculated out -->
-          {{ (profile | async)?.Birthday._d}}
+        <div class="centerGD" *ngIf="(profile | async)?.Gender.name || (profile | async )?.Birthday  ">
+          <div *ngIf="(profile | async)?.Gender.name">
+            <!--  Male -->
+            {{ (profile | async)?.Gender.name}}
+          </div>
+          <div *ngIf="(profile | async )?.Birthday">
+            <!-- Eventually just have the age calculated out...maybe -->
+            {{ (profile | async )?.Birthday|date:"longDate" }}
+          </div>
 
         </div>
 
@@ -46,28 +46,28 @@
 
       <mat-divider class="margin"></mat-divider>
       <!-- Major/Minor -->
-      <div class="major-minor" *ngIf="(profile| async)?.Major && (profile| async)?.Minor !== null">
+      <div class="major-minor" *ngIf="(profile| async)?.Major || (profile| async)?.Minor ">
         <!-- *ngIf="major.value" -->
-        <div class="centerR" *ngIf="(profile| async)?.Major !== null">
+        <div class="centerR" *ngIf="(profile| async)?.Major ">
           <!-- Major -->
+          <i class="fas fa-star-of-life large"></i>
           {{ (profile | async)?.Major}}
         </div>
-        <div class="centerR" *ngIf="(profile| async)?.Minor !== null">
+        <div class="centerR" *ngIf="(profile| async)?.Minor ">
           <!-- Minor -->
-          {{ (profile | async)?.Minor}}
+          <i class="fas fa-star-of-life lLarge"></i>{{ (profile | async)?.Minor}}
         </div>
 
       </div>
-      <mat-divider class="margin" *ngIf="((profile| async)?.Major  && (profile| async)?.Minor) !== null">
-
+      <mat-divider class="margin" *ngIf="(profile| async)?.Major  || (profile| async)?.Minor">
       </mat-divider>
       <!-- Sport/Club -->
-      <div class="major-minor" *ngIf="((profile| async)?.Sport  && (profile| async)?.Club) !== null">
-        <div class="centerR">
+      <div class="major-minor" *ngIf="(profile| async)?.Sport  || (profile| async)?.Club">
+        <div class=" centerR" *ngIf="(profile| async)?.Sport ">
           <!-- Sport -->
           {{ (profile | async)?.Sport}}
         </div>
-        <div class="centerR">
+        <div class="centerR" *ngIf="(profile| async)?.Club ">
           <!-- Club -->
           {{ (profile | async)?.Club}}
         </div>
@@ -78,7 +78,7 @@
       <div class="major-minor">
         <div class="centerR">
           Followers
-          <!-- tracks value of followers -->
+          <!-- tracks value of followers {{}} -->
         </div>
         <div class="centerR">
           Following
@@ -116,7 +116,7 @@
 
           <div class="fName">
             <!-- Chase Olsen -->
-            <!-- {{ (profile | async)?.Pronouns}} -->
+            {{ (profile | async)?.Pronouns}}
             {{ (profile | async)?.Name}}
           </div>
 
@@ -192,7 +192,7 @@
             <div [ngClass]="Pur_ == 0 ? 'hide_' : 'completed-courses' ">
               <div class="words1">Pursuing
                 <!-- Courses -->
-
+                {{ profile | async }}
                 <div class="counter" matBadgePosition="after" matBadgeOverlap="false" matBadge="{{  Pur_ }}"></div>
               </div>
               <div class="scroll">

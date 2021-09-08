@@ -30,7 +30,7 @@ import { AccountTextComponent } from '../signup/signup.component'
 interface Gender {
   name: string;
 }
-const moment = _rollupMoment || _moment;
+const moment = _moment;
 export const MY_FORMATS = {
   parse: {
     dateInput: 'LL',
@@ -412,6 +412,7 @@ export class EditProfileComponent implements OnInit {
   }
 
   onSubmit(): void {
+
     console.log(this.editForm.value);
     // TODO: convert form fields to Profile
 
