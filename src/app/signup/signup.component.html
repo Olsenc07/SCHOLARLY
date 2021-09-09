@@ -162,7 +162,7 @@
                       [aspectRatio]=" 7 / 7" [containWithinAspectRatio]="containWithinAspectRatio" [resizeToWidth]="170"
                       format="png" (imageCropped)="cropImg($event)" (imageLoaded)="imgLoad()"
                       (cropperReady)="initCropper($event)" (loadImageFailed)="imgFailed()"
-                      [ngClass]="profilePic.value ? 'show' : 'hide' ">
+                      [ngClass]="profilePic.value ? 'showCropper' : 'hide' ">
                     </image-cropper>
                   </div>
 

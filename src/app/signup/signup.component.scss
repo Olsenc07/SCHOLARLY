@@ -171,7 +171,8 @@
 }
 .cropper {
   display: flex;
-// May need a max height
+  margin-top: 1%;
+  max-width: fit-content;
 }
 .display {
   display: flex;
@@ -300,7 +301,7 @@
   flex-direction: column;
   color: #418bba;
 }
-@media (min-width: 900px) {
+@media (min-width: 1024px) {
   ._icon2 {
     display: flex;
     justify-content: center;
@@ -309,7 +310,7 @@
     color: #418bba;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   ._icon2 {
     display: none;
   }}
@@ -441,6 +442,11 @@
 }
 .Photo{
   font-size: xxx-large;
+}
+.showCropper{
+  display: flex;
+  justify-content: center;
+  height: fit-content;
 }
 @media(min-width:770px){
 .show{

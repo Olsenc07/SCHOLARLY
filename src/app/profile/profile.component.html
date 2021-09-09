@@ -245,9 +245,9 @@
 
                 <div class="column">
 
-                  <img class="img" *ngFor="let showCase of showCases" src={{showCase}} />
+                  <img class="img" src={{(profile|async)?.ShowCase}} />
+                  <!-- *ngFor="let showCase of showCases {{ShowCase}} -->
 
-                  <!-- {{(profile|async)?.ShowCase}} -->
                 </div>
 
               </div>

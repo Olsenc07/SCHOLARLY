@@ -204,6 +204,7 @@ export class SignupComponent implements OnInit {
         this.url = Event.target.result;
       };
     }
+
   }
   // imagePreview2(event: any): void {
   //   if (event.target.files && event.target.files[0]) {
@@ -321,14 +322,14 @@ export class SignupComponent implements OnInit {
   }
   // Pursuing Courses
   selectedP(event: MatAutocompleteSelectedEvent): void {
-    this.classes.push(event.option.viewValue);
-    this.codeInput.nativeElement.value = '';
+    this.classesP.push(event.option.viewValue);
+    this.codeInputP.nativeElement.value = '';
     this.CodePursuing.setValue('');
   }
   // Completed Classes
   selected(event: MatAutocompleteSelectedEvent): void {
-    this.classesP.push(event.option.viewValue);
-    this.codeInputP.nativeElement.value = '';
+    this.classes.push(event.option.viewValue);
+    this.codeInput.nativeElement.value = '';
     this.CodeCompleted.setValue('');
   }
   private _filter(value: string): string[] {
