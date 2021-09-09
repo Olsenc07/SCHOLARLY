@@ -315,8 +315,8 @@
                 <!-- Upload pic/video -->
                 <div class="centerD">
                   <div class="textU"> Add Photo</div>
-                  <button mat-icon-button class="trash" [ngClass]="showCase.value ? 'show_' : 'hide' " color="primary"
-                    (click)="clearPic()">
+                  <button mat-icon-button class="trash" [ngClass]="CodeCompleted.value ? 'show_' : 'hide' "
+                    color="primary" (click)="clearPic()">
                     <div class=" far fa-trash-alt"></div>
                   </button>
 
@@ -328,15 +328,15 @@
                     <div class="material-icons Photo">
                       add_a_photo
 
-                      <input #fileInput id="showCase" class="uploadD" accept="image/* video/*" type="file"
-                        (change)="imagePreview($event)" [formControl]="showCase" multiple>
+                      <input #fileInput id="CodeCompleted" class="uploadD" accept="image/* video/*" type="file"
+                        (change)="imagePreview($event)" [formControl]="CodeCompleted" multiple>
                     </div>
                   </button>
                 </div>
                 <!-- Only when upload holds a value -->
                 <div class="contents">
                   <div class="imgBox">
-                    <img [src]="url" id="firstP" [ngClass]="showCase.value ? 'show' : 'hide' ">
+                    <img [src]="url" id="firstP" [ngClass]="CodeCompleted.value ? 'show' : 'hide' ">
                   </div>
                 </div>
               </div>
@@ -467,7 +467,7 @@
                     {{code}}
                     <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
                   </mat-chip>
-                  <input placeholder="Choose completed courses" #codeInput [formControl]=" CodePursuing"
+                  <input placeholder="Choose completed courses" #codeInput [formControl]="CodeCompleted"
                     [matAutocomplete]="auto" [matChipInputFor]="chipList"
                     [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="add($event)">
                 </mat-chip-list>
@@ -496,7 +496,7 @@
                     {{codeP}}
                     <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
                   </mat-chip>
-                  <input placeholder="Choose pursuing courses" #codeInputP [formControl]="CodeCompleted"
+                  <input placeholder="Choose pursuing courses" #codeInputP [formControl]="CodePursuing"
                     [matAutocomplete]="autoP" [matChipInputFor]="chipListP"
                     [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="addP($event)">
                 </mat-chip-list>

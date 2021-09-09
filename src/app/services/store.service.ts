@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ReplaySubject } from 'rxjs';
+import { Observable, ReplaySubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
 
@@ -7,8 +7,8 @@ import { MomentDateAdapter } from '@angular/material-moment-adapter';
 export interface Profile {
   // TODO: other profile fields
   // No connection to their subjects
-  CodePursuing: String[];
-  CodeCompleted: String[];
+  // CodePursuing: String[];
+  // CodeCompleted: String[];
   Name: String;
   Pronouns: String;
   profilePic: String;
@@ -20,7 +20,8 @@ export interface Profile {
   profPic: String;
   Birthday: MomentDateAdapter;
   ShowCase: String[];
-  filteredCodesP: <string[]>,
+  filteredCodesP: Observable<String[]>;
+  filteredCodes: Observable<String[]>;
 }
 
 

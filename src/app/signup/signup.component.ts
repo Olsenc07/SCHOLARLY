@@ -21,7 +21,7 @@ import { ClassListService } from '../services/class.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 import { NgxImageZoomModule } from 'ngx-image-zoom';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 // import { base64ToFile } from '../../utils/blob.utils';
 import { ImageCroppedEvent, Dimensions } from 'ngx-image-cropper';
 import { Profile, NewUserId, StoreService } from '../services/store.service';
@@ -62,8 +62,7 @@ export class SignupComponent implements OnInit {
   removable = true;
   separatorKeysCodes: number[] = [ENTER, COMMA];
 
-  filteredCodes: Observable<string[]>;
-  filteredCodesP: Observable<string[]>;
+
 
   classes: string[] = [];
   classesP: string[] = [];
@@ -106,12 +105,18 @@ export class SignupComponent implements OnInit {
   // PP isn't connected properly i dont think, since image is being cropped then returned as a base 64 value
   profilePic: FormControl = new FormControl('');
   CodePursuing: FormControl = new FormControl('');
+  filteredCodesP: Observable<string[]>;
+
+
   CodeCompleted: FormControl = new FormControl('');
+  filteredCodes: Observable<string[]>;
+
 
   bio: FormControl = new FormControl('');
   public bioLength = new BehaviorSubject(0);
   // snapShot1: FormControl = new FormControl('');
   showCase: FormControl = new FormControl('');
+  public showCaseList = new Subject();
   // snapShot3: FormControl = new FormControl('');
 
 
@@ -130,7 +135,6 @@ export class SignupComponent implements OnInit {
     pronouns: this.pronouns,
     birthday: this.birthday,
     bio: this.bio,
-    showCase: this.showCase,
   });
 
   // Maybe just upload one.. makes storing data with edit profile the same way...
@@ -148,7 +152,6 @@ export class SignupComponent implements OnInit {
     minor: this.minor,
     requiredForm: this.requiredForm,
     personalizeForm: this.personalizeForm,
-    showCase: this.showCase,
   });
   toggleContainWithinAspectRatio() {
     this.containWithinAspectRatio = !this.containWithinAspectRatio;
@@ -234,16 +237,19 @@ export class SignupComponent implements OnInit {
     this.bio.valueChanges.subscribe((v) => this.bioLength.next(v.length));
 
 
-    this.filteredCodes = this.CodePursuing.valueChanges.pipe(
+    this.filteredCodesP = this.CodePursuing.valueChanges.pipe(
       map((code: string | null) =>
         code ? this._filter(code) : this.classListService.allClasses().slice()
       )
     );
-    this.filteredCodesP = this.CodeCompleted.valueChanges.pipe(
+    this.filteredCodes = this.CodeCompleted.valueChanges.pipe(
       map((codeP: string | null) =>
         codeP ? this._filter(codeP) : this.classListService.allClasses().slice()
       )
     );
+    this.filteredCodesP.subscribe((r) => this.CodePursuing)
+      ;
+    this.filteredCodes.subscribe((r) => this.CodeCompleted);
   }
 
 
@@ -373,8 +379,8 @@ export class SignupComponent implements OnInit {
   //   document.getElementById('firstP').removeAttribute('src');
   // }
   clearPic(): void {
-    this.showCase.setValue('');
-    document.getElementById('showCase').removeAttribute('src');
+    this.CodeCompleted.setValue('');
+    document.getElementById('CodeCompleted').removeAttribute('src');
   }
   // clearPic3(): void {
   //   this.snapShot3.setValue('');
@@ -412,12 +418,12 @@ export class SignupComponent implements OnInit {
   }
   onSubmitPartThree(): void {
     // TODO: wire up to login request
-    console.log(this.showCase.value);
+    console.log(this.CodeCompleted.value);
   }
   onSubmit(): void {
     // TODO: wire up to login request
     console.log(this.signupForm.value);
-
+    console.log(this.filteredCodes)
 
     let userId: NewUserId = {
       Email: this.email.value,
@@ -428,8 +434,8 @@ export class SignupComponent implements OnInit {
 
 
     let profile: Profile = {
-      CodePursuing: this.CodePursuing.value,
-      CodeCompleted: this.CodeCompleted.value,
+      // CodeCompleted: this.CodeCompleted.value,
+      // CodePursuing: this.CodePursuing.value,
       Name: this.name.value,
       Pronouns: this.pronouns.value,
       profilePic: this.profilePic.value,
@@ -441,7 +447,7 @@ export class SignupComponent implements OnInit {
       profPic: this.cropImgPreview,
       Birthday: this.birthday.value,
       ShowCase: this.showCase.value,
-
+      filteredCodes: this.filteredCodes,
       filteredCodesP: this.filteredCodesP,
     };
     this.storeService.setProfile(profile);

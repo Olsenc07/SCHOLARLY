@@ -69,8 +69,8 @@ export class EditProfileComponent implements OnInit {
   selectable = true;
   removable = true;
   separatorKeysCodes: number[] = [ENTER, COMMA];
-  filteredCodes: Observable<string[]>;
   filteredCodesP: Observable<string[]>;
+  filteredCodes: Observable<string[]>;
   classes: string[] = [];
   classesP: string[] = [];
   @ViewChild('codeInput') codeInput: ElementRef<HTMLInputElement>;
@@ -417,8 +417,8 @@ export class EditProfileComponent implements OnInit {
     // TODO: convert form fields to Profile
 
     let profile: Profile = {
-      CodePursuing: this.CodePursuing.value,
-      CodeCompleted: this.CodeCompleted.value,
+      // CodeCompleted: this.CodeCompleted.value,
+      // CodePursuing: this.CodePursuing.value
       Name: this.name.value,
       Pronouns: this.pronouns.value,
       profilePic: this.profilePic.value,
@@ -430,8 +430,8 @@ export class EditProfileComponent implements OnInit {
       profPic: this.cropImgPreview,
       Birthday: this.birthday.value,
       ShowCase: this.showCase.value,
+      filteredCodes: this.filteredCodes,
       filteredCodesP: this.filteredCodesP,
-
 
       // cropImgPreview: this.cropImgPreview,
       // Converted base64 url to a file

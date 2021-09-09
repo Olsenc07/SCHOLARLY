@@ -160,18 +160,18 @@
           <div class="row_1">
             <!-- This ngIf to adjust to data stroage not hard code like Pur_
             but need to target observable length.. idk rn -->
-            <div class="column1" *ngIf=" (profile | async)?.CodeCompleted.length == 0  && Pur_ == 0">
+            <div class="column1" *ngIf=" !((profile | async)?.filteredCodes  && (profile | async)?.filteredCodesP)">
               <div class="row"> No Courses Added</div><i class="far fa-frown centerR"></i>
             </div>
             <!-- Hidden if neither are filled in -->
 
 
-            <div [ngClass]=" !((profile | async)?.CodeCompleted) ? 'hide_' : 'completed-courses' ">
+            <div [ngClass]=" ((profile | async)?.filteredCodes) ? 'completed-courses' : 'hide_' ">
               <div class="words1">
                 Completed
                 <!-- Courses but need to target list length-->
                 <div class="counter" matBadgePosition="after" matBadgeOverlap="false"
-                  matBadge="{{ (profile | async)?.CodeCompleted  }}">
+                  matBadge="{{ (profile | async)?.filteredCodes  }}">
                 </div>
 
               </div>
@@ -179,7 +179,7 @@
               <div class=" scroll">
                 <mat-chip-list>
                   <!-- *ngFor="let list of Com" -->
-                  <div class="list" *ngFor="let CodeCompleted  of (profile | async)?.CodeCompleted   ">
+                  <div class="list" *ngFor="let CodeCompleted  of (profile | async)?.filteredCodes  ">
                     <div class="center__">
                       <mat-chip class="style" disabled>
                         <!-- {{list}} -->
@@ -192,18 +192,22 @@
             </div>
 
             <!-- "!((profile | async)?.CodePursuing) ? 'hide_' : 'completed-courses' " -->
-            <div [ngClass]="Pur_ == 0 ? 'hide_' : 'completed-courses' ">
-              <div class="words1">Pursuing
+            <div [ngClass]="(profile | async)?.filteredCodesP ? 'completed-courses ' : ' hide_' ">
+              <div class="words1">
+                Pursuing
                 <!-- Courses -->
-                {{ (profile | async)?.CodeCompleted }}
-                <div class="counter" matBadgePosition="after" matBadgeOverlap="false" matBadge="{{  Pur_ }}"></div>
+                {{ (profile | async)?.filteredCodesP }}
+                <div class="counter" matBadgePosition="after" matBadgeOverlap="false"
+                  matBadge="{{  (profile | async)?.filteredCodesP }}"></div>
               </div>
               <div class="scroll">
                 <mat-chip-list>
-                  <div class="list" *ngFor="let list of Pur">
+                  <!-- *ngFor="let list of Pur" -->
+                  <div class="list">
                     <div class="center__">
                       <mat-chip class="style" disabled>
-                        {{list}}
+                        <!-- {{list}}-->
+                        {{ (profile | async)?.filteredCodesP}}
 
                       </mat-chip>
                     </div>
@@ -280,17 +284,17 @@
             </div>
 
             <div class="row_1">
-              <div class="column1" *ngIf="(profile | async)?.CodeCompleted.length  == 0 && Pur_ == 0">
+              <div class="column1" *ngIf="(profile | async)?.filteredCodes  && Pur_ == 0">
                 <div class="row"> No Courses Added</div><i class="far fa-frown centerR"></i>
               </div>
               <!-- Hidden if neither are filled in -->
 
 
-              <div [ngClass]="(profile | async)?.CodeCompleted.length == 0  ? 'hide_' : 'completed-courses' ">
+              <div [ngClass]="(profile | async)?.filteredCodes  ? 'hide_' : 'completed-courses' ">
                 <div class="words1">Completed
 
                   <div class="counter" matBadgePosition="after" matBadgeOverlap="false"
-                    matBadge="{{(profile | async)?.CodeCompleted.length}}"></div>
+                    matBadge="{{(profile | async)?.filteredCodes}}"></div>
                 </div>
 
                 <div class=" scroll">
@@ -300,7 +304,7 @@
                       <div class="center__">
                         <mat-chip class="style" disabled>
                           <!-- {{list}} -->
-                          {{ (profile | async)?.CodeCompleted}}
+                          {{ (profile | async)?.filteredCodes}}
                         </mat-chip>
                       </div>
                     </div>
@@ -308,16 +312,21 @@
                 </div>
 
               </div>
-              <div [ngClass]="Pur_ == 0 ? 'hide_' : 'completed-courses' ">
+              <div [ngClass]="(profile | async)?.filteredCodesP ? 'hide_' : 'completed-courses' ">
                 <div class="words1">Pursuing
                   {{ profile | async }}
-                  <div class="counter" matBadgePosition="after" matBadgeOverlap="false" matBadge="{{  Pur_ }}"></div>
+                  <div class="counter" matBadgePosition="after" matBadgeOverlap="false"
+                    matBadge="{{  (profile | async)?.filteredCodesP }}"></div>
                 </div>
                 <div class="scroll">
                   <mat-chip-list>
-                    <div class="list" *ngFor="let list of Pur">
+                    <!-- *ngFor="let list of Pur" -->
+                    <div class="list">
                       <div class="center__">
-                        <mat-chip class="style" disabled>{{list}}</mat-chip>
+                        <mat-chip class="style" disabled>
+                          <!-- {{list}} -->
+                          {{ (profile | async)?.filteredCodesP}}
+                        </mat-chip>
                       </div>
                     </div>
                   </mat-chip-list>
