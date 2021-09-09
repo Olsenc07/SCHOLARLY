@@ -12,14 +12,11 @@ import { StoreService } from '../services/store.service';
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent implements OnInit {
-  // Connecting store.servie to display course in profile. 
-  // Edit profile -> store -> profile
-
+  // Sign up and edit profile connections
   profile = StoreService.profile$$;
-  // profile_ = StoreService.profile$$;
+  Id = StoreService.userId$$;
 
 
-  // Profile Pic
 
   ids = StoreService.ids;
 
@@ -44,6 +41,7 @@ export class ProfileComponent implements OnInit {
   // TODO: initial following value would need to be loaded from database - for now, always start with false
   following = false;
 
+  // Tempt hard code before data base
   showCases = ['../../assets/Pics/IMG-8413.PNG', '../../assets/Pics/IMG-8619.PNG',
     '../../assets/Pics/WhiteSquareInAppLogo.jpg', '../../assets/Pics/IMG-8413.PNG', '../../assets/Pics/IMG-8619.PNG',
     '../../assets/Pics/ProperInAppLogo.jpeg ', '../../assets/Pics/IMG-8413.PNG'

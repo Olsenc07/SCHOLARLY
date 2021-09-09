@@ -3,7 +3,7 @@ import { ReplaySubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
 
-
+// Missing groups joined and posts made
 export interface Profile {
   // TODO: other profile fields
   // No connection to their subjects
@@ -19,7 +19,30 @@ export interface Profile {
   Club: String;
   profPic: String;
   Birthday: MomentDateAdapter;
+  ShowCase: String[];
 }
+
+
+export interface NewUserId {
+  Email: String;
+  UserName: String;
+  Password: String;
+  TermsCheck: Boolean;
+}
+
+export interface Cards {
+  UserName: String;
+  Major: String;
+  Minor: String;
+  Sport: String;
+  Club: String;
+  profPic: String;
+}
+
+// To pull without being attached to provite log in info..
+// export interface UserId {
+//   UserName: String;
+// }
 
 export interface Ids {
   profilePic: String;
@@ -94,12 +117,17 @@ export class StoreService {
 
 
   static profile$$: ReplaySubject<Profile> = new ReplaySubject<Profile>(1);
+  static userId$$: ReplaySubject<NewUserId> = new ReplaySubject<NewUserId>(1);
   // static profile$$: string[];
 
   constructor(private http: HttpClient) { }
 
+  setUser(userId: NewUserId): void {
+    StoreService.userId$$.next(userId);
+  }
   setProfile(profile: Profile): void {
     StoreService.profile$$.next(profile);
+
   }
 
 

@@ -429,6 +429,7 @@ export class EditProfileComponent implements OnInit {
       Club: this.club.value,
       profPic: this.cropImgPreview,
       Birthday: this.birthday.value,
+      ShowCase: this.showCase.value,
 
 
 
@@ -440,5 +441,6 @@ export class EditProfileComponent implements OnInit {
 
     // TODO: replace null with Profile object
     this.storeService.setProfile(profile);
+
   }
 }

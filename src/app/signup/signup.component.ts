@@ -24,6 +24,7 @@ import { NgxImageZoomModule } from 'ngx-image-zoom';
 import { BehaviorSubject, Observable } from 'rxjs';
 // import { base64ToFile } from '../../utils/blob.utils';
 import { ImageCroppedEvent, Dimensions } from 'ngx-image-cropper';
+import { Profile, NewUserId, StoreService } from '../services/store.service';
 
 interface Gender {
   name: string;
@@ -79,9 +80,11 @@ export class SignupComponent implements OnInit {
 
   ];
 
+  // Wont display because of security warning 
+  // But will be connected to abck end any way so dont worry rn
   url: string;
-  url2: string;
-  url3: string;
+
+  // url3: string;
   MatIconModule: any;
   cropImgPreview: any = '';
   imgChangeEvt: any = '';
@@ -101,14 +104,14 @@ export class SignupComponent implements OnInit {
   termsCheck: FormControl = new FormControl('');
   // PP isn't connected properly i dont think, since image is being cropped then returned as a base 64 value
   profilePic: FormControl = new FormControl('');
-  courseCodeCtrl: FormControl = new FormControl('');
-  courseCodeCtrlP: FormControl = new FormControl('');
+  CodePursuing: FormControl = new FormControl('');
+  CodeCompleted: FormControl = new FormControl('');
 
   bio: FormControl = new FormControl('');
   public bioLength = new BehaviorSubject(0);
-  snapShot1: FormControl = new FormControl('');
-  snapShot2: FormControl = new FormControl('');
-  snapShot3: FormControl = new FormControl('');
+  // snapShot1: FormControl = new FormControl('');
+  showCase: FormControl = new FormControl('');
+  // snapShot3: FormControl = new FormControl('');
 
 
   requiredForm = new FormGroup({
@@ -126,23 +129,25 @@ export class SignupComponent implements OnInit {
     pronouns: this.pronouns,
     birthday: this.birthday,
     bio: this.bio,
+    showCase: this.showCase,
   });
 
-  snapShotForm = new FormGroup({
-    snapShot1: this.snapShot1,
-    snapShot2: this.snapShot2,
-    snapShot3: this.snapShot3,
-  });
+  // Maybe just upload one.. makes storing data with edit profile the same way...
+  // showCase = new FormGroup({
+  //   snapShot1: this.snapShot1,
+  //   snapShot2: this.snapShot2,
+  //   snapShot3: this.snapShot3,
+  // });
   signupForm = new FormGroup({
-    courseCodeCtrl: this.courseCodeCtrl,
-    courseCodeCtrlP: this.courseCodeCtrlP,
+    CodePursuing: this.CodePursuing,
+    CodeCompleted: this.CodeCompleted,
     sport: this.sport,
     club: this.club,
     major: this.major,
     minor: this.minor,
     requiredForm: this.requiredForm,
     personalizeForm: this.personalizeForm,
-    snapShotForm: this.snapShotForm,
+    showCase: this.showCase,
   });
   toggleContainWithinAspectRatio() {
     this.containWithinAspectRatio = !this.containWithinAspectRatio;
@@ -195,44 +200,45 @@ export class SignupComponent implements OnInit {
       };
     }
   }
-  imagePreview2(event: any): void {
-    if (event.target.files && event.target.files[0]) {
-      const reader = new FileReader();
+  // imagePreview2(event: any): void {
+  //   if (event.target.files && event.target.files[0]) {
+  //     const reader = new FileReader();
 
-      reader.readAsDataURL(event.target.files[0]); // read file as data url
+  //     reader.readAsDataURL(event.target.files[0]); // read file as data url
 
-      reader.onload = (Event: any) => { // called once readAsDataURL is completed
-        console.log(Event);
-        this.url2 = Event.target.result;
-      };
-    }
-  }
-  imagePreview3(event: any): void {
-    if (event.target.files && event.target.files[0]) {
-      const reader = new FileReader();
+  //     reader.onload = (Event: any) => { // called once readAsDataURL is completed
+  //       console.log(Event);
+  //       this.url2 = Event.target.result;
+  //     };
+  //   }
+  // }
+  // imagePreview3(event: any): void {
+  //   if (event.target.files && event.target.files[0]) {
+  //     const reader = new FileReader();
 
-      reader.readAsDataURL(event.target.files[0]); // read file as data url
+  //     reader.readAsDataURL(event.target.files[0]); // read file as data url
 
-      reader.onload = (Event: any) => { // called once readAsDataURL is completed
-        console.log(Event);
-        this.url3 = Event.target.result;
-      };
-    }
-  }
+  //     reader.onload = (Event: any) => { // called once readAsDataURL is completed
+  //       console.log(Event);
+  //       this.url3 = Event.target.result;
+  //     };
+  //   }
+  // }
   constructor(
     public dialog: MatDialog,
     public classListService: ClassListService,
     private http: HttpClient,
+    private storeService: StoreService
   ) {
     this.bio.valueChanges.subscribe((v) => this.bioLength.next(v.length));
 
 
-    this.filteredCodes = this.courseCodeCtrl.valueChanges.pipe(
+    this.filteredCodes = this.CodePursuing.valueChanges.pipe(
       map((code: string | null) =>
         code ? this._filter(code) : this.classListService.allClasses().slice()
       )
     );
-    this.filteredCodesP = this.courseCodeCtrlP.valueChanges.pipe(
+    this.filteredCodesP = this.CodeCompleted.valueChanges.pipe(
       map((codeP: string | null) =>
         codeP ? this._filter(codeP) : this.classListService.allClasses().slice()
       )
@@ -250,14 +256,12 @@ export class SignupComponent implements OnInit {
     document.getElementById('fileInputP').click();
   };
   uploadFile(): any {
-    document.getElementById('fileInput').click();
+    document.getElementById('showCase').click();
   };
-  uploadFile2(): any {
-    document.getElementById('fileInput2').click();
-  };
-  uploadFile3(): any {
-    document.getElementById('fileInput3').click();
-  };
+
+  // uploadFile3(): any {
+  //   document.getElementById('fileInput3').click();
+  // };
 
   formatLabel(value: number): string {
     if (value >= 100) {
@@ -276,7 +280,7 @@ export class SignupComponent implements OnInit {
     // Clear the input value
     // event.chipInput!.clear();
 
-    this.courseCodeCtrl.setValue(null);
+    this.CodePursuing.setValue(null);
   }
   // Pursuing Courses
   addP(event: MatChipInputEvent): void {
@@ -290,7 +294,7 @@ export class SignupComponent implements OnInit {
     // Clear the input value
     // event.chipInput!.clear();
 
-    this.courseCodeCtrlP.setValue(null);
+    this.CodeCompleted.setValue(null);
   }
 
 
@@ -310,13 +314,13 @@ export class SignupComponent implements OnInit {
   selected(event: MatAutocompleteSelectedEvent): void {
     this.classes.push(event.option.viewValue);
     this.codeInput.nativeElement.value = '';
-    this.courseCodeCtrl.setValue('');
+    this.CodePursuing.setValue('');
   }
   // Pursuing Classes
   selectedP(event: MatAutocompleteSelectedEvent): void {
     this.classesP.push(event.option.viewValue);
     this.codeInputP.nativeElement.value = '';
-    this.courseCodeCtrlP.setValue('');
+    this.CodeCompleted.setValue('');
   }
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
@@ -363,18 +367,18 @@ export class SignupComponent implements OnInit {
     this.profilePic.setValue('');
     document.getElementById('ProfilePic').removeAttribute('src');
   }
-  clearPic1(): void {
-    this.snapShot1.setValue('');
-    document.getElementById('firstP').removeAttribute('src');
+  // clearPic1(): void {
+  //   this.snapShot1.setValue('');
+  //   document.getElementById('firstP').removeAttribute('src');
+  // }
+  clearPic(): void {
+    this.showCase.setValue('');
+    document.getElementById('showCase').removeAttribute('src');
   }
-  clearPic2(): void {
-    this.snapShot2.setValue('');
-    document.getElementById('secondP').removeAttribute('src');
-  }
-  clearPic3(): void {
-    this.snapShot3.setValue('');
-    document.getElementById('thirdP').removeAttribute('src');
-  }
+  // clearPic3(): void {
+  //   this.snapShot3.setValue('');
+  //   document.getElementById('thirdP').removeAttribute('src');
+  // }
   changeTab(): void {
     this.selectedIndex = this.selectedIndex === 0 ? 1 : 0;
   }
@@ -407,11 +411,40 @@ export class SignupComponent implements OnInit {
   }
   onSubmitPartThree(): void {
     // TODO: wire up to login request
-    console.log(this.snapShotForm.value);
+    console.log(this.showCase.value);
   }
   onSubmit(): void {
     // TODO: wire up to login request
     console.log(this.signupForm.value);
+
+
+    let userId: NewUserId = {
+      Email: this.email.value,
+      UserName: this.username.value,
+      Password: this.password.value,
+      TermsCheck: this.termsCheck.value,
+    };
+
+
+    let profile: Profile = {
+      CodePursuing: this.CodePursuing.value,
+      CodeCompleted: this.CodeCompleted.value,
+      Name: this.name.value,
+      Pronouns: this.pronouns.value,
+      profilePic: this.profilePic.value,
+      Gender: this.genderChoice.value,
+      Major: this.major.value,
+      Minor: this.minor.value,
+      Sport: this.sport.value,
+      Club: this.club.value,
+      profPic: this.cropImgPreview,
+      Birthday: this.birthday.value,
+      ShowCase: this.showCase.value,
+
+
+    };
+    this.storeService.setProfile(profile);
+    this.storeService.setUser(userId);
   }
 
   ngOnInit(): void { }

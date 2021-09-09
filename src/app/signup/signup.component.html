@@ -259,7 +259,7 @@
 
       <!-- SnapShots -->
       <mat-tab disabled>
-        <form [formGroup]="snapShotForm">
+        <form [formGroup]="showCase">
           <ng-template mat-tab-label>
             <span class="material-icons">
               add_to_photos
@@ -276,9 +276,9 @@
 
 
             <div class="rowP">
-              <div class="column_1">
-                <!-- Upload pic/video -->
-                <!-- 1 -->
+              <!-- <div class="column_1">
+                <-- Upload pic/video --
+                <-- 1 --
                 <div class="centerD">
                   <div class="textU"> Add Photo</div>
                   <button mat-icon-button class="trash" [ngClass]="snapShot1.value ? 'show_' : 'hide' " color="primary"
@@ -299,14 +299,14 @@
                     </div>
                   </button>
                 </div>
-                <!-- Only when upload holds a value -->
+                <-- Only when upload holds a value --
                 <div class="contents">
                   <div class="imgBox">
                     <img [src]="url" id="firstP" [ngClass]="snapShot1.value ? 'show' : 'hide' ">
                   </div>
                 </div>
 
-              </div>
+              </div> -->
 
 
               <!-- 2 -->
@@ -315,8 +315,8 @@
                 <!-- Upload pic/video -->
                 <div class="centerD">
                   <div class="textU"> Add Photo</div>
-                  <button mat-icon-button class="trash" [ngClass]="snapShot2.value ? 'show_' : 'hide' " color="primary"
-                    (click)="clearPic2()">
+                  <button mat-icon-button class="trash" [ngClass]="showCase.value ? 'show_' : 'hide' " color="primary"
+                    (click)="clearPic()">
                     <div class=" far fa-trash-alt"></div>
                   </button>
 
@@ -324,27 +324,27 @@
 
 
                 <div class="rowP_">
-                  <button class="cameraIcon" mat-button (click)="uploadFile2()">
+                  <button class="cameraIcon" mat-button (click)="uploadFile()">
                     <div class="material-icons Photo">
                       add_a_photo
 
-                      <input #fileInput id="fileInput2" class="uploadD" accept="image/* video/*" type="file"
-                        (change)="imagePreview2($event)" [formControl]="snapShot2" multiple>
+                      <input #fileInput id="showCase" class="uploadD" accept="image/* video/*" type="file"
+                        (change)="imagePreview($event)" [formControl]="showCase" multiple>
                     </div>
                   </button>
                 </div>
                 <!-- Only when upload holds a value -->
                 <div class="contents">
                   <div class="imgBox">
-                    <img [src]="url2" id="firstP" [ngClass]="snapShot2.value ? 'show' : 'hide' ">
+                    <img [src]="url" id="firstP" [ngClass]="showCase.value ? 'show' : 'hide' ">
                   </div>
                 </div>
               </div>
 
               <!-- 3 -->
-              <div class="column_1">
+              <!-- <div class="column_1">
 
-                <!-- Upload pic/video -->
+                <!- Upload pic/video --
                 <div class="centerD">
                   <div class="textU"> Add Photo</div>
                   <button mat-icon-button class="trash" [ngClass]="snapShot3.value ? 'show_' : 'hide' " color="primary"
@@ -365,14 +365,14 @@
                     </div>
                   </button>
                 </div>
-                <!-- Only when upload holds a value -->
+                <-- Only when upload holds a value --
                 <div class="contents">
                   <div class="imgBox">
                     <img [src]="url3" id="firstP" [ngClass]="snapShot3.value ? 'show' : 'hide' ">
                   </div>
                 </div>
 
-              </div>
+              </div> -->
             </div>
 
 
@@ -406,9 +406,9 @@
             </span>
             <mat-form-field>
               <input class="major" matInput placeholder="Major" [formControl]="major" />
-              <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearMajor()">
+              <!-- <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearMajor()">
                 <mat-icon class="asthetic-adds">close</mat-icon>
-              </button>
+              </button> -->
             </mat-form-field>
           </div>
 
@@ -418,9 +418,9 @@
             </span>
             <mat-form-field>
               <input class="major" matInput placeholder="Minor" [formControl]="minor" />
-              <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearMinor()">
+              <!-- <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearMinor()">
                 <mat-icon class="asthetic-adds">close</mat-icon>
-              </button>
+              </button> -->
             </mat-form-field>
           </div>
         </div>
@@ -434,9 +434,9 @@
             </span>
             <mat-form-field>
               <input matInput placeholder="Do you play a sport?" [formControl]="sport" />
-              <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearSport()">
+              <!-- <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearSport()">
                 <mat-icon class="asthetic-adds">close</mat-icon>
-              </button>
+              </button> -->
             </mat-form-field>
           </div>
 
@@ -448,9 +448,9 @@
             </span>
             <mat-form-field>
               <input class="major" matInput placeholder="Are you apart of a club?  " [formControl]="club" />
-              <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearClub()">
+              <!-- <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearClub()">
                 <mat-icon class="asthetic-adds">close</mat-icon>
-              </button>
+              </button> -->
             </mat-form-field>
           </div>
         </div>
@@ -467,7 +467,7 @@
                     {{code}}
                     <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
                   </mat-chip>
-                  <input placeholder="Choose completed courses" #codeInput [formControl]="courseCodeCtrl"
+                  <input placeholder="Choose completed courses" #codeInput [formControl]=" CodePursuing"
                     [matAutocomplete]="auto" [matChipInputFor]="chipList"
                     [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="add($event)">
                 </mat-chip-list>
@@ -496,7 +496,7 @@
                     {{codeP}}
                     <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
                   </mat-chip>
-                  <input placeholder="Choose pursuing courses" #codeInputP [formControl]="courseCodeCtrlP"
+                  <input placeholder="Choose pursuing courses" #codeInputP [formControl]="CodeCompleted"
                     [matAutocomplete]="autoP" [matChipInputFor]="chipListP"
                     [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (matChipInputTokenEnd)="addP($event)">
                 </mat-chip-list>

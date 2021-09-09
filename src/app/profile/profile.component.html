@@ -19,7 +19,7 @@
         <div class="uNameMsg">
           <div class="centerR_">
             <!-- This is hard coded once user signs up -->
-            Olsen07
+            {{(Id |async)?.UserName}}
 
           </div>
           <div>
@@ -232,17 +232,18 @@
               </div>
             </mat-tab>
             <mat-tab label="Showcase">
-              <div class="column1" *ngIf="showCases.length == 0">
+              <div class="column1" *ngIf="!(profile|async)?.ShowCase">
                 <div class="row"> No Showcases Added</div><i class="far fa-frown centerR"></i>
               </div>
 
-              <div class="showCase" *ngIf="showCases.length !== 0">
+              <div class="showCase" *ngIf="(profile|async)?.ShowCase">
 
 
                 <div class="column">
 
                   <img class="img" *ngFor="let showCase of showCases" src={{showCase}} />
 
+                  <!-- {{(profile|async)?.ShowCase}} -->
                 </div>
 
               </div>
@@ -341,13 +342,14 @@
       </mat-tab>
       <!-- Snap shots -->
       <mat-tab label="Showcase">
-        <div class="column1" *ngIf="showCases.length == 0">
+        <div class="column1" *ngIf="!(profile|async)?.ShowCase">
           <div class="row"> No Showcases Added</div><i class="far fa-frown centerR"></i>
         </div>
-        <div class="showCase" *ngIf="showCases.length !== 0">
+        <div class="showCase" *ngIf="(profile|async)?.ShowCase">
 
           <div class="column">
-            <img class="img" *ngFor="let showCase of showCases" src={{showCase}} />
+            <img class="img" src={{(profile|async)?.ShowCase}} />
+            <!-- *ngFor="let showCase of showCases" -->
           </div>
 
         </div>
