@@ -268,11 +268,9 @@
           </ng-template>
           <div class="snapShots">
             <h2 class="center-text">
-              Get started by adding your first Snap Shots
+              Get started by adding your first showcase
             </h2>
-            <span class="material-icons icon">
-              photo_library
-            </span>
+
 
 
             <div class="rowP">
@@ -314,9 +312,9 @@
 
                 <!-- Upload pic/video -->
                 <div class="centerD">
-                  <div class="textU"> Add Photo</div>
-                  <button mat-icon-button class="trash" [ngClass]="CodeCompleted.value ? 'show_' : 'hide' "
-                    color="primary" (click)="clearPic()">
+                  <div class="textU"> Upload Photo</div>
+                  <button mat-icon-button class="trash" [ngClass]="showCase.value ? 'show_' : 'hide' " color="primary"
+                    (click)="clearPic()">
                     <div class=" far fa-trash-alt"></div>
                   </button>
 
@@ -325,20 +323,23 @@
 
                 <div class="rowP_">
                   <button class="cameraIcon" mat-button (click)="uploadFile()">
-                    <div class="material-icons Photo">
-                      add_a_photo
+                    <span class="material-icons icon Photo">
+                      photo_library
 
-                      <input #fileInput id="CodeCompleted" class="uploadD" accept="image/* video/*" type="file"
-                        (change)="imagePreview($event)" [formControl]="CodeCompleted" multiple>
-                    </div>
+
+
+
+                      <input #fileInput id="showCase" class="uploadD" accept="image/* video/*" type="file"
+                        (change)="imagePreview($event)" [formControl]="showCase" multiple>
+                    </span>
                   </button>
                 </div>
                 <!-- Only when upload holds a value -->
-                <div class="contents">
-                  <div class="imgBox">
-                    <img [src]="url" id="firstP" [ngClass]="CodeCompleted.value ? 'show' : 'hide' ">
-                  </div>
+                <!-- <div class="contents"> -->
+                <div class="imgBox">
+                  <img [src]="url" id="firstP" [ngClass]="showCase.value ? 'show' : 'hide' ">
                 </div>
+                <!-- </div> -->
               </div>
 
               <!-- 3 -->

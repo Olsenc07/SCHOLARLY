@@ -237,7 +237,7 @@
             </mat-tab>
             <mat-tab label="Showcase">
               <div class="column1" *ngIf="!(profile|async)?.ShowCase">
-                <div class="row"> No Showcases Added</div><i class="far fa-frown centerR"></i>
+                <div class="row"> No Showcases Added</div> <i class="fas fa-eye-slash centerR"></i>
               </div>
 
               <div class="showCase" *ngIf="(profile|async)?.ShowCase">
@@ -352,7 +352,7 @@
       <!-- Snap shots -->
       <mat-tab label="Showcase">
         <div class="column1" *ngIf="!(profile|async)?.ShowCase">
-          <div class="row"> No Showcases Added</div><i class="far fa-frown centerR"></i>
+          <div class="row"> No Showcases Added</div><i class="fas fa-eye-slash centerR"></i>
         </div>
         <div class="showCase" *ngIf="(profile|async)?.ShowCase">
 

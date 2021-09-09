@@ -135,6 +135,7 @@ export class SignupComponent implements OnInit {
     pronouns: this.pronouns,
     birthday: this.birthday,
     bio: this.bio,
+    showCase: this.showCase,
   });
 
   // Maybe just upload one.. makes storing data with edit profile the same way...
@@ -234,7 +235,7 @@ export class SignupComponent implements OnInit {
     private http: HttpClient,
     private storeService: StoreService
   ) {
-    this.bio.valueChanges.subscribe((v) => this.bioLength.next(v.length));
+    // this.bio.valueChanges.subscribe((v) => this.bioLength.next(v.length));
 
 
     this.filteredCodesP = this.CodePursuing.valueChanges.pipe(
@@ -275,13 +276,13 @@ export class SignupComponent implements OnInit {
       return Math.round(value / 1) + '+';
     }
   }
-
+  // Pursuing Courses
   add(event: MatChipInputEvent): void {
-    const value = (event.value || '').trim();
+    const valueP = (event.value || '').trim();
 
     // Add our course code
-    if (value) {
-      this.classes.push(value);
+    if (valueP) {
+      this.classesP.push(valueP);
     }
 
     // Clear the input value
@@ -289,13 +290,13 @@ export class SignupComponent implements OnInit {
 
     this.CodePursuing.setValue(null);
   }
-  // Pursuing Courses
+  // Completeted Courses
   addP(event: MatChipInputEvent): void {
-    const valueP = (event.value || '').trim();
+    const value = (event.value || '').trim();
 
     // Add our course code
-    if (valueP) {
-      this.classesP.push(valueP);
+    if (value) {
+      this.classes.push(value);
     }
 
     // Clear the input value
@@ -318,13 +319,14 @@ export class SignupComponent implements OnInit {
       this.classesP.splice(indexP, 1);
     }
   }
-  selected(event: MatAutocompleteSelectedEvent): void {
+  // Pursuing Courses
+  selectedP(event: MatAutocompleteSelectedEvent): void {
     this.classes.push(event.option.viewValue);
     this.codeInput.nativeElement.value = '';
     this.CodePursuing.setValue('');
   }
-  // Pursuing Classes
-  selectedP(event: MatAutocompleteSelectedEvent): void {
+  // Completed Classes
+  selected(event: MatAutocompleteSelectedEvent): void {
     this.classesP.push(event.option.viewValue);
     this.codeInputP.nativeElement.value = '';
     this.CodeCompleted.setValue('');
@@ -379,8 +381,8 @@ export class SignupComponent implements OnInit {
   //   document.getElementById('firstP').removeAttribute('src');
   // }
   clearPic(): void {
-    this.CodeCompleted.setValue('');
-    document.getElementById('CodeCompleted').removeAttribute('src');
+    this.showCase.setValue('');
+    document.getElementById('showCase').removeAttribute('src');
   }
   // clearPic3(): void {
   //   this.snapShot3.setValue('');
