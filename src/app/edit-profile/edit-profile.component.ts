@@ -430,7 +430,7 @@ export class EditProfileComponent implements OnInit {
       profPic: this.cropImgPreview,
       Birthday: this.birthday.value,
       ShowCase: this.showCase.value,
-
+      filteredCodesP: this.filteredCodesP,
 
 
       // cropImgPreview: this.cropImgPreview,

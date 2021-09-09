@@ -64,6 +64,7 @@ export class SignupComponent implements OnInit {
 
   filteredCodes: Observable<string[]>;
   filteredCodesP: Observable<string[]>;
+
   classes: string[] = [];
   classesP: string[] = [];
   @ViewChild('codeInput') codeInput: ElementRef<HTMLInputElement>;
@@ -441,7 +442,7 @@ export class SignupComponent implements OnInit {
       Birthday: this.birthday.value,
       ShowCase: this.showCase.value,
 
-
+      filteredCodesP: this.filteredCodesP,
     };
     this.storeService.setProfile(profile);
     this.storeService.setUser(userId);

@@ -20,6 +20,7 @@ export interface Profile {
   profPic: String;
   Birthday: MomentDateAdapter;
   ShowCase: String[];
+  filteredCodesP: <string[]>,
 }
 
 
