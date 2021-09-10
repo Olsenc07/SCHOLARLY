@@ -18,9 +18,9 @@
             <mat-form-field>
               <!-- only utoronto.ca should be excepted -->
               <input matInput placeholder="School Email" [formControl]="email" required />
-              <button mat-button matSuffix mat-icon-button aria-label=" Clear" type="button" (click)="clearEmail()">
+              <!-- <button mat-button matSuffix mat-icon-button aria-label=" Clear" type="button" (click)="clearEmail()">
                 <mat-icon>close</mat-icon>
-              </button>
+              </button> -->
             </mat-form-field>
           </div>
 
@@ -31,9 +31,9 @@
             <mat-form-field>
               <input matInput [formControl]="username" placeholder="Username" required autocomplete="on" />
 
-              <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearUsername()">
+              <!-- <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearUsername()">
                 <mat-icon>close</mat-icon>
-              </button>
+              </button> -->
             </mat-form-field>
           </div>
           <div class="twoPassword">
@@ -45,10 +45,10 @@
                 <mat-label>Password min 8 characters</mat-label>
                 <input matInput type="password" placeholder="Password" minlength="8" required [formControl]="password"
                   autocomplete="on" />
-                <button mat-button matSuffix mat-icon-button color="primary" aria-label="Clear" type="button"
+                <!-- <button mat-button matSuffix mat-icon-button color="primary" aria-label="Clear" type="button"
                   (click)="clearPassword()">
                   <mat-icon>close</mat-icon>
-                </button>
+                </button> -->
               </mat-form-field>
             </div>
 
@@ -156,6 +156,7 @@
                     </div>
                   </div>
                   <!-- class="cropper" [ngClass]="profilePic.value ? 'show' : 'hide' " -->
+
                   <div class="cropper">
                     <!-- Only when upload holds a value -->
                     <image-cropper [imageChangedEvent]="imgChangeEvt" [maintainAspectRatio]="true"
@@ -199,17 +200,17 @@
               <i class="far fa-address-card _icon"></i>
               <mat-form-field>
                 <input matInput placeholder="Full Name" [formControl]="name" />
-                <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearName()">
+                <!-- <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearName()">
                   <mat-icon class="asthetic-adds">close</mat-icon>
-                </button>
+                </button> -->
               </mat-form-field>
             </div>
             <div class="inputP">
               <mat-form-field class="inputP">
                 <input matInput placeholder="Prefered Pronouns" [formControl]="pronouns" />
-                <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearName()">
+                <!-- <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearName()">
                   <mat-icon class="asthetic-adds">close</mat-icon>
-                </button>
+                </button> -->
               </mat-form-field>
             </div>
 
@@ -259,22 +260,22 @@
 
       <!-- SnapShots -->
       <mat-tab disabled>
-        <form [formGroup]="showCase">
-          <ng-template mat-tab-label>
-            <span class="material-icons">
-              add_to_photos
-            </span>
-            SnapShots
-          </ng-template>
-          <div class="snapShots">
-            <h2 class="center-text">
-              Get started by adding your first showcase
-            </h2>
+        <!-- <form [formGroup]="showCase"> -->
+        <ng-template mat-tab-label>
+          <span class="material-icons">
+            add_to_photos
+          </span>
+          SnapShots
+        </ng-template>
+        <div class="snapShots">
+          <h2 class="center-text">
+            Get started by adding your first showcase
+          </h2>
 
 
 
-            <div class="rowP">
-              <!-- <div class="column_1">
+          <div class="rowP">
+            <!-- <div class="column_1">
                 <-- Upload pic/video --
                 <-- 1 --
                 <div class="centerD">
@@ -307,43 +308,43 @@
               </div> -->
 
 
-              <!-- 2 -->
-              <div class="column_1">
+            <!-- 2 -->
+            <div class="column_1">
 
-                <!-- Upload pic/video -->
-                <div class="centerD">
-                  <div class="textU"> Upload Photo</div>
-                  <button mat-icon-button class="trash" [ngClass]="showCase.value ? 'show_' : 'hide' " color="primary"
-                    (click)="clearPic()">
-                    <div class=" far fa-trash-alt"></div>
-                  </button>
+              <!-- Upload pic/video -->
+              <div class="centerD">
+                <div class="textU"> Upload Photo</div>
+                <button mat-icon-button class="trash" [ngClass]="showCase.value ? 'show_' : 'hide' " color="primary"
+                  (click)="clearPic()">
+                  <div class=" far fa-trash-alt"></div>
+                </button>
 
-                </div>
-
-
-                <div class="rowP_">
-                  <button class="cameraIcon" mat-button (click)="uploadFile()">
-                    <span class="material-icons icon Photo">
-                      photo_library
-
-
-
-
-                      <input #fileInput id="showCase" class="uploadD" accept="image/* video/*" type="file"
-                        (change)="imagePreview($event)" [formControl]="showCase" multiple>
-                    </span>
-                  </button>
-                </div>
-                <!-- Only when upload holds a value -->
-                <!-- <div class="contents"> -->
-                <div class="imgBox">
-                  <img [src]="url" id="firstP" [ngClass]="showCase.value ? 'show' : 'hide' ">
-                </div>
-                <!-- </div> -->
               </div>
 
-              <!-- 3 -->
-              <!-- <div class="column_1">
+
+              <div class="rowP_">
+                <button class="cameraIcon" mat-button (click)="uploadFile()">
+                  <span class="material-icons icon Photo">
+                    photo_library
+
+
+
+
+                    <input #fileInput id="showCase" class="uploadD" accept="image/* video/*" type="file"
+                      (change)="imagePreview($event)" [formControl]="showCase" multiple>
+                  </span>
+                </button>
+              </div>
+              <!-- Only when upload holds a value -->
+              <!-- <div class="contents"> -->
+              <div class="imgBox">
+                <img [src]="url" id="firstP" [ngClass]="showCase.value ? 'show' : 'hide' ">
+              </div>
+              <!-- </div> -->
+            </div>
+
+            <!-- 3 -->
+            <!-- <div class="column_1">
 
                 <!- Upload pic/video --
                 <div class="centerD">
@@ -374,22 +375,22 @@
                 </div>
 
               </div> -->
-            </div>
+          </div>
 
 
-            <div class="createBtn">
-              <button mat-raised-button class="cBtnB" (click)="changeTab2R()">Back</button>
-              <div class="skip1">
-                <button mat-button class="cBtnBl" (click)="changeTab3()">Skip For Now</button>
-              </div>
-              <button type="button" mat-raised-button class="cBtn" (click)="onSubmitPartThree()"
-                (click)="changeTab3()">Save</button>
+          <div class="createBtn">
+            <button mat-raised-button class="cBtnB" (click)="changeTab2R()">Back</button>
+            <div class="skip1">
+              <button mat-button class="cBtnBl" (click)="changeTab3()">Skip For Now</button>
             </div>
+            <button type="button" mat-raised-button class="cBtn" (click)="onSubmitPartThree()"
+              (click)="changeTab3()">Save</button>
           </div>
-          <div class="skip2">
-            <button mat-button class="cBtnBl" (click)="changeTab3()">Skip For Now</button>
-          </div>
-        </form>
+        </div>
+        <div class="skip2">
+          <button mat-button class="cBtnBl" (click)="changeTab3()">Skip For Now</button>
+        </div>
+        <!-- </form> -->
       </mat-tab>
       <mat-tab disabled>
         <ng-template mat-tab-label>

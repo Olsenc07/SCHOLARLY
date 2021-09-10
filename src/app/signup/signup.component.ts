@@ -26,6 +26,7 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { ImageCroppedEvent, Dimensions } from 'ngx-image-cropper';
 import { Profile, NewUserId, StoreService } from '../services/store.service';
 
+
 interface Gender {
   name: string;
 }
@@ -82,7 +83,7 @@ export class SignupComponent implements OnInit {
 
   // Wont display because of security warning 
   // But will be connected to abck end any way so dont worry rn
-  url: string;
+  url: string[];
 
   // url3: string;
   MatIconModule: any;
@@ -249,9 +250,9 @@ export class SignupComponent implements OnInit {
         codeP ? this._filter(codeP) : this.classListService.allClasses().slice()
       )
     );
-    this.filteredCodesP.subscribe((r) => this.CodePursuing)
-      ;
-    this.filteredCodes.subscribe((r) => this.CodeCompleted);
+    // this.filteredCodesP.subscribe((r) => this.CodePursuing);
+
+    // this.filteredCodes.subscribe((r) => this.CodeCompleted);
   }
 
 
@@ -437,8 +438,8 @@ export class SignupComponent implements OnInit {
 
 
     let profile: Profile = {
-      // CodeCompleted: this.CodeCompleted.value,
-      // CodePursuing: this.CodePursuing.value,
+      CodeCompleted: this.CodeCompleted.value,
+      CodePursuing: this.CodePursuing.value,
       Name: this.name.value,
       Pronouns: this.pronouns.value,
       profilePic: this.profilePic.value,
@@ -448,6 +449,7 @@ export class SignupComponent implements OnInit {
       Sport: this.sport.value,
       Club: this.club.value,
       profPic: this.cropImgPreview,
+      // ShowCasse: this.url.value,
       Birthday: this.birthday.value,
       ShowCase: this.showCase.value,
       filteredCodes: this.filteredCodes,

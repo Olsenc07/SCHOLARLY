@@ -77,7 +77,7 @@ export class EditProfileComponent implements OnInit {
   @ViewChild('codeInputP') codeInputP: ElementRef<HTMLInputElement>;
   @ViewChild('auto') matAutocomplete: MatAutocomplete;
   @ViewChild('autoP') matAutocompleteP: MatAutocomplete;
-  url: string;
+  url: string[];
   cropImgPreview: any = '';
   imgChangeEvent: any = '';
   // PP isn't connected properly i dont think, since image is being cropped then returned as a base 64 value
@@ -417,8 +417,8 @@ export class EditProfileComponent implements OnInit {
     // TODO: convert form fields to Profile
 
     let profile: Profile = {
-      // CodeCompleted: this.CodeCompleted.value,
-      // CodePursuing: this.CodePursuing.value
+      CodeCompleted: this.CodeCompleted.value,
+      CodePursuing: this.CodePursuing.value,
       Name: this.name.value,
       Pronouns: this.pronouns.value,
       profilePic: this.profilePic.value,
@@ -430,6 +430,7 @@ export class EditProfileComponent implements OnInit {
       profPic: this.cropImgPreview,
       Birthday: this.birthday.value,
       ShowCase: this.showCase.value,
+      // ShowCasse: this.url,
       filteredCodes: this.filteredCodes,
       filteredCodesP: this.filteredCodesP,
 
