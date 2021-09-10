@@ -16,3 +16,18 @@ export class ReusableCardRequestComponent {
     constructor() { }
 }
 
+
+
+@Component({
+    selector: 'app-card-recommendation',
+    templateUrl: './reusable-card-recommendation.component.html',
+    styleUrls: ['./reusable-card-request.component.scss'],
+})
+export class ReusableCardRecommendationComponent {
+
+    profile = StoreService.profile$$;
+    ids = StoreService.ids;
+
+
+    constructor() { }
+}

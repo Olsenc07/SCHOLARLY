@@ -66,6 +66,7 @@ import { DialogElementsComponent } from './post-page/post-page.component';
 import { ReusableCardComponent } from './reusable-card/reusable-card.component';
 import { ReusableCardBriefComponent } from './reusable-card-brief/reusable-card-brief.component';
 import { ReusableCardRequestComponent } from './reusable-card-request/reusable-card-request.component';
+import { ReusableCardRecommendationComponent } from './reusable-card-request/reusable-card-request.component';
 import { ReusableCardUserComponent } from './reusable-card-user/reusable-card-user.component';
 import { ReusableCardMutualComponent } from './reusable-card-user/reusable-card-user.component';
 import { ReusableCardConvoComponent } from './reusable-card-convo/reusable-card-convo.component';
@@ -99,6 +100,7 @@ import { StoreService } from './services/store.service';
     ReusableCardComponent,
     ReusableCardBriefComponent,
     ReusableCardRequestComponent,
+    ReusableCardRecommendationComponent,
     ReusableCardUserComponent,
     ReusableCardMutualComponent,
     ReusableCardConvoComponent,

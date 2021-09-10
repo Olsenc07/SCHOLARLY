@@ -10,6 +10,12 @@
   text-align: center;
   justify-content: space-evenly;
 }
+.centerEmpty{
+  display: flex;
+  width: 100%;
+  text-align: center;
+  justify-content: space-evenly;
+}
 .center_{
   display: flex;
   justify-content: center;
@@ -20,6 +26,7 @@
   margin: 4% 0%;
   font-family: "Font Awesome 5 Free";
   text-align: center;
+  width: 100%;
 }
 .column{
     display: flex;
@@ -35,10 +42,24 @@
     display: flex;
     flex-direction: row;
 }
+.large{
+  font-size: small;
+  padding-right: 1%;
+}
+.lLarge{
+  font-size: x-small;
+  padding-right: 1%;
+}
 
 .mat-card-avatar{
     width: 50px;
     height: 50px;
+}
+.messageM {
+  display: flex;
+  font-family: "Font Awesome 5 Free";
+  background-color: rgb(173, 211, 236);
+  color: white;
 }
 .fit{
   border-radius: 50%;
@@ -54,8 +75,8 @@ justify-content: center;}
 .row {
     display: flex;
     flex-direction: row;
-    // width: 100%;
-    justify-content: space-between;
+    width: 100%;
+    // justify-content: center;
   }
   .row1{
       display: flex;

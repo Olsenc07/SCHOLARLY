@@ -9,9 +9,9 @@
       <!-- Limit load in amount at a time -->
       <div [ngClass]="opt >=1 ? 'logo-layoutP' : 'logo-layout' ">
         <!-- Then each card is filled uniquely passed off {{ }}  values in feed-->
-        <app-card-request class="adds" *ngFor="let feed of feeds">
+        <app-card-recommendation class="adds" *ngFor="let feed of feeds">
           {{feed}}
-        </app-card-request>
+        </app-card-recommendation>
       </div>
 
 

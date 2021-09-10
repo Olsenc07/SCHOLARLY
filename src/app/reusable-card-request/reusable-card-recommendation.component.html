@@ -18,10 +18,27 @@
                     </mat-card-subtitle> -->
                 <!-- </div> -->
             </div>
-            <div class="row1"><button mat-icon-button class="btn"><i class="far fa-check-circle green"></i></button>
+
+
+            <!-- Card is removed from list when follow is clicked -->
+
+            <mat-chip-list class="center_" aria-label="FollowBtn">
+                <!-- (click)="followClicked()" -->
+                <mat-chip class="messageM">
+                    Follow
+
+                    <!-- {{ following ? "Unfollow" : "Follow" }} -->
+
+
+
+                </mat-chip>
+            </mat-chip-list>
+
+
+            <!-- <div class="row1"><button mat-icon-button class="btn"><i class="far fa-check-circle green"></i></button>
 
                 <button mat-icon-button class="btn"> <i class="far fa-times-circle red"></i></button>
-            </div>
+            </div> -->
 
         </div>
 
