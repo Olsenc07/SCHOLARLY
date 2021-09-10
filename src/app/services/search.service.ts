@@ -89,8 +89,9 @@ export class SearchListService {
           'St.Micheals College',
           'Trinity College',
           'University College',
-          'U Of T Mississauga Campus',
-          'U Of T Scarborough',
+          // How would these work..
+          // 'U Of T Mississauga',
+          // 'U Of T Scarborough',
           'Victoria College',
           'Woodsworth College',
         ];

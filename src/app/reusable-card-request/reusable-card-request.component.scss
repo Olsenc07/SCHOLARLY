@@ -25,6 +25,7 @@
   justify-content: center;
   margin: 4% 0%;
   font-family: "Font Awesome 5 Free";
+  color: #7e7171;
   text-align: center;
   width: 100%;
 }
@@ -93,20 +94,22 @@ width: 100%;
   .profilePic {
     display: flex;
     border-radius: 50%;
-    border: groove;
+    // border: groove;
     margin-right: 2%;
-    margin-bottom: 1%;
+    // margin-bottom: 1%;
   }
   @media (min-width: 500px) {
     .textSize {
       font-size: medium;
       font-family: "Font Awesome 5 Free";
+      color: #7e7171;
     }
   }
   @media (max-width: 500px) {
     .textSize {
       font-size: smaller;
       font-family: "Font Awesome 5 Free";
+      color: #7e7171;
     }
   }
   .userName {

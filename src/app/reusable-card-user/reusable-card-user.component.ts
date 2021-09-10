@@ -28,5 +28,6 @@ export class ReusableCardUserComponent {
 })
 export class ReusableCardMutualComponent {
     // Gets the id == id to fill mutual friends list from data base
+    profile = StoreService.profile$$;
     constructor() { }
 }
