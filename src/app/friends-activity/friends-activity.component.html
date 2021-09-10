@@ -5,18 +5,18 @@
       <!-- Friend request box -->
 
 
-      <div class="row" *ngIf="feeds.length == 5">
+      <div class="row" *ngIf="feeds.length !== 0">
         <div class="title">Friend Requests</div>
       </div>
 
-      <div class="fit" *ngIf="feeds.length !== 5 ">
+      <div class="fit" *ngIf="feeds.length == 0 ">
         <div class="noRequests">
           No Current Requests
           <i class="fas fa-users-slash icon"></i>
         </div>
       </div>
 
-      <div class="fit" *ngIf="feeds.length == 5">
+      <div class="fit" *ngIf="feeds.length !== 0 ">
         <!-- If ids are on friend list -->
         <app-card-request class="adds" *ngFor="let feed of feeds">
           {{feed}}

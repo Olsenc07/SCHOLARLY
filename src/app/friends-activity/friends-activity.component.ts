@@ -13,72 +13,21 @@ export class FriendsActivityComponent implements OnInit {
     "profilePic": "", "userName": "",
     "Major": "", "Minor": "", "Sport": "", "Club": ""
   },
-  {
-    "profilePic": "", "userName": "",
-    "Major": "", "Minor": "", "Sport": "", "Club": ""
-  }, {
-    "profilePic": "", "userName": "",
-    "Major": "", "Minor": "", "Sport": "", "Club": ""
-  }, {
-    "profilePic": "", "userName": "",
-    "Major": "", "Minor": "", "Sport": "", "Club": ""
-  }, {
-    "profilePic": "", "userName": "",
-    "Major": "", "Minor": "", "Sport": "", "Club": ""
-  },
+
   ];
 
   mutuals = [{
     "profilePic": "", "userName": "",
     "Major": "", "Minor": "", "Sport": "", "Club": ""
-  },
-  {
-    "profilePic": "", "userName": "",
-    "Major": "", "Minor": "", "Sport": "", "Club": ""
-  }, {
-    "profilePic": "", "userName": "",
-    "Major": "", "Minor": "", "Sport": "", "Club": ""
-  },
-  {
-    "profilePic": "", "userName": "",
-    "Major": "", "Minor": "", "Sport": "", "Club": ""
-  },
-  {
-    "profilePic": "", "userName": "",
-    "Major": "", "Minor": "", "Sport": "", "Club": ""
-  }];
+  }
+  ];
 
   following = [{
     "profilePic": "", "userName": "",
     "Major": "", "Minor": "", "Sport": "", "Club": ""
   },
-  {
-    "profilePic": "", "userName": "",
-    "Major": "", "Minor": "", "Sport": "", "Club": ""
-  }, {
-    "profilePic": "", "userName": "",
-    "Major": "", "Minor": "", "Sport": "", "Club": ""
-  },
-  {
-    "profilePic": "", "userName": "",
-    "Major": "", "Minor": "", "Sport": "", "Club": ""
-  },
-  {
-    "profilePic": "", "userName": "",
-    "Major": "", "Minor": "", "Sport": "", "Club": ""
-  }];
+  ];
   followers = [{
-    "profilePic": "", "userName": "",
-    "Major": "", "Minor": "", "Sport": "", "Club": ""
-  },
-  {
-    "profilePic": "", "userName": "",
-    "Major": "", "Minor": "", "Sport": "", "Club": ""
-  }, {
-    "profilePic": "", "userName": "",
-    "Major": "", "Minor": "", "Sport": "", "Club": ""
-  },
-  {
     "profilePic": "", "userName": "",
     "Major": "", "Minor": "", "Sport": "", "Club": ""
   }];
@@ -95,6 +44,10 @@ export class FriendsActivityComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    // Creads appropriate number of cards to be displayed on
+    // Their appropraite area.. mutual, following.. esc
+
+    // this.feeds = StoreService.profile$$....
   }
 
 }
