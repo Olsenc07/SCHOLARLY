@@ -101,17 +101,13 @@ export class PostPageComponent implements OnInit {
   postForm = new FormGroup({
     // Desktop
     Title: this.Title,
-    postDescription: this.postDescription,
+    PostDescription: this.postDescription,
     upload: this.upload,
     postLocation: this.postLocation,
     friendCtrl: this.friendCtrl,
 
 
   });
-
-
-
-
 
 
 
