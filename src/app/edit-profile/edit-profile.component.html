@@ -45,9 +45,9 @@
 
                 </div>
                 <div class="cropper">
-                  <image-cropper [imageChangedEvent]="imgChangeEvt" [maintainAspectRatio]="true" [aspectRatio]=" 7 / 7"
-                    [resizeToWidth]="170" format="png" (imageCropped)="cropImg($event)" (imageLoaded)="imgLoad()"
-                    (cropperReady)="initCropper()" (loadImageFailed)="imgFailed()"
+                  <image-cropper [imageChangedEvent]="imgChangeEvent" [maintainAspectRatio]="true"
+                    [aspectRatio]=" 7 / 7" [resizeToWidth]="170" format="png" (imageCropped)="cropImg($event)"
+                    (imageLoaded)="imgLoad()" (cropperReady)="initCropper()" (loadImageFailed)="imgFailed()"
                     [ngClass]="profilePic.value ? 'show' : 'hide' ">
                   </image-cropper>
                 </div>
@@ -67,6 +67,7 @@
               <div class="PreviewPic">
                 <h2 class="Preview">Image Preview</h2>
                 <div class="center">
+                  <!-- save this value for the form control -->
                   <img class="previewPic" id="ProfilePic" [src]="cropImgPreview" />
                 </div>
               </div>
@@ -83,18 +84,18 @@
 
             <mat-form-field>
               <input matInput placeholder="Full Name" [formControl]="name" class="inputText" />
-              <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearName()">
+              <!-- <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearName()">
                 <mat-icon class="asthetic-adds">close</mat-icon>
-              </button>
+              </button> -->
             </mat-form-field>
 
           </div>
           <div class="input">
             <mat-form-field class="smaller">
               <input matInput placeholder="Prefered Pronouns" [formControl]="pronouns" />
-              <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearName()">
+              <!-- <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearName()">
                 <mat-icon class="asthetic-adds">close</mat-icon>
-              </button>
+              </button> -->
             </mat-form-field>
           </div>
           <!-- Bio, decided its not needed -->
@@ -121,9 +122,9 @@
 
               <mat-form-field>
                 <input class="major" matInput placeholder="Major" [formControl]="major" />
-                <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearMajor()">
+                <!-- <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearMajor()">
                   <mat-icon class="asthetic-adds">close</mat-icon>
-                </button>
+                </button> -->
               </mat-form-field>
             </div>
 
@@ -133,9 +134,9 @@
               </span>
               <mat-form-field>
                 <input class="major" matInput placeholder="Minor" [formControl]="minor" />
-                <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearMinor()">
+                <!-- <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearMinor()">
                   <mat-icon class="asthetic-adds">close</mat-icon>
-                </button>
+                </button> -->
               </mat-form-field>
             </div>
           </div>
@@ -147,9 +148,9 @@
             </span>
             <mat-form-field>
               <input matInput placeholder="Do you play a sport?" [formControl]="sport" />
-              <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearSport()">
+              <!-- <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearSport()">
                 <mat-icon class="asthetic-adds">close</mat-icon>
-              </button>
+              </button> -->
             </mat-form-field>
           </div>
           <div class="input">
@@ -158,9 +159,9 @@
             </span>
             <mat-form-field>
               <input class="major" matInput placeholder="Are you apart of a club?" [formControl]="club" />
-              <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearClub()">
+              <!-- <button mat-button matSuffix mat-icon-button aria-label="Clear" type="button" (click)="clearClub()">
                 <mat-icon class="asthetic-adds">close</mat-icon>
-              </button>
+              </button> -->
             </mat-form-field>
           </div>
 

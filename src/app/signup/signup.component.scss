@@ -112,20 +112,13 @@
   max-height: 260px;
 
 }
-@media(min-width:1024px){
+
   .contents{
     display: flex;
    box-sizing: border-box;
    padding: 0% 20% 0% 20%;
-  
-  }}
-  @media(max-width:1024px){
-  .contents{
-    display: flex;
-   box-sizing: border-box;
-   padding: 0% 10% 0% 10%;
-  margin: 1%;
-  }}
+  justify-content: center;
+  }
   .column_1 {
     display: flex;
     flex-direction: column;
@@ -178,7 +171,8 @@
 }
 .cropper {
   display: flex;
-// May need a max height
+  margin-top: 1%;
+  max-width: fit-content;
 }
 .display {
   display: flex;
@@ -295,8 +289,9 @@
 }
 .imgBox{
   display: flex;
- width: 100%;
  height: 100%;
+ margin-top: 1%;
+ justify-content: center;
 } 
 ._icon {
   display: flex;
@@ -306,7 +301,7 @@
   flex-direction: column;
   color: #418bba;
 }
-@media (min-width: 900px) {
+@media (min-width: 1024px) {
   ._icon2 {
     display: flex;
     justify-content: center;
@@ -315,7 +310,7 @@
     color: #418bba;
   }
 }
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   ._icon2 {
     display: none;
   }}
@@ -448,14 +443,29 @@
 .Photo{
   font-size: xxx-large;
 }
-
+.showCropper{
+  display: flex;
+  justify-content: center;
+  height: fit-content;
+}
+@media(min-width:770px){
 .show{
   display: flex;
 justify-content: center;
-}
+padding: 0% 25%;
+max-height: 350px;
+
+}}
+@media(max-width:770px){
+.show{
+  display: flex;
+justify-content: center;
+padding: 0% 10%;
+max-height: 250px;
+max-width: 75%;
+}}
 .show_{
   display: flex;
-flex-direction: column;
 justify-content: center;
 }
 .sport-layout {
@@ -539,21 +549,21 @@ justify-content: center;
 
 
 
-@media (min-width: 1024px) {
+// @media (min-width: 1024px) {
   .rowP {
     display: flex;
     justify-content: space-around;
     flex-direction: row;
     margin: 2% 0%;
-    overflow-x: scroll;
+
   }
-}
-@media (max-width: 1024px) {
-  .rowP {
-    display: none;
+// }
+// @media (max-width: 1024px) {
+//   .rowP {
+//     display: none;
    
-  }
-}
+//   }
+// }
 
 
 

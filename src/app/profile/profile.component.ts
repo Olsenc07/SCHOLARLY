@@ -12,14 +12,19 @@ import { StoreService } from '../services/store.service';
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent implements OnInit {
-  // Connecting store.servie to display course in profile. 
-  // Edit profile -> store -> profile
+  // Sign up and edit profile connections
+  profile = StoreService.profile$$;
+  Id = StoreService.userId$$;
 
-  profile$$ = StoreService.profile$$;
+
+
+  ids = StoreService.ids;
+
+
 
   // Course codes
-  Com_ = StoreService.Com.length;
-  Com = StoreService.Com
+  // Com_ = StoreService.CodeCompleted.length;
+  // Com = StoreService.CodeCompleted
   Pur_ = StoreService.Pur.length;
   Pur = StoreService.Pur;
 
@@ -36,6 +41,7 @@ export class ProfileComponent implements OnInit {
   // TODO: initial following value would need to be loaded from database - for now, always start with false
   following = false;
 
+  // Tempt hard code before data base
   showCases = ['../../assets/Pics/IMG-8413.PNG', '../../assets/Pics/IMG-8619.PNG',
     '../../assets/Pics/WhiteSquareInAppLogo.jpg', '../../assets/Pics/IMG-8413.PNG', '../../assets/Pics/IMG-8619.PNG',
     '../../assets/Pics/ProperInAppLogo.jpeg ', '../../assets/Pics/IMG-8413.PNG'
@@ -56,13 +62,14 @@ export class ProfileComponent implements OnInit {
     this.following = !this.following;
   }
   ngOnInit(): any {
-    this.Com = this.Com.map(code => code.toUpperCase()).sort();
+    // this.Com = this.Com.map(code => code.toUpperCase()).sort();
 
 
     this.Pur = this.Pur.map(code => code.toUpperCase()).sort();
 
     // this.showCases = this.showCases.toString();
-    return this.Pur, this.Com
+    return this.Pur
+    // this.Com
 
   }
 

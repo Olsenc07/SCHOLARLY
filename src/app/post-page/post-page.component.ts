@@ -21,14 +21,14 @@ import { SearchListService } from '../services/search.service';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Post, PostService } from '../services/post.service';
 
-const moment = _moment();
+const moment = _moment;
 
 export const MY_FORMATS = {
   parse: {
-    dateInput: 'DD MMMM YYYY',
+    dateInput: 'LL',
   },
   display: {
-    dateInput: 'DD MMMM YYYY',
+    dateInput: 'LL',
     monthYearLabel: 'MMM YYYY',
     dateA11yLabel: 'LL',
     monthYearA11yLabel: 'MMMM YYYY',
@@ -101,17 +101,13 @@ export class PostPageComponent implements OnInit {
   postForm = new FormGroup({
     // Desktop
     Title: this.Title,
-    postDescription: this.postDescription,
+    PostDescription: this.postDescription,
     upload: this.upload,
     postLocation: this.postLocation,
     friendCtrl: this.friendCtrl,
 
 
   });
-
-
-
-
 
 
 
@@ -236,6 +232,12 @@ export class PostPageComponent implements OnInit {
       PostLocation: this.postLocation.value,
       FriendCtrl: this.friendCtrl.value,
       FirstFormGroup: this.firstFormGroup.value,
+      // LocationEvent: this.locationEvent.value,
+
+      // Date: this.date.value,
+      // Time: this.time.value,
+      // PostLocation: this.postLocation.value,
+
       SecondFormGroup: this.secondFormGroup.value,
       ThirdFormGroup: this.thirdFormGroup.value,
       FourthFormGroup: this.fourthFormGroup.value,

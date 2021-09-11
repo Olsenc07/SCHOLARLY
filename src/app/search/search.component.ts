@@ -27,59 +27,13 @@ export class SearchComponent implements OnInit {
     "profilePic": "", "userName": "", "Bio": "",
     "Major": "", "Minor": "", "Sport": "", "Club": ""
   },
-  {
-    "profilePic": "", "userName": "", "Bio": "",
-    "Major": "", "Minor": "", "Sport": "", "Club": ""
-  },
-  {
-    "profilePic": "", "userName": "", "Bio": "",
-    "Major": "", "Minor": "", "Sport": "", "Club": ""
-  },
-  {
-    "profilePic": "", "userName": "", "Bio": "",
-    "Major": "", "Minor": "", "Sport": "", "Club": ""
-  },
-  {
-    "profilePic": "", "userName": "", "Bio": "",
-    "Major": "", "Minor": "", "Sport": "", "Club": ""
-  },
-  {
-    "profilePic": "", "userName": "", "Bio": "",
-    "Major": "", "Minor": "", "Sport": "", "Club": ""
-  },
-  {
-    "profilePic": "", "userName": "", "Bio": "",
-    "Major": "", "Minor": "", "Sport": "", "Club": ""
-  }
+
   ];
   posts = [{
     "profilePic": "", "Title": "",
     "Specific": "", "Location": "", "Date": "", "Upload": ""
   },
-  {
-    "profilePic": "", "Title": "",
-    "Specific": "", "Location": "", "Date": "", "Upload": ""
-  },
-  {
-    "profilePic": "", "Title": "",
-    "Specific": "", "Location": "", "Date": "", "Upload": ""
-  },
-  {
-    "profilePic": "", "Title": "",
-    "Specific": "", "Location": "", "Date": "", "Upload": ""
-  },
-  {
-    "profilePic": "", "Title": "",
-    "Specific": "", "Location": "", "Date": "", "Upload": ""
-  },
-  {
-    "profilePic": "", "Title": "",
-    "Specific": "", "Location": "", "Date": "", "Upload": ""
-  },
-  {
-    "profilePic": "", "Title": "",
-    "Specific": "", "Location": "", "Date": "", "Upload": ""
-  }
+
   ];
   // Mock list but these are needed to fill app-card-request in ngFor
   // Will be pulled from back end, but how does the selector know to fill???

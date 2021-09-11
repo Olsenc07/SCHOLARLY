@@ -42,6 +42,10 @@
   width: 90%;
   height: 100%;
 }
+.centerist{
+  display: flex;
+  justify-content: center;
+}
 .center {
   display: flex;
   justify-content: center;
@@ -79,6 +83,8 @@
   font-family: "Font Awesome 5 Free";
   height: 100%;
   margin-top: 4%;
+  text-align: center;
+  align-items: center;
 }}
 @media(max-width:450px){
   .centerR {
@@ -90,7 +96,19 @@
     font-family: "Font Awesome 5 Free";
     height: 100%;
     margin-top: 4%;
+    text-align: center;
+    align-items: center;
   }}
+    .centerGD{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      font-size: inherit;
+      color: #7e7171;
+      font-family: "Font Awesome 5 Free";
+      height: 100%;
+      text-align: center;
+    }
 @media(min-width:450px){
 .centerR_ {
   display: flex;
@@ -226,6 +244,7 @@
   display: flex;
   flex-direction: row;
   overflow-x: scroll;
+  padding-bottom: 3%;
   background-color: #ebebf5;
 }
 .groups {
@@ -285,12 +304,21 @@
     height: 100%;
     margin-right: 2%;
   }}
+  @media(max-width:1024px){
+    .HighlightsM_ {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      margin-right: 2%;
+    }}
 @media(min-width:1024px){
 .HighlightsM {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 100%;
   height: 100%;
+  max-width: 52%;
   margin-right: 2%;
 }}
 @media(max-width:1024px){
@@ -317,6 +345,14 @@
 .icon{
   color: rgb(173, 211, 236);
 }
+.large{
+  font-size: small;
+  padding-right: 1%;
+}
+.lLarge{
+  font-size: x-small;
+  padding-right: 1%;
+}
 @media(min-width:400px){
 .left-side {
   display: flex;
@@ -335,6 +371,13 @@
     box-sizing: border-box;
     position: relative;
   }}
+  .list{
+    display: flex;
+    justify-content: center;
+    overflow-y: scroll;
+    flex-direction: column;
+    font-family: "Font Awesome 5 Free";
+  }
 mat-grid-list{
   display: flex;
   width: 100%;
@@ -462,6 +505,7 @@ font-weight: 900;
   display: flex;
   height: 100%;
   width: 100%;
+  margin: 1% 0%;
 }
 .pic {
   display: flex;
@@ -666,13 +710,7 @@ font-weight: 900;
   font-weight: 500;
     color: #7e7171;
 }
-.list{
-  display: flex;
-  justify-content: center;
-  overflow-y: scroll;
-  flex-direction: column;
-  font-family: "Font Awesome 5 Free";
-}
+
 .uNameMsg{
   display: flex;
   justify-content: center;

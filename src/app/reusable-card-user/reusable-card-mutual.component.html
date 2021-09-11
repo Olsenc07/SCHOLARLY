@@ -23,12 +23,20 @@
             </div>
 
 
+
             <!-- Card is removed from list when follow is clicked -->
+            <!-- Only appears if user isn't already following this mutual friend -->
+            <mat-chip-list class="center_" aria-label="FollowBtn">
+                <!-- (click)="followClicked()" -->
+                <mat-chip class="messageM">
+                    Follow
 
-            <div class="row1"><button mat-icon-button class="btn"><i class="far fa-check-circle green"></i></button>
+                    <!-- {{ following ? "Unfollow" : "Follow" }} -->
 
-                <button mat-icon-button class="btn"> <i class="far fa-times-circle red"></i></button>
-            </div>
+
+
+                </mat-chip>
+            </mat-chip-list>
 
 
 
@@ -50,7 +58,7 @@
                 <div class="center1" *ngIf="(profile | async)?.Minor">
                     <!-- {{id.Minor}} -->
                     <i class="fas fa-star-of-life lLarge"></i>
-                    {{ (profile | async)?.Minor}}
+                    <div> {{ (profile | async)?.Minor}}</div>
                 </div>
             </div>
 

@@ -3,6 +3,7 @@ import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { AttendanceComponent } from '../main-pages/main-pages.component';
 import { TaggedComponent } from '../main-pages/main-pages.component';
 import { PostService } from '../services/post.service';
+import { StoreService } from '../services/store.service';
 
 @Component({
     selector: 'app-card',
@@ -11,10 +12,14 @@ import { PostService } from '../services/post.service';
 })
 export class ReusableCardComponent {
 
-    post$$ = PostService.post$$;
-    gender$ = PostService.gender$;
-    booleans$ = PostService.booleans$;
-    event$ = PostService.event$;
+    post = PostService.post$$;
+    profile = StoreService.profile$$;
+    id = StoreService.userId$$;
+
+
+    // gender$ = PostService.gender$;
+    // booleans$ = PostService.booleans$;
+    // event$ = PostService.event$;
 
 
     showCases = [

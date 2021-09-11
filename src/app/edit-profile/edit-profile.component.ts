@@ -12,7 +12,7 @@ import {
 import * as _moment from 'moment';
 import { default as _rollupMoment } from 'moment';
 import { MatDialog } from '@angular/material/dialog';
-import { ImageCroppedEvent } from 'ngx-image-cropper';
+import { ImageCroppedEvent, base64ToFile } from 'ngx-image-cropper';
 import { HttpClient } from '@angular/common/http';
 import {
   MatAutocompleteSelectedEvent,
@@ -30,7 +30,7 @@ import { AccountTextComponent } from '../signup/signup.component'
 interface Gender {
   name: string;
 }
-const moment = _rollupMoment || _moment;
+const moment = _moment;
 export const MY_FORMATS = {
   parse: {
     dateInput: 'LL',
@@ -38,8 +38,8 @@ export const MY_FORMATS = {
   display: {
     dateInput: 'LL',
     monthYearLabel: 'MMM YYYY',
-    dateA11yLabel: 'LL',
-    monthYearA11yLabel: 'MMMM YYYY',
+    dateA12yLabel: 'LL',
+    monthYearA12yLabel: 'MMMM YYYY',
   },
 };
 @Component({
@@ -69,25 +69,25 @@ export class EditProfileComponent implements OnInit {
   selectable = true;
   removable = true;
   separatorKeysCodes: number[] = [ENTER, COMMA];
-  filteredCodes: Observable<string[]>;
   filteredCodesP: Observable<string[]>;
+  filteredCodes: Observable<string[]>;
   classes: string[] = [];
   classesP: string[] = [];
   @ViewChild('codeInput') codeInput: ElementRef<HTMLInputElement>;
   @ViewChild('codeInputP') codeInputP: ElementRef<HTMLInputElement>;
   @ViewChild('auto') matAutocomplete: MatAutocomplete;
   @ViewChild('autoP') matAutocompleteP: MatAutocomplete;
-  url: string;
+  url: string[];
   cropImgPreview: any = '';
-  imgChangeEvt: any = '';
+  imgChangeEvent: any = '';
   // PP isn't connected properly i dont think, since image is being cropped then returned as a base 64 value
   profilePic: FormControl = new FormControl('');
   major: FormControl = new FormControl('');
   minor: FormControl = new FormControl('');
   sport: FormControl = new FormControl('');
   club: FormControl = new FormControl('');
-  bio: FormControl = new FormControl('');
-  public bioLength = new BehaviorSubject(0);
+  // bio: FormControl = new FormControl('');
+  // public bioLength = new BehaviorSubject(0);
   name: FormControl = new FormControl('');
   pronouns: FormControl = new FormControl('');
   showCase: FormControl = new FormControl('');
@@ -112,7 +112,7 @@ export class EditProfileComponent implements OnInit {
     profilePic: this.profilePic,
     CodeCompleted: this.CodeCompleted,
     CodePursuing: this.CodePursuing,
-    bio: this.bio,
+    // bio: this.bio,
     showCase: this.showCase,
   });
   selectedIndex = 0;
@@ -148,7 +148,7 @@ export class EditProfileComponent implements OnInit {
     private http: HttpClient,
     private storeService: StoreService
   ) {
-    this.bio.valueChanges.subscribe((v) => this.bioLength.next(v.length));
+    // this.bio.valueChanges.subscribe((v) => this.bioLength.next(v.length));
 
     this.filteredCodes = this.CodeCompleted.valueChanges.pipe(
       map((code: string | null) =>
@@ -180,11 +180,16 @@ export class EditProfileComponent implements OnInit {
     document.getElementById('fileInputP').click();
   };
   onImgChange(event: any): void {
-    this.imgChangeEvt = event;
+    this.imgChangeEvent = event;
   }
-  // Passes value as base64 string of cropped area!! But where does form controller come into play?
-  cropImg(e: ImageCroppedEvent): void {
+  // Passes value as base64 string of cropped area!!
+  //  But where does form controller come into play?
+  cropImg(e: ImageCroppedEvent): any {
     this.cropImgPreview = e.base64;
+    // let File = base64ToFile(this.cropImgPreview)
+    // this.profilePic = this.cropImgPreview
+    // return this.profilePic
+    return this.cropImgPreview
   }
 
   imgLoad(): void {
@@ -197,6 +202,7 @@ export class EditProfileComponent implements OnInit {
   imgFailed(): void {
     // error msg
   }
+
   // SnapShot
   // After its added to the list. Click save and 
   // this becomes the updated array, sent back to the data base
@@ -205,6 +211,8 @@ export class EditProfileComponent implements OnInit {
     console.log(this.list);
     return this.list
   }
+
+
   imagePreview(event: any): void {
     if (event.target.files && event.target.files[0]) {
       const reader = new FileReader();
@@ -298,9 +306,9 @@ export class EditProfileComponent implements OnInit {
   clearName(): void {
     this.name.setValue('');
   }
-  clearBio(): void {
-    this.bio.setValue('');
-  }
+  // clearBio(): void {
+  //   this.bio.setValue('');
+  // }
 
   clearProfilePic(): any {
     this.profilePic.setValue('');
@@ -404,17 +412,36 @@ export class EditProfileComponent implements OnInit {
   }
 
   onSubmit(): void {
+
     console.log(this.editForm.value);
     // TODO: convert form fields to Profile
 
     let profile: Profile = {
-      CodePursuing: this.CodePursuing.value,
       CodeCompleted: this.CodeCompleted.value,
-      name: this.name.value,
+      CodePursuing: this.CodePursuing.value,
+      Name: this.name.value,
+      Pronouns: this.pronouns.value,
+      profilePic: this.profilePic.value,
+      Gender: this.genderChoice.value,
+      Major: this.major.value,
+      Minor: this.minor.value,
+      Sport: this.sport.value,
+      Club: this.club.value,
+      profPic: this.cropImgPreview,
+      Birthday: this.birthday.value,
+      ShowCase: this.showCase.value,
+      // ShowCasse: this.url,
+      filteredCodes: this.filteredCodes,
+      filteredCodesP: this.filteredCodesP,
 
+      // cropImgPreview: this.cropImgPreview,
+      // Converted base64 url to a file
+      // Trying to store this chosen cropped value in service
+      // cropPicChosen: File,
     };
 
     // TODO: replace null with Profile object
     this.storeService.setProfile(profile);
+
   }
 }

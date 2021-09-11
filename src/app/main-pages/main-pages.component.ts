@@ -65,7 +65,7 @@ export class AttendanceComponent {
 @Component({
   selector: 'app-main-tagged',
   templateUrl: './tagged.component.html',
-  styleUrls: ['./tagged.component.scss'],
+  styleUrls: ['./attendance.component.scss'],
 })
 export class TaggedComponent {
   constructor(private bottomSheetRef: MatBottomSheetRef<AttendanceComponent>) { }

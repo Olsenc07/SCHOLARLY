@@ -5,12 +5,11 @@
 
 
     <!-- Right wall -->
-    <div class="right-wall">
+    <div [ngClass]="feeds.length !== 0 ? 'rightWall_ ' : 'right-wall'">
 
 
       <!-- General choice appears at top of feed and dissapears as user scrolls -->
       <div class="top">
-
 
         {{ category }}
       </div>

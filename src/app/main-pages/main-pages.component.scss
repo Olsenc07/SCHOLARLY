@@ -191,6 +191,7 @@ justify-content: center;
   flex-direction: column;
   width: 100%;
   height: 100%;
+  overflow-y: scroll;
   box-sizing: border-box;
   padding: 0% 32%;
 }}
@@ -220,7 +221,7 @@ justify-content: center;
 }
 .fill{
   display: flex;
-  margin-top: 7%;
+  margin-top: 10%;
   height: 100%;
   justify-content: center;
   flex-direction: column;
@@ -246,6 +247,7 @@ justify-content: center;
     margin: 2% 0% 0% 0%;
     width: 100%;
     height: 100%;
+    
   }
 }
 
@@ -256,8 +258,32 @@ justify-content: center;
     justify-content: center;
     width: 100%;
     height: 100%;
+    margin-top: 5%;
   }
 }
+@media (min-width: 1024px) {
+  .rightWall_ {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2% 0% 0% 0%;
+    width: 100%;
+    height: 100%;
+    
+  }
+}
+
+@media (max-width: 1024px) {
+  .rightWall_ {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 2%;
+  }
+}
+
 
 .text {
   justify-content: center;
@@ -289,24 +315,7 @@ justify-content: center;
   border: groove;
   flex-direction: column;
 }
-@media(min-width:1024px){
-.specifics-input {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  border: groove;
-  overflow-y: scroll;
-  flex-direction: column;
-}}
-@media(max-width:1024px){
-.specifics-input {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  overflow-x: scroll;
-  flex-direction: row;
-}
-}
+
 .text-scroll {
   overflow: scroll;
   color: #707070;

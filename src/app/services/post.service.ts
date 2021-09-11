@@ -9,35 +9,41 @@ export interface Post {
     Upload: String;
     PostLocation: String;
     FriendCtrl: String[];
+    // Date: String;
+    // Time: String;
+    // LocationEvent: String;
+    // Gender: String;
+    // Driver: Boolean;
+    // PaymentService: Boolean;
+    // Event: String;
     FirstFormGroup: String;
     SecondFormGroup: String;
-    ThirdFormGroup: Boolean;
+    ThirdFormGroup: String;
     FourthFormGroup: String;
-
-
 }
+
 @Injectable({
     providedIn: 'root',
 })
 export class PostService {
-    post$$: ReplaySubject<Post> = new ReplaySubject<Post>(1);
-    static post$$: string[];
-
-    gender$: Observable<Post> = new Observable;
-    static gender$: string[];
-
-    booleans$: Observable<Post> = new Observable;
-    static booleans$: boolean;
-
-    event$: Observable<Post> = new Observable;
-    static event$: string[];
 
 
+    // gender$: Observable<Post> = new Observable;
+    // static gender$: string[];
 
-    constructor() { }
+    // booleans$: Observable<Post> = new Observable;
+    // static booleans$: boolean;
+
+    // event$: Observable<Post> = new Observable;
+    // static event$: string[];
+
+    static post$$: ReplaySubject<Post> = new ReplaySubject<Post>(1);
+
+    constructor() {
+    }
 
     setPost(post: Post): void {
-        this.post$$.next(post)
+        PostService.post$$.next(post)
     }
 
 }
