@@ -8,20 +8,29 @@
           <div class="centerT">
             <!-- {{title}} -->
             <mat-card-subtitle class="postTitle textSize">
-              <!-- {{Title}} -->
-              Post Title
+              {{ (post | async)?.Title}}
+              <!-- Post Title -->
             </mat-card-subtitle>
           </div>
           <div class="row2">
             <div class="column">
-              <div mat-card-avatar class="profilePic">
-                <!-- {{profilePic}} -->
+              <div class="profilePic" *ngIf="(profile | async)?.profPic">
+                <!-- need to get croppeded value -->
+                <img class="pic" src="{{(profile | async)?.profPic}}">
+                <!-- <img *ngFor="let id of ids" src="{{id.profilePic}}" class="pic" /> -->
+              </div>
+
+              <div class="profilePic" *ngIf="!(profile | async)?.profPic">
+                <img src="../../assets/Pics/WhiteSquareInAppLogo.jpg" class="pic" />
               </div>
               <div class="nameTitle">
                 <!-- Button directs to that users profile -->
                 <button class="link" mat-button>
                   <!-- {{userName}}: -->
-                  <mat-card-title class="userName textSize">Olsen07</mat-card-title>
+                  <mat-card-title class="userName textSize">
+                    <!-- Olsen07 -->
+                    {{( id |async)?.UserName}}
+                  </mat-card-title>
                 </button>
               </div>
             </div>
@@ -29,13 +38,21 @@
             <div class="row1">
               <div class="column_">
                 <mat-card-title class="textSize row1">
-                  <!-- {{Specific}} -->Specific Page
+                  <!-- {{Specific}}Specific Page -->
+                  {{ (post | async)?.FirstFormGroup.locationEvent}}
                 </mat-card-title>
                 <mat-card-subtitle class="row1">
                   <!--{{Location}} -->
-                  <div class="postLocation textSize">Location</div>
+                  <div class="postLocation textSize">
+                    <!-- Location -->
+                    {{ (post | async)?.postLocation}}
+                  </div>
                   <!--{{Date}} -->
-                  <div class="postTime textSize">Date/Time</div>
+                  <!-- make  column -->
+                  <div class="postTime textSize">
+                    {{ (post | async)?.FirstFormGroup.date}}
+                    {{ (post | async)?.FirstFormGroup.time}}
+                  </div>
                 </mat-card-subtitle>
               </div>
             </div>

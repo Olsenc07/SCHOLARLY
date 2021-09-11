@@ -236,9 +236,15 @@ export class PostPageComponent implements OnInit {
       PostLocation: this.postLocation.value,
       FriendCtrl: this.friendCtrl.value,
       FirstFormGroup: this.firstFormGroup.value,
-      SecondFormGroup: this.secondFormGroup.value,
-      ThirdFormGroup: this.thirdFormGroup.value,
-      FourthFormGroup: this.fourthFormGroup.value,
+      // LocationEvent: this.locationEvent.value,
+
+      // Date: this.date.value,
+      // Time: this.time.value,
+      // PostLocation: this.postLocation.value,
+
+      // SecondFormGroup: this.secondFormGroup.value,
+      // ThirdFormGroup: this.thirdFormGroup.value,
+      // FourthFormGroup: this.fourthFormGroup.value,
     }
 
     this.postService.setPost(post);

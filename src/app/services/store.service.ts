@@ -62,6 +62,7 @@ export interface Ids {
 
 
 
+
 @Injectable({
   providedIn: 'root',
 })
@@ -121,6 +122,7 @@ export class StoreService {
 
   static profile$$: ReplaySubject<Profile> = new ReplaySubject<Profile>(1);
   static userId$$: ReplaySubject<NewUserId> = new ReplaySubject<NewUserId>(1);
+
   // static profile$$: string[];
 
   constructor(private http: HttpClient) { }
@@ -129,9 +131,9 @@ export class StoreService {
     StoreService.userId$$.next(userId);
   }
   setProfile(profile: Profile): void {
-    StoreService.profile$$.next(profile);
-
+    StoreService.profile$$.next(profile)
   }
+
 
 
 

@@ -6,7 +6,7 @@
       <!-- Title of post input -->
       <!-- back button -->
       <div class="back-button_">
-        <button mat-icon-button routerLink="/search" class="text-"><span class="material-icons">
+        <button type="button" mat-icon-button routerLink="/search" class="text-"><span class="material-icons">
             arrow_back_ios
           </span></button>
       </div>
@@ -45,7 +45,7 @@
 
 
             <div [ngClass]="upload.value ? 'Show' : 'hide' ">
-              <button mat-icon-button class="trash" color="primary" (click)="clearUpload()">
+              <button type="button" mat-icon-button class="trash" color="primary" (click)="clearUpload()">
                 <div class=" far fa-trash-alt"></div>
               </button>
             </div>
@@ -54,7 +54,7 @@
 
           <div class="row__"> Recommended Aspect Ratio 4:3</div>
           <div class="rowP">
-            <button class="cameraIcon" mat-button (click)="uploadFile()">
+            <button type="button" class="cameraIcon" mat-button (click)="uploadFile()">
               <div class="material-icons Photo">
                 add_a_photo
 
@@ -73,7 +73,7 @@
         </div>
         <!-- back button -->
         <div class="back-button">
-          <button mat-raised-button routerLink="/search" class="text">Cancel</button>
+          <button type="button" mat-raised-button routerLink="/search" class="text">Cancel</button>
         </div>
       </div>
 
@@ -185,7 +185,7 @@
 
             </mat-form-field>
             <div>
-              <button mat-button matStepperNext>Next</button>
+              <button type="button" mat-button matStepperNext>Next</button>
             </div>
           </form>
         </mat-step>
@@ -214,8 +214,8 @@
             </div>
 
             <div>
-              <button mat-button matStepperPrevious>Back</button>
-              <button mat-button matStepperNext>Next</button>
+              <button type="button" mat-button matStepperPrevious>Back</button>
+              <button type="button" mat-button matStepperNext>Next</button>
             </div>
           </form>
         </mat-step>
@@ -239,8 +239,8 @@
 
             </div>
             <div>
-              <button mat-button matStepperPrevious>Back</button>
-              <button mat-button matStepperNext>Next</button>
+              <button type="button" mat-button matStepperPrevious>Back</button>
+              <button type="button" mat-button matStepperNext>Next</button>
             </div>
           </form>
         </mat-step>
@@ -250,7 +250,7 @@
             <ng-template matStepLabel>Type Of Event</ng-template>
 
             <mat-radio-group aria-label="Select an option" formControlName="event">
-              <button mat-button (click)="openDialog()">
+              <button type="button" mat-button (click)="openDialog()">
                 <mat-icon>info</mat-icon>
               </button>
 
@@ -278,8 +278,9 @@
         <mat-step>
           <ng-template matStepLabel>Time To Post</ng-template>
           <div class="row_">
-            <button mat-button matStepperPrevious>Back</button>
-            <button mat-raised-button color="primary" class="text" routerLink="/search">Post
+            <button type="button" mat-button matStepperPrevious>Back</button>
+            <button type="button" mat-raised-button color="primary" class="text" routerLink="/search"
+              (click)="onFormSubmit()">Post
               <span class="material-icons"> arrow_forward </span>
             </button>
           </div>
