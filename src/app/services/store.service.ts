@@ -82,29 +82,7 @@ export class StoreService {
     profilePic: '', Title: '',
     Specific: '', Location: '', Date: '', Upload: ''
   },
-  {
-    profilePic: '', Title: '',
-    Specific: '', Location: '', Date: '', Upload: ''
-  },
-  {
-    profilePic: '', Title: '',
-    Specific: '', Location: '', Date: '', Upload: ''
-  },
-  {
-    profilePic: '', Title: '',
-    Specific: '', Location: '', Date: '', Upload: ''
-  }, {
-    profilePic: '', Title: '',
-    Specific: '', Location: '', Date: '', Upload: ''
-  },
-  {
-    profilePic: '', Title: '',
-    Specific: '', Location: '', Date: '', Upload: ''
-  },
-  {
-    profilePic: '', Title: '',
-    Specific: '', Location: '', Date: '', Upload: ''
-  },
+
   ];
 
 

@@ -8,51 +8,95 @@
         <div class="column">
           <div class="centerT">
             <!-- {{title}} -->
-            <mat-card-subtitle class="postTitle textSize">
+            <div class="postTitle textSize">
               {{ (post | async)?.Title}}
               <!-- Post Title -->
-            </mat-card-subtitle>
+            </div>
           </div>
           <div class="row2">
             <div class="column">
-              <div class="profilePic" *ngIf="(profile | async)?.profPic">
-                <!-- need to get croppeded value -->
-                <img class="pic" src="{{(profile | async)?.profPic}}">
-                <!-- <img *ngFor="let id of ids" src="{{id.profilePic}}" class="pic" /> -->
+              <div class="row-" *ngIf="(profile | async)?.profPic">
+                <div class="profilePic">
+                  <!-- need to get croppeded value -->
+                  <img class="pic" src="{{(profile | async)?.profPic}}">
+                  <!-- <img *ngFor="let id of ids" src="{{id.profilePic}}" class="pic" /> -->
+                </div>
+
+                <div class="column1">
+                  <div class="linkN">
+                    {{ (profile | async)?.Name}}
+                  </div>
+
+
+
+                  <div class="nameTitle">
+                    <!-- Button directs to that users profile -->
+                    <button mat-button>
+                      <div class="userName  link">
+                        <!-- Olsen07 -->
+                        {{( id | async)?.UserName}}
+                      </div>
+                    </button>
+                  </div>
+                </div>
+
+
               </div>
 
-              <div class="profilePic" *ngIf="!(profile | async)?.profPic">
-                <img src="../../assets/Pics/WhiteSquareInAppLogo.jpg" class="pic" />
+
+              <div class="row-" *ngIf="!(profile | async)?.profPic">
+
+
+                <div class="profilePic">
+                  <img src="../../assets/Pics/WhiteSquareInAppLogo.jpg" class="pic" />
+                </div>
+
+
+                <div class="column1">
+                  <div class="linkN">
+                    {{ (profile | async)?.Name}}
+                  </div>
+
+                  <div class="nameTitle">
+                    <!-- Button directs to that users profile -->
+                    <button mat-button>
+                      <div class="userName  link">
+                        <!-- Olsen07 -->
+                        {{( id | async)?.UserName}}
+                      </div>
+                    </button>
+                  </div>
+                </div>
+
+
               </div>
-              <div class="nameTitle">
-                <!-- Button directs to that users profile -->
-                <button class="link" mat-button>
-                  <!-- {{userName}}: -->
-                  <mat-card-title class="userName textSize">
-                    <!-- Olsen07 -->
-                    {{( id | async)?.UserName}}
-                  </mat-card-title>
-                </button>
-              </div>
+
+
+
+
+
             </div>
 
             <div class="row1">
               <div class="column_">
-                <mat-card-title class="textSize row1">
+                <div class="textSize row1 t">
                   <!-- {{Specific}}Specific Page -->
                   {{ (post | async)?.FirstFormGroup.locationEvent}}
-                </mat-card-title>
+                </div>
                 <mat-card-subtitle class="row1">
                   <!--{{Location}} -->
-                  <div class="postLocation textSize">
+                  <div class="postLocation textSize t">
                     <!-- Location -->
                     {{ (post | async)?.postLocation}}
                   </div>
                   <!--{{Date}} -->
                   <!-- make  column -->
-                  <div class="postTime textSize">
-                    {{ (post | async)?.FirstFormGroup.date}}
-                    {{ (post | async)?.FirstFormGroup.time}}
+                  <div class="postTime textSize column1">
+                    <div class="displayT t">
+                      {{ (post | async)?.FirstFormGroup.date | date:"longDate"}}
+                    </div>
+                    <div class="displayT t">
+                      {{ (post | async)?.FirstFormGroup.time}}</div>
                   </div>
                 </mat-card-subtitle>
               </div>
@@ -103,12 +147,10 @@
     </div>
 
     <!-- Takes upload img/video from post page {{Upload}} -->
-    <div class="upload" *ngFor="let show of showCases">
-      <!-- -->
-      <!-- ../../assets/Pics/ProperInAppLogo.jpeg -->
-      <!-- ../../assets/Pics/WhiteSquareInAppLogo.jpg -->
+    <!-- *ngFor="let show of showCases" -->
+    <div class="upload" *ngIf="(post|async)?.Upload  ">
 
-      <img class="middle-card" src="{{show}}">
+      <img class="middle-card" src="{{  (post|async)?.Upload   }}">
     </div>
 
     <div>
