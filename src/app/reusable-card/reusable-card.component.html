@@ -1,4 +1,5 @@
 <!-- Posts box which should be a scroll view -->
+
 <div class="feed">
   <mat-card class="specifics-fill">
     <!-- Profile Pic -->
@@ -29,7 +30,7 @@
                   <!-- {{userName}}: -->
                   <mat-card-title class="userName textSize">
                     <!-- Olsen07 -->
-                    {{( id |async)?.UserName}}
+                    {{( id | async)?.UserName}}
                   </mat-card-title>
                 </button>
               </div>
@@ -71,29 +72,31 @@
 
           <!-- [ngClass]="(gender$ | async ) === female
           ? 'female' : 'hide' "  -->
-          <p class="fas fa-venus"></p>
+          <p class="fas fa-venus" *ngIf="(post | async)?.SecondFormGroup"></p>
           <!-- [ngClass]="(gender$ | async ) === all
           ? 'all' : 'hide' " -->
-          <p class="fas fa-transgender-alt"></p>
+          <p class="fas fa-transgender-alt" *ngIf="(post | async)?.SecondFormGroup"></p>
           <!-- [ngClass]="(gender$ | async ) === male
           ? 'male' : 'hide' "  -->
-          <p class="fas fa-mars"></p>
+          <p class="fas fa-mars" *ngIf="(post | async)?.SecondFormGroup"></p>
+
+
 
 
           <!-- [ngClass]="(boolean$.driver | async ) === true
           ? 'car' : 'hide' "  -->
-          <p class="fas fa-car"></p>
+          <p class="fas fa-car" *ngIf="(post | async)?.ThirdFormGroup"></p>
           <!-- [ngClass]="(boolean$.paymentService | async ) === true
           ? 'money' : 'hide' " -->
-          <p class="fas fa-dollar-sign"></p>
+          <p class="fas fa-dollar-sign" *ngIf=" (post | async)?.ThirdFormGroup"></p>
 
 
           <!-- [ngClass]="(event$ | async ) === formal
           ? 'formal' : 'hide' " -->
-          <p class="fas fa-user-tie"></p>
+          <p class="fas fa-user-tie" *ngIf="(post | async)?.FourthFormGroup"></p>
           <!-- [ngClass]="(event$ | async ) === relaxed
           ? 'relaxed' : 'hide' " -->
-          <p class="fas fa-glass-cheers"></p>
+          <p class="fas fa-glass-cheers" *ngIf="(post | async)?.FourthFormGroup"></p>
         </div>
 
       </div>

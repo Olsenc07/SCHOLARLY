@@ -17,6 +17,9 @@ export interface Post {
     // PaymentService: Boolean;
     // Event: String;
     FirstFormGroup: String;
+    SecondFormGroup: String;
+    ThirdFormGroup: String;
+    FourthFormGroup: String;
 }
 
 @Injectable({
