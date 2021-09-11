@@ -125,10 +125,10 @@ export class EditProfileComponent implements OnInit {
   ];
 
   // Group list;
-  gList = ['', '', '', '', '', '', ''];
+  gList = [''];
 
   // Post list;
-  pList = ['', '', '', '', '', '', ''];
+  pList = [''];
 
   // Connects to save showcases in the data base
   list = ['../../assets/Pics/IMG-8413.PNG',
