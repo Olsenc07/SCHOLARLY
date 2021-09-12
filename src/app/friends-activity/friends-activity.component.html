@@ -5,21 +5,21 @@
       <!-- Friend request box -->
 
 
-      <div class="row" *ngIf="feeds.length !== 0">
+      <div class="row" *ngIf="requests.length !== 0">
         <div class="title">Friend Requests</div>
       </div>
 
-      <div class="fit" *ngIf="feeds.length == 0 ">
+      <div class="fit" *ngIf="requests.length == 0">
         <div class="noRequests">
           No Current Requests
           <i class="fas fa-users-slash icon"></i>
         </div>
       </div>
 
-      <div class="fit" *ngIf="feeds.length !== 0 ">
+      <div class="fit" *ngIf="requests.length !== 0 ">
         <!-- If ids are on friend list -->
-        <app-card-request class="adds" *ngFor="let feed of feeds">
-          {{feed}}
+        <app-card-request class="adds" *ngFor="let request of requests">
+          {{request}}
         </app-card-request>
       </div>
 
@@ -89,6 +89,10 @@
         </div>
       </div> -->
     </div>
+
+
+
+
     <!-- Tablet/Mobile search bar -->
     <div class="search-friends">
       <!-- <div class="hide1">
@@ -117,7 +121,7 @@
             <div class="following-box">
               <div class="structure">
 
-                <app-card-user *ngFor="let follow of following" class="width"> {{follow}}
+                <app-card-user *ngFor="let following of following" class="width"> {{following}}
                 </app-card-user>
 
               </div>
@@ -140,11 +144,15 @@
                 </div>
               </div>
             </div>
+
             <div class="following-box">
               <div class="structure">
-                <app-card-user *ngFor="let follow of followers" class="width">{{follow}}</app-card-user>
+                <app-card-user *ngFor="let follower of followers" class="width">{{follower}}</app-card-user>
               </div>
             </div>
+
+
+
           </div>
 
 
@@ -157,61 +165,75 @@
         <div class=" column_">
           <mat-tab-group mat-align-tabs="center">
             <div class="row">
-              <mat-tab label="Followers">
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  Followers
+                  <div class="p">
+                    {{followers.length}}
+                  </div>
+
+                </ng-template>
+
                 <div class="middle">
-
-
                   <div class="following-box">
                     <div class="follower-s">
-                      <div class="row">
-                        <div class="title">Friend Requests</div><button mat-icon-button><i
-                            class="fas fa-arrow-circle-right title"></i>
-                        </button>
+                      <div class="row" *ngIf="requests.length !== 0">
+                        <div class="title">Friend Requests</div>
                       </div>
-                      <app-card-request></app-card-request>
-                    </div>
-                    <div class="followers">
-                      <div class="center1">
-                        <div class="center">
-                          <!-- {{Value}} -->
-                          0
+
+
+                      <!-- Don't display for mobiel view -->
+                      <!-- <div class="fit" *ngIf="requests.length == 0">
+                        <div class="noRequests">
+                          No Current Requests
+                          <i class="fas fa-users-slash icon"></i>
                         </div>
-                        <app-card-user class="width"></app-card-user>
+                      </div> -->
+
+                      <div>
+                        <app-card-request class="adds background" *ngFor="let request of requests">
+                          {{request}}
+                        </app-card-request>
+
+                        <div class="p_"></div>
+
+
+                        <app-card-user *ngFor="let follower of followers" class="width adds">{{follower}}
+                        </app-card-user>
                       </div>
+
+
+
+
                     </div>
+                    <!-- <div class="followers"> -->
+                    <!-- <div class="center1">
+
+
+                    </div> -->
+                    <!-- </div> -->
                   </div>
-                  <mat-divider></mat-divider>
+
                 </div>
               </mat-tab>
-              <!-- mutual friends -->
-              <div class="hide">
-                <!-- <div class="middle-middle">
-                  !-- Search Bar Desktop --
-                  <form class="search">
-                    <input type="text" class="search-input" placeholder="Search.." name="search">
-                    <button type="submit"><span class="material-icons">search</span></button>
-                  </form>
-                </div> -->
-                <p>
-                  Mutual
-                </p>
-                <div class="mutual-box">
-                  <div class="follow-m"> </div>
-                </div>
-              </div>
+
               <!-- Right column -->
-              <mat-tab label="Following">
+              <mat-tab>
+                <ng-template mat-tab-label>
+                  Following
+                  <div class="p">
+                    {{following.length}}
+                  </div>
+
+                </ng-template>
                 <div class="right">
 
                   <div class="following-box">
 
                     <div class="followers">
                       <div class="center1">
-                        <div class="center">
-                          <!-- {{Value}} -->
-                          0
-                        </div>
-                        <app-card-user class="width"></app-card-user>
+
+                        <app-card-user *ngFor="let follow of following" class="width">{{follow}}</app-card-user>
                       </div>
                     </div>
                   </div>
@@ -224,7 +246,14 @@
       </div>
       <div class="bottomM">
         <mat-tab-group mat-align-tabs="center">
-          <mat-tab label="Mutual">
+          <mat-tab>
+            <ng-template mat-tab-label>
+              Mutual Friends
+              <div class="p">
+                {{mutuals.length}}
+              </div>
+
+            </ng-template>
             <div class="mutual-largest">
               <div class="mutual-box">
                 <div class="center">
@@ -232,12 +261,12 @@
                 </div>
                 <div class="follow-m">
                   <div class="center1">
-                    <div class="center">
-                      <!-- {{Value}} -->
-                      0
+
+                    <div class="follow-m" *ngIf="mutuals.length !== 0">
+                      <app-card-mutual *ngFor="let mutual of mutuals" class="width">
+                        {{mutual}}
+                      </app-card-mutual>
                     </div>
-                    <app-card-user class="width"></app-card-user>
-                    <app-card-user class="width"></app-card-user>
                     <!-- Then cards keep getting filled in!! Jst was testing the overflow scroll -->
                   </div>
                 </div>

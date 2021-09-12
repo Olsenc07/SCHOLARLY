@@ -75,60 +75,61 @@
 
 
 
-            <div class="row1">
-              <div class="column_">
+            <!-- <div class="row1"> -->
+            <div class="column_">
 
 
-                <!-- Idk If needed -->
+              <!-- Idk If needed -->
 
-                <!-- <div class="postLocation textSize t">
+              <!-- <div class="postLocation textSize t">
                   !-- Location --
                   {{ (post | async)?.PostLocation}}
                 </div> -->
 
-                <div class="textSize row1 t">
-                  <!-- {{Specific}}Specific Page -->
-                  {{ (post | async)?.FirstFormGroup.locationEvent}}
-                </div>
-                <div class="row1">
+              <div class="textSize row1 t" *ngIf="(post | async)?.FirstFormGroup.locationEvent">
+                <!-- {{Specific}}Specific Page -->
+                {{ (post | async)?.FirstFormGroup.locationEvent}}
+              </div>
+              <div class="row1" *ngIf=" (post | async)?.FirstFormGroup.date
+                    || (post | async)?.FirstFormGroup.time ">
 
-                  <!-- make  column -->
-                  <div class="postTime textSize column1">
-                    <div class="displayT t">
-                      {{ (post | async)?.FirstFormGroup.date | date:"longDate"}}
-                    </div>
-                    <div class="displayT t">
-                      {{ (post | async)?.FirstFormGroup.time}}</div>
+                <!-- make  column -->
+                <div class="postTime textSize column1">
+                  <div class=" displayT t">
+                    {{ (post | async)?.FirstFormGroup.date | date:"longDate"}}
                   </div>
-                </div>
-
-
-
-                <!-- Import the boolean icons with no color originally then the what did user say.. if null then display="none" -->
-                <div class="row">
-                  <div class="booleans">
-
-                    <div class="fas fa-venus b" *ngIf="(post | async)?.SecondFormGroup.gender == 'female'"></div>
-                    <div class="fas fa-transgender-alt b" *ngIf="(post | async)?.SecondFormGroup.gender == 'all'">
-                    </div>
-                    <div class="fas fa-mars b" *ngIf="(post | async)?.SecondFormGroup.gender == 'male'"></div>
-
-                    <div class="fas fa-car b" *ngIf="(post | async)?.ThirdFormGroup.driver"></div>
-                    <div class="fas fa-dollar-sign b" *ngIf=" (post | async)?.ThirdFormGroup.paymentService"></div>
-
-                    <div class="fas fa-user-tie b" *ngIf="(post | async)?.FourthFormGroup.event == 'formal'"></div>
-                    <div class="fas fa-glass-cheers b" *ngIf="(post | async)?.FourthFormGroup.event == 'relaxed'">
-                    </div>
-
-                  </div>
+                  <div class="displayT t">
+                    {{ (post | async)?.FirstFormGroup.time}}</div>
                 </div>
               </div>
 
 
 
+              <!-- Import the boolean icons with no color originally then the what did user say.. if null then display="none" -->
+              <div class="row" *ngIf="(post | async)?.SecondFormGroup.gender">
+                <div class="booleans">
 
+                  <div class="fas fa-venus b" *ngIf="(post | async)?.SecondFormGroup.gender == 'female'"></div>
+                  <div class="fas fa-transgender-alt b" *ngIf="(post | async)?.SecondFormGroup.gender == 'all'">
+                  </div>
+                  <div class="fas fa-mars b" *ngIf="(post | async)?.SecondFormGroup.gender == 'male'"></div>
 
+                  <div class="fas fa-car b" *ngIf="(post | async)?.ThirdFormGroup.driver"></div>
+                  <div class="fas fa-dollar-sign b" *ngIf=" (post | async)?.ThirdFormGroup.paymentService"></div>
+
+                  <div class="fas fa-user-tie b" *ngIf="(post | async)?.FourthFormGroup.event == 'formal'"></div>
+                  <div class="fas fa-glass-cheers b" *ngIf="(post | async)?.FourthFormGroup.event == 'relaxed'">
+                  </div>
+
+                </div>
+              </div>
             </div>
+
+
+
+
+
+            <!-- </div> -->
           </div>
 
 
