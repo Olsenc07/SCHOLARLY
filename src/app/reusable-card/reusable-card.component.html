@@ -1,5 +1,4 @@
 <!-- Posts box which should be a scroll view -->
-
 <div class="feed">
   <mat-card class="specifics-fill">
     <!-- Profile Pic -->
@@ -93,7 +92,7 @@
               <div class="row1" *ngIf=" (post | async)?.FirstFormGroup.date
                     || (post | async)?.FirstFormGroup.time ">
 
-                <!-- make  column -->
+
                 <div class="postTime textSize column1">
                   <div class=" displayT t">
                     {{ (post | async)?.FirstFormGroup.date | date:"longDate"}}
