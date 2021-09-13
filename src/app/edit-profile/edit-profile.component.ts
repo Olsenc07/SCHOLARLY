@@ -18,6 +18,7 @@ import {
   MatAutocompleteSelectedEvent,
   MatAutocomplete,
 } from '@angular/material/autocomplete';
+
 import { MatChipInputEvent } from '@angular/material/chips';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { BehaviorSubject, Observable } from 'rxjs';
@@ -112,6 +113,7 @@ export class EditProfileComponent implements OnInit {
     profilePic: this.profilePic,
     CodeCompleted: this.CodeCompleted,
     CodePursuing: this.CodePursuing,
+
     // bio: this.bio,
     showCase: this.showCase,
   });
@@ -273,7 +275,7 @@ export class EditProfileComponent implements OnInit {
   selected(event: MatAutocompleteSelectedEvent): void {
     this.classes.push(event.option.viewValue);
     this.codeInput.nativeElement.value = '';
-    this.CodeCompleted.setValue('');
+    // this.CodeCompleted.setValue();
   }
   // Pursuing Classes
   selectedP(event: MatAutocompleteSelectedEvent): void {
@@ -412,7 +414,7 @@ export class EditProfileComponent implements OnInit {
   }
 
   onSubmit(): void {
-
+    console.log(this.filteredCodes)
     console.log(this.editForm.value);
     // TODO: convert form fields to Profile
 
