@@ -76,6 +76,8 @@ import { SearchListService } from './services/search.service';
 import { PostService } from './services/post.service';
 import { ClassListService } from './services/class.service';
 import { StoreService } from './services/store.service';
+import { FollowerService } from './services/followers.service';
+import { FollowingService } from './services/following.service';
 
 
 
@@ -151,7 +153,8 @@ import { StoreService } from './services/store.service';
     ScrollingModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [SearchListService, PostService, ClassListService, StoreService],
+  providers: [SearchListService, PostService, ClassListService, StoreService,
+    FollowerService, FollowingService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -51,14 +51,14 @@
             <div [ngClass]="(profile | async)?.Sport || (profile | async)?.Club ? 'center' : 'centerEmpty' "
                 *ngIf=" (profile | async)?.Major || (profile | async)?.Minor ">
                 <div class=" center1" *ngIf="(profile | async)?.Major">
-                    <!-- {{id.Major}} -->
-                    <i class="fas fa-star-of-life large"></i>
-                    {{ (profile | async)?.Major}}
+
+                    <i class="fas fa-star large">{{ (profile | async)?.Major}}</i>
+
                 </div>
                 <div class="center1" *ngIf="(profile | async)?.Minor">
-                    <!-- {{id.Minor}} -->
-                    <i class="fas fa-star-of-life lLarge"></i>
-                    <div> {{ (profile | async)?.Minor}}</div>
+
+                    <i class="far fa-star large">{{ (profile | async)?.Minor}}</i>
+
                 </div>
             </div>
 
