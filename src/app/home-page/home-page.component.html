@@ -2,8 +2,8 @@
 <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
   <div fxLayout="row">
     <div class="side-spacer"></div>
-    <div fxLayout="column" fxLayoutAlign="center center" style="width: 100%">
-      <img Src="../../assets/Pics/ProperInAppLogo.jpeg" style="width: 100%">
+    <div fxLayout="column" fxLayoutAlign="center center" class="pic">
+      <img Src="../../assets/Pics/ProperInAppLogo.jpeg" class="pic">
       <div class="content" class="row">
         <span class="main-text main-text-small">
           <a>Enhance your University experience with Scholarly</a>
@@ -14,18 +14,18 @@
             <mat-label> Academic Email</mat-label>
             <input matInput [formControl]="email" />
             <span matSuffix class="hide"></span>
-            <button color="primary" mat-button matSuffix mat-icon-button aria-label="Clear" type="button"
+            <!-- <button color="primary" mat-button matSuffix mat-icon-button aria-label="Clear" type="button"
               (click)="clearEmail()">
               <mat-icon>close</mat-icon>
-            </button>
+            </button> -->
           </mat-form-field>
           <mat-form-field class="text-input">
             <mat-label>Password</mat-label>
             <input matInput [formControl]="password" type="password" placeholder="Password" />
-            <button color="primary" mat-button matSuffix mat-icon-button aria-label="Clear" type="button"
+            <!-- <button color="primary" mat-button matSuffix mat-icon-button aria-label="Clear" type="button"
               (click)="clearPassword()">
               <mat-icon>close</mat-icon>
-            </button>
+            </button> -->
           </mat-form-field>
           <button (click)="onSubmit()" [disabled]="!loginForm.valid" routerLink="/profile" mat-raised-button
             color="primary" class="action-button top">

@@ -1,4 +1,10 @@
-@media (max-width: 500px) {
+
+@media (max-width: 901px) {
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
+}@media (max-width: 500px) {
   .content {
     display: flex;
     position: relative;
@@ -45,6 +51,10 @@
     color: #0e3379;
     font-family: "Font Awesome 5 Free";
   }
+}
+.pic{
+  width: 100%;
+  border-radius: 53%;
 }
 @media (min-width: 901px) {
 .log-in-box {
@@ -132,9 +142,4 @@
     margin-top: 1%;
   }
 }
-@media (max-width: 901px) {
-  .column {
-    display: flex;
-    flex-direction: column;
-  }
-}
+
