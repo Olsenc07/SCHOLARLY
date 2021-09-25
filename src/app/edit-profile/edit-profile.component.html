@@ -198,7 +198,6 @@
 
 
           <!-- Public or Private account -->
-
           <div class="accounts">
             <mat-radio-group aria-label="Select an option" formControlName="accountType" class="Accounts">
 
@@ -427,6 +426,7 @@
         </div>
 
         <div class="c_r">
+          <!-- Completed Course -->
           <div class="courses">
             <div class="input">
               <i class="fas fa-check _icon"></i>
@@ -472,7 +472,7 @@
                 </mat-chip-list>
                 <cdk-virtual-scroll-viewport itemSize="10">
                   <mat-autocomplete #autoP="matAutocomplete" (optionSelected)="selectedP($event)">
-                    <mat-option *cdkVirtualFor="let codeP of filteredCodesP | async" [valueP]="codeP">
+                    <mat-option *cdkVirtualFor="let codeP of filteredCodesP | async" [value]="codeP">
                       {{codeP}}
                     </mat-option>
                   </mat-autocomplete>

@@ -7,8 +7,8 @@ import { MomentDateAdapter } from '@angular/material-moment-adapter';
 export interface Profile {
   // TODO: other profile fields
   // No connection to their subjects
-  CodePursuing: String[];
   CodeCompleted: String[];
+  CodePursuing: String[];
   Name: String;
   Pronouns: String;
   profilePic: String;
@@ -21,8 +21,8 @@ export interface Profile {
   Birthday: MomentDateAdapter;
   ShowCase: String[];
   // ShowCasse: String[];
-  filteredCodesP: Observable<String[]>;
-  filteredCodes: Observable<String[]>;
+
+
 }
 
 
