@@ -13,23 +13,18 @@
 
     <!-- Filled by taking users id of those that joined this post group chat -->
     <span class="membersBox">
-      <app-card-mutual class="fit"></app-card-mutual>
-      <app-card-mutual class="fit"></app-card-mutual>
-      <app-card-mutual class="fit"></app-card-mutual>
-      <app-card-mutual class="fit"></app-card-mutual>
-      <app-card-mutual class="fit"></app-card-mutual>
-      <app-card-mutual class="fit"></app-card-mutual>
-      <app-card-mutual class="fit"></app-card-mutual>
-      <app-card-mutual class="fit"></app-card-mutual>
-      <app-card-mutual class="fit"></app-card-mutual>
-      <app-card-mutual class="fit"></app-card-mutual>
+      <app-card-mutual *ngFor="let members of members" class="fit">
+        {{member}}
+      </app-card-mutual>
+
+
     </span>
 
   </div>
   <div class="column">
     <div class="row mobile">
       <!-- For mobile icon button to display members in the chat room -->
-      <button mat-icon-button class="mobile" (click)="openChat()"><i class="fas fa-user-graduate "></i></button>
+
       <div class="columnM">
 
         {{ (post | async)?.Title}}

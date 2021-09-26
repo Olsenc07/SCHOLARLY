@@ -20,7 +20,6 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin: 0% 3%;
 }}
 @media(min-width:1024px){
 .columnM{
@@ -35,6 +34,7 @@
   flex-direction: column;
 }}
 
+@media(min-width:1024px){
 .entire-page {
   display: flex;
   flex-direction: row;
@@ -43,7 +43,18 @@
   margin: 0px;
   padding: 0px;
   position: fixed;
-}
+}}
+@media(max-width:1024px){
+  .entire-page {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-y: scroll;
+    box-sizing: border-box;
+  }}
 @media(min-width:1024px){
 .left {
   display: flex;
@@ -56,22 +67,56 @@
 }
 @media(max-width:1024px){
   .left {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2%;
+    margin-bottom: 19%;
   }
   }
+
+  
   .messages{
     display: flex;
     height: 100%;
     overflow-y: scroll;
   }
+
+@media(min-width:1024px){
 .middle {
   display: flex;
   flex-direction: column;
-  border: groove;
+  // border: groove;
   width: 100%;
   height: 100%;
-  background-color: #d5d8da;
-}
+  background-color: rgb(222 222 239);
+  }}
+  @media(max-width:1024px) and (min-width:800px){
+    .middle {
+      display: flex;
+      flex-direction: column;
+      // border: groove;
+      width: 100%;
+      height: 44vw;
+      background-color: rgb(222 222 239);
+      }}
+      @media(max-width:800px) and (min-width:500px) {
+        .middle {
+          display: flex;
+          flex-direction: column;
+          // border: groove;
+          width: 100%;
+          height: 60vw;
+          background-color: rgb(222 222 239);
+          }}
+          @media(max-width:500px) {
+            .middle {
+              display: flex;
+              flex-direction: column;
+              // border: groove;
+              width: 100%;
+              height: 97vw;
+              background-color: rgb(222 222 239);
+              }}
 @media(min-width:1024px){
   .mobile{
     display: none;
@@ -156,25 +201,35 @@ padding-right: 2%;
 .fas {
   font-size: initial;
 }
+@media(min-width:1024px){
 .fit {
   width: 100%;
-}
-@media(min-width:1024px){
+  padding: 1%;
+}}
+@media(max-width:1024px){
+  .fit {
+    width: 100%;
+    padding: .5%;
+  }}
+  
+  @media(min-width:1024px){
 .title {
   display: flex;
   justify-content: center;
   flex-direction: row;
-
   font-size: xx-large;
   margin-bottom: 3%;
   font-family: "Font Awesome 5 Free";
   color: #7e7171;
-}
-}
+}}
 @media(max-width:1024px){
   .title {
-    display: none;
-   
-  }
-  }
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    font-size: xx-large;
+    margin-bottom: 1%;
+    font-family: "Font Awesome 5 Free";
+    color: #7e7171;
+  }}
   
