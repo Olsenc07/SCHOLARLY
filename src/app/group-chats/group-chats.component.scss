@@ -1,3 +1,12 @@
+.basic{
+  display: flex;
+  width: 100%;
+}
+.booleans{
+  display: flex;
+    width: 15%;
+    justify-content: space-evenly;
+}
 @media(min-width:1024px){
 .column{
   display: flex;
@@ -24,6 +33,7 @@
   justify-content: center;
   flex-direction: column;
 }}
+
 .entire-page {
   display: flex;
   flex-direction: row;
@@ -47,12 +57,17 @@
     display: none;
   }
   }
+  .messages{
+    display: flex;
+    height: 500px;
+  }
 .middle {
   display: flex;
   flex-direction: column;
   border: groove;
   width: 100%;
   height: 100%;
+  background-color: #add3ec;
 }
 @media(min-width:1024px){
   .mobile{
@@ -72,9 +87,17 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  font-weight: 500;
-  font-size: x-large;
+  font-size: xx-large;
+  font-family: "Font Awesome 5 Free";
+  color: #7e7171;
   margin: 2% 0%;
+}
+.row_basic{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  font-family: "Font Awesome 5 Free";
+  color: #7e7171;
 }
 .row-icons {
   display: flex;
@@ -118,14 +141,17 @@ form.search::after {
   clear: both;
   display: table;
 }
+.info{
+  display: flex;
+padding-right: 2%;
+}
 .space{
   display: flex;
   width: 50%;
   justify-content: space-around;
 }
 .fas {
-  font-size: 25px;
-  margin-top: 1%;
+  font-size: initial;
 }
 .fit {
   width: 100%;
@@ -135,9 +161,11 @@ form.search::after {
   display: flex;
   justify-content: center;
   flex-direction: row;
-  font-weight: 500;
-  font-size: large;
+
+  font-size: xx-large;
   margin-bottom: 3%;
+  font-family: "Font Awesome 5 Free";
+  color: #7e7171;
 }
 }
 @media(max-width:1024px){

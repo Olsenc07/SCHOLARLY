@@ -3,6 +3,7 @@ import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { GroupMembersComponent } from '../group-members/group-members.component';
 import { FormControl } from '@angular/forms';
+import { PostService } from '../services/post.service';
 
 @Component({
   selector: 'app-group-chats',
@@ -12,6 +13,10 @@ import { FormControl } from '@angular/forms';
 export class GroupChatsComponent implements OnInit {
   faCoffee = faCoffee;
   MatBadgeModule;
+
+  post = PostService.post$$;
+
+
 
   // filters members, not entirely neeeded...
   search: FormControl = new FormControl('');

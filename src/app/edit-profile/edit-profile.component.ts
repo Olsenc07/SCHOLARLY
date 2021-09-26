@@ -19,7 +19,7 @@ import {
   MatAutocomplete,
 } from '@angular/material/autocomplete';
 
-import { MatChipInputEvent } from '@angular/material/chips';
+import { MatChipInputEvent, MatChipList } from '@angular/material/chips';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
@@ -104,6 +104,12 @@ export class EditProfileComponent implements OnInit {
   // Need to push form controls from the users input, into this 
   // Form Array, which gets passed 
   CodePursuing: FormControl = new FormControl('');
+
+
+  // Completed = new FormArray({
+  //   CodeCompleted
+  // })
+
 
   editForm = new FormGroup({
     major: this.major,

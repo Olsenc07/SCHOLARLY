@@ -3,48 +3,79 @@
   <div class="left">
     <label for="members" class="title">Members</label>
 
-    <div class="searchM">
+    <!-- Idk if needed -->
+    <!-- <div class="searchM">
       <form class="search">
         <input type="text" class="search-input" placeholder="Search.." name="search" [formControl]="search">
         <button type="submit"><span class="material-icons">search</span></button>
       </form>
-    </div>
+    </div> -->
 
+    <!-- Filled by taking users id of those that joined this post group chat -->
     <span class="membersBox">
       <app-card-user class="fit"></app-card-user>
       <app-card-user class="fit"></app-card-user>
       <app-card-user class="fit"></app-card-user>
       <app-card-user class="fit"></app-card-user>
-
-
     </span>
 
   </div>
   <div class="column">
-    <label class="row">
+    <div class="row mobile">
       <!-- For mobile icon button to display members in the chat room -->
-      <button mat-icon-button (click)="openChat()" class="mobile"><i class="fas fa-user-graduate mobile"></i></button>
+      <button mat-icon-button class="mobile" (click)="openChat()"><i class="fas fa-user-graduate "></i></button>
       <div class="columnM">
-        <!-- {{Group}} -->
-        Group Name
+
+        {{ (post | async)?.Title}}
       </div>
 
-    </label>
-    <!-- Icon indicators -->
-    <div class="row-icons">
-      <div class="space">
-        <p class="fas fa-venus"></p>
-        <p class="fas fa-transgender-alt"></p>
-        <p class="fas fa-mars"></p>
-        <p class="fas fa-car"></p>
-        <p class="fas fa-dollar-sign"></p>
-        <p class="fas fa-user-tie"></p>
-        <p class="fas fa-glass-cheers"></p>
-      </div>
     </div>
-    <!-- Message area -->
 
+    <!-- Quick facts above chat-->
+    <div class="row_basic">
+      <!-- Icon indicators -->
+
+      <div class="basic">
+        <div class="info" *ngIf="(post | async)?.FirstFormGroup.locationEvent">
+          <!-- {{Specific}}Specific Page -->
+          {{ (post | async)?.FirstFormGroup.locationEvent}}
+        </div>
+
+
+
+
+        <div class="info " *ngIf=" (post | async)?.FirstFormGroup.date">
+          {{ (post | async)?.FirstFormGroup.date | date:"longDate"}}
+        </div>
+        <div class="info" *ngIf="(post | async)?.FirstFormGroup.time ">
+          {{ (post | async)?.FirstFormGroup.time}}</div>
+      </div>
+
+      <div class="booleans">
+        <div class="fas fa-venus " *ngIf="(post | async)?.SecondFormGroup.gender == 'female'"></div>
+        <div class="fas fa-transgender-alt " *ngIf="(post | async)?.SecondFormGroup.gender == 'all'">
+        </div>
+        <div class="fas fa-mars " *ngIf="(post | async)?.SecondFormGroup.gender == 'male'"></div>
+
+        <div class="fas fa-car " *ngIf="(post | async)?.ThirdFormGroup.driver"></div>
+        <div class="fas fa-dollar-sign " *ngIf=" (post | async)?.ThirdFormGroup.paymentService"></div>
+
+        <div class="fas fa-user-tie " *ngIf="(post | async)?.FourthFormGroup.event == 'formal'"></div>
+        <div class="fas fa-glass-cheers " *ngIf="(post | async)?.FourthFormGroup.event == 'relaxed'">
+        </div>
+      </div>
+
+
+
+
+    </div>
+
+
+    <!-- Message area -->
     <div class="middle">
+
+      <div class="messages"></div>
+
     </div>
 
 
