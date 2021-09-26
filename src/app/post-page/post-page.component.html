@@ -227,14 +227,14 @@
               <div class="row">
                 <p class="fas fa-car icon"> </p>
                 <div class="textP"> Able to drive members</div>
-                <mat-checkbox class="btn" formControlName="driver"></mat-checkbox>
+                <mat-checkbox [disableRipple]="true" class="btn" formControlName="driver"></mat-checkbox>
               </div>
 
               <div class="row">
                 <p class="fas fa-dollar-sign icon"></p>
                 <div class="textP">Service involving payment </div>
 
-                <mat-checkbox class="btn" formControlName="paymentService"></mat-checkbox>
+                <mat-checkbox [disableRipple]="true" class="btn" formControlName="paymentService"></mat-checkbox>
               </div>
 
             </div>

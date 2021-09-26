@@ -8,6 +8,7 @@
   height: 100%;
   width: 100%;
   margin-top: 1%;
+  color: #7e7171;
 }
 
 .centerT{
@@ -64,6 +65,7 @@
 }
 .displayT{
   text-align: center;
+  color: #7e7171;
 }
 .hide{display: none;
 }
@@ -162,6 +164,7 @@ flex-direction: row;}
   font-weight: bolder;
   flex-direction: column;
   justify-content: center;
+  color: #7e7171;
 }
 .postLocation {
   display: flex;
@@ -198,14 +201,14 @@ flex-direction: row;}
   .textSize {
     font-size: medium;
     font-family: "Font Awesome 5 Free";
-    color: #7e7171;
+    
   }
 }
 @media (max-width: 550px) {
   .textSize {
     font-size: inherit;
     font-family: "Font Awesome 5 Free";
-    color: #7e7171;
+   
   }
 }
 @media (min-width: 550px) {
