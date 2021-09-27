@@ -1,84 +1,81 @@
-
-
-.btn{
+.btn {
   display: flex;
   font-size: xx-large;
   justify-content: center;
 }
-.center{
-display: flex;
-width: 100%;
-flex-direction: column;
-text-align: center;
-justify-content: space-evenly;
+.center {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-evenly;
 }
 
-.centerEmpty{
-display: flex;
-width: 100%;
-text-align: center;
-justify-content: space-evenly;
+.centerEmpty {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  justify-content: space-evenly;
 }
-.center_{
-display: flex;
-justify-content: center;
+.center_ {
+  display: flex;
+  justify-content: center;
 }
-.center__{
+.center__ {
   color: cornflowerblue;
   font-size: x-large;
 }
-.center-{
-  color: cornflowerblue;
- 
+// .center-{
+//   // color: cornflowerblue;
+
+// }
+.center1 {
+  display: flex;
+  justify-content: center;
+  margin: 4% 0%;
+  font-family: "Font Awesome 5 Free";
+  color: #7e7171;
+  text-align: center;
+  width: 100%;
 }
-.center1{
-display: flex;
-justify-content: center;
-margin: 4% 0%;
-font-family: "Font Awesome 5 Free";
-color: #7e7171;
-text-align: center;
-width: 100%;
-}
-.column{
+.column {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
-.column_{
-display: flex;
-flex-direction: column;
-
+.column_ {
+  display: flex;
+  flex-direction: column;
 }
-.classes{
+.classes {
   display: flex;
   flex-direction: row;
 }
-.large{
-font-size: small;
+.large {
+  font-size: small;
 }
 
-.mat-card-avatar{
+.mat-card-avatar {
   width: 50px;
   height: 50px;
 }
 .messageM {
-display: flex;
-font-family: "Font Awesome 5 Free";
-background-color: rgb(173, 211, 236);
-color: white;
-}
-.fit{
-border-radius: 50%;
-}
-.gender{
   display: flex;
-justify-content: center;
+  font-family: "Font Awesome 5 Free";
+  background-color: rgb(173, 211, 236);
+  color: white;
 }
-.green{
+.fit {
+  border-radius: 50%;
+}
+.gender {
+  display: flex;
+  justify-content: center;
+}
+.green {
   color: rgb(11, 179, 11);
 }
-.red{
+.red {
   color: rgb(196, 68, 68);
 }
 .row {
@@ -87,16 +84,16 @@ justify-content: center;
   width: 100%;
   // justify-content: center;
 }
-.row1{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    box-sizing: border-box;
-}
-.row_{
+.row1 {
   display: flex;
   flex-direction: row;
-width: 100%;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.row_ {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
 }
 
 .profilePic {
@@ -127,6 +124,6 @@ width: 100%;
   flex-direction: column;
   justify-content: center;
 }
-.width{
-    width: 100%;
+.width {
+  width: 100%;
 }
