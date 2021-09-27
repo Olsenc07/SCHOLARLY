@@ -3,6 +3,7 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
+  border-bottom-left-radius: 25px;
 }
 .list {
   display: flex;
@@ -19,11 +20,14 @@
   //   width: 100%;
   box-sizing: border-box;
   margin: 5% 5% 0% 5%;
+  border-radius: 25px;
 }
 .messages {
   display: flex;
   height: 100%;
   background-color: #dedeef;
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
 }
 .new_message_icon {
   font-size: large;
@@ -33,10 +37,10 @@
   flex-direction: column;
   //   height: 100%;
   width: 100%;
+  position: static;
 }
 .search-box {
   position: relative;
-  width: 100%;
   display: flex;
   flex-direction: row;
   // display: inline-block;
@@ -46,6 +50,8 @@
   //   border: ridge;
   border-color: azure;
   background-color: white;
+  border-radius: 25px;
+  margin: 0% 5%;
 }
 .search-box__icon {
   display: flex;
@@ -56,6 +62,8 @@
   padding: 1%;
   // border: ridge;
   border-color: azure;
+  border-bottom-left-radius: 25px;
+  border-top-left-radius: 25px;
 }
 .search-box__input {
   // transition: right, 0.7s;
@@ -82,6 +90,7 @@
   border-color: azure;
   display: flex;
   color: rgb(126, 113, 113);
+  border-radius: 25px;
 }
 .style {
   display: flex;
