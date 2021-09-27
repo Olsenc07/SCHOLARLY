@@ -334,7 +334,7 @@
           <!-- <div class="column"> -->
           <div *ngIf=" clicked == false">
             <div class="row">
-              <div class="snapshot">Add A Showcase</div>
+              <div class="snapshot">Add Showcase</div>
               <button mat-icon-button class="trash" [ngClass]="showCase.value ? 'show' : 'hide' " color="primary"
                 (click)="clearPic1()">
                 <div class=" far fa-trash-alt"></div>
@@ -362,7 +362,7 @@
           </div>
 
           <div [ngClass]="showCase.value ? 'hide' : 'show_' ">
-            <div class="snapshot"> Remove A Showcase</div>
+            <div class="snapshot"> Remove Showcase</div>
             <div class="rowE">
               <button class="rowE_" mat-button (click)="deleteShowCase()" (click)="hideAdd()">
                 <i class="fas fa-minus-circle Photo"></i>

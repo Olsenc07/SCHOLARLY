@@ -1,0 +1,99 @@
+.left {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  height: 100%;
+  width: 100%;
+}
+.message_box {
+  display: flex;
+  border: ridge;
+  //   flex-direction: row;
+  height: 100%;
+  //   width: 100%;
+  box-sizing: border-box;
+  margin: 5% 5% 0% 5%;
+}
+.messages {
+  display: flex;
+  height: 100%;
+  background-color: #dedeef;
+}
+.new_message_icon {
+  font-size: large;
+}
+.right {
+  display: flex;
+  flex-direction: column;
+  //   height: 100%;
+  width: 100%;
+}
+.search-box {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  // display: inline-block;
+  border-style: hidden;
+  justify-content: center;
+  align-items: center;
+  //   border: ridge;
+  border-color: azure;
+  background-color: white;
+}
+.search-box__icon {
+  display: flex;
+  font-size: 26px;
+  right: 10%;
+  color: lightblue;
+  background-color: white;
+  padding: 1%;
+  // border: ridge;
+  border-color: azure;
+}
+.search-box__input {
+  // transition: right, 0.7s;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 1px;
+  // width: 20%;
+  font-size: initial;
+  float: right;
+  position: relative;
+  // border-radius: 5%;
+  // margin-right: 10%;
+  // opacity: 0.7%;
+  height: 25px;
+  // cursor: pointer;
+  outline: none;
+  border: none;
+  width: 100%;
+  font-family: "Font Awesome 5 Free";
+  font-weight: initial;
+  background-color: white;
+  // border: ridge;
+  border-color: azure;
+  display: flex;
+  color: rgb(126, 113, 113);
+}
+.style {
+  display: flex;
+  color: #7e7171;
+  font-family: "Font Awesome 5 Free";
+  width: 100%;
+  font-size: large;
+  padding-left: 3%;
+  align-items: center;
+}
+.title {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}

@@ -1,0 +1,48 @@
+<div class="message_box">
+
+<div class="left">
+
+    <div class="title">
+<div class="style">Messages</div>
+<button mat-icon-button>
+    <i class="far fa-edit new_message_icon"></i>
+</button>
+</div>
+
+<div class="search-box">
+    <i class="fas fa-search search-box__icon "></i>
+    <input matInput type="search" class="search-box__input" placeholder="Filter messages"
+      [formControl]="search" />
+    <cdk-virtual-scroll-viewport itemSize="10">
+      <mat-option *cdkVirtualFor="let user of filteredSearch | async" [value]="user">
+        {{user}}
+      </mat-option>
+    </cdk-virtual-scroll-viewport>
+  </div>
+
+<div class="list"> 
+
+<!-- <newcard -->
+</div>
+
+
+
+
+</div>
+
+
+
+
+<div class="right">
+
+<div class="messages">
+
+</div>
+
+
+
+
+</div>
+
+
+</div>
