@@ -3,7 +3,9 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
+  border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
+  background-color: #c1c1d2;
 }
 .list {
   display: flex;
@@ -15,11 +17,11 @@
 .message_box {
   display: flex;
   border: ridge;
-  //   flex-direction: row;
+
   height: 100%;
-  //   width: 100%;
+  width: 100%;
   box-sizing: border-box;
-  margin: 5% 5% 0% 5%;
+  margin: 5% 10% 0% 10%;
   border-radius: 25px;
 }
 .messages {
@@ -32,12 +34,24 @@
 .new_message_icon {
   font-size: large;
 }
+.page {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
 .right {
   display: flex;
   flex-direction: column;
   //   height: 100%;
   width: 100%;
   position: static;
+}
+.scroll {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  padding: 0% 15%;
 }
 .search-box {
   position: relative;
@@ -51,7 +65,7 @@
   border-color: azure;
   background-color: white;
   border-radius: 25px;
-  margin: 0% 5%;
+  margin: 1% 5%;
 }
 .search-box__icon {
   display: flex;
@@ -94,15 +108,20 @@
 }
 .style {
   display: flex;
-  color: #7e7171;
+  color: gray;
   font-family: "Font Awesome 5 Free";
   width: 100%;
   font-size: large;
   padding-left: 3%;
   align-items: center;
 }
+.space {
+  padding: 1%;
+}
 .title {
   display: flex;
   flex-direction: row;
   width: 100%;
+  background-color: #c1c1d2;
+  border-top-left-radius: 25px;
 }

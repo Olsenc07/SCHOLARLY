@@ -1,50 +1,55 @@
-.basic{
+.basic {
   display: flex;
   width: 100%;
 }
-.booleans{
+.booleans {
   display: flex;
-    width: 15%;
-    justify-content: space-evenly;
+  width: 15%;
+  justify-content: space-evenly;
 }
-@media(min-width:1024px){
-.column{
-  display: flex;
-  flex-direction: column;
-  width: 70%;
-  margin: 0% 3%;
-  height: 85%;
-}}
-@media(max-width:1024px){
-.column{
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}}
-@media(min-width:1024px){
-.columnM{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}}
-@media(max-width:1024px){
-.columnM{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}}
+@media (min-width: 1024px) {
+  .column {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 0% 3%;
+    height: 85%;
+  }
+}
+@media (max-width: 1024px) {
+  .column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .columnM {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+@media (max-width: 1024px) {
+  .columnM {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
 
-@media(min-width:1024px){
-.entire-page {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 100%;
-  margin: 0px;
-  padding: 0px;
-  position: fixed;
-}}
-@media(max-width:1024px){
+@media (min-width: 1024px) {
+  .entire-page {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    position: fixed;
+  }
+}
+@media (max-width: 1024px) {
   .entire-page {
     display: flex;
     flex-direction: column-reverse;
@@ -54,81 +59,95 @@
     padding: 0px;
     overflow-y: scroll;
     box-sizing: border-box;
-  }}
-@media(min-width:1024px){
-.left {
-  display: flex;
-  flex-direction: column;
-  width: 35%;
-  height: 81%;
-  margin-left: 2%;
-  margin-top: 2%;
+  }
 }
+@media (min-width: 1024px) {
+  .left {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    height: 81%;
+    margin-left: 2%;
+    margin-top: 2%;
+  }
 }
-@media(max-width:1024px){
+@media (max-width: 1024px) {
   .left {
     display: flex;
     flex-direction: column;
     margin-top: 2%;
     margin-bottom: 19%;
   }
-  }
+}
 
-  
-  .messages{
-    display: flex;
-    height: 100%;
-    overflow-y: scroll;
-  }
-
-@media(min-width:1024px){
-.middle {
+.messages {
   display: flex;
-  flex-direction: column;
-  // border: groove;
-  width: 100%;
   height: 100%;
-  background-color: rgb(222 222 239);
-  }}
-  @media(max-width:1024px) and (min-width:800px){
-    .middle {
-      display: flex;
-      flex-direction: column;
-      // border: groove;
-      width: 100%;
-      height: 44vw;
-      background-color: rgb(222 222 239);
-      }}
-      @media(max-width:800px) and (min-width:500px) {
-        .middle {
-          display: flex;
-          flex-direction: column;
-          // border: groove;
-          width: 100%;
-          height: 60vw;
-          background-color: rgb(222 222 239);
-          }}
-          @media(max-width:500px) {
-            .middle {
-              display: flex;
-              flex-direction: column;
-              // border: groove;
-              width: 100%;
-              height: 97vw;
-              background-color: rgb(222 222 239);
-              }}
-@media(min-width:1024px){
-  .mobile{
+  overflow-y: scroll;
+}
+
+@media (min-width: 1024px) {
+  .middle {
+    display: flex;
+    flex-direction: column;
+    // border: groove;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(222 222 239);
+    border-radius: 25px;
+    border: ridge;
+  }
+}
+@media (max-width: 1024px) and (min-width: 800px) {
+  .middle {
+    display: flex;
+    flex-direction: column;
+    // border: groove;
+    width: 100%;
+    height: 44vw;
+    background-color: rgb(222 222 239);
+    border-radius: 25px;
+    border: ridge;
+  }
+}
+@media (max-width: 800px) and (min-width: 500px) {
+  .middle {
+    display: flex;
+    flex-direction: column;
+    // border: groove;
+    width: 100%;
+    height: 60vw;
+    background-color: rgb(222 222 239);
+    border-radius: 25px;
+    border: ridge;
+  }
+}
+@media (max-width: 500px) {
+  .middle {
+    display: flex;
+    flex-direction: column;
+    // border: groove;
+    width: 100%;
+    height: 97vw;
+    background-color: rgb(222 222 239);
+    border-radius: 25px;
+    border: ridge;
+  }
+}
+@media (min-width: 1024px) {
+  .mobile {
     display: none;
-  }}
-  @media(max-width:1024px){
-    .mobile{
-      margin-right: 2%;
-    }}
-.membersBox { 
+  }
+}
+@media (max-width: 1024px) {
+  .mobile {
+    margin-right: 2%;
+  }
+}
+.membersBox {
   display: flex;
   width: 100%;
- flex-direction: column;
+  flex-direction: column;
   overflow-y: scroll;
 }
 .row {
@@ -140,7 +159,7 @@
   color: #7e7171;
   margin: 2% 0%;
 }
-.row_basic{
+.row_basic {
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -189,11 +208,11 @@ form.search::after {
   clear: both;
   display: table;
 }
-.info{
+.info {
   display: flex;
-padding-right: 2%;
+  padding-right: 2%;
 }
-.space{
+.space {
   display: flex;
   width: 50%;
   justify-content: space-around;
@@ -201,28 +220,31 @@ padding-right: 2%;
 .fas {
   font-size: initial;
 }
-@media(min-width:1024px){
-.fit {
-  width: 100%;
-  padding: 1%;
-}}
-@media(max-width:1024px){
+@media (min-width: 1024px) {
   .fit {
     width: 100%;
-    padding: .5%;
-  }}
-  
-  @media(min-width:1024px){
-.title {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  font-size: xx-large;
-  margin-bottom: 3%;
-  font-family: "Font Awesome 5 Free";
-  color: #7e7171;
-}}
-@media(max-width:1024px){
+    padding: 1%;
+  }
+}
+@media (max-width: 1024px) {
+  .fit {
+    width: 100%;
+    padding: 0.5%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    font-size: xx-large;
+    margin-bottom: 3%;
+    font-family: "Font Awesome 5 Free";
+    color: #7e7171;
+  }
+}
+@media (max-width: 1024px) {
   .title {
     display: flex;
     justify-content: center;
@@ -231,5 +253,5 @@ padding-right: 2%;
     margin-bottom: 1%;
     font-family: "Font Awesome 5 Free";
     color: #7e7171;
-  }}
-  
+  }
+}
