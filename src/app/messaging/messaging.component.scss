@@ -17,11 +17,10 @@
 .message_box {
   display: flex;
   border: ridge;
-
-  height: 100%;
+  height: 74vh;
   width: 100%;
   box-sizing: border-box;
-  margin: 5% 10% 0% 10%;
+  margin: 3% 10% 0% 10%;
   border-radius: 25px;
 }
 .messages {
@@ -48,9 +47,9 @@
   position: static;
 }
 .scroll {
-  display: flex;
-  flex-direction: column;
-  overflow-y: scroll;
+  //   display: flex;
+  //   flex-direction: column;
+  //   overflow-y: scroll;
   padding: 0% 15%;
 }
 .search-box {
@@ -115,9 +114,9 @@
   padding-left: 3%;
   align-items: center;
 }
-.space {
-  padding: 1%;
-}
+// .space {
+//   padding: 1% ;
+// }
 .title {
   display: flex;
   flex-direction: row;

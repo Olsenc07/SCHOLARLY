@@ -69,6 +69,7 @@ import { ReusableCardRequestComponent } from './reusable-card-request/reusable-c
 import { ReusableCardRecommendationComponent } from './reusable-card-request/reusable-card-request.component';
 import { ReusableCardUserComponent } from './reusable-card-user/reusable-card-user.component';
 import { ReusableCardMutualComponent } from './reusable-card-user/reusable-card-user.component';
+import { ReusableCardMessageComponent } from './reusable-card-user/reusable-card-user.component';
 import { ReusableCardConvoComponent } from './reusable-card-convo/reusable-card-convo.component';
 
 import { TaggedComponent } from './main-pages/main-pages.component';
@@ -105,6 +106,7 @@ import { FollowingService } from './services/following.service';
     ReusableCardRecommendationComponent,
     ReusableCardUserComponent,
     ReusableCardMutualComponent,
+    ReusableCardMessageComponent,
     ReusableCardConvoComponent,
     TaggedComponent,
     AccountTextComponent,

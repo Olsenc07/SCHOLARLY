@@ -18,7 +18,16 @@ export class ReusableCardUserComponent {
 }
 
 
-
+@Component({
+    selector: 'app-card-message',
+    templateUrl: './reusable-card-message.component.html',
+    styleUrls: ['./reusable-card-user.component.scss'],
+})
+export class ReusableCardMessageComponent {
+    // Gets the id == id to fill mutual friends list from data base
+    profile = StoreService.profile$$;
+    constructor() { }
+}
 
 
 @Component({
