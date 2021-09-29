@@ -5,7 +5,8 @@
   width: 100%;
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
-  background-color: #c1c1d2;
+  background-color: #dfdfea;
+  overflow: hidden;
 }
 .list {
   display: flex;
@@ -26,7 +27,7 @@
 .messages {
   display: flex;
   height: 100%;
-  background-color: #dedeef;
+  background-color: #dfdfea;
   border-bottom-right-radius: 25px;
   border-top-right-radius: 25px;
 }
@@ -114,13 +115,13 @@
   padding-left: 3%;
   align-items: center;
 }
-// .space {
-//   padding: 1% ;
-// }
+.space {
+  padding: 1%;
+}
 .title {
   display: flex;
   flex-direction: row;
   width: 100%;
-  background-color: #c1c1d2;
+  background-color: #dfdfea;
   border-top-left-radius: 25px;
 }

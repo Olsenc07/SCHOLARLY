@@ -13,7 +13,7 @@ export class MessagingComponent {
  // allUsers should filter through every user
  allUsers: string[] = [''];
 //  List of people you are talking to
- chats = ['','','','','','','',''];
+ chats = [''];
 
     search: FormControl = new FormControl('');
     filteredSearch: Observable<string[]>;
