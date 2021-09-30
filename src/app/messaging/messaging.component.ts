@@ -16,10 +16,15 @@ export class MessagingComponent {
  chats = [''];
 
     search: FormControl = new FormControl('');
+    message: FormControl = new FormControl('');
+
+
     filteredSearch: Observable<string[]>;
     searchForm = new FormGroup({
       search: this.search,
     });
+    // Sends message
+    sendMsg(){};
 
     constructor( )
         {

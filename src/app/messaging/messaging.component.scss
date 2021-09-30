@@ -1,3 +1,7 @@
+.assistance {
+  display: flex;
+  flex-direction: row;
+}
 .left {
   display: flex;
   flex-direction: column;
@@ -17,8 +21,7 @@
 }
 .message_box {
   display: flex;
-  border: ridge;
-  height: 74vh;
+  height: 83vh;
   width: 100%;
   box-sizing: border-box;
   margin: 3% 10% 0% 10%;
@@ -27,8 +30,8 @@
 .messages {
   display: flex;
   height: 100%;
+  overflow-y: scroll;
   background-color: #dfdfea;
-  border-bottom-right-radius: 25px;
   border-top-right-radius: 25px;
 }
 .new_message_icon {
@@ -52,6 +55,15 @@
   //   flex-direction: column;
   //   overflow-y: scroll;
   padding: 0% 15%;
+}
+.send_btn {
+  display: flex;
+  align-items: center;
+}
+.send_btn_style {
+  font-family: "Font Awesome 5 Free";
+  background-color: #add3ec;
+  color: white;
 }
 .search-box {
   position: relative;
@@ -124,4 +136,13 @@
   width: 100%;
   background-color: #dfdfea;
   border-top-left-radius: 25px;
+}
+.type_message {
+  overflow-y: scroll;
+}
+.type_message_box {
+  width: 98%;
+}
+.upload_options {
+  margin-right: 1%;
 }
