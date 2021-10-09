@@ -43,6 +43,9 @@
   width: 100%;
   box-sizing: border-box;
 }
+.post {
+  resize: none;
+}
 .right {
   display: flex;
   flex-direction: column;
@@ -137,9 +140,7 @@
   background-color: #dfdfea;
   border-top-left-radius: 25px;
 }
-.type_message {
-  overflow-y: scroll;
-}
+
 .type_message_box {
   width: 98%;
 }

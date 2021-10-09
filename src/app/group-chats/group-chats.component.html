@@ -71,7 +71,7 @@
 
     </div>
 
-
+<mat-divider></mat-divider>
     <!-- Message area -->
     <div class="middle">
       <!-- Where the conversation is held -->
@@ -79,6 +79,46 @@
 
     </div>
 
+<!-- Messagin -->
+<form [formGroup]="messageForm">
+<div class="message_box_container">
+    <div class="type_message">
+      <mat-form-field class="type_message_box">
+        <mat-label>Write a message...</mat-label>
+              <textarea matInput class="post"
+                [formControl]="message"></textarea>
+              </mat-form-field>
+      </div>
+      
+      <div class="assistance">
+      <div class="upload_options">
+          <button mat-icon-button>
+              <i class="fas fa-paperclip"></i>
+          </button>
+         
+          <button mat-icon-button>
+          <i class="fas fa-camera"></i>
+          </button>
+      
+          <button mat-icon-button>
+             GIF
+          </button>
+              
+          <button mat-icon-button>
+              <i class="fas fa-grin-alt"></i>
+          </button>
+      </div>
+      
+      <div class="send_btn">
+          <mat-chip type="button" [disabled]="!messageForm.valid" class="send_btn_style"   (click)="sendMsg()">
+      Send
+          </mat-chip>
+          </div>
+      
+          
+      </div>
+    </div>
+</form>
 
   </div>
 

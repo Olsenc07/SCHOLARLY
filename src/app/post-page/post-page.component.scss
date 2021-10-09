@@ -436,13 +436,13 @@ p {
   display: flex;
   width: 100%;
   height: 100%;
-  overflow-y: scroll;
+  resize: none;
 }
 .postM {
   display: flex;
   width: 100%;
   height: 100%;
-  overflow-y: scroll;
+  resize: none;
 }
 .post-location {
   display: flex;

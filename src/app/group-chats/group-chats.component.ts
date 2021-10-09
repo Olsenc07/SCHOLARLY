@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
-
-import { FormControl } from '@angular/forms';
 import { PostService } from '../services/post.service';
 
 @Component({
@@ -13,14 +12,27 @@ import { PostService } from '../services/post.service';
 export class GroupChatsComponent implements OnInit {
   faCoffee = faCoffee;
   MatBadgeModule;
-
   post = PostService.post$$;
+
+  message: FormControl = new FormControl('');
+
+  
+  messageForm = new FormGroup({
+  message: this.message
+});
+  
 
   // Filled by members that join the group
   members = ['']
 
   // filters members, not entirely neeeded...
   search: FormControl = new FormControl('');
+
+
+  
+
+   // Sends message
+   sendMsg(){};
 
   constructor(private _bottomSheet: MatBottomSheet) { }
 
