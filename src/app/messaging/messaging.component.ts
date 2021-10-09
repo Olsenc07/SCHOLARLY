@@ -17,12 +17,13 @@ export class MessagingComponent {
 
     search: FormControl = new FormControl('');
     message: FormControl = new FormControl('');
+    fileUploadM: FormControl = new FormControl('');
+    photoUploadM: FormControl = new FormControl('');
 
 
     filteredSearch: Observable<string[]>;
-    searchForm = new FormGroup({
-      search: this.search,
-    });
+
+
     // Sends message
     sendMsg(){};
 
@@ -35,6 +36,13 @@ export class MessagingComponent {
         const filterValue = value.toLowerCase();
         return this.allUsers.filter(user => user.toLowerCase().indexOf(filterValue) === 0);
               }
-            
+           
+              
+              uploadFile(): any {
+                document.getElementById('fileInput').click();
+              };
+              uploadPic(): any {
+                document.getElementById('picInput').click();
+              };
 
 };
