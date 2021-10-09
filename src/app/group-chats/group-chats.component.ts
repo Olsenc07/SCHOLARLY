@@ -15,8 +15,9 @@ export class GroupChatsComponent implements OnInit {
   post = PostService.post$$;
 
   message: FormControl = new FormControl('');
+  fileUpload: FormControl = new FormControl('');
+  photoUpload: FormControl = new FormControl('');
 
-  
   messageForm = new FormGroup({
   message: this.message
 });
@@ -36,7 +37,12 @@ export class GroupChatsComponent implements OnInit {
 
   constructor(private _bottomSheet: MatBottomSheet) { }
 
-
+  uploadFile(): any {
+    document.getElementById('fileInput').click();
+  };
+  uploadPic(): any {
+    document.getElementById('picInput').click();
+  };
 
   ngOnInit(): void {
   }
