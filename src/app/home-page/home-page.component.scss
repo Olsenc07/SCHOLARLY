@@ -55,6 +55,7 @@
 @media (min-width: 1024px) {
   .pic {
     width: 100%;
+    margin-top: 1%;
     border-radius: 25px;
   }
 }
@@ -73,6 +74,7 @@
     width: 100%;
     margin-top: 2%;
     display: flex;
+    background-image: linear-gradient(to top right, #0f3379, white);
   }
 }
 @media (max-width: 901px) {
@@ -85,6 +87,7 @@
     height: 100%;
     margin-top: 2%;
     display: flex;
+    background-image: linear-gradient(to top right, #0f3379, white);
   }
 }
 .forgot-password {
