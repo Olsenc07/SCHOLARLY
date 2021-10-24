@@ -35,7 +35,9 @@ const routes: Routes = [
   { path: 'groups', component: GroupChatsComponent },
   { path: 'main', component: MainPagesComponent },
   { path: 'messages', component: MessagingComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  // Directs to search page if user is logged in. 
+  // Directs to log in page if user isn't logged in.
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
 ];
 
 @NgModule({
