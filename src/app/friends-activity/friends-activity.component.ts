@@ -17,10 +17,7 @@ export class FriendsActivityComponent implements OnInit {
 
   ];
 
-  mutuals = [{
-    "profilePic": "", "userName": "",
-    "Major": "", "Minor": "", "Sport": "", "Club": ""
-  },
+  mutuals = [
 
   ];
 

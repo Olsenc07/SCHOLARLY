@@ -25,10 +25,7 @@
   color: cornflowerblue;
   font-size: x-large;
 }
-// .center-{
-//   // color: cornflowerblue;
 
-// }
 .center1 {
   display: flex;
   justify-content: center;
@@ -78,6 +75,11 @@
 .red {
   color: rgb(196, 68, 68);
 }
+.remove_friend {
+  color: gray;
+  font-size: large;
+}
+
 .row {
   display: flex;
   flex-direction: row;

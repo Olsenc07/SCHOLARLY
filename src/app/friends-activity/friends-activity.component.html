@@ -58,6 +58,12 @@
             <div class="message">
               Click The Hand Shake Icon On Your Friends Lists To Display Mututal Friends
               <i class="far fa-handshake messageIcon "></i>
+              <div class="remove_explained">
+           To remove a user from a list, click
+              <i class="fas fa-user-minus remove_icon"></i>
+            
+</div>
+
             </div>
 
 
@@ -130,9 +136,6 @@
 
 
           <!-- Right column -->
-
-
-
           <div class="right">
             <div class="friend_count">
               <div class="center">
@@ -261,6 +264,18 @@
                 </div>
                 <div class="follow-m">
                   <div class="center1">
+
+                    <div class="follow-m" *ngIf="mutuals.length == 0">
+                      <div class="message">
+                        Click The Hand Shake Icon On Your Friends Lists To Display Mututal Friends
+                        <i class="far fa-handshake messageIcon "></i>
+                        <div class="remove_explained">
+                     To remove a user from a list, click
+                        <i class="fas fa-user-minus remove_icon"></i>         
+                         </div>
+                      </div>
+                    </div>
+
 
                     <div class="follow-m" *ngIf="mutuals.length !== 0">
                       <app-card-mutual *ngFor="let mutual of mutuals" class="width">
