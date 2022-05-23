@@ -4,6 +4,13 @@
     <mat-tab-group [selectedIndex]="selectedIndex" mat-align-tabs="center">
 
       <mat-tab disabled>
+
+
+
+
+        <!-- Messsage is sent to verify email once email is typed in and the option to verify this email
+          pops up and when they click it, it then sends the verification email. Then when they verify it. The next button is un disabled and they
+        can continue creating their account -->
         <form [formGroup]="requiredForm">
           <ng-template mat-tab-label>
             <mat-icon><span class="material-icons-two-tone">
@@ -59,7 +66,7 @@
               <div class="layout">
                 Private Account
                 <div class="center_">
-                  <mat-radio-button value="private"></mat-radio-button>
+                  <mat-radio-button [disableRipple]="true" value="private"></mat-radio-button>
                 </div>
 
               </div>
@@ -73,7 +80,7 @@
               <div class="layout">
                 Public Account
                 <div class="center_">
-                  <mat-radio-button value="public"></mat-radio-button>
+                  <mat-radio-button [disableRipple]="true" value="public"></mat-radio-button>
                 </div>
               </div>
 
@@ -102,7 +109,7 @@
           <div class="existing-account-layout">
             <!-- [disabled]="!requiredForm.valid" -->
             <button type="button" mat-raised-button class="existing-account-layout" (click)="onSubmitPartOne()"
-              (click)="changeTab()">
+              (click)="changeTab()" [disabled]="!requiredForm.valid">
               Next
             </button>
 
@@ -218,10 +225,10 @@
               <!-- Birthday picker -->
               <div class="column">
                 <i class="fas fa-birthday-cake icon"></i>
-                <p class="asthetic-adds ">Birthday</p>
+                <!-- <p class="asthetic-adds ">Birthday</p> -->
               </div>
               <mat-form-field appearance="fill">
-                <mat-label>Choose a date</mat-label>
+                <mat-label>When's your birthday?</mat-label>
                 <input matInput [matDatepicker]="dp" [formControl]="birthday">
                 <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
                 <mat-datepicker #dp></mat-datepicker>

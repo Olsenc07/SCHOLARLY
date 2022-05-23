@@ -83,6 +83,17 @@
 }
 .counter{
   display: flex;
+  padding: 0% 15%;
+  justify-content: center;
+  flex-direction: column;
+  font-size: large;
+}
+.counter_{
+  display: flex;
+  padding: 0% 5%;
+  justify-content: center;
+  flex-direction: column;
+  font-size: large;
 }
 .courses {
   display: flex;
@@ -370,12 +381,7 @@
   display: flex;
     width: 100%;
 }
-.input {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  width: 99%;
-}
+
 .recent-post-layout {
   display: flex;
   flex-direction: column;
@@ -645,6 +651,13 @@ justify-content: center;
   margin-bottom: 2%;
   margin-top: inherit;
 }
+
+// .input {
+//   display: flex;
+//   justify-content: center;
+//   flex-direction: row;
+//   width: 99%;
+// }
 
 .inputText {
   display: flex;

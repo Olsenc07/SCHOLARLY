@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { StoreService } from '../services/store.service';
+import { PostService } from '../services/post.service';
 
 @Component({
     selector: 'app-card-brief',
@@ -7,5 +9,9 @@ import { Component } from '@angular/core';
 })
 
 export class ReusableCardBriefComponent {
+    profile = StoreService.profile$$;
+    post = PostService.post$$;
+    id = StoreService.userId$$;
+
     constructor() { }
 }

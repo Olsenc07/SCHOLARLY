@@ -29,9 +29,9 @@
             <mat-chip-list class="center_" aria-label="FollowBtn">
                 <!-- (click)="followClicked()" -->
                 <mat-chip class="messageM">
-                    Follow
-
-                    <!-- {{ following ? "Unfollow" : "Follow" }} -->
+                    Message
+                    <!-- Or -->
+                    <!-- <i class="far fa-envelope"></i> -->
 
 
 
@@ -47,34 +47,7 @@
 
         </div>
 
-        <div class="row">
-            <div [ngClass]="(profile | async)?.Sport || (profile | async)?.Club ? 'center' : 'centerEmpty' "
-                *ngIf=" (profile | async)?.Major || (profile | async)?.Minor ">
-                <div class=" center1" *ngIf="(profile | async)?.Major">
-
-                    <i class="fas fa-star large">{{ (profile | async)?.Major}}</i>
-
-                </div>
-                <div class="center1" *ngIf="(profile | async)?.Minor">
-
-                    <i class="far fa-star large">{{ (profile | async)?.Minor}}</i>
-
-                </div>
-            </div>
-
-
-            <div [ngClass]="(profile | async)?.Major || (profile | async)?.Minor ? 'center' : 'centerEmpty' "
-                *ngIf="(profile | async)?.Sport || (profile | async)?.Club ">
-                <div class="center1" *ngIf="(profile | async)?.Sport">
-                    <!-- {{id.Sport}} -->
-                    {{ (profile | async)?.Sport}}
-                </div>
-                <div class="center1" *ngIf="(profile | async)?.Club">
-                    <!-- {{id.Club}} -->
-                    {{ (profile | async)?.Club}}
-                </div>
-            </div>
-
-        </div>
+        
+       
     </div>
 </mat-card>

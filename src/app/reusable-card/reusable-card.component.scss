@@ -1,4 +1,4 @@
-.b{
+.b {
   padding: 1%;
 }
 .booleans {
@@ -7,9 +7,10 @@
   height: 100%;
   width: 100%;
   margin-top: 1%;
+  color: #7e7171;
 }
 
-.centerT{
+.centerT {
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -26,21 +27,21 @@
   font-size: medium;
 }
 
-  .center1 {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-  }
-.column{
+.center1 {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+.column {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
-.column1{
+.column1 {
   display: flex;
   flex-direction: column;
 }
-.column_{
+.column_ {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -51,33 +52,32 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
- 
 }
-.d{
+.d {
   font-family: "Font Awesome 5 Free";
-    color: #7e7171;
+  color: #7e7171;
 }
-.description
-{
+.description {
   display: flex;
 }
-.displayT{
+.displayT {
   text-align: center;
 }
-.hide{display: none;
+.hide {
+  display: none;
 }
-@media(min-width:400px){
-  .mat-card-avatar{
+@media (min-width: 400px) {
+  .mat-card-avatar {
     width: 50px;
     height: 50px;
-  }}
-  @media(max-width:400px){
-    .mat-card-avatar{
-      width: 40px;
-      height: 40px;
-    }}
-    
-   
+  }
+}
+@media (max-width: 400px) {
+  .mat-card-avatar {
+    width: 40px;
+    height: 40px;
+  }
+}
 
 .feed {
   display: flex;
@@ -85,9 +85,8 @@
   height: 100%;
 }
 
-.fit_{
+.fit_ {
   display: flex;
-  
 }
 .specifics-fill {
   display: flex;
@@ -97,43 +96,44 @@
   box-sizing: border-box;
 }
 
-.row-
-{
+.row- {
   display: flex;
-flex-direction: row;}
+  flex-direction: row;
+}
 .row {
   display: flex;
   flex-direction: row;
   // width: 100%;
   // justify-content: space-evenly;
 }
-  .rowM{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-.row1{
+.rowM {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.row1 {
   display: flex;
   flex-direction: row;
   justify-content: center;
   font-family: "Font Awesome 5 Free";
   width: 100%;
 }
-.row2{
+.row2 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
 }
-.linkN{
+.linkN {
   color: #7e7171;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    font-weight: 500;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  // font-weight: 500;
+  text-align: center;
 }
-.link{
-  color: cornflowerblue;
+.link {
+  // color: cornflowerblue;
   font-size: small;
 }
 
@@ -181,8 +181,7 @@ flex-direction: row;}
   justify-content: center;
 }
 
-
-::ng-deep .mat-radio-label{
+::ng-deep .mat-radio-label {
   justify-content: center;
 }
 .nameTitle {
@@ -220,25 +219,25 @@ flex-direction: row;}
     color: cornflowerblue;
   }
 }
-.t{
+.t {
   font-size: small;
 }
 .middle-card {
   display: flex;
-// border: groove;
-width: 100%;
-height: 100%;
-aspect-ratio: 4/3;
-box-sizing: border-box;
+  // border: groove;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4/3;
+  box-sizing: border-box;
 }
-.upload{
+.upload {
   display: flex;
   width: 100%;
-height: 100%;
-// Optimize padding for all shapes... make sure top isnt to much of a push away
+  height: 100%;
+  // Optimize padding for all shapes... make sure top isnt to much of a push away
 
-// padding: 0% 9% 3% 9%;
-// padding: 0% 20%;
+  // padding: 0% 9% 3% 9%;
+  // padding: 0% 20%;
 
   box-sizing: border-box;
 }

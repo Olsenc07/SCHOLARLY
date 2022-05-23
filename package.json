@@ -29,6 +29,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@igniteui/material-icons-extended": "^2.4.0",
     "chip-input": "^0.2.13",
+    "express": "^4.17.1",
     "graphql": "^15.4.0",
     "hammerjs": "^2.0.8",
     "jszip": "^3.5.0",

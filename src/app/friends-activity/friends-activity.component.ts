@@ -8,29 +8,31 @@ import { StoreService } from '../services/store.service';
   styleUrls: ['./friends-activity.component.scss']
 })
 export class FriendsActivityComponent implements OnInit {
-
+  requests = [''];
   feeds = [{
     "profilePic": "", "userName": "",
     "Major": "", "Minor": "", "Sport": "", "Club": ""
   },
 
+
   ];
 
-  mutuals = [{
-    "profilePic": "", "userName": "",
-    "Major": "", "Minor": "", "Sport": "", "Club": ""
-  }
+  mutuals = [
+
   ];
 
   following = [{
     "profilePic": "", "userName": "",
     "Major": "", "Minor": "", "Sport": "", "Club": ""
   },
+
+
   ];
   followers = [{
     "profilePic": "", "userName": "",
     "Major": "", "Minor": "", "Sport": "", "Club": ""
-  }];
+  },
+  ];
 
   // Friend requests from the card...
   accept: FormControl = new FormControl('');

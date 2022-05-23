@@ -45,12 +45,8 @@
 }
 .large{
   font-size: small;
-  padding-right: 1%;
 }
-.lLarge{
-  font-size: x-small;
-  padding-right: 1%;
-}
+
 
 .mat-card-avatar{
     width: 50px;
@@ -84,11 +80,12 @@ justify-content: center;}
       flex-direction: row;
       justify-content: center;
       box-sizing: border-box;
+      width:100%;
   }
   .row_{
     display: flex;
     flex-direction: row;
-width: 100%;
+
 }
  
   .profilePic {
@@ -98,20 +95,20 @@ width: 100%;
     margin-right: 2%;
     // margin-bottom: 1%;
   }
-  @media (min-width: 500px) {
+  // @media (min-width: 500px) {
     .textSize {
       font-size: medium;
       font-family: "Font Awesome 5 Free";
       color: #7e7171;
     }
-  }
-  @media (max-width: 500px) {
-    .textSize {
-      font-size: smaller;
-      font-family: "Font Awesome 5 Free";
-      color: #7e7171;
-    }
-  }
+  // }
+  // @media (max-width: 500px) {
+    // .textSize {
+    //   font-size: smaller;
+    //   font-family: "Font Awesome 5 Free";
+    //   color: #7e7171;
+    // }
+  // }
   .userName {
     display: flex;
     font-weight: 500;

@@ -69,13 +69,16 @@ import { ReusableCardRequestComponent } from './reusable-card-request/reusable-c
 import { ReusableCardRecommendationComponent } from './reusable-card-request/reusable-card-request.component';
 import { ReusableCardUserComponent } from './reusable-card-user/reusable-card-user.component';
 import { ReusableCardMutualComponent } from './reusable-card-user/reusable-card-user.component';
+import { ReusableCardMessageComponent } from './reusable-card-user/reusable-card-user.component';
 import { ReusableCardConvoComponent } from './reusable-card-convo/reusable-card-convo.component';
-import { GroupMembersComponent } from './group-members/group-members.component';
+
 import { TaggedComponent } from './main-pages/main-pages.component';
 import { SearchListService } from './services/search.service';
 import { PostService } from './services/post.service';
 import { ClassListService } from './services/class.service';
 import { StoreService } from './services/store.service';
+import { FollowerService } from './services/followers.service';
+import { FollowingService } from './services/following.service';
 
 
 
@@ -103,8 +106,8 @@ import { StoreService } from './services/store.service';
     ReusableCardRecommendationComponent,
     ReusableCardUserComponent,
     ReusableCardMutualComponent,
+    ReusableCardMessageComponent,
     ReusableCardConvoComponent,
-    GroupMembersComponent,
     TaggedComponent,
     AccountTextComponent,
     MessagingComponent,
@@ -151,7 +154,8 @@ import { StoreService } from './services/store.service';
     ScrollingModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [SearchListService, PostService, ClassListService, StoreService],
+  providers: [SearchListService, PostService, ClassListService, StoreService,
+    FollowerService, FollowingService],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

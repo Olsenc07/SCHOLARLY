@@ -78,7 +78,6 @@ export class AppComponent implements OnInit {
       map((event: NavigationEnd) => event.url === '/' || event.url === '/friends-activity')
     );
 
-
     this.isProfileScreen$ = this.router.events.pipe(
       filter(event => event instanceof NavigationEnd),
       map((event: NavigationEnd) => event.url === '/' || event.url === '/profile')

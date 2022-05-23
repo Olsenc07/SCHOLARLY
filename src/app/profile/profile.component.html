@@ -23,7 +23,7 @@
 
           </div>
           <div>
-            <button class="icon" mat-icon-button routerLink="/groups">
+            <button class="icon" mat-icon-button routerLink="/messages">
               <span class="material-icons">
                 chat
               </span>
@@ -40,6 +40,11 @@
             {{ (profile | async )?.Birthday|date:"longDate" }}
           </div>
 
+          <!-- <div *ngIf="date equals bd input"> <i class="fas fa-birthday-cake icon"></i>
+          Happy Birthday
+          </div> -->
+
+
         </div>
 
       </div>
@@ -50,12 +55,12 @@
         <!-- *ngIf="major.value" -->
         <div class="centerR" *ngIf="(profile| async)?.Major ">
           <!-- Major -->
-          <i class="fas fa-star-of-life large"></i>
-          {{ (profile | async)?.Major}}
+          <i class="fas fa-star large">{{ (profile | async)?.Major}}</i>
+
         </div>
         <div class="centerR" *ngIf="(profile| async)?.Minor ">
           <!-- Minor -->
-          <i class="fas fa-star-of-life lLarge"></i>{{ (profile | async)?.Minor}}
+          <i class="far fa-star large">{{ (profile | async)?.Minor}}</i>
         </div>
 
       </div>
@@ -78,11 +83,13 @@
       <div class="major-minor">
         <div class="centerR">
           Followers
-          <!-- tracks value of followers {{}} -->
+          <!-- Counter -->
+          {{followers}}
         </div>
         <div class="centerR">
           Following
-          <!-- tracks value of following -->
+          <!-- Counter -->
+          {{follow}}
         </div>
       </div>
 
@@ -160,18 +167,19 @@
           <div class="row_1">
             <!-- This ngIf to adjust to data stroage not hard code like Pur_
             but need to target observable length.. idk rn -->
-            <div class="column1" *ngIf=" !((profile | async)?.filteredCodes  && (profile | async)?.filteredCodesP)">
-              <div class="row"> No Courses Added</div><i class="far fa-frown centerR"></i>
+            <div class="column1" *ngIf=" !((profile | async)?.CodeCompleted  || (profile | async)?.filteredCodesP)">
+              <div class="row"> No Courses Added</div>
+              <!-- <i class="far fa-frown centerR"></i> -->
             </div>
             <!-- Hidden if neither are filled in -->
 
 
-            <div [ngClass]=" ((profile | async)?.filteredCodes) ? 'completed-courses' : 'hide_' ">
+            <div [ngClass]=" ((profile | async)?.CodeCompleted) ? 'completed-courses' : 'hide_' ">
               <div class="words1">
                 Completed
                 <!-- Courses but need to target list length-->
                 <div class="counter" matBadgePosition="after" matBadgeOverlap="false"
-                  matBadge="{{ (profile | async)?.filteredCodes  }}">
+                  matBadge="{{ (profile | async)?.CodeCompleted.length  }}">
                 </div>
 
               </div>
@@ -183,7 +191,7 @@
                     <div class="center__">
                       <mat-chip class="style" disabled>
                         <!-- {{list}} -->
-                        {{ (profile | async)?.filteredCodes }}
+                        {{ (profile | async)?.CodeCompleted }}
                       </mat-chip>
                     </div>
                   </div>
@@ -196,9 +204,8 @@
               <div class="words1">
                 Pursuing
                 <!-- Courses -->
-
                 <div class="counter" matBadgePosition="after" matBadgeOverlap="false"
-                  matBadge="{{  (profile | async)?.CodePursuing }}"></div>
+                  matBadge="{{  (profile | async)?.CodePursuing.length }}"></div>
               </div>
               <div class="scroll">
                 <mat-chip-list>
@@ -208,7 +215,6 @@
                       <mat-chip class="style" disabled>
                         <!-- {{list}}-->
                         {{ (profile | async)?.CodePursuing }}
-
                       </mat-chip>
                     </div>
                   </div>
@@ -284,17 +290,18 @@
             </div>
 
             <div class="row_1">
-              <div class="column1" *ngIf="(profile | async)?.filteredCodes  && Pur_ == 0">
-                <div class="row"> No Courses Added</div><i class="far fa-frown centerR"></i>
+              <div class="column1" *ngIf=" !((profile | async)?.CodeCompleted  || (profile | async)?.filteredCodesP)">
+                <div class="row"> No Courses Added</div>
+                <!-- <i class="far fa-frown centerR"></i> -->
               </div>
               <!-- Hidden if neither are filled in -->
 
 
-              <div [ngClass]="(profile | async)?.filteredCodes  ? 'hide_' : 'completed-courses' ">
+              <div [ngClass]="(profile | async)?.CodeCompleted  ?  'completed-courses': 'hide_' ">
                 <div class="words1">Completed
 
                   <div class="counter" matBadgePosition="after" matBadgeOverlap="false"
-                    matBadge="{{(profile | async)?.filteredCodes}}"></div>
+                    matBadge="{{(profile | async)?.CodeCompleted}}"></div>
                 </div>
 
                 <div class=" scroll">
@@ -304,7 +311,7 @@
                       <div class="center__">
                         <mat-chip class="style" disabled>
                           <!-- {{list}} -->
-                          {{ (profile | async)?.filteredCodes}}
+                          {{ (profile | async)?.CodeCompleted}}
                         </mat-chip>
                       </div>
                     </div>
@@ -312,11 +319,10 @@
                 </div>
 
               </div>
-              <div [ngClass]="(profile | async)?.filteredCodesP ? 'hide_' : 'completed-courses' ">
+              <div [ngClass]="(profile | async)?.CodePursuing ? 'completed-courses' : 'hide_' ">
                 <div class="words1">Pursuing
-                  {{ profile | async }}
                   <div class="counter" matBadgePosition="after" matBadgeOverlap="false"
-                    matBadge="{{  (profile | async)?.filteredCodesP }}"></div>
+                    matBadge="{{  (profile | async)?.CodePursuing }}"></div>
                 </div>
                 <div class="scroll">
                   <mat-chip-list>
@@ -325,7 +331,7 @@
                       <div class="center__">
                         <mat-chip class="style" disabled>
                           <!-- {{list}} -->
-                          {{ (profile | async)?.filteredCodesP}}
+                          {{ (profile | async)?.CodePursuing}}
                         </mat-chip>
                       </div>
                     </div>

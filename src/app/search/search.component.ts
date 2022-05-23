@@ -34,6 +34,7 @@ export class SearchComponent implements OnInit {
     "Specific": "", "Location": "", "Date": "", "Upload": ""
   },
 
+
   ];
   // Mock list but these are needed to fill app-card-request in ngFor
   // Will be pulled from back end, but how does the selector know to fill???

@@ -66,27 +66,27 @@
           <!-- End -->
           <div class="icon-top">
             <div class="icon-btn-fit">
-              <button mat-icon-button type="button" routerLink="/search" class="a_up">
+              <button [disableRipple]="true" mat-icon-button type="button" routerLink="/search" class="a_up">
                 <mat-icon [ngClass]="(isSearchScreen$ | async ) === true
                ? 'PublicOn' : 'public' ">public</mat-icon>
               </button>
             </div>
 
             <div class="icon-btn-fit">
-              <button mat-icon-button type="button" routerLink="/friends-activity" class="a_up">
+              <button [disableRipple]="true" mat-icon-button type="button" routerLink="/friends-activity" class="a_up">
                 <mat-icon [ngClass]="(isFriendsActScreen$ | async ) === true
             ? 'GroupsOn' : 'groups' ">groups</mat-icon>
               </button>
             </div>
             <div class="icon-btn-fit">
-              <button mat-icon-button type="button" routerLink="/post-page" class="a_up">
+              <button [disableRipple]="true" mat-icon-button type="button" routerLink="/post-page" class="a_up">
                 <mat-icon [ngClass]="(isPostScreen$ | async ) === true
                 ? 'PostOn' : 'post' ">add_circle</mat-icon>
               </button>
             </div>
 
             <div class="icon-btn-fit">
-              <button mat-icon-button type="button" routerLink="/messages" class="a_up">
+              <button [disableRipple]="true" mat-icon-button type="button" routerLink="/messages" class="a_up">
                 <i [ngClass]="(isMessagesScreen$ | async ) === true
                 ? 'MessageOn' : 'message' 
                 " class="far fa-comment-dots"></i>
@@ -94,7 +94,7 @@
             </div>
 
             <div class="icon-btn-fit">
-              <button mat-icon-button type="button" routerLink="/profile" class="a_up">
+              <button [disableRipple]="true" mat-icon-button type="button" routerLink="/profile" class="a_up">
                 <mat-icon [ngClass]="(isProfileScreen$ | async ) === true
             ? 'ProfileOn' : 'profile'">account_circle</mat-icon>
               </button>
@@ -145,26 +145,26 @@
       <mat-toolbar class="lower">
         <div class="icon-top">
           <div class="icon-btn-fit">
-            <button mat-icon-button type="button" routerLink="/search" class="a_up">
+            <button [disableRipple]="true" mat-icon-button type="button" routerLink="/search" class="a_up">
               <mat-icon [ngClass]="(isSearchScreen$ | async ) === true
     ? 'PublicOnM' : 'publicM' ">public</mat-icon>
             </button>
           </div>
           <div class="icon-btn-fit">
-            <button mat-icon-button type="button" routerLink="/friends-activity" class="a_up">
+            <button [disableRipple]="true" mat-icon-button type="button" routerLink="/friends-activity" class="a_up">
               <mat-icon [ngClass]="(isFriendsActScreen$ | async ) === true
       ? 'GroupsOnM' : 'groupsM' ">groups</mat-icon>
             </button>
           </div>
           <div class="icon-btn-fit">
-            <button mat-icon-button type="button" routerLink="/post-page" class="a_up">
+            <button [disableRipple]="true" mat-icon-button type="button" routerLink="/post-page" class="a_up">
               <mat-icon [ngClass]="(isPostScreen$ | async ) === true
               ? 'PostOnM' : 'postM' ">add_circle</mat-icon>
             </button>
           </div>
 
           <div class="icon-btn-fit">
-            <button mat-icon-button type="button" routerLink="/messages" class="a_up">
+            <button [disableRipple]="true" mat-icon-button type="button" routerLink="/messages" class="a_up">
               <i [ngClass]="(isMessagesScreen$ | async ) === true
               ? 'MessageOnM' : 'messageM' 
               " class="far fa-comment-dots"></i>
@@ -172,7 +172,7 @@
           </div>
 
           <div class="icon-btn-fit">
-            <button mat-icon-button type="button" routerLink="/profile" class="a_up">
+            <button [disableRipple]="true" mat-icon-button type="button" routerLink="/profile" class="a_up">
               <mat-icon [ngClass]="(isProfileScreen$ | async ) === true
       ? 'ProfileOnM' : 'profileM' ">account_circle</mat-icon>
             </button>

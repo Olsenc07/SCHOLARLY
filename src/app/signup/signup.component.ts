@@ -122,6 +122,7 @@ export class SignupComponent implements OnInit {
 
 
   requiredForm = new FormGroup({
+    // verify email
     email: this.email,
     username: this.username,
     password: this.password,
@@ -452,8 +453,7 @@ export class SignupComponent implements OnInit {
       // ShowCasse: this.url.value,
       Birthday: this.birthday.value,
       ShowCase: this.showCase.value,
-      filteredCodes: this.filteredCodes,
-      filteredCodesP: this.filteredCodesP,
+
     };
     this.storeService.setProfile(profile);
     this.storeService.setUser(userId);

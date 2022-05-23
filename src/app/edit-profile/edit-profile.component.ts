@@ -1,5 +1,5 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormControl, FormGroup } from '@angular/forms';
 import {
   MomentDateAdapter,
   MAT_MOMENT_DATE_ADAPTER_OPTIONS,
@@ -18,10 +18,11 @@ import {
   MatAutocompleteSelectedEvent,
   MatAutocomplete,
 } from '@angular/material/autocomplete';
-import { MatChipInputEvent } from '@angular/material/chips';
+
+import { MatChipInputEvent, MatChipList } from '@angular/material/chips';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, startWith } from 'rxjs/operators';
 import { ClassListService } from '../services/class.service';
 import { Profile, StoreService } from '../services/store.service';
 import { AccountTextComponent } from '../signup/signup.component'
@@ -69,8 +70,10 @@ export class EditProfileComponent implements OnInit {
   selectable = true;
   removable = true;
   separatorKeysCodes: number[] = [ENTER, COMMA];
-  filteredCodesP: Observable<string[]>;
+  // These show inputs in real time but arn't whats stored
   filteredCodes: Observable<string[]>;
+  filteredCodesP: Observable<string[]>;
+
   classes: string[] = [];
   classesP: string[] = [];
   @ViewChild('codeInput') codeInput: ElementRef<HTMLInputElement>;
@@ -96,8 +99,17 @@ export class EditProfileComponent implements OnInit {
   genderChoice: FormControl = new FormControl('');
 
 
+  // I think each code input is a different form control, save into the array
   CodeCompleted: FormControl = new FormControl('');
+  // Need to push form controls from the users input, into this 
+  // Form Array, which gets passed 
   CodePursuing: FormControl = new FormControl('');
+
+
+  // Completed = new FormArray({
+  //   CodeCompleted
+  // })
+
 
   editForm = new FormGroup({
     major: this.major,
@@ -125,10 +137,10 @@ export class EditProfileComponent implements OnInit {
   ];
 
   // Group list;
-  gList = ['', '', '', '', '', '', ''];
+  gList = ['', ''];
 
   // Post list;
-  pList = ['', '', '', '', '', '', ''];
+  pList = ['', ''];
 
   // Connects to save showcases in the data base
   list = ['../../assets/Pics/IMG-8413.PNG',
@@ -155,6 +167,8 @@ export class EditProfileComponent implements OnInit {
         code ? this._filter(code) : this.classListService.allClasses().slice()
       )
     );
+
+
     this.filteredCodesP = this.CodePursuing.valueChanges.pipe(
       map((codeP: string | null) =>
         codeP ? this._filter(codeP) : this.classListService.allClasses().slice()
@@ -238,7 +252,6 @@ export class EditProfileComponent implements OnInit {
 
     // Clear the input value
     // event.chipInput!.clear();
-
     this.CodeCompleted.setValue(null);
   }
   // Pursuing Courses
@@ -252,7 +265,6 @@ export class EditProfileComponent implements OnInit {
 
     // Clear the input value
     // event.chipInput!.clear();
-
     this.CodePursuing.setValue(null);
   }
 
@@ -273,13 +285,13 @@ export class EditProfileComponent implements OnInit {
   selected(event: MatAutocompleteSelectedEvent): void {
     this.classes.push(event.option.viewValue);
     this.codeInput.nativeElement.value = '';
-    this.CodeCompleted.setValue('');
+    // this.CodeCompleted.setValue();
   }
   // Pursuing Classes
   selectedP(event: MatAutocompleteSelectedEvent): void {
     this.classesP.push(event.option.viewValue);
     this.codeInputP.nativeElement.value = '';
-    this.CodePursuing.setValue('');
+    // this.CodePursuing.setValue('');
   }
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
@@ -288,7 +300,9 @@ export class EditProfileComponent implements OnInit {
       .allClasses()
       .filter((code) => code.toLowerCase().indexOf(filterValue) === 0);
   }
-  ngOnInit(): void { }
+
+  ngOnInit(): void {
+  }
 
   clearMajor(): void {
     this.major.setValue('');
@@ -431,8 +445,7 @@ export class EditProfileComponent implements OnInit {
       Birthday: this.birthday.value,
       ShowCase: this.showCase.value,
       // ShowCasse: this.url,
-      filteredCodes: this.filteredCodes,
-      filteredCodesP: this.filteredCodesP,
+
 
       // cropImgPreview: this.cropImgPreview,
       // Converted base64 url to a file

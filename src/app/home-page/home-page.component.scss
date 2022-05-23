@@ -1,3 +1,9 @@
+@media (max-width: 901px) {
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
+}
 @media (max-width: 500px) {
   .content {
     display: flex;
@@ -46,27 +52,43 @@
     font-family: "Font Awesome 5 Free";
   }
 }
-@media (min-width: 901px) {
-.log-in-box {
-  box-sizing: border-box;
-  padding: 0% 5% 5% 5%;
-  border: 1px solid gray;
-  border-radius: 16px;
-  width: 100%;
-  margin-top: 2%;
-  display: flex;
-}}
-@media (max-width: 901px) {
-.log-in-box {
-  box-sizing: border-box;
-  padding: 0% 5% 5% 5%;
-  border: 1px solid gray;
-  border-radius: 16px;
-  width: 100%;
-  height: 100%;
-  margin-top: 2%;
-  display: flex;
+@media (min-width: 1024px) {
+  .pic {
+    width: 100%;
+    margin-top: 1%;
+    border-radius: 25px;
+  }
 }
+@media (max-width: 1024px) {
+  .pic {
+    width: 100%;
+  }
+}
+
+@media (min-width: 901px) {
+  .log-in-box {
+    box-sizing: border-box;
+    padding: 0% 5% 5% 5%;
+    border: 1px solid gray;
+    border-radius: 16px;
+    width: 100%;
+    margin-top: 2%;
+    display: flex;
+    background-image: linear-gradient(to top right, #0f3379, white);
+  }
+}
+@media (max-width: 901px) {
+  .log-in-box {
+    box-sizing: border-box;
+    padding: 0% 5% 5% 5%;
+    border: 1px solid gray;
+    border-radius: 16px;
+    width: 100%;
+    height: 100%;
+    margin-top: 2%;
+    display: flex;
+    background-image: linear-gradient(to top right, #0f3379, white);
+  }
 }
 .forgot-password {
   margin: 8px 0;
@@ -76,7 +98,7 @@
 }
 
 .action-button {
-  font-family: "Font Awesome 5 Free","Helvetic Neue";
+  font-family: "Font Awesome 5 Free", "Helvetic Neue";
 }
 @media (max-height: 545px) {
   .top {
@@ -86,7 +108,7 @@
 @media (min-width: 511px) {
   .tag {
     color: #0e3379;
-    font-family: "Font Awesome 5 Free","Helvetic Neue";
+    font-family: "Font Awesome 5 Free", "Helvetic Neue";
     margin: 3% 0;
     font-size: 17px;
   }
@@ -99,14 +121,14 @@
 
 .text-input {
   width: 100%;
-  font-family: "Font Awesome 5 Free","Helvetic Neue";
+  font-family: "Font Awesome 5 Free", "Helvetic Neue";
   height: 9vh;
   font-size: large;
 }
 @media (max-width: 700px) and (min-width: 402px) {
   .text-input {
     width: 100%;
-    font-family: "Font Awesome 5 Free","Helvetic Neue";
+    font-family: "Font Awesome 5 Free", "Helvetic Neue";
     height: 9vh;
     font-size: medium;
   }
@@ -114,27 +136,21 @@
 @media (max-width: 401px) {
   .text-input {
     width: 100%;
-    font-family: "Font Awesome 5 Free","Helvetic Neue";
+    font-family: "Font Awesome 5 Free", "Helvetic Neue";
     height: 9vh;
     font-size: small;
   }
 }
-@media(min-width:1024px){
-.side-spacer {
-  width: 25%;
-}}
-
+@media (min-width: 1024px) {
+  .side-spacer {
+    width: 25%;
+  }
+}
 
 @media (min-width: 902px) {
   .row {
     display: flex;
     flex-direction: row;
     margin-top: 1%;
-  }
-}
-@media (max-width: 901px) {
-  .column {
-    display: flex;
-    flex-direction: column;
   }
 }
